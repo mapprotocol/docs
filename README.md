@@ -1,25 +1,8 @@
-# MAP Protocol
+# Introduction
 
 ## Getting Super Powers
 
-Becoming a super hero is a fairly straight forward process:
-
-```
-$ give me super-powers
-```
-
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
-
-Once you're strong enough, save the world:
-
-{% code title="hello.sh" %}
-```bash
-# Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-{% endcode %}
+MAP protocol aims to be the secure end-to-end solution for any blockchain resident to move and exchange assets. To fulfill this role, MAP team is building on three layers simultaneously: a dedicated blockchain served as the infrastructure freeway connecting all kinds of blockchains to break the barriers, the MAP Assets layer where all kinds of assets are mapped to MAP chain in a non-custodial style via trustless smart contract, and the DeFi Application layer where all kinds of applications including but not limited to DEXes, games and NFTs can be built with the cross-chain capabilities enabled by the MAP chain and MAP assets.
 
 
 
