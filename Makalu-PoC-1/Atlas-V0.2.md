@@ -17,8 +17,8 @@ specify name and symbol assign the USDT contract address obtained in the previou
 (3). Deploy [MapRouter](https://github.com/mapprotocol/contracts/blob/884cc2b64ff14c01fa60251851537e2f877a14a2/contracts/MapRouter.sol)
 
 The constructor of this contract receives 2 parameters, mpcAddress and verify. mpcAddress is the address of the relayer 
-that listen and verifies cross-chain transactions. This will be described in detail below. assign the 
-[TxVerify](https://mapprotocol.github.io/atlas/tx_verify/Tx-Verify-Contract#contract-address) contract address to verify
+that listen and verifies cross-chain transactions. This will be described in detail below. assign the
+[TxVerify](cross-chain/tx-verify/Tx-Verify-Contract#contract-address) contract address to verify
 
 (4). Set Authentication
 
@@ -32,7 +32,7 @@ token: token contract address, here can be MapERC20 contract address,
 to: the address of the recipient of the transaction, 
 amount: transaction amount, 
 toChainId: the target chain of cross-chain transactions,
-see [supported chain list](https://mapprotocol.github.io/atlas/light%20client%20data/Header-Store-API#chain-identification-list).
+see [supported chain list](cross-chain/light-client-data/Header-Store-API#chain-identification-list).
 
 ### 4. Register as a relayer and synchronize the block header to atlas
 Atlas uses light client verification to verify on-chain transactions on the opposite chain to achieve the purpose of 
@@ -41,9 +41,9 @@ cross-chain transaction verification.
 
 For how to register as a relayer and synchronize the block header, please refer to the document linked below.
 
-[How To Become Relayer](https://mapprotocol.github.io/atlas/relayer/QuickStart.html)
+[How To Become Relayer](map-protocol/relayer/QuickStart)
 
-[Sync Block Header](https://mapprotocol.github.io/atlas/light%20client%20data/Header-Store-Contract.html)
+[Sync Block Header](cross-chain/light-client-data/Header-Store-Contract)
 
 ### 5. Listen cross chain transaction events and verify transactions
 In this step, you need to implement a simple program to listen cross-chain transaction events on ethereum. 
@@ -52,7 +52,7 @@ and then the sawpIn method of the MapRouter contract deployed on atlas is mobili
 The sawpIn method will call the pre-compiled contract of atlas to verify whether the cross-chain transaction exists and is legal. 
 If the verification is passed, the transfer amount will be sent to the recipient of the cross-chain transaction.
 
-[How to construct cross-chain transaction verification data](https://mapprotocol.github.io/atlas/tx_verify/Tx-Verify-Contract.html#example)
+[How to construct cross-chain transaction verification data](cross-chain/tx-verify/Tx-Verify-Contract#example)
 
 ### 6. Query whether the cross-chain transaction has arrived
 After the above steps, you have completed a cross-chain transaction. Now let's verify whether the transaction amount has arrived. 
