@@ -5,10 +5,9 @@
 * [Getting Started]()
     * [FAQ](getting-started/faq.md)
 
-* MAP Protocol(map-protocol/setValidator.md)
+* [MAP Protocol](map-protocol/setValidator.md)
     * [Consensus](map-protocol/consensus/Consensue.md)
         * [Proof-of-Stake](map-protocol/consensus/Proof-of-Stake.md)
-        * [Node Configuration](map-protocol/consensus/NodeConfiguration.md)
     * Relayer
         * [Relayer Contract](map-protocol/relayer/Relayer-Contract.md)
         * [Relayer API](map-protocol/relayer/Relayer-API.md)
