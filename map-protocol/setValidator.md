@@ -140,7 +140,7 @@ admin.addPeer("enode://cd63432c612e3185e24b0be116c5e2a0804a94cb65cf0ba2787c42863
 admin.addPeer("enode://40d2dc2a51298f3d9e2eabea17ae20781cb65ceb351681db6ab45e8086ded21aa1fcac08767bab383dec89723565c9f161dbb3cfa7cfd8ef41d049cdf0f44f26@127.0.0.1:21224")
 ```
 
-### Operating a private network
+## Operating a private network
 
 Maintaining your own private network is more involved as a lot of configurations taken for
 granted in the official networks need to be manually set up.

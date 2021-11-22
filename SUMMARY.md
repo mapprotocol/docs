@@ -5,7 +5,7 @@
 * [Getting Started]()
     * [FAQ](getting-started/faq.md)
 
-* MAP Protocol
+* MAP Protocol(map-protocol/setValidator.md)
     * [Consensus](map-protocol/consensus/Consensue.md)
         * [Proof-of-Stake](map-protocol/consensus/Proof-of-Stake.md)
         * [Node Configuration](map-protocol/consensus/NodeConfiguration.md)
