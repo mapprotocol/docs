@@ -12,6 +12,10 @@
         * [Relayer Contract](map-protocol/relayer/Relayer-Contract.md)
         * [Relayer API](map-protocol/relayer/Relayer-API.md)
         * [How To Become Relayer](map-protocol/relayer/QuickStart.md)
+    * Vaildator
+      * [Vaildator Marker](map-protocol/validator/Marker.md)
+      * [Vaildator Client](map-protocol/validator/ValidatorCli.md)
+      * [How To Become Vaildator](map-protocol/validator/QuickStart.md)
 
 * Cross Chain
     * Light Client Data
