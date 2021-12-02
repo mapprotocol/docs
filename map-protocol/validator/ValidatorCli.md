@@ -212,10 +212,10 @@ OPTIONS
   
   --password                                                 your atlas group account password
   
-  --readConfig                                               get validators by validatorCfg.json
+  --address                                                  validator address
 
 EXAMPLES
-  ValidatorCli addFirstMember --rpcaddr localhost  --rpcport 8545  --keystore /root/keystore/UTC--2021-07-19T02-09-17.552426700Z--81f02fd21657df80783755874a92c996749777bf --password "123456" --readConfig
+  ValidatorCli addFirstMember --rpcaddr localhost  --rpcport 8545  --keystore /root/keystore/UTC--2021-07-19T02-09-17.552426700Z--81f02fd21657df80783755874a92c996749777bf --password "123456" --address "0x3e3429f72450a39ce227026e8ddef331e9973e4d"
   ```
 
 
@@ -239,10 +239,9 @@ OPTIONS
   
   --password                                                 your atlas group account password
   
-  --readConfig                                               get validators by validatorCfg.json
-
+   --address                                                 validator address
 EXAMPLES
-  ValidatorCli addToGroup --rpcaddr localhost  --rpcport 8545  --keystore /root/keystore/UTC--2021-07-19T02-09-17.552426700Z--81f02fd21657df80783755874a92c996749777bf --password "123456" --readConfig
+  ValidatorCli addToGroup --rpcaddr localhost  --rpcport 8545  --keystore /root/keystore/UTC--2021-07-19T02-09-17.552426700Z--81f02fd21657df80783755874a92c996749777bf --password "123456" --address "0x3e3429f72450a39ce227026e8ddef331e9973e4d"
   ``` 
 
 
