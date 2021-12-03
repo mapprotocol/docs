@@ -1,39 +1,39 @@
 ## How To Become Validator
 
-### Step 1: createAccount
+### Step 1: [createAccount](ValidatorCli.md#CreateAccount)
 
 Manage your account, keys, and metadata.
 
-Keep your locked Gold more secure by authorizing alternative keys to be used for signing attestations, voting, or validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked Gold in cold storage.
+Keep your locked MAP more secure by authorizing alternative keys to be used for signing attestations, voting, or validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked MAP in cold storage.
 
-### Step 2: lockedgold
+### Step 2: [lockedMAP](ValidatorCli.md#lockedMAP)
 
-Locks ATLAS to be used in governance and validator elections.
+Locks MAP to be used in governance and validator elections.
 
 
-### Step 3: affiliate group
+### Step 3: [affiliate group](ValidatorCli.md#affiliate)
 
 Affiliate a Validator with a Validator Group. This allows the Validator Group to add that Validator as a member. If the Validator is already a member of a Validator Group, affiliating with a different Group will remove the Validator from the first group's members.
 
-### Step 4: validator register
+### Step 4: [validator register](ValidatorCli.md#RegisterValidator)
 
 Register a new Validator.
 
 
 ## How To Become validatorgroup
 
-### Step 1: createAccount
+### Step 1: [createAccount](ValidatorCli.md#CreateAccount)
 
 Manage your account, keys, and metadata.
 
-Keep your locked Gold more secure by authorizing alternative keys to be used for signing attestations, voting, or validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked Gold in cold storage.
+Keep your locked MAP more secure by authorizing alternative keys to be used for signing attestations, voting, or validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked MAP in cold storage.
 
-### Step 2: lockedgold
+### Step 2: [lockedMAP](ValidatorCli.md#lockedMAP)
 
-Locks ATLAS to be used in governance and validator elections.
+Locks MAP to be used in governance and validator elections.
 
 
-### Step 3: validatorgroup register
+### Step 3: [validatorgroup register](ValidatorCli.md#RegisterGroup)
 
 Register a new Validator Group.
 
@@ -42,7 +42,7 @@ Different from the registration validator, the registration of the group needs t
 
 ### Step 4: Group operation on validator
 
-Add or remove members from a Validator Group.   
+[Add](ValidatorCli.md#AddFirstMember) or [remove](ValidatorCli.md#RemoveMember) members from a Validator Group.   
 
 
 
