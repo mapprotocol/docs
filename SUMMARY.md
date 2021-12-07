@@ -26,3 +26,5 @@
 
 * [Makalu PoC-1](Makalu-PoC-1/README.md)
     * [Atlas-V0.2](Makalu-PoC-1/Atlas-V0.2.md)
+
+* [JSON RPC API](rpc-api/RPC-API.md)
