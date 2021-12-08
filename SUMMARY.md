@@ -25,7 +25,7 @@
         * [Cross Chain Tx Verify Contract](cross-chain/tx-verify/Tx-Verify-Contract.md)
 
 * Makalu PoC
-    * [PcC-1](Makalu-PoC/PcC-1.md)
-    * [PcC-2](Makalu-PoC/PcC-2.md)
+    * [PoC-1](Makalu-PoC/PoC-1.md)
+    * [PoC-2](Makalu-PoC/PoC-2.md)
 
 * [JSON RPC API](rpc-api/RPC-API.md)
