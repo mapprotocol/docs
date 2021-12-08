@@ -25,8 +25,7 @@ See [Become Validator](../map-protocol/setValidator.md)
 | comment  | address |
 | -------- | ------  |
 | 浏览器    | https://makalu.mapscan.io |
-| API 接口  | https://makalu-api.mapscan.io |
-| PoC-2 RPC| https://poc2-rpc.maplabs.io |
+| RPC      | https://poc2-rpc.maplabs.io |
 | IPFS     | https://makalu-ipfs.maplabs.io  |
 | Graph    | https://makalu-graph.maplabs.io |
 | Graph API| https://makalu-graph-api.maplabs.io |
