@@ -4,10 +4,11 @@
 
 | chain ID | comment           |
 | ---------| ----------------- | 
-| 211     | MAP chain         |
-| 1     | ethereum chain (main chain)    |
-| 3     | ethereum chain (ropsten chain start Number 800 )    |
-| 10     | ethereum chain (Private chain  (--dev))|
+| 22776    | MAP chain (main chain)         |
+| 212      | MAP chain (test chain)         |
+| 1        | ethereum chain (main chain)    |
+| 3        | ethereum chain (ropsten chain start Number 800 )    |
+| 10       | ethereum chain (Private chain  (--dev))|
 
 ## CurrentHeaderNumber
 
