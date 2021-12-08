@@ -1,6 +1,24 @@
 
 ## JSON RPC API Reference
 
+### The default block parameter
+The following methods have an extra default block parameter:
+
+- [eth_getBalance](#eth_getbalance)
+- [eth_getCode](eth_getcode)
+- [eth_getTransactionCount](eth_gettransactioncount)
+- [eth_getStorageAt](eth_getstorageat)
+- [eth_call](eth_call)
+
+When requests are made that act on the state of ethereum, the last default block parameter determines the height of the block.
+
+The following options are possible for the defaultBlock parameter:
+
+- `HEX String` - an integer block number
+- `String "earliest"` for the earliest/genesis block
+- `String "latest"` - for the latest mined block
+- `String "pending"` - for the pending state/transactions
+
 
 ### web3
 
@@ -297,7 +315,7 @@ Returns the balance of the account of given address.
 
 ##### Parameters
 DATA, 20 Bytes - address to check for balance.
-QUANTITY|TAG - integer block number, or the string "latest", "earliest" or "pending", see the default block parameter
+QUANTITY|TAG - integer block number, or the string "latest", "earliest" or "pending", see the [default block parameter](#the-default-block-parameter).
 
 ##### Returns
 
@@ -387,14 +405,14 @@ Returns information about a block by block hash.
 
 ##### Returns
 
-See [eth_getBlockByNumber](#eth_getBlockByNumber)
+See [eth_getBlockByNumber](#eth_getblockbynumber)
 
 ##### Example
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockByHash","params":["0xdddfede981cb797b5492be3b6a238db872ae3260bb19472f06dfa5b2214850dc", true],"id":1}}'
 ```
-Result See [eth_getBlockByNumber](#eth_getBlockByNumber)
+Result See [eth_getBlockByNumber](#eth_getblockbynumber)
 
 #### eth_getCode
 
@@ -721,7 +739,7 @@ See [eth_getTransactionByHash](#eth_gettransactionbyhash)
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionByBlockHashAndIndex","params":["0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b", "0x0"],"id":1}'
 ```
 
-Result see [eth_getTransactionByHash](#eth_getTransactionbyhash)
+Result see [eth_getTransactionByHash](#eth_gettransactionbyhash)
 
 #### eth_getTransactionCount
 

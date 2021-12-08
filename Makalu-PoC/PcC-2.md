@@ -1,4 +1,4 @@
-# Makalu PoC-1
+# Makalu PoC-2
 
 ## Build your own network and send cross-chain transactions
 
