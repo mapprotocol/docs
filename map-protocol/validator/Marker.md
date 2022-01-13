@@ -105,7 +105,7 @@ This will create a `genesis.json`.
 Registers a validator
 
 USAGE
-  $ Marker validator registerValidator   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --commission <value> --Lesser <from getTotalVotesForEligibleValidators> --greater <from getTotalVotesForEligibleValidators>
+  $ Marker validator register   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --commission <value> --Lesser <from getTotalVotesForEligibleValidators> --greater <from getTotalVotesForEligibleValidators>
   
 Detailed introduction
     //you need to know lesser or greater first , your can konw it by getTotalVotesForEligibleValidators commond

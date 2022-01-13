@@ -6,7 +6,7 @@
 
    A fixed reward will be issued for each epoch.
 
-   We will fix a ratio p to the validator.
+   We will fix a reward ratio p to the validator.
 
    Each validator will receive (p + mySorce) / (N * P + Sorce1 + Score2 +...ScoreN ) Proportional reward.
 

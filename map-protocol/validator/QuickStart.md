@@ -29,7 +29,7 @@ Detailed introduction
 ### Step 2: [lockedMAP](Marker.md#LockedMAP)
 
 Locks MAP to be used in validator elections.
-
+You must lock 10k map to become validator. 
 
 ```bash
 Detailed introduction
@@ -40,6 +40,7 @@ Detailed introduction
    ...
   }
  ```
+
 ### Step 3: [getTotalVotesForEligibleValidators](Marker.md#GetTotalVotesForEligibleValidators)
 Get lesser and greater for the next step
 
