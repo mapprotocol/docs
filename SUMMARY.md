@@ -15,7 +15,7 @@
     * Vaildator
         * [QuickStart](map-protocol/validator/QuickStart.md)
         * [Marker](map-protocol/validator/Marker.md)
-        * [Vaildator Marker](map-protocol/validator/Reward.md)
+        * [Vaildator Epoch Reward](map-protocol/validator/Reward.md)
 
 * Cross Chain
     * Light Client Data
