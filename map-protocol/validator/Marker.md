@@ -73,9 +73,9 @@ This will create a `genesis.json`.
 | Flag        | Usage  |
 | ---------   | ------ | 
 | key         | Private key file path           | 
-| keystore    | Keystore file path   Belong to <common params>            | 
+| keystore    | Keystore file path   ( Belong to common params) | 
 | namePrefix    | namePrefix when setName      | 
-| password    | Keystore file`s password   (defult value "")  Belong to <common params>| 
+| password    | Keystore file`s password   (defult value "")   ( Belong to common params)| 
 | commission    | This represents the share of the epoch rewards given to elected Voters(0< commission <100)| 
 | lesser    | The validator receiving fewer votes than the validator for which the vote was revoked ,or 0 if that validator has the fewest votes of any validator validator     | 
 | greater    | Greater The validator receiving more votes than the validator for which the vote was revoked,or 0 if that validator has the most votes of any validator validator.  | 
@@ -85,11 +85,11 @@ This will create a `genesis.json`.
 | withdrawIndex    |Relocks gold that has been unlocked but not withdrawn. | 
 | relockIndex    | Relocks gold that has been unlocked but not withdrawn.  |
 | validatorIndex    | used for revokePending or revokeActive       | 
-| rpcaddr    | HTTP-RPC server listening interface    Belong to <common params>   | 
-| rpcport    | HTTP-RPC server listening port     Belong to <common params>  | 
+| rpcaddr    | HTTP-RPC server listening interface    ( Belong to common params)   | 
+| rpcport    | HTTP-RPC server listening port    ( Belong to common params) | 
 | value    | your transfer value      | 
 | duration    | duration The time (in seconds) that these requirements persist for.     | 
-| target    | target address      | 
+| target    | target address  | 
 
 
 
@@ -100,12 +100,12 @@ This will create a `genesis.json`.
 
 ## Validator commond
 
-###  registerValidator
+###  RegisterValidator
 ```bash
 Registers a validator
 
 USAGE
-  $ Marker validator registerValidator   <common params>   --commission <value> --Lesser <from getTotalVotesForEligibleValidators> --greater <from getTotalVotesForEligibleValidators>
+  $ Marker validator registerValidator   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --commission <value> --Lesser <from getTotalVotesForEligibleValidators> --greater <from getTotalVotesForEligibleValidators>
   
 Detailed introduction
     //you need to know lesser or greater first , your can konw it by getTotalVotesForEligibleValidators commond
@@ -156,12 +156,12 @@ Detailed introduction
 
 
 
-###  deregisterValidator
+###  DeregisterValidator
 ```bash
 De-registers a validator.
 
 USAGE
-    $ Marker validator deregisterValidator   <common params>    --validatorIndex <from getRegisteredValidatorSigners>
+    $ Marker validator deregisterValidator   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>   --validatorIndex <from getRegisteredValidatorSigners>
     
 Detailed introduction
  //you need to know index first , your can konw it by getRegisteredValidatorSigners commond
@@ -188,12 +188,12 @@ Detailed introduction
 
 ## voter
 
-###  vote
+###  Vote
 ```bash
 Increments the number of total and pending votes for `validator`.
 
 USAGE
-    $ Marker voter vote   <common params>    --target <from getTotalVotesForEligibleValidators> --voteNum <value> --lesser <from getTotalVotesForEligibleValidators> --greater <from getTotalVotesForEligibleValidators>
+    $ Marker voter vote   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>   --target <from getTotalVotesForEligibleValidators> --voteNum <value> --lesser <from getTotalVotesForEligibleValidators> --greater <from getTotalVotesForEligibleValidators>
     
 Detailed introduction
     //you need to know lesser and greater first , your can konw it by getTotalVotesForEligibleValidators commond
@@ -246,12 +246,12 @@ Detailed introduction
 
 
 
-###  activate
+###  Activate
 ```bash
 Converts `account`'s pending votes for `validator` to active votes.
 
 USAGE
-   $ Marker voter activate   <common params>    --target <from getTotalVotesForEligibleValidators> 
+   $ Marker voter activate   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>   --target <from getTotalVotesForEligibleValidators> 
   
 Detailed introduction
     function _activate(address validator, address account) internal returns (bool) {
@@ -275,12 +275,12 @@ Detailed introduction
 
 
 
-###  revokePending
+###  RevokePending
 ```bash
 Revokes `value` pending votes for `validator`
 
 USAGE
-    $ Marker voter     revokePending   <common params> --target <validatorAddress> --validatorIndex  <from getValidatorsVotedForByAccount> --lockedNum <value>  --Lesser <from getTotalVotesForEligibleValidators> --greater <from getTotalVotesForEligibleValidators>
+    $ Marker voter     revokePending   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>--target <validatorAddress> --validatorIndex  <from getValidatorsVotedForByAccount> --lockedNum <value>  --Lesser <from getTotalVotesForEligibleValidators> --greater <from getTotalVotesForEligibleValidators>
   
 Detailed introduction
     //you need to know lesser or greater first , your can konw it by getTotalVotesForEligibleValidators commond
@@ -314,12 +314,12 @@ Detailed introduction
  ``` 
 
 
-###  revokeActive
+###  RevokeActive
 ```bash
 Revokes `value` active votes for `validator`
 
 USAGE
-      $ Marker voter revokeActive   <common params> --target <validatorAddress> --validatorIndex  <from getValidatorsVotedForByAccount> --lockedNum <value>  --Lesser <from getTotalVotesForEligibleValidators> --greater <from getTotalVotesForEligibleValidators>
+      $ Marker voter revokeActive   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>--target <validatorAddress> --validatorIndex  <from getValidatorsVotedForByAccount> --lockedNum <value>  --Lesser <from getTotalVotesForEligibleValidators> --greater <from getTotalVotesForEligibleValidators>
   
 Detailed introduction
     //you need to know lesser or greater first , your can konw it by getTotalVotesForEligibleValidators commond
@@ -355,8 +355,8 @@ Detailed introduction
 Updates the Locked Gold requirements for Validators.
 
 USAGE
-  $ Marker voter     setValidatorLockedGoldRequirements  <common params>   --value <LockedGoldRequirementsvalue>   --duration <LockedGoldRequirementsduration>
-  $ Marker validator setValidatorLockedGoldRequirements  <common params>   --value <LockedGoldRequirementsvalue>   --duration <LockedGoldRequirementsduration>
+  $ Marker voter     setValidatorLockedGoldRequirements  --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --value <LockedGoldRequirementsvalue>   --duration <LockedGoldRequirementsduration>
+  $ Marker validator setValidatorLockedGoldRequirements  --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --value <LockedGoldRequirementsvalue>   --duration <LockedGoldRequirementsduration>
   
 Detailed introduction
     function setValidatorLockedGoldRequirements(uint256 value, uint256 duration)
@@ -385,8 +385,8 @@ Detailed introduction
 create a account
 
 USAGE
-  $ Marker validator createAccount  <common params> --namePrefix "validator"
-  $ Marker voter     createAccount  <common params> --namePrefix "voter"
+  $ Marker validator createAccount  --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>--namePrefix "validator"
+  $ Marker voter     createAccount  --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>--namePrefix "voter"
 
 Detailed introduction
 
@@ -416,8 +416,8 @@ Detailed introduction
 Locks map to be used for voting or register validator
 
 USAGE
-  $ Marker validator lockedMAP  <common params>  --lockedNum <value>
-  $ Marker voter lockedMAP     <common params>   --lockedNum <value> 
+  $ Marker validator lockedMAP  --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path> --lockedNum <value>
+  $ Marker voter lockedMAP     --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --lockedNum <value> 
 
 
 
@@ -431,13 +431,13 @@ Detailed introduction
  
   
 ```
-###  unlockMAP
+###  UnlockMAP
 ```bash
 Unlocks gold that becomes withdrawable after the unlocking period.
 
 USAGE
-  $ Marker validator unlockMap <common params>   --lockedNum <value>
-  $ Marker voter     unlockMap <common params>   --lockedNum <value>
+  $ Marker validator unlockMap --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --lockedNum <value>
+  $ Marker voter     unlockMap --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --lockedNum <value>
 
 
 
@@ -470,13 +470,13 @@ Detailed introduction
 
 
 
-###  relockMAP
+###  RelockMAP
 ```bash
 Relocks map that has been unlocked but not withdrawn.
 
 USAGE
-  $ Marker validator  relockMAP <common params>   --lockedNum <value> --relockIndex <from getPendingWithdrawals>
-  $ Marker voter      relockMAP <common params>   --lockedNum <value> --relockIndex <from getPendingWithdrawals>
+  $ Marker validator  relockMAP --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --lockedNum <value> --relockIndex <from getPendingWithdrawals>
+  $ Marker voter      relockMAP --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --lockedNum <value> --relockIndex <from getPendingWithdrawals>
 
 Detailed introduction
   //you need to know PendingWithdrawals index first , your can konw it by getPendingWithdrawals commond
@@ -493,13 +493,13 @@ Detailed introduction
 ```
 
 
-###  withdrawMap
+###  WithdrawMap
 ```bash
 Withdraws gold that has been unlocked after the unlocking period has passed.
 
 USAGE
-  $ Marker validator  withdrawMap      <common params>   --lockedNum <value> --WithdrawIndex <from getPendingWithdrawals>
-  $ Marker voter      withdrawMap      <common params>   --lockedNum <value> --WithdrawIndex <from getPendingWithdrawals>
+  $ Marker validator  withdrawMap      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --lockedNum <value> --WithdrawIndex <from getPendingWithdrawals>
+  $ Marker voter      withdrawMap      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --lockedNum <value> --WithdrawIndex <from getPendingWithdrawals>
   
 Detailed introduction
   //you need to know PendingWithdrawals index first , your can konw it by getPendingWithdrawals commond
@@ -515,122 +515,122 @@ Detailed introduction
 
 
 
-###  getNumRegisteredValidators
+###  GetNumRegisteredValidators
 ```bash
 Returns the number of registered validators
 
 USAGE
-   $ Marker validator  getNumRegisteredValidators      <common params>   
-   $ Marker voter      getNumRegisteredValidators      <common params>  
+   $ Marker validator  getNumRegisteredValidators      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  
+   $ Marker voter      getNumRegisteredValidators      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path> 
   
  ``` 
 
 
-###  getTopValidators
+###  GetTopValidators
 ```bash
 Returns the top n validator members for a particular validator.
 
 USAGE
-    $ Marker validator  getTopValidators      <common params>   --topNum <value>
-    $ Marker voter      getTopValidators      <common params>   --topNum <value>
+    $ Marker validator  getTopValidators      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --topNum <value>
+    $ Marker voter      getTopValidators      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --topNum <value>
 NOTICE
   your can konw 'topNum' by getNumRegisteredValidators commond
  ``` 
 
 
-###  getTotalVotesForEligibleValidators
+###  GetTotalVotesForEligibleValidators
 ```bash
 Returns lists of all validator validators and the number of votes they've received.
 
 USAGE
-    $ Marker validator  getTotalVotesForEligibleValidators      <common params>   
-    $ Marker voter      getTotalVotesForEligibleValidators      <common params>   
+    $ Marker validator  getTotalVotesForEligibleValidators      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  
+    $ Marker voter      getTotalVotesForEligibleValidators      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  
  ```   
 
 
-###  getValidatorEligibility
+###  GetValidatorEligibility
 ```bash
 Returns whether or not a validator is eligible to receive votes.
 
 USAGE
-    $ Marker validator  getValidatorEligibility      <common params>   --target <validatorAddress>
-    $ Marker voter      getValidatorEligibility      <common params>   --target <validatorAddress>
+    $ Marker validator  getValidatorEligibility      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
+    $ Marker voter      getValidatorEligibility      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
 ```   
 
 
-###  getPendingVotesForValidatorByAccount
+###  GetPendingVotesForValidatorByAccount
 ```bash
 Returns the pending votes for `validator` made by `account`.
 
 USAGE
-  $ Marker validator  getPendingVotesForValidatorByAccount      <common params>   --target <validatorAddress>
-  $ Marker voter      getPendingVotesForValidatorByAccount      <common params>   --target <validatorAddress>
+  $ Marker validator  getPendingVotesForValidatorByAccount      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
+  $ Marker voter      getPendingVotesForValidatorByAccount      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
 ```   
 
 
-###  getActiveVotesForValidatorByAccount
+###  GetActiveVotesForValidatorByAccount
 ```bash
 Returns the active votes for `validator` made by `account`.
 
 USAGE
-   $ Marker validator  getActiveVotesForValidatorByAccount      <common params>   --target <validatorAddress>
-   $ Marker voter      getActiveVotesForValidatorByAccount      <common params>   --target <validatorAddress>
+   $ Marker validator  getActiveVotesForValidatorByAccount      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
+   $ Marker voter      getActiveVotesForValidatorByAccount      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
 ```   
 
 
 
-###  getValidatorsVotedForByAccount
+###  GetValidatorsVotedForByAccount
 ```bash
 Returns the validators that `account` has voted for.
 
 USAGE
-   $ Marker validator  getValidatorsVotedForByAccount      <common params>   --target <voterAddress>
-   $ Marker voter      getValidatorsVotedForByAccount      <common params>   --target <voterAddress>
+   $ Marker validator  getValidatorsVotedForByAccount      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <voterAddress>
+   $ Marker voter      getValidatorsVotedForByAccount      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <voterAddress>
 
 ``` 
 
 
 
 
-###  getAccountTotalLockedGold
+###  GetAccountTotalLockedGold
 ```bash
 Returns the total amount of locked gold for an account.
 
 USAGE
-  $ Marker validator  getAccountTotalLockedGold      <common params>   --target <validatorAddress>
-  $ Marker voter      getAccountTotalLockedGold      <common params>   --target <validatorAddress>
+  $ Marker validator  getAccountTotalLockedGold      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
+  $ Marker voter      getAccountTotalLockedGold      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
 ``` 
 
 
 
-###  getAccountNonvotingLockedGold
+###  GetAccountNonvotingLockedGold
 ```bash
 Returns the total amount of non-voting locked gold for an account.
 
 USAGE
-   $ Marker validator  getAccountTotalLockedGold      <common params>   --target <validatorAddress>
-   $ Marker voter      getAccountTotalLockedGold      <common params>   --target <validatorAddress>
+   $ Marker validator  getAccountTotalLockedGold      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
+   $ Marker voter      getAccountTotalLockedGold      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
 ``` 
 
 
-###  getAccountLockedGoldRequirement
+###  GetAccountLockedGoldRequirement
 ```bash
 Returns the current locked gold balance requirement for the supplied account.
 
 USAGE
-  $ Marker validator  getAccountLockedGoldRequirement      <common params>   
-  $ Marker voter      getAccountLockedGoldRequirement      <common params>   
+  $ Marker validator  getAccountLockedGoldRequirement      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  
+  $ Marker voter      getAccountLockedGoldRequirement      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  
 ``` 
 
 
 
-###  getPendingWithdrawals
+###  GetPendingWithdrawals
 ```bash
 Returns the pending withdrawals from unlocked gold for an account.
 
 USAGE
-  $ Marker validator  getPendingWithdrawals      <common params>    --target <targetAddress>
-  $ Marker voter      getPendingWithdrawals      <common params>    --target <targetAddress>
+  $ Marker validator  getPendingWithdrawals      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>   --target <targetAddress>
+  $ Marker voter      getPendingWithdrawals      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>   --target <targetAddress>
 
 RETURN
   PendingWithdrawals

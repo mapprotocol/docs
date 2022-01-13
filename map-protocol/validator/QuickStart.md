@@ -26,7 +26,7 @@ Detailed introduction
   }
 ```
 
-### Step 2: [lockedMAP](Marker.md#lockedMAP)
+### Step 2: [lockedMAP](Marker.md#LockedMAP)
 
 Locks MAP to be used in validator elections.
 
@@ -40,7 +40,7 @@ Detailed introduction
    ...
   }
  ```
-### Step 3: getTotalVotesForEligibleValidators
+### Step 3: [getTotalVotesForEligibleValidators](Marker.md#GetTotalVotesForEligibleValidators)
 Get lesser and greater for the next step
 
 
@@ -105,7 +105,7 @@ Detailed introduction:
 
     Please refer to ‘How To Become Validator’
 
-### Step 2: [lockedMAP](Marker.md#lockedMAP)
+### Step 2: [lockedMAP](Marker.md#LockedMAP)
 
 Locks MAP to be used in validator elections.
 
@@ -113,7 +113,7 @@ Detailed introduction:
 
     Please refer to ‘How To Become Validator’
 
-### Step 3: [vote]()
+### Step 3: [vote](Marker.md#Vote)
 vote to your target validator
 When you go to this step, your ticket will be in Pengding status, and you need to deactivate it to finally receive the reward
 
@@ -165,7 +165,7 @@ Detailed introduction
     }
 ```    
 
-### Step 4: activate
+### Step 4: [activate](Marker.md#Activate)
 
 Activate your ticket to get reward
 Because your vote will be marked as last epoch, you need to be greater than last epoch to activate
@@ -194,7 +194,8 @@ Detailed introduction
 
 
 ## How To unlock lockedMap
-### Step 1: unlock
+### Step 1: [unlock](Marker.md#Unlock)
+
 Unlocks map that becomes withdrawable after the unlocking period.
 
 you just unlock your nonvoting map.
@@ -227,7 +228,8 @@ Detailed introduction
         return 0;
     }
  ```
-### Step 2: getPendingWithdrawals
+
+### Step 2: [getPendingWithdrawals](Marker.md#GetPendingWithdrawals)
 Use 'getPendingWithdrawals' commond to get the withraw Pengding list for the next step
 
 ### Step 3:withdraw
@@ -246,20 +248,21 @@ Detailed introduction
 
 ## How To withdraw voted map
 
-### Step 1: getTotalVotesForEligibleValidators
+### Step 1: [getTotalVotesForEligibleValidators](Marker.md#GetTotalVotesForEligibleValidators)
 
 Get lesser and greater for the next step
 
 ### Step 2:
 
-revokePending:
+[revokePending](Marker.md#RevokePending):
 
 If your vote is not active in pending, use 'revokePending'commond.
 
-revokeActive:
+[revokeActive](Marker.md#RevokeActive):
 
 If your vote is active, use 'revokeActive'commond.
 Both of these methods will put the map in nonvoting map
+
 ```bash
 Detailed introduction
     //you need to know lesser or greater first , your can konw it by getTotalVotesForEligibleValidators commond
@@ -290,5 +293,6 @@ Detailed introduction
 	    ...
     }
 ```
+
 ### Step 3:
-Please refer to the following process 'How To unlock lockedMap'
+Please refer to the following process [How To unlock lockedMap](QuickStart.md#How To unlock lockedMap)
