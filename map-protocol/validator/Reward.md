@@ -8,7 +8,8 @@
 
    We will fix a reward ratio p to the validator.
 
-   Each validator will receive (p + mySorce) / (N * P + Sorce1 + Score2 +...ScoreN ) Proportional reward.
+   new_score = uptime ** exponent * adjustmentSpeed + old_score * (1 - adjustmentSpeed)
+   Each validator will receive (p + mySorce) / (N * P + Sorce1 + Score2 +...ScoreN) Proportional reward.
 
    If the validator fails to fulfill its responsibilities, it will be punished through the punishment mechanism.
 
@@ -17,3 +18,5 @@
    Commission is the proportional value drawn by the validator in proportion to the total reward.
 
    Those excluding validators reward are for voter.  voter's reward will be obtained according to the voting proportion of voter to validator
+
+   

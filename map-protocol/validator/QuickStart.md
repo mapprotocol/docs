@@ -29,7 +29,7 @@ Detailed introduction
 ### Step 2: [lockedMAP](Marker.md#LockedMAP)
 
 Locks MAP to be used in validator elections.
-You must lock 10k map to become validator. 
+You must lock 10k map to become validator.
 
 ```bash
 Detailed introduction
@@ -41,16 +41,11 @@ Detailed introduction
   }
  ```
 
-### Step 3: [getTotalVotesForEligibleValidators](Marker.md#GetTotalVotesForEligibleValidators)
-Get lesser and greater for the next step
-
-
-### Step 4: [validator register](Marker.md#RegisterValidator)
+### Step 3: [validator register](Marker.md#RegisterValidator)
 
 Register a new Validator.
 ```bash
 Detailed introduction
-    //you need to know lesser or greater first , your can konw it by getTotalVotesForEligibleValidators commond
     function registerValidator(
         uint256 commission,
         address lesser,
@@ -88,8 +83,6 @@ Detailed introduction
 	
 	function markValidatorEligible(address lesser, address greater, address validator){
         ...
-		//the lesser and greater will be used by votes.total.eligible
-		//you need to know lesser or greater first 
         votes.total.eligible.insert(validator, value, lesser, greater);
         ...
     }
@@ -120,7 +113,6 @@ When you go to this step, your ticket will be in Pengding status, and you need t
 
 ```bash
 Detailed introduction
-    //you need to know lesser and greater first , your can konw it by getTotalVotesForEligibleValidators commond
     function vote(address validator, uint256 value, address lesser, address greater)
     external
     nonReentrant
@@ -148,8 +140,6 @@ Detailed introduction
 	function incrementTotalVotes(address validator, uint256 value, address lesser, address greater)
     {
         ...
-		//the lesser and greater will be used by votes.total.eligible
-		//you need to know lesser or greater first 
         votes.total.eligible.update(validator, newVoteTotal, lesser, greater);
     }
 	
@@ -230,10 +220,8 @@ Detailed introduction
     }
  ```
 
-### Step 2: [getPendingWithdrawals](Marker.md#GetPendingWithdrawals)
-Use 'getPendingWithdrawals' commond to get the withraw Pengding list for the next step
 
-### Step 3:withdraw
+### Step 2:withdraw
 Withdraws gold that has been unlocked after the unlocking period has passed.
 
 ```bash
@@ -249,11 +237,8 @@ Detailed introduction
 
 ## How To withdraw voted map
 
-### Step 1: [getTotalVotesForEligibleValidators](Marker.md#GetTotalVotesForEligibleValidators)
 
-Get lesser and greater for the next step
-
-### Step 2:
+### Step 1:
 
 [revokePending](Marker.md#RevokePending):
 
@@ -266,7 +251,6 @@ Both of these methods will put the map in nonvoting map
 
 ```bash
 Detailed introduction
-    //you need to know lesser or greater first , your can konw it by getTotalVotesForEligibleValidators commond
      function revokePending(
         address validator,
         uint256 value,
@@ -288,12 +272,10 @@ Detailed introduction
     private
     {
         ...
-		//the lesser and greater will be used by votes.total.eligible
-		//you need to know lesser or greater first 
         votes.total.eligible.update(validator, newVoteTotal, lesser, greater);
 	    ...
     }
 ```
 
-### Step 3:
+### Step 2:
 Please refer to the following process [How To unlock lockedMap](QuickStart.md#How To unlock lockedMap)
