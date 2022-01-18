@@ -550,6 +550,15 @@ USAGE
     $ Marker       getTotalVotesForEligibleValidators      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  
  ```   
 
+###  getTotalVotes
+```bash
+Returns the total votes received across all validators.
+
+USAGE
+    $ Marker   getTotalVotes      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  
+    $ Marker   getTotalVotes      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  
+ ```   
+
 
 ###  GetValidatorEligibility
 ```bash
