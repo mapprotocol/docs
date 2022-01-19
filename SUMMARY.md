@@ -13,15 +13,15 @@
         * [Relayer API](map-protocol/relayer/Relayer-API.md)
         * [How To Become Relayer](map-protocol/relayer/QuickStart.md)
     * Vaildator
-      * [Vaildator Marker](map-protocol/validator/Marker.md)
-      * [Vaildator Client](map-protocol/validator/ValidatorCli.md)
-      * [How To Become Vaildator](map-protocol/validator/QuickStart.md)
+        * [QuickStart](map-protocol/validator/QuickStart.md)
+        * [Marker](map-protocol/validator/Marker.md)
+        * [Vaildator Epoch Reward](map-protocol/validator/Reward.md)
 
 * Cross Chain
     * Light Client Data
         * [Header Store Contract](cross-chain/light-client-data/Header-Store-Contract.md)
         * [Header Store API](cross-chain/light-client-data/Header-Store-API.md)
-    * [Cross Chain Tx Verify](cross-chain/tx-verify/Tx-Verify.md))
+        * [Cross Chain Tx Verify](cross-chain/tx-verify/Tx-Verify.md))
         * [Cross Chain Tx Verify Contract](cross-chain/tx-verify/Tx-Verify-Contract.md)
 
 * Makalu PoC

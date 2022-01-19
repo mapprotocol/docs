@@ -1,50 +1,311 @@
 ## How To Become Validator
 
-### Step 1: [createAccount](ValidatorCli.md#CreateAccount)
+### Step 1: [createAccount](Marker.md#CreateAccount)
 
 Manage your account, keys, and metadata.
 
-Keep your locked MAP more secure by authorizing alternative keys to be used for signing attestations, voting, or validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked MAP in cold storage.
+Keep your locked MAP more secure by authorizing alternative keys to be used for signing attestations、voting、validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked MAP in storage.
+```bash
+Detailed introduction
+  function createAccount() public returns (bool) {
+    ...
+    account.exists = true;
+    ...
+  }
+  function setName(string memory name) public {
+    ...
+    account.name = name;
+    ...
+  }
+  function setAccountDataEncryptionKey(bytes memory dataEncryptionKey) public {
+   ...
+    //Setter for the data encryption key and version.
+	//dataEncryptionKey secp256k1 public key for data encryption.
+    account.dataEncryptionKey = dataEncryptionKey;
+   ...
+  }
+```
 
-### Step 2: [lockedMAP](ValidatorCli.md#lockedMAP)
+### Step 2: [lockedMAP](Marker.md#LockedMAP)
 
-Locks MAP to be used in governance and validator elections.
+Locks MAP to be used in validator elections.
+You must lock 10k MAP to become validator.
 
+```bash
+Detailed introduction
+   function lock() external payable nonReentrant {
+   ...
+    //This is equivalent to you transfer the map to LockedGold contract address 
+    _incrementNonvotingAccountBalance(msg.sender, msg.value);
+   ...
+  }
+ ```
 
-### Step 3: [affiliate group](ValidatorCli.md#affiliate)
-
-Affiliate a Validator with a Validator Group. This allows the Validator Group to add that Validator as a member. If the Validator is already a member of a Validator Group, affiliating with a different Group will remove the Validator from the first group's members.
-
-### Step 4: [validator register](ValidatorCli.md#RegisterValidator)
+### Step 3: [validator register](Marker.md#RegisterValidator)
 
 Register a new Validator.
+You need to use `register` command to pass in your own information
+```bash
+Detailed introduction
+    function registerValidator(
+        uint256 commission,
+        address lesser,
+        address greater,
+        bytes calldata ecdsaPublicKey,
+        bytes calldata blsPublicKey,
+        bytes calldata blsPop
+    ) external nonReentrant returns (bool) {
+        ...
+		//you need locded enough Map first
+        uint256 lockedGoldBalance = getLockedGold().getAccountTotalLockedGold(account);
+        require(lockedGoldBalance >= validatorLockedGoldRequirements.value, "Deposit too small");
+		...
+		//this will Call precompile contract 
+        require(
+            _updateEcdsaPublicKey(validator, account, signer, ecdsaPublicKey),
+            "Error updating ECDSA public key"
+        );
+        require(
+            _updateBlsPublicKey(validator, account, blsPublicKey, blsPop),
+            "Error updating BLS public key"
+        );
+		...
+		//This validator will be eligible to participate in the election
+        getElection().markValidatorEligible(lesser, greater, account);      
+    }
+	
+	//This structure will serialize the validator according to the number of votes
+	struct TotalVotes {
+        // A list of eligible Validators sorted by total (pending+active) votes.
+        // Note that this list will omit ineligible Validators, including those that may have > 0
+        // total votes.
+		// the total (pending+active) votes will decide whether you are elected at end of epoch
+        SortedLinkedList.List eligible;
+    }
+	
+	function markValidatorEligible(address lesser, address greater, address validator){
+        ...
+        votes.total.eligible.insert(validator, value, lesser, greater);
+        ...
+    }
+ ``` 
 
 
-## How To Become validatorgroup
 
-### Step 1: [createAccount](ValidatorCli.md#CreateAccount)
+## How To Vote
+### Step 1: [createAccount](Marker.md#CreateAccount)
 
 Manage your account, keys, and metadata.
 
-Keep your locked MAP more secure by authorizing alternative keys to be used for signing attestations, voting, or validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked MAP in cold storage.
+Keep your locked MAP more secure by authorizing alternative keys to be used for signing attestations、voting、validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked MAP in storage.
+```bash
+Detailed introduction
+  function createAccount() public returns (bool) {
+    ...
+    account.exists = true;
+    ...
+  }
+  function setName(string memory name) public {
+    ...
+    account.name = name;
+    ...
+  }
+  function setAccountDataEncryptionKey(bytes memory dataEncryptionKey) public {
+   ...
+    //Setter for the data encryption key and version.
+	//dataEncryptionKey secp256k1 public key for data encryption.
+    account.dataEncryptionKey = dataEncryptionKey;
+   ...
+  }
+```
 
-### Step 2: [lockedMAP](ValidatorCli.md#lockedMAP)
+### Step 2: [lockedMAP](Marker.md#LockedMAP)
 
-Locks MAP to be used in governance and validator elections.
+Locks MAP to vote.
+
+```bash
+Detailed introduction
+   function lock() external payable nonReentrant {
+   ...
+    //This is equivalent to you transfer the map to LockedGold contract address 
+    _incrementNonvotingAccountBalance(msg.sender, msg.value);
+   ...
+  }
+ ```
+
+### Step 3: [vote](Marker.md#Vote)
+Vote to your target validator when you go to this step, your ticket will be in Pengding status, and you need to deactivate it to finally receive the reward
+
+```bash
+Detailed introduction
+    function vote(address validator, uint256 value, address lesser, address greater)
+    external
+    nonReentrant
+    returns (bool)
+    {
+        // Add validator to the validators voted for by the account.
+        bool alreadyVotedForValidator = false;
+        address[] storage validators = votes.validatorsVotedFor[account];
+        for (uint256 i = 0; i < validators.length; i = i.add(1)) {
+            alreadyVotedForValidator = alreadyVotedForValidator || validators[i] == validator;
+        }
+		//1.voter can't vote for the same person twice
+		//2.The number of votes cannot exceed the number of `maxNumValidatorsVotedFor`
+        if (!alreadyVotedForValidator) {
+            require(validators.length < maxNumValidatorsVotedFor, "Voted for too many validators");
+            validators.push(validator);
+        }
+		
+		//the votes will be pending
+        incrementPendingVotes(validator, account, value);
+        incrementTotalVotes(validator, value, lesser, greater);
+        
+    }
+	
+	function incrementTotalVotes(address validator, uint256 value, address lesser, address greater)
+    {
+        ...
+        votes.total.eligible.update(validator, newVoteTotal, lesser, greater);
+    }
+	
+	 function incrementPendingVotes(address validator, address account, uint256 value) private {    
+      ...
+	    //the ticket will be Recorded by validatorPending
+		//the ticket in the validatorPending will do not participate in Epoch Awards
+		//if you want to participate in Epoch Awards you need to active 
+		//the active commond is activate
+        PendingVote storage pendingVote = validatorPending.byAccount[account];
+        pendingVote.value = pendingVote.value.add(value);
+		//your ticket will be marker pendingVote.epoch
+        pendingVote.epoch = getEpochNumber();
+    }
+```    
+
+### Step 4: [activate](Marker.md#Activate)
+
+Activate your ticket to get reward
+This operation need to be greater than your pending vote epoch
+
+```bash
+Detailed introduction
+    function _activate(address validator, address account) internal returns (bool) {
+        ...
+		//Activate need greater than your pending vote epoch
+        require(pendingVote.epoch < getEpochNumber(), "Pending vote epoch not passed");
+        ...
+        decrementPendingVotes(validator, account, value);
+        incrementActiveVotes(validator, account, value);  
+    }
+	
+	function incrementActiveVotes(address validator, address account, uint256 value)
+    {
+        ...
+		//the votes will be Recorded by validatorActive
+		//the votes in the validatorActive will participate in Epoch Awards
+        validatorActive.valueByAccount[account] = validatorActive.valueByAccount[account].add(value);
+        ...
+    }
+ ``` 
 
 
-### Step 3: [validatorgroup register](ValidatorCli.md#RegisterGroup)
 
-Register a new Validator Group.
+## How To withdraw MAP
+### Step 1: [unlock](Marker.md#Unlock)
 
-Different from the registration validator, the registration of the group needs to specify the Commission.This represents the share of the epoch rewards given to elected Validators that goes to the group they are a member of.
+Unlocks MAP that becomes withdrawable after the unlocking period.
+
+You can only unlock your nonvoting map.
+
+if you are a validator you will be limit by 'balanceRequirement'(10k MAP)
+
+```bash
+Detailed introduction
+   function unlock(uint256 value) external nonReentrant {
+   ...
+    //if you are a validator you will be limit by 'balanceRequirement'
+    uint256 balanceRequirement = getValidators().getAccountLockedGoldRequirement(msg.sender);
+    require(
+      balanceRequirement == 0 ||
+        balanceRequirement <= getAccountTotalLockedGold(msg.sender).sub(value),
+      "Trying to unlock too much gold"
+    );
+   ...
+   //you can only unlock it after the unlocking period.
+    uint256 available = now.add(unlockingPeriod);
+    account.pendingWithdrawals.push(PendingWithdrawal(value, available));
+    
+  }
+    //Attention reminder
+	//if you are a validator you will be Limited by `validatorLockedGoldRequirements.value`(10k MAP)
+   function getAccountLockedGoldRequirement(address account) public view returns (uint256) {
+        if (isValidator(account)) {
+            return validatorLockedGoldRequirements.value;
+        }
+        return 0;
+    }
+ ```
 
 
-### Step 4: Group operation on validator
+### Step 2:withdraw
+Withdraws MAP that has been unlocked after the unlocking period has passed.
 
-[Add](ValidatorCli.md#AddFirstMember) or [remove](ValidatorCli.md#RemoveMember) members from a Validator Group.   
+```bash
+Detailed introduction
+  //you need to know PendingWithdrawals index first , your can konw it by getPendingWithdrawals commond
+  function withdraw(uint256 index) external nonReentrant {
+    ...
+	//the unlocking period
+    require(now >= pendingWithdrawal.timestamp, "Pending withdrawal not available");
+    ...
+  }
+ ``` 
+
+## How To withdraw tickets
 
 
+### Step 1:
 
+[revokePending](Marker.md#RevokePending):
+
+If your vote is not active , use 'revokePending'commond.
+
+[revokeActive](Marker.md#RevokeActive):
+
+If your vote is active, use 'revokeActive'commond.
+Both of these methods will put the map in your nonvoting map
+
+```bash
+Detailed introduction
+     function revokePending(
+        address validator,
+        uint256 value,
+        address lesser,
+        address greater,
+        uint256 index
+    ) external nonReentrant returns (bool) {
+        ...
+         decrementPendingVotes(validator, account, value);
+        ...
+		// update the validator ranking
+		 decrementTotalVotes(validator, value, lesser, greater);
+		//this will increment in voter NonvotingBalance 
+        getLockedGold().incrementNonvotingAccountBalance(account, value);
+        ...
+    }	
+	
+	function decrementTotalVotes(address validator, uint256 value, address lesser, address greater)
+    private
+    {
+        ...
+        votes.total.eligible.update(validator, newVoteTotal, lesser, greater);
+	    ...
+    }
+```
+
+### Step 2:
+Your ticket has changed from pending or active to locking.
+the next step is same to  [How To unlock lockedMap](QuickStart.md#How To unlock lockedMap)
+
+ 
 
 
