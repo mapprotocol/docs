@@ -157,7 +157,7 @@ If you have not creat Account  or locked the Map, you can quickly register throu
 
 USAGE
 $ Marker  quicklyRegister   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport>
---keystore <keystore path>--lockedNum <value> --commission <value> 
+--keystore <keystore path>--lockedNum <value> --commission <value>
 
 
 
@@ -256,7 +256,7 @@ If you have not creat Account or locked the Map, you can quickly vote through th
 
 USAGE
 $ Marker  quicklyVote   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport>
---keystore <keystore path> --lockedNum <value>  
+--keystore <keystore path> --lockedNum <value>  --voteNum <value> --target <validator>
 
 
 
