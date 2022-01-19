@@ -4,7 +4,7 @@
 
 Manage your account, keys, and metadata.
 
-Keep your locked MAP more secure by authorizing alternative keys to be used for signing attestations, voting, or validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked MAP in cold storage.
+Keep your locked MAP more secure by authorizing alternative keys to be used for signing attestations、voting、validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked MAP in storage.
 ```bash
 Detailed introduction
   function createAccount() public returns (bool) {
@@ -29,7 +29,7 @@ Detailed introduction
 ### Step 2: [lockedMAP](Marker.md#LockedMAP)
 
 Locks MAP to be used in validator elections.
-You must lock 10k map to become validator.
+You must lock 10k MAP to become validator.
 
 ```bash
 Detailed introduction
@@ -44,6 +44,7 @@ Detailed introduction
 ### Step 3: [validator register](Marker.md#RegisterValidator)
 
 Register a new Validator.
+You need to use `register` command to pass in your own information
 ```bash
 Detailed introduction
     function registerValidator(
@@ -73,6 +74,7 @@ Detailed introduction
         getElection().markValidatorEligible(lesser, greater, account);      
     }
 	
+	//This structure will serialize the validator according to the number of votes
 	struct TotalVotes {
         // A list of eligible Validators sorted by total (pending+active) votes.
         // Note that this list will omit ineligible Validators, including those that may have > 0
@@ -88,28 +90,51 @@ Detailed introduction
     }
  ``` 
 
-## How To Voter And Participation in obtaining benefits
+
+
+## How To Vote
 ### Step 1: [createAccount](Marker.md#CreateAccount)
 
 Manage your account, keys, and metadata.
 
-Keep your locked MAP more secure by authorizing alternative keys to be used for signing attestations, voting, or validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked MAP in cold storage.
-
-Detailed introduction:
-
-    Please refer to ‘How To Become Validator’
+Keep your locked MAP more secure by authorizing alternative keys to be used for signing attestations、voting、validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked MAP in storage.
+```bash
+Detailed introduction
+  function createAccount() public returns (bool) {
+    ...
+    account.exists = true;
+    ...
+  }
+  function setName(string memory name) public {
+    ...
+    account.name = name;
+    ...
+  }
+  function setAccountDataEncryptionKey(bytes memory dataEncryptionKey) public {
+   ...
+    //Setter for the data encryption key and version.
+	//dataEncryptionKey secp256k1 public key for data encryption.
+    account.dataEncryptionKey = dataEncryptionKey;
+   ...
+  }
+```
 
 ### Step 2: [lockedMAP](Marker.md#LockedMAP)
 
-Locks MAP to be used in validator elections.
+Locks MAP to vote.
 
-Detailed introduction:
-
-    Please refer to ‘How To Become Validator’
+```bash
+Detailed introduction
+   function lock() external payable nonReentrant {
+   ...
+    //This is equivalent to you transfer the map to LockedGold contract address 
+    _incrementNonvotingAccountBalance(msg.sender, msg.value);
+   ...
+  }
+ ```
 
 ### Step 3: [vote](Marker.md#Vote)
-vote to your target validator
-When you go to this step, your ticket will be in Pengding status, and you need to deactivate it to finally receive the reward
+Vote to your target validator when you go to this step, your ticket will be in Pengding status, and you need to deactivate it to finally receive the reward
 
 ```bash
 Detailed introduction
@@ -125,7 +150,7 @@ Detailed introduction
             alreadyVotedForValidator = alreadyVotedForValidator || validators[i] == validator;
         }
 		//1.voter can't vote for the same person twice
-		//2.The number of votes cannot exceed the number of maxNumValidatorsVotedFor
+		//2.The number of votes cannot exceed the number of `maxNumValidatorsVotedFor`
         if (!alreadyVotedForValidator) {
             require(validators.length < maxNumValidatorsVotedFor, "Voted for too many validators");
             validators.push(validator);
@@ -159,13 +184,13 @@ Detailed introduction
 ### Step 4: [activate](Marker.md#Activate)
 
 Activate your ticket to get reward
-Because your vote will be marked as last epoch, you need to be greater than last epoch to activate
+This operation need to be greater than your pending vote epoch
 
 ```bash
 Detailed introduction
     function _activate(address validator, address account) internal returns (bool) {
         ...
-		//active at next epoch
+		//Activate need greater than your pending vote epoch
         require(pendingVote.epoch < getEpochNumber(), "Pending vote epoch not passed");
         ...
         decrementPendingVotes(validator, account, value);
@@ -184,14 +209,14 @@ Detailed introduction
 
 
 
-## How To unlock lockedMap
+## How To withdraw MAP
 ### Step 1: [unlock](Marker.md#Unlock)
 
-Unlocks map that becomes withdrawable after the unlocking period.
+Unlocks MAP that becomes withdrawable after the unlocking period.
 
-you just unlock your nonvoting map.
+You can only unlock your nonvoting map.
 
-if you are a validator you will be limit by 'balanceRequirement'
+if you are a validator you will be limit by 'balanceRequirement'(10k MAP)
 
 ```bash
 Detailed introduction
@@ -211,7 +236,7 @@ Detailed introduction
     
   }
     //Attention reminder
-	//if you are a validator you will be Limited by validatorLockedGoldRequirements.value
+	//if you are a validator you will be Limited by `validatorLockedGoldRequirements.value`(10k MAP)
    function getAccountLockedGoldRequirement(address account) public view returns (uint256) {
         if (isValidator(account)) {
             return validatorLockedGoldRequirements.value;
@@ -222,7 +247,7 @@ Detailed introduction
 
 
 ### Step 2:withdraw
-Withdraws gold that has been unlocked after the unlocking period has passed.
+Withdraws MAP that has been unlocked after the unlocking period has passed.
 
 ```bash
 Detailed introduction
@@ -235,19 +260,19 @@ Detailed introduction
   }
  ``` 
 
-## How To withdraw voted map
+## How To withdraw tickets
 
 
 ### Step 1:
 
 [revokePending](Marker.md#RevokePending):
 
-If your vote is not active in pending, use 'revokePending'commond.
+If your vote is not active , use 'revokePending'commond.
 
 [revokeActive](Marker.md#RevokeActive):
 
 If your vote is active, use 'revokeActive'commond.
-Both of these methods will put the map in nonvoting map
+Both of these methods will put the map in your nonvoting map
 
 ```bash
 Detailed introduction
@@ -278,4 +303,9 @@ Detailed introduction
 ```
 
 ### Step 2:
-Please refer to the following process [How To unlock lockedMap](QuickStart.md#How To unlock lockedMap)
+Your ticket has changed from pending or active to locking.
+the next step is same to  [How To unlock lockedMap](QuickStart.md#How To unlock lockedMap)
+
+ 
+
+
