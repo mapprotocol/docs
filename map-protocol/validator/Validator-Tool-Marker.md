@@ -158,6 +158,7 @@ $ Marker  quicklyRegister   --password <password> --rpcaddr <rpcaddr>  --rpcport
 
 ### deregister
 
+```bash
 De-registers a validator.
 
 USAGE
@@ -183,11 +184,13 @@ validatorLockedGoldRequirements.duration
     delete validators[account];
     ...
 }
+```
+
 ## From the perspective of voters
 
 ### Vote
 
-```bash
+```solidity
 
 Increments the number of total and pending votes for `validator`.
 
@@ -243,10 +246,12 @@ Detailed introduction
 ```
 ### quicklyVote
 
+```bash
 If you have not creat Account or locked the Map, you can quickly vote through the `quicklyVote` command, which integrates the `createAccount` `lockedMAP`
 
 USAGE
 $ Marker  quicklyVote   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport>--keystore <keystore path> --lockedNum <value>  --voteNum <value> --target <validator>
+```
 
 ### Activate
 
@@ -275,12 +280,15 @@ Detailed introduction
         ...
     }
 ```
+
 ### RevokePending
+
+```bash
 
 Revokes `value` pending votes for `validator`
 
 USAGE
-    $ Marker      revokePending   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>--target <validatorAddress>  --lockedNum <value>  
+    $ Marker  revokePending   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>--target <validatorAddress>  --lockedNum <value>  
   
 Detailed introduction
 
@@ -300,8 +308,6 @@ Detailed introduction
         getLockedGold().incrementNonvotingAccountBalance(account, value);
         ...
     }
-
-
     function decrementTotalVotes(address validator, uint256 value, address lesser, address greater)
     private
     {
@@ -309,6 +315,8 @@ Detailed introduction
         votes.total.eligible.update(validator, newVoteTotal, lesser, greater);
         ...
     }
+```
+
 
 ### RevokeActive
 
@@ -340,14 +348,19 @@ Detailed introduction
          votes.total.eligible.update(validator, newVoteTotal, lesser, greater);
     }
 ```
-## From the perspective of owner(As a specific person who can modify contract rule settings)
+
+## From the perspective of owner
+
+Is a specific person who can modify contract rule settings
+
 
 ### setValidatorLockedGoldRequirements
 
+```bash
 Updates the Locked Gold requirements for Validators.
 
 USAGE
-  $ Marker      setValidatorLockedGoldRequirements  --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --value <LockedGoldRequirementsvalue>   --duration <LockedGoldRequirementsduration>
+  $ Marker setValidatorLockedGoldRequirements  --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --value <LockedGoldRequirementsvalue>   --duration <LockedGoldRequirementsduration>
   
 Detailed introduction
     function setValidatorLockedGoldRequirements(uint256 value, uint256 duration)
@@ -363,6 +376,9 @@ Detailed introduction
 	validatorLockedGoldRequirements = LockedGoldRequirements(value, duration);
        ...
     }
+
+```
+
 
 ## common commond
 
@@ -396,6 +412,7 @@ Detailed introduction
   }
  
 ```
+
 ### LockedMAP
 
 ```bash
@@ -416,8 +433,10 @@ Detailed introduction
  
   
 ```
+
 ### UnlockMAP
 
+```bash
 Unlocks gold that becomes withdrawable after the unlocking period.
 
 USAGE
@@ -449,10 +468,12 @@ Detailed introduction
         }
         return 0;
     }
-  
+    
+```
 
 ### RelockMAP
 
+```bash
 Relocks map that has been unlocked but not withdrawn.
 
 USAGE
@@ -469,7 +490,7 @@ Detailed introduction
       deletePendingWithdrawal(account.pendingWithdrawals, index);
     ...
   }
-  
+```
 
 ### WithdrawMap
 
@@ -507,6 +528,7 @@ USAGE
 NOTICE
   your can konw 'topNum' by getNumRegisteredValidators commond
 ```
+
 ### GetTotalVotesForEligibleValidators
 
 ```bash
