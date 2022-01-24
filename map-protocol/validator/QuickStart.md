@@ -42,7 +42,7 @@ Detailed
   }
 ```
 
-### Step 3: [validator register](Validator-Tool-Marker.md#RegisterValidator)
+### Step 3: [validator register](Validator-Tool-Marker.md#Register)
 
 Register a new Validator.
 You need to use `register` command to pass in your own information
@@ -212,7 +212,7 @@ Detailed
 
 ## How To withdraw MAP
 
-### Step 1: [unlock](Validator-Tool-Marker.md#Unlock)
+### Step 1: [unlock](Validator-Tool-Marker.md#UnlockMAP)
 
 Unlocks MAP that becomes withdrawable after the unlocking period.
 
@@ -306,4 +306,4 @@ Detailed
 ### Step 2:
 
 Your ticket has changed from pending or active to locking.
-the next step is same to [How To withdraw MAP](QuickStart.md#How To withdraw MAP)
+the next step is same to [How To withdraw MAP](#How To withdraw MAP)
