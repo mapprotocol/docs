@@ -37,7 +37,9 @@ So per validator will receive the reward('validatorReceived') = (`epochReward` -
 
 `punishment` is the punishment mechanism param.
 
-New score is calculated by this formula: "`new_score` = `uptime`  * `adjustmentSpeed` + `old_score` * (1 - `adjustmentSpeed`)"
+New score is calculated by this formula: 
+
+ "`new_score` = `uptime`  * `adjustmentSpeed` + `old_score` * (1 - `adjustmentSpeed`)"
 
 `uptime`. This is score of work done at work stage.
 
@@ -58,11 +60,11 @@ Per voter's reward will be obtained according to the voting proportion of voter 
 
 ## Expand:
 
-case One: Validator was deRegister during his service.
+### case One: Validator was deRegister during his service.
 
 In this case,we won't consider him when awarded,the rest validators will share his reward equally.
 
-case Two: Validator Re register.
+### case Two: Validator Re register.
 
 When a validator is deRegistered, voters can still cancel the votes on the deRegistered validator as they wish.
 
