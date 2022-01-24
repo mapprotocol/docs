@@ -6,8 +6,8 @@ Manage your account, keys, and metadata.
 
 Keep your locked MAP more secure by authorizing alternative keys to be used for signing attestations、voting、validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked MAP in storage.
 
-```bash
-Detailed introduction
+```shell
+Detailed
   function createAccount() public returns (bool) {
     ...
     account.exists = true;
@@ -32,8 +32,8 @@ Detailed introduction
 Locks MAP to be used in validator elections.
 You must lock 10k MAP to become validator.
 
-```bash
-Detailed introduction
+```shell
+Detailed
    function lock() external payable nonReentrant {
    ...
     //This is equivalent to you transfer the map to LockedGold contract address 
@@ -47,8 +47,8 @@ Detailed introduction
 Register a new Validator.
 You need to use `register` command to pass in your own information
 
-```bash
-Detailed introduction
+```shell
+Detailed
     function registerValidator(
         uint256 commission,
         address lesser,
@@ -100,8 +100,8 @@ Manage your account, keys, and metadata.
 
 Keep your locked MAP more secure by authorizing alternative keys to be used for signing attestations、voting、validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked MAP in storage.
 
-```bash
-Detailed introduction
+```shell
+Detailed
   function createAccount() public returns (bool) {
     ...
     account.exists = true;
@@ -125,8 +125,8 @@ Detailed introduction
 
 Locks MAP to vote.
 
-```bash
-Detailed introduction
+```shell
+Detailed
    function lock() external payable nonReentrant {
    ...
     //This is equivalent to you transfer the map to LockedGold contract address 
@@ -139,8 +139,8 @@ Detailed introduction
 
 Vote to your target validator when you go to this step, your ticket will be in Pengding status, and you need to deactivate it to finally receive the reward
 
-```bash
-Detailed introduction
+```shell
+Detailed
     function vote(address validator, uint256 value, address lesser, address greater)
     external
     nonReentrant
@@ -189,8 +189,8 @@ Detailed introduction
 Activate your ticket to get reward
 This operation need to be greater than your pending vote epoch
 
-```bash
-Detailed introduction
+```shell
+Detailed
     function _activate(address validator, address account) internal returns (bool) {
         ...
 		//Activate need greater than your pending vote epoch
@@ -220,8 +220,8 @@ You can only unlock your nonvoting map.
 
 if you are a validator you will be limit by 'balanceRequirement'(10k MAP)
 
-```bash
-Detailed introduction
+```shell
+Detailed
    function unlock(uint256 value) external nonReentrant {
    ...
     //if you are a validator you will be limit by 'balanceRequirement'
@@ -251,8 +251,8 @@ Detailed introduction
 
 Withdraws MAP that has been unlocked after the unlocking period has passed.
 
-```bash
-Detailed introduction
+```shell
+Detailed
   //you need to know PendingWithdrawals index first , your can konw it by getPendingWithdrawals commond
   function withdraw(uint256 index) external nonReentrant {
     ...
@@ -275,8 +275,8 @@ If your vote is not active , use 'revokePending'commond.
 If your vote is active, use 'revokeActive'commond.
 Both of these methods will put the map in your nonvoting map
 
-```bash
-Detailed introduction
+```shell
+Detailed
      function revokePending(
         address validator,
         uint256 value,

@@ -6,11 +6,10 @@ Marker contains tools to make genesis.json and some client commands to better li
 
 ### Building Marker
 
-```bash
+```shell
 cd github.com/mapprotocol/atlas/cmd/marker
 go build -o Marker  *.go
 ```
-
 
 | client | commands  | summary                                               |
 | -------- | ----------- | ------------------------------------------------------- |
@@ -22,7 +21,8 @@ go build -o Marker  *.go
 
 `marker genesis` is a developer utility to easy running atlas blockchain testnets and related jobs around testnets.
 
-Its main advantage over previous solutions is that it's able to create a `genesis.json` where all core conctracts are already deployed in it.
+Its main advantage over previous solutions is that it's able to create a `genesis.json` where all core conctracts are
+already deployed in it.
 
 ## Using marker genesis
 
@@ -30,7 +30,7 @@ Its main advantage over previous solutions is that it's able to create a `genesi
 
 cd marker config path : github.com/mapprotocol/atlas/marker/config
 
-```bash
+```shell
 
 first you need to config the markerConfig.json like this:
 
@@ -63,7 +63,7 @@ first you need to config the markerConfig.json like this:
 
 then to do so run:
 
-```bash
+```shell
 marker genesis --buildpath path/to/protocol/build
 ```
 
@@ -72,7 +72,6 @@ Where `buildpath` is the path to truffle compile output folder.
 This will create a `genesis.json`.
 
 ## Flag
-
 
 | Flag          | Usage                                                                                               |
 | --------------- | ----------------------------------------------------------------------------------------------------- |
@@ -96,13 +95,14 @@ This will create a `genesis.json`.
 
 ### Register
 
-```bash
 Registers a validator
+
+```shell
 
 USAGE
   $ Marker  register   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --commission <value> 
   
-Detailed introduction
+Detailed
     function registerValidator(
         uint256 commission,
         address lesser,
@@ -149,8 +149,9 @@ Detailed introduction
 
 ### quicklyRegister
 
-```bash
 If you have not creat Account  or locked the Map, you can quickly register through the `quicklyRegister` command, which integrates the `createAccount` `lockedMAP`
+
+```shell
 
 USAGE
 $ Marker  quicklyRegister   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>--lockedNum <value> --commission <value>
@@ -158,46 +159,45 @@ $ Marker  quicklyRegister   --password <password> --rpcaddr <rpcaddr>  --rpcport
 
 ### deregister
 
-```bash
 De-registers a validator.
+
+```shell
 
 USAGE
 $ Marker  deregister   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>
 
-Detailed introduction
-//you need to know index first , your can konw it by getRegisteredValidatorSigners commond
-function deregisterValidator(uint256 index) external nonReentrant returns (bool) {
-...
-uint256 requirementEndTime = validator.registerTimestamp.add(
-validatorLockedGoldRequirements.duration
-);
+Detailed
 
-//you cannot deregister Validator during the requirementEndTime
-    require(requirementEndTime < now, "Not yet requirement end time");
-
-    //Marks a validator ineligible for electing validators.
-    //Will not participate in validation
-    getElection().markValidatorIneligible(account);
-
-    // Remove the validator.
-    deleteElement(registeredValidators, account, index);
-    delete validators[account];
-    ...
-}
+    function deregisterValidator(uint256 index) external nonReentrant returns (bool) {
+        ...
+        int256 requirementEndTime = validator.registerTimestamp.add(validatorLockedGoldRequirements.duration);
+    
+         //you cannot deregister Validator during the requirementEndTime
+        require(requirementEndTime < now, "Not yet requirement end time");
+    
+        //Marks a validator ineligible for electing validators.
+        //Will not participate in validation
+        getElection().markValidatorIneligible(account);
+    
+        // Remove the validator.
+        deleteElement(registeredValidators, account, index);
+        delete validators[account];
+        ...
+    }
 ```
 
 ## From the perspective of voters
 
 ### Vote
 
-```solidity
-
 Increments the number of total and pending votes for `validator`.
 
+```shell
+
 USAGE
-    $ Marker  vote   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>   --target <validator> --voteNum <value> 
-  
-Detailed introduction
+$ Marker  vote   --password < password > --rpcaddr < rpcaddr > --rpcport < rpcport > --keystore < keystore path > --target < validator > --voteNum < value >
+
+Detailed
 
     function vote(address validator, uint256 value, address lesser, address greater)
     external
@@ -210,61 +210,60 @@ Detailed introduction
         for (uint256 i = 0; i < validators.length; i = i.add(1)) {
             alreadyVotedForValidator = alreadyVotedForValidator || validators[i] == validator;
         }
-	//1.voter can't vote for the same person twice
-	//2.The number of votes cannot exceed the number of maxNumValidatorsVotedFor
+        //1.voter can't vote for the same person twice
+        //2.The number of votes cannot exceed the number of maxNumValidatorsVotedFor
         if (!alreadyVotedForValidator) {
             require(validators.length < maxNumValidatorsVotedFor, "Voted for too many validators");
             validators.push(validator);
         }
-
-	//the votes will be pending
+        
+        //the votes will be pending
         incrementPendingVotes(validator, account, value);
         incrementTotalVotes(validator, value, lesser, greater);
-	//your ticket will be marker pendingVote.epoch
+        //your ticket will be marker pendingVote.epoch
         pendingVote.epoch = getEpochNumber();
-  
     }
 
-	function incrementTotalVotes(address validator, uint256 value, address lesser, address greater)
+    function incrementTotalVotes(address validator, uint256 value, address lesser, address greater)
     {
-        ...
-        votes.total.eligible.update(validator, newVoteTotal, lesser, greater);
+      ...
+      votes.total.eligible.update(validator, newVoteTotal, lesser, greater);
     }
 
-    function incrementPendingVotes(address validator, address account, uint256 value) private {  
-      ...
-
-	//the votes will be Recorded by validatorPending
-	//the votes in the validatorPending will do not participate in Epoch Awards
-	//if you want to participate in Epoch Awards you need to active 
-	//the active commond is activate
+    function incrementPendingVotes(address validator, address account, uint256 value) private {
+        ...  
+        //the votes will be Recorded by validatorPending
+        //the votes in the validatorPending will do not participate in Epoch Awards
+        //if you want to participate in Epoch Awards you need to active 
+        //the active commond is activate
         PendingVote storage pendingVote = validatorPending.byAccount[account];
         pendingVote.value = pendingVote.value.add(value);
-       ...
+        ...
     }
-  
+
 ```
+
 ### quicklyVote
 
-```bash
 If you have not creat Account or locked the Map, you can quickly vote through the `quicklyVote` command, which integrates the `createAccount` `lockedMAP`
 
+```shell
 USAGE
 $ Marker  quicklyVote   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport>--keystore <keystore path> --lockedNum <value>  --voteNum <value> --target <validator>
 ```
 
 ### Activate
 
-```bash
 Converts `account`'s pending votes for `validator` to active votes.
 
+```shell
 USAGE
    $ Marker  activate   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>   --target <from getTotalVotesForEligibleValidators> 
   
-Detailed introduction
+Detailed
     function _activate(address validator, address account) internal returns (bool) {
         ...
-	//active at next epoch
+	    //active at next epoch
         require(pendingVote.epoch < getEpochNumber(), "Pending vote epoch not passed");
         ...
         decrementPendingVotes(validator, account, value);
@@ -274,8 +273,8 @@ Detailed introduction
 	function incrementActiveVotes(address validator, address account, uint256 value)
     {
         ...
-	//the votes will be Recorded by validatorActive
-	//the votes in the validatorActive will participate in Epoch Awards
+	    //the votes will be Recorded by validatorActive
+	    //the votes in the validatorActive will participate in Epoch Awards
         validatorActive.valueByAccount[account] = validatorActive.valueByAccount[account].add(value);
         ...
     }
@@ -283,14 +282,14 @@ Detailed introduction
 
 ### RevokePending
 
-```bash
-
 Revokes `value` pending votes for `validator`
+
+```shell
 
 USAGE
     $ Marker  revokePending   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>--target <validatorAddress>  --lockedNum <value>  
   
-Detailed introduction
+Detailed
 
      function revokePending(
         address validator,
@@ -302,9 +301,9 @@ Detailed introduction
         ...
          decrementPendingVotes(validator, account, value);
         ...
-	// update the validator ranking
-	decrementTotalVotes(validator, value, lesser, greater);
-	//this will increment in voter NonvotingBalance 
+	    // update the validator ranking
+	    decrementTotalVotes(validator, value, lesser, greater);
+	    //this will increment in voter NonvotingBalance 
         getLockedGold().incrementNonvotingAccountBalance(account, value);
         ...
     }
@@ -317,16 +316,16 @@ Detailed introduction
     }
 ```
 
-
 ### RevokeActive
 
-```bash
 Revokes `value` active votes for `validator`
+
+```shell
 
 USAGE
     $ Marker  revokeActive   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>--target <validatorAddress>  --lockedNum <value>  
   
-Detailed introduction
+Detailed
       function _revokeActive(
         address validator,
         uint256 value,
@@ -334,9 +333,9 @@ Detailed introduction
         address greater,
         uint256 index
     ) internal returns (bool) {
-	...
+	   ...
         decrementActiveVotes(validator, account, value);
-	// update the validator ranking
+	    // update the validator ranking
         decrementTotalVotes(validator, value, lesser, greater);
         getLockedGold().incrementNonvotingAccountBalance(account, value);   
        ...
@@ -345,53 +344,53 @@ Detailed introduction
     function decrementTotalVotes(address validator, uint256 value, address lesser, address greater)
     private
     {
-         votes.total.eligible.update(validator, newVoteTotal, lesser, greater);
+        votes.total.eligible.update(validator, newVoteTotal, lesser, greater);
     }
 ```
 
 ## From the perspective of owner
 
-Is a specific person who can modify contract rule settings
-
+owner is a specific person who can modify contract rule settings
 
 ### setValidatorLockedGoldRequirements
 
-```bash
 Updates the Locked Gold requirements for Validators.
+
+```shell
 
 USAGE
   $ Marker setValidatorLockedGoldRequirements  --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --value <LockedGoldRequirementsvalue>   --duration <LockedGoldRequirementsduration>
   
-Detailed introduction
+Detailed
     function setValidatorLockedGoldRequirements(uint256 value, uint256 duration)
     public
     onlyOwner 
     returns (bool)
     {
-      ...
+       ...
         require(
             value != requirements.value || duration != requirements.duration,
             "Validator requirements not changed"
         );
-	validatorLockedGoldRequirements = LockedGoldRequirements(value, duration);
+	    validatorLockedGoldRequirements = LockedGoldRequirements(value, duration);
        ...
     }
 
 ```
 
-
 ## common commond
 
 ### CreateAccount
 
-```bash
-
 create a account
+
+```shell
+
 
 USAGE
   $ Marker  createAccount  --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path> --namePrefix <you can marker your account like "validator" or "voter" and so on that you want>
 
-Detailed introduction
+Detailed
 
   function createAccount() public returns (bool) {
     ...
@@ -415,36 +414,34 @@ Detailed introduction
 
 ### LockedMAP
 
-```bash
 Locks map to be used for voting or register validator
+
+```shell
 
 USAGE
   $ Marker  lockedMAP  --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path> --lockedNum <value>
 
 
-
-Detailed introduction
+Detailed
    function lock() external payable nonReentrant {
    ...
     //This is equivalent to you transfer the map to LockedGold contract address 
     _incrementNonvotingAccountBalance(msg.sender, msg.value);
    ...
   }
- 
-  
+
 ```
 
 ### UnlockMAP
 
-```bash
 Unlocks gold that becomes withdrawable after the unlocking period.
+
+```shell
 
 USAGE
   $ Marker  unlockMap --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --lockedNum <value>
 
-
-
-Detailed introduction
+Detailed
    function unlock(uint256 value) external nonReentrant {
    ...
     //if you are a validator you will be limit by 'balanceRequirement'
@@ -460,9 +457,9 @@ Detailed introduction
     account.pendingWithdrawals.push(PendingWithdrawal(value, available));
   
   }
-   //Attention reminder
-   //if you are a validator you will be Limited by validatorLockedGoldRequirements.value
-   function getAccountLockedGoldRequirement(address account) public view returns (uint256) {
+    //Attention reminder
+    //if you are a validator you will be Limited by validatorLockedGoldRequirements.value
+    function getAccountLockedGoldRequirement(address account) public view returns (uint256) {
         if (isValidator(account)) {
             return validatorLockedGoldRequirements.value;
         }
@@ -473,13 +470,14 @@ Detailed introduction
 
 ### RelockMAP
 
-```bash
 Relocks map that has been unlocked but not withdrawn.
+
+```shell
 
 USAGE
   $ Marker   relockMAP --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --lockedNum <value> --relockIndex <from getPendingWithdrawals>
 
-Detailed introduction
+Detailed
   //you need to know PendingWithdrawals index first , your can konw it by getPendingWithdrawals commond
   function relock(uint256 index, uint256 value) external nonReentrant {
     ...
@@ -494,13 +492,14 @@ Detailed introduction
 
 ### WithdrawMap
 
-```bash
 Withdraws gold that has been unlocked after the unlocking period has passed.
+
+```shell
 
 USAGE
   $ Marker   withdrawMap      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --lockedNum <value> --WithdrawIndex <from getPendingWithdrawals>
   
-Detailed introduction
+Detailed
   //you need to know PendingWithdrawals index first , your can konw it by getPendingWithdrawals commond
   function withdraw(uint256 index) external nonReentrant {
     ...
@@ -509,103 +508,126 @@ Detailed introduction
     ...
   }
 ```
+
 ### GetNumRegisteredValidators
 
-```bash
 Returns the number of registered validators
+
+```shell
 
 USAGE
    $ Marker   getNumRegisteredValidators      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  
   
 ```
+
 ### GetTopValidators
 
-```bash
 Returns the top n validator members for a particular validator.
 
+```shell
+
 USAGE
-    $ Marker   getTopValidators      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --topNum <value>
+    $ Marker   getTopValidators   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --topNum <value>
 NOTICE
   your can konw 'topNum' by getNumRegisteredValidators commond
 ```
 
 ### GetTotalVotesForEligibleValidators
 
-```bash
 Returns lists of all validator validators and the number of votes they've received.
+
+```shell
 
 USAGE
     $ Marker   getTotalVotesForEligibleValidators      --password <password>  --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  
 ```
+
 ### getTotalVotes
 
-```bash
 Returns the total votes received across all validators.
+
+```shell
 
 USAGE
     $ Marker   getTotalVotes      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  
 ```
+
 ### GetValidatorEligibility
 
-```bash
 Returns whether or not a validator is eligible to receive votes.
 
+```shell
+
 USAGE
-    $ Marker   getValidatorEligibility      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
+    $ Marker   getValidatorEligibility   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
 ```
+
 ### GetPendingVotesForValidatorByAccount
 
-```bash
 Returns the pending votes for `validator` made by `account`.
+
+```shell
 
 USAGE
   $ Marker  getPendingVotesForValidatorByAccount      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
 ```
+
 ### GetActiveVotesForValidatorByAccount
 
-```bash
 Returns the active votes for `validator` made by `account`.
+
+```shell
 
 USAGE
    $ Marker  getActiveVotesForValidatorByAccount      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
 ```
+
 ### GetValidatorsVotedForByAccount
 
-```bash
 Returns the validators that `account` has voted for.
+
+```shell
 
 USAGE
    $ Marker   getValidatorsVotedForByAccount      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <voterAddress>
 
 ```
+
 ### GetAccountTotalLockedGold
 
-```bash
 Returns the total amount of locked gold for an account.
+
+```shell
 
 USAGE
   $ Marker   getAccountTotalLockedGold      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
 ```
+
 ### GetAccountNonvotingLockedGold
 
-```bash
 Returns the total amount of non-voting locked gold for an account.
+
+```shell
 
 USAGE
    $ Marker   getAccountTotalLockedGold      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
 ```
+
 ### GetAccountLockedGoldRequirement
 
-```bash
 Returns the current locked gold balance requirement for the supplied account.
+
+```shell
 
 USAGE
   $ Marker   getAccountLockedGoldRequirement      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  
 ```
+
 ### GetPendingWithdrawals
 
-```bash
 Returns the pending withdrawals from unlocked gold for an account.
+
+```shell
 
 USAGE
   $ Marker   getPendingWithdrawals      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>   --target <targetAddress>
