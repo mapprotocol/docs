@@ -14,8 +14,10 @@
         * [How To Become Relayer](map-protocol/relayer/QuickStart.md)
     * Vaildator
         * [QuickStart](map-protocol/validator/QuickStart.md)
-        * [Marker](map-protocol/validator/Marker.md)
-        * [Vaildator Epoch Reward](map-protocol/validator/Reward.md)
+        * [Validator-Election](map-protocol/validator/Validator-Election.md)
+        * [Validator-EpochRewards](map-protocol/validator/Validator-EpochRewards.md)
+        * [Validator-LockedMAP](map-protocol/validator/Validator-LockedMAP.md)
+        * [Validator-Tool-Marker](map-protocol/validator/Validator-Tool-Marker.md)
 
 * Cross Chain
     * Light Client Data

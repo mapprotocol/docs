@@ -1,12 +1,13 @@
 ## How To Become Validator
 
-### Step 1: [createAccount](Marker.md#CreateAccount)
+### Step 1: [createAccount](Validator-Tool-Marker.md#CreateAccount)
 
 Manage your account, keys, and metadata.
 
 Keep your locked MAP more secure by authorizing alternative keys to be used for signing attestations、voting、validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked MAP in storage.
-```bash
-Detailed introduction
+
+```shell
+Detailed
   function createAccount() public returns (bool) {
     ...
     account.exists = true;
@@ -26,27 +27,28 @@ Detailed introduction
   }
 ```
 
-### Step 2: [lockedMAP](Marker.md#LockedMAP)
+### Step 2: [lockedMAP](Validator-Tool-Marker.md#LockedMAP)
 
 Locks MAP to be used in validator elections.
 You must lock 10k MAP to become validator.
 
-```bash
-Detailed introduction
+```shell
+Detailed
    function lock() external payable nonReentrant {
    ...
     //This is equivalent to you transfer the map to LockedGold contract address 
     _incrementNonvotingAccountBalance(msg.sender, msg.value);
    ...
   }
- ```
+```
 
-### Step 3: [validator register](Marker.md#RegisterValidator)
+### Step 3: [validator register](Validator-Tool-Marker.md#RegisterValidator)
 
 Register a new Validator.
 You need to use `register` command to pass in your own information
-```bash
-Detailed introduction
+
+```shell
+Detailed
     function registerValidator(
         uint256 commission,
         address lesser,
@@ -71,9 +73,9 @@ Detailed introduction
         );
 		...
 		//This validator will be eligible to participate in the election
-        getElection().markValidatorEligible(lesser, greater, account);      
+        getElection().markValidatorEligible(lesser, greater, account);    
     }
-	
+
 	//This structure will serialize the validator according to the number of votes
 	struct TotalVotes {
         // A list of eligible Validators sorted by total (pending+active) votes.
@@ -82,24 +84,24 @@ Detailed introduction
 		// the total (pending+active) votes will decide whether you are elected at end of epoch
         SortedLinkedList.List eligible;
     }
-	
+
 	function markValidatorEligible(address lesser, address greater, address validator){
         ...
         votes.total.eligible.insert(validator, value, lesser, greater);
         ...
     }
- ``` 
-
-
+```
 
 ## How To Vote
-### Step 1: [createAccount](Marker.md#CreateAccount)
+
+### Step 1: [createAccount](Validator-Tool-Marker.md#CreateAccount)
 
 Manage your account, keys, and metadata.
 
 Keep your locked MAP more secure by authorizing alternative keys to be used for signing attestations、voting、validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked MAP in storage.
-```bash
-Detailed introduction
+
+```shell
+Detailed
   function createAccount() public returns (bool) {
     ...
     account.exists = true;
@@ -119,25 +121,26 @@ Detailed introduction
   }
 ```
 
-### Step 2: [lockedMAP](Marker.md#LockedMAP)
+### Step 2: [lockedMAP](Validator-Tool-Marker.md#LockedMAP)
 
 Locks MAP to vote.
 
-```bash
-Detailed introduction
+```shell
+Detailed
    function lock() external payable nonReentrant {
    ...
     //This is equivalent to you transfer the map to LockedGold contract address 
     _incrementNonvotingAccountBalance(msg.sender, msg.value);
    ...
   }
- ```
+```
 
-### Step 3: [vote](Marker.md#Vote)
+### Step 3: [vote](Validator-Tool-Marker.md#Vote)
+
 Vote to your target validator when you go to this step, your ticket will be in Pengding status, and you need to deactivate it to finally receive the reward
 
-```bash
-Detailed introduction
+```shell
+Detailed
     function vote(address validator, uint256 value, address lesser, address greater)
     external
     nonReentrant
@@ -155,20 +158,20 @@ Detailed introduction
             require(validators.length < maxNumValidatorsVotedFor, "Voted for too many validators");
             validators.push(validator);
         }
-		
+	
 		//the votes will be pending
         incrementPendingVotes(validator, account, value);
         incrementTotalVotes(validator, value, lesser, greater);
-        
+      
     }
-	
+
 	function incrementTotalVotes(address validator, uint256 value, address lesser, address greater)
     {
         ...
         votes.total.eligible.update(validator, newVoteTotal, lesser, greater);
     }
-	
-	 function incrementPendingVotes(address validator, address account, uint256 value) private {    
+
+	 function incrementPendingVotes(address validator, address account, uint256 value) private {  
       ...
 	    //the ticket will be Recorded by validatorPending
 		//the ticket in the validatorPending will do not participate in Epoch Awards
@@ -179,15 +182,15 @@ Detailed introduction
 		//your ticket will be marker pendingVote.epoch
         pendingVote.epoch = getEpochNumber();
     }
-```    
+```
 
-### Step 4: [activate](Marker.md#Activate)
+### Step 4: [activate](Validator-Tool-Marker.md#Activate)
 
 Activate your ticket to get reward
 This operation need to be greater than your pending vote epoch
 
-```bash
-Detailed introduction
+```shell
+Detailed
     function _activate(address validator, address account) internal returns (bool) {
         ...
 		//Activate need greater than your pending vote epoch
@@ -196,7 +199,7 @@ Detailed introduction
         decrementPendingVotes(validator, account, value);
         incrementActiveVotes(validator, account, value);  
     }
-	
+
 	function incrementActiveVotes(address validator, address account, uint256 value)
     {
         ...
@@ -205,12 +208,11 @@ Detailed introduction
         validatorActive.valueByAccount[account] = validatorActive.valueByAccount[account].add(value);
         ...
     }
- ``` 
-
-
+```
 
 ## How To withdraw MAP
-### Step 1: [unlock](Marker.md#Unlock)
+
+### Step 1: [unlock](Validator-Tool-Marker.md#Unlock)
 
 Unlocks MAP that becomes withdrawable after the unlocking period.
 
@@ -218,8 +220,8 @@ You can only unlock your nonvoting map.
 
 if you are a validator you will be limit by 'balanceRequirement'(10k MAP)
 
-```bash
-Detailed introduction
+```shell
+Detailed
    function unlock(uint256 value) external nonReentrant {
    ...
     //if you are a validator you will be limit by 'balanceRequirement'
@@ -233,7 +235,7 @@ Detailed introduction
    //you can only unlock it after the unlocking period.
     uint256 available = now.add(unlockingPeriod);
     account.pendingWithdrawals.push(PendingWithdrawal(value, available));
-    
+  
   }
     //Attention reminder
 	//if you are a validator you will be Limited by `validatorLockedGoldRequirements.value`(10k MAP)
@@ -243,14 +245,14 @@ Detailed introduction
         }
         return 0;
     }
- ```
-
+```
 
 ### Step 2:withdraw
+
 Withdraws MAP that has been unlocked after the unlocking period has passed.
 
-```bash
-Detailed introduction
+```shell
+Detailed
   //you need to know PendingWithdrawals index first , your can konw it by getPendingWithdrawals commond
   function withdraw(uint256 index) external nonReentrant {
     ...
@@ -258,24 +260,23 @@ Detailed introduction
     require(now >= pendingWithdrawal.timestamp, "Pending withdrawal not available");
     ...
   }
- ``` 
+```
 
 ## How To withdraw tickets
 
-
 ### Step 1:
 
-[revokePending](Marker.md#RevokePending):
+[revokePending](Validator-Tool-Marker.md#RevokePending):
 
 If your vote is not active , use 'revokePending'commond.
 
-[revokeActive](Marker.md#RevokeActive):
+[revokeActive](Validator-Tool-Marker.md#RevokeActive):
 
 If your vote is active, use 'revokeActive'commond.
 Both of these methods will put the map in your nonvoting map
 
-```bash
-Detailed introduction
+```shell
+Detailed
      function revokePending(
         address validator,
         uint256 value,
@@ -291,8 +292,8 @@ Detailed introduction
 		//this will increment in voter NonvotingBalance 
         getLockedGold().incrementNonvotingAccountBalance(account, value);
         ...
-    }	
-	
+    }
+
 	function decrementTotalVotes(address validator, uint256 value, address lesser, address greater)
     private
     {
@@ -303,9 +304,6 @@ Detailed introduction
 ```
 
 ### Step 2:
+
 Your ticket has changed from pending or active to locking.
-the next step is same to  [How To unlock lockedMap](QuickStart.md#How To unlock lockedMap)
-
- 
-
-
+the next step is same to [How To withdraw MAP](QuickStart.md#How To withdraw MAP)
