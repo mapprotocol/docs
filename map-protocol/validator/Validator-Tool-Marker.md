@@ -82,14 +82,15 @@ This will create a `genesis.json`.
 | commission    | The proportion of awards collected by the validator, and then the rest to voter(0< commission <0.1) |
 | voteNum       | The amount of map to use to vote (The unit is 10^18)                                                |
 | topNum        | topNum of validator                                                                                 |
-| lockedNum     | The amount of map to lock 、unlock、relock、withdraw  (The unit is 10^18)                           |
+| lockedNum     | The amount of map to lock 、unlock、relock、withdraw  (The unit is 10^18)                            |
 | withdrawIndex | Relocks gold that has been unlocked but not withdrawn.                                              |
 | relockIndex   | Relocks gold that has been unlocked but not withdrawn.                                              |
 | rpcaddr       | HTTP-RPC server listening interface    ( Belong to common params)                                   |
 | rpcport       | HTTP-RPC server listening port    ( Belong to common params)                                        |
 | value         | your transfer value                                                                                 |
 | duration      | duration The time (in seconds) that these requirements persist for.                                 |
-| target        | target address                                                                                      |
+| target        | the target address to query                                                                         |
+| validator     | validator address                                                                                   |
 
 ## From the perspective of validator
 
@@ -149,7 +150,8 @@ Detailed
 
 ### quicklyRegister
 
-If you have not creat Account  or locked the Map, you can quickly register through the `quicklyRegister` command, which integrates the `createAccount` `lockedMAP`
+If you have not creat Account or locked the Map, you can quickly register through the `quicklyRegister` command, which
+integrates the `createAccount` `lockedMAP`
 
 ```shell
 
@@ -195,7 +197,7 @@ Increments the number of total and pending votes for `validator`.
 ```shell
 
 USAGE
-$ Marker  vote   --password < password > --rpcaddr < rpcaddr > --rpcport < rpcport > --keystore < keystore path > --target < validator > --voteNum < value >
+$ Marker  vote   --password < password > --rpcaddr < rpcaddr > --rpcport < rpcport > --keystore < keystore path > --validator < validator > --voteNum < value >
 
 Detailed
 
@@ -245,11 +247,12 @@ Detailed
 
 ### quicklyVote
 
-If you have not creat Account or locked the Map, you can quickly vote through the `quicklyVote` command, which integrates the `createAccount` `lockedMAP`
+If you have not creat Account or locked the Map, you can quickly vote through the `quicklyVote` command, which
+integrates the `createAccount` `lockedMAP`
 
 ```shell
 USAGE
-$ Marker  quicklyVote   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport>--keystore <keystore path> --lockedNum <value>  --voteNum <value> --target <validator>
+$ Marker  quicklyVote   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport>--keystore <keystore path> --lockedNum <value>  --voteNum <value> --validator <validator>
 ```
 
 ### Activate
@@ -258,7 +261,7 @@ Converts `account`'s pending votes for `validator` to active votes.
 
 ```shell
 USAGE
-   $ Marker  activate   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>   --target <from getTotalVotesForEligibleValidators> 
+   $ Marker  activate   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>   --validator <from getTotalVotesForEligibleValidators> 
   
 Detailed
     function _activate(address validator, address account) internal returns (bool) {
@@ -287,7 +290,7 @@ Revokes `value` pending votes for `validator`
 ```shell
 
 USAGE
-    $ Marker  revokePending   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>--target <validatorAddress>  --lockedNum <value>  
+    $ Marker  revokePending   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>--validator <validatorAddress>  --lockedNum <value>  
   
 Detailed
 
@@ -323,7 +326,7 @@ Revokes `value` active votes for `validator`
 ```shell
 
 USAGE
-    $ Marker  revokeActive   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>--target <validatorAddress>  --lockedNum <value>  
+    $ Marker  revokeActive   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>--validator <validatorAddress>  --lockedNum <value>  
   
 Detailed
       function _revokeActive(
@@ -559,7 +562,27 @@ Returns whether or not a validator is eligible to receive votes.
 ```shell
 
 USAGE
-    $ Marker   getValidatorEligibility   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
+    $ Marker   getValidatorEligibility   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --validator <validatorAddress>
+```
+
+### GetValidator
+
+Returns the validator`s information.
+
+```shell
+
+USAGE
+    $ Marker   getValidator   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --validator <validatorAddress>
+```
+
+### GetRewardInfo
+
+Returns the awards of the last epoch
+
+```shell
+
+USAGE
+    $ Marker   getRewardInfo   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path> 
 ```
 
 ### GetPendingVotesForValidatorByAccount
@@ -569,7 +592,16 @@ Returns the pending votes for `validator` made by `account`.
 ```shell
 
 USAGE
-  $ Marker  getPendingVotesForValidatorByAccount      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
+  $ Marker  getPendingVotesForValidatorByAccount      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --validator <validatorAddress>
+```
+
+### GetPendingInfoForValidator
+
+Returns the pending votes for `validator` made by `account` And the pending Epoch.
+
+```shell
+USAGE
+  $ Marker  GetPendingInfoForValidator      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --validator <validatorAddress>
 ```
 
 ### GetActiveVotesForValidatorByAccount
@@ -579,7 +611,7 @@ Returns the active votes for `validator` made by `account`.
 ```shell
 
 USAGE
-   $ Marker  getActiveVotesForValidatorByAccount      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
+   $ Marker  getActiveVotesForValidatorByAccount      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --validator <validatorAddress>
 ```
 
 ### GetValidatorsVotedForByAccount
@@ -589,7 +621,7 @@ Returns the validators that `account` has voted for.
 ```shell
 
 USAGE
-   $ Marker   getValidatorsVotedForByAccount      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <voterAddress>
+   $ Marker   getValidatorsVotedForByAccount      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --validator <voterAddress>
 
 ```
 
@@ -600,7 +632,7 @@ Returns the total amount of locked gold for an account.
 ```shell
 
 USAGE
-  $ Marker   getAccountTotalLockedGold      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
+  $ Marker   getAccountTotalLockedGold      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <targetAddress>
 ```
 
 ### GetAccountNonvotingLockedGold
@@ -610,7 +642,7 @@ Returns the total amount of non-voting locked gold for an account.
 ```shell
 
 USAGE
-   $ Marker   getAccountTotalLockedGold      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <validatorAddress>
+   $ Marker   getAccountTotalLockedGold      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <targetAddress>
 ```
 
 ### GetAccountLockedGoldRequirement
