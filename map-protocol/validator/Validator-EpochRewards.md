@@ -15,7 +15,11 @@ units of MAP as blocks are produced, to create several kinds of incentives.
 
 3.Make payments into a Community Fund for protocol infrastructure grants
 
-Each epoch will be rewarded with a fixed reward (`epochReward` default value is 160k MAP).
+Each epoch will be rewarded with a fixed reward.
+
+$$
+EpochReward = 160k (MAP)
+$$
 
 ## Reward Disbursement
 
@@ -26,6 +30,10 @@ The amount of disbursements is determined at the end of every epoch via a three 
 In step one，Community Fund will receive a fixed percentage of the reward(`communityFundReward`
 = `CommunityFundMultiplier`*`epochReward` ,`CommunityFundMultiplier` defult value = 0.5).
 
+$$
+CommunityFundReward= CommunityFundMultiplier(defult =0.5) \\* EpochReward
+$$
+
 ### Step 2
 
 In step two,we will Count the number of signatures of each validator and convert it into a score(`Sorce` >=0,<=1), which
@@ -33,8 +41,9 @@ will eventually participate in the calculation of rewards.
 
 If the validator fails to fulfill its responsibilities, it will be punished through the punishment mechanism.
 
-So per validator will receive the reward('validatorReceived') = (`epochReward` - `communityFundReward`)  * `punishment`
-* (`P` +` mySorce`) / (`N` * `P` + `Sorce1` + `Score2` +...`ScoreN`).
+So per validator will receive the reward('validatorReceived') = (`epochReward`
+
+- `communityFundReward`)* `punishment`* (`P` +` mySorce`) / (`N` * `P` + `Sorce1` + `Score2` +...`ScoreN`).
 
 `P` is the fixed reward proportion shared by the validator(p>0, p<=1, default value is 1)
 
@@ -55,7 +64,7 @@ default value is 1).
 ### Step 3
 
 In step three, because the validator will distribute the reward to voter, the actual validator will receive the
-reward(`validatorActualReceived`) =`validatorReceived` * `Commission` * `myScore`.
+reward(`validatorActualReceived`) =`validatorReceived` * `Commission` .
 
 `Commission` is the proportional value drawn by the validator in proportion to the `validatorReceived`.
 
