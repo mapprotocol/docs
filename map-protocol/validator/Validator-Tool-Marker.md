@@ -17,59 +17,6 @@ go build -o Marker  *.go
 | marker | validator | Validator registration、 lockMap and other operations |
 | marker | voter     | voter vote、 lockMap and other operations             |
 
-## Marker genesis
-
-`marker genesis` is a developer utility to easy running atlas blockchain testnets and related jobs around testnets.
-
-Its main advantage over previous solutions is that it's able to create a `genesis.json` where all core conctracts are
-already deployed in it.
-
-## Using marker genesis
-
-### Generating a genesis.json
-
-cd marker config path : github.com/mapprotocol/atlas/marker/config
-
-```shell
-
-first you need to config the markerConfig.json like this:
-
-{
-  "AdminInfo": {
-    "Account":  "your admin account keysore path",
-        "Password":  "your admin account password"
-  },
-  "Validators": [
-    {
-     "Account":  "your validator account keysore path",
-        "Password":  "your validator account password"
-    },
-    {
-     "Account":  "your validator account keysore path",
-        "Password":  "your validator account password"
-    },
-    {
-     "Account":  "your validator account keysore path",
-        "Password":  "your validator account password"
-    },
-    {
-     "Account":  "your validator account keysore path",
-        "Password":  "your validator account password"
-    }
-    ...
-  ]
-}
-```
-
-then to do so run:
-
-```shell
-marker genesis --buildpath path/to/protocol/build
-```
-
-Where `buildpath` is the path to truffle compile output folder.
-
-This will create a `genesis.json`.
 
 ## Flag
 
@@ -645,7 +592,7 @@ USAGE
    $ Marker   getAccountTotalLockedGold      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <targetAddress>
 ```
 
-### GetAccountLockedGoldRequirement
+#### GetAccountLockedGoldRequirement
 
 Returns the current locked gold balance requirement for the supplied account.
 

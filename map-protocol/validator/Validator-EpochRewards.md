@@ -15,7 +15,9 @@ units of MAP as blocks are produced, to create several kinds of incentives.
 
 3.Make payments into a Community Fund for protocol infrastructure grants
 
-Each epoch will be rewarded with a fixed reward (`epochReward` default value is 160k MAP).
+Each epoch will be rewarded with a fixed reward 
+
+- `EpochReward`= 160k(MAP).
 
 ## Reward Disbursement
 
@@ -23,45 +25,65 @@ The amount of disbursements is determined at the end of every epoch via a three 
 
 ### Step 1
 
-In step one，Community Fund will receive a fixed percentage of the reward(`communityFundReward`
-= `CommunityFundMultiplier`*`epochReward` ,`CommunityFundMultiplier` defult value = 0.5).
+In step one，Community Fund will receive a fixed percentage of the reward
+
+- `CommunityFundReward` = `CommunityFundMultiplier`*`EpochReward` (`CommunityFundMultiplier` defult value = 0.5).
 
 ### Step 2
 
-In step two,we will Count the number of signatures of each validator and convert it into a score(`Sorce` >=0,<=1), which
+In step two,we will Count the number of signatures of each validator and convert it into a score(`Sorce`>=0,<=1), which
 will eventually participate in the calculation of rewards.
 
 If the validator fails to fulfill its responsibilities, it will be punished through the punishment mechanism.
 
-So per validator will receive the reward('validatorReceived') = (`epochReward` - `communityFundReward`)  * `punishment`
-* (`P` +` mySorce`) / (`N` * `P` + `Sorce1` + `Score2` +...`ScoreN`).
+So per validator will receive the reward:
 
-`P` is the fixed reward proportion shared by the validator(p>0, p<=1, default value is 1)
+- `ValidatorReceived` = (`EpochReward` - `CommunityFundReward`)  * `Punishment`* (`P` +` mySorce`) / (`N` * `P` + `Sorce1` + `Score2` +...`ScoreN`).
+- `P`  A fixed reward proportion shared by the validator(p>0, p<=1, default value is 1)
+- `N` Number of validator
+- `Punishment`  Punishment mechanism param.
 
-`punishment` is the punishment mechanism param.
 
-New score is calculated by this formula:
+The score is calculated by this formula:
 
-"`new_score` = `uptime`  * `adjustmentSpeed` + `old_score` * (1 - `adjustmentSpeed`)"
+- `NewScore` = `UptimeScore`  * `AdjustmentSpeed` + `OldScore` * (1 - `AdjustmentSpeed`)
 
-`uptime`. This is score of work done at work stage.
+- `UptimeScore` This is score of work done at `TotalMonitoredBlocks`.
+   - The `TotalMonitoredBlocks` are the total number of block on which we monitor uptime for the epoch
+   - `TotalMonitoredBlocks` value range is  `[EpochFirstBlock + lookbackWindowSize(defult = 12) -1,EpochLastBlock - BlocksToSkipAtEpochEnd(defult = 2]`
+   - `lookbackWindowSize` A fixed value about lookbackWindow check whether the validator has signed in a fixed interval.
+   - `BlocksToSkipAtEpochEnd` represents the number of blocks to skip on the monitoring window from the end of the epoch
+        - About currently we skip blocks:
+        - lastBlock     => its parentSeal is on firstBlock of next epoch
+        - lastBlock - 1 => parentSeal is on lastBlockOfEpoch, but validatorScore is computed with lastBlockOfEpoch and before updating scores
+        - (lastBlock-1 could be counted, but much harder to implement)
+   - About first block to monitor:
+        - we can't monitor uptime when current lookbackWindow crosses the epoch boundary
+        - thus, first block to monitor is the final block of the lookbackwindow that starts at firstBlockOfEpoch    
+   - So `UptimeScore` = `SignedBlocks ` / `TotalMonitoredBlocks`.
+      - `SignedBlocks ` Number of blocks signed by validator,this will be checked every time the block is produced.
+      - First,  check whether the current block is in `BlocksToSkipAtEpochEnd`.
+      - Second, check whether the current block review period is signed. If it exists, the signature will be regarded as successful 
+      - if First step and Second step is successful `SignedBlocks` will add 1.
+   
+- `AdjustmentSpeed`  A adjustment factor.This way will encourage the validator to stabilize.('AdjustmentSpeed' default value is 1).
 
-`adjustmentSpeed`.This is an adjustment factor.This way will encourage the validator to stabilize.('adjustmentSpeed'
-default value is 1).
+- `OldScore`. This is the score of the last epoch of this validator.(In the fist distribute epoch reward OldScore is 0)
 
-`old_score`. This is the score of the last epoch of this validator.（when the fist distribute epoch reward old_score is
-0）
 
 ### Step 3
 
-In step three, because the validator will distribute the reward to voter, the actual validator will receive the
-reward(`validatorActualReceived`) =`validatorReceived` * `Commission` * `myScore`.
+In step three, because the validator will distribute the reward to voter, the actual validator will receive the reward:
 
-`Commission` is the proportional value drawn by the validator in proportion to the `validatorReceived`.
+- `ValidatorActualReceived` =`ValidatorReceived` * `Commission`.
 
-The validator's voters will receive `validatorReceived` - `validatorActualReceived`. These votes will be returned to the
-voting pool. This operation is equivalent to an increase in the number of votes per voter.Voters draw their votes from
-the voting pool and get corresponding rewards.
+- `Commission` A proportional value drawn by the validator in proportion to the `ValidatorReceived`.
+
+The validator's voters will receive:
+
+-`VotersReward` = `ValidatorReceived` - `ValidatorActualReceived`. 
+
+These rewards(`VotersReward`) will be returned to the voting pool. This operation is equivalent to an increase in the number of votes per voter. Voters draw their votes from the voting pool and get corresponding rewards.
 
 Per voter's reward will be obtained according to the voting proportion of voter to validator.
 
