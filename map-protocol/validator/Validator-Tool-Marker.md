@@ -199,7 +199,7 @@ integrates the `createAccount` `lockedMAP`
 
 ```shell
 USAGE
-$ Marker  quicklyVote   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport>--keystore <keystore path> --lockedNum <value>  --voteNum <value> --validator <validator>
+$ Marker  quicklyVote   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport>--keystore <keystore path> --mapValue <value>  --voteNum <value> --validator <validator>
 ```
 
 ### Activate
@@ -237,7 +237,7 @@ Revokes `value` pending votes for `validator`
 ```shell
 
 USAGE
-    $ Marker  revokePending   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>--validator <validatorAddress>  --lockedNum <value>  
+    $ Marker  revokePending   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>--validator <validatorAddress>  --mapValue <value>  
   
 Detailed
 
@@ -273,7 +273,7 @@ Revokes `value` active votes for `validator`
 ```shell
 
 USAGE
-    $ Marker  revokeActive   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>--validator <validatorAddress>  --lockedNum <value>  
+    $ Marker  revokeActive   --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>--validator <validatorAddress>  --mapValue <value>  
   
 Detailed
       function _revokeActive(
@@ -389,7 +389,7 @@ Unlocks gold that becomes withdrawable after the unlocking period.
 ```shell
 
 USAGE
-  $ Marker  unlockMap --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --lockedNum <value>
+  $ Marker  unlockMap --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --mapValue <value>
 
 Detailed
    function unlock(uint256 value) external nonReentrant {
@@ -425,7 +425,7 @@ Relocks map that has been unlocked but not withdrawn.
 ```shell
 
 USAGE
-  $ Marker   relockMAP --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --lockedNum <value> --relockIndex <from getPendingWithdrawals>
+  $ Marker   relockMAP --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --mapValue <value> --relockIndex <from getPendingWithdrawals>
 
 Detailed
   //you need to know PendingWithdrawals index first , your can konw it by getPendingWithdrawals commond
@@ -447,7 +447,7 @@ Withdraws gold that has been unlocked after the unlocking period has passed.
 ```shell
 
 USAGE
-  $ Marker   withdrawMap      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --lockedNum <value> --WithdrawIndex <from getPendingWithdrawals>
+  $ Marker   withdrawMap      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>   --WithdrawIndex <from getPendingWithdrawals>
   
 Detailed
   //you need to know PendingWithdrawals index first , your can konw it by getPendingWithdrawals commond

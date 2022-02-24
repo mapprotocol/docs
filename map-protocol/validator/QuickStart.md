@@ -210,7 +210,7 @@ Detailed
     }
 ```
 
-## How To withdraw MAP
+## How To withdraw Locked MAP
 
 ### Step 1: [unlock](Validator-Tool-Marker.md#UnlockMAP)
 
@@ -262,7 +262,7 @@ Detailed
   }
 ```
 
-## How To withdraw tickets
+## How To withdraw votes
 
 ### Step 1:
 
@@ -305,5 +305,5 @@ Detailed
 
 ### Step 2:
 
-Your ticket has changed from pending or active to locking.
-the next step is same to [How To withdraw MAP](#How To withdraw MAP)
+Now your votes`s state has changed from pending or active to locking state.
+the next step is same to [How To withdraw Locked MAP](#How To withdraw Locked MAP)
