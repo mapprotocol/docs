@@ -38,16 +38,16 @@ If the validator fails to fulfill its responsibilities, it will be punished thro
 
 So per validator will receive the reward:
 
-- `ValidatorReceived` = `(`EpochReward` - `CommunityFundReward`)` * `Punishment` * (`P` +` mySorce`) / (`N` * `P` + `Sorce1` + `Score2` +...`ScoreN`).
+- `ValidatorReceived` = `(`EpochReward`-`CommunityFundReward`)` \* `Punishment` \* (`P` +` mySorce`) \/ (`N` * `P` + `Sorce1` + `Score2` +...`ScoreN`).
 - `P`  A fixed reward proportion shared by the validator(p>0, p<=1, default value is 1)
 - `N` Number of validator
 - `Punishment`  Punishment mechanism param.
 
 The score is calculated by this formula:
 
-- `NewScore` = `UptimeScore` * `AdjustmentSpeed`+`OldScore` * `(1 - `AdjustmentSpeed`)`
+- `NewScore` = `UptimeScore` \* `AdjustmentSpeed`+`OldScore` \* `(1 - `AdjustmentSpeed`)`
 - `UptimeScore` This is score of work done at `TotalMonitoredBlocks`.
-
+  
   - The `TotalMonitoredBlocks` are the total number of block on which we monitor uptime for the epoch
   - `TotalMonitoredBlocks` value range is  `[EpochFirstBlock + lookbackWindowSize(defult = 12) -1,EpochLastBlock - BlocksToSkipAtEpochEnd(defult = 2)]`
   - `lookbackWindowSize` A fixed value about lookbackWindow check whether the validator has signed in a fixed
@@ -98,3 +98,4 @@ When a validator is deRegistered, voters can still cancel the votes on the deReg
 
 If voter don't withdraw his vote,voters vote will remain in the voting area,Wait for the validator to register again,
 and these tickets will be returned to the validator again
+
