@@ -38,8 +38,7 @@ If the validator fails to fulfill its responsibilities, it will be punished thro
 
 So per validator will receive the reward:
 
-- `ValidatorReceived` = (`EpochReward` - `CommunityFundReward`)*`Punishment`* (`P` +` mySorce`) / (`N` * `P` + `Sorce1`
-  + `Score2` +...`ScoreN`).
+- `ValidatorReceived` = (`EpochReward` - `CommunityFundReward`)*`Punishment`* (`P` +` mySorce`) / (`N` * `P` + `Sorce1` + `Score2` +...`ScoreN`).
 - `P`  A fixed reward proportion shared by the validator(p>0, p<=1, default value is 1)
 - `N` Number of validator
 - `Punishment`  Punishment mechanism param.
@@ -47,33 +46,29 @@ So per validator will receive the reward:
 The score is calculated by this formula:
 
 - `NewScore` = `UptimeScore`*`AdjustmentSpeed`+`OldScore`*(1 - `AdjustmentSpeed`)
-
 - `UptimeScore` This is score of work done at `TotalMonitoredBlocks`.
-    - The `TotalMonitoredBlocks` are the total number of block on which we monitor uptime for the epoch
-    - `TotalMonitoredBlocks` value range
-      is  `[EpochFirstBlock + lookbackWindowSize(defult = 12) -1,EpochLastBlock - BlocksToSkipAtEpochEnd(defult = 2]`
-    - `lookbackWindowSize` A fixed value about lookbackWindow check whether the validator has signed in a fixed
-      interval.
-    - `BlocksToSkipAtEpochEnd` represents the number of blocks to skip on the monitoring window from the end of the
-      epoch
-        - About currently we skip blocks:
-        - lastBlock => its parentSeal is on firstBlock of next epoch
-        - lastBlock - 1 => parentSeal is on lastBlockOfEpoch, but validatorScore is computed with lastBlockOfEpoch and
-          before updating scores
-        - (lastBlock-1 could be counted, but much harder to implement)
-    - About first block to monitor:
-        - we can't monitor uptime when current lookbackWindow crosses the epoch boundary
-        - thus, first block to monitor is the final block of the lookbackwindow that starts at firstBlockOfEpoch
-    - So `UptimeScore` = `SignedBlocks ` / `TotalMonitoredBlocks`.
-        - `SignedBlocks ` Number of blocks signed by validator,this will be checked every time the block is produced.
-        - First, check whether the current block is in `BlocksToSkipAtEpochEnd`.
-        - Second, check whether the current block review period is signed. If it exists, the signature will be regarded
-          as successful
-        - if First step and Second step is successful `SignedBlocks` will add 1.
 
-- `AdjustmentSpeed`  A adjustment factor.This way will encourage the validator to stabilize.('AdjustmentSpeed' default
-  value is 1).
-
+  - The `TotalMonitoredBlocks` are the total number of block on which we monitor uptime for the epoch
+  - `TotalMonitoredBlocks` value range is  `[EpochFirstBlock + lookbackWindowSize(defult = 12) -1,EpochLastBlock - BlocksToSkipAtEpochEnd(defult = 2)]`
+  - `lookbackWindowSize` A fixed value about lookbackWindow check whether the validator has signed in a fixed
+    interval.
+  - `BlocksToSkipAtEpochEnd` represents the number of blocks to skip on the monitoring window from the end of the
+    epoch
+    - About currently we skip blocks:
+    - lastBlock => its parentSeal is on firstBlock of next epoch
+    - lastBlock - 1 => parentSeal is on lastBlockOfEpoch, but validatorScore is computed with lastBlockOfEpoch and
+      before updating scores
+    - (lastBlock-1 could be counted, but much harder to implement)
+  - About first block to monitor:
+    - we can't monitor uptime when current lookbackWindow crosses the epoch boundary
+    - thus, first block to monitor is the final block of the lookbackwindow that starts at firstBlockOfEpoch
+  - So `UptimeScore` = `SignedBlocks ` / `TotalMonitoredBlocks`.
+    - `SignedBlocks ` Number of blocks signed by validator,this will be checked every time the block is produced.
+    - First, check whether the current block is in `BlocksToSkipAtEpochEnd`.
+    - Second, check whether the current block review period is signed. If it exists, the signature will be regarded
+      as successful
+    - if First step and Second step is successful `SignedBlocks` will add 1.
+- `AdjustmentSpeed`  A adjustment factor.This way will encourage the validator to stabilize.('AdjustmentSpeed' default value is 1).
 - `OldScore`. This is the score of the last epoch of this validator.(In the fist distribute epoch reward OldScore is 0)
 
 ### Step 3
@@ -81,15 +76,13 @@ The score is calculated by this formula:
 In step three, because the validator will distribute the reward to voter, the actual validator will receive the reward:
 
 - `ValidatorActualReceived` =`ValidatorReceived`*`Commission`.
-
 - `Commission` A proportional value drawn by the validator in proportion to the `ValidatorReceived`.
 
 The validator's voters will receive:
 
 -`VotersReward` = `ValidatorReceived` - `ValidatorActualReceived`.
 
-These rewards(`VotersReward`) will be returned to the voting pool. This operation is equivalent to an increase in the
-number of votes per voter. Voters draw their votes from the voting pool and get corresponding rewards.
+These rewards(`VotersReward`) will be returned to the voting pool. This operation is equivalent to an increase in the number of votes per voter. Voters draw their votes from the voting pool and get corresponding rewards.
 
 Per voter's reward will be obtained according to the voting proportion of voter to validator.
 
