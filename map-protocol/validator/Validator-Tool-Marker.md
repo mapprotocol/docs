@@ -13,9 +13,7 @@ go build -o Marker  *.go
 
 | client | commands  | summary                                               |
 | -------- | ----------- | ------------------------------------------------------- |
-| marker | genesis   | create genesis to deloy contracts                     |
-| marker | validator | Validator registration、 lockMap and other operations |
-| marker | voter     | voter vote、 lockMap and other operations             |
+| marker | Flags | Validator registration、 lockMap、voter vote、 lockMap and so on |
 
 ## Flag
 

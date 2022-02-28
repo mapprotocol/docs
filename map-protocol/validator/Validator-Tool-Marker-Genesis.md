@@ -5,6 +5,11 @@
 Its main advantage over previous solutions is that it's able to create a `genesis.json` where all core conctracts are
 already deployed in it.
 
+| client | commands  | summary                                               |
+| -------- | ----------- | ------------------------------------------------------- |
+| marker | genesis   | create genesis to deloy contracts                     |
+
+
 ## Using marker genesis
 
 ### Generating a genesis.json
