@@ -18,7 +18,8 @@
         * [Validator-EpochRewards](map-protocol/validator/Validator-EpochRewards.md)
         * [Validator-LockedMAP](map-protocol/validator/Validator-LockedMAP.md)
         * [Validator-Tool-Marker](map-protocol/validator/Validator-Tool-Marker.md)
-        * [Validator-Tool-Marker-genesis](map-protocol/validator/Validator-Tool-Marker-genesis.md)
+        * [Validator-Tool-Marker-Genesis](map-protocol/validator/Validator-Tool-Marker-Genesis.md)
+        * [Validator-Tool-RPC](map-protocol/validator/Validator-Tool-RPC.md)
 
 * Cross Chain
     * Light Client Data
