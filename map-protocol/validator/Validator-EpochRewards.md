@@ -38,14 +38,14 @@ If the validator fails to fulfill its responsibilities, it will be punished thro
 
 So per validator will receive the reward:
 
-- `ValidatorReceived` = (`EpochReward` - `CommunityFundReward`)*`Punishment`* (`P` +` mySorce`) / (`N` * `P` + `Sorce1` + `Score2` +...`ScoreN`).
+- `ValidatorReceived` = (`EpochReward` - `CommunityFundReward`) * `Punishment` * (`P` +` mySorce`) / (`N` * `P` + `Sorce1` + `Score2` +...`ScoreN`).
 - `P`  A fixed reward proportion shared by the validator(p>0, p<=1, default value is 1)
 - `N` Number of validator
 - `Punishment`  Punishment mechanism param.
 
 The score is calculated by this formula:
 
-- `NewScore` = `UptimeScore`*`AdjustmentSpeed`+`OldScore`*(1 - `AdjustmentSpeed`)
+- `NewScore` = `UptimeScore` * `AdjustmentSpeed`+`OldScore` * (1 - `AdjustmentSpeed`)
 - `UptimeScore` This is score of work done at `TotalMonitoredBlocks`.
 
   - The `TotalMonitoredBlocks` are the total number of block on which we monitor uptime for the epoch
