@@ -27,7 +27,8 @@ The amount of disbursements is determined at the end of every epoch via a three 
 
 In step one，Community Fund will receive a fixed percentage of the reward
 
-- `CommunityFundReward`  =  `CommunityFundMultiplier`*`EpochReward` (`CommunityFundMultiplier` defult value = 0.5).
+- `CommunityFundReward`  =  `CommunityFundMultiplier`*`EpochReward`   
+- `CommunityFundMultiplier` defult value = 0.5.
 
 ### Step 2
 
@@ -38,7 +39,7 @@ If the validator fails to fulfill its responsibilities, it will be punished thro
 
 So per validator will receive the reward:
 
-- `ValidatorReceived` = `(`EpochReward`-`CommunityFundReward`)` \* `Punishment` \* (`P` +` mySorce`) \/ (`N` * `P` + `Sorce1` + `Score2` +...`ScoreN`).
+- `ValidatorReceived` = `(`EpochReward`-`CommunityFundReward`)` \* `Punishment` \* (`P` +` mySorce`) / (`N` * `P` + `Sorce1` + `Score2` +...`ScoreN`).
 - `P`  A fixed reward proportion shared by the validator(p>0, p<=1, default value is 1)
 - `N` Number of validator
 - `Punishment`  Punishment mechanism param.
