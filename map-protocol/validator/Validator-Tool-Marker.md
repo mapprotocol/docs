@@ -17,7 +17,6 @@ go build -o Marker  *.go
 | marker | validator | Validator registration、 lockMap and other operations |
 | marker | voter     | voter vote、 lockMap and other operations             |
 
-
 ## Flag
 
 | Flag          | Usage                                                                                               |
@@ -447,7 +446,7 @@ Withdraws gold that has been unlocked after the unlocking period has passed.
 ```shell
 
 USAGE
-  $ Marker   withdrawMap      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>   --WithdrawIndex <from getPendingWithdrawals>
+  $ Marker   withdrawMap      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>   --withdrawIndex <from getPendingWithdrawals>
   
 Detailed
   //you need to know PendingWithdrawals index first , your can konw it by getPendingWithdrawals commond
@@ -579,7 +578,7 @@ Returns the total amount of locked gold for an account.
 ```shell
 
 USAGE
-  $ Marker   getAccountTotalLockedGold      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <targetAddress>
+  $ Marker   getAccountTotalLockedGold      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <targetAddress that the account you want to query(including yourself)>
 ```
 
 ### GetAccountNonvotingLockedGold
@@ -589,7 +588,7 @@ Returns the total amount of non-voting locked gold for an account.
 ```shell
 
 USAGE
-   $ Marker   getAccountTotalLockedGold      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <targetAddress>
+   $ Marker   getAccountNonvotingLockedGold      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>  --target <targetAddress that the account you want to query(including yourself)>
 ```
 
 #### GetAccountLockedGoldRequirement
@@ -609,7 +608,7 @@ Returns the pending withdrawals from unlocked gold for an account.
 ```shell
 
 USAGE
-  $ Marker   getPendingWithdrawals      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>   --target <targetAddress>
+  $ Marker   getPendingWithdrawals      --password <password> --rpcaddr <rpcaddr>  --rpcport <rpcport> --keystore <keystore path>   --target <targetAddress that the account you want to query(including yourself)>
 
 RETURN
   PendingWithdrawals
