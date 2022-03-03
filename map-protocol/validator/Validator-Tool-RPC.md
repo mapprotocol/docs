@@ -159,7 +159,162 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 }
 ```
 
+## GetValEnodeTable
 
+Retrieve the Validator Enode Table.
 
+### example
 
+```shell
 
+# request:
+curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"istanbul_getValEnodeTable","id":1}' http://192.168.10.201:8545
+# response:
+
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "0x16FdBcAC4D4Cc24DCa47B9b80f58155a551ca2aF": {
+      "publicKey": "0x03e7678fb997c00d5998f79413d73ebde98865cd0d7fa82e2ab6d0920a72204d8c",
+      "enode": "enode://7c5b11c810839a9a68306f701790cdf04bf34cfeead6f02dbc6139290a9175cc2ce535b59d7d1829c7cb3edba395871667f1ba0af0441945e3679be36ff5ff7f@127.0.0.1:31001",
+      "version": 1646035550,
+      "highestKnownVersion": 1646035550,
+      "numQueryAttemptsForHKVersion": 0,
+      "lastQueryTimestamp": "2022-02-28 16:07:35.1808733 +0800 CST"
+    },
+    "0x2dC45799000ab08E60b7441c36fCC74060Ccbe11": {
+      "publicKey": "0x02ec7664543f2dae218176a072ca7bfc16632438793077c06cf05975cc1302ee60",
+      "enode": "enode://181cf6e375f502137074b65e8ba339eb7be85b430777bb267a9db96772dfb8182b684b2e8228464e99c22b31934ddad4b15d6709cfe667d740a0cbe07d3ac482@127.0.0.1:31002",
+      "version": 1646035556,
+      "highestKnownVersion": 1646035556,
+      "numQueryAttemptsForHKVersion": 0,
+      "lastQueryTimestamp": "2022-02-28 16:06:35.1831069 +0800 CST"
+    },
+    "0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5": {
+      "publicKey": "0x02ef2af91ba2fc2b04bc47c7d59d6d07a0dea2a62c5b537d4a83a387bee4424531",
+      "enode": "enode://ec7664543f2dae218176a072ca7bfc16632438793077c06cf05975cc1302ee60c27f29e2cc3b64ffbaa69d2939e937f99a7bf93d7c5fa59bffbcd769e4f234e8@127.0.0.1:31003",
+      "version": 1646035561,
+      "highestKnownVersion": 1646035561,
+      "numQueryAttemptsForHKVersion": 0,
+      "lastQueryTimestamp": "2022-02-28 16:07:35.1808733 +0800 CST"
+    }
+  }
+}
+```
+
+## GetVersionCertificateTableInfo
+
+Retrieve the Validator Signature timestamp.
+
+### example
+
+```shell
+
+# request:
+curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"istanbul_getVersionCertificateTableInfo","id":1}' http://192.168.10.201:8545
+# response:
+
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "0x16FdBcAC4D4Cc24DCa47B9b80f58155a551ca2aF": {
+      "address": "0x16FdBcAC4D4Cc24DCa47B9b80f58155a551ca2aF",
+      "version": 1646035850
+    },
+    "0x1c0eDab88dbb72B119039c4d14b1663525b3aC15": {
+      "address": "0x1c0eDab88dbb72B119039c4d14b1663525b3aC15",
+      "version": 1646035835
+    },
+    "0x2dC45799000ab08E60b7441c36fCC74060Ccbe11": {
+      "address": "0x2dC45799000ab08E60b7441c36fCC74060Ccbe11",
+      "version": 1646035856
+    },
+    "0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5": {
+      "address": "0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5",
+      "version": 1646035861
+    }
+  }
+}
+```
+
+## GetCurrentRoundState
+
+retrieves the current IBFT RoundState
+
+### example
+
+```shell
+
+# request:
+curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"istanbul_getCurrentRoundState","id":1}' http://192.168.10.201:8545
+# response:
+
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "state": "Accept request",
+    "sequence": 382,
+    "round": 0,
+    "desiredRound": 0,
+    "pendingRequestHash": null,
+    "validatorSet": [
+      "0x1c0edab88dbb72b119039c4d14b1663525b3ac15",
+      "0x16fdbcac4d4cc24dca47b9b80f58155a551ca2af",
+      "0x2dc45799000ab08e60b7441c36fcc74060ccbe11",
+      "0x6c5938b49bacde73a8db7c3a7da208846898bff5"
+    ],
+    "proposer": "0x16fdbcac4d4cc24dca47b9b80f58155a551ca2af",
+    "prepares": [],
+    "commits": [],
+    "parentCommits": [
+      "0x2dc45799000ab08e60b7441c36fcc74060ccbe11",
+      "0x16fdbcac4d4cc24dca47b9b80f58155a551ca2af",
+      "0x1c0edab88dbb72b119039c4d14b1663525b3ac15",
+      "0x6c5938b49bacde73a8db7c3a7da208846898bff5"
+    ],
+    "preprepare": null,
+    "preparedCertificate": null
+  }
+}
+
+```
+
+## ForceRoundChange
+
+Force current node timeout
+
+### example
+
+```shell
+
+# request:
+curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"istanbul_forceRoundChange","id":1}' http://192.168.10.201:8545
+# response:
+{"jsonrpc":"2.0","id":1,"result":true}
+```
+
+## GetCurrentReplicaState
+
+retrieves the current replica state
+
+### example
+
+```shell
+
+# request:
+curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"istanbul_getCurrentReplicaState","id":1}' http://192.168.10.201:8545
+# response:
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "state": "Primary",
+    "isPrimary": true,
+    "startValidatingBlock": null,
+    "stopValidatingBlock": null
+  }
+}
+```
