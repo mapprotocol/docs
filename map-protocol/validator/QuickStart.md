@@ -30,7 +30,7 @@ Detailed
 ### Step 2: [lockedMAP](Validator-Tool-Marker.md#LockedMAP)
 
 Locks MAP to be used in validator elections.
-You must lock 10k MAP to become validator.
+You must lock 1000k MAP to become validator.
 
 ```shell
 Detailed
