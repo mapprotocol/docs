@@ -17,7 +17,7 @@ units of MAP as blocks are produced, to create several kinds of incentives.
 
 Each epoch will be rewarded with a fixed reward
 
-- `EpochReward`= 160k(MAP).
+- `EpochReward`= 1,000k(MAP).
 
 ## Reward Disbursement
 
@@ -28,7 +28,7 @@ The amount of disbursements is determined at the end of every epoch via a three 
 In step one，Community Fund will receive a fixed percentage of the reward
 
 - `CommunityFundReward`  =  `CommunityFundMultiplier`*`EpochReward`   
-- `CommunityFundMultiplier` defult value = 0.5.
+- `CommunityFundMultiplier` defult value = 0.1.
 
 ### Step 2
 
