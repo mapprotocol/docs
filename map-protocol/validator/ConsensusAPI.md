@@ -1,6 +1,6 @@
 # Validator-Tool-RPC
 
-Get information on the chain about validators
+Get information on the chain about validators.
 
 ## GetSnapshot
 
@@ -294,7 +294,7 @@ Force current node timeout
 curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"istanbul_forceRoundChange","id":1}' http://192.168.10.201:8545
 # response:
 {"jsonrpc":"2.0","id":1,"result":true}
-```
+```  
 
 ## GetCurrentReplicaState
 
