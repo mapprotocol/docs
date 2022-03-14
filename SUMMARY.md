@@ -13,11 +13,11 @@
         * [Relayer API](map-protocol/relayer/Relayer-API.md)
         * [How To Become Relayer](map-protocol/relayer/QuickStart.md)
     * Vaildator
-         *QuickStart
+         * QuickStart
               * [How To Become A New Validator](map-protocol/validator/QuickStart/HowToBecomeANewValidator.md) 
               * [How To Vote](map-protocol/validator/QuickStart/HowToVote.md)
               * [How To WithdrawMap](map-protocol/validator/QuickStart/HowToWithdrawMap.md)
-         *Marker
+         * Marker
               * [Marker Introduce](map-protocol/validator/Marker/Marker.md)
               * [About Validator](map-protocol/validator/Marker/AboutValidator.md)
               * [About Vote](map-protocol/validator/Marker/AboutVote.md)
