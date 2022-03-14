@@ -9,7 +9,7 @@
     * [Consensus](map-protocol/consensus/Consensue.md)
         * [Proof-of-Stake](map-protocol/consensus/Proof-of-Stake.md)
     * Mainnet
-        * [run-mainnet-full-node.md](map-protocol/mainnet/run-mainnet-full-node.md)
+        * [run-privatenet-full-node](map-protocol/privatenet/run-privatenet-full-node.md)
     * Relayer
         * [Relayer Contract](map-protocol/relayer/Relayer-Contract.md)
         * [Relayer API](map-protocol/relayer/Relayer-API.md)
