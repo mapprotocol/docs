@@ -26,7 +26,7 @@ OPTIONS
                                                               like "validator" or "voter"
                                                               and so on that you want 
 
-EXAMPLES
+EXAMPLES:
 Marker createAccount
 --rpcaddr localhost
 --rpcport 8545
@@ -34,7 +34,7 @@ Marker createAccount
 --password ""
 --namePrefix "validator"
 
-response:
+RESPONSE:
 success
 or
 Failed
@@ -64,7 +64,7 @@ OPTIONS
                                                               
                                                             
 
-EXAMPLES
+EXAMPLES:
 Marker lockedMAP
 --rpcaddr localhost
 --rpcport 8545
@@ -72,7 +72,7 @@ Marker lockedMAP
 --password ""
 --lockedNum 1000000
 
-response:
+RESPONSE:
 success
 or
 Failed
@@ -102,7 +102,7 @@ OPTIONS
                                                               
                                                             
 
-EXAMPLES
+EXAMPLES:
 Marker unlockMap
 --rpcaddr localhost
 --rpcport 8545
@@ -110,7 +110,7 @@ Marker unlockMap
 --password ""
 --mapValue 1000000
 
-response:
+RESPONSE:
 success
 or
 Failed
@@ -140,7 +140,7 @@ OPTIONS
                                                               
   --relockIndex                                                from `getPendingWithdrawals` command                                                     
 
-EXAMPLES
+EXAMPLES:
 Marker relockMAP
 --rpcaddr localhost
 --rpcport 8545
@@ -149,7 +149,7 @@ Marker relockMAP
  --mapValue 100000
 --relockIndex 1
 
-response:
+RESPONSE:
 success
 or
 Failed
@@ -177,7 +177,7 @@ OPTIONS
                                                               
    --withdrawIndex                                             from `getPendingWithdrawals` command                                                     
 
-EXAMPLES
+EXAMPLES:
 Marker withdrawMap
 --rpcaddr localhost
 --rpcport 8545
@@ -185,7 +185,7 @@ Marker withdrawMap
 --password ""
 --relockIndex 1
 
-response:
+RESPONSE:
 success
 or
 Failed
@@ -213,14 +213,14 @@ OPTIONS
                                                                port
                                                                                                                
 
-EXAMPLES
+EXAMPLES:
 Marker getNumRegisteredValidators
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 
-response:
+RESPONSE:
 100
 ```
 
@@ -251,7 +251,7 @@ OPTIONS
                                                                `getNumRegisteredValidators`
                                                                commond                                                                                                      
 
-EXAMPLES
+EXAMPLES:
 Marker GetTopValidators
 --rpcaddr localhost
 --rpcport 8545
@@ -259,7 +259,7 @@ Marker GetTopValidators
 --password ""
 --topNum 6
 
-response:
+RESPONSE:
 INFO [03-14|17:04:48.606] === getTopValidators ===                 admin=0xCe90710A4673b87a6881b0907358119BaF0304a5
 INFO [03-14|17:04:48.636] Validator:                               index=0 addr=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
 INFO [03-14|17:04:48.636] Validator:                               index=1 addr=0x16FdBcAC4D4Cc24DCa47B9b80f58155a551ca2aF
@@ -288,7 +288,7 @@ OPTIONS
   --rpcport                                                    HTTP-RPC server listening 
                                                                port                                                                                                 
 
-EXAMPLES
+EXAMPLES:
 Marker getTotalVotesForEligibleValidators
 --rpcaddr localhost
 --rpcport 8545
@@ -296,7 +296,7 @@ Marker getTotalVotesForEligibleValidators
 --password ""
 
 
-response:
+RESPONSE:
 INFO [03-14|17:06:13.020] === getTotalVotesForEligibleValidators === admin=0x81f02Fd21657DF80783755874a92c996749777Bf
 INFO [03-14|17:06:13.049] Validator:                               addr=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15 vote amount=70,350,500,000,000,000,000,000,000
 INFO [03-14|17:06:13.049] Validator:                               addr=0x16FdBcAC4D4Cc24DCa47B9b80f58155a551ca2aF vote amount=70,322,500,000,000,000,000,000,000
@@ -327,7 +327,7 @@ OPTIONS
   --rpcport                                                    HTTP-RPC server listening 
                                                                port                                                                                                 
 
-EXAMPLES
+EXAMPLES:
 Marker getTotalVotes
 --rpcaddr localhost
 --rpcport 8545
@@ -335,7 +335,7 @@ Marker getTotalVotes
 --password ""
 
 
-response:
+RESPONSE:
 INFO [03-14|17:07:24.458] === getAccountLockedGoldRequirement ===  admin=0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5
 INFO [03-14|17:07:24.487] result                                   getTotalVotes=315,096,000,000,000,000,000,000,000
 ```
@@ -362,7 +362,7 @@ OPTIONS
                                                                                                                                                               
   --validator                                                  validatorAddress
   
-EXAMPLES
+EXAMPLES:
 Marker getValidatorEligibility
 --rpcaddr localhost
 --rpcport 8545
@@ -370,7 +370,7 @@ Marker getValidatorEligibility
 --password ""
 --validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
-response:
+RESPONSE:
 INFO [03-14|17:10:27.990] === getValidatorEligibility ===          admin=0xCe90710A4673b87a6881b0907358119BaF0304a5
 INFO [03-14|17:10:28.018] === result ===                           bool=true
 ```
@@ -399,7 +399,7 @@ OPTIONS
                                                                                                                                                               
   --validator                                                  validatorAddress
   
-EXAMPLES
+EXAMPLES:
 Marker getValidator
 --rpcaddr localhost
 --rpcport 8545
@@ -407,7 +407,7 @@ Marker getValidator
 --password ""
 --validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
-response:
+RESPONSE:
 INFO [03-14|17:12:22.303] === getValidator ===                     admin=0x81f02Fd21657DF80783755874a92c996749777Bf
 INFO [03-14|17:12:22.332]                                          ecdsaPublicKey=0x2b5e2a3beacf839d1ec74fd00f4388d4b813eac26b26ab4859003473b286650a
 INFO [03-14|17:12:22.332]                                          BlsPublicKey=0x1fd39f1fbcad8e3188442ea31dee662389599751f8e73b99215cefc2e0003f81
@@ -442,14 +442,14 @@ OPTIONS
   --rpcport                                                    HTTP-RPC server listening 
                                                                port  
   
-EXAMPLES
+EXAMPLES:
 Marker getRewardInfo
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 
-response:
+RESPONSE:
 INFO [03-14|17:13:42.872] === getReward ===                        cur_epoch=389 epochSize=20 queryBlockNumber=7760 validatorContractAddress=0x000000000000000000000000000000000000D012 admin=0x81f02Fd21657DF80783755874a92c996749777Bf
 INFO [03-14|17:13:42.874]                                          validator=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15 reward=19,999,999,999,999,999,999,999
 INFO [03-14|17:13:42.874]                                          validator=0x16FdBcAC4D4Cc24DCa47B9b80f58155a551ca2aF reward=19,999,999,999,999,999,999,999
@@ -483,7 +483,7 @@ OPTIONS
                                                                                                                                                               
   --validator                                                  validatorAddress
   
-EXAMPLES
+EXAMPLES:
 Marker getPendingVotesForValidatorByAccount
 --rpcaddr localhost
 --rpcport 8545
@@ -491,7 +491,7 @@ Marker getPendingVotesForValidatorByAccount
 --password ""
 --validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
-response:
+RESPONSE:
 INFO [03-14|17:16:39.474] === getPendingVotesForValidatorByAccount === admin=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
 INFO [03-14|17:16:39.501] PendingVotes                             balance=0
 ```
@@ -519,7 +519,7 @@ OPTIONS
                                                                                                                                                               
   --validator                                                  validatorAddress
   
-EXAMPLES
+EXAMPLES:
 Marker GetPendingInfoForValidator
 --rpcaddr localhost
 --rpcport 8545
@@ -527,7 +527,7 @@ Marker GetPendingInfoForValidator
 --password ""
 --validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
-response:
+RESPONSE:
 INFO [03-14|17:20:49.046] === getPendingInfoForValidator ===       admin=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
 INFO [03-14|17:20:49.074] getPendingInfoForValidator               Value=0 Epoch=0
 ```
@@ -555,7 +555,7 @@ OPTIONS
                                                                                                                                                               
   --validator                                                  validatorAddress
   
-EXAMPLES
+EXAMPLES:
 Marker getActiveVotesForValidatorByAccount
 --rpcaddr localhost
 --rpcport 8545
@@ -563,7 +563,7 @@ Marker getActiveVotesForValidatorByAccount
 --password ""
 --validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
-response:
+RESPONSE:
 INFO [03-14|17:24:41.690] === getActiveVotesForValidatorByAccount === admin=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
 INFO [03-14|17:24:41.717] ActiveVotes                              balance=71,502,344,612,553,670,006,133,714
 ```
@@ -591,7 +591,7 @@ OPTIONS
                                                                                                                                                               
   --validator                                                  validatorAddress
   
-EXAMPLES
+EXAMPLES:
 Marker getValidatorsVotedForByAccount
 --rpcaddr localhost
 --rpcport 8545
@@ -599,7 +599,7 @@ Marker getValidatorsVotedForByAccount
 --password ""
 --validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
-response:
+RESPONSE:
 INFO [03-14|17:26:57.697] === getValidatorsVotedForByAccount ===   admin=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
 INFO [03-14|17:26:57.726] validator                                Address=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
 ```
@@ -627,7 +627,7 @@ OPTIONS
                                                                                                                                                               
   --target                                                 that the account you want to query(including yourself)
   
-EXAMPLES
+EXAMPLES:
 Marker getAccountTotalLockedGold
 --rpcaddr localhost
 --rpcport 8545
@@ -635,7 +635,7 @@ Marker getAccountTotalLockedGold
 --password ""
 --target 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
-response:
+RESPONSE:
 INFO [03-14|17:28:53.815] === getAccountTotalLockedGold ===        admin=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15 target=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
 INFO [03-14|17:28:53.844] result                                   lockedGold=72,036,161,827,847,066,039,664,690
 ```
@@ -663,7 +663,7 @@ OPTIONS
                                                                                                                                                               
   --target                                                     targetAddress that the account you want to query(including yourself)
   
-EXAMPLES
+EXAMPLES:
 Marker getAccountNonvotingLockedGold
 --rpcaddr localhost
 --rpcport 8545
@@ -671,7 +671,7 @@ Marker getAccountNonvotingLockedGold
 --password ""
 --target 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
-response:
+RESPONSE:
 INFO [03-14|17:30:55.164] === getAccountNonvotingLockedGold ===    admin=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15 target=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
 INFO [03-14|17:30:55.192] result                                   lockedGold=0
 ```
@@ -700,14 +700,14 @@ OPTIONS
                                                                                                                                                               
  
   
-EXAMPLES
+EXAMPLES:
 Marker getAccountLockedGoldRequirement
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 
-response:
+RESPONSE:
 INFO [03-14|17:32:15.948] === getAccountLockedGoldRequirement ===  admin=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15 target=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
 INFO [03-14|17:32:15.976] result                                   GoldRequirement=1,000,000,000,000,000,000,000,000
 ```
@@ -738,7 +738,7 @@ OPTIONS
                                                                                                                                                               
   --target                                                     targetAddress that the account you want to query(including yourself)
   
-EXAMPLES
+EXAMPLES:
 Marker getPendingWithdrawals
 --rpcaddr localhost
 --rpcport 8545
@@ -746,7 +746,7 @@ Marker getPendingWithdrawals
 --password ""
 --target 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
-response:
+RESPONSE:
 INFO [03-14|17:33:18.696] === getPendingWithdrawals ===            admin=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15 target=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
 INFO [03-14|17:33:18.724] nil 
 ```

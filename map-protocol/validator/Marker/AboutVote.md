@@ -177,7 +177,7 @@ OPTIONS
 
 
                                                                                                             
-EXAMPLES:
+EXAMPLES::
 Marker revokePending
 --rpcaddr localhost
 --rpcport 8545
@@ -223,9 +223,7 @@ OPTIONS
                                                                command
                                                                
   --mapValue                                                   The `MAP` that you want to revoke from your active votes for validator
-  
-
-                                                                                                           
+                                                                                                             
 EXAMPLES:
 Marker revokeActive
 --rpcaddr localhost

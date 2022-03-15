@@ -31,7 +31,7 @@ OPTIONS
                                                                required to be a validator,
                                                                so you will not be able to
                                                                deregister during this period.
-EXAMPLES
+EXAMPLES:
 Marker setValidatorLockedGoldRequirements
 --rpcaddr localhost
 --rpcport 8545
@@ -40,7 +40,7 @@ Marker setValidatorLockedGoldRequirements
 --value 0
 --duration 0
 
-response:
+RESPONSE:
 success
 or
 Failed
