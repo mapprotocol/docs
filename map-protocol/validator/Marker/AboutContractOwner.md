@@ -10,7 +10,7 @@ Updates the Locked Gold requirements for Validators.
 
 ```shell
 USAGE
-  $ Marker setValidatorLockedGoldRequirements
+  $ ./Marker setValidatorLockedGoldRequirements
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -32,7 +32,7 @@ OPTIONS
                                                                so you will not be able to
                                                                deregister during this period.
 EXAMPLES:
-Marker setValidatorLockedGoldRequirements
+./Marker setValidatorLockedGoldRequirements
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15

@@ -8,7 +8,7 @@ create a account
 
 ```shell
 USAGE
-  $ Marker createAccount
+  $ ./Marker createAccount
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -27,7 +27,7 @@ OPTIONS
                                                               and so on that you want 
 
 EXAMPLES:
-Marker createAccount
+./Marker createAccount
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -46,7 +46,7 @@ Locks map to be used for voting or register validator
 
 ```shell
 USAGE
-  $ Marker lockedMAP
+  $ ./Marker lockedMAP
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -65,7 +65,7 @@ OPTIONS
                                                             
 
 EXAMPLES:
-Marker lockedMAP
+./Marker lockedMAP
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -84,7 +84,7 @@ Unlocks gold that becomes withdrawable after the unlocking period.
 
 ```shell
 USAGE
-  $ Marker unlockMap
+  $ ./Marker unlockMap
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -103,7 +103,7 @@ OPTIONS
                                                             
 
 EXAMPLES:
-Marker unlockMap
+./Marker unlockMap
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -122,7 +122,7 @@ Relocks map that has been unlocked but not withdrawn.
 
 ```shell
 USAGE
-  $ Marker relockMAP
+  $ ./Marker relockMAP
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -141,7 +141,7 @@ OPTIONS
   --relockIndex                                                from `getPendingWithdrawals` command                                                     
 
 EXAMPLES:
-Marker relockMAP
+./Marker relockMAP
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -161,7 +161,7 @@ Withdraws gold that has been unlocked after the unlocking period has passed.
 
 ```shell
 USAGE
-  $ Marker withdrawMap
+  $ ./Marker withdrawMap
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -178,7 +178,7 @@ OPTIONS
    --withdrawIndex                                             from `getPendingWithdrawals` command                                                     
 
 EXAMPLES:
-Marker withdrawMap
+./Marker withdrawMap
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -198,7 +198,7 @@ Returns the number of registered validators
 
 ```shell
 USAGE
-  $ Marker getNumRegisteredValidators
+  $ ./Marker getNumRegisteredValidators
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -214,7 +214,7 @@ OPTIONS
                                                                                                                
 
 EXAMPLES:
-Marker getNumRegisteredValidators
+./Marker getNumRegisteredValidators
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -231,7 +231,7 @@ Returns the top n validator members for a particular validator.
 
 ```shell
 USAGE
-  $ Marker GetTopValidators
+  $ ./Marker GetTopValidators
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -252,7 +252,7 @@ OPTIONS
                                                                commond                                                                                                      
 
 EXAMPLES:
-Marker GetTopValidators
+./Marker GetTopValidators
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -274,7 +274,7 @@ Returns lists of all validator validators and the number of votes they've receiv
 
 ```shell
 USAGE
-  $ Marker getTotalVotesForEligibleValidators
+  $ ./Marker getTotalVotesForEligibleValidators
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -289,7 +289,7 @@ OPTIONS
                                                                port                                                                                                 
 
 EXAMPLES:
-Marker getTotalVotesForEligibleValidators
+./Marker getTotalVotesForEligibleValidators
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -313,7 +313,7 @@ Returns the total votes received across all validators.
 ```shell
 
 USAGE
-  $ Marker getTotalVotes
+  $ ./Marker getTotalVotes
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -328,7 +328,7 @@ OPTIONS
                                                                port                                                                                                 
 
 EXAMPLES:
-Marker getTotalVotes
+./Marker getTotalVotes
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -346,7 +346,7 @@ Returns whether or not a validator is eligible to receive votes.
 
 ```shell
 USAGE
-  $ Marker getValidatorEligibility
+  $ ./Marker getValidatorEligibility
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -363,7 +363,7 @@ OPTIONS
   --validator                                                  validatorAddress
   
 EXAMPLES:
-Marker getValidatorEligibility
+./Marker getValidatorEligibility
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -383,7 +383,7 @@ Returns the validator`s information.
 ```shell
 
 USAGE
-  $ Marker getValidator
+  $ ./Marker getValidator
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -400,7 +400,7 @@ OPTIONS
   --validator                                                  validatorAddress
   
 EXAMPLES:
-Marker getValidator
+./Marker getValidator
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -428,7 +428,7 @@ Returns the awards of the last epoch
 ```shell
 
 USAGE
-  $ Marker getRewardInfo
+  $ ./Marker getRewardInfo
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -443,7 +443,7 @@ OPTIONS
                                                                port  
   
 EXAMPLES:
-Marker getRewardInfo
+./Marker getRewardInfo
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -467,7 +467,7 @@ Returns the pending votes for `validator` made by `account`.
 ```shell
 
 USAGE
-  $ Marker getPendingVotesForValidatorByAccount
+  $ ./Marker getPendingVotesForValidatorByAccount
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -484,7 +484,7 @@ OPTIONS
   --validator                                                  validatorAddress
   
 EXAMPLES:
-Marker getPendingVotesForValidatorByAccount
+./Marker getPendingVotesForValidatorByAccount
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -503,7 +503,7 @@ Returns the pending votes for `validator` made by `account` And the pending Epoc
 
 ```shell
 USAGE
-  $ Marker GetPendingInfoForValidator
+  $ ./Marker GetPendingInfoForValidator
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -520,7 +520,7 @@ OPTIONS
   --validator                                                  validatorAddress
   
 EXAMPLES:
-Marker GetPendingInfoForValidator
+./Marker GetPendingInfoForValidator
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -539,7 +539,7 @@ Returns the active votes for `validator` made by `account`.
 
 ```shell
 USAGE
-  $ Marker getActiveVotesForValidatorByAccount
+  $ ./Marker getActiveVotesForValidatorByAccount
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -556,7 +556,7 @@ OPTIONS
   --validator                                                  validatorAddress
   
 EXAMPLES:
-Marker getActiveVotesForValidatorByAccount
+./Marker getActiveVotesForValidatorByAccount
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -575,7 +575,7 @@ Returns the validators that `account` has voted for.
 
 ```shell
 USAGE
-  $ Marker getValidatorsVotedForByAccount
+  $ ./Marker getValidatorsVotedForByAccount
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -592,7 +592,7 @@ OPTIONS
   --validator                                                  validatorAddress
   
 EXAMPLES:
-Marker getValidatorsVotedForByAccount
+./Marker getValidatorsVotedForByAccount
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -611,7 +611,7 @@ Returns the total amount of locked gold for an account.
 
 ```shell
 USAGE
-  $ Marker getAccountTotalLockedGold
+  $ ./Marker getAccountTotalLockedGold
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -628,7 +628,7 @@ OPTIONS
   --target                                                 that the account you want to query(including yourself)
   
 EXAMPLES:
-Marker getAccountTotalLockedGold
+./Marker getAccountTotalLockedGold
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -647,7 +647,7 @@ Returns the total amount of non-voting locked gold for an account.
 ```shell
 
 USAGE
-  $ Marker getAccountNonvotingLockedGold
+  $ ./Marker getAccountNonvotingLockedGold
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -664,7 +664,7 @@ OPTIONS
   --target                                                     targetAddress that the account you want to query(including yourself)
   
 EXAMPLES:
-Marker getAccountNonvotingLockedGold
+./Marker getAccountNonvotingLockedGold
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -684,7 +684,7 @@ Returns the current locked gold balance requirement for the supplied account.
 ```shell
 
 USAGE
-  $ Marker getAccountLockedGoldRequirement
+  $ ./Marker getAccountLockedGoldRequirement
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -701,7 +701,7 @@ OPTIONS
  
   
 EXAMPLES:
-Marker getAccountLockedGoldRequirement
+./Marker getAccountLockedGoldRequirement
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -720,9 +720,7 @@ Returns the pending withdrawals from unlocked gold for an account.
 ```shell
 
 USAGE
-   --target <>
-USAGE
-  $ Marker getPendingWithdrawals
+  $ ./Marker getPendingWithdrawals
 
 OPTIONS
   --keystore                                                   Keystore file path
@@ -739,7 +737,7 @@ OPTIONS
   --target                                                     targetAddress that the account you want to query(including yourself)
   
 EXAMPLES:
-Marker getPendingWithdrawals
+./Marker getPendingWithdrawals
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15

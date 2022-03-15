@@ -13,7 +13,7 @@ account address. 129 bytes.
 
 ```shell
 USAGE
-  $ Marker register
+  $ ./Marker register
 
 OPTIONS
   --keystore                                                   your keystore file path
@@ -38,7 +38,7 @@ OPTIONS
 
   
 EXAMPLES:
-Marker register
+./Marker register
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -61,7 +61,7 @@ Please note that you can only use this command once. No matter whether the comma
 
 ```shell
 USAGE
-  $ Marker quicklyRegister
+  $ ./Marker quicklyRegister
 
 OPTIONS
   --keystore                                                   your keystore file path
@@ -89,7 +89,7 @@ OPTIONS
                                                                `MAP`. 
                                                                                                             
 EXAMPLES:
-Marker quicklyRegister
+./Marker quicklyRegister
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -113,7 +113,7 @@ The `Validators` contract sets the minimum time to become a validator. You must 
 
 ```shell
 USAGE
-  $ Marker deregister
+  $ ./Marker deregister
 
 OPTIONS
   --keystore                                                   your keystore file path
@@ -129,7 +129,7 @@ OPTIONS
 
                                                                                                             
 EXAMPLES:
-Marker deregister
+./Marker deregister
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
