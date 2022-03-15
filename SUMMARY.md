@@ -5,15 +5,17 @@
 * [Getting Started]()
     * [FAQ](getting-started/faq.md)
 
-* [MAP Protocol](map-protocol/setValidator.md)
+* [MAP Protocol](map-protocol/SetValidator.md)
     * [Consensus](map-protocol/consensus/Consensue.md)
         * [Proof-of-Stake](map-protocol/consensus/Proof-of-Stake.md)
-    * Mainnet
-        * [run-privatenet-full-node](map-protocol/privatenet/run-privatenet-full-node.md)
+    * FullNode
+        * [PrivateNet](map-protocol/privatenet/PrivateNet.md)
     * Relayer
+        * [Compass](map-protocol/relayer/Compass.md)
+        * [How To Become Relayer](map-protocol/relayer/QuickStart.md)
+        * [Set Default Relayer](map-protocol/SetRelayer.md)
         * [Relayer Contract](map-protocol/relayer/Relayer-Contract.md)
         * [Relayer API](map-protocol/relayer/Relayer-API.md)
-        * [How To Become Relayer](map-protocol/relayer/QuickStart.md)
     * Vaildator
          * QuickStart
               * [How To Become A New Validator](map-protocol/validator/QuickStart/HowToBecomeANewValidator.md) 
