@@ -20,7 +20,7 @@
               * [How To Become A New Validator](map-protocol/validator/QuickStart/HowToBecomeANewValidator.md) 
               * [How To Vote](map-protocol/validator/QuickStart/HowToVote.md)
               * [How To Withdraw](map-protocol/validator/QuickStart/HowToWithdraw.md)
-         * [LockedMAPAndVoting](map-protocol/validator/VoterLockedMAPAndVoting.md)
+         * [VoterOrValidatorLockedMAPAndVoting](map-protocol/validator/VoterOrValidatorLockedMAPAndVoting.md)
          * [Election](map-protocol/validator/Election.md)
          * [Rewards](map-protocol/validator/Rewards.md)
          * [ConsensusAPI](map-protocol/validator/ConsensusAPI.md)

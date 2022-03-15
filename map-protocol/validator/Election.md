@@ -16,10 +16,7 @@ There is a minimum target(1) and a maximum cap(100) on the number of active vali
 
 EXAMPLES:
 Now there are four validators on the chain,they are:
-=== validator1 === 0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
-=== validator2 === 0x16FdBcAC4D4Cc24DCa47B9b80f58155a551ca2aF
-=== validator3 === 0x2dC45799000ab08E60b7441c36fCC74060Ccbe11
-=== validator4 === 0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5
+[0x1c0eDab88dbb72B119039c4d14b1663525b3aC15, 0x16FdBcAC4D4Cc24DCa47B9b80f58155a551ca2aF, 0x2dC45799000ab08E60b7441c36fCC74060Ccbe11, 0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5]
 If we do not select validators for some reasons (equivalent validators number to less than 1), we will continue to use the above validators.
 If we select the latest set of validators (which means that the number of new validators is greater than 1 and less than 100), we will replace the above validators with new validators.
 
