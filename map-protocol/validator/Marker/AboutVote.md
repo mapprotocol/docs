@@ -4,7 +4,7 @@ Introduction about vote commands.
 
 ### Vote
 
-You must lock enough `MAP` into the locked gold contract in advance and register your information into the contract.
+You must lock enough `MAP` into the `lockedGold` contract in advance and register your information into the contract.
 
 Decrements the number of total and  the number of nonvoting  corresponding to your previously registered account in the `LockedGold` contract.
 
