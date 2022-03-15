@@ -15,11 +15,15 @@
         * [How To Become Relayer](map-protocol/relayer/QuickStart.md)
         * [Relayer Contract](map-protocol/relayer/Relayer-Contract.md)
         * [Relayer API](map-protocol/relayer/Relayer-API.md)
-    * Vaildator
+    * Validator
          * QuickStart
               * [How To Become A New Validator](map-protocol/validator/QuickStart/HowToBecomeANewValidator.md) 
               * [How To Vote](map-protocol/validator/QuickStart/HowToVote.md)
               * [How To Withdraw](map-protocol/validator/QuickStart/HowToWithdraw.md)
+         * [ValidatorOrVoterLockedMAPAndVoting](map-protocol/validator/ValidatorOrVoterLockedMAPAndVoting.md)
+         * [Election](map-protocol/validator/Election.md)
+         * [Rewards](map-protocol/validator/Rewards.md)
+         * [ConsensusAPI](map-protocol/validator/ConsensusAPI.md)
          * Marker
               * [Marker Introduce](map-protocol/validator/Marker/Marker.md)
               * [About Validator](map-protocol/validator/Marker/AboutValidator.md)
@@ -27,10 +31,7 @@
               * [About ContractOwner](map-protocol/validator/Marker/AboutContractOwner.md)
               * [About Common](map-protocol/validator/Marker/AboutCommon.md)
               * [About Make Genesis](map-protocol/validator/Marker/AboutMakeGenesis.md)
-         * [Election](map-protocol/validator/Election.md)
-         * [EpochRewards](map-protocol/validator/EpochRewards.md)
-         * [LockedMAPAndVoting](map-protocol/validator/LockedMAPAndVoting.md)
-         * [ConsensusAPI](map-protocol/validator/ConsensusAPI.md)
+
 
 * Cross Chain
     * Light Client Data

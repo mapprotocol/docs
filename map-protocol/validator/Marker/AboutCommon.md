@@ -80,7 +80,7 @@ Failed
 
 ### UnlockMAP
 
-Unlocks gold that becomes withdrawable after the unlocking period.
+Unlocks `MAP` that becomes withdrawable after the unlocking period.
 
 ```shell
 USAGE
@@ -157,7 +157,7 @@ Failed
 
 ### WithdrawMap
 
-Withdraws gold that has been unlocked after the unlocking period has passed.
+Withdraws `MAP` that has been unlocked after the unlocking period has passed.
 
 ```shell
 USAGE
@@ -607,7 +607,7 @@ INFO [03-14|17:26:57.726] validator                                Address=0x1c0
 
 ### GetAccountTotalLockedGold
 
-Returns the total amount of locked gold for an account.
+Returns the total amount of locked `MAP` for an account.
 
 ```shell
 USAGE
@@ -642,7 +642,7 @@ INFO [03-14|17:28:53.844] result                                   lockedGold=72
 
 ### GetAccountNonvotingLockedGold
 
-Returns the total amount of non-voting locked gold for an account.
+Returns the total amount of non-voting locked `MAP` for an account.
 
 ```shell
 
@@ -679,7 +679,7 @@ INFO [03-14|17:30:55.192] result                                   lockedGold=0
 
 #### GetAccountLockedGoldRequirement
 
-Returns the current locked gold balance requirement for the supplied account.
+Returns the current locked `MAP` balance requirement for the supplied account.
 
 ```shell
 
@@ -715,7 +715,7 @@ INFO [03-14|17:32:15.976] result                                   GoldRequireme
 
 ### GetPendingWithdrawals
 
-Returns the pending withdrawals from unlocked gold for an account.
+Returns the pending withdrawals from unlocked `MAP` for an account.
 
 ```shell
 

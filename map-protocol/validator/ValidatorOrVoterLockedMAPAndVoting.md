@@ -1,10 +1,14 @@
-# Locked `MAP` And Voting
+# Voter Or Validator Locked MAP And Voting
+
+If you create Account and locked `MAP` enough, you can vote as a voter.
+
+If your account has become a validator, you can also use this account as a voter to vote.
 
 Introduction to locked `MAP` and how to  participate in voting.
 
 ## Validator Election Participation
 
-To participate in validator elections, users must first make a transfer of `MAP` to the LockedGold smart contract.
+To participate in validator elections, users must first make a transfer of `MAP` to the `LockedGold` smart contract.
 
 ## Concurrent Use of Locked MAP
 
