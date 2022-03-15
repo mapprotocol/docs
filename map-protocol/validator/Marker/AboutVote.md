@@ -12,7 +12,7 @@ Increments the number of total and pending votes for validator in the `Election`
 
 ```shell
 USAGE
-  $ Marker vote
+  $ ./Marker vote
 
 OPTIONS
   --keystore                                                   your keystore file path
@@ -32,7 +32,7 @@ OPTIONS
 
                                                                                                             
 EXAMPLES:
-Marker vote
+./Marker vote
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -57,7 +57,7 @@ Please note that you can only use this command once. No matter whether the comma
 
 ```shell
 USAGE
-$ Marker  quicklyVote   
+$ ./Marker  quicklyVote   
 
 OPTIONS
   --keystore                                                   your keystore file path
@@ -80,7 +80,7 @@ OPTIONS
 
                                                                                                             
 EXAMPLES:
-Marker vote
+./Marker vote
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -104,7 +104,7 @@ That means converts `account`'s pending votes for `validator` to active votes.
 
 ```shell
 USAGE
-$ Marker  activate   
+$ ./Marker  activate   
 
 OPTIONS
   --keystore                                                   your keystore file path
@@ -127,7 +127,7 @@ OPTIONS
 
                                                                                                             
 EXAMPLES:
-Marker vote
+./Marker vote
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -153,7 +153,7 @@ Decrements the number of total and pending votes for validator in the `Election`
 
 ```shell
 USAGE
-$ Marker  revokePending   
+$ ./Marker  revokePending   
 
 OPTIONS
   --keystore                                                   your keystore file path
@@ -178,7 +178,7 @@ OPTIONS
 
                                                                                                             
 EXAMPLES::
-Marker revokePending
+./Marker revokePending
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -203,7 +203,7 @@ Decrements the number of total and active votes for validator in the `Election` 
 
 ```shell
 USAGE
-$ Marker  revokeActive
+$ ./Marker  revokeActive
 
 OPTIONS
   --keystore                                                   your keystore file path
@@ -225,7 +225,7 @@ OPTIONS
   --mapValue                                                   The `MAP` that you want to revoke from your active votes for validator
                                                                                                              
 EXAMPLES:
-Marker revokeActive
+./Marker revokeActive
 --rpcaddr localhost
 --rpcport 8545
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15

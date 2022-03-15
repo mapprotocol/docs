@@ -43,7 +43,7 @@ then to do so run:
 
 ```shell
 USAGE
-  $ Marker genesis
+  $ ./Marker genesis
 
 OPTIONS
   --buildpath                                                  buildpath is the path to 

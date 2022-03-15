@@ -18,7 +18,7 @@ governance, voting for validators, or helping users interact with multi-sig cont
 Building `Marker` requires both a Go (version 1.14 or later) and a C compiler.You can install them using your favourite package manager.
 git clone https://github.com/mapprotocol/atlas.git
 cd github.com/mapprotocol/atlas/cmd/marker
-go build -o Marker  *.go
+go build -o ./Marker  *.go
 ```
 
 ### Commands
@@ -26,7 +26,7 @@ go build -o Marker  *.go
 The tool is broken down into modules and commands with the following pattern:
 
 ```shell
-Marker　<command> <...args> 
+./Marker　<command> <...args> 
 ```
 
 The Marker tool assumes that users are running a node which they have access to signing transactions on.
