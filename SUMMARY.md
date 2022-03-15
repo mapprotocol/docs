@@ -16,7 +16,7 @@
          * QuickStart
               * [How To Become A New Validator](map-protocol/validator/QuickStart/HowToBecomeANewValidator.md) 
               * [How To Vote](map-protocol/validator/QuickStart/HowToVote.md)
-              * [How To WithdrawMap](map-protocol/validator/QuickStart/HowToWithdraw.md)
+              * [How To Withdraw](map-protocol/validator/QuickStart/HowToWithdraw.md)
          * Marker
               * [Marker Introduce](map-protocol/validator/Marker/Marker.md)
               * [About Validator](map-protocol/validator/Marker/AboutValidator.md)
