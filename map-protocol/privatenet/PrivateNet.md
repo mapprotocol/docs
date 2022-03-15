@@ -13,16 +13,32 @@ git clone https://github.com/mapprotocol/atlas.git
 cd atlas
 ```
 
+## Create four validator accounts 
+
+- private key and address
+
+  Atlas allows developers use the ethereum's account on atlas blockchain. If no account, it's helpful to use the command.
+```shell
+$ ./atlas --datadir ./data account new
+```
+
+- genesis bls public key.
+ 
+  Refer to `TestMakeKeyFromJson` function from https://github.com/mapprotocol/atlas/blob/main/tools/makeValidator_test.go
+
+
 ## set genesis block at every node
-**Note that there are differences between versions, which the POC version needn't set validator.**
+**Note that there are differences between versions, which the POC version needn't set validator.
+Only Suitable for the POS version. The validator must be set, because only them are allowed to mine.**
 
-Only Suitable for the POS version. The validator must be set, because only them are allowed to mine.
+Get validator configuration json and replace parameter `mainnetAllocJSON`  in `atlas/core/chain/genesis_alloc.go`
+- [get configuration validator json](../validator/Marker/AboutMakeGenesis.md)
+
 How to set validator,see:
-- [set validator on contract](../validator/Marker/AboutMakeGenesis.md)
-- [set validator on genesis block](../relayer/QuickStart.md)
+- [set validator on genesis block](../SetValidator.md)
 
 
-## Build four node 
+## Build four nodes 
 
 - build atlas of POC version:
 ```
@@ -34,19 +50,6 @@ make atlas
 ```
 make atlas
 ```
-
-## Create four accounts
-
-- private key and address
-
-  Atlas allows developers use the ethereum's account on atlas blockchain. If no account, it's helpful to use the command.
-```shell
-$ ./atlas account new
-```
-
-- genesis bls public key. 
-  
-  Refer to `TestMakeKey` function from https://github.com/mapprotocol/atlas/blob/main/tools/makeValidator_test.go
 
 ## start four nodes
 
