@@ -17,19 +17,27 @@
         * [Relayer Contract](map-protocol/relayer/Relayer-Contract.md)
         * [Relayer API](map-protocol/relayer/Relayer-API.md)
     * Vaildator
-        * [QuickStart](map-protocol/validator/QuickStart.md)
-        * [Validator-Election](map-protocol/validator/Validator-Election.md)
-        * [Validator-EpochRewards](map-protocol/validator/Validator-EpochRewards.md)
-        * [Validator-LockedMAP](map-protocol/validator/Validator-LockedMAP.md)
-        * [Validator-Tool-Marker](map-protocol/validator/Validator-Tool-Marker.md)
-        * [Validator-Tool-Marker-Genesis](map-protocol/validator/Validator-Tool-Marker-Genesis.md)
-        * [Validator-Tool-RPC](map-protocol/validator/Validator-Tool-RPC.md)
+         * QuickStart
+              * [How To Become A New Validator](map-protocol/validator/QuickStart/HowToBecomeANewValidator.md) 
+              * [How To Vote](map-protocol/validator/QuickStart/HowToVote.md)
+              * [How To Withdraw](map-protocol/validator/QuickStart/HowToWithdraw.md)
+         * Marker
+              * [Marker Introduce](map-protocol/validator/Marker/Marker.md)
+              * [About Validator](map-protocol/validator/Marker/AboutValidator.md)
+              * [About Vote](map-protocol/validator/Marker/AboutVote.md)
+              * [About ContractOwner](map-protocol/validator/Marker/AboutContractOwner.md)
+              * [About Common](map-protocol/validator/Marker/AboutCommon.md)
+              * [About Make Genesis](map-protocol/validator/Marker/AboutMakeGenesis.md)
+         * [Election](map-protocol/validator/Election.md)
+         * [EpochRewards](map-protocol/validator/EpochRewards.md)
+         * [LockedMAPAndVoting](map-protocol/validator/LockedMAPAndVoting.md)
+         * [ConsensusAPI](map-protocol/validator/ConsensusAPI.md)
 
 * Cross Chain
     * Light Client Data
         * [Header Store Contract](cross-chain/light-client-data/Header-Store-Contract.md)
         * [Header Store API](cross-chain/light-client-data/Header-Store-API.md)
-        * [Cross Chain Tx Verify](cross-chain/tx-verify/Tx-Verify.md))
+        * [Cross Chain Tx Verify](cross-chain/tx-verify/Tx-Verify.md)
         * [Cross Chain Tx Verify Contract](cross-chain/tx-verify/Tx-Verify-Contract.md)
 
 * Makalu PoC

@@ -1,6 +1,6 @@
 # Validator-Tool-RPC
 
-Get information on the chain about validators
+Get information on the chain about validators.
 
 ## GetSnapshot
 
@@ -13,7 +13,7 @@ retrieves the state snapshot at a given block.
 # request:
 
 curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"istanbul_getSnapshot","params":["0x1"],"id":1}' http://192.168.10.201:8545 
-# response:
+# RESPONSE:
 
 {
   "jsonrpc": "2.0",
@@ -60,7 +60,7 @@ retrieves the list validators that must sign a given block.
 # request:
 
 curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"istanbul_getValidators","params":["0x1"],"id":1}' http://192.168.10.201:8545 
-# response:
+# RESPONSE:
 
 {
   "jsonrpc": "2.0",
@@ -86,7 +86,7 @@ retrieves the list of validators BLS public keys that must sign a given block.
 # request:
 
 curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"istanbul_getValidatorsBLSPublicKeys","params":["0x1"],"id":1}' http://192.168.10.201:8545 
-# response:
+# RESPONSE:
 
 {
   "jsonrpc": "2.0",
@@ -111,7 +111,7 @@ retrieves the list of validators BLS public keys that must sign a given block.
 
 # request:
 curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"istanbul_getProposer","params":["0x21",0],"id":1}' http://192.168.10.201:8545
-# response:
+# RESPONSE:
 
 {
   "jsonrpc": "2.0",
@@ -131,7 +131,7 @@ returns true if this node is participating in the consensus protocol.
 
 # request:
 curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"istanbul_isValidating","id":1}' http://192.168.10.201:8545
-# response:
+# RESPONSE:
 
 {
   "jsonrpc": "2.0",
@@ -150,7 +150,7 @@ returns true if this node is participating in the consensus protocol.
 
 # request:
 curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"istanbul_getLookbackWindow","params":["0x1"],"id":1}' http://192.168.10.201:8545
-# response:
+# RESPONSE:
 
 {
   "jsonrpc": "2.0",
@@ -169,7 +169,7 @@ Retrieve the Validator Enode Table.
 
 # request:
 curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"istanbul_getValEnodeTable","id":1}' http://192.168.10.201:8545
-# response:
+# RESPONSE:
 
 {
   "jsonrpc": "2.0",
@@ -213,7 +213,7 @@ Retrieve the Validator Signature timestamp.
 
 # request:
 curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"istanbul_getVersionCertificateTableInfo","id":1}' http://192.168.10.201:8545
-# response:
+# RESPONSE:
 
 {
   "jsonrpc": "2.0",
@@ -249,7 +249,7 @@ retrieves the current IBFT RoundState
 
 # request:
 curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"istanbul_getCurrentRoundState","id":1}' http://192.168.10.201:8545
-# response:
+# RESPONSE:
 
 {
   "jsonrpc": "2.0",
@@ -292,9 +292,9 @@ Force current node timeout
 
 # request:
 curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"istanbul_forceRoundChange","id":1}' http://192.168.10.201:8545
-# response:
+# RESPONSE:
 {"jsonrpc":"2.0","id":1,"result":true}
-```
+```  
 
 ## GetCurrentReplicaState
 
@@ -306,7 +306,7 @@ retrieves the current replica state
 
 # request:
 curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"istanbul_getCurrentReplicaState","id":1}' http://192.168.10.201:8545
-# response:
+# RESPONSE:
 {
   "jsonrpc": "2.0",
   "id": 1,

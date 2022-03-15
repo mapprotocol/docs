@@ -1,6 +1,6 @@
 # Epoch Reward
 
-Introduction to Atlas epoch rewards and the target reward release schedule.
+Introduction to Makalu chain epoch rewards and the target reward release schedule.
 
 ## What are Epoch Rewards?
 
@@ -98,5 +98,5 @@ In this case,we won't consider him when awarded,the rest validators will share h
 When a validator is deRegistered, voters can still cancel the votes on the deRegistered validator as they wish.
 
 If voter don't withdraw his vote,voters vote will remain in the voting area,Wait for the validator to register again,
-and these tickets will be returned to the validator again
+and these tickets will be returned to the validator again.
 

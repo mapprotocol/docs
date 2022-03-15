@@ -1,6 +1,6 @@
-# Validator Elections
+# Elections
 
-Introduction to Atlas validator elections and management of validator and votes throughout the process.
+Introduction to Makalu chain validator elections and management of validator and votes throughout the process.
 
 ## Updating the Active Validator Set
 
