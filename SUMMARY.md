@@ -15,12 +15,12 @@
         * [How To Become Relayer](map-protocol/relayer/QuickStart.md)
         * [Relayer Contract](map-protocol/relayer/Relayer-Contract.md)
         * [Relayer API](map-protocol/relayer/Relayer-API.md)
-    * Vaildator
+    * Validator
          * QuickStart
               * [How To Become A New Validator](map-protocol/validator/QuickStart/HowToBecomeANewValidator.md) 
               * [How To Vote](map-protocol/validator/QuickStart/HowToVote.md)
               * [How To Withdraw](map-protocol/validator/QuickStart/HowToWithdraw.md)
-         * [VoterOrValidatorLockedMAPAndVoting](map-protocol/validator/VoterOrValidatorLockedMAPAndVoting.md)
+         * [ValidatorOrVoterLockedMAPAndVoting](map-protocol/validator/ValidatorOrVoterLockedMAPAndVoting.md)
          * [Election](map-protocol/validator/Election.md)
          * [Rewards](map-protocol/validator/Rewards.md)
          * [ConsensusAPI](map-protocol/validator/ConsensusAPI.md)
