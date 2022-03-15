@@ -24,7 +24,7 @@ make atlas
 make atlas
 ```
 
-## Create an account and get its address
+## Create an account
 
 atlas allows developers use the ethereum's account on atlas blockchain. If no account, it's helpful to use the command.
 ```shell
@@ -59,6 +59,19 @@ $ ./atlas --datadir ./node --ipcpath ./node --verbosity 0 --port 20201 --cache.p
 
 - tip: The command line above includes the parameter `--http.addr 0.0.0.0` which makes the Map Blockchain software listen for incoming RPC requests on all network adaptors.
 
+In a private network setting, however a single CPU miner instance is more than enough for
+practical purposes as it can produce a stable stream of blocks at the correct intervals
+without needing heavy resources (consider running on a single thread, no need for multiple
+ones either). To start a `atlas` instance for mining, run it with all your usual flags, extended
+by:
+
+```shell
+$ atlas <usual-flags> --miner.etherbase=<validator-address>
+```
+
+Which will start mining blocks and transactions on a single CPU thread, crediting all
+proceedings to the account specified by `--miner.etherbase`. You can further tune the mining by changing the default gas price transactions converge to (`--miner.gasprice`).
+
 
 ## Connect the node
 
@@ -74,7 +87,7 @@ do also specify a custom `--datadir` flag.
 $ atlas --datadir=path/to/custom/data/folder --bootnodes=<bootnode-url>
 ```
 
-- Suitable for the Operation on a console.
+- the Operation on a console.
 
 Query Own node-url: 
 ```
@@ -91,23 +104,11 @@ admin.addPeer("enode://88c2fdd0189a33e3b8ee02a04a767c4792140c00c08de5d368b9aac57
 admin.addPeer("enode://88c2fdd0189a33e3b8ee02a04a767c4792140c00c08de5d368b9aac578a0a36b5518aee5fcb695cd93c348237901a5c532f561170adc00903001e40ca3eff041@168.63.248.220:21221")
 ```
 
-#### Running a validator node
-
-First, it needs to a validator account.
-
-Mining on the public Atlas network is a complex task as it's only feasible using GPUs,
-requiring an OpenCL or CUDA enabled `ethminer` instance. For information on such a setup, please consult the EtherMining subreddit and the ethminer repository.
-
-In a private network setting, however a single CPU miner instance is more than enough for
-practical purposes as it can produce a stable stream of blocks at the correct intervals
-without needing heavy resources (consider running on a single thread, no need for multiple
-ones either). To start a `atlas` instance for mining, run it with all your usual flags, extended
-by:
-
-```shell
-$ atlas <usual-flags> --miner.etherbase=<validator-address>
+You'll start seeing some output. After a few minutes, you should see lines that look like this. This means your node has connected other nodes and started produce blocks.
+```text
+INFO [03-15|13:39:27.683] Looking for peers                        peercount=2 tried=5 static=4
+INFO [03-15|13:39:37.582] Reset timer to resend RoundChange msg    address=0x2dC45799000ab08E60b7441c36fCC74060Ccbe11 func=resetResendRoundChangeTi
+mer cur_seq=23 cur_epoch=1 cur_round=0 des_round=5 state="Waiting for new round" address=0x2dC45799000ab08E60b7441c36fCC74060Ccbe11 timeout=17.5s
+INFO [03-15|13:39:39.311] Looking for peers                        peercount=3 tried=0 static=4
 ```
-
-Which will start mining blocks and transactions on a single CPU thread, crediting all
-proceedings to the account specified by `--miner.etherbase`. You can further tune the mining by changing the default gas price transactions converge to (`--miner.gasprice`).
 
