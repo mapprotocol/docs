@@ -13,7 +13,6 @@
     * Relayer
         * [Compass](map-protocol/relayer/Compass.md)
         * [How To Become Relayer](map-protocol/relayer/QuickStart.md)
-        * [Set Default Relayer](map-protocol/SetRelayer.md)
         * [Relayer Contract](map-protocol/relayer/Relayer-Contract.md)
         * [Relayer API](map-protocol/relayer/Relayer-API.md)
     * Vaildator
