@@ -1,17 +1,28 @@
 #  Operating a private network
-Until now, atlas has both POC and POS version. Next, the following is a description of how to build private-net On two different version.
+Until now, atlas has both POC and POS version. Next, the following is a description of how to build private-net with four nodes On two different version. 
 
 ## Prerequisites
 
-Building atlas requires git, Go (version 1.14 or later) and a C compiler. You can install them using your favourite package manager.
+- Private key and address
+  
+  Building atlas requires git, Go (version 1.14 or later) and a C compiler. You can install them using your favourite package manager.
 
-## Build node 
-
-- clone repositories,
+- Clone repositories
 ```
 git clone https://github.com/mapprotocol/atlas.git
 cd atlas
 ```
+
+## set genesis block at every node
+**Note that there are differences between versions, which the POC version needn't set validator.**
+
+Only Suitable for the POS version. The validator must be set, because only them are allowed to mine.
+How to set validator,see:
+- [set validator on contract](../validator/Marker/AboutMakeGenesis.md)
+- [set validator on genesis block](../relayer/QuickStart.md)
+
+
+## Build four node 
 
 - build atlas of POC version:
 ```
@@ -24,32 +35,20 @@ make atlas
 make atlas
 ```
 
-## Create an account
+## Create four accounts
 
-atlas allows developers use the ethereum's account on atlas blockchain. If no account, it's helpful to use the command.
+- private key and address
+
+  Atlas allows developers use the ethereum's account on atlas blockchain. If no account, it's helpful to use the command.
 ```shell
 $ ./atlas account new
 ```
 
 - genesis bls public key. 
   
-Refer to `TestMakeKey` function from https://github.com/mapprotocol/atlas/blob/main/tools/makeValidator_test.go
+  Refer to `TestMakeKey` function from https://github.com/mapprotocol/atlas/blob/main/tools/makeValidator_test.go
 
-
-## Set Validator and Relayer
-**Note that there are differences between versions, which the POC version needn't set validator.**
-
-Only Suitable for the POS version. The validator must be set, because only them are allowed to mine. 
-How to set validator,see: 
-- [set validator on contract](../validator/Validator-Tool-Marker-Genesis.md)
-- [set validator on genesis block](../relayer/QuickStart.md)
-
-
-If it needs to cross-chain, just set relayer. In the first epoch,the relayer address is as same as validator.
-How to set relayer,see:
-- [set relayer on genesis block](../relayer/QuickStart.md)
-
-## start the node
+## start four nodes
 
 This command specifies the settings needed to run the node, and gets it started.
 
@@ -57,7 +56,7 @@ This command specifies the settings needed to run the node, and gets it started.
 $ ./atlas --datadir ./node --ipcpath ./node --verbosity 0 --port 20201 --cache.preimages --http --http.port 7888 console
 ```
 
-- tip: The command line above includes the parameter `--http.addr 0.0.0.0` which makes the Map Blockchain software listen for incoming RPC requests on all network adaptors.
+*tip: The command line above includes the parameter `--http.addr 0.0.0.0` which makes the Map Blockchain software listen for incoming RPC requests on all network adaptors.*
 
 In a private network setting, however a single CPU miner instance is more than enough for
 practical purposes as it can produce a stable stream of blocks at the correct intervals
@@ -73,7 +72,7 @@ Which will start mining blocks and transactions on a single CPU thread, creditin
 proceedings to the account specified by `--miner.etherbase`. You can further tune the mining by changing the default gas price transactions converge to (`--miner.gasprice`).
 
 
-## Connect the node
+## Connect four nodes
 
 -  the Operation of flag. 
 
@@ -103,6 +102,8 @@ admin.addPeer("enode://a4642d6eb2f1c69ee861f4146636df028a7eb328e233f620cc6838db4
 admin.addPeer("enode://88c2fdd0189a33e3b8ee02a04a767c4792140c00c08de5d368b9aac578a0a36b5518aee5fcb695cd93c348237901a5c532f561170adc00903001e40ca3eff041@13.76.138.119:21221")
 admin.addPeer("enode://88c2fdd0189a33e3b8ee02a04a767c4792140c00c08de5d368b9aac578a0a36b5518aee5fcb695cd93c348237901a5c532f561170adc00903001e40ca3eff041@168.63.248.220:21221")
 ```
+
+## Check node status
 
 You'll start seeing some output. After a few minutes, you should see lines that look like this. This means your node has connected other nodes and started produce blocks.
 ```text
