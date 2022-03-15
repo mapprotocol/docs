@@ -52,13 +52,13 @@ OPTIONS
   --newenv                                                     the genesis.json will be 
                                                                generated under this folder 
 
-  --rpcaddr                                                    this your markerConfig.json 
+  --markerCfg                                                  this your markerConfig.json 
                                                                path default to github.com/
                                                                mapprotocol/atlas/marker/config/
                                                                markerConfig.json
                                                              
   
-EXAMPLES
+EXAMPLES:
 
 marker genesis --buildpath path/to/protocol/build --newenv ./root/atlasEnv --markerCfg "./root/atlas/marker/config/markerConfig.json"
 

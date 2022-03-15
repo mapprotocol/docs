@@ -16,7 +16,7 @@
          * QuickStart
               * [How To Become A New Validator](map-protocol/validator/QuickStart/HowToBecomeANewValidator.md) 
               * [How To Vote](map-protocol/validator/QuickStart/HowToVote.md)
-              * [How To WithdrawMap](map-protocol/validator/QuickStart/HowToWithdrawMap.md)
+              * [How To WithdrawMap](map-protocol/validator/QuickStart/HowToWithdraw.md)
          * Marker
               * [Marker Introduce](map-protocol/validator/Marker/Marker.md)
               * [About Validator](map-protocol/validator/Marker/AboutValidator.md)
@@ -33,7 +33,7 @@
     * Light Client Data
         * [Header Store Contract](cross-chain/light-client-data/Header-Store-Contract.md)
         * [Header Store API](cross-chain/light-client-data/Header-Store-API.md)
-        * [Cross Chain Tx Verify](cross-chain/tx-verify/Tx-Verify.md))
+        * [Cross Chain Tx Verify](cross-chain/tx-verify/Tx-Verify.md)
         * [Cross Chain Tx Verify Contract](cross-chain/tx-verify/Tx-Verify-Contract.md)
 
 * [Makalu PoC-1](Makalu-PoC-1/README.md)

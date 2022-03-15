@@ -37,7 +37,7 @@ OPTIONS
                                                                when voting                                                                                                                            
 
   
-EXAMPLES
+EXAMPLES:
 Marker register
 --rpcaddr localhost
 --rpcport 8545
@@ -88,7 +88,7 @@ OPTIONS
                                                                validator,you will lock the 
                                                                `MAP`. 
                                                                                                             
-EXAMPLES
+EXAMPLES:
 Marker quicklyRegister
 --rpcaddr localhost
 --rpcport 8545
@@ -128,7 +128,7 @@ OPTIONS
                                                                port
 
                                                                                                             
-EXAMPLES
+EXAMPLES:
 Marker deregister
 --rpcaddr localhost
 --rpcport 8545
