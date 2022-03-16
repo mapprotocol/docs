@@ -4,12 +4,10 @@ Introduction register deregister and so on about validator.
 
 ### Register
 
-Register a new Validator. Through this command, we will transfer your Commission、your ecdsaPublicKey、your
-blsPublicKey、your BLSProof into the management contract. To manage and secure your assets. your ecdsaPublicKey、your
-blsPublicKey、your BLSProof we'll get them through your keystore. The ECDSA public key that the validator is using for
-consensus, should match the validator signer. 64 bytes. The BLS public key that the validator is using for consensus,
-should pass proof of possession. 33 bytes. The BLS public key proof-of-possession, which consists of a signature on the
-account address. 129 bytes.
+Register a new Validator. Through this command, we will transfer your Commission、your ecdsaPublicKey、your blsPublicKey、your BLSProof into the management contract. To manage and secure your assets. your ecdsaPublicKey、your blsPublicKey、your BLSProof we'll get them through your keystore. 
+The ECDSA public key that the validator is using for consensus, should match the validator signer. 64 bytes. 
+The BLS public key that the validator is using for consensus, should pass proof of possession. 33 bytes. 
+The BLS public key proof-of-possession, which consists of a signature on the account address. 129 bytes.
 
 ```shell
 USAGE

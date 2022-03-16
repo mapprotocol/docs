@@ -8,9 +8,7 @@ Marker contains tools to make genesis.json and some client commands to better li
 
 The Command Line Interface allows users to interact with the Makalu Protocol smart contracts.
 
-It allows you to interact with the Makalu Protocol and smart contracts using command-line tools rather than writing go
-Script. Some common features you may want to consider are helping users participate in elections or in on-chain
-governance, voting for validators, or helping users interact with multi-sig contracts.
+It allows you to interact with the Makalu Protocol and smart contracts using command-line tools rather than writing go Script. Some common features you may want to consider are helping users participate in elections or in on-chain governance, voting for validators, or helping users interact with multi-sig contracts.
 
 ### Building Marker
 
