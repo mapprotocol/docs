@@ -1,4 +1,4 @@
-# Voter Or Validator Locked MAP And Voting
+# Validator And Voter Locked MAP And Voting
 
 If you create Account and locked `MAP` enough, you can vote as a voter.
 
