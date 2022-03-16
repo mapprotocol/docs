@@ -13,32 +13,7 @@ git clone https://github.com/mapprotocol/atlas.git
 cd atlas
 ```
 
-## Create four validator accounts 
-
-- private key and address
-
-  Atlas allows developers use the ethereum's account on atlas blockchain. If no account, it's helpful to use the command.
-```shell
-$ ./atlas --datadir ./data account new
-```
-
-- genesis bls public key.
- 
-  Refer to `TestMakeKeyFromJson` function from https://github.com/mapprotocol/atlas/blob/main/tools/makeValidator_test.go
-
-
-## set genesis block at every node
-**Note that there are differences between versions, which the POC version needn't set validator.
-Only Suitable for the POS version. The validator must be set, because only them are allowed to mine.**
-
-Get validator configuration json and replace parameter `mainnetAllocJSON`  in `atlas/core/chain/genesis_alloc.go`
-- [get configuration validator json](../validator/Marker/AboutMakeGenesis.md)
-
-How to set validator,see:
-- [set validator on genesis block](../SetValidator.md)
-
-
-## Build four nodes 
+## Build four nodes
 
 - build atlas of POC version:
 ```
@@ -51,7 +26,64 @@ make atlas
 make atlas
 ```
 
-## start four nodes
+## Create four validator accounts 
+
+- private key and address
+
+  Atlas allows developers use the ethereum's account on atlas blockchain. If no account, it's helpful to use the command.
+```shell
+$ ./atlas --datadir ./data account new
+
+# Output
+INFO [03-16|14:12:42.713] Maximum peer count                       ETH=50 LES=0 total=50
+Your new account is locked with a password. Please give a password. Do not forget this password.
+Password: 
+Repeat password: 
+
+Your new key was generated
+
+Public address of the key:   0x535f9A9d4C598289a892Cc5921E91862E740c72e
+Path of the secret key file: data/keystore/UTC--2022-03-16T06-13-28.057575000Z--535f9a9d4c598289a892cc5921e91862e740c72e
+
+- You can share your public address with anyone. Others need it to interact with you.
+- You must NEVER share the secret key with anyone! The key controls access to your funds!
+- You must BACKUP your key file! Without the key, it's impossible to access account funds!
+- You must REMEMBER your password! Without the password, it's impossible to decrypt the key!
+
+```
+
+- genesis bls public key.
+ 
+  Refer to `TestMakeKeyFromJson` function from https://github.com/mapprotocol/atlas/blob/main/tools/makeValidator_test.go
+
+
+## Generating a genesis.json 
+**Note that there are differences between versions, which the POC version needn't set validator.
+Only Suitable for the POS version. The validator must be set, because only them are allowed to mine.**
+
+Get validator configuration json and generating a genesis.json
+- [generating a genesis.json ](../validator/Marker/AboutMakeGenesis.md#generating-a-genesis.json)
+
+## Initialize node
+Initialize the node with the genesis file generated in the previous step
+
+```shell
+./atlas --datadir ./node init ./genesis.json
+
+# Output
+INFO [03-16|15:14:56.031] Maximum peer count                       ETH=50 LES=0 total=50
+INFO [03-16|15:14:56.038] Set global gas cap                       cap=50,000,000
+INFO [03-16|15:14:56.038] Allocated cache and file handles         database=/Users/t/data/atlas-1/atlas/chaindata cache=16.00MiB handles=16
+INFO [03-16|15:14:56.133] Writing custom genesis block 
+INFO [03-16|15:14:56.141] Persisted trie from memory database      nodes=276 size=31.68KiB time="921.915µs" gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=-984.00B
+INFO [03-16|15:14:56.142] Successfully wrote genesis state         database=chaindata                             hash=e359b1..ad2642
+INFO [03-16|15:14:56.142] Allocated cache and file handles         database=/Users/t/data/atlas-1/atlas/lightchaindata cache=16.00MiB handles=16
+INFO [03-16|15:14:56.223] Writing custom genesis block 
+INFO [03-16|15:14:56.226] Persisted trie from memory database      nodes=276 size=31.68KiB time="587.341µs" gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=-984.00B
+INFO [03-16|15:14:56.227] Successfully wrote genesis state         database=lightchaindata                        hash=e359b1..ad2642
+```
+
+## Start four nodes
 
 This command specifies the settings needed to run the node, and gets it started.
 
@@ -68,11 +100,11 @@ ones either). To start a `atlas` instance for mining, run it with all your usual
 by:
 
 ```shell
-$ atlas <usual-flags> --miner.etherbase=<validator-address>
+$ atlas <usual-flags> --miner.validator=<validator-address>
 ```
 
 Which will start mining blocks and transactions on a single CPU thread, crediting all
-proceedings to the account specified by `--miner.etherbase`. You can further tune the mining by changing the default gas price transactions converge to (`--miner.gasprice`).
+proceedings to the account specified by `--miner.validator`. You can further tune the mining by changing the default gas price transactions converge to (`--miner.gasprice`).
 
 
 ## Connect four nodes
