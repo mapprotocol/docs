@@ -10,13 +10,13 @@ You can only unlock your nonvoting `MAP`,if you want to cancel your voting `MAP`
 
 If you are a validator you will not be able to unlock 1000,000 `MAP` that necessary pledge as validator.
 
-You need `unlock` command to perform unlock operations,more detail about `unlock` command please to see [this](../Marker/AboutCommon.md#UnlockMAP) .
+You need `unlock` command to perform unlock operations,more detail about `unlock` command please to see [this](../../marker/AboutCommon.md#UnlockMAP) .
 
 ### Step 2:withdraw
 
 Withdraws `MAP` that has been unlocked after the unlocking period has passed. this step equivalent to withdrawing the money you locked in the smart contract to your account address.
 
-You need `withdraw` command to perform withdraw operations,more detail about `withdraw` command please to see [this](../Marker/AboutCommon.md#WithdrawMap) .
+You need `withdraw` command to perform withdraw operations,more detail about `withdraw` command please to see [this](../../marker/AboutCommon.md#WithdrawMap) .
 
 At this step, the `MAP` you locked has been transferred to your account address. You can inquire by yourself.
 
@@ -38,7 +38,7 @@ If your voting `MAP` is active, you can use 'revokeActive' command to withdraw y
 
 Both of `revokePending` and `revokeActive` command will put the voting `MAP` turn into nonvoting `MAP` 
 
-Here are the details of these two commands please click [revokePending](../Marker/AboutVote.md#RevokePending) or [revokeActive](../Marker/AboutVote.md#RevokeActive) to see.
+Here are the details of these two commands please click [revokePending](../../marker/AboutVote.md#RevokePending) or [revokeActive](../../marker/AboutVote.md#RevokeActive) to see.
 
 ### Step 2:
 

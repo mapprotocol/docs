@@ -5,6 +5,8 @@
 Its main advantage over previous solutions is that it's able to create a `genesis.json` where all core conctracts are
 already deployed in it.
 
+We need to use the marker tool. For information on how to use the marker tool, please refer to [Marker](../../marker/Marker.md)
+
 ### Generating a genesis.json
 
 Suppose "github.com/mapprotocol/atlas" is your project path.
@@ -61,7 +63,7 @@ OPTIONS
                                                                path default to github.com/
                                                                mapprotocol/atlas/marker/config/
                                                                markerConfig.json
-                                                       
+                                                     
   
 EXAMPLES:
 

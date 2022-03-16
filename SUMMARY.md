@@ -8,6 +8,7 @@
 * [MAP Protocol](map-protocol/SetValidator.md)
     * [Consensus](map-protocol/consensus/Consensue.md)
         * [Proof-of-Stake](map-protocol/consensus/Proof-of-Stake.md)
+        * [ConsensusAPI](map-protocol/consensus/ConsensusAPI.md)
     * FullNode
         * [PrivateNet](map-protocol/privatenet/PrivateNet.md)
     * Relayer
@@ -16,21 +17,21 @@
         * [Relayer Contract](map-protocol/relayer/Relayer-Contract.md)
         * [Relayer API](map-protocol/relayer/Relayer-API.md)
     * Validator
-         * QuickStart
-              * [How To Become A New Validator](map-protocol/validator/QuickStart/HowToBecomeANewValidator.md) 
-              * [How To Vote](map-protocol/validator/QuickStart/HowToVote.md)
-              * [How To Withdraw](map-protocol/validator/QuickStart/HowToWithdraw.md)
-         * [Validator And Voter Locked MAP And Voting](map-protocol/validator/ValidatorAndVoterLockedMAPAndVoting.md)
+         * Overview
+              * [How To Make Genesis](map-protocol/validator/Overview/HowToMakeGenesis.md)
+              * [How To Become A New Validator](map-protocol/validator/Overview/HowToBecomeANewValidator.md) 
+              * [How To Vote](map-protocol/validator/Overview/HowToVote.md)
+              * [How To Withdraw](map-protocol/validator/Overview/HowToWithdraw.md)
+         * [Validator](map-protocol/validator/Validator.md)
+         * [Locked MAP](map-protocol/validator/LockedMAP.md)
          * [Election](map-protocol/validator/Election.md)
          * [Rewards](map-protocol/validator/Rewards.md)
-         * [ConsensusAPI](map-protocol/validator/ConsensusAPI.md)
-         * Marker
-              * [Marker Introduce](map-protocol/validator/Marker/Marker.md)
-              * [About Validator](map-protocol/validator/Marker/AboutValidator.md)
-              * [About Vote](map-protocol/validator/Marker/AboutVote.md)
-              * [About ContractOwner](map-protocol/validator/Marker/AboutContractOwner.md)
-              * [About Common](map-protocol/validator/Marker/AboutCommon.md)
-              * [About Make Genesis](map-protocol/validator/Marker/AboutMakeGenesis.md)
+    * Marker
+         * [Marker Introduce](map-protocol/marker/Marker.md)
+         * [About Validator](map-protocol/marker/AboutValidator.md)
+         * [About Vote](map-protocol/marker/AboutVote.md)
+         * [About ContractOwner](map-protocol/marker/AboutContractOwner.md)
+         * [About Common](map-protocol/marker/AboutCommon.md)
 
 
 * Cross Chain
