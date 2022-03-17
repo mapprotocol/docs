@@ -10,12 +10,12 @@ while greatly increasing transaction processing speed.
 Makalu PoC-2 will continue to support light client verification to verify on-chain transactions on the peer chain, 
 compatible with and support EIP-1559, and PoC2 will continue to update multiple versions in a small version iteration.
 
-### 1. Running atlas
+### Running atlas
 
 See [Become Validator](../map-protocol/setValidator.md)
 
 
-### 2. Atlas address
+### Atlas address
 
 | network  | address | chainid | networkid |
 | -------- | ------  | ------ | ------ |
