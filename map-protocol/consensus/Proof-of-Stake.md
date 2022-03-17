@@ -9,8 +9,8 @@ Validators gather transactions received from other nodes and execute any associa
 
 ## Staking Requirements
 
-Atlas uses a proof-of-stake consensus mechanism, which requires Validators to have locked MAP to participate in block production. 
-The current requirement is `1000,000` MAP to register a Validator.
+Atlas uses a proof-of-stake consensus mechanism, which requires Validators to have locked `MAP` to participate in block production. 
+The current requirement is `1000,000` `MAP` to register a Validator.
 
 ## About election
 
@@ -23,11 +23,11 @@ If the minimum target is not reached, the election aborts and no change is made 
 
 ## Validator number and Reward
 
-The participators make these decisions by locking MAP and voting for Validator.
+The participators make these decisions by locking `MAP` and voting for Validator.
 Validator elections are held `every epoch` (approximately once per day).
 The protocol elects a maximum of `100` Validators. At each epoch, every elected Validator must be re-elected to continue.
 Validators are selected in proportion to votes received for each Validator.
 
-If you hold MAP, or are a beneficiary of a Release`MAP` contract that allows voting, you can vote for validator. A single account can split their Locked`MAP` balance to have outstanding votes between `3 validator` and `10 validator`.
-MAP that you lock and use to vote for a  validator receives epoch rewards every epoch (approximately every day) once the community passes a governance proposal enabling rewards.
+If you hold `MAP`, or are a beneficiary of a Release`MAP` contract that allows voting, you can vote for validator. A single account can split their Locked`MAP` balance to have outstanding votes between `3 validator` and `10 validator`.
+`MAP` that you lock and use to vote for a  validator receives epoch rewards every epoch (approximately every day) once the community passes a governance proposal enabling rewards.
 
