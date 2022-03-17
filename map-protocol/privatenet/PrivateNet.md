@@ -48,12 +48,11 @@ Repeat password:
 
 Your new key was generated
 
-Public address of the key:   0xEBF60197DFe819D82E3998788A51e05D4372b806
-PublicKeyHex:   0x043d2ca09d918dec666aac71f645be06906dc21b77a1104c8333b2191c47b50e9aaf7824fcb23838d5e280283765332523daf0c9406c451e39b71da79643fb3d09
-BLS Public address of the key:   0x6d289f65b7bb56b1c66cd932ea167acf3778cb3372557000d698b8fa24b6009400
-BLSProofOfPossession:   0x018eac2f79de074cfdf60bb6e253b17b5703b1d760d880d5dd0dca20149cd6771b7c76f1347e693a8101a92187ae97f0f53081e6f1ab5840a5a825667053b104eb57f397c20e4f69df02a78e28dda293823ddbd92f528aabe618cddf06e41170325b4d66971a10b50feca6b9942c23391d74f544e7dd9a6a62435fc5658eb5a36a
-Path of the secret key file: node-1/keystore/UTC--2022-03-16T06-13-28.057575000Z--535f9a9d4c598289a892cc5921e91862e740c72e
-
+Public address of the key:   0xF930B74D2b1b703B879ab54E225ECc18Ab28e61C
+BLS Public address of the key:   0x28a23c223e4f46e2967a4332dc28bf883f58d8dd141cd006ba2c6e8c8fb14c1f00
+BLSProofOfPossession:   0x0139b981ed2621470e10d1e3f41812663ca61cfa0c3e8e1aca84d0f4f64e80bc5c6745844f218ca9e68363dce54bc21cbf772d2409246b9d9886f324d76c7605777c92333e490607f8732ed8bcdf135fd4bb3ea5e770cf3abffe38fa84edf78188339b159392aca1d6af621e67fb741eaefd51e1d31c7a0aefb690c23f075c3bb9
+PublicKeyHex:   0x04cb33a2402dc01be2470222e30ffcb236fcf1926837358a5fd7bf2b9704115ca3857d9e41009301cf6e021fa2700eca8393c84e9a9cdf4178b0c9fbc9cdce1ccc
+Path of the secret key file: node-1/keystore/UTC--2022-03-17T09-35-15.650368000Z--f930b74d2b1b703b879ab54e225ecc18ab28e61c
 
 - You can share your public address with anyone. Others need it to interact with you.
 - You must NEVER share the secret key with anyone! The key controls access to your funds!
@@ -78,31 +77,31 @@ Just like the following:
 
 ```json
 {
-  "AdminAddress": "0x1c0edab88dbb72b119039c4d14b1663525b3ac15",
+  "AdminAddress": "0xF930B74D2b1b703B879ab54E225ECc18Ab28e61C",
   "Validators": [
     {
-      "Address": "0x1c0eDab88dbb72B119039c4d14b1663525b3aC15",
-      "PublicKeyHex": "0x0491c373a1504d67e0c6c98276fc6043544fd09a623473b6936a107943baf666612b5e2a3beacf839d1ec74fd00f4388d4b813eac26b26ab4859003473b286650a",
-      "BLSPubKey": "0x82b9df317d21429c6f0b74c96c21a610483be1d234c2815c50be454a689c35ae01",
-      "BLSProofOfPossession": "0x01549fe9a666f283bfc9f7217675ea86a7db91dfce7745aaef0a8850f993cf7bb1036b8740d7646ef9fb33f4f7b12183ee74b4ea7d0f51fb8b99ddb27b4bf414a81eaaaa551df6920c7d41179adfbf33e4e17cc33f874849d6a7493f0f4e1d86c3590ef385d8b5455edde052d363207b654402cff0113aa2ae1f3c0d293e4e68ad"
+      "Address": "0xF930B74D2b1b703B879ab54E225ECc18Ab28e61C",
+      "PublicKeyHex": "0x04cb33a2402dc01be2470222e30ffcb236fcf1926837358a5fd7bf2b9704115ca3857d9e41009301cf6e021fa2700eca8393c84e9a9cdf4178b0c9fbc9cdce1ccc",
+      "BLSPubKey": "0x28a23c223e4f46e2967a4332dc28bf883f58d8dd141cd006ba2c6e8c8fb14c1f00",
+      "BLSProofOfPossession": "0x0139b981ed2621470e10d1e3f41812663ca61cfa0c3e8e1aca84d0f4f64e80bc5c6745844f218ca9e68363dce54bc21cbf772d2409246b9d9886f324d76c7605777c92333e490607f8732ed8bcdf135fd4bb3ea5e770cf3abffe38fa84edf78188339b159392aca1d6af621e67fb741eaefd51e1d31c7a0aefb690c23f075c3bb9"
     },
     {
-      "Address": "0x16FdBcAC4D4Cc24DCa47B9b80f58155a551ca2aF",
-      "PublicKeyHex": "0x04e7678fb997c00d5998f79413d73ebde98865cd0d7fa82e2ab6d0920a72204d8c49c14f873ec9ee0e0b38651001acc9a4c1a0a63de6c6589b896f21f6a6bb6837",
-      "BLSPubKey": "0x32071fff6599fcdefb78d8048abf7d32165e4dad0a00d7667ba4e1933a6f1bff00",
-      "BLSProofOfPossession": "0x012adc9e784bbb9088d48860ca8f47583952ffc08b51f0101a79d02958fe297f6d2fed91b96dd527f8160d78c1465b3a78209043d556da9b66c445bdc58568395879d016852d708c6e645cbdbb0876aa4baff5ce3ab96cad2fa1c64c5c531e377100ed79b2ff00e4ea13c89bd6917356d3dcae3f9ce5b6a0199edef6de74549b44"
+      "Address": "0x0e2699Be2B47Dfd7560c4771A32A50b64F81293d",
+      "PublicKeyHex": "0x04e42d6217bd5943b395706d959451028b2a2bde27091729ec8a9a85ea08c42a8917cc8bcddd39abf60af4c647d5e345e0e3b4e68912f5d7729267f3427cb7692c",
+      "BLSPubKey": "0x25cc3db8313960693f32826d23399e4ab77b46782503bc42f1a6c2afd7e3041c00",
+      "BLSProofOfPossession": "0x013d9147f769934037e8ddd00a686f21ece0c68dfbf666560dc6c0c0c4fab49edd0eabc5b59f8b41cf0f7f7fb17fb7541f5737cece4a18bbc05cf691d3c66532f0313629e6801097940ef01b8652eb1d53d78e7efe2d21bd26d40a4a612229a2ac72be9ea8dc1365414f51753b9532adf9921f026ee584799d1f64c328df65851c"
     },
     {
-      "Address": "0x2dC45799000ab08E60b7441c36fCC74060Ccbe11",
-      "PublicKeyHex": "0x04ec7664543f2dae218176a072ca7bfc16632438793077c06cf05975cc1302ee60c27f29e2cc3b64ffbaa69d2939e937f99a7bf93d7c5fa59bffbcd769e4f234e8",
-      "BLSPubKey": "0x66b74fbfc9c23963a9a21e12d79422fc288b7598b58f23d4ec04ea2657a05a9901",
-      "BLSProofOfPossession": "0x016e29b185836f0ab89bbbfab10cf2723d68606a889dceee94ff0f591a9c4a0feb2e5bd9d65c22cd25c9af3d59ad05185426f43d0b54af13a0ca1f15678d0ee32e0ea54ec4cbc7b4ae2ce4734b95cf46d754e321ea1cd876b6debe7c881b7541e7317f5d3bafdb4a75c7f7ffeb061b8fc2cc1e886cd1aab643b87973434e17d526"
+      "Address": "0x3c0ef282c8c62a44eA2FE8928b6bd89a16fD8252",
+      "PublicKeyHex": "0x04e9527daab62c13afa7068fe902b62cd6c1d067b1553f57f8d31e5887b640b594c8aa34cdc1e43630041eaa20063e27e6acf6379f82c5049818a079cc888eef49",
+      "BLSPubKey": "0x1a5c9f6f2f0ce12cf54aca83d760a2d0305d221a2f8bfa723430030bc3e98f6500",
+      "BLSProofOfPossession": "0x010a8d302da72577c064b079a4855a85ed8903f18dce78ab4e779fa8f99c9ee26b55894a5bdb471fcbb12a7317f2f64e9ffddbe2639ae9485a9fa49e358eb8a35b7ec0b1e02eabc2e7053d0337b4eaa0d5266f5411c56c358b87b479a62488b2112d4ac4de47910d7f6b40ac806cba554d9abb82c03e27a54ca2536c62bd779ee0"
     },
     {
-      "Address": "0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5",
-      "PublicKeyHex": "0x04ef2af91ba2fc2b04bc47c7d59d6d07a0dea2a62c5b537d4a83a387bee44245317de753c4e45858708c0d31473c6595ac9dddbcf7ac02a13df4af1a188e2c9c24",
-      "BLSPubKey": "0x40cdae9b90b80179ac73341dd83974fa6dd85f921080770241df8b4f3eb2244e01",
-      "BLSProofOfPossession": "0x011429fe83a89f7b314ba6454197ddc52d75c3d102f05475880791ab5f104a3f4f882fab6289d39ac38d0821afb2fcbbfb2b3ec0f8b07614d8187141e75ccdde2c6ad1b55825ed085a605d78019a4156d355a6dc0f25e9f2e568b075caad82c31609468a87f2b3270f04a23ee2574449b409a4b566a00b906c447fed0916c10111"
+      "Address": "0x41E4A55Ef06c1961B3e143357e24cA7f92e4DD03",
+      "PublicKeyHex": "0x048e7157847573e11a80593c01b86cd59f40746e3389dcf96ec7dfac39fb20bb8df8e426a9573b556acead607f17512f4a0799d86e7ced7bc2c31e66bd2c40e3e0",
+      "BLSPubKey": "0x1a5c9f6f2f0ce12cf54aca83d760a2d0305d221a2f8bfa723430030bc3e98f6500",
+      "BLSProofOfPossession": "0x010a8d302da72577c064b079a4855a85ed8903f18dce78ab4e779fa8f99c9ee26b55894a5bdb471fcbb12a7317f2f64e9ffddbe2639ae9485a9fa49e358eb8a35b7ec0b1e02eabc2e7053d0337b4eaa0d5266f5411c56c358b87b479a62488b2112d4ac4de47910d7f6b40ac806cba554d9abb82c03e27a54ca2536c62bd779ee0"
     }
   ]
 }
@@ -135,10 +134,10 @@ INFO [03-16|15:14:56.227] Successfully wrote genesis state         database=ligh
 The following command starts four corresponding nodes using the four accounts created earlier。
 
 ```shell
-./atlas --datadir ./node-1 --ipcpath ./node-1 --port 20201 --mine --miner.validator 0x535f9a9d4c598289a892cc5921e91862e740c72e --unlock 0x535f9a9d4c598289a892cc5921e91862e740c72e console
-./atlas --datadir ./node-2 --ipcpath ./node-2 --port 20202 --mine --miner.validator 0x2d7a789d78791ff62b220f6cbd5b50c6168ef0b5 --unlock 0x2d7a789d78791ff62b220f6cbd5b50c6168ef0b5 console
-./atlas --datadir ./node-3 --ipcpath ./node-3 --port 20203 --mine --miner.validator 0x9d64de56141a501b8ecf6fbbaecde74f11c34ddf --unlock 0x9d64de56141a501b8ecf6fbbaecde74f11c34ddf console
-./atlas --datadir ./node-4 --ipcpath ./node-4 --port 20204 --mine --miner.validator 0x2cd61076834a033e8613ce8176bced9c7b48e8ed --unlock 0x2cd61076834a033e8613ce8176bced9c7b48e8ed console
+./atlas --datadir ./node-1 --ipcpath ./node-1 --port 20201 --mine --miner.validator 0xF930B74D2b1b703B879ab54E225ECc18Ab28e61C --unlock 0xF930B74D2b1b703B879ab54E225ECc18Ab28e61C console
+./atlas --datadir ./node-2 --ipcpath ./node-2 --port 20202 --mine --miner.validator 0x0e2699Be2B47Dfd7560c4771A32A50b64F81293d --unlock 0x0e2699Be2B47Dfd7560c4771A32A50b64F81293d console
+./atlas --datadir ./node-3 --ipcpath ./node-3 --port 20203 --mine --miner.validator 0x3c0ef282c8c62a44eA2FE8928b6bd89a16fD8252 --unlock 0x3c0ef282c8c62a44eA2FE8928b6bd89a16fD8252 console
+./atlas --datadir ./node-4 --ipcpath ./node-4 --port 20204 --mine --miner.validator 0x41E4A55Ef06c1961B3e143357e24cA7f92e4DD03 --unlock 0x41E4A55Ef06c1961B3e143357e24cA7f92e4DD03 console
 ```
 
 Type the above command on the command line and press enter, you will see the following prompt：
