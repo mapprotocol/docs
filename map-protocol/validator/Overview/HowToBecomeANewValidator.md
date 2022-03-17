@@ -6,10 +6,10 @@ MAP is a Proof Of Stake network, which has different hardware requirements than 
 Proof Of Stake consensus is less CPU intensive, but is more sensitive to network connectivity and latency.
 Below is a list of standard requirements for running Validator on the MAP Network:
 
-- Memory: 8 GB RAM
-- CPU: Quad core 3GHz (64-bit)
+- Memory: 16 GB RAM
+- CPU: Quad core 2.5 GHz (64-bit)
 - Disk: 256 GB of SSD storage, plus a secondary HDD desirable
-- Network: At least 1 GB input/output Ethernet with a fiber Internet connection, ideally redundant connections and HA switches
+- Network: At least 100 Mb input/output Ethernet with a fiber Internet connection, ideally redundant connections and HA switches
 
 ### Software requirements
 
