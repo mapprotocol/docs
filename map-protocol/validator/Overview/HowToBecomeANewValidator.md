@@ -135,4 +135,60 @@ INFO [03-17|18:23:08.820] Validator:                               addr=0x0e2699
 INFO [03-17|18:23:08.820] Validator:                               addr=0xF930B74D2b1b703B879ab54E225ECc18Ab28e61C vote amount=1,000,000,000,000,000,000,000,000
 INFO [03-17|18:23:08.820] Validator:                               addr=0x49d3112D06156761bE64D91dD47fFE567fAD60c8 vote amount=0
 ```
-From the above results, we can see that we have become a validator.
+As can be seen from the above results, we have become a validator. But our vote count is 0, which prevents us from being 
+elected as a validator that can participate in the block, which is not what we want. So we also need to vote for validators.
+
+### Vote
+We can use our validator account to vote for ourselves, or we can let other validators or voters vote for ourselves.
+Below we will demonstrate voting for ourselves using our own validator account, as this is the easiest.
+
+For more information on voting and elections, click on the links below to view:
+
+[vote](./HowToVote.md)
+[election](../Election.md)
+
+```shell
+./marker vote --rpcaddr 127.0.0.1 --rpcport 7445 --keystore /Users/t/go_project/atlas/node-1/keystore/UTC--2022-03-17T10-07-49.186973000Z--49d3112d06156761be64d91dd47ffe567fad60c8 --password "" --validator "0x49d3112d06156761be64d91dd47ffe567fad60c8" --voteNum 100000
+
+# Output
+INFO [03-17|18:23:25.291] === vote Validator ===                   admin=0x49d3112D06156761bE64D91dD47fFE567fAD60c8 voteTargetValidator=0x49d3112D06156761bE64D91dD47fFE567fAD60c8 vote MAP Num=100000
+INFO [03-17|18:23:25.312] TxInfo                                   func=sendContractTransaction TX data nonce =5  gasLimit =4,500,000  gasPrice =1,001,000,000,000  chainID =212
+INFO [03-17|18:23:25.315] Please waiting                           func=getResult                txHash =0x00bd8e58b2fa8eea4ca0baeef020175b491647149fd429673cfa3c783a6420e4
+INFO [03-17|18:23:27.132] Transaction Success                      func=queryTx                 block Number=34
+```
+
+### Verify
+Let's verify that our vote was successful.
+
+```shell
+./marker getTotalVotesForEligibleValidators --rpcaddr 127.0.0.1 --rpcport 7445 --keystore /Users/alex/atlas/node-5/keystore/UTC--2022-03-17T10-07-49.186973000Z--49d3112d06156761be64d91dd47ffe567fad60c8 --password ""
+
+# Output
+INFO [03-17|18:23:37.547] === getTotalVotesForEligibleValidators === admin=0x49d3112D06156761bE64D91dD47fFE567fAD60c8
+INFO [03-17|18:23:37.550] Validator:                               addr=0xF930B74D2b1b703B879ab54E225ECc18Ab28e61C vote amount=11,000,000,000,000,000,000,000,000
+INFO [03-17|18:23:37.550] Validator:                               addr=0x0e2699Be2B47Dfd7560c4771A32A50b64F81293d vote amount=1,000,000,000,000,000,000,000,000
+INFO [03-17|18:23:37.550] Validator:                               addr=0x3c0ef282c8c62a44eA2FE8928b6bd89a16fD8252 vote amount=1,000,000,000,000,000,000,000,000
+INFO [03-17|18:23:37.550] Validator:                               addr=0x41E4A55Ef06c1961B3e143357e24cA7f92e4DD03 vote amount=1,000,000,000,000,000,000,000,000
+INFO [03-17|18:23:37.550] Validator:                               addr=0x49d3112D06156761bE64D91dD47fFE567fAD60c8 vote amount=100,000,000,000,000,000,000,000
+```
+Judging from the results, I've successfully voted for myself, but it's not enough.
+We need to call RPC in the next epoch to finally determine whether we are selected as validators who can participate in 
+block generation，Just like the following:
+
+```shell
+curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"istanbul_getValidators","params":[],"id":1}' http://127.0.0.1:7445
+
+# Output
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": [
+    "0xf930b74d2b1b703b879ab54e225ecc18ab28e61c",
+    "0x0e2699be2b47dfd7560c4771a32a50b64f81293d",
+    "0x3c0ef282c8c62a44ea2fe8928b6bd89a16fd8252",
+    "0x41e4a55ef06c1961b3e143357e24ca7f92e4dd03",
+    "0x49d3112d06156761be64d91dd47ffe567fad60c8" # our validator
+  ]
+}
+```
+For more information on istanbul_getValidators [click here](../../consensus/ConsensusAPI.md#getvalidators)
