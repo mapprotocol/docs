@@ -17,7 +17,7 @@ units of MAP as blocks are produced, to create several kinds of incentives.
 
 Each epoch will be rewarded with a fixed reward
 
-- `EpochReward`= 1,000k(MAP).
+- `EpochReward`= 1,000,000 `MAP`.
 
 ## Reward Disbursement
 
@@ -51,8 +51,8 @@ The score is calculated by this formula:
   
   - The `TotalMonitoredBlocks` are the total number of block on which we monitor uptime for the epoch
   - `TotalMonitoredBlocks` value range is  `[EpochFirstBlock + lookbackWindowSize(defult = 12) -1,EpochLastBlock - BlocksToSkipAtEpochEnd(defult = 2)]`
-  - `lookbackWindowSize` A fixed value about lookbackWindow check whether the validator has signed in a fixed
-    interval.
+  - `lookbackWindowSize` A fixed value about lookbackWindow check whether the validator has signed in a fixed interval.
+  -  If you have a successful sign in `[NowBlockNumber-lookbackWindow ,NowBlockNumber]`, we will regard your current block as a successful work.
   - `BlocksToSkipAtEpochEnd` represents the number of blocks to skip on the monitoring window from the end of the
     epoch
     - About currently we skip blocks:
