@@ -17,7 +17,7 @@ units of MAP as blocks are produced, to create several kinds of incentives.
 
 Each epoch will be rewarded with a fixed reward
 
-- `EpochReward`= 1,000k(MAP).
+- `EpochReward`= 1,000,000 `MAP`.
 
 ## Reward Disbursement
 
