@@ -6,7 +6,7 @@ Makalu chain implements an unlocking period, a delay of 3 days after making a re
 
 Unlocks `MAP`, which can be withdrawn after the unlocking period. Unlocked `MAP` will appear as a "pending withdrawal" until the unlocking period is over, after which it can be withdrawn via "withdraw" command.
 
-You can only unlock your nonvoting `MAP`,if you want to cancel your voting `MAP` please to Reference [How To withdraw voting MAP](HowToWithdraw.md#How To withdraw voting MAP)
+You can only unlock your nonvoting `MAP`,if you want to cancel your voting `MAP` please to Reference [How To withdraw voting MAP](../Overview/HowToWithdraw.md#How To withdraw voting MAP)
 
 If you are a validator you will not be able to unlock 1000,000 `MAP` that necessary pledge as validator.
 
@@ -34,7 +34,7 @@ If your voting `MAP` is not active, you can use 'revokePending' command to withd
 
 revokeActive:
 
-If your voting `MAP` is active, you can use 'revokeActive' command to withdraw your  active voting `MAP`. If you perform this step, the votes you withdraw will lose the corresponding reward.
+If your voting `MAP` is active, you can use `revokeActive` command to withdraw your  active voting `MAP`. If you perform this step, the votes you withdraw will lose the corresponding reward.
 
 Both of `revokePending` and `revokeActive` command will put the voting `MAP` turn into nonvoting `MAP` 
 
@@ -44,4 +44,4 @@ Here are the details of these two commands please click [revokePending](../../ma
 
 Now your voting `MAP` state has changed from not active state or active state to locking state.
 
-the next step is same to [How To withdraw Locked MAP](#How To withdraw Locked MAP)
+the next step is same to [How To withdraw Locked MAP](../Overview/HowToWithdraw.md#How To withdraw Locked MAP)
