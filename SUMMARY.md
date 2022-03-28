@@ -32,8 +32,8 @@
         * Cross Chain
             * [Header Store Contract](cross-chain/light-client-data/Header-Store-Contract.md)
             * [Header Store API](cross-chain/light-client-data/Header-Store-API.md)
-            * [Cross Chain Tx Verify](cross-chain/tx-verify/Tx-Verify.md)
-            * [Cross Chain Tx Verify Contract](cross-chain/tx-verify/Tx-Verify-Contract.md)
+            * [Verify](cross-chain/tx-verify/Tx-Verify.md)
+            * [Verify Contract](cross-chain/tx-verify/Tx-Verify-Contract.md)
     * MAP Relayer
         * Contracts
             * [Relayer](map-protocol/relayer/Relayer-Contract.md)
