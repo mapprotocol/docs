@@ -27,7 +27,7 @@ The amount of disbursements is determined at the end of every epoch via a three 
 
 In step one，Community Fund will receive a fixed percentage of the reward
 
-- `CommunityFundReward`  =  `CommunityFundMultiplier`*`EpochReward`   
+- `CommunityFundReward`  =  `CommunityFundMultiplier`*`EpochReward`
 - `CommunityFundMultiplier` defult value = 0.1.
 
 ### Step 2
@@ -48,11 +48,11 @@ The score is calculated by this formula:
 
 - `NewScore` = `UptimeScore` \* `AdjustmentSpeed`+`OldScore` \* `(1 - `AdjustmentSpeed`)`
 - `UptimeScore` This is score of work done at `TotalMonitoredBlocks`.
-  
+
   - The `TotalMonitoredBlocks` are the total number of block on which we monitor uptime for the epoch
   - `TotalMonitoredBlocks` value range is  `[EpochFirstBlock + lookbackWindowSize(defult = 12) -1,EpochLastBlock - BlocksToSkipAtEpochEnd(defult = 2)]`
   - `lookbackWindowSize` A fixed value about lookbackWindow check whether the validator has signed in a fixed interval.
-  -  If you have a successful sign in `[NowBlockNumber-lookbackWindow ,NowBlockNumber]`, we will regard your current block as a successful work.
+  - If you have a successful sign in `[NowBlockNumber-lookbackWindow ,NowBlockNumber]`, we will regard your current block as a successful work.
   - `BlocksToSkipAtEpochEnd` represents the number of blocks to skip on the monitoring window from the end of the
     epoch
     - About currently we skip blocks:
@@ -87,6 +87,56 @@ These rewards(`VotersReward`) will be returned to the voting pool. This operatio
 
 Per voter's reward will be obtained according to the voting proportion of voter to validator.
 
+## Example:
+
+epoch size = 100, The award for each epoch size is 1000,000 `MAP` ,There are four validators V1、V2、V3、V4 and a community fund C1.
+
+The Commission of V1 registration is 0.1, and he voted 100,000 `MAP` for himself.
+
+The Commission of V2 registration is 0.2, and he voted 100,000 `MAP` for himself and 100,000 `MAP` for V1.
+
+The Commission of V3 registration is 0.5, and he voted 200,000 `MAP` for himself.
+
+The Commission of V4 registration is 0.6, and he voted 300,000 `MAP` for himself and 300,000 `MAP` for V3.
+
+If every validator has done a good job in this epoch. so each validator will get all the scores.
+
+Reward validator:
+
+Reward for C1:1000,000 \* 0.1 = 100,000 `MAP`
+
+Because they have the same score, they get the same reward (1000,000 - 100,000) \* (1 + 1)/(1*4 + 1 + 1 + 1 + 1) = 225,000 `MAP`
+
+Reward for V1: 225,000 \*0.1 = 22,500 `MAP`
+
+Reward for V2: 225,000 \*0.2 = 45,000 `MAP`
+
+Reward for V3: 225,000 \*0.5 = 112,500 `MAP`
+
+Reward for V4: 225,000 \*0.6 = 135,000 `MAP`
+
+Reward voter:
+
+Reward for V1 voters:
+
+Reward for V1: 225,000 \*0.9 \* ( 100,000 / (100,000 + 100,000) )  = 101,250 `MAP`
+
+Reward for V2: 225,000 \*0.9 \* ( 100,000 / (100,000 + 100,000) )  = 101,250 `MAP`
+
+Reward for V2 voters:
+
+Reward for V2: 225,000 \*0.8 \* ( 100,000 / 100,000 )  = 180,000 `MAP`
+
+Reward for V3 voters:
+
+Reward for V3: 225,000 \*0.5 \* ( 200,000 / (200,000 + 300,000) )  = 45,000 `MAP`
+
+Reward for V4: 225,000 \*0.5 \* ( 300,000 / (200,000 + 300,000) )  = 67,500 `MAP`
+
+Reward for V4 voters:
+
+Reward for V4: 225,000 \*0.4 \* ( 300,000 / 300,000 )  = 90,000 `MAP`
+
 ## Expand:
 
 ### case One: Validator was deRegister during his service.
@@ -99,4 +149,3 @@ When a validator is deRegistered, voters can still cancel the votes on the deReg
 
 If voter don't withdraw his vote,voters vote will remain in the voting area,Wait for the validator to register again,
 and these tickets will be returned to the validator again.
-
