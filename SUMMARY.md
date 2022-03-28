@@ -11,18 +11,17 @@
             * [How To Vote](map-protocol/validator/Overview/HowToVote.md)
             * [How To Withdraw](map-protocol/validator/Overview/HowToWithdraw.md)
         * Marker
-            * [Marker Introduce](map-protocol/marker/Marker.md)
-            * [About Validator](map-protocol/marker/AboutValidator.md)
-            * [About Vote](map-protocol/marker/AboutVote.md)
-            * [About ContractOwner](map-protocol/marker/AboutContractOwner.md)
-            * [About Common](map-protocol/marker/AboutCommon.md)
+            * [Introduce](map-protocol/marker/Marker.md)
+            * [Validator](map-protocol/marker/AboutValidator.md)
+            * [Vote](map-protocol/marker/AboutVote.md)
+            * [ContractOwner](map-protocol/marker/AboutContractOwner.md)
+            * [Common](map-protocol/marker/AboutCommon.md)
         * Consensus
             * [Proof-of-Stake](map-protocol/consensus/Proof-of-Stake.md)
-            * Validator
-                * [Validator](map-protocol/validator/Validator.md)
-                * [Locked MAP](map-protocol/validator/LockedMAP.md)
-                * [Election](map-protocol/validator/Election.md)
-                * [Rewards](map-protocol/validator/Rewards.md)
+            * [Validator](map-protocol/validator/Validator.md)
+            * [Locked MAP](map-protocol/validator/LockedMAP.md)
+            * [Election](map-protocol/validator/Election.md)
+            * [Rewards](map-protocol/validator/Rewards.md)
         * Contracts
         * Makalu PoC
             * [PoC-1](Makalu-PoC/PoC-1.md)
@@ -37,11 +36,11 @@
             * [Cross Chain Tx Verify Contract](cross-chain/tx-verify/Tx-Verify-Contract.md)
     * MAP Relayer
         * Contracts
-        * [Compass](map-protocol/relayer/Compass.md)
-        * [Relayer Contract](map-protocol/relayer/Relayer-Contract.md)
+            * [Relayer](map-protocol/relayer/Relayer-Contract.md)
+        * [Compass](map-protocol/relayer/Compass.md)      
         * [Relayer API](map-protocol/relayer/Relayer-API.md)
     * MAP SDK
-        * [JSON RPC API](rpc-api/RPC-API.md)
-        * [ConsensusAPI](map-protocol/consensus/ConsensusAPI.md)
+        * [Atlas JSON RPC](rpc-api/RPC-API.md)
+        * [Atlas Consensus API](map-protocol/consensus/ConsensusAPI.md)
     * Tutoials
         * [How To Become Relayer](map-protocol/relayer/QuickStart.md)
