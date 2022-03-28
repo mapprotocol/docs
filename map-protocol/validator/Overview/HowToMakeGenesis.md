@@ -51,9 +51,13 @@ First you need to config the markerConfig.json like this:
 ```
 
 Second you need compile your `map-contracts` project,we need the bytecode about `map-contracts` to make `genesis.json` file.
+
 1.Download `map-contracts` project in any folder you like , use this command `git clone https://github.com/mapprotocol/map-contracts.git`
+
 2.Suppose you have installed node, then then switch to the project file initialize the project and use this command `npm install`
+
 3.Compile the project using truffle, the command compiled by truffle is `truffle compile`
+
 4.A file called `build` will be generated in your `map-contracts` project. We will use this file to specify the corresponding parameters.
 
 then to do so run:
