@@ -9,15 +9,16 @@ units of MAP as blocks are produced, to create several kinds of incentives.
 
 ## Epoch rewards are paid in the final block of the epoch and are used to:
 
-1.Distributed rewards for validators
+1. Distributed rewards for validators
 
-2.Distribute rewards to holders of Locked MAP voting for validator that elected validators
+2. Distribute rewards to holders of Locked MAP voting for validator that elected validators
 
-3.Make payments into a Community Fund for protocol infrastructure grants
+3. Make payments into a Community Fund for protocol infrastructure grants
 
 Each epoch will be rewarded with a fixed reward
 
 - `EpochReward`= 1,000,000 `MAP`.
+
 
 ## Reward Disbursement
 
@@ -40,30 +41,46 @@ If the validator fails to fulfill its responsibilities, it will be punished thro
 So per validator will receive the reward:
 
 - `ValidatorReceived` = `(`EpochReward`-`CommunityFundReward`)` \* `Punishment` \* (`P` +` mySorce`) / (`N` * `P` + `Sorce1` + `Score2` +...`ScoreN`).
-- `P`  A fixed reward proportion shared by the validator(p>0, p<=1, default value is 1)
-- `N` Number of validator
+  
+- `P`   A fixed reward proportion shared by the validator(p>0, p<=1, default value is 1)
+  
+- `N`  Number of validator
+  
 - `Punishment`  Punishment mechanism param.
 
 The score is calculated by this formula:
 
 - `NewScore` = `UptimeScore` \* `AdjustmentSpeed`+`OldScore` \* `(1 - `AdjustmentSpeed`)`
+  
 - `UptimeScore` This is score of work done at `TotalMonitoredBlocks`.
 
-  - The `TotalMonitoredBlocks` are the total number of block on which we monitor uptime for the epoch
+  - The `TotalMonitoredBlocks` are the total number of block on which we monitor uptime for the epoch.
+  
   - `TotalMonitoredBlocks` value range is  `[EpochFirstBlock + lookbackWindowSize(defult = 12) -1,EpochLastBlock - BlocksToSkipAtEpochEnd(defult = 2)]`
+  
   - `lookbackWindowSize` A fixed value about lookbackWindow check whether the validator has signed in a fixed interval.
   - If you have a successful sign in `[NowBlockNumber-lookbackWindow ,NowBlockNumber]`, we will regard your current block as a successful work.
+  
   - `BlocksToSkipAtEpochEnd` represents the number of blocks to skip on the monitoring window from the end of the
     epoch
+
     - About currently we skip blocks:
+  
     - lastBlock => its parentSeal is on firstBlock of next epoch
+  
     - lastBlock - 1 => parentSeal is on lastBlockOfEpoch, but validatorScore is computed with lastBlockOfEpoch and
       before updating scores
+
     - (lastBlock-1 could be counted, but much harder to implement)
+  
   - About first block to monitor:
-    - we can't monitor uptime when current lookbackWindow crosses the epoch boundary
-    - thus, first block to monitor is the final block of the lookbackwindow that starts at firstBlockOfEpoch
+  
+    - we can't monitor uptime when current lookbackWindow crosses the epoch boundary.
+  
+    - thus, first block to monitor is the final block of the lookbackwindow that starts at firstBlockOfEpoch.
+  
   - So `UptimeScore` = `SignedBlocks ` / `TotalMonitoredBlocks`.
+  
     - `SignedBlocks ` Number of blocks signed by validator,this will be checked every time the block is produced.
     - First, check whether the current block is in `BlocksToSkipAtEpochEnd`.
     - Second, check whether the current block review period is signed. If it exists, the signature will be regarded
@@ -89,53 +106,64 @@ Per voter's reward will be obtained according to the voting proportion of voter 
 
 ## Example:
 
-epoch size = 100, The award for each epoch size is 1000,000 `MAP` ,There are four validators V1、V2、V3、V4 and a community fund C1.
+the initial parameters of atlas:
+```
+epoch size = 100
 
-The Commission of V1 registration is 0.1, and he voted 100,000 `MAP` for himself.
+reward of epoch = 1,000,000
 
-The Commission of V2 registration is 0.2, and he voted 100,000 `MAP` for himself and 100,000 `MAP` for V1.
+four validators for consensus(V1、V2、V3、V4) with fee rate (
+  0.1,0.2,0.5,0.6) and all votes: (200,000,100,000,500,000,300,000)
 
-The Commission of V3 registration is 0.5, and he voted 200,000 `MAP` for himself.
+// V1 validator has two voters(V1 + V2)
+V1's vote = 100,000(self vote) + 100,000(V2 vote) = 200,000
 
-The Commission of V4 registration is 0.6, and he voted 300,000 `MAP` for himself and 300,000 `MAP` for V3.
+// V2 validator has one voter (V2)
+V2's vote = 100,000(self vote) = 100,000
 
-If every validator has done a good job in this epoch. so each validator will get all the scores.
+// V3 validator has two voters(V3 + V4)
+V3's vote = 200,000(self vote) + 300,000(V4 vote) = 500,000
 
-Reward validator:
+// V4 validator has one voter (V4)
+V4's vote = 300,000(self vote) = 300,000
 
-Reward for C1:1000,000 \* 0.1 = 100,000 `MAP`
+community fund of C1
+```
 
-Because they have the same score, they get the same reward (1000,000 - 100,000) \* (1 + 1)/(1*4 + 1 + 1 + 1 + 1) = 225,000 `MAP`
+If every validator has done a good job in the epoch. so each validator will get all the scores.
 
-Reward for V1: 225,000 \*0.1 = 22,500 `MAP`
+Calculate the reward in end of the epoch:
+```
+C1 = 1,000,000 * 10% = 100,000
 
-Reward for V2: 225,000 \*0.2 = 45,000 `MAP`
+// refor to reward = (EpochReward-CommunityFundReward) * Punishment * (P + mySorce) / (N * P + Sorce1 + Score2 +...ScoreN)
+// validator = reward * fee rate
+// four validators have same score: 1 (0 <= score <= 1)
 
-Reward for V3: 225,000 \*0.5 = 112,500 `MAP`
+V1 = (1,000,000-C1) * (1+1) / (1*4 + 1 + 1 + 1 + 1) * 0.1 = 22,500
+V2 = (1,000,000-C1) * (1+1) / (1*4 + 1 + 1 + 1 + 1) * 0.2 = 45,000
+V3 = (1,000,000-C1) * (1+1) / (1*4 + 1 + 1 + 1 + 1) * 0.5 = 112,500
+V4 = (1,000,000-C1) * (1+1) / (1*4 + 1 + 1 + 1 + 1) * 0.6 = 135,000
+```
 
-Reward for V4: 225,000 \*0.6 = 135,000 `MAP`
+Calculate the reward for voter:
 
-Reward voter:
+```
+// V1 validator:
+V1 voter = 225,000 * (1-0.1) * (100,000 / 200,000) = 101,250
+V2 voter = 225,000 * (1-0.1) * (100,000 / 200,000) = 101,250
 
-Reward for V1 voters:
+// V2 validator:
+V2 voter = 225,000 * (1-0.2) * (100,000 / 100,000) = 180,000
 
-Reward for V1: 225,000 \*0.9 \* ( 100,000 / (100,000 + 100,000) )  = 101,250 `MAP`
+// V3 validator:
+V3 voter = 225,000 * (1-0.5) * (200,000 / 500,000) = 45,000
+V4 voter = 225,000 * (1-0.5) * (300,000 / 500,000) = 67,500
 
-Reward for V2: 225,000 \*0.9 \* ( 100,000 / (100,000 + 100,000) )  = 101,250 `MAP`
+// V4 validator:
+V4 voter = 225,000 * (1-0.6) * (300,000 / 300,000) = 90,000
 
-Reward for V2 voters:
-
-Reward for V2: 225,000 \*0.8 \* ( 100,000 / 100,000 )  = 180,000 `MAP`
-
-Reward for V3 voters:
-
-Reward for V3: 225,000 \*0.5 \* ( 200,000 / (200,000 + 300,000) )  = 45,000 `MAP`
-
-Reward for V4: 225,000 \*0.5 \* ( 300,000 / (200,000 + 300,000) )  = 67,500 `MAP`
-
-Reward for V4 voters:
-
-Reward for V4: 225,000 \*0.4 \* ( 300,000 / 300,000 )  = 90,000 `MAP`
+```
 
 ## Expand:
 
