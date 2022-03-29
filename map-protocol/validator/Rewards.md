@@ -1,6 +1,6 @@
 # Epoch Reward
 
-Introduction to Makalu chain epoch rewards and the target reward release schedule.
+Introduction to Map chain epoch rewards and the target reward release schedule.
 
 ## What are Epoch Rewards?
 

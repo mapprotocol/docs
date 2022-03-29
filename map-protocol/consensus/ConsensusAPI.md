@@ -103,7 +103,7 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 
 ## GetProposer
 
-retrieves the list of validators BLS public keys that must sign a given block.
+GetProposer retrieves the proposer for a given block number (i.e. sequence) and round.
 
 ### example
 
@@ -142,7 +142,7 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 
 ## GetLookbackWindow
 
-returns true if this node is participating in the consensus protocol.
+GetLookbackWindow retrieves the current replica state.
 
 ### example
 
