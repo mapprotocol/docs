@@ -116,37 +116,3 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 }
 
 ```
-
-## GetRelayerReward
-
-get relayer rewards for the specified epoch
-
-### request parameters
-
-| parameter | type   | comment |
-| --------- | ------ | ------- |
-| epochID   | number | epoch id |
-| relayer   | string | relayer address |
-
-### response parameters
-
-| parameter | type   | comment |
-| --------- | ------ | ------- |
-| result    | number | reward of relayer |
-
-### example
-
-```shell
-
-# request:
-curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"header_getRelayerReward","params":["0x1", "0xDf945e6FFd840Ed5787d367708307BD1Fa3d40f4"],"id":1}' http://127.0.0.1:7445
-
-# response:
-
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "result": 15000000000
-}
-
-```

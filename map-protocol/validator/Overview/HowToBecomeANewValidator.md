@@ -144,7 +144,7 @@ Below we will demonstrate voting for ourselves using our own validator account, 
 
 For more information on voting and elections, click on the links below to view:
 
-[vote](./HowToVote.md)
+[vote](./HowToVote.md)  
 [election](../Election.md)
 
 ```shell
