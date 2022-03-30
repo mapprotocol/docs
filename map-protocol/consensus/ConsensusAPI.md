@@ -142,7 +142,7 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 
 ## GetLookbackWindow
 
-GetLookbackWindow retrieves the current replica state.
+GetLookbackWindow retrieves A fixed value about lookbackWindow check whether the validator has signed in a fixed interval.
 
 ### example
 
