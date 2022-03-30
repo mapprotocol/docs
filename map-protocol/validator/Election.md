@@ -1,6 +1,6 @@
 # Elections
 
-Introduction to Makalu chain validator elections and management of validator and votes throughout the process.
+Introduction to Map chain validator elections and management of validator and votes throughout the process.
 
 ## Updating the Active Validator Set
 

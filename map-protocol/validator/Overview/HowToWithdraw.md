@@ -2,7 +2,7 @@
 
 ### Step 1: unlock
 
-Makalu chain implements an unlocking period, a delay of 3 days after making a request to unlock Locked `MAP` before it can be recovered from the escrow.
+Map chain implements an unlocking period, a delay of 3 days after making a request to unlock Locked `MAP` before it can be recovered from the escrow.
 
 Unlocks `MAP`, which can be withdrawn after the unlocking period. Unlocked `MAP` will appear as a "pending withdrawal" until the unlocking period is over, after which it can be withdrawn via "withdraw" command.
 

@@ -1,14 +1,14 @@
 # Marker
 
-Introduction to the Makalu Command Line Interface and installation instructions.
+Introduction to the Map Command Line Interface and installation instructions.
 
 ### What is the Marker
 
-Marker contains tools to make genesis.json and some client commands to better link Makalu contracts.
+Marker contains tools to make genesis.json and some client commands to better link Map contracts.
 
-The Command Line Interface allows users to interact with the Makalu Protocol smart contracts.
+The Command Line Interface allows users to interact with the Map Protocol smart contracts.
 
-It allows you to interact with the Makalu Protocol and smart contracts using command-line tools rather than writing go Script. Some common features you may want to consider are helping users participate in elections or in on-chain governance, voting for validators, or helping users interact with multi-sig contracts.
+It allows you to interact with the Map Protocol and smart contracts using command-line tools rather than writing go Script. Some common features you may want to consider are helping users participate in elections or in on-chain governance, voting for validators, or helping users interact with multi-sig contracts.
 
 ### Building Marker
 
@@ -69,4 +69,4 @@ The keystore has been stored in the directory specified by --dataDir.
 
 ### Optional: Run a Full Node
 
-Commands need to connect to a Makalu node to execute most functionality.
+Commands need to connect to a Map node to execute most functionality.
