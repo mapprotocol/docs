@@ -38,12 +38,12 @@
         * Contract
           * [Bridge](map-bridge/contract/bridge.md)
         * ABI
-          * [Fee Center](map-bridge/abi/FeeCenter.json)
-          * [Map Bridge Relay](map-bridge/abi/MAPBridgeRelayV2.json)
-          * [Map Bridge](map-bridge/abi/MAPBridgeV2.json)
-          * [Relayer](map-bridge/abi/Relayer.json)
-          * [Vault Token](map-bridge/abi/VToken.json)
-          * [Staking](map-bridge/abi/MasterChef.json)
+          * [Fee Center](map-bridge/abi/FeeCenter.md)
+          * [Map Bridge Relay](map-bridge/abi/MAPBridgeRelayV2.md)
+          * [Map Bridge](map-bridge/abi/MAPBridgeV2.md)
+          * [Relayer](map-bridge/abi/Relayer.md)
+          * [Vault Token](map-bridge/abi/VToken.md)
+          * [Staking](map-bridge/abi/MasterChef.md)
         * Address
           * [Address V1](map-bridge/address/bridge-v1.md)
           * [Address V2 Test](map-bridge/address/bridge_v2_test.md)

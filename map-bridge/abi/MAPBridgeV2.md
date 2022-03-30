@@ -1,3 +1,4 @@
+```json
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "MAPBridgeV2",
@@ -845,3 +846,4 @@
   "linkReferences": {},
   "deployedLinkReferences": {}
 }
+```

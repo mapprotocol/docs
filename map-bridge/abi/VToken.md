@@ -1,3 +1,4 @@
+```json
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "VToken",
@@ -738,3 +739,4 @@
   "linkReferences": {},
   "deployedLinkReferences": {}
 }
+```

@@ -1,3 +1,4 @@
+```json
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "Relayer",
@@ -524,3 +525,4 @@
   "linkReferences": {},
   "deployedLinkReferences": {}
 }
+```
