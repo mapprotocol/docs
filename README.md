@@ -1,8 +1,7 @@
 # Introduction
 
-## Getting Super Powers
-
-MAP protocol aims to be the secure end-to-end solution for any blockchain resident to move and exchange assets. To fulfill this role, MAP team is building on three layers simultaneously: a dedicated blockchain served as the infrastructure freeway connecting all kinds of blockchains to break the barriers, the MAP Assets layer where all kinds of assets are mapped to MAP chain in a non-custodial style via trustless smart contract, and the DeFi Application layer where all kinds of applications including but not limited to DEXes, games and NFTs can be built with the cross-chain capabilities enabled by the MAP chain and MAP assets.
+MAP Protocol is a decentralized cross-chain interoperability protocol backed by a dedicated blockchain that safeguards cross-chain assets and empowers Dapps to achieve its full potential. MAP Protocol is more than just a bridge, but a truly decentralized cross-chain interoperability protocol. MAP Protocol empowers developers to build all kinds of cross-chain Defi applications on it which helps to solve the interoperability issue and achieve dynamic liquidity migration across the blockchain universe.
 
 
-
+# Our Vision
+With MAP protocol, our vision is to create a quick, seamless experience that links between smart contract chains, eventually creating a network on multiple chains through which users can use every interoperable cross-chain service from one chain to another without having to use CEXes.
