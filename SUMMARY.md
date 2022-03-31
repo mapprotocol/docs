@@ -1,8 +1,7 @@
 # Summary
 
-* [MAP Protocol](README.md)
-* [WritePaper](writePaper.md)
-* [FAQ](getting-started/faq.md)
+* [Overview](README.md)
+    * [FAQ](getting-started/faq.md)
 * MAP Chain
     * Atlas
         * [Make Private Chain](map-protocol/privatenet/PrivateNet.md) 
@@ -10,8 +9,9 @@
         * [How To Become A New Validator](map-protocol/validator/Overview/HowToBecomeANewValidator.md) 
         * [How To Vote](map-protocol/validator/Overview/HowToVote.md)
         * [How To Withdraw](map-protocol/validator/Overview/HowToWithdraw.md)
-    * Marker
-        * [Introduce](map-protocol/marker/Marker.md)
+        * [Atlas JSON RPC](rpc-api/RPC-API.md)
+        * [Atlas Consensus API](map-protocol/consensus/ConsensusAPI.md)
+    * [Marker](map-protocol/marker/Marker.md)
         * [Validator](map-protocol/marker/AboutValidator.md)
         * [Vote](map-protocol/marker/AboutVote.md)
         * [ContractOwner](map-protocol/marker/AboutContractOwner.md)
@@ -53,13 +53,12 @@
         * [Header Store API](cross-chain/light-client-data/Header-Store-API.md)
         * [Verify](cross-chain/tx-verify/Tx-Verify.md)
         * [Verify Contract](cross-chain/tx-verify/Tx-Verify-Contract.md)
-* MAP Relayer
-    * Contracts
+* [MAP Relayer](map-protocol/relayer/Compass.md)
+      * Contracts
         * [Relayer](map-protocol/relayer/Relayer-Contract.md)
-    * [Compass](map-protocol/relayer/Compass.md)      
     * [Relayer API](map-protocol/relayer/Relayer-API.md)
 * MAP SDK
-    * [Atlas JSON RPC](rpc-api/RPC-API.md)
-    * [Atlas Consensus API](map-protocol/consensus/ConsensusAPI.md)
+    
 * Tutoials
+    * [How To Become A New Validator](map-protocol/validator/Overview/HowToBecomeANewValidator.md)
     * [How To Become Relayer](map-protocol/relayer/QuickStart.md)
