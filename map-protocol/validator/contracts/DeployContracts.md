@@ -58,7 +58,7 @@ Open truffle-config.js in a text editor and configure its contents through the f
 
 Deploy to your chosen Map network running one of the following commands.
 
-truffle deploy --network mapNetwork
+`truffle deploy --network mapNetwork`
 
 
 ## Deployment of contract related to validator
