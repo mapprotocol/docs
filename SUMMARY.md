@@ -59,6 +59,6 @@
     * [Relayer API](map-protocol/relayer/Relayer-API.md)
 * MAP SDK
     
-* Tutoials
+* Tutorials
     * [How To Become A New Validator](map-protocol/validator/Overview/HowToBecomeANewValidator.md)
     * [How To Become Relayer](map-protocol/relayer/QuickStart.md)
