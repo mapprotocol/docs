@@ -1,7 +1,11 @@
 # Summary
 
 * [Overview](README.md)
-    * [FAQ](getting-started/faq.md)
+    * [How it works](getting-started/how-it-works.md)
+    * [How to participate](getting-started/participate.md)
+    * [MAP token](getting-started/map-token.md)
+    * [DAO governance](getting-started/dao.md)
+    * [Roadmap](getting-started/roadmap.md)
 * MAP Chain
     * Atlas
         * [Make Private Chain](map-protocol/privatenet/PrivateNet.md) 
