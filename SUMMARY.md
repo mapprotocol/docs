@@ -22,14 +22,13 @@
         * [Locked MAP](map-protocol/validator/LockedMAP.md)
         * [Election](map-protocol/validator/Election.md)
         * [Rewards](map-protocol/validator/Rewards.md)
-    * Contracts
+    * [Contracts](map-protocol/validator/contracts/ContractsAddress.md)
         * Validator ABI
             * [AccountsABI](map-protocol/validator/contracts/ABI/AccountsABI.md)
             * [ElectionABI](map-protocol/validator/contracts/ABI/ElectionABI.md)
             * [EpochRewardsABI](map-protocol/validator/contracts/ABI/EpochRewardsABI.md)
             * [LockedGoldABI](map-protocol/validator/contracts/ABI/LockedGoldABI.md)
             * [ValidatorsABI](map-protocol/validator/contracts/ABI/ValidatorsABI.md)
-        * [Validator Contracts Address](map-protocol/validator/contracts/ContractsAddress.md)
         * [Validator Contracts Deploy](map-protocol/validator/contracts/DeployContracts.md)
     * Makalu PoC
         * [PoC-1](Makalu-PoC/PoC-1.md)
