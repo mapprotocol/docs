@@ -2,7 +2,7 @@
 
 # What is a Validator?
 
-Map’s consensus protocol is performed by nodes that are selected as validators. There is a maximum cap on the number of active validators that can be changed by governance proposal, which is currently set at 100 validators. The active validator set is determined via the proof-of-stake process and is updated at the end of each epoch, a fixed period of approximately one day.
+Map’s consensus protocol is performed by nodes that are selected as validators. There is a maximum cap on the number of active validators that can be changed by governance proposal, which is currently set at 100 validators. The active validator set is determined via the proof-of-stake process and is updated at the end of each epoch, a fixed period of approximately 3 days.
 
 # Registration
 
