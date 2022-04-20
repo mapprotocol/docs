@@ -8,7 +8,7 @@ The active validator set is updated by running an election in the final block of
 
 ## Election Validator 
 
-Validators must have at least 0.001 proportion of the total votes to be considered for the election. So the validator can't have no voters.
+Validators must have at least 0.001 proportion of the total votes to be considered for the election. So the validator can't have no votes.
 
 The advantage of this is to avoid burn `MAP` and limit the number of voters in the 1000.
 
