@@ -37,6 +37,42 @@ header store contract is deployed at address:
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "getRelayer",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "relayer",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "from",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "td",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes",
+        "name": "header",
+        "type": "bytes"
+      }
+    ],
+    "name": "reset",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -55,6 +91,19 @@ header store contract is deployed at address:
       }
     ],
     "name": "save",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "relayer",
+        "type": "address"
+      }
+    ],
+    "name": "setRelayer",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -86,3 +135,35 @@ get the current synchronized part height of the corresponding chain
 | --------- | ------ | ------- |
 | chainID   | number | chain identification |
 
+### setRelayer
+
+set the address of the relayer contract. This contract is only called by admin
+
+#### parameters
+
+| parameter | type   | comment |
+| --------- | ------ | ------- |
+| relayer   | address | the address of the relayer contract |
+
+### getRelayer
+
+get the address of the relayer contract
+
+#### response
+
+| parameter | type   | comment |
+| --------- | ------ | ------- |
+| relayer   | address | the address of the relayer contract |
+
+### reset
+
+clear the header data stored in the header store contract, and use the specified header as the starting block header 
+used by the header store contract. This contract is only called by admin
+
+#### parameters
+
+| parameter| type   | comment |
+| -------- | ------ | ------- |
+| from     | number | source chain identification |
+| td       | number | the total difficulty of the block header you want to set |
+| header   | []byte | a block header rlp encoded data, example: rlp.EncodeToBytes(Header{}) |
