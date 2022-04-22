@@ -52,10 +52,14 @@
       * [Address V2 Test](map-bridge/address/bridge_v2_test.md)
     * Light Client
     * Cross Chain
-        * [Header Store Contract](cross-chain/light-client-data/Header-Store-Contract.md)
-        * [Header Store API](cross-chain/light-client-data/Header-Store-API.md)
-        * [Verify](cross-chain/tx-verify/Tx-Verify.md)
-        * [Verify Contract](cross-chain/tx-verify/Tx-Verify-Contract.md)
+      * Ethereum To MAP
+          * [Header Store Contract](cross-chain/ethereum/light-client-data/Header-Store-Contract.md)
+          * [Header Store API](cross-chain/ethereum/light-client-data/Header-Store-API.md)
+          * [Verify](cross-chain/ethereum/tx-verify/Tx-Verify.md)
+          * [Verify Contract](cross-chain/ethereum/tx-verify/Tx-Verify-Contract.md)
+      * MAP To Ethereum
+          * [Verify](cross-chain/map/tx-verify/Tx-Verify.md)
+          * [Verify Contract](cross-chain/map/tx-verify/Tx-Verify-Contract.md)
 * [MAP Relayer](map-protocol/relayer/Compass.md)
       * Contracts
         * [Relayer](map-protocol/relayer/Relayer-Contract.md)
