@@ -72,7 +72,7 @@ judge whether the transaction is true and valid by verifying the transaction rec
 | coin     | Address      | the address of the token contract |
 | srcChain | *big.Int     | source chain identification |
 | dstChain | *big.Int     | destination chain identification|
-| rlpTxProve  | []byte       | cross chain transaction prove information, RLP encode of [txProve](Tx-Verify#MAP) |
+| rlpTxProve  | []byte       | cross chain transaction prove information, RLP encode of [txProve](Tx-Verify.md#MAP) |
 
 #### output parameters
 

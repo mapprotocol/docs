@@ -73,7 +73,7 @@ judge whether the transaction is true and valid by verifying the transaction rec
 | Coin     | Address      | the address of the token contract |
 | SrcChain | *big.Int     | source chain identification |
 | DstChain | *big.Int     | destination chain identification|
-| TxProve  | []byte       | cross chain transaction prove information, RLP encode of [CrossTxProve](https://mapprotocol.github.io/atlas/tx_verify/Tx-Verify) |
+| TxProve  | []byte       | cross chain transaction prove information, RLP encode of [CrossTxProve](Tx-Verify.md#Ethereum) |
 
 #### output parameters
 
