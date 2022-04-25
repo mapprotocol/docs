@@ -36,7 +36,7 @@ specify name and symbol assign the USDT contract address obtained in the previou
 
 The constructor of this contract receives 2 parameters, mpcAddress and verify. mpcAddress is the address of the relayer 
 that listen and verifies cross-chain transactions. This will be described in detail below. assign the
-[TxVerify](../cross-chain/tx-verify/Tx-Verify-Contract.md#contract-address) contract address to verify
+[TxVerify](../cross-chain/ethereum/tx-verify/Tx-Verify-Contract.md#contract-address) contract address to verify
 
 (4). Set Authentication
 
@@ -50,7 +50,7 @@ token: token contract address, here can be MapERC20 contract address,
 to: the address of the recipient of the transaction, 
 amount: transaction amount, 
 toChainId: the target chain of cross-chain transactions,
-see [supported chain list](../cross-chain/light-client-data/Header-Store-API.md#chain-identification-list).
+see [supported chain list](../cross-chain/ethereum/light-client-data/Header-Store-API.md#chain-identification-list).
 
 ### 4. Register as a relayer and synchronize the block header to atlas
 Atlas uses light client verification to verify on-chain transactions on the opposite chain to achieve the purpose of 
@@ -61,7 +61,7 @@ For how to register as a relayer and synchronize the block header, please refer 
 
 [How To Become Relayer](../map-protocol/relayer/QuickStart.md)
 
-[Sync Block Header](../cross-chain/light-client-data/Header-Store-Contract.md)
+[Sync Block Header](../cross-chain/ethereum/light-client-data/Header-Store-Contract.md)
 
 ### 5. Listen cross chain transaction events and verify transactions
 In this step, you need to implement a simple program to listen cross-chain transaction events on ethereum. 
@@ -70,7 +70,7 @@ and then the sawpIn method of the MapRouter contract deployed on atlas is mobili
 The sawpIn method will call the pre-compiled contract of atlas to verify whether the cross-chain transaction exists and is legal. 
 If the verification is passed, the transfer amount will be sent to the recipient of the cross-chain transaction.
 
-[How to construct cross-chain transaction verification data](../cross-chain/tx-verify/Tx-Verify-Contract.md#example)
+[How to construct cross-chain transaction verification data](../cross-chain/ethereum/tx-verify/Tx-Verify-Contract.md#example)
 
 ### 6. Query whether the cross-chain transaction has arrived
 After the above steps, you have completed a cross-chain transaction. Now let's verify whether the transaction amount has arrived. 

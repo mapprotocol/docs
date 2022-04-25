@@ -5,7 +5,6 @@
 tx verify contract is deployed at address:
 
 ```
-0x0000000000747856657269667941646472657373
 ```
 
 ## Contract JSON ABI
@@ -69,11 +68,11 @@ judge whether the transaction is true and valid by verifying the transaction rec
 
 | parameter| type         | comment |
 | -------- | ------------ | ------- |
-| Router   | Address      | address of the contract that generated the cross-chain transaction event |
-| Coin     | Address      | the address of the token contract |
-| SrcChain | *big.Int     | source chain identification |
-| DstChain | *big.Int     | destination chain identification|
-| TxProve  | []byte       | cross chain transaction prove information, RLP encode of [CrossTxProve](https://mapprotocol.github.io/atlas/tx_verify/Tx-Verify) |
+| router   | Address      | address of the contract that generated the cross-chain transaction event |
+| coin     | Address      | the address of the token contract |
+| srcChain | *big.Int     | source chain identification |
+| dstChain | *big.Int     | destination chain identification|
+| rlpTxProve  | []byte       | cross chain transaction prove information, RLP encode of [txProve](Tx-Verify.md#MAP) |
 
 #### output parameters
 
@@ -93,23 +92,23 @@ import (
 
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/light"
 	"github.com/ethereum/go-ethereum/rlp"
+	
+	"github.com/mapprotocol/atlas/core/types"
 )
 
-type TxBaseParams struct {
+type TxParams struct {
 	From  []byte
 	To    []byte
 	Value *big.Int
 }
 
-type CrossTxProve struct {
-	Tx          *TxBaseParams
-	Receipt     *types.Receipt
+type TxProve struct {
+    Header      []byte
+	Tx          *TxParams
+	Receipt     []byte
 	Prove       light.NodeList
-	BlockNumber uint64
-	TxIndex     uint
 }
 
 func example() {
@@ -120,13 +119,33 @@ func example() {
 	    dstChain = big.NewInt(211)
 	)
 
-	txProve, err := rlp.EncodeToBytes(CrossTxProve{})
+    encodedHeader, err := rlp.EncodeToBytes(types.Header{})
+	if err != nil {
+		panic(err)
+	}
+	encodedReceipt, err := rlp.EncodeToBytes(types.Receipt{})
+	if err != nil {
+		panic(err)
+	}
+	
+	txProve := TxProve{
+		Header: encodedHeader,
+		Tx: &TxParams{
+			From:  commom.Address{}.Bytes(),
+			To:    commom.Address{}.Bytes(),
+			Value: big.NewInt(1),
+		},
+		Receipt: encodedReceipts,
+		Prove:   proof.NodeList(),
+	}
+
+	encodedTxProve, err := rlp.EncodeToBytes(txProve)
 	if err != nil {
 		panic(err)
 	}
 
 	ABITxVerify, _ := abi.JSON(strings.NewReader(""))
-	input, err := ABITxVerify.Pack("txVerify", router, coin, srcChain, dstChain, txProve)
+	input, err := ABITxVerify.Pack("txVerify", router, coin, srcChain, dstChain, encodedTxProve)
 	if err != nil {
 		panic(err)
 	}
