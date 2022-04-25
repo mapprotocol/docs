@@ -52,7 +52,7 @@ First you need to config the markerConfig.json like this:
 
 Second you need compile your `map-contracts` project,we need the bytecode about `map-contracts` to make `genesis.json` file.
 
-Please refer to [Deployment of contract related to validator](../contracts/DeployContracts.md#deployment of contract related to validator)
+Please refer to [Deployment of contract related to validator](../contracts/DeployContracts.md#deployment-of-contract-related-to-validator)
 
 then to do so run:
 
