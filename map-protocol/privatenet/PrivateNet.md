@@ -41,7 +41,7 @@ $ ./atlas --datadir ./node-3 account new
 $ ./atlas --datadir ./node-4 account new
 
 # Output
-INFO [04-27|11:43:22.727] Maximum peer count                       ETH=50 LES=0 total=50
+INFO [03-16|14:12:42.713] Maximum peer count                       ETH=50 LES=0 total=50
 Your new account is locked with a password. Please give a password. Do not forget this password.
 Password: 
 Repeat password: 
@@ -200,9 +200,9 @@ admin.addPeer("enode://88c2fdd0189a33e3b8ee02a04a767c4792140c00c08de5d368b9aac57
 
 You'll start seeing some output. After a few minutes, you should see lines that look like this. This means your node has connected other nodes and started produce blocks.
 ```text
-INFO [03-15|13:39:27.683] Looking for peers                        peercount=2 tried=5 static=4
-INFO [03-15|13:39:37.582] Reset timer to resend RoundChange msg    address=0x2dC45799000ab08E60b7441c36fCC74060Ccbe11 func=resetResendRoundChangeTi
+INFO [03-16|20:21:27.683] Looking for peers                        peercount=2 tried=5 static=4
+INFO [03-16|20:21:37.582] Reset timer to resend RoundChange msg    address=0x2dC45799000ab08E60b7441c36fCC74060Ccbe11 func=resetResendRoundChangeTi
 mer cur_seq=23 cur_epoch=1 cur_round=0 des_round=5 state="Waiting for new round" address=0x2dC45799000ab08E60b7441c36fCC74060Ccbe11 timeout=17.5s
-INFO [03-15|13:39:39.311] Looking for peers                        peercount=3 tried=0 static=4
+INFO [03-16|20:21:39.311] Looking for peers                        peercount=3 tried=0 static=4
 ```
 
