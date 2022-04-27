@@ -41,7 +41,7 @@ $ ./atlas --datadir ./node-3 account new
 $ ./atlas --datadir ./node-4 account new
 
 # Output
-INFO [03-16|14:12:42.713] Maximum peer count                       ETH=50 LES=0 total=50
+INFO [04-27|11:43:22.727] Maximum peer count                       ETH=50 LES=0 total=50
 Your new account is locked with a password. Please give a password. Do not forget this password.
 Password: 
 Repeat password: 
@@ -49,15 +49,17 @@ Repeat password:
 Your new key was generated
 
 Public address of the key:   0xF930B74D2b1b703B879ab54E225ECc18Ab28e61C
-BLS Public address of the key:   0x28a23c223e4f46e2967a4332dc28bf883f58d8dd141cd006ba2c6e8c8fb14c1f00
-BLSProofOfPossession:   0x0139b981ed2621470e10d1e3f41812663ca61cfa0c3e8e1aca84d0f4f64e80bc5c6745844f218ca9e68363dce54bc21cbf772d2409246b9d9886f324d76c7605777c92333e490607f8732ed8bcdf135fd4bb3ea5e770cf3abffe38fa84edf78188339b159392aca1d6af621e67fb741eaefd51e1d31c7a0aefb690c23f075c3bb9
-PublicKeyHex:   0x04cb33a2402dc01be2470222e30ffcb236fcf1926837358a5fd7bf2b9704115ca3857d9e41009301cf6e021fa2700eca8393c84e9a9cdf4178b0c9fbc9cdce1ccc
+PublicKeyHex:   0x040456ddacfeecf28a9fed43a1d5d3a147c84a2024270fa76ac6d1886ef87e4ae04f5c719b4b98e1c3b135e0d012134ddc31881d08acc210ff203c18653633d36e
+BLS Public address of the key:   0x09d635d808a637f50dd5d90bbe2c5c750ff69e8422bde26cbe57eb095741dcb122ad53b16ce611304fb25bdf027fe996ce7aabbefb0e0cdc8ecde878929583ba1131c21d5ac81a4b299a3a11da0752773ae6c07214888f2ab4eacd9e9aa428242a53fcc07697a75a04489a35cef22f028d15958a53439035c46edca443d1e3a200
+BLSProofOfPossession:   0x15f238946bae1fdfa77e1b9b9fde8f4f4fe54195f697b18f4a17196309ed234204cd5c621b4ae3d4347024e319afce035a2a1e5197881141b6dfde2785235141
 Path of the secret key file: node-1/keystore/UTC--2022-03-17T09-35-15.650368000Z--f930b74d2b1b703b879ab54e225ecc18ab28e61c
 
 - You can share your public address with anyone. Others need it to interact with you.
 - You must NEVER share the secret key with anyone! The key controls access to your funds!
 - You must BACKUP your key file! Without the key, it's impossible to access account funds!
 - You must REMEMBER your password! Without the password, it's impossible to decrypt the key!
+
+
 
 ```
 
@@ -69,9 +71,8 @@ Get validator configuration json and generating a genesis.json
 - [generating a genesis.json ](../validator/Overview/HowToMakeGenesis.md#generating-a-genesis.json)
 
 We now generate the genesis.json file using the paths of the four accounts generated in the previous step.
-Fill the keystore path and account password corresponding to the account into the values corresponding to 
-`Account` and `Password` key in the json file respectively. The value corresponding to the `AdminAddress` key 
-can be any of the four accounts we created above or other accounts.
+Fill in the information we output when we created the account into the corresponding key value.
+The value corresponding to the `AdminAddress` key can be any of the four accounts we created above or other accounts.
 
 Just like the following:
 
@@ -81,27 +82,31 @@ Just like the following:
   "Validators": [
     {
       "Address": "0xF930B74D2b1b703B879ab54E225ECc18Ab28e61C",
-      "PublicKeyHex": "0x04cb33a2402dc01be2470222e30ffcb236fcf1926837358a5fd7bf2b9704115ca3857d9e41009301cf6e021fa2700eca8393c84e9a9cdf4178b0c9fbc9cdce1ccc",
-      "BLSPubKey": "0x28a23c223e4f46e2967a4332dc28bf883f58d8dd141cd006ba2c6e8c8fb14c1f00",
-      "BLSProofOfPossession": "0x0139b981ed2621470e10d1e3f41812663ca61cfa0c3e8e1aca84d0f4f64e80bc5c6745844f218ca9e68363dce54bc21cbf772d2409246b9d9886f324d76c7605777c92333e490607f8732ed8bcdf135fd4bb3ea5e770cf3abffe38fa84edf78188339b159392aca1d6af621e67fb741eaefd51e1d31c7a0aefb690c23f075c3bb9"
+      "PublicKeyHex": "0x040456ddacfeecf28a9fed43a1d5d3a147c84a2024270fa76ac6d1886ef87e4ae04f5c719b4b98e1c3b135e0d012134ddc31881d08acc210ff203c18653633d36e",
+      "BLSPubKey": "0x09d635d808a637f50dd5d90bbe2c5c750ff69e8422bde26cbe57eb095741dcb122ad53b16ce611304fb25bdf027fe996ce7aabbefb0e0cdc8ecde878929583ba1131c21d5ac81a4b299a3a11da0752773ae6c07214888f2ab4eacd9e9aa428242a53fcc07697a75a04489a35cef22f028d15958a53439035c46edca443d1e3a200",
+      "BLSG1PubKey": "0x09d635d808a637f50dd5d90bbe2c5c750ff69e8422bde26cbe57eb095741dcb122ad53b16ce611304fb25bdf027fe996ce7aabbefb0e0cdc8ecde878929583ba1131c21d5ac81a4b299a3a11da0752773ae6c07214888f2ab4eacd9e9aa428242a53fcc07697a75a04489a35cef22f028d15958a53439035c46edca443d1e3a200",
+      "BLSProofOfPossession": "0x15f238946bae1fdfa77e1b9b9fde8f4f4fe54195f697b18f4a17196309ed234204cd5c621b4ae3d4347024e319afce035a2a1e5197881141b6dfde2785235141"
     },
     {
       "Address": "0x0e2699Be2B47Dfd7560c4771A32A50b64F81293d",
-      "PublicKeyHex": "0x04e42d6217bd5943b395706d959451028b2a2bde27091729ec8a9a85ea08c42a8917cc8bcddd39abf60af4c647d5e345e0e3b4e68912f5d7729267f3427cb7692c",
-      "BLSPubKey": "0x25cc3db8313960693f32826d23399e4ab77b46782503bc42f1a6c2afd7e3041c00",
-      "BLSProofOfPossession": "0x013d9147f769934037e8ddd00a686f21ece0c68dfbf666560dc6c0c0c4fab49edd0eabc5b59f8b41cf0f7f7fb17fb7541f5737cece4a18bbc05cf691d3c66532f0313629e6801097940ef01b8652eb1d53d78e7efe2d21bd26d40a4a612229a2ac72be9ea8dc1365414f51753b9532adf9921f026ee584799d1f64c328df65851c"
+      "PublicKeyHex": "0x04f47a1376fff0c026f63f539d7208d4f9e7d046d4e3c49016333beb2bb9517532a041f652a714c7971fc2ff5551752ed958dc3a54504bea956969fd05dcad7ade",
+      "BLSPubKey": "0x0fe202e9adfff4c5748235236c1a6de404a69085ed89c7ba5a68bd98c83dc07f17b6b4d0edaef436f5fb4a97824e4aa2e5d3d42ac8189ea15fcafc34f69cf7e3056b668d73b4ca90860ff15f9b4b6807e0089cc96921d91c0b219746f4016f3d01789b5fd2ff8f8cbe5ccb0af6cace7f210d1f73e836b8e25601afdbefd19a0600",
+      "BLSG1PubKey": "0x0fe202e9adfff4c5748235236c1a6de404a69085ed89c7ba5a68bd98c83dc07f17b6b4d0edaef436f5fb4a97824e4aa2e5d3d42ac8189ea15fcafc34f69cf7e3056b668d73b4ca90860ff15f9b4b6807e0089cc96921d91c0b219746f4016f3d01789b5fd2ff8f8cbe5ccb0af6cace7f210d1f73e836b8e25601afdbefd19a0600",
+      "BLSProofOfPossession": "0x0ba85160de008a330397c3efb886335b7b00a5689a0db74c6a224ce7965ff9890131fd80e474b6d16b64cc2b99deddaaa6858ab2e6f6e8f7ff1035292b78bf1a"
     },
     {
       "Address": "0x3c0ef282c8c62a44eA2FE8928b6bd89a16fD8252",
-      "PublicKeyHex": "0x04e9527daab62c13afa7068fe902b62cd6c1d067b1553f57f8d31e5887b640b594c8aa34cdc1e43630041eaa20063e27e6acf6379f82c5049818a079cc888eef49",
-      "BLSPubKey": "0x1a5c9f6f2f0ce12cf54aca83d760a2d0305d221a2f8bfa723430030bc3e98f6500",
-      "BLSProofOfPossession": "0x010a8d302da72577c064b079a4855a85ed8903f18dce78ab4e779fa8f99c9ee26b55894a5bdb471fcbb12a7317f2f64e9ffddbe2639ae9485a9fa49e358eb8a35b7ec0b1e02eabc2e7053d0337b4eaa0d5266f5411c56c358b87b479a62488b2112d4ac4de47910d7f6b40ac806cba554d9abb82c03e27a54ca2536c62bd779ee0"
+      "PublicKeyHex": "0x0413ac8c3aa0b5bca1768fc6b631503d7ef28f84794bb68404c46187eb7bbfc5360123da2fc76b223ff34451fbd204369a30de1dfc421946b708629911fd9395f0",
+      "BLSPubKey": "0x19afff51ccfb65f91fe8a8922f072897c657d41823b8a87ac296b42bbeaa1969292f5c0cbd6991b083dcb95ac4c4c2961ad93bc1debc325bfdced44430b5d9da291ec44382e494e73ed6faaf5a9047fa23986f1a904166d5b05aa4e7a7e77fc9030d7acbf12bc3f4d27028779fd785c06096ab863f6747d2e63fec5bdc3aca1800",
+      "BLSG1PubKey": "0x19afff51ccfb65f91fe8a8922f072897c657d41823b8a87ac296b42bbeaa1969292f5c0cbd6991b083dcb95ac4c4c2961ad93bc1debc325bfdced44430b5d9da291ec44382e494e73ed6faaf5a9047fa23986f1a904166d5b05aa4e7a7e77fc9030d7acbf12bc3f4d27028779fd785c06096ab863f6747d2e63fec5bdc3aca1800",
+      "BLSProofOfPossession": "0x0a24d98df93e65c87c42d71f7ce8aeb3b8a580d74382dfd824c4c6b64df60cff3040b8c5979a68529d05a5e357337314fa63a655a3b0eb26f7a0f385488a46c2"
     },
     {
       "Address": "0x41E4A55Ef06c1961B3e143357e24cA7f92e4DD03",
-      "PublicKeyHex": "0x048e7157847573e11a80593c01b86cd59f40746e3389dcf96ec7dfac39fb20bb8df8e426a9573b556acead607f17512f4a0799d86e7ced7bc2c31e66bd2c40e3e0",
-      "BLSPubKey": "0x1a5c9f6f2f0ce12cf54aca83d760a2d0305d221a2f8bfa723430030bc3e98f6500",
-      "BLSProofOfPossession": "0x010a8d302da72577c064b079a4855a85ed8903f18dce78ab4e779fa8f99c9ee26b55894a5bdb471fcbb12a7317f2f64e9ffddbe2639ae9485a9fa49e358eb8a35b7ec0b1e02eabc2e7053d0337b4eaa0d5266f5411c56c358b87b479a62488b2112d4ac4de47910d7f6b40ac806cba554d9abb82c03e27a54ca2536c62bd779ee0"
+      "PublicKeyHex": "0x040e36f52adb9da0e98afcc889eff6a20c0266c1b083db5eb234c0d18ac1d2226397862599951623aab0cd3dc6fdf43974a3baa69edbe0a5c01762782b6be28900",
+      "BLSPubKey": "0x0832b7c57c144b1e09a51b244a105b1cbc6932f9257f97365403a93f9f695a42178641aa1b6389acf294ba0e3f949ea592f2ef0d7ab6c2813e661049107b222503c117795d7a54f3e555b67e3ba1626a35f498ce58d168962ee8b366580b74aa0d042e6459265880dbbcf76d10c31cbd38e344a7fa02a1b480ac651ed46146ff00",
+      "BLSG1PubKey": "0x0832b7c57c144b1e09a51b244a105b1cbc6932f9257f97365403a93f9f695a42178641aa1b6389acf294ba0e3f949ea592f2ef0d7ab6c2813e661049107b222503c117795d7a54f3e555b67e3ba1626a35f498ce58d168962ee8b366580b74aa0d042e6459265880dbbcf76d10c31cbd38e344a7fa02a1b480ac651ed46146ff00",
+      "BLSProofOfPossession": "0x2ff772a97bf2ca4aaba9e31b52375b00c3bb732efe2f84fab8ed32c74d9189b018c6c8079066614a1e65c7def0f08d4f60cd5467b129316e33791e58f021f44a"
     }
   ]
 }
