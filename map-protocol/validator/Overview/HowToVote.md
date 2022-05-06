@@ -8,7 +8,7 @@ In this step, you need to transfer your identification information to the corres
 
 The purpose of this step is keep your locked `MAP` more secure by authorizing alternative keys to be used for signing attestations、voting、validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked `MAP` in storage.
 
-You need `createAccount` command to perform the above operations,more detail about `createAccount` command please to see [this](../../marker/AboutCommon.md#CreateAccount).
+You need `createAccount` command to perform the above operations,more detail about `createAccount` command please to see [this](../../marker/AboutCommon.md#createAccount).
 
 ### Step 2: locked `MAP`
 
@@ -26,4 +26,4 @@ When you get to this step, you can vote for your favorite validator.
 
 When you finish voting,your votes will be in the status of pending. We will automatically activate your votes to get the reward when the next reward is issued.Of course, you can also use `active` command to activate your votes yourself. this active operation need to be greater than your pending vote epoch.
 
-You can click the [active](../../marker/AboutVote.md#Activate) and [vote](../../marker/AboutVote.md#Vote)  to see detail.
+You can click the [active](../../marker/AboutVote.md#activate) and [vote](../../marker/AboutVote.md#vote)  to see detail.
