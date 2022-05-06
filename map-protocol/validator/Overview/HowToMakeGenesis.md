@@ -54,7 +54,7 @@ First you need to config the markerConfig.json like this:
 
 ```
 
-Second you need compile your `map-contracts` project,we need the bytecode about `map-contracts` to make `genesis.json` file.
+Second you need compile your `atlas-contracts` project,we need the bytecode about `atlas-contracts` to make `genesis.json` file.
 
 Please refer to [Deployment of contract related to validator](../contracts/DeployContracts.md#deployment-of-contract-related-to-validator)
 
@@ -79,7 +79,7 @@ OPTIONS
   
 EXAMPLES:
 
-marker genesis --buildpath ./root/map-contracts/build/contracts --newenv ./root/atlasEnv --markercfg "./root/atlas/marker/config/markerConfig.json"
+marker genesis --buildpath ./root/atlas-contracts/build/contracts --newenv ./root/atlasEnv --markercfg "./root/atlas/marker/config/markerConfig.json"
 
 
 This will create a `genesis.json` in the ./root/atlasEnv folder
