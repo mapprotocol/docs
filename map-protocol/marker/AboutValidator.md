@@ -145,5 +145,37 @@ or
 Failed
 ```
 
+### revertRegister
 
+if you deRegister your account in the current epoch you can revert your validator identity at the same epoch.
+```shell
+USAGE
+  $ ./Marker revertRegister
+
+OPTIONS
+  --keystore                                                   your keystore file path
+  
+  --password                                                   Keystore file`s password 
+                                                               (defult value "") 
+
+  --rpcaddr                                                    HTTP-RPC server listening 
+                                                               interface
+                                                             
+  --rpcport                                                    HTTP-RPC server listening 
+                                                               port
+
+                                                                                                            
+EXAMPLES:
+./Marker revertRegister
+--rpcaddr localhost
+--rpcport 8545
+--keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--password ""
+
+
+RESPONSE:
+success
+or
+Failed
+```
 
