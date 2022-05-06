@@ -4,9 +4,10 @@ Introduction register deregister and so on about validator.
 
 ### Register
 
-Register a new Validator. Through this command, we will transfer your Commission、your ecdsaPublicKey、your blsPublicKey、your BLSProof into the management contract. To manage and secure your assets. your ecdsaPublicKey、your blsPublicKey、your BLSProof we'll get them through your keystore. 
+Register a new Validator. Through this command, we will transfer your Commission、your ecdsaPublicKey、your blsPublicKey、your blsG1PublicKey、your BLSProof into the management contract. To manage and secure your assets. your ecdsaPublicKey、your blsPublicKey、your BLSProof we'll get them through your keystore. 
 The ECDSA public key that the validator is using for consensus, should match the validator signer. 64 bytes. 
-The BLS public key that the validator is using for consensus, should pass proof of possession. 33 bytes. 
+The BLS public key that the validator is using for consensus, should pass proof of possession. 129 bytes. 
+The BLS G1 public key that the validator is using for consensus. 129 bytes. 
 The BLS public key proof-of-possession, which consists of a signature on the account address. 129 bytes.
 
 ```shell
@@ -78,8 +79,8 @@ OPTIONS
   --commission                                                 The proportion of awards 
                                                                collected by the validator,
                                                                and then the rest to voter
-                                                               ,Commission(0< commission <1)
-                                                               can`t be greater than 100%.
+                                                               ,Commission(0< commission <1000000)
+                                                               can`t be greater than 1000000.
                                                                This attribute is one of the 
                                                                objects that voters refer to
                                                                when voting 
@@ -109,7 +110,9 @@ deregister a validator.
 
 Of course, first you have to be a validator.
 
-The `Validators` contract sets the minimum time to become a validator. You must be greater than this time before you can deregister validator.
+The `Validators` contract sets the minimum time(default 60 Day) to become a validator. You must be greater than this time before you can deregister validator.
+
+In order to prevent malicious occupation of resources during deregister, we put your deregister request in pending status and perform batch logout in the last block of the epoch.
 
 ```shell
 USAGE

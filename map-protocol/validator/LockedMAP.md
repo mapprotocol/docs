@@ -1,6 +1,6 @@
 #Locked MAP And Voting
 
-If you create Account and locked `MAP` enough, you can vote as a voter.
+If you create Account and locked `MAP` enough, you can vote as a voter.Note that the minimum locking amount is 10 `MAP`.
 
 If your account has become a validator, you can also use this account as a voter to vote.
 
