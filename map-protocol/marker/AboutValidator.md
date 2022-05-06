@@ -28,11 +28,13 @@ OPTIONS
   --commission                                                 The proportion of awards 
                                                                collected by the validator,
                                                                and then the rest to voter
-                                                               ,Commission(0< commission <1)
-                                                               can`t be greater than 100%.
+                                                               ,The commission parameter 
+                                                               is relative to 1000000
+                                                               (0 < commission <1000000)
+                                                               can`t be greater than 1000000.
                                                                This attribute is one of the 
                                                                objects that voters refer to
-                                                               when voting                                                                                                                            
+                                                               when voting.                                                                                                                            
 
   
 EXAMPLES:
