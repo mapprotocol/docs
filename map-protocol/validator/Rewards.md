@@ -29,7 +29,7 @@ The amount of disbursements is determined at the end of every epoch via a three 
 In step one，Community Fund will receive a fixed percentage of the reward
 
 - `CommunityFundReward`  =  `CommunityFundMultiplier`*`EpochReward`
-- `CommunityFundMultiplier` defult value = 0.1.
+- `CommunityFundMultiplier` defult value = 0.
 
 ### Step 2
 
@@ -86,7 +86,7 @@ The score is calculated by this formula:
     - Second, check whether the current block review period is signed. If it exists, the signature will be regarded
       as successful
     - if First step and Second step is successful `SignedBlocks` will add 1.
-- `AdjustmentSpeed`  A adjustment factor.This way will encourage the validator to stabilize.('AdjustmentSpeed' default value is 1).
+- `AdjustmentSpeed`  A adjustment factor.This way will encourage the validator to stabilize.('AdjustmentSpeed' default value is 0.2).
 - `OldScore`. This is the score of the last epoch of this validator.(In the fist distribute epoch reward OldScore is 0)
 
 ### Step 3

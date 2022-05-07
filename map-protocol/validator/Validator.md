@@ -11,3 +11,10 @@ Any account that has at least the minimum stake requirement in Locked `MAP`, whe
 # Reward source of validator
 
 The reward of validator comes from a certain proportion of the system reward of each session. This certain proportion is set at registration time and can be changed later.
+
+# DeRegister
+
+- [deRegister](../marker/AboutValidator.md#deregister)
+
+In order to prevent malicious occupation of resources during deregister, we put your deregister request in pending status and perform batch logout in the last block of the epoch.
+

@@ -65,12 +65,12 @@ Deploy to your chosen Map network running one of the following commands.
 
 Introduce the contracts related to the deployment of validator
 
-you need compile your `map-contracts` project,we need the bytecode about `map-contracts` to make `genesis.json`file.
+you need compile your `atlas-contracts` project,we need the bytecode about `atlas-contracts` to make `genesis.json`file.
 
-1.Download `map-contracts` project in any folder you like , use this command `git clone https://github.com/mapprotocol/map-contracts.git`
+1.Download `atlas-contracts` project in any folder you like , use this command `git clone https://github.com/mapprotocol/atlas-contracts.git`
 
 2.Suppose you have installed node, then then switch to the project file initialize the project and use this command `npm install`
 
 3.Compile the project using truffle, the command compiled by truffle is `truffle compile`
 
-4.A file called `build` will be generated in your `map-contracts` project. We will use this file to specify the corresponding parameters.
+4.A file called `build` will be generated in your `atlas-contracts` project. We will use this file to specify the corresponding parameters.
