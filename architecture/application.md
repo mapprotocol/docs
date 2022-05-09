@@ -2,7 +2,7 @@ Decentralized derivative and synthetic assets are usually constrained by the acc
 
 Assets and data originated from Dapps assembly on MAP Relay Chain. Dapps can achieve interoperability because of MAP Cross-chain Services (MCS). The finality of cross-chain data and asset verification network by MAP Protocol Layer empowers Dapps to grow limitless.
 
-2.8.1 Cross-chain Lending
+### Cross-chain Lending
 
 Currently, if a user has money on chain A but wants to farm on Chain B, the user would have to go through 9 steps:
 
@@ -11,7 +11,7 @@ Currently, if a user has money on chain A but wants to farm on Chain B, the user
 With MAP Protocol, you can collateralize on Chain A, borrow on the destination chain, farm, repay, and the collateral is unlocked, skipping the four bridging and swapping fees.
 
 
-2.8.2 Cross-chain Swap
+### Cross-chain Swap
 
 Cross-chain Swap allows you to swap coins with substantially lower fees than traditional DeFi exchanges by connecting you to the best cross-chain DeFi protocols. By using MAP Protocol, developers can build a truly decentralized cross-chain exchange that enables users to swap any token on any chain.
 
@@ -21,11 +21,11 @@ In a cross-chain swap built with MAP Protocol, users can add multichain coin LP 
 
 Barterswap, the first truly decentralized cross-chain exchange that enables users to swap any token on any chain, includes all the above functionalities and will be released in Q3 2022.
 
-2.8.3 On-chain Oracle and Derivatives because of cross-chain Data
+### On-chain Oracle and Derivatives because of cross-chain Data
 
 Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices and quantities originating from other chains. This issue can be solved by multi-chain deployment, but it is extremely complex. By building a reliable cross-chain network, MAP Protocol has enabled Data cross-chain and is nurturing a completely new oracle market - On-Chain Oracle. By deploying on MAP Relay Chain, derivative and synthetic asset applications can easily acquire reliable multi-chain data from On-Chain Oracle.
 
-2.8.4 Cross-chain GameFi
+### Cross-chain GameFi
 
 As the crypto industry and the idea of metaverse boomed, a lot of innovative ideas were brought to the traditional gaming sector. Gaming Finance refers to the gamification of financial systems to create profit through participation in play-to-earn crypto games. The play-to-earn games are different from conventional games since players participate to earn rewards, and players can create in-game assets with complete control over ownership.
 
@@ -35,14 +35,15 @@ Another way to be scalable and maintain a good gaming experience is directly dep
 
 Illustration of MAP Protocol Cross-chain Applications - Data
 
+![](app-oracal.png)
 
 Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices, and quantities originated from other chains. This issue can be solved by deploying on multiple chains but is extremely complex. By building a reliable cross-chain network, MAP Protocol has enabled Data cross-chain and is nurturing a completely new oracle market - On-Chain Oracle. By deploying on MAP Relay Chain, derivative and synthetic asset applications can acquire reliable multi-chain data from On-Chain Oracle with ease.
 
-2.8.5 Fungible token and NFT Bridge
+### Fungible token and NFT Bridge
 
 Cross-chain bridges and cross-chain NFT bridges no longer have to build their infrastructure or use MPC. Using MAP’s underlying cross-chain verification network with finality and the MCS application developer service kit, bridge developers can easily build their NFT or homogenized token bridge application.
 
-2.8.6 Cross-chain Governance - The case of Aave
+### Cross-chain Governance - The case of Aave
 
 As told by its developers, a proposal executed on Aave, which is built on the Ethereum (ETH) network, was sent to the Polygon (MATIC) FxPortal. The mechanism then read the Ethereum data and passed it for validation on the Polygon network. Afterward, the Aave cross-chain governance bridge contract received this data, decoded it and queued the action, pending a time lock for finalization. The development team wrote:
 
@@ -51,10 +52,10 @@ The Aave cross-chain governance bridge is built in a generic way to be easily ad
 With MAP Protocols interoperability with all-chains, cross-chain governance can be achieved with all EVM and heterogenous chains by a security cross-chain infrastructure.
 
 
-
+![](app-bridge.png)
 
 *Fungible tokens like USDC are issued simultaneously on multiple chains. Dapp developers need to submit whether fungible tokens are issued on multiple chains on the MAP Cross-chain services' vault to avoid different forms of the same assets created during the cross-chain process.
 
-2.8.7 Applications on MAP Protocol
+### Applications on MAP Protocol
 
 Dapp developers only need to deploy their dapps on MAP Relay Chain with the completed MAP Cross-chain services module, then enjoy the privilege of connecting the entire blockchain world’s liquidity. 

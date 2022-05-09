@@ -4,7 +4,7 @@ Assets management of cross-chain transfers is quite error-prone and usually come
 
 Suppose Ethereum and Binance Smart Chain are already supported by MAP protocol and Alice wants to transfer 100 USDC from Ethereum to BSC with MAP protocol. Note that before Alice doing anything, MAP protocol already deployed light client of MAP relay chain on both Ethereum and BSC, called MapLightClientOnEth and MapLightClientOnBsc, and Messengers are continuously update both light clients according to MAP relay chain growth. Also EthLightClientOnMap and BscLightClientOnMap are already deployed on MAP relay chain and Messengers are already updating both light clients according to the update of Ethereum and BSC. Also there is an AssetVault contract deployed on MAP relay chain, Ethereum and BSC.
 
-
+![](mcs-asset.png)
 
 Cross-chain assets are locked in the AssetsVault contract on the source chain. For assets moving to MAP relay chain, MAP relay chain will wrap all assets from different chains, e.g., mUSDC is the wrapped USDC on MAP relay chain for USDC on Ethereum, BSC, etc. Let’s illustrate what really happens behind the scenes if Alice is using MAP protocol to move 100 USDC from Ethereum to BSC via MAP relay chain.
 
@@ -30,18 +30,19 @@ Note that if Alice transfers 100 USDC from Ethereum to MAP relay chain, then she
 
 Illustration of MAP Protocol's MAP Cross-Chain Services (MCS) Layer
 
+![](mcs-data.png)
 
-Messenger
-What is Messenger? Messenger is an independent inter-chain program.
-Messenger listens to relevant events as preset in the program and builds a proof on the ledger of the source chain; then transmit the message of the event and proof to Vault or Data on the destination chain.
-Messenger needs to prepay the gas fee of MAP Relay Chain and the destination chain for cross-chain users and thus get rewards from applications.
-As gas fees of destination chains cannot be estimated, MAP Protocol Layer cannot include this process into the bottom network because of the principle of absoluteness adopted by MAP Protocol.
-The flexibility of applications opens up many possibilities for Messenger, where applications can charge cross-chain users flexible transaction fees and reward Messenger accordingly.
-As a main component of MAP Cross-chain Services, Messenger SDK is open to Dapp developers.
-Messenger is a high concurrency inter-chain program. Theoretically, as long as one honest Messenger is working in between chains, all cross-chain transactions messages of the Dapp can be transferred.
-Malicious attacks by messengers will not cause the loss of assets and will only result in invalidity of verification on the MAP Protocol Layer.
+### Messenger
+- What is Messenger? Messenger is an independent inter-chain program.
+- Messenger listens to relevant events as preset in the program and builds a proof on the ledger of the source chain; then transmit the message of the event and proof to Vault or Data on the destination chain.
+- Messenger needs to prepay the gas fee of MAP Relay Chain and the destination chain for cross-chain users and thus get rewards from applications.
+- As gas fees of destination chains cannot be estimated, MAP Protocol Layer cannot include this process into the bottom network because of the principle of absoluteness adopted by MAP Protocol.
+- The flexibility of applications opens up many possibilities for Messenger, where applications can charge cross-chain users flexible transaction fees and reward Messenger accordingly.
+- As a main component of MAP Cross-chain Services, Messenger SDK is open to Dapp developers.
+- Messenger is a high concurrency inter-chain program. Theoretically, as long as one honest Messenger is working in between chains, all cross-chain transactions messages of the Dapp can be transferred.
+- Malicious attacks by messengers will not cause the loss of assets and will only result in invalidity of verification on the MAP Protocol Layer.
 
-Vault & Data
-On the source chain, Vault & Data are responsible for receipt of assets or data and trigger an event for Messengers to listen to.
-On relay chain or destination chain, Vault & Data are responsible for receiving cross-chain messages transmitted by Messengers, then through an internal component - router to schedule and conduct the verification of cross-chain transactions via Light-Client of the source chain deployed on the destination chain. When verification completes, Vault & Data will record the corresponding instruction.
-Dapp developers can deploy vault & Data. They can also share the liquidity of asset vaults or data pools via MAP Cross-chain Services' Vault & Data.
+### Vault & Data
+- On the source chain, Vault & Data are responsible for receipt of assets or data and trigger an event for Messengers to listen to.
+- On relay chain or destination chain, Vault & Data are responsible for receiving cross-chain messages transmitted by Messengers, then through an internal component - router to schedule and conduct the verification of cross-chain transactions via Light-Client of the source chain deployed on the destination chain. When verification completes, Vault & Data will record the corresponding instruction.
+- Dapp developers can deploy vault & Data. They can also share the liquidity of asset vaults or data pools via MAP Cross-chain Services' Vault & Data.
