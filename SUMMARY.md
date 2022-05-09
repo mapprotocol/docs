@@ -51,7 +51,6 @@
         * [Fee Center](map-bridge/abi/FeeCenter.md)
         * [Map Bridge Relay](map-bridge/abi/MAPBridgeRelayV2.md)
         * [Map Bridge](map-bridge/abi/MAPBridgeV2.md)
-        * [Relayer](map-bridge/abi/Relayer.md)
         * [Vault Token](map-bridge/abi/VToken.md)
         * [Staking](map-bridge/abi/MasterChef.md)
       * Address
@@ -63,9 +62,7 @@
           * [Header Store API](cross-chain/light-client-data/Header-Store-API.md)
           * [Verify](cross-chain/tx-verify/Tx-Verify.md)
           * [Verify Contract](cross-chain/tx-verify/Tx-Verify-Contract.md)
-  * [MAP Relayer](map-chain/relayer/Compass.md)
-    * [Contracts](map-chain/relayer/Relayer-Contract.md)
-    * [Relayer API](map-chain/relayer/Relayer-API.md)
+  * [Maintainer](map-chain/relayer/Compass.md)
 
   * SDK
     * [Atlas JSON RPC](rpc-api/RPC-API.md)
