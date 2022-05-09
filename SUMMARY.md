@@ -14,6 +14,7 @@
   * [Gas Fee Model](learn/fee.md)
   * [Construction of MAP Protocol Layer](learn/map-protocol-layers.md)
   * [Tokenomics](learn/tokenomics.md)
+  * [Purchase](/learn/purchase.md)
 * Develop
   * MAP Relay Chain
     * Atlas
