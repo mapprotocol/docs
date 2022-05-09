@@ -21,4 +21,5 @@
 **Technical Illustration of MAP Protocol**
 
 ![](technical-illustration.png)
+
 Developers can deploy cross-chain Dapps on MAP Relay Chain to achieve interoperability.
