@@ -1,4 +1,4 @@
-## Background
+# Background
 
 ### Three stages of crypto industry development
 
@@ -39,7 +39,7 @@ The solution to the problem of blockchains interoperability can be the very fact
   * Although Thorchain and Terra are Cosmos’s ecosystem chains, the cross-chain mechanism of Thorchain is still MPC, and dapps developed on Terra are mostly mono-chain dapps.
   * Polkadot has not yet developed any cross-chain applications. 
 
-## Introduction of MAP Protocol
+# Introduction of MAP Protocol
 
 MAP Protocol is a blockchain interoperable protocol designated for cross-chain Dapps, application-ready, all-chain coverage, cost-efficient, and security-finality.
 
@@ -50,7 +50,7 @@ While cross-chain bridges can be easily built with MAP protocol, the protocol it
 Thus, together with worldwide developers, MAP Protocol is the dawn of a new cross-chain age.
 
 
-## History of MAP Protocol
+# History of MAP Protocol
 ### Genesis: In the summer of 2019
 
 MAP team was founded in the summer of 2019. Although there was a downfall in the crypto market, CEXs was still making huge profits. With the mission of constructing a cross-chain peer-to-peer e-cash payment system infrastructure, MAP Protocol started to be built by a team of senior blockchain research experts, experienced smart contract developers, and bottom-layer blockchain engineering experts. The MAP team deeply agrees with the classic Satoshi Nakamoto’s doctrine of blockchain and believes that cross-chain technology should not deviate from it and should contribute to a trustful peer-to-peer blockchain universe.
