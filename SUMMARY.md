@@ -46,8 +46,7 @@
         * [PoC-1](Makalu-PoC/PoC-1.md)
         * [PoC-2](Makalu-PoC/PoC-2.md)
   * MAP Bridge
-      * Contract
-        * [Bridge](map-bridge/contract/bridge.md)
+      * [Contract](map-bridge/contract/bridge.md)
       * ABI
         * [Fee Center](map-bridge/abi/FeeCenter.md)
         * [Map Bridge Relay](map-bridge/abi/MAPBridgeRelayV2.md)
@@ -65,13 +64,12 @@
           * [Verify](cross-chain/tx-verify/Tx-Verify.md)
           * [Verify Contract](cross-chain/tx-verify/Tx-Verify-Contract.md)
   * [MAP Relayer](map-chain/relayer/Compass.md)
-        * Contracts
-          * [Relayer](map-chain/relayer/Relayer-Contract.md)
-      * [Relayer API](map-chain/relayer/Relayer-API.md)
+    * [Contracts](map-chain/relayer/Relayer-Contract.md)
+    * [Relayer API](map-chain/relayer/Relayer-API.md)
 
   * SDK
-    *[Atlas JSON RPC](rpc-api/RPC-API.md)
-      * [Atlas Consensus API](map-chain/consensus/ConsensusAPI.md)
+    * [Atlas JSON RPC](rpc-api/RPC-API.md)
+    * [Atlas Consensus API](map-chain/consensus/ConsensusAPI.md)
 * Run
     * [How To Become A New Validator](map-chain/validator/Overview/HowToBecomeANewValidator.md)
     * [How To Become Relayer](map-chain/relayer/QuickStart.md)
