@@ -7,7 +7,7 @@ With MAP protocol, our vision is to create a quick, seamless experience that lin
 
 ## Our Strength
 
-We are building a whole solution in a more trustless and decentralized way.
+We are building a whole solution in a truely trustless and decentralized way.
 
 1. MAP Protocol solution is more decentralized. It is secured by 100+ staked validators and maintained by 10000+ relayers. This is to preserve the features towards decentralization.
 

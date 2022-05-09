@@ -1,6 +1,6 @@
 #Map Bridge Contract
 
-## Bidge Contract
+## Bridge Contract
 ### transferOut
 Cross-chain transfer of tokens
 
@@ -86,6 +86,6 @@ function addAuthToken(address[] memory token) external
 
 | parameter| type   | comment |
 | -------- | ------ | ------- |
-| token    | address[]| List of token addresses with permissions
+| token    | address[]| List of token addresses with permissions |
 
 

@@ -59,7 +59,7 @@ cross-chain transaction verification.
 
 For how to register as a relayer and synchronize the block header, please refer to the document linked below.
 
-[How To Become Relayer](../map-protocol/relayer/QuickStart.md)
+[How To Become Relayer](../map-chain/relayer/QuickStart.md)
 
 [Sync Block Header](../cross-chain/ethereum/light-client-data/Header-Store-Contract.md)
 

@@ -1,6 +1,17 @@
 # MAP Bridge V1
 
 
+## Bridge Contracts
+
+Proxy Contract
+
+| Chain            | Address |
+|------------------| -----|
+| Ethereum mainnet | 0xb586DC60e9e39F87c9CB8B7D7E30b2f04D40D14c |
+| Ethereum mainnet | 0xb586DC60e9e39F87c9CB8B7D7E30b2f04D40D14c |
+| Ethereum mainnet | 0xb586DC60e9e39F87c9CB8B7D7E30b2f04D40D14c |
+| Ethereum mainnet | 0xb586DC60e9e39F87c9CB8B7D7E30b2f04D40D14c |
+
 ## ETH Bridge Relay
 
 Deploying contracts with the account: 0x038BCF8d2d48C084B661E3f2B3c514b4244B4D90
