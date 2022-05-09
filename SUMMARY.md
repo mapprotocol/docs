@@ -7,7 +7,7 @@
     * [MAP Relay Chain](architecture/relay-chain.md)
     * [Three-layer Architecture](architecture/3layer.md)
     * [MAP Protocol Layer](architecture/protocl-layer.md)
-    * [Verification & Maintenance Network](architecture/verifaction.md)
+    * [Verification & Maintenance Network](architecture/verification.md)
     * [MAP Cross-chain Service (MCS) Layer](architecture/mcs.md)
     * [MAP Application Layer](architecture/application.md)
   * [Comparison with other cross-chain models](learn/comparison.md)
