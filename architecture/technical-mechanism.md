@@ -19,5 +19,6 @@
 10. MAP Relay Chain supports the development of all cross-chain native Dapps, including on-chain oracle, cross-chain swap, cross-chain bridge for tokens and NFTs, decentralized derivatives, cross-chain DAO, and cross-chain GameFi, etc.
 
 **Technical Illustration of MAP Protocol**
+
 ![](technical-illustration.png)
 Developers can deploy cross-chain Dapps on MAP Relay Chain to achieve interoperability.
