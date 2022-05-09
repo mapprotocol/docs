@@ -32,6 +32,7 @@ Light clients on MAP relay chain are initialized as smart contracts, so that the
 Solely maintaining light clients of connected blockchains on MAP relay chain is not enough for bidirectional cross-chain interoperation in a trustless style, MAP protocol requires the existence of MAP relay chain’s light client on each connected blockchain. While on MAP relay chain, the gas price can be continuously optimized to stay as low as possible, on other chains, we must accept the reality. As MAP relay chain adopts PoS and IBFT, a light client can be easily built following the above technique. To optimize the gas consumption of the light client on other chains, MAP relay chain adopts aggregate  BLS signature over BN256 curve. In this way, the verification of the signatures of MAP relay chain’s validators can be reduced to verify only one aggregated signature with one aggregated public key. As the precompile contract of BN256 is widely supported by the EVM-compatible blockchain, the gas consumption of maintaining the MAP relay chain’s light client can be reduced.
 
 **Illustration of MAP Protocol's Cross-Chain Verification & Maintenance Network**
+
 ![Illustration of MAP Protocol's Cross-Chain Verification & Maintenance Network](map-client.png)
 
 ## Maintainer

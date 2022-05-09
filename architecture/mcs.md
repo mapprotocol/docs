@@ -32,7 +32,7 @@ Illustration of MAP Protocol's MAP Cross-Chain Services (MCS) Layer
 
 ![](mcs-data.png)
 
-### Messenger
+## Messenger
 - What is Messenger? Messenger is an independent inter-chain program.
 - Messenger listens to relevant events as preset in the program and builds a proof on the ledger of the source chain; then transmit the message of the event and proof to Vault or Data on the destination chain.
 - Messenger needs to prepay the gas fee of MAP Relay Chain and the destination chain for cross-chain users and thus get rewards from applications.
@@ -42,7 +42,7 @@ Illustration of MAP Protocol's MAP Cross-Chain Services (MCS) Layer
 - Messenger is a high concurrency inter-chain program. Theoretically, as long as one honest Messenger is working in between chains, all cross-chain transactions messages of the Dapp can be transferred.
 - Malicious attacks by messengers will not cause the loss of assets and will only result in invalidity of verification on the MAP Protocol Layer.
 
-### Vault & Data
+## Vault & Data
 - On the source chain, Vault & Data are responsible for receipt of assets or data and trigger an event for Messengers to listen to.
 - On relay chain or destination chain, Vault & Data are responsible for receiving cross-chain messages transmitted by Messengers, then through an internal component - router to schedule and conduct the verification of cross-chain transactions via Light-Client of the source chain deployed on the destination chain. When verification completes, Vault & Data will record the corresponding instruction.
 - Dapp developers can deploy vault & Data. They can also share the liquidity of asset vaults or data pools via MAP Cross-chain Services' Vault & Data.
