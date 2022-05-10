@@ -1,11 +1,13 @@
 # Summary
 
 * Learn
-  * [About MAP Protocol]
+  * About MAP Protocol
     * [Background](learn/background.md)
     * [Introduction of MAP Protocol](learn/introduction.md)
     * [History of MAP Protocol](learn/history.md)
-  * [Comparison with other cross-chain models](learn/comparison.md)
+  * [Comparison with other cross-chain models](architecture/comparison.md)
+    * [MAP Protocol vs Cosmos & Polkadot](learn/CosmosPolkadot.md)
+    * [MAP vs other cross-chain solutions without relay chain](learn/others.md)
   * [Technical Mechanism](architecture/overiew.md)
     * [MAP Protocol's Technical Mechanism](architecture/technical-mechanism.md)
     * [MAP Relay Chain](architecture/relay-chain.md)
