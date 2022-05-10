@@ -31,7 +31,7 @@ The details are as follows:
 
 11. Users need to swap MAP tokens into ETHs or USDCs on HiveSwap.
 
-12.The MAP Protocol team has 33% of the voting rights for each proposal.
+12. The MAP Protocol team has 33% of the voting rights for each proposal.
 
 ### Reward proposal
 
