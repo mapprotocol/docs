@@ -2,6 +2,7 @@
 
 * Learn
   * [About MAP Protocol](learn/about.md)
+    * [Background](learn/background.md)
   * [Technical Mechanism](architecture/overiew.md)
     * [MAP Protocol's Technical Mechanism](architecture/technical-mechanism.md)
     * [MAP Relay Chain](architecture/relay-chain.md)
