@@ -1,9 +1,6 @@
-# MAP Cross-chain Service V1
-
 
 ## MCS Contracts
 
-Proxy Contract
 
 | Chain            | Address |
 |------------------| -----|

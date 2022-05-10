@@ -65,8 +65,8 @@
         * [Vault Token](mcs/abi/VToken.md)
         * [Staking](mcs/abi/MasterChef.md)
       * Address
-        * [Address V1](mcs/address/bridge-v1.md)
-        * [Address V2 Test](mcs/address/bridge_v2_test.md)
+        * [MCS V1](mcs/address/bridge-v1.md)
+        * [MCS V2 Test](mcs/address/bridge_v2_test.md)
       * [Messenger](mcs/messenger/messenger.md)
   * SDK
     * [Atlas JSON RPC](rpc-api/RPC-API.md)
