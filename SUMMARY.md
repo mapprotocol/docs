@@ -22,13 +22,10 @@
   * [Purchase $MAP](/learn/purchase.md)
 * Develop
   * MAP Relay Chain
-    * Atlas
-        * [Make Private Chain](map-chain/privatenet/PrivateNet.md) 
-        * [How To Make Genesis](map-chain/validator/Overview/HowToMakeGenesis.md)
-        * [How To Vote](map-chain/validator/Overview/HowToVote.md)
-        * [How To Withdraw](map-chain/validator/Overview/HowToWithdraw.md)
-        * [Atlas JSON RPC](rpc-api/RPC-API.md)
-        * [Atlas Consensus API](map-chain/consensus/ConsensusAPI.md)
+    * [Make Private Chain](map-chain/privatenet/PrivateNet.md) 
+    * [How To Make Genesis](map-chain/validator/Overview/HowToMakeGenesis.md)
+    * [How To Vote](map-chain/validator/Overview/HowToVote.md)
+    * [How To Withdraw](map-chain/validator/Overview/HowToWithdraw.md)
     * [Marker](map-chain/marker/Marker.md)
         * [Validator](map-chain/marker/AboutValidator.md)
         * [Vote](map-chain/marker/AboutVote.md)
@@ -69,10 +66,10 @@
           * [Verify](cross-chain/tx-verify/Tx-Verify.md)
           * [Verify Contract](cross-chain/tx-verify/Tx-Verify-Contract.md)
   * [Maintainer](map-chain/relayer/Compass.md)
-
+    * [How To Become Maintainer](map-chain/relayer/QuickStart.md)
   * SDK
     * [Atlas JSON RPC](rpc-api/RPC-API.md)
     * [Atlas Consensus API](map-chain/consensus/ConsensusAPI.md)
 * Run
     * [How To Become A New Validator](map-chain/validator/Overview/HowToBecomeANewValidator.md)
-    * [How To Become Maintainer](map-chain/relayer/QuickStart.md)
+    
