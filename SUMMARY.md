@@ -13,7 +13,7 @@
     * [MAP Protocol's Technical Mechanism](architecture/technical-mechanism.md)
     * [Three-layer Architecture](architecture/3layer.md)
     * [MAP Protocol Layer](architecture/protocl-layer.md)
-      * [MAP Relay Chain](architecture/relay-chain.md)
+      * [MAP Relay Chain]
           * [MAP Relay Chain](architecture/relaychain.md)
       * [Verification & Maintenance Network](architecture/verification.md)
     * [MAP Cross-chain Service (MCS) Layer](architecture/mcs.md)
