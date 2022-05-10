@@ -52,3 +52,11 @@ The details are as follows:
 
 Proposals initiated with GMAP are considered valid proposals. If the supporting ratio exceeds 60%, the MAP Protocol team will discuss with the initiator and make relevant suggestions and executions. The MAP Protocol team has 33% of the voting rights for each proposal.
 Users will receive incentives from locked GMAP. GMAP DAO Governance Model will have a two months trial period. MAP Protocol highly encourage our community members to actively participate in our GMAP DAO Governance as DAO is an essential element of MAP Protocol.
+
+### How to participate
+
+By voting on proposals via idavoll, everyone can shape the future of MAP Protocol together. 
+
+https://newspace.idavoll.network/project-staking-detail/MAPProtocol
+
+
