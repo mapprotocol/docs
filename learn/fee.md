@@ -57,6 +57,6 @@ Users will receive incentives from locked GMAP. GMAP DAO Governance Model will h
 
 By voting on proposals via idavoll, everyone can shape the future of MAP Protocol together. 
 
-https://newspace.idavoll.network/project-staking-detail/MAPProtocol
+Related Link: https://newspace.idavoll.network/project-staking-detail/MAPProtocol
 
 
