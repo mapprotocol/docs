@@ -27,7 +27,7 @@ The details are as follows:
 
 9. HiveSwap will list XMAP/YMAP pair. The initial price is set as 1YMAP = 0.8 XMAP. It will fluctuate with the market.
 
-10. If users want to withdraw their MAP tokens from the staking pool, they can combine GMAPs and YMAPs in a 1:1 ratio and get the corresponding XMAPs. Then, users can use XMAPs to swap MAP tokens.
+10. If users want to withdraw their MAP tokens from the staking pool, they can combine GMAPs and YMAPs in a 1:1 ratio and get the corresponding XMAPs.    Then, users can use XMAPs to swap MAP tokens.
 
 11. Users need to swap MAP tokens into ETHs or USDCs on HiveSwap.
 
