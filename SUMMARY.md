@@ -1,10 +1,11 @@
 # Summary
 
 * Learn
-  * [About MAP Protocol](learn/about.md)
+  * [About MAP Protocol]
     * [Background](learn/background.md)
     * [Introduction of MAP Protocol](learn/introduction.md)
     * [History of MAP Protocol](learn/history.md)
+  * [Comparison with other cross-chain models](learn/comparison.md)
   * [Technical Mechanism](architecture/overiew.md)
     * [MAP Protocol's Technical Mechanism](architecture/technical-mechanism.md)
     * [MAP Relay Chain](architecture/relay-chain.md)
@@ -13,7 +14,6 @@
     * [Verification & Maintenance Network](architecture/verification.md)
     * [MAP Cross-chain Service (MCS) Layer](architecture/mcs.md)
     * [MAP Application Layer](architecture/application.md)
-  * [Comparison with other cross-chain models](learn/comparison.md)
   * [Gas Fee Model](learn/fee.md)
   * [Construction of MAP Protocol Layer](learn/map-protocol-layers.md)
   * [Tokenomics](learn/tokenomics.md)
