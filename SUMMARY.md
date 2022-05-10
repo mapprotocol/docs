@@ -45,7 +45,6 @@
         * [EpochRewardsABI](map-chain/validator/contracts/ABI/EpochRewardsABI.md)
         * [LockedGoldABI](map-chain/validator/contracts/ABI/LockedGoldABI.md)
         * [ValidatorsABI](map-chain/validator/contracts/ABI/ValidatorsABI.md)
-        
     * Makalu PoC
         * [PoC-1](Makalu-PoC/PoC-1.md)
         * [PoC-2](Makalu-PoC/PoC-2.md)
@@ -55,6 +54,8 @@
     * [Eth LightClient Verify Contract](cross-chain/ethereum/tx-verify/Tx-Verify-Contract.md)
     * [MAP LightClient Verify](cross-chain/map/tx-verify/Tx-Verify.md)
     * [MAP LightClient Verify Contract](cross-chain/map/tx-verify/Tx-Verify-Contract.md)
+  * [Maintainer](map-chain/relayer/Compass.md)
+    * [How To Become Maintainer](map-chain/relayer/QuickStart.md)
   * MAP Cross-chain Service
       * [Contract](mcs/contract/bridge.md)
       * ABI
@@ -66,8 +67,7 @@
       * Address
         * [Address V1](mcs/address/bridge-v1.md)
         * [Address V2 Test](mcs/address/bridge_v2_test.md)
-  * [Maintainer](map-chain/relayer/Compass.md)
-    * [How To Become Maintainer](map-chain/relayer/QuickStart.md)
+      * [Messenger](mcs/messenger/messenger.md)
   * SDK
     * [Atlas JSON RPC](rpc-api/RPC-API.md)
     * [Atlas Consensus API](map-chain/consensus/ConsensusAPI.md)
