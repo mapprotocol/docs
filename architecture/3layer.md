@@ -1,6 +1,8 @@
-MAP Protocol is structured in three layers: MAP Protocol Layer, MAP Cross-chain Services Layer (MCS), and MAP Application Ecosystem Layer.
+MAP Protocol is structured in **three layers**: **MAP Protocol Layer**, **MAP Cross-chain Services Layer(MCS)**, and **MAP Application Ecosystem Layer**.
 
 ![](3layer.png)
+
+
 ## MAP Application Layer
 
 - Assets and data originated from Dapps assembly on MAP Relay Chain.
