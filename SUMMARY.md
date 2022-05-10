@@ -51,17 +51,17 @@
     * Makalu PoC
         * [PoC-1](Makalu-PoC/PoC-1.md)
         * [PoC-2](Makalu-PoC/PoC-2.md)
-  * MAP Bridge
-      * [Contract](map-bridge/contract/bridge.md)
+  * MAP Cross-chain Service
+      * [Contract](mcs/contract/bridge.md)
       * ABI
-        * [Fee Center](map-bridge/abi/FeeCenter.md)
-        * [Map Bridge Relay](map-bridge/abi/MAPBridgeRelayV2.md)
-        * [Map Bridge](map-bridge/abi/MAPBridgeV2.md)
-        * [Vault Token](map-bridge/abi/VToken.md)
-        * [Staking](map-bridge/abi/MasterChef.md)
+        * [Fee Center](mcs/abi/FeeCenter.md)
+        * [Map Bridge Relay](mcs/abi/MAPBridgeRelayV2.md)
+        * [Map Bridge](mcs/abi/MAPBridgeV2.md)
+        * [Vault Token](mcs/abi/VToken.md)
+        * [Staking](mcs/abi/MasterChef.md)
       * Address
-        * [Address V1](map-bridge/address/bridge-v1.md)
-        * [Address V2 Test](map-bridge/address/bridge_v2_test.md)
+        * [Address V1](mcs/address/bridge-v1.md)
+        * [Address V2 Test](mcs/address/bridge_v2_test.md)
       * Light Client
       * Cross Chain
           * [Header Store Contract](cross-chain/light-client-data/Header-Store-Contract.md)
@@ -75,4 +75,4 @@
     * [Atlas Consensus API](map-chain/consensus/ConsensusAPI.md)
 * Run
     * [How To Become A New Validator](map-chain/validator/Overview/HowToBecomeANewValidator.md)
-    * [How To Become Relayer](map-chain/relayer/QuickStart.md)
+    * [How To Become Maintainer](map-chain/relayer/QuickStart.md)

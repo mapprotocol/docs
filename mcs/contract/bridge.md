@@ -1,6 +1,6 @@
-#Map Bridge Contract
+#Map Cross-chain Service Contract
 
-## Bridge Contract
+## MCS Contract
 ### transferOut
 Cross-chain transfer of tokens
 

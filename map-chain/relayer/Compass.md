@@ -1,8 +1,8 @@
-# MAP Relayer - Compass 
+# MAP Maintainer - Compass 
 
 ## Summary
 
-Compass is the Golang implementation of cross-chain communication relayer for MAP Protocol. It currently supports bridging between EVM based chains.  
+Compass is the Golang implementation of cross-chain communication maintainer for MAP Protocol. It currently supports bridging between EVM based chains.  
 
 The newly designed compass version contains all the functions required to run the relay node. With this tool, you can run nodes on almost all hardware platforms.
 
@@ -65,7 +65,7 @@ the configuration file is a small JSON file.
   "mapchain": {
         "id": "0",                          // Chain ID of the MAP chain
         "endpoint": "ws://<host>:<port>",   // Node endpoint
-        "from": "0xff93...",                // MAP chain address of relayer
+        "from": "0xff93...",                // MAP chain address of maintainer
         "opts": {}                          // MAP Chain configuration options (see below)
     },
   "chains": []                              // List of Chain configurations
@@ -81,7 +81,7 @@ A chain configurations take this form:
     "type": "ethereum",                 // Chain type (only "ethereum" is supported for now)
     "id": "0",                          // Chain ID
     "endpoint": "ws://<host>:<port>",   // Node endpoint
-    "from": "0xff93...",                // On-chain address of relayer
+    "from": "0xff93...",                // On-chain address of maintainer
     "opts": {},                         // Chain-specific configuration options (see below)
 }
 ```
@@ -108,7 +108,7 @@ Ethereum chains support the following additional options:
 ```
 ### Blockstore
 
-The blockstore is used to record the last block the relayer processed, so it can pick up where it left off. 
+The blockstore is used to record the last block the maintainer processed, so it can pick up where it left off. 
 
 If a `startBlock` option is provided (see [Configuration](#configuration)), then the greater of `startBlock` and the latest block in the blockstore is used at startup.
 
@@ -126,5 +126,5 @@ To import private keys as keystores, use `compass accounts import --privateKey k
 
 ## Chain Implementations
 
-- Ethereum (Solidity): [contracts](https://github.com/mapprotocol/contracts)
+- Ethereum (Solidity): [contracts](https://github.com/mapprotocol/map-contracts)
 The Solidity contracts required for compass. Includes scripts for deployment.
