@@ -1,8 +1,5 @@
 MAP Protocol is structured in **three layers**: **MAP Protocol Layer**, **MAP Cross-chain Services Layer(MCS)**, and **MAP Application Ecosystem Layer**.
 
-![](3layer.png)
-
-
 ## MAP Application Layer
 
 - Assets and data originated from Dapps assembly on MAP Relay Chain.
@@ -28,3 +25,5 @@ MAP Protocol is structured in **three layers**: **MAP Protocol Layer**, **MAP Cr
 - The Maintainer is an independent inter-chain program responsible for updating the status of Light Clients. The mechanism of the Light-client assures the invalidity of malicious attacks from maintainer.
 - MAP Protocol is this Layer in the narrow sense.
 - MAP Protocol incentivizes validators on MAP Relay Chain and Maintainers for updating Light-Client status. 
+
+![](3layer.png)
