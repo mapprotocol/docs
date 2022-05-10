@@ -4,6 +4,7 @@
   * [About MAP Protocol](learn/about.md)
     * [Background](learn/background.md)
     * [Introduction of MAP Protocol](learn/introduction.md)
+    * [History of MAP Protocol](learn/history.md)
   * [Technical Mechanism](architecture/overiew.md)
     * [MAP Protocol's Technical Mechanism](architecture/technical-mechanism.md)
     * [MAP Relay Chain](architecture/relay-chain.md)
