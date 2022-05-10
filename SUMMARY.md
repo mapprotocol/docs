@@ -8,7 +8,7 @@
   * Comparison with other cross-chain models
     * [MAP Protocol vs Cosmos & Polkadot](learn/CosmosPolkadot.md)
     * [MAP vs other cross-chain solutions without relay chain](learn/others.md)
-    * [Summury](architecture/comparison.md)
+    * [Summary](architecture/comparison.md)
   * [Technical Mechanism](architecture/overiew.md)
     * [MAP Protocol's Technical Mechanism](architecture/technical-mechanism.md)
     * [Three-layer Architecture](architecture/3layer.md)
