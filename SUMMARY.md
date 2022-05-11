@@ -14,7 +14,8 @@
     * [Three-layer Architecture](architecture/3layer.md)
     * [MAP Protocol Layer](architecture/protocl-layer.md)
       * MAP Relay Chain
-          * [MAP Relay Chain](architecture/relaychain.md)
+          * [Concept](architecture/concept.md)
+          * [Isomorphism with All Chains](architecture/precompile.md)
       * [Verification & Maintenance Network](architecture/verification.md)
     * [MAP Cross-chain Service (MCS) Layer](architecture/mcs.md)
     * [MAP Application Layer](architecture/application.md)
