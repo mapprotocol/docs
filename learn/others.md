@@ -6,5 +6,4 @@ The Light-client verification mechanism will lead to massive consumption of gas 
 
 ## Comparisons between MAP Protocol and other lightweight cross-chain solutions with no relay chain
 
-
-
+![](comp2.png)
