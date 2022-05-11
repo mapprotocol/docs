@@ -9,6 +9,7 @@ The emergence of the programmable smart contract of Ethereum boosted the develop
 **Stage 3: Multi-chain - Call for cross-chain**
 Although cross-chain infrastructure competition is neck and neck, cross-chain infrastructure makes cross-chain dapps possible and significantly boosts development.
 
+
 ## Cross-chain field
 
 Let’s start by explaining what blockchain and cross-chain are. Blockchain is a network in which one block of transactions sequentially follows another and the network is supported by miners/nodes. The first blockchain is the Bitcoin blockchain, since its launch many other blockchains have been created. An important milestone in the development of blockchain technology was the launch of the Ethereum network with the support for smart contracts. Ethereum dominated the market, Dapps started to deploy on Ethereum. After Ethereum, more public chains were launched to challenge Ethereum, and Dapps started to explore possibilities on different chains. Nowadays, Dapps are deployed on multiple chains and as a result, users also own digital assets on multiple chains, and they are desperately in need of a secure and efficient cross-chain solution. Not just a bridge, but a cross-chain interoperability protocol as a solution.
