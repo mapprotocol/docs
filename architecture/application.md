@@ -36,7 +36,7 @@ Another way to be scalable and maintain a good gaming experience is directly dep
 Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices and quantities originating from other chains. This issue can be solved by multi-chain deployment, but it is extremely complex. By building a reliable cross-chain network, MAP Protocol has enabled Data cross-chain and is nurturing a completely new oracle market - On-Chain Oracle. By deploying on MAP Relay Chain, derivative and synthetic asset applications can easily acquire reliable multi-chain data from On-Chain Oracle. 
 
 
-### [Illustration of MAP Protocol Cross-chain Applications - Data]
+### Illustration of MAP Protocol Cross-chain Applications - Data
 
 Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices, and quantities originated from other chains. This issue can be solved by deploying on multiple chains but is extremely complex. By building a reliable cross-chain network, MAP Protocol has enabled Data cross-chain and is nurturing a completely new oracle market - On-Chain Oracle. By deploying on MAP Relay Chain, derivative and synthetic asset applications can acquire reliable multi-chain data from On-Chain Oracle with ease. 
 
@@ -57,7 +57,7 @@ The Aave cross-chain governance bridge is built in a generic way to be easily ad
 With MAP Protocols interoperability with all-chains, cross-chain governance can be achieved with all EVM and heterogenous chains by a security cross-chain infrastructure.
 
 
-### [Illustration of MAP Protocol Cross-chain Application - Fungible Tokens]
+### Illustration of MAP Protocol Cross-chain Application - Fungible Tokens
 
 ![MAP Protocol Cross-chain Application - Fungible Tokens](app-bridge.png)
 
