@@ -20,7 +20,7 @@ While cross-chain bridges can be easily built with MAP Protocol, MAP Protocol it
 
 * MAP Relay Chain supports the development of all cross-chain native Dapps, including on-chain oracle, cross-chain swap, cross-chain bridge for tokens and NFTs, decentralized derivatives, cross-chain DAO, and cross-chain GameFi, etc. 
 
-### Technical Illustration of MAP Protocol**
+### Technical Illustration of MAP Protocol
 
 ![](technical-illustration.png)
 
