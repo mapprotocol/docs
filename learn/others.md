@@ -4,6 +4,6 @@ The lightweight solutions, including MAP Protocol, achieved cross-chain function
 
 The Light-client verification mechanism will lead to massive consumption of gas fees for cross-chain activities between heterogeneous chains. The better way is to use a relay chain, compatible with multiple chains' algorithm, thus enabling a homogeneous cross-chain and forming the ultimate cross-chain verification network. MAP Protocol has developed the MAP Relay Chain as such. As the cross-chain asset and data assembly, MAP Relay Chain supports the native deployment of cross-chain Dapps, including cross-chain bridge applications,  differentiating MAP Protocol from all the other competitors.
 
-## Comparisons between MAP Protocol and other lightweight cross-chain solutions with no relay chain
+### Comparisons between MAP Protocol and other lightweight cross-chain solutions with no relay chain
 
 ![](comp2.png)
