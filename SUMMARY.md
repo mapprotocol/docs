@@ -12,7 +12,7 @@
   * [Technical Mechanism](architecture/overiew.md)
     * [MAP Protocol's Technical Mechanism](architecture/technical-mechanism.md)
     * [Three-layer Architecture](architecture/3layer.md)
-    * [MAP Protocol Layer](architecture/protocl-layer.md)
+    * MAP Protocol Layer
       * MAP Relay Chain
           * [Concept](architecture/concept.md)
           * [Isomorphism with All Chains](architecture/precompile.md)
