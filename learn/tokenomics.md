@@ -1,5 +1,5 @@
 
-![](token_economy.png)
+![](tokenomics.png)
 
 ### DAO Governance
 
