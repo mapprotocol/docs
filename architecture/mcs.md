@@ -4,8 +4,6 @@ Assets management of cross-chain transfers is quite error-prone and usually come
 
 Suppose Ethereum and Binance Smart Chain are already supported by MAP protocol and Alice wants to transfer 100 USDC from Ethereum to BSC with MAP protocol. Note that before Alice doing anything, MAP protocol already deployed light client of MAP relay chain on both Ethereum and BSC, called MapLightClientOnEth and MapLightClientOnBsc, and Messengers are continuously update both light clients according to MAP relay chain growth. Also EthLightClientOnMap and BscLightClientOnMap are already deployed on MAP relay chain and Messengers are already updating both light clients according to the update of Ethereum and BSC. Also there is an AssetVault contract deployed on MAP relay chain, Ethereum and BSC.
 
-![](mcs.png)
-
 Cross-chain assets are locked in the AssetsVault contract on the source chain. For assets moving to MAP relay chain, MAP relay chain will wrap all assets from different chains, e.g., mUSDC is the wrapped USDC on MAP relay chain for USDC on Ethereum, BSC, etc. Let’s illustrate what really happens behind the scenes if Alice is using MAP protocol to move 100 USDC from Ethereum to BSC via MAP relay chain.
 
 1. Alice interacts with the contract AssetsVault on Ethereum, to lock her 100 USDC to AssetsVault.
@@ -28,9 +26,9 @@ b. If the cryptographic proof passes the check and the corresponding event is no
 
 Note that if Alice transfers 100 USDC from Ethereum to MAP relay chain, then she will end up with 100 mUSDC sitting in her address on MAP relay chain. No trusted parties are involved in the above processing. All state changes related to the assets moving are driven by the proper cross-chain messages with cryptographic proof submitted by Messengers. In the above procedure, Alice only needs to send one transaction and all the rest are taken care of by Messengers in a pure trustless way.
 
-Illustration of MAP Protocol's MAP Cross-Chain Services (MCS) Layer
+### Illustration of MAP Protocol's MAP Cross-Chain Services (MCS) Layer
 
-![](mcs-data.png)
+![](mcs.png)
 
 ## Messenger
 - What is Messenger? Messenger is an independent inter-chain program.
