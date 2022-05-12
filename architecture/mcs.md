@@ -4,7 +4,7 @@ Assets management of cross-chain transfers is quite error-prone and usually come
 
 Suppose Ethereum and Binance Smart Chain are already supported by MAP protocol and Alice wants to transfer 100 USDC from Ethereum to BSC with MAP protocol. Note that before Alice doing anything, MAP protocol already deployed light client of MAP relay chain on both Ethereum and BSC, called MapLightClientOnEth and MapLightClientOnBsc, and Messengers are continuously update both light clients according to MAP relay chain growth. Also EthLightClientOnMap and BscLightClientOnMap are already deployed on MAP relay chain and Messengers are already updating both light clients according to the update of Ethereum and BSC. Also there is an AssetVault contract deployed on MAP relay chain, Ethereum and BSC.
 
-![](mcs-asset.png)
+![](mcs.png)
 
 Cross-chain assets are locked in the AssetsVault contract on the source chain. For assets moving to MAP relay chain, MAP relay chain will wrap all assets from different chains, e.g., mUSDC is the wrapped USDC on MAP relay chain for USDC on Ethereum, BSC, etc. Let’s illustrate what really happens behind the scenes if Alice is using MAP protocol to move 100 USDC from Ethereum to BSC via MAP relay chain.
 
