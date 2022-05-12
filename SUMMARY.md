@@ -43,6 +43,8 @@
         * [Common](map-chain/marker/AboutCommon.md)
     * Consensus
         * [Proof-of-Stake](map-chain/consensus/Proof-of-Stake.md)
+        * Epoch And Block
+          * [AggregatedSeal](map-protocol/consensus/epoch-and-block/AggregatedSeal.md)
         * [Validator](map-chain/validator/Validator.md)
         * [Locked MAP](map-chain/validator/LockedMAP.md)
         * [Election](map-chain/validator/Election.md)
