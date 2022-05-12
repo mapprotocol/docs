@@ -24,6 +24,15 @@ This step is voting.
 
 When you get to this step, you can vote for your favorite validator.
 
-When you finish voting,your votes will be in the status of pending. We will automatically activate your votes to get the reward when the next reward is issued.Of course, you can also use `active` command to activate your votes yourself. this active operation need to be greater than your pending vote epoch.
+When you finish voting,your votes will be in the status of pending. At the end of epoch block, the Elected validator will automatic activation the votes in pending related to him, you can also use `active` command to activate your votes yourself. this active operation need to be greater than your pending vote epoch.
 
 You can click the [active](../../marker/AboutVote.md#activate) and [vote](../../marker/AboutVote.md#vote)  to see detail.
+
+## Expand:
+
+### Case: When you vote for a validator who is not yet been elected.
+
+your pending votes will not be automatic activation,until validator is elected , validator will automatic activation your votes at the next epoch.
+so If you don't activate your vote, your votes will get benefits after the second epoch when validator be elected.
+
+
