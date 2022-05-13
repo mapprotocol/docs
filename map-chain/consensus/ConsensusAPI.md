@@ -6,6 +6,21 @@ Get information on the chain about validators.
 
 retrieves the state snapshot at a given block.
 
+##### Parameters
+`QUANTITY|TAG` - hexadecimal  of a block number
+
+
+##### Returns
+
+`epoch` - The epoch number of the block number.
+
+`number` - The number of the block number.
+
+`validators` - validator`s information of the epoch.
+
+
+
+
 ### example
 
 ```shell
@@ -20,28 +35,32 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
   "id": 1,
   "result": {
     "epoch": 20,
-    "number": 1,
-    "hash": "0x12c69199c03a4d1e5607d08a9b5dd84acb543855d5a691ecb91c4bfea1d89fe9",
+    "number": 76,
+    "hash": "0xa599dec7072503e480da203bca5fc42ad9c9399bdb59034d2aee07bc092cb252",
     "validators": [
       {
         "Address": "0x1c0edab88dbb72b119039c4d14b1663525b3ac15",
-        "BLSPublicKey": "0xbe77f945929d5dd3fe99aa825df0f5b1e8ea11786333b4492a8624a4d08dcee0e89df327359e8ec3f2d8ae01e938b7003414aa2d6523ffa02fde42b278cbae311fd39f1fbcad8e3188442ea31dee662389599751f8e73b99215cefc2e0003f81",
-        "UncompressedBLSPublicKey": "vnf5RZKdXdP+maqCXfD1sejqEXhjM7RJKoYkpNCNzuDonfMnNZ6Ow/LYrgHpOLcANBSqLWUj/6Av3kKyeMuuMR/Tnx+8rY4xiEQuox3uZiOJWZdR+Oc7mSFc78LgAD8BlkSdzKrlvWuiShgIDoPyrkAPj8FBBbfmM+6+faVlf12Z6eoWLPCJpLqlSAKawDEBuCxkwzUMYsdQhMWfvrDglTmhzbyhnQgVOSCYSECBRE31H2SP98WkvgdiyP5eRY0B"
+        "BLSPublicKey": "0x136ef6be87de9c925869387782afb4cf19496999c2684709daeb3af8d0b59d800bbe05870789f0f9b3cadababa69f5a00a38bbcba71d99c4c35d671442232c4d3017fd6b99e8356a3e4e985bdfc60bbcb8d939c87976a1ff677d7c42989b379a0b4c0f168a544c892bd2b3ec480e3d6c58c7dddb8d83677ebee2e87ab3660b8000",
+        "BLSG1PublicKey": "0x14d44a97d2fc3ea62b6dcf2bd857079bd261993152f11aef5dd001db68b20d2d1ba45f117b6530a7aec45d7d90fd4e15d2a62f62b706eaa115aa801caeee294b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "UncompressedBLSPublicKey": "E272vofenJJYaTh3gq+0zxlJaZnCaEcJ2us6+NC1nYALvgWHB4nw+bPK2rq6afWgCji7y6cdmcTDXWcUQiMsTTAX/WuZ6DVqPk6YW9/GC7y42TnIeXah/2d9fEKYmzeaC0wPFopUTIkr0rPsSA49bFjH3duNg2d+vuLoerNmC4A="
       },
       {
         "Address": "0x16fdbcac4d4cc24dca47b9b80f58155a551ca2af",
-        "BLSPublicKey": "0x4f38a71fb13ab20f7bbfc2749ab15d775b7729842d967ca4f4115d1fcb3f378c892d073344f84e2abd8995a16eeee8004f4e588c30261e08a5dae70c581f904ea86b574bfe279222cf6b7913bebb0d3bd6c2bbe2e2ea1d338f145c4d95b99201",
-        "UncompressedBLSPublicKey": "TzinH7E6sg97v8J0mrFdd1t3KYQtlnyk9BFdH8s/N4yJLQczRPhOKr2JlaFu7ugAT05YjDAmHgil2ucMWB+QTqhrV0v+J5Iiz2t5E767DTvWwrvi4uodM48UXE2VuZIBcRSScPehdY5CfM+Z2IJG1+3W1XctINNxTXa7FIWnT5SOgolR+TuGX+6KfH6fEQMAhB1k+W21F+2rRvfAMoPASFM6Bsd/HgsSU8FMwiEGYY0QfuNYItQVOW5Yw1SAQLEA"
+        "BLSPublicKey": "0x0a2e37ecad6e69bfec9fec2b345d0f8441a0f63acf8b45c0131a78e5d777d52e0a39404ca85f2c08752c1d4ff8df05c82c7880779d61fe3fabcd4fd682463c0515b1f0217561a6a72bd381da19e34c5560c6eccb08ff83d7d3f4ac6da7f5d1ed15a2780f782c1fa571fa65b99694af559b9df168b1d8745ac3bbc7d3fe550b9400",
+        "BLSG1PublicKey": "0x15b7bcf0accf839170a5d4621282edcf14f4a438f8e53abcead5f0528cb91cb1135fd4e82ede1493ab1209af122e1dc186c885cc96d2413cbc09a58163b91eb90000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "UncompressedBLSPublicKey": "Ci437K1uab/sn+wrNF0PhEGg9jrPi0XAExp45dd31S4KOUBMqF8sCHUsHU/43wXILHiAd51h/j+rzU/WgkY8BRWx8CF1YaanK9OB2hnjTFVgxuzLCP+D19P0rG2n9dHtFaJ4D3gsH6Vx+mW5lpSvVZud8Wix2HRaw7vH0/5VC5Q="
       },
       {
         "Address": "0x2dc45799000ab08e60b7441c36fcc74060ccbe11",
-        "BLSPublicKey": "0x8cf3bfcbfc76e9a99b70cad65ae51f8a8972e3e230445a55c8cf6b96dea7a2d0d970e3545e1316554d5d3b0a53582800ad4de92e3b06b62aa6f7677fdc2885a90b75fd80e2db2775512d8f3d3900aabae5b0525786d65615994b07afe7f69481",
-        "UncompressedBLSPublicKey": "jPO/y/x26ambcMrWWuUfioly4+IwRFpVyM9rlt6notDZcONUXhMWVU1dOwpTWCgArU3pLjsGtiqm92d/3CiFqQt1/YDi2yd1US2PPTkAqrrlsFJXhtZWFZlLB6/n9pQBAT1ftvRFprsH+oAAnx51ZmyLEywKFFHDk0QxSF/ZmxOpIwzhQiVNSMK9k9ygFYgAHuzpLp7qv2tvNSJdAlTNlE+b8X7ZR3xWNzw+LJXdK6XnXFGmU00AZyKoEoNen1UB"
+        "BLSPublicKey": "0x086fac850f3a9f36e8a5107eab0ba79044043dc2cc6b897cbbd0d4bf805570ff270a98f28e2d2e70b7b2ecc41a4a13e453178354997aa2038852c5945f0564bb02cdf57642881a1b40417fe3620429fc087f8dee6a68e5d7193d3243c38a1f3827d0f4cb616722a1fa78a283a17589d7688a769ade77e9d6417c6e2a9adf59c300",
+        "BLSG1PublicKey": "0x2fd433e93187f6b3d15664ec48073bd73d57c801c4a8bfc1e0e3abd3deefc45619d45ac7ad54df7dda5b8afd6f882c9d9f879dbc6d587f1da5da1751baac729f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "UncompressedBLSPublicKey": "CG+shQ86nzbopRB+qwunkEQEPcLMa4l8u9DUv4BVcP8nCpjyji0ucLey7MQaShPkUxeDVJl6ogOIUsWUXwVkuwLN9XZCiBobQEF/42IEKfwIf43uamjl1xk9MkPDih84J9D0y2FnIqH6eKKDoXWJ12iKdpred+nWQXxuKprfWcM="
       },
       {
         "Address": "0x6c5938b49bacde73a8db7c3a7da208846898bff5",
-        "BLSPublicKey": "0x1bbb8eb14a7f5dddc9de3356ce4247dab8e554fa83cd33e663db148b5d2dd14485f090978c84074154b450329de06b018eac04113ede1eedadf891ee862877af92a648c162be62182db90e8c83f8fd154fc14f13676bcb1fe3503260b6261a01",
-        "UncompressedBLSPublicKey": "G7uOsUp/Xd3J3jNWzkJH2rjlVPqDzTPmY9sUi10t0USF8JCXjIQHQVS0UDKd4GsBjqwEET7eHu2t+JHuhih3r5KmSMFivmIYLbkOjIP4/RVPwU8TZ2vLH+NQMmC2JhoBRiTJN+lnQ0H2/re07VcOulQKOiukLaqMjmHQyqDJ+y4ymENPlUzpOIJnAva5f5EAeEkwQBzNkb/rGZofPb5is/zidskNwgdLVDBQHl6jO3hP60fkMidmFkzz394GBGoA"
+        "BLSPublicKey": "0x03fea7bc386ea24aaa19c563a4f26f38cbc2ce172ba2310587405f4f05777fb911a4c3553b7b6529ea02a9da3ae2df6f70c3409105b39e1930d6a6ae8344fc221f5dfb2e73cc8ce434d1af33d95366796bdec26ca7cfcc0a03867fabf471884206db6b9e175a131995bd0c70b93a6f2eec96d831ad0c42d13d334f780d57883400",
+        "BLSG1PublicKey": "0x1b037f39d9f8e74b608a898249cc3d156ff1f0051026388366b85a84aac43bb4068275cd909e16b29f1b3bc97e91ec0a8b95a11b8a574cbc2c9ea142d26c8a490000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "UncompressedBLSPublicKey": "A/6nvDhuokqqGcVjpPJvOMvCzhcrojEFh0BfTwV3f7kRpMNVO3tlKeoCqdo64t9vcMNAkQWznhkw1qaug0T8Ih9d+y5zzIzkNNGvM9lTZnlr3sJsp8/MCgOGf6v0cYhCBttrnhdaExmVvQxwuTpvLuyW2DGtDELRPTNPeA1XiDQ="
       }
     ]
   }
@@ -52,6 +71,14 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 ## GetValidators
 
 retrieves the list validators that must sign a given block.
+
+##### Parameters
+`QUANTITY|TAG` - hexadecimal  of a block number
+
+
+##### Returns
+
+address of these validators 
 
 ### example
 
@@ -79,6 +106,14 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 
 retrieves the list of validators BLS public keys that must sign a given block.
 
+##### Parameters
+`QUANTITY|TAG` - hexadecimal  of a block number
+
+
+##### Returns
+
+blsPublicKeys of these validators
+
 ### example
 
 ```shell
@@ -105,6 +140,15 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 
 GetProposer retrieves the proposer for a given block number (i.e. sequence) and round.
 
+##### Parameters
+- `sequence`  - hexadecimal  of a block number.
+- `round`     - The Number of rotations
+ 
+
+##### Returns
+
+proposer address of this block number
+
 ### example
 
 ```shell
@@ -125,6 +169,14 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 
 returns true if this node is participating in the consensus protocol.
 
+##### Parameters
+none
+
+
+##### Returns
+
+bool value about this node is participating in the consensus protocol.
+
 ### example
 
 ```shell
@@ -144,6 +196,14 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 
 GetLookbackWindow retrieves A fixed value about lookbackWindow check whether the validator has signed in a fixed interval.
 
+##### Parameters
+none
+
+##### Returns
+ 
+interval value about lookbackWindow .
+
+
 ### example
 
 ```shell
@@ -162,6 +222,14 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 ## GetValEnodeTable
 
 Retrieve the Validator Enode Table.
+
+##### Parameters
+none
+
+##### Returns
+
+validators Enode Table
+
 
 ### example
 
@@ -207,6 +275,10 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 
 Retrieve the Validator Signature timestamp.
 
+##### Parameters
+none
+
+
 ### example
 
 ```shell
@@ -242,6 +314,10 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 ## GetCurrentRoundState
 
 retrieves the current IBFT RoundState
+
+##### Parameters
+none
+
 
 ### example
 
@@ -286,6 +362,9 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 
 Force current node timeout
 
+##### Parameters
+none
+
 ### example
 
 ```shell
@@ -299,6 +378,9 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 ## GetCurrentReplicaState
 
 retrieves the current replica state
+
+##### Parameters
+none
 
 ### example
 
