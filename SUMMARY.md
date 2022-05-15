@@ -67,7 +67,6 @@
     * [MAP LightClient Verify](cross-chain/map/tx-verify/Tx-Verify.md)
     * [MAP LightClient Verify Contract](cross-chain/map/tx-verify/Tx-Verify-Contract.md)
   * [Maintainer](map-chain/relayer/Compass.md)
-    * [How To Become Maintainer](map-chain/relayer/QuickStart.md)
   * MAP Cross-chain Service
       * [Contract](mcs/contract/bridge.md)
       * ABI
