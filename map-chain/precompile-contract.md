@@ -498,4 +498,32 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
    }
   ```
 
+- Address 0x00000000000000000000000000000000000000f3: ed25519Verify
+
+  ed25519Verify implements a native Ed25519 signature verification.
+
+  ```shell
+  func (c *ed25519Verify) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
+	// Setup success/failure return values
+	var fail32byte, success32Byte = true32Byte, false32Byte
+
+	// Check if all required arguments are present
+	if len(input) < 96 {
+		return fail32byte, nil
+	}
+
+	publicKey := input[0:32]  // 32 bytes
+	signature := input[32:96] // 64 bytes
+	message := input[96:]     // arbitrary length
+
+	// Verify the Ed25519 signature against the public key and message
+	// https://godoc.org/golang.org/x/crypto/ed25519#Verify
+	if ed25519.Verify(publicKey, message, signature) {
+		return success32Byte, nil
+	}
+	return fail32byte, nil
+  }
+
+  ```
+
 
