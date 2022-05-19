@@ -30,7 +30,7 @@ judge whether the transaction is true and valid by verifying the transaction rec
 | parameter| type         | comment |
 | -------- | ------------ | ------- |
 | _threshold   | uint      | validators count |
-| _pairKeys     | bytes[]      | validators public keys |
+| _pairKeys     | G1      | validators public keys |
 | _weights     | uint[]      | voting power |
 | round     | uint     | Committee rounds |
 
@@ -45,7 +45,7 @@ judge whether the transaction is true and valid by verifying the transaction rec
 | parameter| type         | comment |
 | -------- | ------------ | ------- |
 | _bh   | blockHeader     | the new round block header |
-| aggPk     | bytes      | the agg public key |
+| aggPk     | G2      | the agg public key |
 
 
 
@@ -58,7 +58,7 @@ judge whether the transaction is true and valid by verifying the transaction rec
 | parameter| type         | comment |
 | -------- | ------------ | ------- |
 | _proveData   | proveData      | the proof of transaction |
-| aggPk     | bytes      | the agg public key |
+| aggPk     | G2      | the agg public key |
 
 #### output parameters
 
