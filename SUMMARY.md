@@ -29,6 +29,7 @@
      * [Liquidity providers](learn/liquidityprovider.md)
      * [End users](learn/enduser.md)
   * [Tokenomics](learn/tokenomics.md)
+  * [Roadmap](learn/roadmap.md)
   * [Purchase $MAP](/learn/purchase.md)
 * Develop
   * MAP Relay Chain
