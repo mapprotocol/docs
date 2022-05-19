@@ -10,11 +10,12 @@ tx verify contract is deployed at address:
 ## Contract interface
 
 ```solidity
-    function verifyProof(proveData memory _proveData, bytes memory aggPk) external view returns (bool success, string memory message);
-        
-    function UpdateBlockHeader(blockHeader memory bh, bytes memory aggPk) external;
-        
-    function init(uint _threshold, bytes[] memory _pairKeys, uint[] memory _weights,uint round) external;
+     function verifyProofData(proveData memory _proveData, G2 memory aggPk) external view returns (bool success, string memory message);
+
+    function updateBlockHeader(blockHeader memory bh, G2 memory aggPk) external;
+
+    function init(uint _threshold, G1[] memory _pairKeys, uint[] memory _weights,uint round) external;
+
 ```
 
 ## Interact with contract interface
@@ -48,7 +49,7 @@ judge whether the transaction is true and valid by verifying the transaction rec
 
 
 
-### verifyProof
+### verifyProofData
 
 judge whether the transaction is true and valid by verifying the transaction receipt
 
