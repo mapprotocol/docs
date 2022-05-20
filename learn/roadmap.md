@@ -1,23 +1,22 @@
 ### 2019.Q3 - 2020.Q4
 
-- Release MAP Protocol Gravity Version.
-- Implement MAP proof of concept module and PoS consensus.
+- Release MAP Protocol v1.0, implement cross-chain solution with light-client verification without relay chain.
 
 ### 2021.Q3
 
-- Launch the Makalu Testnet, start the decentralized cross-chain between MAP Makalu and Ethereum.
-- Launch MAP Bridge.
+- Launch MAP Relay Chain Makalu Testnet, start the ligth-client veification cross-chain between MAP Makalu and Ethereum.
+- Launch MAP Cross-chain Service (MCS) for testnet.
 - Start maintainer mining, invite users to participate maintainer test.
 
 ### 2022.Q1
 
 - Support more chains decentralized cross-chain.
-- MAP bridge supports cross-chain between Ethereum, Polygon, BNB Chain and MAP Makalu.
+- MCS supports cross-chain between Ethereum, Polygon, BNB Chain and MAP Makalu.
 - Invite more DeFi projects to join Makalu testnet.
 
 ### 2022.Q2
 
-- Launch MAP Relay Chain.
+- Launch MAP Relay Chain, support more signature, hash, mining and Merkel proof calculation precompiled contracts.
 - Launch the explorer and PoS DApp.
 - Provide SDK to interact with MAP Relay Chain.
 
@@ -25,9 +24,9 @@
 
 - Extend cross-chain connections to Ethereum(EVM PoW) and Near(non-EVM PoS), which represents the technical mechanisms in blockchain space.
 - Extend cross-chain connections to popular EVM compatible chains: BNB Chain, Polygon, Avalanche, Fantom, Harmony, etc.
-- Support cross-chain oracles, lending, swap and other DApps.
-- Launch MAP Cross-chain Service, provide shared vault.
+- Launch MAP Cross-chain Service, support cross-chain data, fungible tokens and NFTS, provide shared vaults.
 - Provide MCS SDK to develope individual MCSs.
+- Support cross-chain oracles, lending, swap and other DApps.
 
 ### 2023.Q1
 
