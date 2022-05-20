@@ -74,8 +74,6 @@ Dapp developers only need to deploy their dapps on MAP Relay Chain with the comp
 | NFT Bridge | CoLAB Bridge |
 | Cross-chain NFT Collaboration Platform | CoLAB |
 | Cross-chain Swap | BarterSwap |
-| Cross-chain Fixed-Rate Lending Protocol | Gomboc Finance |
-| Stable Coin | USM |
 | Cross-chain DAO | Idavoll DAO |
 | MAP Relay Chain Swap | HiveSwap |
 | Off-chain Oracle | Nest |
