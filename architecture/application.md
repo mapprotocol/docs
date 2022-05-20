@@ -59,7 +59,7 @@ With MAP Protocols interoperability with all-chains, cross-chain governance can 
 
 ### Illustration of MAP Protocol Cross-chain Application - Fungible Tokens
 
-![MAP Protocol Cross-chain Application - Fungible Tokens](app-bridge.png)
+![MAP Protocol Cross-chain Application - Fungible Tokens](nft_flow.png)
 
 *Fungible tokens like USDC are issued simultaneously on multiple chains. Dapp developers need to submit whether fungible tokens are issued on multiple chains on the MAP Cross-chain services' vault to avoid different forms of the same assets created during the cross-chain process.
 
