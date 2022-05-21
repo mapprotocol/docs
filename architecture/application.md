@@ -47,6 +47,11 @@ Decentralized derivative and synthetic assets are usually constrained by the acc
 
 Cross-chain bridges and cross-chain NFT bridges no longer have to build their infrastructure or use MPC. Using MAP’s underlying cross-chain verification network with finality and the MCS application developer service kit, bridge developers can easily build their NFT or homogenized token bridge application.
 
+### Illustration of MAP Protocol Cross-chain Application - Fungible Tokens
+
+![MAP Protocol Cross-chain Application - Fungible Tokens](nft_flow.png)
+
+*Fungible tokens like USDC are issued simultaneously on multiple chains. Dapp developers need to submit whether fungible tokens are issued on multiple chains on the MAP Cross-chain services' vault to avoid different forms of the same assets created during the cross-chain process.
 
 ## Cross-chain Governance - The case of Aave
 
@@ -55,13 +60,6 @@ As told by its developers, a proposal executed on Aave, which is built on the Et
 The Aave cross-chain governance bridge is built in a generic way to be easily adapted to operate with any chain that supports the EVM [Ethereum Virtual Machine] and cross-chain messaging. Currently, the repository supports contracts bridging to Polygon and Arbitrum. On Aave, users can submit Aave Improvement Protocols, or AIPs, to target various features on the DeFi platform.
 
 With MAP Protocols interoperability with all-chains, cross-chain governance can be achieved with all EVM and heterogenous chains by a security cross-chain infrastructure.
-
-
-### Illustration of MAP Protocol Cross-chain Application - Fungible Tokens
-
-![MAP Protocol Cross-chain Application - Fungible Tokens](nft_flow.png)
-
-*Fungible tokens like USDC are issued simultaneously on multiple chains. Dapp developers need to submit whether fungible tokens are issued on multiple chains on the MAP Cross-chain services' vault to avoid different forms of the same assets created during the cross-chain process.
 
 
 ## Applications on MAP Protocol
