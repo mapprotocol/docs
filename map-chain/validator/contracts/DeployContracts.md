@@ -69,8 +69,10 @@ you need compile your `atlas-contracts` project,we need the bytecode about `atla
 
 1.Download `atlas-contracts` project in any folder you like , use this command `git clone https://github.com/mapprotocol/atlas-contracts.git`
 
-2.Suppose you have installed node, then then switch to the project file initialize the project and use this command `npm install`
+2.Suppose you have installed node,  then switch to the project file initialize the project and use this command `npm install`
 
-3.Compile the project using truffle, the command compiled by truffle is `truffle compile`
+3.Download truffle with `npm install truffle`
 
-4.A file called `build` will be generated in your `atlas-contracts` project. We will use this file to specify the corresponding parameters.
+4.Compile the project using truffle, the command compiled by truffle is `truffle compile`
+
+5.A file called `build` will be generated in your `atlas-contracts` project. We will use this file to specify the corresponding parameters.
