@@ -5,13 +5,15 @@
 Its main advantage over previous solutions is that it's able to create a `genesis.json` where all core conctracts are
 already deployed in it.
 
-We need to use the marker tool. For information on how to use the marker tool, please refer to [Marker](../../marker/Marker.md)
+We need to use the marker tool. For information on how to use the marker tool, please refer to [Marker](./marker/Marker.md)
 
 ### Generating a genesis.json
 
-Suppose "github.com/mapprotocol/atlas" is your project path.
-
-cd marker config path : github.com/mapprotocol/atlas/marker/config to modify markerConfig.json.
+```
+git clone github.com/mapprotocol/atlas
+cd marker/config
+vim markerConfig.json
+```
 
 First you need to config the markerConfig.json like this:
 
@@ -56,7 +58,7 @@ First you need to config the markerConfig.json like this:
 
 Second you need compile your `atlas-contracts` project,we need the bytecode about `atlas-contracts` to make `genesis.json` file.
 
-Please refer to [Deployment of contract related to validator](../contracts/DeployContracts.md#deployment-of-contract-related-to-validator)
+Please refer to [Deployment of contract related to validator](./contracts/DeployContracts.md#deployment-of-contract-related-to-validator)
 
 then to do so run:
 

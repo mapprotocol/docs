@@ -70,7 +70,7 @@ Path of the secret key file: node-1/keystore/UTC--2022-03-17T09-35-15.650368000Z
 Only Suitable for the POS version. The validator must be set, because only them are allowed to mine.**
 
 Get validator configuration json and generating a genesis.json
-- [generating a genesis.json ](../validator/Overview/HowToMakeGenesis.md#generating-a-genesis.json)
+- [generating a genesis.json ](./how-to-make-genesis.md#generating-a-genesis.json)
 
 We now generate the genesis.json file using the paths of the four accounts generated in the previous step.
 Fill in the information we output when we created the account into the corresponding key value.
