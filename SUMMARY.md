@@ -33,7 +33,7 @@
   * [Purchase $MAP](/learn/purchase.md)
 * Develop
   * MAP Relay Chain
-    * [Make Private Chain](map-chain/privatenet/PrivateNet.md) 
+    * [Make Private Chain](develop/map-relay-chain/make-private-chain.md) 
     * [How To Make Genesis](map-chain/validator/Overview/HowToMakeGenesis.md)
     * [How To Vote](map-chain/validator/Overview/HowToVote.md)
     * [How To Withdraw](map-chain/validator/Overview/HowToWithdraw.md)
