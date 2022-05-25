@@ -48,9 +48,13 @@ Cross-chain bridges and cross-chain NFT bridges no longer have to build their in
 
 ### Illustration of MAP Protocol Cross-chain Application - Fungible Tokens
 
-![MAP Protocol Cross-chain Application - Fungible Tokens](nft_flow.png)
+![MAP Protocol Cross-chain Application - Fungible Tokens](fungible_token.png)
 
 *Fungible tokens like USDC are issued simultaneously on multiple chains. Dapp developers need to submit whether fungible tokens are issued on multiple chains on the MAP Cross-chain services' vault to avoid different forms of the same assets created during the cross-chain process.
+
+### Illustration of MAP Protocol Cross-chain Application - Non-Fungible Tokens (NFT)
+
+![MAP Protocol Cross-chain Application - NFT](nft_flow.png)
 
 ## Cross-chain Governance - The case of Aave
 
