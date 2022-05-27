@@ -81,8 +81,7 @@
         * [MCS V1](develop/mcs/address/bridge-v1.md)
         * [MCS V2 Test](develop/mcs/address/bridge_v2_test.md)
       * [Messenger](develop/mcs/messenger/messenger.md)
-      * Api
-        * [Api](develop/mcs/api/api.md)
+      * [API](develop/mcs/api/api.md)
   * SDK
     * [Atlas JSON RPC](sdk/RPC-API.md)
     * [Atlas Consensus API](sdk/ConsensusAPI.md)

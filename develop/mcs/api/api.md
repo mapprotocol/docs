@@ -1,5 +1,5 @@
 
-## Bridge API Reference
+## MCS API Reference
 
 List of APIs:
 
@@ -8,7 +8,7 @@ List of APIs:
 - [queryTokenList](queryTokenList)
 - [queryChainList](queryChainList)
 
-#### queryHistory
+### queryHistory
 
 Uri: /api/queryHistory
 
@@ -189,7 +189,7 @@ curl --location --request POST 'http://18.139.224.21:8201/api/queryHistory' \
 }
 ```
 
-#### queryBridgeInfo
+### queryBridgeInfo
 
 Uri: /api/queryBridgeInfo
 
@@ -281,7 +281,7 @@ curl --location --request POST 'http://18.139.224.21:8201/api/queryBridgeInfo' \
 }
 ```
 
-#### queryTokenList
+### queryTokenList
 
 Uri: /api/queryTokenList
 
@@ -551,7 +551,7 @@ curl --location --request POST 'http://18.139.224.21:8201/api/queryTokenList'
 }
 ```
 
-#### queryChainList
+### queryChainList
 
 Uri: /api/queryChainList
 
