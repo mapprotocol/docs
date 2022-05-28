@@ -19,6 +19,7 @@
 - Launch MAP Relay Chain, support more signature, hash, mining and Merkel proof calculation precompiled contracts.
 - Launch the explorer and PoS DApp.
 - Provide SDK to interact with MAP Relay Chain.
+- Provide MCS SDK test version.
 
 ### 2022.Q3
 
@@ -28,9 +29,14 @@
 - Provide MCS SDK to develope individual MCSs.
 - Support cross-chain oracles, lending, swap and other DApps.
 
-### 2023.Q1
+### 2022.Q4
 
-- Extend cross-chain connections to more EVM compatible and non-EVM compatible chains: Solana, Polkadot ecosystem's chain, Arbitrum, Optimism, etc. 
+- Extend cross-chain connections to non-EVM compatible chains: Flow and Celo.
+- Extend cross-chain connections to non-EVM compatible chains: Solana.
+
+### 2023.Q1
+- Extend cross-chain connections to more EVM compatible and non-EVM compatible chains: Polkadot ecosystem's chain, Arbitrum, Optimism, etc.
+
 
 ### 2023.Q3
 

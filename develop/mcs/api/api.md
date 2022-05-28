@@ -1,12 +1,12 @@
 
 ## MCS API Reference
 
-List of APIs:
+List of APIs
 
 - [queryHistory](#queryHistory)
-- [queryBridgeInfo](queryBridgeInfo)
-- [queryTokenList](queryTokenList)
-- [queryChainList](queryChainList)
+- [queryBridgeInfo](#queryBridgeInfo)
+- [queryTokenList](#queryTokenList)
+- [queryChainList](#queryChainList)
 
 ### queryHistory
 
