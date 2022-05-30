@@ -37,6 +37,19 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "fraction",
+        "type": "uint256"
+      }
+    ],
+    "name": "EpochRelayerPaymentFractionFundSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "address",
         "name": "previousOwner",
@@ -88,6 +101,19 @@
       }
     ],
     "name": "RewardsMultiplierParametersSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "payment",
+        "type": "uint256"
+      }
+    ],
+    "name": "TargetRelayerEpochPaymentSet",
     "type": "event"
   },
   {
@@ -176,6 +202,11 @@
       },
       {
         "internalType": "bytes",
+        "name": "blsG1Key",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
         "name": "blsPop",
         "type": "bytes"
       }
@@ -201,6 +232,21 @@
         "internalType": "address",
         "name": "",
         "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "epochPayment",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
     "payable": false,
@@ -565,21 +611,6 @@
     "type": "function"
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "targetValidatorEpochPayment",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "constant": false,
     "inputs": [
       {
@@ -681,12 +712,17 @@
       },
       {
         "internalType": "uint256",
-        "name": "_targetValidatorEpochPayment",
+        "name": "_targetEpochPayment",
         "type": "uint256"
       },
       {
         "internalType": "uint256",
         "name": "_communityRewardFraction",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_epochRelayerPaymentFraction",
         "type": "uint256"
       },
       {
@@ -728,6 +764,27 @@
     "type": "function"
   },
   {
+    "constant": false,
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "setEpochRelayerPaymentFraction",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "constant": true,
     "inputs": [],
     "name": "getCommunityRewardFraction",
@@ -751,7 +808,7 @@
         "type": "uint256"
       }
     ],
-    "name": "setTargetValidatorEpochPayment",
+    "name": "setTargetEpochPayment",
     "outputs": [
       {
         "internalType": "bool",
@@ -798,6 +855,11 @@
     "inputs": [],
     "name": "calculateTargetEpochRewards",
     "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
       {
         "internalType": "uint256",
         "name": "",

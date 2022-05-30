@@ -104,4 +104,8 @@ marker genesis --buildpath ./root/atlas-contracts/build/contracts --newenv ./roo
 
 
 This will create a `genesis.json` in the ./root/atlasEnv folder
+
 ```
+you can use this `genesis.json` init `MAP` validator nodes
+- the one way: like this `./atlas --datadir ./node-1 init ./genesis.json`
+- the other way: copy the `alloc` info in the `genesis.json` to core/chain/genesis_alloc_mainnet.go file overwrite `mainnetAllocJSON` info
