@@ -73,6 +73,12 @@ First you need to config the markerConfig.json like this:
 - BLSG1PubKey:    Singeraddress`s BLSG1PubKey
 - BLSProofOfPossession: BLS signature data of singeraddress to account address
 
+generate signer`s `PublicKeyHex`、`BLSPubKey`、`BLSG1PubKey` info please refer to  [Create four validator accounts](./make-private-chain.md#create-four-validator-accounts)
+
+generate signer`s `ECDSASignature` info please refer to  [Create four validator accounts](./marker/AboutValidator.md#makeECDSASignatureFromSinger)
+
+generate signer`s `BLSProofOfPossession` info please refer to  [Create four validator accounts](./marker/AboutValidator.md#makeBLSProofOfPossessionFromSinger)
+
 note:If you use the same account address as Address and SingerAddress, singeraddress and blsproofofpossession are the default values of the account address.
 
 Second you need compile your `atlas-contracts` project,we need the bytecode about `atlas-contracts` to make `genesis.json` file.
