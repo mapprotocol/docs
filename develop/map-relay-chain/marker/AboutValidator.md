@@ -220,7 +220,7 @@ INFO [05-30|13:42:03.231] Transaction Success                      func=queryTx 
 
 ```
 
-### makeECDSASignatureFromSinger
+### MakeECDSASignatureFromSinger
 
 - note:singer function 
 - print a ECDSASignature that singer sign the account(validator)
@@ -250,7 +250,7 @@ INFO [05-30|13:41:55.131] ECDSASignature                           result=0x6dce
 ```
 
 
-### makeBLSProofOfPossessionFromSinger
+### MakeBLSProofOfPossessionFromSinger
 
 - note:singer function
 - print a BLSProofOfPossession that singer BLSSign the account(validator)

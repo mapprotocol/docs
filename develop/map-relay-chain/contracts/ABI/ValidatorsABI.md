@@ -213,6 +213,19 @@
         "internalType": "address",
         "name": "validator",
         "type": "address"
+      }
+    ],
+    "name": "ValidatorPreDeregistered",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "validator",
+        "type": "address"
       },
       {
         "indexed": true,
@@ -279,6 +292,11 @@
       {
         "internalType": "bytes",
         "name": "blsKey",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "blsG1Key",
         "type": "bytes"
       },
       {
@@ -999,19 +1017,9 @@
         "type": "address"
       },
       {
-        "internalType": "bytes",
-        "name": "ecdsaPublicKey",
-        "type": "bytes"
-      },
-      {
-        "internalType": "bytes",
-        "name": "blsPublicKey",
-        "type": "bytes"
-      },
-      {
-        "internalType": "bytes",
-        "name": "blsPop",
-        "type": "bytes"
+        "internalType": "bytes[]",
+        "name": "blsBlsG1BlsPopEcdsaPub",
+        "type": "bytes[]"
       }
     ],
     "name": "registerValidator",
@@ -1024,6 +1032,36 @@
     ],
     "payable": false,
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "revertRegisterValidator",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "isPendingDeRegisterValidator",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -1136,13 +1174,7 @@
   },
   {
     "constant": false,
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "index",
-        "type": "uint256"
-      }
-    ],
+    "inputs": [],
     "name": "deregisterValidator",
     "outputs": [
       {
@@ -1157,10 +1189,30 @@
   },
   {
     "constant": false,
+    "inputs": [],
+    "name": "deRegisterAllValidatorsInPending",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "",
+        "type": "address[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
     "inputs": [
       {
         "internalType": "bytes",
         "name": "blsPublicKey",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "blsG1PublicKey",
         "type": "bytes"
       },
       {
@@ -1233,6 +1285,11 @@
       {
         "internalType": "bytes",
         "name": "blsPublicKey",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "blsG1PublicKey",
         "type": "bytes"
       },
       {
@@ -1345,6 +1402,27 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "signer",
+        "type": "address"
+      }
+    ],
+    "name": "getValidatorBlsG1PublicKeyFromSigner",
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "blsG1PublicKey",
+        "type": "bytes"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "account",
         "type": "address"
       }
@@ -1359,6 +1437,11 @@
       {
         "internalType": "bytes",
         "name": "blsPublicKey",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "blsG1PublicKey",
         "type": "bytes"
       },
       {

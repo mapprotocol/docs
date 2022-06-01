@@ -34,7 +34,7 @@
 * Develop
   * MAP Relay Chain
     * [Make Private Chain](develop/map-relay-chain/make-private-chain.md) 
-    * [How To Make Genesis](develop/map-relay-chain/how-to-make-genesis.md)
+    * [Make Genesis](develop/map-relay-chain/how-to-make-genesis.md)
     * [How To Vote](develop/map-relay-chain/how-to-vote.md)
     * [How To Withdraw](develop/map-relay-chain/how-to-withdraw.md)
     * Consensus
