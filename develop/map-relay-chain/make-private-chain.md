@@ -1,13 +1,14 @@
-#  Operating a private network
-Until now, atlas has both POC and POS version. Next, the following is a description of how to build private-net with four nodes On two different version. 
+# Make Private Chain
+
+Until now, atlas has both POC and POS version. Next, the following is a description of how to build private-net with four nodes On two different version.
 
 ## Prerequisites
 
-- Private key and address
-  
-  Building atlas requires git, Go (version 1.14 or later) and a C compiler. You can install them using your favourite package manager.
+*   Private key and address
 
-- Clone repositories
+    Building atlas requires git, Go (version 1.14 or later) and a C compiler. You can install them using your favourite package manager.
+* Clone repositories
+
 ```
 git clone https://github.com/mapprotocol/atlas.git
 cd atlas
@@ -15,25 +16,27 @@ cd atlas
 
 ## Build four nodes
 
-We can start four nodes with different ports on one host, or we can start four nodes on multiple hosts.
-The following will use the node method of starting four different ports on one host to demonstrate.
+We can start four nodes with different ports on one host, or we can start four nodes on multiple hosts. The following will use the node method of starting four different ports on one host to demonstrate.
 
-- build atlas of POC version:
+* build atlas of POC version:
+
 ```
 git checkout v0.2
 make atlas
 ```
 
-- build atlas of POS version:
+* build atlas of POS version:
+
 ```
 make atlas
 ```
 
-## Create four validator accounts 
+## Create four validator accounts
 
-- private key and address
+*   private key and address
 
-  Atlas allows developers use the ethereum's account on atlas blockchain. If no account, it's helpful to use the command.
+    Atlas allows developers use the ethereum's account on atlas blockchain. If no account, it's helpful to use the command.
+
 ```shell
 $ ./atlas --datadir ./node-1 account new
 $ ./atlas --datadir ./node-2 account new
@@ -62,67 +65,58 @@ Path of the secret key file: node-1/keystore/UTC--2022-03-17T09-35-15.650368000Z
 - You must REMEMBER your password! Without the password, it's impossible to decrypt the key!
 
 
-
 ```
 
-## Generating a genesis.json 
-**Note that there are differences between versions, which the POC version needn't set validator.
-Only Suitable for the POS version. The validator must be set, because only them are allowed to mine.**
+## Generating a genesis.json
+
+**Note that there are differences between versions, which the POC version needn't set validator. Only Suitable for the POS version. The validator must be set, because only them are allowed to mine.**
 
 Get validator configuration json and generating a genesis.json
-- [generating a genesis.json ](./how-to-make-genesis.md#generating-a-genesis.json)
 
-We now generate the genesis.json file using the paths of the four accounts generated in the previous step.
-Fill in the information we output when we created the account into the corresponding key value.
-The value corresponding to the `AdminAddress` key can be any of the four accounts we created above or other accounts.
+* [generating a genesis.json](how-to-make-genesis.md#generating-a-genesis.json)
+
+We now generate the genesis.json file using the paths of the four accounts generated in the previous step. Fill in the information we output when we created the account into the corresponding key value. The value corresponding to the `AdminAddress` key can be any of the four accounts we created above or other accounts.
 
 Just like the following:
 
 ```json
 {
-  "AdminAddress": "0xB16561A66B6439944DAf0388b5E6a2D3D0a49e12",
+  "AdminAddress": "0xF930B74D2b1b703B879ab54E225ECc18Ab28e61C",
   "Validators": [
     {
-      "Address": "0xB16561A66B6439944DAf0388b5E6a2D3D0a49e12",
-      "SingerAddress": "0x1c0eDab88dbb72B119039c4d14b1663525b3aC15",
-      "ECDSASignature": "0x2ac44a912dbf3205f0500401cf02db33240fa03198dd4c3b202dfe7be3dbe1ed7cbfbe9326d50223faf2971e3ecefed027df1dda6727e9c45b55b377384dacf201",
-      "PublicKeyHex": "0x0491c373a1504d67e0c6c98276fc6043544fd09a623473b6936a107943baf666612b5e2a3beacf839d1ec74fd00f4388d4b813eac26b26ab4859003473b286650a",
-      "BLSPubKey": "0x136ef6be87de9c925869387782afb4cf19496999c2684709daeb3af8d0b59d800bbe05870789f0f9b3cadababa69f5a00a38bbcba71d99c4c35d671442232c4d3017fd6b99e8356a3e4e985bdfc60bbcb8d939c87976a1ff677d7c42989b379a0b4c0f168a544c892bd2b3ec480e3d6c58c7dddb8d83677ebee2e87ab3660b80",
-      "BLSG1PubKey": "0x14d44a97d2fc3ea62b6dcf2bd857079bd261993152f11aef5dd001db68b20d2d1ba45f117b6530a7aec45d7d90fd4e15d2a62f62b706eaa115aa801caeee294b",
-      "BLSProofOfPossession": "0x15933821ab5c324c95ba46ad99349e4c0d068a290fabd90f59eee9e69597ce012e4df0614f48696ff22c52a0667ee1daf8ca581d920c39ba726f0f3c69cae66e"
+      "Address": "0xF930B74D2b1b703B879ab54E225ECc18Ab28e61C",
+      "PublicKeyHex": "0x040456ddacfeecf28a9fed43a1d5d3a147c84a2024270fa76ac6d1886ef87e4ae04f5c719b4b98e1c3b135e0d012134ddc31881d08acc210ff203c18653633d36e",
+      "BLSPubKey": "0x09d635d808a637f50dd5d90bbe2c5c750ff69e8422bde26cbe57eb095741dcb122ad53b16ce611304fb25bdf027fe996ce7aabbefb0e0cdc8ecde878929583ba1131c21d5ac81a4b299a3a11da0752773ae6c07214888f2ab4eacd9e9aa428242a53fcc07697a75a04489a35cef22f028d15958a53439035c46edca443d1e3a200",
+      "BLSG1PubKey": "0x09d635d808a637f50dd5d90bbe2c5c750ff69e8422bde26cbe57eb095741dcb122ad53b16ce611304fb25bdf027fe996ce7aabbefb0e0cdc8ecde878929583ba1131c21d5ac81a4b299a3a11da0752773ae6c07214888f2ab4eacd9e9aa428242a53fcc07697a75a04489a35cef22f028d15958a53439035c46edca443d1e3a200",
+      "BLSProofOfPossession": "0x15f238946bae1fdfa77e1b9b9fde8f4f4fe54195f697b18f4a17196309ed234204cd5c621b4ae3d4347024e319afce035a2a1e5197881141b6dfde2785235141"
     },
     {
-      "Address": "0xdC757c8e3b8800d977a34f802131FAA870d264c4",
-      "SingerAddress": "0x16FdBcAC4D4Cc24DCa47B9b80f58155a551ca2aF",
-      "ECDSASignature": "0x9b4f29d54a31b052fc9fcfdc968912a59b308df021f32b3c923438c0d65ff2cc47b8d01bf5968d70a8c82875a1852c313540f89467a3fe833902a0c0aff5a27a01",
-      "PublicKeyHex": "0x04e7678fb997c00d5998f79413d73ebde98865cd0d7fa82e2ab6d0920a72204d8c49c14f873ec9ee0e0b38651001acc9a4c1a0a63de6c6589b896f21f6a6bb6837",
-      "BLSPubKey": "0x0a2e37ecad6e69bfec9fec2b345d0f8441a0f63acf8b45c0131a78e5d777d52e0a39404ca85f2c08752c1d4ff8df05c82c7880779d61fe3fabcd4fd682463c0515b1f0217561a6a72bd381da19e34c5560c6eccb08ff83d7d3f4ac6da7f5d1ed15a2780f782c1fa571fa65b99694af559b9df168b1d8745ac3bbc7d3fe550b94",
-      "BLSG1PubKey": "0x15b7bcf0accf839170a5d4621282edcf14f4a438f8e53abcead5f0528cb91cb1135fd4e82ede1493ab1209af122e1dc186c885cc96d2413cbc09a58163b91eb9",
-      "BLSProofOfPossession": "0x2cfa8f2daa103964dfa380bfc30e695b94ef62832e1e641d9febf4ab78b128392f2e33612a66cc75e35a6326b8a6aa0be26fd9567d4aeff16e9883a671648b5d"
+      "Address": "0x0e2699Be2B47Dfd7560c4771A32A50b64F81293d",
+      "PublicKeyHex": "0x04f47a1376fff0c026f63f539d7208d4f9e7d046d4e3c49016333beb2bb9517532a041f652a714c7971fc2ff5551752ed958dc3a54504bea956969fd05dcad7ade",
+      "BLSPubKey": "0x0fe202e9adfff4c5748235236c1a6de404a69085ed89c7ba5a68bd98c83dc07f17b6b4d0edaef436f5fb4a97824e4aa2e5d3d42ac8189ea15fcafc34f69cf7e3056b668d73b4ca90860ff15f9b4b6807e0089cc96921d91c0b219746f4016f3d01789b5fd2ff8f8cbe5ccb0af6cace7f210d1f73e836b8e25601afdbefd19a0600",
+      "BLSG1PubKey": "0x0fe202e9adfff4c5748235236c1a6de404a69085ed89c7ba5a68bd98c83dc07f17b6b4d0edaef436f5fb4a97824e4aa2e5d3d42ac8189ea15fcafc34f69cf7e3056b668d73b4ca90860ff15f9b4b6807e0089cc96921d91c0b219746f4016f3d01789b5fd2ff8f8cbe5ccb0af6cace7f210d1f73e836b8e25601afdbefd19a0600",
+      "BLSProofOfPossession": "0x0ba85160de008a330397c3efb886335b7b00a5689a0db74c6a224ce7965ff9890131fd80e474b6d16b64cc2b99deddaaa6858ab2e6f6e8f7ff1035292b78bf1a"
     },
     {
-      "Address": "0x257Cc34FB139A2db4Da96496Be03358d89e52d95",
-      "SingerAddress": "0x2dC45799000ab08E60b7441c36fCC74060Ccbe11",
-      "ECDSASignature": "0x303ea4fdbd348c32655e7a460802be169f4bc4ca1a7030af941de4a57069dfb5253c0c087e06e258f63e50176bd5b54bf462514d8116ec3394bdc875c5678f7500",
-      "PublicKeyHex": "0x04ec7664543f2dae218176a072ca7bfc16632438793077c06cf05975cc1302ee60c27f29e2cc3b64ffbaa69d2939e937f99a7bf93d7c5fa59bffbcd769e4f234e8",
-      "BLSPubKey": "0x086fac850f3a9f36e8a5107eab0ba79044043dc2cc6b897cbbd0d4bf805570ff270a98f28e2d2e70b7b2ecc41a4a13e453178354997aa2038852c5945f0564bb02cdf57642881a1b40417fe3620429fc087f8dee6a68e5d7193d3243c38a1f3827d0f4cb616722a1fa78a283a17589d7688a769ade77e9d6417c6e2a9adf59c3",
-      "BLSG1PubKey": "0x2fd433e93187f6b3d15664ec48073bd73d57c801c4a8bfc1e0e3abd3deefc45619d45ac7ad54df7dda5b8afd6f882c9d9f879dbc6d587f1da5da1751baac729f",
-      "BLSProofOfPossession": "0x1ee63371c158365acde92ee1a53ca1dcb54efb52d1c077735dcd46237c7938b62720e4903dd9b825f3bed819422791352a9b7fe1a39e1183d33c0ca892cff1f4"
+      "Address": "0x3c0ef282c8c62a44eA2FE8928b6bd89a16fD8252",
+      "PublicKeyHex": "0x0413ac8c3aa0b5bca1768fc6b631503d7ef28f84794bb68404c46187eb7bbfc5360123da2fc76b223ff34451fbd204369a30de1dfc421946b708629911fd9395f0",
+      "BLSPubKey": "0x19afff51ccfb65f91fe8a8922f072897c657d41823b8a87ac296b42bbeaa1969292f5c0cbd6991b083dcb95ac4c4c2961ad93bc1debc325bfdced44430b5d9da291ec44382e494e73ed6faaf5a9047fa23986f1a904166d5b05aa4e7a7e77fc9030d7acbf12bc3f4d27028779fd785c06096ab863f6747d2e63fec5bdc3aca1800",
+      "BLSG1PubKey": "0x19afff51ccfb65f91fe8a8922f072897c657d41823b8a87ac296b42bbeaa1969292f5c0cbd6991b083dcb95ac4c4c2961ad93bc1debc325bfdced44430b5d9da291ec44382e494e73ed6faaf5a9047fa23986f1a904166d5b05aa4e7a7e77fc9030d7acbf12bc3f4d27028779fd785c06096ab863f6747d2e63fec5bdc3aca1800",
+      "BLSProofOfPossession": "0x0a24d98df93e65c87c42d71f7ce8aeb3b8a580d74382dfd824c4c6b64df60cff3040b8c5979a68529d05a5e357337314fa63a655a3b0eb26f7a0f385488a46c2"
     },
     {
-      "Address": "0xac146d6629F8C3B8F2e830275B583C5402032472",
-      "SingerAddress": "0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5",
-      "ECDSASignature": "0x29388d40ee2ee4468fca04b624c77208b7b00c56c532fac53314cf39e3e8feb80c6bd2b7d25a6e20e9da0adaeec4b49c13b673e6ca2d088370e0b6189fb216f000",
-      "PublicKeyHex": "0x04ef2af91ba2fc2b04bc47c7d59d6d07a0dea2a62c5b537d4a83a387bee44245317de753c4e45858708c0d31473c6595ac9dddbcf7ac02a13df4af1a188e2c9c24",
-      "BLSPubKey": "0x03fea7bc386ea24aaa19c563a4f26f38cbc2ce172ba2310587405f4f05777fb911a4c3553b7b6529ea02a9da3ae2df6f70c3409105b39e1930d6a6ae8344fc221f5dfb2e73cc8ce434d1af33d95366796bdec26ca7cfcc0a03867fabf471884206db6b9e175a131995bd0c70b93a6f2eec96d831ad0c42d13d334f780d578834",
-      "BLSG1PubKey": "0x1b037f39d9f8e74b608a898249cc3d156ff1f0051026388366b85a84aac43bb4068275cd909e16b29f1b3bc97e91ec0a8b95a11b8a574cbc2c9ea142d26c8a49",
-      "BLSProofOfPossession": "0x1417ef1814518ade2af0e52ce7a11bcf834bba5ac42f91f3a1229c072721bb1b0c82513600690ebc0244572dd459d280abd6c14c0fc4837fa06335c88457a402"
+      "Address": "0x41E4A55Ef06c1961B3e143357e24cA7f92e4DD03",
+      "PublicKeyHex": "0x040e36f52adb9da0e98afcc889eff6a20c0266c1b083db5eb234c0d18ac1d2226397862599951623aab0cd3dc6fdf43974a3baa69edbe0a5c01762782b6be28900",
+      "BLSPubKey": "0x0832b7c57c144b1e09a51b244a105b1cbc6932f9257f97365403a93f9f695a42178641aa1b6389acf294ba0e3f949ea592f2ef0d7ab6c2813e661049107b222503c117795d7a54f3e555b67e3ba1626a35f498ce58d168962ee8b366580b74aa0d042e6459265880dbbcf76d10c31cbd38e344a7fa02a1b480ac651ed46146ff00",
+      "BLSG1PubKey": "0x0832b7c57c144b1e09a51b244a105b1cbc6932f9257f97365403a93f9f695a42178641aa1b6389acf294ba0e3f949ea592f2ef0d7ab6c2813e661049107b222503c117795d7a54f3e555b67e3ba1626a35f498ce58d168962ee8b366580b74aa0d042e6459265880dbbcf76d10c31cbd38e344a7fa02a1b480ac651ed46146ff00",
+      "BLSProofOfPossession": "0x2ff772a97bf2ca4aaba9e31b52375b00c3bb732efe2f84fab8ed32c74d9189b018c6c8079066614a1e65c7def0f08d4f60cd5467b129316e33791e58f021f44a"
     }
   ]
 }
 ```
 
 ## Initialize four validator nodes
+
 Initialize the node with the genesis file generated in the previous step
 
 ```shell
@@ -167,31 +161,28 @@ Unlocking account 0x931abadeb878d761cf2df15f0ba0442350c132fc | Attempt 1/3
 Password: 
 ```
 
-At this time, we need to enter the password corresponding to the account and press Enter, congratulations, 
-you have successfully started a node. Then we start the remaining nodes in the same way.
+At this time, we need to enter the password corresponding to the account and press Enter, congratulations, you have successfully started a node. Then we start the remaining nodes in the same way.
 
 If you want to start an RPC node you can use the following way.
+
 ```shell
 ./atlas --datadir ./node-rpc --ipcpath ./node-rpc --port 20205 --http --http.addr "0.0.0.0" --http.port 7445 --http.api eth,web3,net,debug,txpool,header,istanbul --http.corsdomain "*" console
 ```
 
 ## Connect four nodes
 
--  the Operation of flag. 
+* the Operation of flag.
 
-With the bootnode operational and externally reachable (try
-`telnet <ip> <port>` to ensure it's indeed reachable), start every subsequent `atlas`
-node pointed to the bootnode for peer discovery via the `--bootnodes` flag. It will
-probably also be desirable to keep the data directory of your private network separated, so
-do also specify a custom `--datadir` flag.
+With the bootnode operational and externally reachable (try `telnet <ip> <port>` to ensure it's indeed reachable), start every subsequent `atlas` node pointed to the bootnode for peer discovery via the `--bootnodes` flag. It will probably also be desirable to keep the data directory of your private network separated, so do also specify a custom `--datadir` flag.
 
 ```shell
 $ atlas --datadir=path/to/custom/data/folder --bootnodes=<bootnode-url>
 ```
 
-- the Operation on a console.
+* the Operation on a console.
 
-Query Own node-url: 
+Query Own node-url:
+
 ```
 admin.nodeInfo.enode
 "enode://6a469a852c7ee7f656e33a7858db5c480d6253ad760771a779985c305d66de78109bae579adf3f32fbd770e44145d5728176bcddda56d8a8c92709f827d94842@127.0.0.1
@@ -199,6 +190,7 @@ admin.nodeInfo.enode
 ```
 
 Connect validator node, for example:
+
 ```
 admin.addPeer("enode://8f8bb96b01be9f76a93b2b54bcaff35b48ace58f0b0f3c85a139048072ff030bcad022a442e49181885f1f0338a5efd2f4807d21d2f88973e18426dee3d8e0b7@127.0.0.1:20201")
 admin.addPeer("enode://a4642d6eb2f1c69ee861f4146636df028a7eb328e233f620cc6838db474e94327bdcdc810d2f9c2fa30694764e71b4c7b5828f6e8df7a3f71f3eb781bb017a4e@127.0.0.1:20202")
@@ -209,10 +201,10 @@ admin.addPeer("enode://88c2fdd0189a33e3b8ee02a04a767c4792140c00c08de5d368b9aac57
 ## Check node status
 
 You'll start seeing some output. After a few minutes, you should see lines that look like this. This means your node has connected other nodes and started produce blocks.
-```text
+
+```
 INFO [03-16|20:21:27.683] Looking for peers                        peercount=2 tried=5 static=4
 INFO [03-16|20:21:37.582] Reset timer to resend RoundChange msg    address=0x2dC45799000ab08E60b7441c36fCC74060Ccbe11 func=resetResendRoundChangeTi
 mer cur_seq=23 cur_epoch=1 cur_round=0 des_round=5 state="Waiting for new round" address=0x2dC45799000ab08E60b7441c36fCC74060Ccbe11 timeout=17.5s
 INFO [03-16|20:21:39.311] Looking for peers                        peercount=3 tried=0 static=4
 ```
-

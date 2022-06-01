@@ -1,27 +1,27 @@
-## Prerequisites
+# How To Become A New Validator
 
-### Hardware requirements
+### Prerequisites
 
-MAP is a Proof Of Stake network, which has different hardware requirements than a Proof of Work network.
-Proof Of Stake consensus is less CPU intensive, but is more sensitive to network connectivity and latency.
-Below is a list of standard requirements for running Validator on the MAP Network:
+#### Hardware requirements
 
-- Memory: 16 GB RAM
-- CPU: Quad core 2.5 GHz (64-bit)
-- Disk: 256 GB of SSD storage, plus a secondary HDD desirable
-- Network: At least 100 Mb input/output Ethernet with a fiber Internet connection, ideally redundant connections and HA switches
+MAP is a Proof Of Stake network, which has different hardware requirements than a Proof of Work network. Proof Of Stake consensus is less CPU intensive, but is more sensitive to network connectivity and latency. Below is a list of standard requirements for running Validator on the MAP Network:
 
-### Software requirements
+* Memory: 16 GB RAM
+* CPU: Quad core 2.5 GHz (64-bit)
+* Disk: 256 GB of SSD storage, plus a secondary HDD desirable
+* Network: At least 100 Mb input/output Ethernet with a fiber Internet connection, ideally redundant connections and HA switches
+
+#### Software requirements
 
 Building atlas requires git, Go (version 1.14 or later) and a C compiler. You can install them using your favourite package manager.
 
-## How to become a new validator
+### How to become a new validator
 
 In order to make your assets safer, we need you to set some necessary identification parameters to become a validator. We also set the corresponding threshold so that we can screen those who really want to contribute to the chain. Of course, we will give corresponding rewards to these people.
 
 The following steps are regarded as your first operation, because you only need to perform the following operations once to become a validator. Unless you log off the validator or cancel the corresponding operation, you will not need to perform the second operation to avoid wasting your gas fee.
 
-### Step 1: create Account
+#### Step 1: create Account
 
 In this step, you need to transfer your identification information to the corresponding management contract,which will manage your account, keys, and metadata.
 
@@ -29,55 +29,57 @@ The purpose of this step is keep your locked `MAP` more secure by authorizing al
 
 You need `createAccount` command to perform the above operations,more detail about `createAccount` command please to see [this](../develop/map-relay-chain/marker/AboutCommon.md#createaccount).
 
-### Step 2: locked `MAP`
+#### Step 2: locked `MAP`
 
 The threshold we set to be the validator is to lock 1000,000 `MAP` into the corresponding management smart contract.
 
 This part of the locked `MAP` will be used for future punishment, which is also one of the conditions for being elected.
 
-You need `createAccount`  command to perform the above operations,more detail about `lockedMAP` command please to see [this](../develop/map-relay-chain/marker/AboutCommon.md#lockedmap) .
+You need `createAccount` command to perform the above operations,more detail about `lockedMAP` command please to see [this](../develop/map-relay-chain/marker/AboutCommon.md#lockedmap) .
 
-### Step 3: validator register
+#### Step 3: validator register
 
 This step is a key step for registering as a new validator.
 
-You need `register`  command to perform the above operations,more detail about `register` command please to see [this](../develop/map-relay-chain/marker/AboutValidator.md#register).
+You need `register` command to perform the above operations,more detail about `register` command please to see [this](../develop/map-relay-chain/marker/AboutValidator.md#register).
 
 At this step, you will successfully register as a validator. Next, you can try to vote for yourself. How to vote please to see[this](../develop/map-relay-chain/marker/AboutVote.md#vote).
 
+### Example
 
-
-## Example
 If you want to become a validator, you need to meet two conditions:
 
 1. A node that provides RPC services.
 2. Your account needs to have at least 1,000,000 MAP.
 
-### Start A node that provides RPC services.
+#### Start A node that provides RPC services.
 
-You can start a node that provides RPC services by yourself, or you can use the [RPC nodes](../../../Makalu-PoC/PoC-2.md#atlas-address) we provide.
+You can start a node that provides RPC services by yourself, or you can use the [RPC nodes](broken-reference) we provide.
 
-- Clone repositories
+* Clone repositories
+
 ```shell
 cd /Users/alex
 
 git clone https://github.com/mapprotocol/atlas.git
 ```
 
-- Build
+* Build
+
 ```shell
 cd /Users/alex/atlas
 
 make atlas
 ```
 
-- Start node
+* Start node
+
 ```shell
 ./atlas --datadir ./node-rpc --ipcpath ./node-rpc --port 36210 --http --http.addr "0.0.0.0" --http.port 7445 --http.api eth,web3,net,debug,txpool,header,istanbul --http.corsdomain "*" console
 ```
 
+#### Create account
 
-### Create account
 ```shell
 ./marker createAccount --rpcaddr 127.0.0.1 --rpcport 7445 --keystore /Users/alex/atlas/node-5/keystore/UTC--2022-03-17T10-07-49.186973000Z--49d3112d06156761be64d91dd47ffe567fad60c8 --password "" --namePrefix "validator"
 
@@ -97,7 +99,8 @@ INFO [03-17|18:22:01.071] Please waiting                           func=getResul
 INFO [03-17|18:22:06.718] Transaction Success                      func=queryTx                 block Number=20
 ```
 
-### Locked MAP
+#### Locked MAP
+
 ```shell
 ./marker lockedMAP --rpcaddr 127.0.0.1 --rpcport 7445 --keystore /Users/alex/atlas/node-5/keystore/UTC--2022-03-17T10-07-49.186973000Z--49d3112d06156761be64d91dd47ffe567fad60c8 --password "" --lockedNum 1000000
 
@@ -109,7 +112,8 @@ INFO [03-17|18:22:37.845] Please waiting                           func=getResul
 INFO [03-17|18:22:41.073] Transaction Success                      func=queryTx                 block Number=27
 ```
 
-### Validator register
+#### Validator register
+
 ```shell
 ./marker register --rpcaddr 127.0.0.1 --rpcport 7445 --keystore /Users/alex/atlas/node-5/keystore/UTC--2022-03-17T10-07-49.186973000Z--49d3112d06156761be64d91dd47ffe567fad60c8 --password "" --commission 0.6
 
@@ -121,7 +125,8 @@ INFO [03-17|18:22:59.856] Please waiting                           func=getResul
 INFO [03-17|18:23:01.074] Transaction Success                      func=queryTx                 block Number=31
 ```
 
-### Verify
+#### Verify
+
 So far we have completed the registration steps of validator, now let's verify whether it has become a validator.
 
 ```shell
@@ -135,17 +140,17 @@ INFO [03-17|18:23:08.820] Validator:                               addr=0x0e2699
 INFO [03-17|18:23:08.820] Validator:                               addr=0xF930B74D2b1b703B879ab54E225ECc18Ab28e61C vote amount=1,000,000,000,000,000,000,000,000
 INFO [03-17|18:23:08.820] Validator:                               addr=0x49d3112D06156761bE64D91dD47fFE567fAD60c8 vote amount=0
 ```
-As can be seen from the above results, we have become a validator. But our vote count is 0, which prevents us from being 
-elected as a validator that can participate in the block, which is not what we want. So we also need to vote for validators.
 
-### Vote
-We can use our validator account to vote for ourselves, or we can let other validators or voters vote for ourselves.
-Below we will demonstrate voting for ourselves using our own validator account, as this is the easiest.
+As can be seen from the above results, we have become a validator. But our vote count is 0, which prevents us from being elected as a validator that can participate in the block, which is not what we want. So we also need to vote for validators.
+
+#### Vote
+
+We can use our validator account to vote for ourselves, or we can let other validators or voters vote for ourselves. Below we will demonstrate voting for ourselves using our own validator account, as this is the easiest.
 
 For more information on voting and elections, click on the links below to view:
 
-[vote](./HowToVote.md)  
-[election](../Election.md)
+[vote](broken-reference)\
+[election](../develop/map-relay-chain/consensus/Election.md)
 
 ```shell
 ./marker vote --rpcaddr 127.0.0.1 --rpcport 7445 --keystore /Users/t/go_project/atlas/node-1/keystore/UTC--2022-03-17T10-07-49.186973000Z--49d3112d06156761be64d91dd47ffe567fad60c8 --password "" --validator "0x49d3112d06156761be64d91dd47ffe567fad60c8" --voteNum 100000
@@ -157,7 +162,8 @@ INFO [03-17|18:23:25.315] Please waiting                           func=getResul
 INFO [03-17|18:23:27.132] Transaction Success                      func=queryTx                 block Number=34
 ```
 
-### Verify
+#### Verify
+
 Let's verify that our vote was successful.
 
 ```shell
@@ -171,9 +177,8 @@ INFO [03-17|18:23:37.550] Validator:                               addr=0x3c0ef2
 INFO [03-17|18:23:37.550] Validator:                               addr=0x41E4A55Ef06c1961B3e143357e24cA7f92e4DD03 vote amount=1,000,000,000,000,000,000,000,000
 INFO [03-17|18:23:37.550] Validator:                               addr=0x49d3112D06156761bE64D91dD47fFE567fAD60c8 vote amount=100,000,000,000,000,000,000,000
 ```
-Judging from the results, I've successfully voted for myself, but it's not enough.
-We need to call RPC in the next epoch to finally determine whether we are selected as validators who can participate in 
-block generation，Just like the following:
+
+Judging from the results, I've successfully voted for myself, but it's not enough. We need to call RPC in the next epoch to finally determine whether we are selected as validators who can participate in block generation，Just like the following:
 
 ```shell
 curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"istanbul_getValidators","params":[],"id":1}' http://127.0.0.1:7445
@@ -191,4 +196,5 @@ curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"
   ]
 }
 ```
-For more information on istanbul_getValidators [click here](../../consensus/ConsensusAPI.md#getvalidators)
+
+For more information on istanbul\_getValidators [click here](../sdk/ConsensusAPI.md#getvalidators)
