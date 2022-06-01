@@ -32,7 +32,7 @@
 ### 2022.Q4
 
 - Extend cross-chain connections to non-EVM compatible chains: Flow and Celo.
-- Extend cross-chain connections to non-EVM compatible chains: Solana.
+- Extend cross-chain connections to non-EVM compatible chains: Solana. 
 
 ### 2023.Q1
 - Extend cross-chain connections to more EVM compatible and non-EVM compatible chains: Polkadot ecosystem's chain, Arbitrum, Optimism, etc.
