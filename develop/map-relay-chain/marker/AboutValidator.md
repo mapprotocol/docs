@@ -230,7 +230,7 @@ USAGE
 
 OPTIONS
                                                              
-  --validator                                                  the target you will sign the message 
+  --target                                                     the target you will sign the message 
                                                                
   --signerPriv                                                 The private key of signaddress is used to generate sign data    
                                                                                                             
@@ -260,7 +260,7 @@ USAGE
 
 OPTIONS
                                                              
-  --validator                                                  the target you will sign the message 
+  --target                                                     the target you will sign the message 
                                                                
   --signerPriv                                                 The private key of signaddress is used to generate sign data    
                                                                                                             
