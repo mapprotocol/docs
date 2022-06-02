@@ -89,7 +89,7 @@ OPTIONS
                                                                validator,you will lock the 
                                                                `MAP`. 
                                                                
-  --singerPriv                                                 The private key of singeraddress is used to generate singer data                                            
+  --signerPriv                                                 The private key of signaddress is used to generate sign data                                            
                                                                                                             
 EXAMPLES:
 ./Marker quicklyRegister
@@ -98,7 +98,7 @@ EXAMPLES:
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --commission 100000
---singerPriv 842e1d8a93b4e46104da96676066ddb0973c63ec80a15746856c046dd4a1004c
+--signerPriv 842e1d8a93b4e46104da96676066ddb0973c63ec80a15746856c046dd4a1004c
 --lockedNum 1000000
 
 RESPONSE:
@@ -202,7 +202,7 @@ OPTIONS
   --rpcport                                                    HTTP-RPC server listening 
                                                                port
                                                                
-  --singerPriv                                                 The private key of singeraddress is used to generate singer data    
+  --signerPriv                                                 The private key of signaddress is used to generate sign data    
                                                                                                             
 EXAMPLES:
 ./Marker authorizeValidatorSigner
@@ -210,7 +210,7 @@ EXAMPLES:
 --rpcport 8545
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
---singerPriv   842e1d8a93b4e46104da96676066ddb0973c63ec80a15746856c046dd4a1004c   
+--signerPriv   842e1d8a93b4e46104da96676066ddb0973c63ec80a15746856c046dd4a1004c   
 
 RESPONSE:
 INFO [05-30|13:41:55.131] === authorizeValidatorSigner === 
@@ -220,59 +220,59 @@ INFO [05-30|13:42:03.231] Transaction Success                      func=queryTx 
 
 ```
 
-### MakeECDSASignatureFromSinger
+### MakeECDSASignatureFromSigner
 
-- note:singer function 
-- print a ECDSASignature that singer sign the account(validator)
+- note:signer function 
+- print a ECDSASignature that signer sign the account(validator)
 ```shell
 USAGE
-  $ ./Marker makeECDSASignatureFromSinger
+  $ ./Marker makeECDSASignatureFromSigner
 
 OPTIONS
                                                              
   --validator                                                  the target you will sign the message 
                                                                
-  --singerPriv                                                 The private key of singeraddress is used to generate singer data    
+  --signerPriv                                                 The private key of signaddress is used to generate sign data    
                                                                                                             
 EXAMPLES:
-makeECDSASignatureFromSinger
---singerPriv
+makeECDSASignatureFromSigner
+--signerPriv
 c59c8a05f70b5ea0a0f2a2bd9491686a8c4a55c0585db2c8c6ed7ccfa0ee2c7b
 --validator
 0xac146d6629F8C3B8F2e830275B583C5402032472
 
 RESPONSE:
 INFO [05-30|13:41:55.131] === ECDSASignature === 
-INFO [05-30|13:41:55.131] === singer ===                           account=0x05D0CFd882185dEB9b3E0eA7872Ad332acB9E31d
+INFO [05-30|13:41:55.131] === signer ===                           account=0x05D0CFd882185dEB9b3E0eA7872Ad332acB9E31d
 INFO [05-30|13:41:55.131] ECDSASignature                           result=0x6dcec34a67a3388b6fbf93ad48f88aa88c0ce46789de0f9e042acbe6e116c97f26d645652576a65602ed97f7ca16f890898b8e761de3edc34447edb2e41713ad01
 
 
 ```
 
 
-### MakeBLSProofOfPossessionFromSinger
+### MakeBLSProofOfPossessionFromSigner
 
-- note:singer function
-- print a BLSProofOfPossession that singer BLSSign the account(validator)
+- note:signer function
+- print a BLSProofOfPossession that signer BLSSign the account(validator)
 ```shell
 USAGE
-  $ ./Marker makeBLSProofOfPossessionFromSinger
+  $ ./Marker makeBLSProofOfPossessionFromSigner
 
 OPTIONS
                                                              
   --validator                                                  the target you will sign the message 
                                                                
-  --singerPriv                                                 The private key of singeraddress is used to generate singer data    
+  --signerPriv                                                 The private key of signaddress is used to generate sign data    
                                                                                                             
 EXAMPLES:
-makeBLSProofOfPossessionFromSinger
---singerPriv
+makeBLSProofOfPossessionFromSigner
+--signerPriv
 c59c8a05f70b5ea0a0f2a2bd9491686a8c4a55c0585db2c8c6ed7ccfa0ee2c7b
 --validator
 0xac146d6629F8C3B8F2e830275B583C5402032472
 
 RESPONSE:
-INFO [05-30|13:52:40.371] === makeBLSProofOfPossessionFromSinger === 
+INFO [05-30|13:52:40.371] === makeBLSProofOfPossessionFromSigner === 
 INFO [05-30|13:52:40.375] === pop ===                                result=0x1417ef1814518ade2af0e52ce7a11bcf834bba5ac42f91f3a1229c072721bb1b0c82513600690ebc0244572dd459d280abd6c14c0fc4837fa06335c88457a402
 
 ```
