@@ -23,7 +23,7 @@ First you need to config the markerConfig.json like this: set your own keys.
  "Validators": [
   {
    "Address": "0xB16561A66B6439944DAf0388b5E6a2D3D0a49e12",
-   "SingerAddress": "0x1c0eDab88dbb72B119039c4d14b1663525b3aC15",
+   "SignerAddress": "0x1c0eDab88dbb72B119039c4d14b1663525b3aC15",
    "ECDSASignature": "0x2ac44a912dbf3205f0500401cf02db33240fa03198dd4c3b202dfe7be3dbe1ed7cbfbe9326d50223faf2971e3ecefed027df1dda6727e9c45b55b377384dacf201",
    "PublicKeyHex": "0x0491c373a1504d67e0c6c98276fc6043544fd09a623473b6936a107943baf666612b5e2a3beacf839d1ec74fd00f4388d4b813eac26b26ab4859003473b286650a",
    "BLSPubKey": "0x136ef6be87de9c925869387782afb4cf19496999c2684709daeb3af8d0b59d800bbe05870789f0f9b3cadababa69f5a00a38bbcba71d99c4c35d671442232c4d3017fd6b99e8356a3e4e985bdfc60bbcb8d939c87976a1ff677d7c42989b379a0b4c0f168a544c892bd2b3ec480e3d6c58c7dddb8d83677ebee2e87ab3660b80",
@@ -32,7 +32,7 @@ First you need to config the markerConfig.json like this: set your own keys.
   },
   {
    "Address": "0xdC757c8e3b8800d977a34f802131FAA870d264c4",
-   "SingerAddress": "0x16FdBcAC4D4Cc24DCa47B9b80f58155a551ca2aF",
+   "SignerAddress": "0x16FdBcAC4D4Cc24DCa47B9b80f58155a551ca2aF",
    "ECDSASignature": "0x9b4f29d54a31b052fc9fcfdc968912a59b308df021f32b3c923438c0d65ff2cc47b8d01bf5968d70a8c82875a1852c313540f89467a3fe833902a0c0aff5a27a01",
    "PublicKeyHex": "0x04e7678fb997c00d5998f79413d73ebde98865cd0d7fa82e2ab6d0920a72204d8c49c14f873ec9ee0e0b38651001acc9a4c1a0a63de6c6589b896f21f6a6bb6837",
    "BLSPubKey": "0x0a2e37ecad6e69bfec9fec2b345d0f8441a0f63acf8b45c0131a78e5d777d52e0a39404ca85f2c08752c1d4ff8df05c82c7880779d61fe3fabcd4fd682463c0515b1f0217561a6a72bd381da19e34c5560c6eccb08ff83d7d3f4ac6da7f5d1ed15a2780f782c1fa571fa65b99694af559b9df168b1d8745ac3bbc7d3fe550b94",
@@ -41,7 +41,7 @@ First you need to config the markerConfig.json like this: set your own keys.
   },
   {
    "Address": "0x257Cc34FB139A2db4Da96496Be03358d89e52d95",
-   "SingerAddress": "0x2dC45799000ab08E60b7441c36fCC74060Ccbe11",
+   "SignerAddress": "0x2dC45799000ab08E60b7441c36fCC74060Ccbe11",
    "ECDSASignature": "0x303ea4fdbd348c32655e7a460802be169f4bc4ca1a7030af941de4a57069dfb5253c0c087e06e258f63e50176bd5b54bf462514d8116ec3394bdc875c5678f7500",
    "PublicKeyHex": "0x04ec7664543f2dae218176a072ca7bfc16632438793077c06cf05975cc1302ee60c27f29e2cc3b64ffbaa69d2939e937f99a7bf93d7c5fa59bffbcd769e4f234e8",
    "BLSPubKey": "0x086fac850f3a9f36e8a5107eab0ba79044043dc2cc6b897cbbd0d4bf805570ff270a98f28e2d2e70b7b2ecc41a4a13e453178354997aa2038852c5945f0564bb02cdf57642881a1b40417fe3620429fc087f8dee6a68e5d7193d3243c38a1f3827d0f4cb616722a1fa78a283a17589d7688a769ade77e9d6417c6e2a9adf59c3",
@@ -50,7 +50,7 @@ First you need to config the markerConfig.json like this: set your own keys.
   },
   {
    "Address": "0xac146d6629F8C3B8F2e830275B583C5402032472",
-   "SingerAddress": "0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5",
+   "SignerAddress": "0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5",
    "ECDSASignature": "0x29388d40ee2ee4468fca04b624c77208b7b00c56c532fac53314cf39e3e8feb80c6bd2b7d25a6e20e9da0adaeec4b49c13b673e6ca2d088370e0b6189fb216f000",
    "PublicKeyHex": "0x04ef2af91ba2fc2b04bc47c7d59d6d07a0dea2a62c5b537d4a83a387bee44245317de753c4e45858708c0d31473c6595ac9dddbcf7ac02a13df4af1a188e2c9c24",
    "BLSPubKey": "0x03fea7bc386ea24aaa19c563a4f26f38cbc2ce172ba2310587405f4f05777fb911a4c3553b7b6529ea02a9da3ae2df6f70c3409105b39e1930d6a6ae8344fc221f5dfb2e73cc8ce434d1af33d95366796bdec26ca7cfcc0a03867fabf471884206db6b9e175a131995bd0c70b93a6f2eec96d831ad0c42d13d334f780d578834",
@@ -63,20 +63,20 @@ First you need to config the markerConfig.json like this: set your own keys.
 ## MarkerConfig.json params instruction
 
 - Address:        This account address will be registered to the validator list as a validator account
-- SingerAddress:  It is authorized by account address to replace the validator to make consensus with other nodes on the `MAP` network
-- ECDSASignature: Singeraddress ecdsasignature for account address
-- PublicKeyHex:   Singeraddress`s Publickeyhex
-- BLSPubKey:      Singeraddress`s Blspubkey
-- BLSG1PubKey:    Singeraddress`s BLSG1PubKey
-- BLSProofOfPossession: BLS signature data of singeraddress to account address
+- SignerAddress:  It is authorized by account address to replace the validator to make consensus with other nodes on the `MAP` network
+- ECDSASignature: Signeraddress ecdsasignature for account address
+- PublicKeyHex:   Signeraddress`s Publickeyhex
+- BLSPubKey:      Signeraddress`s Blspubkey
+- BLSG1PubKey:    Signeraddress`s BLSG1PubKey
+- BLSProofOfPossession: BLS signature data of signeraddress to account address
 
 generate signer`s `PublicKeyHex`、`BLSPubKey`、`BLSG1PubKey` info please refer to  [Create four validator accounts](./make-private-chain.md#create-four-validator-accounts)
 
-generate signer`s `ECDSASignature` info please refer to  [Create four validator accounts](./marker/AboutValidator.md#makeECDSASignatureFromSinger)
+generate signer`s `ECDSASignature` info please refer to  [Create four validator accounts](./marker/AboutValidator.md#makeECDSASignatureFromSigner)
 
-generate signer`s `BLSProofOfPossession` info please refer to  [Create four validator accounts](./marker/AboutValidator.md#makeBLSProofOfPossessionFromSinger)
+generate signer`s `BLSProofOfPossession` info please refer to  [Create four validator accounts](./marker/AboutValidator.md#makeBLSProofOfPossessionFromSigner)
 
-note:If you use the same account address as Address and SingerAddress, singeraddress and blsproofofpossession are the default values of the account address.
+note:If you use the same account address as Address and SignerAddress, signeraddress and blsproofofpossession are the default values of the account address.
 
 Second you need compile your `atlas-contracts` project,we need the bytecode about `atlas-contracts` to make `genesis.json` file.
 
