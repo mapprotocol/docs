@@ -3,4 +3,4 @@ MAP Protocol is the only infrastructure made for cross-chain Dapps that connects
 charges the lowest cross-chain gas, and also offers complete Dapp development service toolkits. 
 Build on the best cross-chain infrastructure now.
 
-![](allcompar.png)
+![](compp.png)
