@@ -33,7 +33,7 @@ Solely maintaining light clients of connected blockchains on MAP relay chain is 
 
 **Illustration of MAP Protocol's Cross-Chain Verification & Maintenance Network**
 
-![Illustration of MAP Protocol's Cross-Chain Verification & Maintenance Network](verification.png)
+![Illustration of MAP Protocol's Cross-Chain Verification & Maintenance Network](verify.png)
 
 # Maintainer
 
