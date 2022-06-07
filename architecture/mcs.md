@@ -28,7 +28,7 @@ Note that if Alice transfers 100 USDC from Ethereum to MAP relay chain, then she
 
 ### Illustration of MAP Protocol's MAP Cross-Chain Services (MCS) Layer
 
-![](mcs.png)
+![](mcsflow.png)
 
 ## Messenger
 - What is Messenger? Messenger is an independent inter-chain program.
