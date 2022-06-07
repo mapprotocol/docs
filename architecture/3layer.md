@@ -26,4 +26,4 @@ MAP Protocol is structured in **three layers**: **MAP Protocol Layer**, **MAP Cr
 - MAP Protocol is this Layer in the narrow sense.
 - MAP Protocol incentivizes validators on MAP Relay Chain and Maintainers for updating Light-Client status. 
 
-![](three_layers.png)
+![](3layers.png)
