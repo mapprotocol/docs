@@ -24,4 +24,4 @@ While cross-chain bridges can be easily built with MAP Protocol, MAP Protocol it
 
 Developers can deploy cross-chain Dapps on MAP Relay Chain to achieve interoperability.
 
-![](technicalmechanisms.png)
+![](techincalmechanisms.png)
