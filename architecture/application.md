@@ -1,6 +1,4 @@
-Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices, and quantities originated from other chains. This issue can be solved by deploying on multiple chains but is extremely complex. By building a reliable cross-chain network, MAP Protocol has enabled Data cross-chain and is nurturing a completely new oracle market - On-Chain Oracle. By deploying on MAP Relay Chain, derivative and synthetic asset applications can acquire reliable multi-chain data from On-Chain Oracle with ease.
-
-Assets and data originated from Dapps assembly on MAP Relay Chain. Dapps can achieve interoperability because of MAP Cross-chain Services (MCS). The finality of cross-chain data and asset verification network by MAP Protocol Layer empowers Dapps to grow limitless.
+Assets and data originated from Dapps assembly on MAP Relay Chain. Dapps can achieve interoperability because of MAP Cross-chain Services (MCS). The finality of omnichain data and asset verification network by MAP Protocol Layer empowers Dapps to grow limitless.
 
 ## Omnichain Lending
 
@@ -17,9 +15,9 @@ Omnichain Swap allows you to swap coins with substantially lower fees than tradi
  
 Omnichain SWAP also enables omnichain aggregation swap by connecting every major DEX liquidity out there. Existing AMMs can be wrapped to perform omni-chain swaps from one asset to another without the need to modify any existing code. User’s will be able to swap from ETH on Ethereum to Near on Near in one single transaction from the source chain.
 
-In a omnichain swap built with MAP Protocol, users can add multichain coin liquidity in one pool, that means providing liquidity to a pair of tokens from different chains becomes possible. Users can swap one token directly for another chain token from a different chain without using any intermediate token, such as stable coins, to achieve the shortest route of cross-chain swap.
+In a omnichain swap built with MAP Protocol, users can add multichain coin liquidity in one pool, that means providing liquidity to a pair of tokens from different chains becomes possible. Users can swap one token directly for another chain token from a different chain without using any intermediate token, such as stable coins, to achieve the shortest route of omnichain swap.
 
-**BarterSwap**, the first truly decentralized cross-chain exchange that enables users to swap any token on any chain, includes all the above functionalities and will be released in Q4 2022. 
+**BarterSwap**, the first truly decentralized omnichain exchange that enables users to swap any token on any chain, includes all the above functionalities and will be released in Q4 2022. 
 
 
 ## Omnichain GameFi
@@ -33,24 +31,24 @@ Another way to be scalable and maintain a good gaming experience is directly dep
 
 ## On-chain Oracle and Derivatives
 
-Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices and quantities originating from other chains. This issue can be solved by multi-chain deployment, but it is extremely complex. By building a reliable cross-chain network, MAP Protocol has enabled Data cross-chain and is nurturing a completely new oracle market - On-Chain Oracle. By deploying on MAP Relay Chain, derivative and synthetic asset applications can easily acquire reliable multi-chain data from On-Chain Oracle. 
+Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices and quantities originating from other chains. This issue can be solved by multi-chain deployment, but it is extremely complex. By building a reliable cross-chain network, MAP Protocol has enabled Data omnichain and is nurturing a completely new oracle market - On-Chain Oracle. By deploying on MAP Relay Chain, derivative and synthetic asset applications can easily acquire reliable multi-chain data from On-Chain Oracle. 
 
 
 ### Illustration of MAP Protocol Omnichain Applications - Data
 
 ![Illustration of MAP Protocol Omnichain Applications - Data](dataflow.png)
 
-Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices, and quantities originated from other chains. This issue can be solved by deploying on multiple chains but is extremely complex. By building a reliable cross-chain network, MAP Protocol has enabled Data cross-chain and is nurturing a completely new oracle market - On-Chain Oracle. By deploying on MAP Relay Chain, derivative and synthetic asset applications can acquire reliable multi-chain data from On-Chain Oracle with ease. 
+Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices, and quantities originated from other chains. This issue can be solved by deploying on multiple chains but is extremely complex. By building a reliable cross-chain network, MAP Protocol has enabled Data omnichain and is nurturing a completely new oracle market - On-Chain Oracle. By deploying on MAP Relay Chain, derivative and synthetic asset applications can acquire reliable multi-chain data from On-Chain Oracle with ease. 
 
 ## Fungible token and NFT Bridge
 
-Omnichain bridges and omnichain NFT bridges no longer have to build their infrastructure or use MPC. Using MAP’s underlying cross-chain verification network with finality and the MCS application developer service kit, bridge developers can easily build their NFT or homogenized token bridge application.
+Omnichain bridges and omnichain NFT bridges no longer have to build their infrastructure or use MPC. Using MAP’s underlying omnichain verification network with finality and the MCS application developer service kit, bridge developers can easily build their NFT or homogenized token bridge application.
 
 ### Illustration of MAP Protocol Omnichain Application - Fungible Tokens
 
 ![MAP Protocol Omnichain Application - Fungible Tokens](fungible.png)
 
-*Fungible tokens like USDC are issued simultaneously on multiple chains. Dapp developers need to submit whether fungible tokens are issued on multiple chains on the MAP Cross-chain services' vault to avoid different forms of the same assets created during the cross-chain process.
+*Fungible tokens like USDC are issued simultaneously on multiple chains. Dapp developers need to submit whether fungible tokens are issued on multiple chains on the MAP Cross-chain services' vault to avoid different forms of the same assets created during the omnichain process.
 
 ### Illustration of MAP Protocol Omnichain Application - Non-Fungible Tokens (NFT)
 
@@ -62,12 +60,12 @@ As told by its developers, a proposal executed on Aave, which is built on the Et
 
 The Aave cross-chain governance bridge is built in a generic way to be easily adapted to operate with any chain that supports the EVM [Ethereum Virtual Machine] and cross-chain messaging. Currently, the repository supports contracts bridging to Polygon and Arbitrum. On Aave, users can submit Aave Improvement Protocols, or AIPs, to target various features on the DeFi platform.
 
-With MAP Protocols interoperability with all-chains, cross-chain governance can be achieved with all EVM and heterogenous chains by a security cross-chain infrastructure.
+With MAP Protocols interoperability with all-chains, cross-chain governance can be achieved with all EVM and heterogenous chains by a security omnichain infrastructure.
 
 
 ## Omnichain Applications on MAP Protocol
 
-Dapp developers only need to deploy their dapps on MAP Relay Chain with the completed MAP Cross-chain services module, then enjoy the privilege of connecting the entire blockchain world’s liquidity. Developers can easily build their omnichain applications deployed on any chain in just two steps:
+Dapp developers only need to deploy their dapps on MAP Relay Chain with the completed MAP omnichain services module, then enjoy the privilege of connecting the entire blockchain world’s liquidity. Developers can easily build their omnichain applications deployed on any chain in just two steps:
 
 1. Build inter-chain messenger using our SDK.
 2. Interact with on-chain vault and data through our API.
@@ -76,14 +74,14 @@ Dapp developers only need to deploy their dapps on MAP Relay Chain with the comp
 | ---- | ---- |
 | Fungible Token Bridge | Barter Bridge |
 | NFT Bridge | CoLAB Bridge |
-| Cross-chain NFT Collaboration Platform | CoLAB |
-| Cross-chain Swap | BarterSwap |
-| Cross-chain DAO | Idavoll DAO |
+| Omnichain NFT Collaboration Platform | CoLAB |
+| Omnichain Swap | BarterSwap |
+| Omnichain DAO | Idavoll DAO |
 | MAP Relay Chain Swap | HiveSwap |
 | Off-chain Oracle | Nest |
 | On-chain Oracle | Onchain Oracle |
-| Cross-chain Farm | UniFarm |
-| Cross-chain GameFi | Nextype, Spiritland |
+| Omnichain Farm | UniFarm |
+| Omnichain GameFi | Nextype, Spiritland |
 | Wallet | BeFi Wallet DAO, Bitkeep, MathWallet, Coin98 |
 | Payment | Alchemy Pay |
 | DeFi System | Ecentive |
