@@ -65,7 +65,7 @@ The Aave cross-chain governance bridge is built in a generic way to be easily ad
 With MAP Protocols interoperability with all-chains, cross-chain governance can be achieved with all EVM and heterogenous chains by a security cross-chain infrastructure.
 
 
-## Applications on MAP Protocol
+## Omnichain Applications on MAP Protocol
 
 Dapp developers only need to deploy their dapps on MAP Relay Chain with the completed MAP Cross-chain services module, then enjoy the privilege of connecting the entire blockchain world’s liquidity. Developers can easily build their omnichain applications deployed on any chain in just two steps:
 
