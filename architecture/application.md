@@ -13,11 +13,11 @@ With MAP Protocol, you can collateralize on Chain A, borrow on the destination c
 
 ## Omnichain Swap
 
-Cross-chain Swap allows you to swap coins with substantially lower fees than traditional DeFi exchanges by connecting you to the best cross-chain DeFi protocols. By using MAP Protocol, developers can build a truly decentralized cross-chain exchange that enables users to swap any token on any chain.
+Omnichain Swap allows you to swap coins with substantially lower fees than traditional DeFi exchanges by connecting you to the best omnichain DeFi protocols. By using MAP Protocol, developers can build a truly decentralized omnichain exchange that enables users to swap any token on any chain.
  
-Cross chain SWAP also enables cross-chain aggregation swap by connecting every major DEX liquidity out there. Existing AMMs can be wrapped to perform cross-chain swaps from one asset to another without the need to modify any existing code. User’s will be able to swap from ETH on Ethereum to Near on Near in one single transaction from the source chain.
+Omnichain SWAP also enables omnichain aggregation swap by connecting every major DEX liquidity out there. Existing AMMs can be wrapped to perform omni-chain swaps from one asset to another without the need to modify any existing code. User’s will be able to swap from ETH on Ethereum to Near on Near in one single transaction from the source chain.
 
-In a cross-chain swap built with MAP Protocol, users can add multichain coin liquidity in one pool, that means providing liquidity to a pair of tokens from different chains becomes possible. Users can swap one token directly for another chain token from a different chain without using any intermediate token, such as stable coins, to achieve the shortest route of cross-chain swap.
+In a omnichain swap built with MAP Protocol, users can add multichain coin liquidity in one pool, that means providing liquidity to a pair of tokens from different chains becomes possible. Users can swap one token directly for another chain token from a different chain without using any intermediate token, such as stable coins, to achieve the shortest route of cross-chain swap.
 
 **BarterSwap**, the first truly decentralized cross-chain exchange that enables users to swap any token on any chain, includes all the above functionalities and will be released in Q4 2022. 
 
@@ -31,7 +31,7 @@ The lifespan of a GameFi depends heavily on the popularity and user's gaming exp
 Another way to be scalable and maintain a good gaming experience is directly deploying on MAP Relay Chain. With MAP Relay Chain's interoperability, GameFi projects can automatically link up with all EVM and non-EVM chains efficiently and securely by deploying on MAP Relay Chain. MAP Relay Chain will proactively connect with all of the upcoming chains so that the GameFi project can focus on user experience without worrying about scalability and security problems. 
 
 
-## On-chain Oracle and Derivatives because of cross-chain Data
+## On-chain Oracle and Derivatives
 
 Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices and quantities originating from other chains. This issue can be solved by multi-chain deployment, but it is extremely complex. By building a reliable cross-chain network, MAP Protocol has enabled Data cross-chain and is nurturing a completely new oracle market - On-Chain Oracle. By deploying on MAP Relay Chain, derivative and synthetic asset applications can easily acquire reliable multi-chain data from On-Chain Oracle. 
 
@@ -44,9 +44,9 @@ Decentralized derivative and synthetic assets are usually constrained by the acc
 
 ## Fungible token and NFT Bridge
 
-Cross-chain bridges and cross-chain NFT bridges no longer have to build their infrastructure or use MPC. Using MAP’s underlying cross-chain verification network with finality and the MCS application developer service kit, bridge developers can easily build their NFT or homogenized token bridge application.
+Omnichain bridges and omnichain NFT bridges no longer have to build their infrastructure or use MPC. Using MAP’s underlying cross-chain verification network with finality and the MCS application developer service kit, bridge developers can easily build their NFT or homogenized token bridge application.
 
-### Illustration of MAP Protocol Omnichain  Application - Fungible Tokens
+### Illustration of MAP Protocol Omnichain Application - Fungible Tokens
 
 ![MAP Protocol Omnichain Application - Fungible Tokens](fungible.png)
 
