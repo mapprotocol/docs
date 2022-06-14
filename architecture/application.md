@@ -86,4 +86,8 @@ Dapp developers only need to deploy their dapps on MAP Relay Chain with the comp
 | DeFi System | Ecentive |
 | Staking Service | Kucoin, Ankr, Hashquark, 01Node, Allnodes, Infstone |
 
+## Omnichain Application
+Developers can easily build their omnichain applications deployed on any chain in just two steps:
+1. Build inter-chain messenger using our SDK.
+2. Interact with on-chain vault and data through our API.
 
