@@ -5,8 +5,8 @@ MAP Protocol is designated for cross-chain Dapp developers. Not for blockchain m
 
 ### MAP Relay Chain
 
-- [Make Private Chain](https://docs.maplabs.io/develop/map-relay-chain/privatenet)
-- [Generating Marker genesis](https://docs.maplabs.io/develop/map-relay-chain/howtomakegenesis)
+- [Make Private Chain](https://docs.maplabs.io/develop/map-relay-chain/make-private-chain)
+- [Generating Marker genesis](https://docs.maplabs.io/develop/map-relay-chain/how-to-make-genesis)
 - [Consensus](https://docs.maplabs.io/develop/map-relay-chain/consensus)
 - [Contracts](https://docs.maplabs.io/develop/map-relay-chain/contractsaddress)
 
@@ -19,7 +19,7 @@ MAP Protocol is designated for cross-chain Dapp developers. Not for blockchain m
 
 ### Maintainer
 
-- [How to become Maintainer](https://docs.maplabs.io/develop/compass)
+- [How to become Maintainer](https://docs.maplabs.io/develop/maintainer)
 
 ### MAP Cross-chain Service(MCS)
 
