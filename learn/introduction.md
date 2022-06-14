@@ -6,7 +6,11 @@ MAP Protocol provides instant confirmation and verification finality by Light-cl
 
 While cross-chain bridges can be easily built with MAP protocol, the protocol itself targets a more fundamental problem and pursues grander vision: boosting the whole cross-chain ecosystem by building a solid cross-chain Dapp infrastructure. Any Dapp built with the infrastructure automatically inherits the cross-chain nature of MAP protocol without requiring the developers to tackle the error-prone cross-chain communications. With the technical threshold of building cross-chain Dapp reduced, the ecosystem shall thrive.
 
-Thus, together with worldwide developers, MAP Protocol is the dawn of a new cross-chain age.
+Thus, together with worldwide developers, MAP Protocol is the dawn of a new cross-chain age. Developers can easily build their omnichain applications deployed on any chain in just two steps:
+
+1. Build inter-chain messenger using our SDK.
+2. Interact with on-chain vault and data through our API.
+
 
 ## Features of MAP Protocol 
 
