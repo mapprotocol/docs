@@ -68,6 +68,7 @@
     * [Eth LightClient Verify Contract](develop/light-client/ethereum/tx-verify/Tx-Verify-Contract.md)
     * [MAP LightClient Verify](develop/light-client/map/tx-verify/Tx-Verify.md)
     * [MAP LightClient](develop/light-client/map/tx-verify/Tx-Verify-Contract.md)
+    * [MAP LightClient on Near](develop/light-client/map/tx-verify/map-light-client-on-near.md)
   * [Maintainer](develop/light-client/Maintainer.md)
   * MAP Cross-chain Service
       * [Contract](develop/mcs/contract/bridge.md)
