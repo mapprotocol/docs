@@ -1,23 +1,24 @@
 Assets and data originated from Dapps assembly on MAP Relay Chain. Dapps can achieve interoperability because of MAP Cross-chain Services (MCS). The finality of omnichain data and asset verification network by MAP Protocol Layer empowers Dapps to grow limitless.
 
-## Omnichain Lending
+## Cross-chain Lending
 
-Currently, if a user has money on chain A but wants to farm on Chain B, the user would have to go through 9 steps:
+Currently, if a user has money on chain A but wants to farm on Chain B, the user would have to go through 9 steps: 
 
-(1) Collateralize on Chain A -> (2) borrow -> (3) bridge (fee) -> (4) swap (fee) -> (5) farm on the destination chain -> (6) swap back (fee) -> (7) bridge back (fee) -> (8) repay the loan -> (9) un-collateralize.
+Collateralize on Chain A -> borrow -> bridge (fee) -> swap (fee) -> farm on the destination chain -> swap back (fee) -> bridge back (fee) -> repay the loan -> un-collateralize. 
 
 With MAP Protocol, you can collateralize on Chain A, borrow on the destination chain, farm, repay, and the collateral is unlocked, skipping the four bridging and swapping fees.
 
 
+
 ## Omnichain Swap
 
-Omnichain Swap allows you to swap coins with substantially lower fees than traditional DeFi exchanges by connecting you to the best omnichain DeFi protocols. By using MAP Protocol, developers can build a truly decentralized omnichain exchange that enables users to swap any token on any chain.
+Omnichain Swap allows you to swap coins with substantially lower fees than traditional DeFi exchanges by connecting you to the best cross-chain DeFi protocols. By using MAP Protocol, developers can build a truly decentralized omnichain exchange that enables users to swap any token on any chain.
  
-Omnichain SWAP also enables omnichain aggregation swap by connecting every major DEX liquidity out there. Existing AMMs can be wrapped to perform omni-chain swaps from one asset to another without the need to modify any existing code. User’s will be able to swap from ETH on Ethereum to Near on Near in one single transaction from the source chain.
+Omnichain SWAP also enables omnichain aggregation swap by connecting every major DEX liquidity out there. Existing AMMs can be wrapped to perform omnichain swaps from one asset to another without the need to modify any existing code. User’s will be able to swap from ETH on Ethereum to Near on Near in one single transaction from the source chain.
 
-In a omnichain swap built with MAP Protocol, users can add multichain coin liquidity in one pool, that means providing liquidity to a pair of tokens from different chains becomes possible. Users can swap one token directly for another chain token from a different chain without using any intermediate token, such as stable coins, to achieve the shortest route of omnichain swap.
+In an omnichain swap built with MAP Protocol, users can add multichain coin liquidity in one pool, that means providing liquidity to a pair of tokens from different chains becomes possible. Users can swap one token directly for another chain token from a different chain without using any intermediate token, such as stable coins, to achieve the shortest route of omnichain swap.
 
-**BarterSwap**, the first truly decentralized omnichain exchange that enables users to swap any token on any chain, includes all the above functionalities and will be released in Q4 2022. 
+**BarterSwap**, the first truly decentralized cross-chain exchange that enables users to swap any token on any chain, includes all the above functionalities and will be released in Q4 2022. 
 
 
 ## Omnichain GameFi
@@ -31,18 +32,19 @@ Another way to be scalable and maintain a good gaming experience is directly dep
 
 ## On-chain Oracle and Derivatives
 
-Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices and quantities originating from other chains. This issue can be solved by multi-chain deployment, but it is extremely complex. By building a reliable cross-chain network, MAP Protocol has enabled Data omnichain and is nurturing a completely new oracle market - On-Chain Oracle. By deploying on MAP Relay Chain, derivative and synthetic asset applications can easily acquire reliable multi-chain data from On-Chain Oracle. 
+Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices and quantities originating from other chains. This issue can be solved by multi-chain deployment, but it is extremely complex. By building a reliable omnichain network, MAP Protocol has enabled Data cross-chain and is nurturing a completely new oracle market - On-Chain Oracle. By deploying on MAP Relay Chain, derivative and synthetic asset applications can easily acquire reliable multi-chain data from On-Chain Oracle. 
 
 
 ### Illustration of MAP Protocol Omnichain Applications - Data
 
 ![Illustration of MAP Protocol Omnichain Applications - Data](dataflow.png)
 
-Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices, and quantities originated from other chains. This issue can be solved by deploying on multiple chains but is extremely complex. By building a reliable cross-chain network, MAP Protocol has enabled Data omnichain and is nurturing a completely new oracle market - On-Chain Oracle. By deploying on MAP Relay Chain, derivative and synthetic asset applications can acquire reliable multi-chain data from On-Chain Oracle with ease. 
+Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices, and quantities originated from other chains. This issue can be solved by deploying on multiple chains but is extremely complex. By building a reliable cross-chain network, MAP Protocol has enabled Data omnichain and is nurturing a completely new oracle market - **On-Chain Oracle**. By deploying on MAP Relay Chain, derivative and synthetic asset applications can acquire reliable multi-chain data from On-Chain Oracle with ease. 
 
 ## Fungible token and NFT Bridge
 
-Omnichain bridges and omnichain NFT bridges no longer have to build their infrastructure or use MPC. Using MAP’s underlying omnichain verification network with finality and the MCS application developer service kit, bridge developers can easily build their NFT or homogenized token bridge application.
+Cross-chain bridges and cross-chain NFT bridges no longer have to build their infrastructure or use MPC. Using MAP’s underlying cross-chain verification network with finality and the MCS application developer service kit, bridge developers can easily build their NFT or homogenized token bridge application. 
+
 
 ### Illustration of MAP Protocol Omnichain Application - Fungible Tokens
 
@@ -56,11 +58,11 @@ Omnichain bridges and omnichain NFT bridges no longer have to build their infras
 
 ## Omnichain Governance - The case of Aave
 
-As told by its developers, a proposal executed on Aave, which is built on the Ethereum (ETH) network, was sent to the Polygon (MATIC) FxPortal. The mechanism then read the Ethereum data and passed it for validation on the Polygon network. Afterward, the Aave cross-chain governance bridge contract received this data, decoded it and queued the action, pending a time lock for finalization. The development team wrote:
+As told by its developers, a proposal executed on Aave, which is built on the Ethereum (ETH) network, was sent to the Polygon (MATIC) FxPortal. The mechanism then read the Ethereum data and passed it for validation on the Polygon network. Afterward, the Aave cross-chain governance bridge contract received this data, decoded it and queued the action, pending a timelock for finalization. The development team wrote:
 
-The Aave cross-chain governance bridge is built in a generic way to be easily adapted to operate with any chain that supports the EVM [Ethereum Virtual Machine] and cross-chain messaging. Currently, the repository supports contracts bridging to Polygon and Arbitrum. On Aave, users can submit Aave Improvement Protocols, or AIPs, to target various features on the DeFi platform.
-
-With MAP Protocols interoperability with all-chains, cross-chain governance can be achieved with all EVM and heterogenous chains by a security omnichain infrastructure.
+The Aave cross-chain governance bridge is built in a generic way to be easily adapted to operate with any chain that supports the EVM and cross-chain messaging. Currently, the repository supports contracts bridging to Polygon and Arbitrum. On Aave, users can submit Aave Improvement Protocols, or AIPs, to target various features on the DeFi platform.
+ 
+With MAP Protocol's interoperability with all-chains, omnichain governace can be achieved with all EVM and heterogenous chains by a security cross-chain infrastructure. 
 
 
 ## Omnichain Applications on MAP Protocol
