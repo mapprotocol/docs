@@ -75,15 +75,15 @@ Dapp developers only need to deploy their dapps on MAP Relay Chain with the comp
 | Dapp Categories | Projects under development on MAP Protocol as of Apr 2022 |
 | ---- | ---- |
 | Fungible Token Bridge | Barter Bridge |
-| NFT Bridge | CoLAB Bridge |
-| Omnichain NFT Collaboration Platform | CoLAB |
-| Omnichain Swap | BarterSwap |
-| Omnichain DAO | Idavoll DAO |
+| NFT Bridge | CoLAB NFT Bridge |
+| Cross-chain NFT Collaboration Platform | CoLAB |
+| Cross-chain Swap | BarterSwap |
+| Cross-chain DAO | Idavoll DAO |
 | MAP Relay Chain Swap | HiveSwap |
 | Off-chain Oracle | Nest |
 | On-chain Oracle | Onchain Oracle |
-| Omnichain Farm | UniFarm |
-| Omnichain GameFi | Nextype, Spiritland |
+| Cross-chain Farm | UniFarm |
+| Cross-chain GameFi | Nextype, Spiritland |
 | Wallet | BeFi Wallet DAO, Bitkeep, MathWallet, Coin98 |
 | Payment | Alchemy Pay |
 | DeFi System | Ecentive |
