@@ -10,6 +10,7 @@ Map light client contract is deployed at address:
 ## Contract interface
 
 ```rust
+impl MapLightClient {
      pub fn new(threshold: u128,
                validators: Vec<Validator>,
                epoch: u64,
@@ -26,6 +27,7 @@ Map light client contract is deployed at address:
     pub fn get_epoch_size(&self) -> u64;
 
     pub fn get_record_for_epoch(&self, epoch: u64) -> Option<EpochRecord>;
+}
 ```
 
 ## Interact with contract interface
@@ -80,9 +82,9 @@ Check if the contract is intialized.
 | bool      |  true if the contract is already initialized, false otherwise| 
 
 
-### next_block_header_epoch
+### get_header_height
 
-Get the epoch of the next block header which will update the validators.
+Get the latest block header number the light client has updated.
 
 #### output parameters
 
@@ -117,3 +119,59 @@ Get the record information( validators, threshold and epoch) for the epecified e
 | type         | comment |
 | --------  | ------- |
 | Option<EpochRecord>      |  the record of the specified epoch, maybe None| 
+
+## Data structure
+
+
+### Here are some main data structure for map light client contract.
+
+MapLightClient is the map light client contract.
+```rust
+pub struct MapLightClient {
+    // the epoch information records of latest 20 epochs
+    epoch_records: UnorderedMap<u64, EpochRecord>,
+    // the block count of one epoch
+    epoch_size: u64,
+    // the latest block header height that the contract has updated
+    header_height: u64,
+}
+```
+
+EpochRecord is the record for epoch information.
+```rust
+pub struct EpochRecord {
+    // threshold for current epoch
+    pub threshold: u128,
+    // epoch id
+    pub epoch: u64,
+    // validators to verify the proof for current epoch
+    pub validators: Vec<Validator>,
+}
+```
+
+Validator is the data structure for each epoch validator.
+```rust
+pub struct Validator {
+    // BLS G1 public key of current validater
+    g1_pub_key: G1,
+    // the weight of current validator
+    weight: u128,
+    // the secp256k1 address
+    address: Address,
+}
+```
+ReceiptProof includes the proof and the receipt to prove.
+```rust
+pub struct ReceiptProof {
+    // the block header where the receipt exists
+    pub header: Header,
+    // the aggregated G2 public key of the signed validators
+    pub agg_pk: G2,
+    // the receipt to prove
+    pub receipt: Receipt,
+    // the index of the receipt in the block
+    pub key_index: Vec<u8>,
+    // the proof to prove the existance of the above receipt
+    pub proof: Vec<ProofEntry>,
+}
+```
