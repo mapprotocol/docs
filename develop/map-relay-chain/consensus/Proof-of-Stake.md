@@ -24,7 +24,7 @@ If the minimum target is not reached, the election aborts and no change is made 
 ## Validator number and Reward
 
 The participators make these decisions by locking `MAP` and voting for Validator.
-Validator elections are held `every epoch` (approximately once per day).
+Validator elections are held `every epoch` (approximately once per three day).
 The protocol elects a maximum of `100` Validators. At each epoch, every elected Validator must be re-elected to continue.
 Validators are selected in proportion to votes received for each Validator.
 
