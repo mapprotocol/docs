@@ -21,7 +21,7 @@ retrieves the state snapshot at a given block.
 
 
 
-### example
+##### example
 
 ```shell
 
@@ -80,7 +80,7 @@ retrieves the list validators that must sign a given block.
 
 address of these validators 
 
-### example
+##### example
 
 ```shell
 
@@ -114,7 +114,7 @@ retrieves the list of validators BLS public keys that must sign a given block.
 
 blsPublicKeys of these validators
 
-### example
+##### example
 
 ```shell
 
@@ -149,7 +149,7 @@ GetProposer retrieves the proposer for a given block number (i.e. sequence) and 
 
 proposer address of this block number
 
-### example
+##### example
 
 ```shell
 
@@ -177,7 +177,7 @@ none
 
 bool value about this node is participating in the consensus protocol.
 
-### example
+##### example
 
 ```shell
 
@@ -204,7 +204,7 @@ none
 interval value about lookbackWindow .
 
 
-### example
+##### example
 
 ```shell
 
@@ -231,7 +231,7 @@ none
 validators Enode Table
 
 
-### example
+##### example
 
 ```shell
 
@@ -279,7 +279,7 @@ Retrieve the Validator Signature timestamp.
 none
 
 
-### example
+##### example
 
 ```shell
 
@@ -319,7 +319,7 @@ retrieves the current IBFT RoundState
 none
 
 
-### example
+##### example
 
 ```shell
 
@@ -365,7 +365,7 @@ Force current node timeout
 ##### Parameters
 none
 
-### example
+##### example
 
 ```shell
 
@@ -382,7 +382,7 @@ retrieves the current replica state
 ##### Parameters
 none
 
-### example
+##### example
 
 ```shell
 
