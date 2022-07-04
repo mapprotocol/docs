@@ -8,9 +8,8 @@ Nowadays, general chains, such as Ethereum, Avalanche, Flow, have their own resp
 
 Developers can easily build their omnichain applications deployed on any chain in just **two steps**:
 
-1. **Build inter-chain messenger using our SDK.**
-2. **Interact with on-chain vault and data through our API.**
-
+1. **Build inter-chain messenger.**
+2. **Interact with on-chain vault and data through our SDK.**
 
 ## Features of MAP Protocol 
 
