@@ -7,7 +7,7 @@ Next, follow this document, and you will withdraw your vote
 
 #### How To withdraw pending vote
 
-Because your current vote is to contribute to the next validator, so your voting `MAP` will go through two states not active state and active state.
+Because your current vote is to contribute to the `validator`(in the next epoch), so your voting `MAP` will go through two states the `pending` and the `active` state.
 
 So， You can use `getPendingVotesForValidatorByAccount` command to  check whether you have inactive `MAP`
 
@@ -19,7 +19,7 @@ INFO [07-07|13:32:03.891] === getPendingVotesForValidatorByAccount === admin=0x0
 INFO [07-07|13:32:03.894] PendingVotes                             balance=100,000,000,000,000,000,000,000
 ```
 
-If your voting `MAP` is not active, you can use 'revokePending' command to withdraw your not active voting `MAP`.
+If your voting `MAP` is in `pending`, you can use 'revokePending' command to withdraw your pending voting `MAP`.
 
 For Example
 ```shell
@@ -33,7 +33,7 @@ INFO [07-08|02:39:50.839] Transaction Success                      func=queryTx 
 
 #### How To withdraw active vote
 
-If you're voting `MAP` is active, you can use `revokeActive` command to withdraw your  active voting `MAP`. If you perform this step, the votes you withdraw will lose the corresponding reward.
+If you're voting `MAP` is in `active`, you can use `revokeActive` command to withdraw your  active voting `MAP`. If you perform this step, the votes you withdraw will lose the corresponding reward.
 
 First, you can use the `getActiveVotesForValidatorByAccount` command to see how many active votes you have
 
@@ -63,9 +63,10 @@ Then you can also use the `getActiveVotesForValidatorByAccount` command to confi
 
 > be careful ： Both of `revokePending` and `revokeActive` command will put the voting `MAP` turn into nonvoting `MAP`
 > 
-> Now your voting `MAP` state has changed from not active state or active state to locking state.
+> Now your voting `MAP` state has changed from pending state or active state to locking state.
 > 
 > the next step is same to [How To withdraw Locked MAP](./how-to-withdraw.md#how-to-withdraw-locked-map)
+
 
 ## How To withdraw Locked MAP
 
