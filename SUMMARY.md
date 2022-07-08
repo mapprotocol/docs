@@ -37,6 +37,7 @@
     * [Make Genesis](develop/map-relay-chain/how-to-make-genesis.md)
     * [How To Vote](develop/map-relay-chain/how-to-vote.md)
     * [How To Withdraw](develop/map-relay-chain/how-to-withdraw.md)
+    * [Integrate an Exchange](develop/map-relay-chain/Integrate-an-Exchange.md)
     * Consensus
         * [Overview](develop/map-relay-chain/consensus/Overview.md)
         * [Proof-of-Stake](develop/map-relay-chain/consensus/Proof-of-Stake.md)
