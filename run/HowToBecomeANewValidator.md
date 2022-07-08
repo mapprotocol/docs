@@ -126,8 +126,8 @@ INFO [07-08|14:54:50.765] Transaction Success                      func=queryTx 
 ```
 
 ### Authorize
-Account: 0x98efa292822eb7b3045c491e8ae4e82b3b1ac005
-PrivateKey: 8df920b696ef3f5fdcf01624405ea8236b2b4907766ad61d42ce877df05f8bca
+Signer Account: 0x98efa292822eb7b3045c491e8ae4e82b3b1ac005
+Signer PrivateKey: 8df920b696ef3f5fdcf01624405ea8236b2b4907766ad61d42ce877df05f8bca
 
 ```shell
 ./marker authorizeValidatorSigner 127.0.0.1 --rpcport 7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --password "" --signerPriv 8df920b696ef3f5fdcf01624405ea8236b2b4907766ad61d42ce877df05f8bca
