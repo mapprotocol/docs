@@ -19,7 +19,7 @@ git clone https://github.com/mapprotocol/atlas.git
 cd atlas & make atlas
 
 ```
-than start a node with the RPC service on the background.
+than start a node with the RPC service on the background,use `atlas -h` get more details.
 
 ```
 ./build/bin/atlas --datadir ./data --gcmode "archive" --syncmode "full" --port 28360 --v5disc --http --http.addr "0.0.0.0" --http.api eth,web3,net,debug,txpool,header,istanbul --http.corsdomain "*" --http.vhosts "*" 
@@ -45,9 +45,9 @@ Atlas transactions are identical to standard EVM transactions with one exception
     They must be signed with Atlas’s ChainID (22776).
 
 
-For development purposes, Atlas supports all the popular tooling for Ethereum,like as 'MetaMask and Remix','Truffle' and 'Hardhat', so developers familiar with Ethereum and Solidity can feel right at home.
+For development purposes, Atlas supports all the popular tooling for Ethereum,like as `MetaMask and Remix`,`Truffle` and `Hardhat`, so developers familiar with Ethereum and Solidity can feel right at home.
 
-
+We are compatible with the improvement of Ethereum eip1559, and set the minimum basefee to 100GWei.
 
 
 ps: Atlas consensus provides fast and irreversible finality with 5 seconds. To query the most up-to-date finalized block, query any value (i.e. block, balance, state, etc) with the latest parameter.
