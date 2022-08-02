@@ -258,3 +258,41 @@ curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"
 }
 ```
 For more information on istanbul_getValidators [click here](../../consensus/ConsensusAPI.md#getvalidators)
+
+### Join the network
+You have become a validator, the next step is to join the network. Don't worry it's simple.
+
+How to build the atlas [click here](develop/map-relay-chain/make-private-chain.md#build-four-nodes)
+
+```shell
+./atlas --datadir ./node --syncmode "full" --port 30321 --mine --miner.validator 0x98efa292822eb7b3045c491e8ae4e82b3b1ac005 --unlock 0x98efa292822eb7b3045c491e8ae4e82b3b1ac005
+
+INFO [08-01|16:15:45.369] Bumping default cache on mainnet         provided=1024 updated=4096
+INFO [08-01|16:15:45.370] Maximum peer count                       ETH=50 LES=0 total=50
+INFO [08-01|16:15:45.371] Set global gas cap                       cap=50,000,000
+INFO [08-01|16:15:45.371] Allocated trie memory caches             clean=614.00MiB dirty=1024.00MiB
+INFO [08-01|16:15:45.371] Allocated cache and file handles         database=/Users/t/data/atlas-1/atlas/chaindata cache=2.00GiB handles=5120
+INFO [08-01|16:15:45.722] Opened ancient database                  database=/Users/t/data/atlas-1/atlas/chaindata/ancient readonly=false
+......
+
+> net
+{
+  listening: true,
+  peerCount: 6,
+  version: "22776",
+  getListening: function(callback),
+  getPeerCount: function(callback),
+  getVersion: function(callback)
+}
+
+......
+
+INFO [08-01|16:40:40.796] Finalized                                func=Finalize        block=1 epochSize=50000 duration="333.422µs" lastInEpoch=false
+INFO [08-01|16:40:40.797] Imported new chain segment               blocks=1 txs=0 mgas=0.000 elapsed=5.391ms mgasps=0.000 number=1 hash=62d029..14f4c1 age=1mo4d23h dirty=7.07KiB
+INFO [08-01|16:40:51.790] Finalized                                func=Finalize        block=2 epochSize=50000 duration="106.969µs" lastInEpoch=false
+INFO [08-01|16:40:51.790] Imported new chain segment               blocks=1 txs=0 mgas=0.000 elapsed=4.913ms mgasps=0.000 number=2 hash=c2b741..35869d age=1mo4d23h dirty=10.79KiB
+INFO [08-01|16:40:53.892] Finalized                                func=Finalize        block=3 epochSize=50000 duration="104.285µs" lastInEpoch=false
+INFO [08-01|16:40:53.893] Finalized                                func=Finalize        block=4 epochSize=50000 duration="105.568µs" lastInEpoch=false
+```
+
+After the node starts, it will automatically connect to other nodes, and then start to synchronize blocks.
