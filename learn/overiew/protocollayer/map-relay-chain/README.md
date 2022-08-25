@@ -1,2 +1,0 @@
-# MAP Relay Chain
-
