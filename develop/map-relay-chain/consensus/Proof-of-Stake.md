@@ -1,6 +1,6 @@
 ## Proof-of-Stake
 
-Atlas is a proof-of-stake blockchain. In comparison to Proof of Work systems like Bitcoin and Ethereum, this eliminates the negative environmental impact and means that users can make transactions that are cheaper, faster, and whose outcome cannot be changed once complete.
+MAP Relay Chain(Atlas) is a proof-of-stake blockchain. In comparison to Proof of Work systems like Bitcoin and Ethereum, this eliminates the negative environmental impact and means that users can make transactions that are cheaper, faster, and whose outcome cannot be changed once complete.
 
 The Atlas Blockchain implements a Istanbul Byzantine Fault Tolerant (IBFT) consensus algorithm in which a well-defined set of validator nodes broadcast signed messages between themselves in a sequence of steps to reach agreement even when up to a third of the total nodes are offline, faulty or malicious. When a quorum of validators have reached agreement, that decision is final.
 
@@ -10,7 +10,7 @@ Validators gather transactions received from other nodes and execute any associa
 ## Staking Requirements
 
 Atlas uses a proof-of-stake consensus mechanism, which requires Validators to have locked `MAP` to participate in block production. 
-The current requirement is `1000,000` `MAP` to register a Validator.
+The current requirement is `1,000,000` `MAP` to register a Validator.
 
 ## About election
 

@@ -15,9 +15,9 @@ units of MAP as blocks are produced, to create several kinds of incentives.
 
 3. Make payments into a Community Fund for protocol infrastructure grants
 
-Each epoch will be rewarded with a fixed reward
+Each epoch will be rewarded with a fixed reward.
 
-- `EpochReward`= 1,000,000 `MAP`.
+- First 2 yease, `EpochReward`= 833,333 `MAP`.
 
 
 ## Reward Disbursement
