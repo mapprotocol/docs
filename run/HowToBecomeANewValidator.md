@@ -63,15 +63,15 @@ The threshold we set to be the validator is to lock 1000,000 `MAP` into the corr
 This part of the locked `MAP` will be used for future punishment, which is also one of the conditions for being elected.
 
 You need `lockedMAP`  command to perform the above operations,more detail about `lockedMAP` command 
-please to see [this](../develop/map-relay-chain/marker/AboutCommon.md#lockedmap) .
+please to see [this](/develop/map-relay-chain/marker/AboutCommon.md#lockedmap) .
 
 ### Step 3: validator register
 
 This step is a key step for registering as a new validator.
 
-You need `register`  command to perform the above operations,more detail about `register` command please to see [this](../develop/map-relay-chain/marker/AboutValidator.md#register).
+You need `register`  command to perform the above operations,more detail about `register` command please to see [this](/develop/map-relay-chain/marker/AboutValidator.md#register).
 
-At this step, you will successfully register as a validator. Next, you can try to vote for yourself. How to vote please to see[this](../develop/map-relay-chain/marker/AboutVote.md#vote).
+At this step, you will successfully register as a validator. Next, you can try to vote for yourself. How to vote please to see[this](/develop/map-relay-chain/marker/AboutVote.md#vote).
 
 
 
@@ -79,7 +79,7 @@ At this step, you will successfully register as a validator. Next, you can try t
 
 ### Start A node that provides RPC services.
 
-You can start a node that provides RPC services by yourself, or you can use the [RPC nodes](../../../Makalu-PoC/PoC-2.md#atlas-address) we provide.
+You can start a node that provides RPC services by yourself, or you can use the [RPC nodes](/develop/map-relay-chain/Makalu-PoC/PoC-2.md#atlas-address) we provide.
 
 - Clone repositories
 ```shell
@@ -178,8 +178,8 @@ Below we will create a voter account and vote for our validator
 
 For more information on voting and elections, click on the links below to view:
 
-[vote](./HowToVote.md)  
-[election](../Election.md)
+[vote](/develop/map-relay-chain/how-to-vote.md)  
+[election](/develop/map-relay-chain/consensus/Election.md)
 
 ### Create account
 ```shell
@@ -258,12 +258,12 @@ curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"
     ]
 }
 ```
-For more information on istanbul_getValidators [click here](../../consensus/ConsensusAPI.md#getvalidators)
+For more information on istanbul_getValidators [click here](/sdk/ConsensusAPI.md#getvalidators)
 
 ### Join the network
 You have become a validator, the next step is to join the network. Don't worry it's simple.
 
-How to build the atlas [click here](develop/map-relay-chain/make-private-chain.md#build-four-nodes)
+How to build the atlas [click here](/develop/map-relay-chain/make-private-chain.md#build-four-nodes)
 
 ```shell
 ./atlas --datadir ./node --syncmode "full" --port 30321 --mine --miner.validator 0x98efa292822eb7b3045c491e8ae4e82b3b1ac005 --unlock 0x98efa292822eb7b3045c491e8ae4e82b3b1ac005

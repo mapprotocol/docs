@@ -14,7 +14,7 @@ The reward of validator comes from a certain proportion of the system reward of 
 
 # DeRegister
 
-- [deRegister](../marker/AboutValidator.md#deregister)
+- [deRegister](/develop/map-relay-chain/marker/AboutValidator.md)
 
 In order to prevent malicious occupation of resources during deregister, we put your deregister request in pending status and perform batch logout in the last block of the epoch.
 
