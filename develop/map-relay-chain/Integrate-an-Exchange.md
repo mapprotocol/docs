@@ -27,7 +27,7 @@ than start a node with the RPC service on the background,use `atlas -h` get more
 
 ## Interacting with the Atlas
 
-Interacting with the Atlas is identical to interacting with [go-ethereum](https://geth.ethereum.org/). You can find the reference material for Atlas API [here](../../sdk/RPC-API.md).
+Interacting with the Atlas is identical to interacting with [go-ethereum](https://geth.ethereum.org/). You can find the reference material for Atlas API [here](/sdk/RPC-API.md).
 
 Please note that personal_ namespace is turned off by default. To turn it on, you need to pass the appropriate command line .
 

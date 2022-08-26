@@ -12,7 +12,7 @@ compatible with and support EIP-1559, and PoC2 will continue to update multiple 
 
 ### Running atlas
 
-See [Become Validator](../map-chain/setValidator.md)
+See [Become Validator](/map-chain/SetValidator.md)
 
 
 ### Atlas address

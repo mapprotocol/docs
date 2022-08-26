@@ -59,13 +59,13 @@ INFO [07-08|05:47:51.709] Transaction Success                      func=queryTx 
 
 Then you can also use the `getActiveVotesForValidatorByAccount` command to confirm whether the revoke is successful
 
-> Here are the details of these two commands please click [revokePending](./marker/AboutVote.md#revokepending) or [revokeActive](./marker/AboutVote.md#revokeactive) to see.
+> Here are the details of these two commands please click [revokePending](/develop/map-relay-chain/marker/AboutVote.md#revokepending) or [revokeActive](/develop/map-relay-chain/marker/AboutVote.md#revokeactive) to see.
 
 > be careful ： Both of `revokePending` and `revokeActive` command will put the voting `MAP` turn into nonvoting `MAP`
 > 
 > Now your voting `MAP` state has changed from pending state or active state to locking state.
 > 
-> the next step is same to [How To withdraw Locked MAP](./how-to-withdraw.md#how-to-withdraw-locked-map)
+> the next step is same to [How To withdraw Locked MAP](/develop/map-relay-chain/how-to-withdraw.md#how-to-withdraw-locked-map)
 
 
 ## How To withdraw Locked MAP
@@ -86,11 +86,11 @@ Map chain implements an unlocking period, a delay of 60 days after making a requ
 
 Unlocks `MAP`, which can be withdrawn after the unlocking period. Unlocked `MAP` will appear as a "pending withdrawal" until the unlocking period is over, after which it can be withdrawn via "withdraw" command.
 
-You can only unlock your nonvoting `MAP`,if you want to cancel your voting `MAP` please to Reference [How To withdraw voting MAP](./how-to-withdraw.md#how-to-withdraw-voting-map)
+You can only unlock your nonvoting `MAP`,if you want to cancel your voting `MAP` please to Reference [How To withdraw voting MAP](/develop/map-relay-chain/how-to-withdraw.md#how-to-withdraw-voting-map)
 
 If you are a validator you will not be able to unlock 1000,000 `MAP` that necessary pledge as validator.
 
-You need `unlock` command to perform unlock operations,more detail about `unlock` command please to see [this](./marker/AboutCommon.md#unlockmap) .
+You need `unlock` command to perform unlock operations,more detail about `unlock` command please to see [this](/develop/map-relay-chain/marker/AboutCommon.md#unlockmap) .
 
 For Example
 ```shell
@@ -119,7 +119,7 @@ INFO [07-08|06:25:27.546] result:                                  index=0 value
 
 Withdraws `MAP` that has been unlocked after the unlocking period has passed. this step equivalent to withdrawing the money you locked in the smart contract to your account address.
 
-You need `withdraw` command to perform withdraw operations,more detail about `withdraw` command please to see [this](./marker/AboutCommon.md#withdrawmap) .
+You need `withdraw` command to perform withdraw operations,more detail about `withdraw` command please to see [this](/develop/map-relay-chain/marker/AboutCommon.md#withdrawmap) .
 
 At this step, the `MAP` you locked has been transferred to your account address. You can inquire by yourself.
 
