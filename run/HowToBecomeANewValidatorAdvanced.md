@@ -85,18 +85,7 @@ INFO [07-08|14:54:35.785] Please waiting                           func=getResul
 INFO [07-08|14:54:40.224] Transaction Success                      func=queryTx                 block Number=11
 ```
 
-### Locked MAP
-```shell
-./marker lockedMAP --rpcaddr 127.0.0.1 --rpcport 7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --password "" --lockedNum 1000000
-
-INFO [07-08|14:54:49.141] === Lock  gold === 
-INFO [07-08|14:54:49.141] Lock  gold                               amount=1000000000000000000000000
-INFO [07-08|14:54:49.148] TxInfo                                   func=sendContractTransaction TX data nonce =3  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =1,098,789
-INFO [07-08|14:54:49.150] Please waiting                           func=getResult                txHash =0x698140b0ad8677706a4d10d3c5c72f15a8e143623be84a6ed514990fe3f5e5f3
-INFO [07-08|14:54:50.765] Transaction Success                      func=queryTx                 block Number=13
-```
-
-### make ECDSA signature from signer
+### Make ECDSA signature from signer
 ```shell
 ./marker makeECDSASignatureFromSigner --validator 0x73bc690093b9dd0400c91886184a60cc127b2c33 --signerPriv 040939e5...604b6f25
 
@@ -115,6 +104,17 @@ Authorize using the signature (0x59dff185...32f0d700) generated in the previous 
 INFO [07-08|14:55:00.015] authorizeValidatorSignerBySignature      signer=0x26654eb0bb935dce4a34daa3e14c67662a8aa1f8    signature=0x59dff185...32f0d700
 INFO [07-08|14:55:00.032] Please waiting                           func=getResult                 txHash =0xb73a1376e661d523e44b87c37e2e03cc36534d3a550808245f263aaad358b0ad
 INFO [07-08|14:55:05.078] Transaction Success                      func=queryTx                  block Number=16
+```
+
+### Locked MAP
+```shell
+./marker lockedMAP --rpcaddr 127.0.0.1 --rpcport 7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --password "" --lockedNum 1000000
+
+INFO [07-08|14:54:49.141] === Lock  gold === 
+INFO [07-08|14:54:49.141] Lock  gold                               amount=1000000000000000000000000
+INFO [07-08|14:54:49.148] TxInfo                                   func=sendContractTransaction TX data nonce =3  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =1,098,789
+INFO [07-08|14:54:49.150] Please waiting                           func=getResult                txHash =0x698140b0ad8677706a4d10d3c5c72f15a8e143623be84a6ed514990fe3f5e5f3
+INFO [07-08|14:54:50.765] Transaction Success                      func=queryTx                 block Number=13
 ```
 
 ### Generate signer proof
