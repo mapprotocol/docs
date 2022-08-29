@@ -18,11 +18,7 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
 
   --value                                                      The threshold you set to 
                                                                be the validator value.         
@@ -33,8 +29,7 @@ OPTIONS
                                                                deregister during this period.
 EXAMPLES:
 ./Marker setValidatorLockedGoldRequirements
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --value 0
@@ -61,11 +56,7 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
 
   --relayerf                                                   The percentage of the total
                                                                reward to be sent to the relayer.
@@ -74,8 +65,7 @@ OPTIONS
   
 EXAMPLES:
 ./Marker setEpochRelayerPaymentFraction
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --relayerf 0.1
@@ -102,11 +92,7 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
                                                                
   --contractAddress                                            Proxy contract Address    
   
@@ -117,8 +103,7 @@ OPTIONS
   
 EXAMPLES:
 ./Marker                setImplementation
---rpcaddr               localhost
---rpcport               8545
+--rpcaddr               http://127.0.0.1:7445
 --keystore              ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password              ""
 --contractAddress       0x000000000000000000000000000000000000D012
@@ -146,11 +131,7 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
                                                                
   --contractAddress                                            Proxy contract Address    
   
@@ -160,8 +141,7 @@ OPTIONS
   
 EXAMPLES:
 ./Marker                setContractOwner
---rpcaddr               localhost
---rpcport               8545
+--rpcaddr http://127.0.0.1:7445
 --keystore              ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password              ""
 --contractAddress       0x000000000000000000000000000000000000D012
@@ -189,11 +169,7 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
                                                                
   --contractAddress                                            Proxy contract Address    
   
@@ -203,8 +179,7 @@ OPTIONS
   
 EXAMPLES:
 ./Marker                setProxyContractOwner
---rpcaddr               localhost
---rpcport               8545
+--rpcaddr http://127.0.0.1:7445
 --keystore              ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password              ""
 --contractAddress       0x000000000000000000000000000000000000D012

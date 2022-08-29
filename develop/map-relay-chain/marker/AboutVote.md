@@ -20,11 +20,7 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
                                                                
   --validator                                                  Your target validator address
   
@@ -33,8 +29,7 @@ OPTIONS
                                                                                                             
 EXAMPLES:
 ./Marker vote
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --validator "0x81f02fd21657df80783755874a92c996749777bf"
@@ -65,11 +60,7 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
                                                                
   --validator                                                  Your target validator address
   
@@ -81,8 +72,7 @@ OPTIONS
                                                                                                             
 EXAMPLES:
 ./Marker vote
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --validator "0x81f02fd21657df80783755874a92c996749777bf"
@@ -112,11 +102,7 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
                                                                
   --validator                                                  Your target validator address
                                                                you can query it from 
@@ -128,8 +114,7 @@ OPTIONS
                                                                                                             
 EXAMPLES:
 ./Marker vote
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --validator "0x81f02fd21657df80783755874a92c996749777bf"
@@ -161,11 +146,7 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
                                                                
   --validator                                                  Your target validator address
                                                                you can query it from 
@@ -179,8 +160,7 @@ OPTIONS
                                                                                                             
 EXAMPLES::
 ./Marker revokePending
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --validator "0x81f02fd21657df80783755874a92c996749777bf"
@@ -211,11 +191,7 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
                                                                
   --validator                                                  Your target validator address
                                                                you can query it from 
@@ -226,8 +202,7 @@ OPTIONS
                                                                                                              
 EXAMPLES:
 ./Marker revokeActive
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --validator "0x81f02fd21657df80783755874a92c996749777bf"
