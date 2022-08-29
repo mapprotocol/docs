@@ -16,11 +16,7 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
 
   --namePrefix                                                you can marker your account
                                                               like "validator" or "voter"
@@ -28,8 +24,7 @@ OPTIONS
 
 EXAMPLES:
 ./Marker createAccount
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --namePrefix "validator"
@@ -54,11 +49,7 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
 
   --lockedNum                                                  The `MAP` you want to lock
                                                               
@@ -66,8 +57,7 @@ OPTIONS
 
 EXAMPLES:
 ./Marker lockedMAP
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --lockedNum 1000000
@@ -92,11 +82,7 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
 
   --mapValue                                                   The `MAP` you want to unlock
                                                               
@@ -104,8 +90,7 @@ OPTIONS
 
 EXAMPLES:
 ./Marker unlockMap
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --mapValue 1000000
@@ -130,20 +115,15 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
-
+  --rpcaddr                                                    HTTP-RPC server address
+                                                                                                                       
   --mapValue                                                   The `MAP` you want to Relocks
                                                               
   --relockIndex                                                from `getPendingWithdrawals` command                                                     
 
 EXAMPLES:
 ./Marker relockMAP
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
  --mapValue 100000
@@ -169,18 +149,13 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address
                                                               
-   --withdrawIndex                                             from `getPendingWithdrawals` command                                                     
+  --withdrawIndex                                             from `getPendingWithdrawals` command                                                     
 
 EXAMPLES:
 ./Marker withdrawMap
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --withdrawIndex 1
@@ -206,17 +181,12 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address
                                                                                                                
 
 EXAMPLES:
 ./Marker getNumRegisteredValidators
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 
@@ -239,11 +209,7 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
                                                                
   --topNum                                                     the top number validators
                                                                you want to konw,your can
@@ -253,8 +219,7 @@ OPTIONS
 
 EXAMPLES:
 ./Marker GetTopValidators
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --topNum 6
@@ -282,16 +247,11 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port                                                                                                 
+  --rpcaddr                                                    HTTP-RPC server address                                                                                                  
 
 EXAMPLES:
 ./Marker getTotalVotesForEligibleValidators
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 
@@ -321,16 +281,11 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port                                                                                                 
+  --rpcaddr                                                    HTTP-RPC server address                                                                                                  
 
 EXAMPLES:
 ./Marker getTotalVotes
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 
@@ -354,18 +309,13 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port  
+  --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --validator                                                  validatorAddress
   
 EXAMPLES:
 ./Marker getValidatorEligibility
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -391,18 +341,13 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port  
+  --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --validator                                                  validatorAddress
   
 EXAMPLES:
 ./Marker getValidator
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -436,16 +381,11 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port  
+  --rpcaddr                                                    HTTP-RPC server address   
   
 EXAMPLES:
 ./Marker getRewardInfo
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 
@@ -475,18 +415,13 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port  
+  --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --validator                                                  validatorAddress
   
 EXAMPLES:
 ./Marker getPendingVotesForValidatorByAccount
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -511,18 +446,13 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port  
+  --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --validator                                                  validatorAddress
   
 EXAMPLES:
 ./Marker GetPendingInfoForValidator
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -547,18 +477,13 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port  
+  --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --validator                                                  validatorAddress
   
 EXAMPLES:
 ./Marker getActiveVotesForValidatorByAccount
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -583,18 +508,13 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port  
+  --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --validator                                                  validatorAddress
   
 EXAMPLES:
 ./Marker getValidatorsVotedForByAccount
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -619,18 +539,13 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port  
+  --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --target                                                 that the account you want to query(including yourself)
   
 EXAMPLES:
 ./Marker getAccountTotalLockedGold
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --target 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -655,18 +570,13 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port  
+  --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --target                                                     targetAddress that the account you want to query(including yourself)
   
 EXAMPLES:
 ./Marker getAccountNonvotingLockedGold
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --target 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -692,18 +602,13 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port  
+  --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
  
   
 EXAMPLES:
 ./Marker getAccountLockedGoldRequirement
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 
@@ -728,18 +633,13 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port  
+  --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --target                                                     targetAddress that the account you want to query(including yourself)
   
 EXAMPLES:
 ./Marker getPendingWithdrawals
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --target 0x1c0edab88dbb72b119039c4d14b1663525b3ac15

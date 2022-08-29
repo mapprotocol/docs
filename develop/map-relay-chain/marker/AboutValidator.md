@@ -20,11 +20,7 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
 
   --commission                                                 The proportion of awards 
                                                                collected by the validator,
@@ -40,8 +36,7 @@ OPTIONS
   
 EXAMPLES:
 ./Marker register
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --commission 0.1
@@ -70,11 +65,7 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
 
   --commission                                                 The proportion of awards 
                                                                collected by the validator,
@@ -93,8 +84,7 @@ OPTIONS
                                                                                                             
 EXAMPLES:
 ./Marker quicklyRegister
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --commission 100000
@@ -127,17 +117,12 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
 
                                                                                                             
 EXAMPLES:
 ./Marker deregister
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 
@@ -161,17 +146,12 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
 
                                                                                                             
 EXAMPLES:
 ./Marker revertRegister
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 
@@ -196,18 +176,13 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
                                                                
   --signerPriv                                                 The private key of signaddress is used to generate sign data    
                                                                                                             
 EXAMPLES:
 ./Marker authorizeValidatorSigner
---rpcaddr localhost
---rpcport 8545
+--rpcaddr http://127.0.0.1:7445
 --keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --signerPriv   842e1d8a93b4e46104da96676066ddb0973c63ec80a15746856c046dd4a1004c   
@@ -293,26 +268,16 @@ OPTIONS
   --password                                                   Keystore file`s password 
                                                                (defult value "") 
 
-  --rpcaddr                                                    HTTP-RPC server listening 
-                                                               interface
-                                                             
-  --rpcport                                                    HTTP-RPC server listening 
-                                                               port
+  --rpcaddr                                                    HTTP-RPC server address 
                                                                
   --target                                                     target signer address
                                                                                                             
 EXAMPLES:
 signerToAccount
---rpcaddr
-localhost
---rpcport
-8545
---keystore
-/Users/zhangwei/work/atlasEnv/data/data_ibft1/keystore/UTC--2022-05-11T03-31-08.562982000Z--6621f2b6da2bed64b5ffbd6c5b2138547f44c8f9
---password
-"111111"
---target
-"0x05D0CFd882185dEB9b3E0eA7872Ad332acB9E31d"
+--rpcaddr http://127.0.0.1:7445
+--keystore /Users/zhangwei/work/atlasEnv/data/data_ibft1/keystore/UTC--2022-05-11T03-31-08.562982000Z--6621f2b6da2bed64b5ffbd6c5b2138547f44c8f9
+--password "111111"
+--target "0x05D0CFd882185dEB9b3E0eA7872Ad332acB9E31d"
 
 RESPONSE:
 INFO [05-30|13:52:40.371] === signerToAccount === 
