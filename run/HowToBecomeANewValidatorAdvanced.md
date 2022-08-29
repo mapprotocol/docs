@@ -1,34 +1,5 @@
-## Introduce
 
-Map is a chain using POS consensus algorithm，Its working principle is as follows
-- Become a validator by pledging a map
-- Each validator votes to elect the validator of the verification block of each epoch
-- At the end of each epoch, get rewards according to the vote of the election
-
-## Prerequisites
-
-### Hardware requirements
-
-1. Machine configuration
-
-    MAP is a Proof Of Stake network, which has different hardware requirements than a Proof of Work network.
-Proof Of Stake consensus is less CPU intensive, but is more sensitive to network connectivity and latency.
-Below is a list of standard requirements for running Validator on the MAP Network:
-
-    - Memory: 16 GB RAM
-    - CPU: Quad core 2.5 GHz (64-bit)
-    - Disk: 256 GB of SSD storage, plus a secondary HDD desirable
-    - Network: At least 100 Mb input/output Ethernet with a fiber Internet connection, ideally redundant connections and HA switches
-
-2. Number of maps
-
-   Your account needs to have at least 1,000,000 MAP
-
-### Software requirements
-
-Building atlas requires git, Go (version 1.14 or later) and a C compiler. You can install them using your favourite package manager.
-
-## How to become a new validator
+## How to become a new validator advanced
 
 In order to make your assets safer, we need you to set some necessary identification parameters to become a validator. 
 We also set the corresponding threshold so that we can screen those who really want to contribute to the chain. 
@@ -75,7 +46,7 @@ At this step, you will successfully register as a validator. Next, you can try t
 
 
 
-## Example
+## Advanced example
 
 ### Start A node that provides RPC services.
 
@@ -114,20 +85,23 @@ INFO [07-08|14:54:35.785] Please waiting                           func=getResul
 INFO [07-08|14:54:40.224] Transaction Success                      func=queryTx                 block Number=11
 ```
 
-### Authorize
-Signer Account: 0x98efa292822eb7b3045c491e8ae4e82b3b1ac005
+### Make ECDSA signature from signer
+```shell
+./marker makeECDSASignatureFromSigner --validator 0x73bc690093b9dd0400c91886184a60cc127b2c33 --signerPriv 040939e5...604b6f25
 
-Signer PrivateKey: 8df920b696ef3f5fdcf01624405ea8236b2b4907766ad61d42ce877df05f8bca
+INFO [08-26|17:31:49.422] === makeECDSASignatureFromSigner === 
+INFO [08-26|17:31:49.422] === signer  ===                          account=0x26654Eb0Bb935DCE4a34DAA3e14c67662a8Aa1f8
+INFO [08-26|17:31:49.422] ECDSASignature                           result=0x59dff185...32f0d700
+
+```
+
+### Authorize by signature
+Authorize using the signature (0x59dff185...32f0d700) generated in the previous step
 
 ```shell
-./marker authorizeValidatorSigner --rpcaddr 127.0.0.1 --rpcport 7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --password "" --signerPriv 8df920b696ef3f5fdcf01624405ea8236b2b4907766ad61d42ce877df05f8bca
+./marker authorizeValidatorSignerBySignature --rpcaddr 18.142.54.137 --rpcport 7445 --keystore /Users/t/data/atlas-1/keystore/UTC--2022-08-25T08-33-50.335907000Z--01ccdcd1ae63a2c6b4c3493983dc6400c63729ad --password "" --signer 0x26654eb0bb935dce4a34daa3e14c67662a8aa1f8 --signature 0x59dff185...32f0d700
 
-INFO [07-08|14:55:00.015] === makeECDSASignatureFromSigner === 
-INFO [07-08|14:55:00.015] === signer  ===                          account=0x98EFA292822eB7b3045C491e8ae4E82B3b1AC005
-INFO [07-08|14:55:00.015] ECDSASignature                           result=0x712c3f5deaf6d5012ff94dc6a8c3f5bd3d5570ba1f878343fd48767f88fb317d76d39ca33e274eb245d617252d7a44cf048d8579cd896440183f5fbe9f65ca8800
-INFO [07-08|14:55:00.015] authorizeValidatorSigner                 func=authorizeValidatorSigner address=0x73bC690093b9dD0400c91886184A60cC127b2c33
-INFO [07-08|14:55:00.015] === authorizeValidatorSigner === 
-INFO [07-08|14:55:00.032] TxInfo                                   func=sendContractTransaction  TX data nonce =4  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =1,098,789
+INFO [07-08|14:55:00.015] authorizeValidatorSignerBySignature      signer=0x26654eb0bb935dce4a34daa3e14c67662a8aa1f8    signature=0x59dff185...32f0d700
 INFO [07-08|14:55:00.032] Please waiting                           func=getResult                 txHash =0xb73a1376e661d523e44b87c37e2e03cc36534d3a550808245f263aaad358b0ad
 INFO [07-08|14:55:05.078] Transaction Success                      func=queryTx                  block Number=16
 ```
@@ -143,18 +117,29 @@ INFO [07-08|14:54:49.150] Please waiting                           func=getResul
 INFO [07-08|14:54:50.765] Transaction Success                      func=queryTx                 block Number=13
 ```
 
-### Validator register
-```shell
-./marker register --rpcaddr 127.0.0.1 --rpcport 7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --password "" --signerPriv 8df920b696ef3f5fdcf01624405ea8236b2b4907766ad61d42ce877df05f8bca --commission 400000
+### Generate signer proof
 
-INFO [07-08|15:09:53.230] === Register validator === 
-INFO [07-08|15:09:53.230] === commision ===                        commision=400,000
-INFO [07-08|15:09:53.233] === getTotalVotesForValidator ===        admin=0x73bC690093b9dD0400c91886184A60cC127b2c33
-INFO [07-08|15:09:53.234] === getTotalVotesForValidator ===        result=0
-INFO [07-08|15:09:53.237] === makeBLSProofOfPossessionFromsigner === 
-INFO [07-08|15:09:53.420] TxInfo                                   func=sendContractTransaction TX data nonce =7  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =1,098,789
-INFO [07-08|15:09:53.421] Please waiting                           func=getResult                txHash =0xfb0487e7196df7489e90ab91217251da5fc7d07b2bc2d2f4ea67966a506a4cd6
-INFO [07-08|15:09:55.241] Transaction Success                      func=queryTx                 block Number=194
+```shell
+./marker generateSignerProof --validator 0x73bc690093b9dd0400c91886184a60cc127b2c33 --signerPriv 040939e5...604b6f25
+
+INFO [08-26|17:32:23.950] generateBLSProof                         validator=0x01ccDcd1aE63a2C6B4c3493983dc6400C63729Ad signerPrivate=040939e5...604b6f25
+INFO [08-26|17:32:23.955] === makeBLSProofOfPossessionFromSigner === 
+INFO [08-26|17:32:23.958] generateBLSProof                         proof=0xf90149b8...0e56f0ab1
+
+```
+
+### Validator register by proof
+Use the proof (0xf90149b8...0e56f0ab1) generated in the previous step to register the validator
+
+```shell
+./marker registerByProof --rpcaddr 18.142.54.137 --rpcport 7445 --keystore /Users/t/data/atlas-1/keystore/UTC--2022-08-25T08-33-50.335907000Z--01ccdcd1ae63a2c6b4c3493983dc6400c63729ad --password "" -- --proof 0xf90149b8...0e56f0ab1 
+
+INFO [08-26|17:32:25.055] registerValidatorByProof                 commission=1,000,000
+INFO [08-26|17:32:25.548] === getTotalVotesForValidator ===        admin=0x01ccDcd1aE63a2C6B4c3493983dc6400C63729Ad
+INFO [08-26|17:32:25.974] === getTotalVotesForValidator ===        result=0
+INFO [08-26|17:32:26.011] TxInfo                                   func=sendContractTransaction TX data nonce =7  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =1,098,789
+INFO [08-26|17:32:26.119] Please waiting                           func=getResult                txHash =0xfb0487e7196df7489e90ab91217251da5fc7d07b2bc2d2f4ea67966a506a4cd6
+INFO [08-26|17:32:27.241] Transaction Success                      func=queryTx                 block Number=194
 ```
 
 ### Verify
