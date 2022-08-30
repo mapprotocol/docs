@@ -4,7 +4,7 @@ Introduces the query interface, registered account and locking `MAP`
 
 ### CreateAccount
 
-create a account
+create an account
 
 ```shell
 USAGE
@@ -649,3 +649,83 @@ INFO [03-14|17:33:18.696] === getPendingWithdrawals ===            admin=0x1c0eD
 INFO [03-14|17:33:18.724] nil 
 ```
 
+### Transfer
+
+transfer
+
+```shell
+
+USAGE
+  $ ./marker transfer
+
+OPTIONS
+  --keystore                                                   Keystore file path of sender
+  
+  --password                                                   Keystore file`s password 
+                                                               (defult value "") 
+
+  --rpcaddr                                                    HTTP-RPC server address   
+                                                                                                                                                              
+  --target                                                     recipient`s address
+  
+  --amount                                                     transfer amount, unit (wei)
+  
+EXAMPLES:
+./marker transfer --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/keystore/UTC--2022-05-31T03-33-25.405082000Z--3b778bb4f460956e313ba92484eb84603a86a625 --password "" --target 0x7cc3e34c2075d96ef69bf6445a234f6c5e244073 --amount 10
+
+RESPONSE:
+INFO [08-30|10:56:11.048] Tx Info                                  func=sendContractTransaction from=0x3B778BB4F460956E313Ba92484Eb84603A86a625 to=0x7cC3e34C2075D96ef69bF6445a234F6C5E244073 value=10 nonce =1  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =212
+INFO [08-30|10:56:11.144] Please waiting                           func=getResult                txHash =0x55beb566d735e7b46e61d85f23e52b0958777ba4bbd2332244b3a2e5eb22e137
+INFO [08-30|10:56:12.234] Please waiting, Transaction is in pending status func=getResult
+INFO [08-30|10:56:13.328] Please waiting, Transaction is in pending status func=getResult
+INFO [08-30|10:56:15.748] Transaction Success                      func=getResult               number=668,236
+INFO [08-30|10:56:15.748] transfer success                         from =0x3B778BB4F460956E313Ba92484Eb84603A86a625 to=0x7cC3e34C2075D96ef69bF6445a234F6C5E244073 amount=10
+```
+
+
+### getAccountMetadataURL
+
+Returns the metadata url of the account
+
+```shell
+
+USAGE
+  $ ./marker getAccountMetadataURL
+
+OPTIONS
+  --rpcaddr                                                    HTTP-RPC server address   
+                                                                                                                                                              
+  --target                                                     target address that the account you want to query(including yourself)
+    
+EXAMPLES:
+./marker getAccountMetadataURL --rpcaddr http://127.0.0.1:7445 --target 0xef021f15d188ad28625517a8d73cd20ce743a32d
+
+RESPONSE:
+INFO [08-30|11:06:12.108] get account metadata url                 address=0xeF021f15D188ad28625517A8D73CD20cE743a32D url=https://www.example.com
+```
+
+### setAccountMetadataURL
+
+Set the metadata url for the account
+
+```shell
+
+USAGE
+  $ ./marker setAccountMetadataURL
+
+OPTIONS
+  --rpcaddr                                                    HTTP-RPC server address   
+                                                                                                                                                              
+  --target                                                     target address that the account you want to query(including yourself)
+    
+EXAMPLES:
+./marker setAccountMetadataURL --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/keystore/UTC--2022-08-26T10-59-01.086763000Z--ef021f15d188ad28625517a8d73cd20ce743a32d --password "" --url https://www.metadata.com
+
+RESPONSE:
+INFO [08-30|11:09:53.016] set account metadata url                 address=0xeF021f15D188ad28625517A8D73CD20cE743a32D url=https://www.metadata.com
+INFO [08-30|11:09:54.678] Tx Info                                  func=sendContractTransaction from=0xeF021f15D188ad28625517A8D73CD20cE743a32D to=0x000000000000000000000000000000000000d010 value=<nil> nonce =5  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =20212
+INFO [08-30|11:09:55.092] Please waiting                           func=getResult                txHash =0xde15a1daee5e74c183f759c00cf51ba09c31c76c01362a25e2020b1c04fa9f7d
+INFO [08-30|11:09:56.508] Please waiting, Transaction is in pending status func=getResult
+INFO [08-30|11:09:57.926] Please waiting, Transaction is in pending status func=getResult
+INFO [08-30|11:09:58.350] Transaction Success                      func=getResult               number=61898
+```
