@@ -94,4 +94,5 @@
     * [Atlas Consensus API](sdk/ConsensusAPI.md)
 * Run
   * [How To Become A New Validator](run/HowToBecomeANewValidator.md)
+  * [How To Become A New Validator[advance]](run/HowToBecomeANewValidatorAdvanced.md)
   * [Withdraw](run/Withdraw.md)
