@@ -176,19 +176,11 @@ USAGE
   $ ./Marker getNumRegisteredValidators
 
 OPTIONS
-  --keystore                                                   Keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address
                                                                                                                
 
 EXAMPLES:
-./Marker getNumRegisteredValidators
---rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
+./Marker getNumRegisteredValidators --rpcaddr http://127.0.0.1:7445
 
 RESPONSE:
 100
@@ -201,14 +193,9 @@ Returns the top n validator members for a particular validator.
 
 ```shell
 USAGE
-  $ ./Marker GetTopValidators
+  $ ./Marker getTopValidators
 
 OPTIONS
-  --keystore                                                   Keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address 
                                                                
   --topNum                                                     the top number validators
@@ -220,12 +207,10 @@ OPTIONS
 EXAMPLES:
 ./Marker GetTopValidators
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
 --topNum 6
 
 RESPONSE:
-INFO [03-14|17:04:48.606] === getTopValidators ===                 admin=0xCe90710A4673b87a6881b0907358119BaF0304a5
+INFO [03-14|17:04:48.606] === getTopValidators ===                 admin=0x0000000000000000000000000000000000000000
 INFO [03-14|17:04:48.636] Validator:                               index=0 addr=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
 INFO [03-14|17:04:48.636] Validator:                               index=1 addr=0x16FdBcAC4D4Cc24DCa47B9b80f58155a551ca2aF
 INFO [03-14|17:04:48.636] Validator:                               index=2 addr=0x2dC45799000ab08E60b7441c36fCC74060Ccbe11
@@ -242,22 +227,15 @@ USAGE
   $ ./Marker getTotalVotesForEligibleValidators
 
 OPTIONS
-  --keystore                                                   Keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address                                                                                                  
 
 EXAMPLES:
 ./Marker getTotalVotesForEligibleValidators
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
 
 
 RESPONSE:
-INFO [03-14|17:06:13.020] === getTotalVotesForEligibleValidators === admin=0x81f02Fd21657DF80783755874a92c996749777Bf
+INFO [03-14|17:06:13.020] === getTotalVotesForEligibleValidators === admin=0x0000000000000000000000000000000000000000
 INFO [03-14|17:06:13.049] Validator:                               addr=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15 vote amount=70,350,500,000,000,000,000,000,000
 INFO [03-14|17:06:13.049] Validator:                               addr=0x16FdBcAC4D4Cc24DCa47B9b80f58155a551ca2aF vote amount=70,322,500,000,000,000,000,000,000
 INFO [03-14|17:06:13.049] Validator:                               addr=0x2dC45799000ab08E60b7441c36fCC74060Ccbe11 vote amount=70,322,500,000,000,000,000,000,000
@@ -276,22 +254,14 @@ USAGE
   $ ./Marker getTotalVotes
 
 OPTIONS
-  --keystore                                                   Keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address                                                                                                  
 
 EXAMPLES:
 ./Marker getTotalVotes
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
-
 
 RESPONSE:
-INFO [03-14|17:07:24.458] === getAccountLockedGoldRequirement ===  admin=0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5
+INFO [03-14|17:07:24.458] === getAccountLockedGoldRequirement ===  admin=0x0000000000000000000000000000000000000000
 INFO [03-14|17:07:24.487] result                                   getTotalVotes=315,096,000,000,000,000,000,000,000
 ```
 
@@ -304,11 +274,6 @@ USAGE
   $ ./Marker getValidatorEligibility
 
 OPTIONS
-  --keystore                                                   Keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --validator                                                  validatorAddress
@@ -316,12 +281,10 @@ OPTIONS
 EXAMPLES:
 ./Marker getValidatorEligibility
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
 --validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
 RESPONSE:
-INFO [03-14|17:10:27.990] === getValidatorEligibility ===          admin=0xCe90710A4673b87a6881b0907358119BaF0304a5
+INFO [03-14|17:10:27.990] === getValidatorEligibility ===          admin=0x0000000000000000000000000000000000000000
 INFO [03-14|17:10:28.018] === result ===                           bool=true
 ```
 
@@ -336,11 +299,6 @@ USAGE
   $ ./Marker getValidator
 
 OPTIONS
-  --keystore                                                   Keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --validator                                                  validatorAddress
@@ -348,12 +306,10 @@ OPTIONS
 EXAMPLES:
 ./Marker getValidator
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
 --validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
 RESPONSE:
-INFO [03-14|17:12:22.303] === getValidator ===                     admin=0x81f02Fd21657DF80783755874a92c996749777Bf
+INFO [03-14|17:12:22.303] === getValidator ===                     admin=0x0000000000000000000000000000000000000000
 INFO [03-14|17:12:22.332]                                          ecdsaPublicKey=0x2b5e2a3beacf839d1ec74fd00f4388d4b813eac26b26ab4859003473b286650a
 INFO [03-14|17:12:22.332]                                          BlsPublicKey=0x1fd39f1fbcad8e3188442ea31dee662389599751f8e73b99215cefc2e0003f81
 INFO [03-14|17:12:22.332]                                          Score=1
@@ -366,31 +322,24 @@ INFO [03-14|17:12:22.333]                                          LastSlashed=0
 ```
 
 
-### GetRewardInfo
+### getValidatorRewardInfo
 
 Returns the awards of the last epoch
 
 ```shell
 
 USAGE
-  $ ./Marker getRewardInfo
+  $ ./Marker getValidatorRewardInfo
 
 OPTIONS
-  --keystore                                                   Keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address   
   
 EXAMPLES:
-./Marker getRewardInfo
+./Marker getValidatorRewardInfo
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
 
 RESPONSE:
-INFO [03-14|17:13:42.872] === getReward ===                        cur_epoch=389 epochSize=20 queryBlockNumber=7760 validatorContractAddress=0x000000000000000000000000000000000000D012 admin=0x81f02Fd21657DF80783755874a92c996749777Bf
+INFO [03-14|17:13:42.872] === getReward ===                        cur_epoch=389 epochSize=20 queryBlockNumber=7760 validatorContractAddress=0x000000000000000000000000000000000000D012 admin=0x0000000000000000000000000000000000000000
 INFO [03-14|17:13:42.874]                                          validator=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15 reward=19,999,999,999,999,999,999,999
 INFO [03-14|17:13:42.874]                                          validator=0x16FdBcAC4D4Cc24DCa47B9b80f58155a551ca2aF reward=19,999,999,999,999,999,999,999
 INFO [03-14|17:13:42.874]                                          validator=0x2dC45799000ab08E60b7441c36fCC74060Ccbe11 reward=19,999,999,999,999,999,999,999
@@ -410,11 +359,6 @@ USAGE
   $ ./Marker getPendingVotesForValidatorByAccount
 
 OPTIONS
-  --keystore                                                   Keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --validator                                                  validatorAddress
@@ -422,12 +366,10 @@ OPTIONS
 EXAMPLES:
 ./Marker getPendingVotesForValidatorByAccount
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
 --validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
 RESPONSE:
-INFO [03-14|17:16:39.474] === getPendingVotesForValidatorByAccount === admin=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
+INFO [03-14|17:16:39.474] === getPendingVotesForValidatorByAccount === admin=0x0000000000000000000000000000000000000000
 INFO [03-14|17:16:39.501] PendingVotes                             balance=0
 ```
 
@@ -438,14 +380,9 @@ Returns the pending votes for `validator` made by `account` And the pending Epoc
 
 ```shell
 USAGE
-  $ ./Marker GetPendingInfoForValidator
+  $ ./Marker getPendingInfoForValidator
 
 OPTIONS
-  --keystore                                                   Keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --validator                                                  validatorAddress
@@ -453,12 +390,10 @@ OPTIONS
 EXAMPLES:
 ./Marker GetPendingInfoForValidator
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
 --validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
 RESPONSE:
-INFO [03-14|17:20:49.046] === getPendingInfoForValidator ===       admin=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
+INFO [03-14|17:20:49.046] === getPendingInfoForValidator ===       admin=0x0000000000000000000000000000000000000000
 INFO [03-14|17:20:49.074] getPendingInfoForValidator               Value=0 Epoch=0
 ```
 
@@ -472,11 +407,6 @@ USAGE
   $ ./Marker getActiveVotesForValidatorByAccount
 
 OPTIONS
-  --keystore                                                   Keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --validator                                                  validatorAddress
@@ -484,12 +414,10 @@ OPTIONS
 EXAMPLES:
 ./Marker getActiveVotesForValidatorByAccount
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
 --validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
 RESPONSE:
-INFO [03-14|17:24:41.690] === getActiveVotesForValidatorByAccount === admin=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
+INFO [03-14|17:24:41.690] === getActiveVotesForValidatorByAccount === admin=0x0000000000000000000000000000000000000000
 INFO [03-14|17:24:41.717] ActiveVotes                              balance=71,502,344,612,553,670,006,133,714
 ```
 
@@ -503,11 +431,6 @@ USAGE
   $ ./Marker getValidatorsVotedForByAccount
 
 OPTIONS
-  --keystore                                                   Keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --validator                                                  validatorAddress
@@ -515,12 +438,10 @@ OPTIONS
 EXAMPLES:
 ./Marker getValidatorsVotedForByAccount
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
 --validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
 RESPONSE:
-INFO [03-14|17:26:57.697] === getValidatorsVotedForByAccount ===   admin=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
+INFO [03-14|17:26:57.697] === getValidatorsVotedForByAccount ===   admin=0x0000000000000000000000000000000000000000
 INFO [03-14|17:26:57.726] validator                                Address=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
 ```
 
@@ -534,11 +455,6 @@ USAGE
   $ ./Marker getAccountTotalLockedGold
 
 OPTIONS
-  --keystore                                                   Keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --target                                                 that the account you want to query(including yourself)
@@ -546,12 +462,10 @@ OPTIONS
 EXAMPLES:
 ./Marker getAccountTotalLockedGold
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
 --target 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
 RESPONSE:
-INFO [03-14|17:28:53.815] === getAccountTotalLockedGold ===        admin=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15 target=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
+INFO [03-14|17:28:53.815] === getAccountTotalLockedGold ===        admin=0x0000000000000000000000000000000000000000 target=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
 INFO [03-14|17:28:53.844] result                                   lockedGold=72,036,161,827,847,066,039,664,690
 ```
 
@@ -565,11 +479,6 @@ USAGE
   $ ./Marker getAccountNonvotingLockedGold
 
 OPTIONS
-  --keystore                                                   Keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --target                                                     targetAddress that the account you want to query(including yourself)
@@ -577,12 +486,10 @@ OPTIONS
 EXAMPLES:
 ./Marker getAccountNonvotingLockedGold
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
 --target 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
 RESPONSE:
-INFO [03-14|17:30:55.164] === getAccountNonvotingLockedGold ===    admin=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15 target=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
+INFO [03-14|17:30:55.164] === getAccountNonvotingLockedGold ===    admin=0x0000000000000000000000000000000000000000 target=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
 INFO [03-14|17:30:55.192] result                                   lockedGold=0
 ```
 
@@ -597,11 +504,6 @@ USAGE
   $ ./Marker getAccountLockedGoldRequirement
 
 OPTIONS
-  --keystore                                                   Keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
  
@@ -609,11 +511,9 @@ OPTIONS
 EXAMPLES:
 ./Marker getAccountLockedGoldRequirement
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
 
 RESPONSE:
-INFO [03-14|17:32:15.948] === getAccountLockedGoldRequirement ===  admin=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15 target=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
+INFO [03-14|17:32:15.948] === getAccountLockedGoldRequirement ===  admin=0x0000000000000000000000000000000000000000 target=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
 INFO [03-14|17:32:15.976] result                                   GoldRequirement=1,000,000,000,000,000,000,000,000
 ```
 
@@ -628,11 +528,6 @@ USAGE
   $ ./Marker getPendingWithdrawals
 
 OPTIONS
-  --keystore                                                   Keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --target                                                     targetAddress that the account you want to query(including yourself)
@@ -640,8 +535,6 @@ OPTIONS
 EXAMPLES:
 ./Marker getPendingWithdrawals
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
 --target 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
 RESPONSE:
