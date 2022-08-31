@@ -21,7 +21,7 @@ You need `createAccount` command to perform the above operations,more detail abo
 
 For example
 ```shell
-./marker createAccount -rpcaddr http://127.0.0.1:7445 --namePrefix "validator" --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --password ""
+./marker createAccount -rpcaddr http://127.0.0.1:7445 --name "validator" --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --password ""
 
 INFO [07-01|05:54:37.048] Create account                           func=createAccount address=0x078F684c7d3bf78BDbe8bEf93E56998442dc8099 name=validator
 INFO [07-01|05:54:37.048] === create Account ===

@@ -124,7 +124,7 @@ After the node starts, it will automatically connect to other nodes, and then st
 --keystore is used to specify the address of the `account`
 
 ```shell
-./marker createAccount -rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --password "" --namePrefix "validator"
+./marker createAccount -rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --password "" --name "validator"
 
 INFO [07-08|14:54:28.097] Create account                           func=createAccount address=0x73bC690093b9dD0400c91886184A60cC127b2c33 name=validator
 INFO [07-08|14:54:28.097] === create Account === 

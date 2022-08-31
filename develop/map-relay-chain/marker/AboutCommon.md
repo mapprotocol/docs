@@ -18,7 +18,7 @@ OPTIONS
 
   --rpcaddr                                                    HTTP-RPC server address 
 
-  --namePrefix                                                you can marker your account
+  --name                                                you can marker your account
                                                               like "validator" or "voter"
                                                               and so on that you want 
 
@@ -27,7 +27,7 @@ EXAMPLES:
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
---namePrefix "validator"
+--name "validator"
 
 RESPONSE:
 success
