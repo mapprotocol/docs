@@ -21,7 +21,7 @@ You need `createAccount` command to perform the above operations,more detail abo
 
 For example
 ```shell
-./marker createAccount -rpcaddr http://127.0.0.1:7445 --namePrefix "validator" --keystore /root/atlas-testnet/atlas/validator-1/keystore/UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --password ""
+./marker createAccount -rpcaddr http://127.0.0.1:7445 --namePrefix "validator" --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --password ""
 
 INFO [07-01|05:54:37.048] Create account                           func=createAccount address=0x078F684c7d3bf78BDbe8bEf93E56998442dc8099 name=validator
 INFO [07-01|05:54:37.048] === create Account ===
@@ -48,7 +48,7 @@ You need `lockedMAP` command to perform the above operations,more detail about `
 
 For example
 ```shell
-./marker lockedMAP -rpcaddr http://127.0.0.1:7445 --keystore /root/atlas-testnet/atlas/validator-1/keystore/UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --password "" --lockedNum 1000000
+./marker lockedMAP -rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --password "" --lockedNum 1000000
 
 INFO [07-01|06:12:45.068] === Lock  gold ===
 INFO [07-01|06:12:45.069] Lock  gold                               amount=1000000000000000000000000
@@ -65,7 +65,7 @@ When you get to this step, you can vote for your favorite validator. You can use
 
 For example
 ```shell
-./marker getTotalVotesForEligibleValidators -rpcaddr http://127.0.0.1:7445 --keystore /root/atlas-testnet/atlas/validator-1/keystore/UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --password ""
+./marker getTotalVotesForEligibleValidators -rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --password ""
 
 INFO [07-06|06:04:01.431] === getTotalVotesForEligibleValidators === admin=0x078F684c7d3bf78BDbe8bEf93E56998442dc8099
 INFO [07-06|06:04:01.434] Validator:                               addr=0x36b77597430cc2C0DD090c67f77f67Fc28195b5D vote amount=1,056,438,467,567,624,843,076,833
@@ -78,7 +78,7 @@ INFO [07-06|06:04:01.434] Validator:                               addr=0x078F68
 
 For `vote` example
 ```shell
-./marker vote -rpcaddr http://127.0.0.1:7445 --keystore /root/atlas-testnet/atlas/validator-1/keystore/UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --password "" --validator "0x078F684c7d3bf78BDbe8bEf93E56998442dc8099" --voteNum 100000
+./marker vote -rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --password "" --validator "0x078F684c7d3bf78BDbe8bEf93E56998442dc8099" --voteNum 100000
 
 INFO [07-06|06:05:31.454] === vote Validator ===                   admin=0x078F684c7d3bf78BDbe8bEf93E56998442dc8099 voteTargetValidator=0x078F684c7d3bf78BDbe8bEf93E56998442dc8099 vote MAP Num=100000
 INFO [07-06|06:05:31.478] TxInfo                                   func=sendContractTransaction TX data nonce =10  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =29088

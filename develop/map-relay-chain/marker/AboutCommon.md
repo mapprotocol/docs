@@ -25,7 +25,7 @@ OPTIONS
 EXAMPLES:
 ./Marker createAccount
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --namePrefix "validator"
 
@@ -58,7 +58,7 @@ OPTIONS
 EXAMPLES:
 ./Marker lockedMAP
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --lockedNum 1000000
 
@@ -91,7 +91,7 @@ OPTIONS
 EXAMPLES:
 ./Marker unlockMap
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --mapValue 1000000
 
@@ -124,7 +124,7 @@ OPTIONS
 EXAMPLES:
 ./Marker relockMAP
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
  --mapValue 100000
 --relockIndex 1
@@ -156,7 +156,7 @@ OPTIONS
 EXAMPLES:
 ./Marker withdrawMap
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --withdrawIndex 1
 
