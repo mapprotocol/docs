@@ -83,6 +83,8 @@ keystore of `signer`:  UTC--2022-06-14T05-46-48.450557000Z--98efa292822eb7b3045c
 
 How to build the atlas [click here](/develop/map-relay-chain/make-private-chain.md#build-four-nodes)
 
+If you want node to run in the background and not hang up,  you can use nohup and & in combination, or screen or similar. Below we will demonstrate using screen
+
 --miner.validator is used to specify the address of the `signer`
 
 ```shell
