@@ -37,7 +37,7 @@ OPTIONS
 EXAMPLES:
 ./Marker register
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --commission 0.1
 
@@ -85,7 +85,7 @@ OPTIONS
 EXAMPLES:
 ./Marker quicklyRegister
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --commission 100000
 --signerPriv 842e1d8a93b4e46104da96676066ddb0973c63ec80a15746856c046dd4a1004c
@@ -123,7 +123,7 @@ OPTIONS
 EXAMPLES:
 ./Marker deregister
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 
 
@@ -152,7 +152,7 @@ OPTIONS
 EXAMPLES:
 ./Marker revertRegister
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 
 
@@ -183,7 +183,7 @@ OPTIONS
 EXAMPLES:
 ./Marker authorizeValidatorSigner
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --signerPriv   842e1d8a93b4e46104da96676066ddb0973c63ec80a15746856c046dd4a1004c   
 
@@ -275,7 +275,7 @@ OPTIONS
 EXAMPLES:
 signerToAccount
 --rpcaddr http://127.0.0.1:7445
---keystore /Users/zhangwei/work/atlasEnv/data/data_ibft1/keystore/UTC--2022-05-11T03-31-08.562982000Z--6621f2b6da2bed64b5ffbd6c5b2138547f44c8f9
+--keystore ./UTC--2022-05-11T03-31-08.562982000Z--6621f2b6da2bed64b5ffbd6c5b2138547f44c8f9
 --password "111111"
 --target "0x05D0CFd882185dEB9b3E0eA7872Ad332acB9E31d"
 

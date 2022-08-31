@@ -30,7 +30,7 @@ OPTIONS
 EXAMPLES:
 ./Marker vote
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --validator "0x81f02fd21657df80783755874a92c996749777bf"
 --voteNum 10000
@@ -73,7 +73,7 @@ OPTIONS
 EXAMPLES:
 ./Marker vote
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --validator "0x81f02fd21657df80783755874a92c996749777bf"
 --voteNum 10000
@@ -115,7 +115,7 @@ OPTIONS
 EXAMPLES:
 ./Marker vote
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --validator "0x81f02fd21657df80783755874a92c996749777bf"
 
@@ -161,7 +161,7 @@ OPTIONS
 EXAMPLES::
 ./Marker revokePending
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --validator "0x81f02fd21657df80783755874a92c996749777bf"
 
@@ -203,7 +203,7 @@ OPTIONS
 EXAMPLES:
 ./Marker revokeActive
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --validator "0x81f02fd21657df80783755874a92c996749777bf"
 

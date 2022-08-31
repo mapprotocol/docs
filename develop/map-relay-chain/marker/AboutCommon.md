@@ -18,16 +18,16 @@ OPTIONS
 
   --rpcaddr                                                    HTTP-RPC server address 
 
-  --namePrefix                                                you can marker your account
+  --name                                                you can marker your account
                                                               like "validator" or "voter"
                                                               and so on that you want 
 
 EXAMPLES:
 ./Marker createAccount
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
---namePrefix "validator"
+--name "validator"
 
 RESPONSE:
 success
@@ -58,7 +58,7 @@ OPTIONS
 EXAMPLES:
 ./Marker lockedMAP
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --lockedNum 1000000
 
@@ -91,7 +91,7 @@ OPTIONS
 EXAMPLES:
 ./Marker unlockMap
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --mapValue 1000000
 
@@ -124,7 +124,7 @@ OPTIONS
 EXAMPLES:
 ./Marker relockMAP
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
  --mapValue 100000
 --relockIndex 1
@@ -156,7 +156,7 @@ OPTIONS
 EXAMPLES:
 ./Marker withdrawMap
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --withdrawIndex 1
 
@@ -607,6 +607,11 @@ USAGE
   $ ./marker setAccountMetadataURL
 
 OPTIONS
+  --keystore                                                   Keystore file path of sender
+  
+  --password                                                   Keystore file`s password 
+                                                               (defult value "") 
+                                                               
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --target                                                     target address that the account you want to query(including yourself)
@@ -621,4 +626,57 @@ INFO [08-30|11:09:55.092] Please waiting                           func=getResul
 INFO [08-30|11:09:56.508] Please waiting, Transaction is in pending status func=getResult
 INFO [08-30|11:09:57.926] Please waiting, Transaction is in pending status func=getResult
 INFO [08-30|11:09:58.350] Transaction Success                      func=getResult               number=61898
+```
+
+### getAccountName
+
+Returns the name of the account
+
+```shell
+
+USAGE
+  $ ./marker getAccountName
+
+OPTIONS
+  --rpcaddr                                                    HTTP-RPC server address   
+                                                                                                                                                              
+  --target                                                     target address that the account you want to query(including yourself)
+    
+EXAMPLES:
+./marker getAccountName --rpcaddr http://127.0.0.1:7445 --target 0xef021f15d188ad28625517a8d73cd20ce743a32d
+
+RESPONSE:
+INFO [08-31|15:15:53.195] get name                                 address=0xeF021f15D188ad28625517A8D73CD20cE743a32D name=validator
+```
+
+### setAccountName
+
+Set the name for the account
+
+```shell
+
+USAGE
+  $ ./marker setAccountName
+
+OPTIONS
+  --keystore                                                   Keystore file path of sender
+  
+  --password                                                   Keystore file`s password 
+                                                               (defult value "") 
+                                                               
+  --rpcaddr                                                    HTTP-RPC server address   
+                                                                                                                                                              
+  --name                                                       name for the account
+    
+EXAMPLES:
+./marker setAccountName --rpcaddr http://3.0.19.66:7445 --keystore ./UTC--2022-08-26T10-59-01.086763000Z--ef021f15d188ad28625517a8d73cd20ce743a32d --password "" --name "so cool validator"
+
+RESPONSE:
+INFO [08-31|15:16:07.006] set name                                 address=0xeF021f15D188ad28625517A8D73CD20cE743a32D name="so cool validator"
+INFO [08-31|15:16:09.039] Tx Info                                  func=sendContractTransaction from=0xeF021f15D188ad28625517A8D73CD20cE743a32D to=0x000000000000000000000000000000000000d010 value=<nil> nonce =10  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =20212
+INFO [08-31|15:16:09.448] Please waiting                           func=getResult                txHash =0x046ee71f161c06d34c4eb13ed9c536e909da152d9ca4036ccb240ae1ab23cb7f
+INFO [08-31|15:16:10.983] Please waiting, Transaction is in pending status func=getResult
+INFO [08-31|15:16:12.517] Please waiting, Transaction is in pending status func=getResult
+INFO [08-31|15:16:14.048] Please waiting, Transaction is in pending status func=getResult
+INFO [08-31|15:16:17.024] Transaction Success                      func=getResult               number=82133
 ```

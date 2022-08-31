@@ -27,13 +27,14 @@ OPTIONS
                                                                required to be a validator,
                                                                so you will not be able to
                                                                deregister during this period.
+                                                               
 EXAMPLES:
-./Marker setValidatorLockedGoldRequirements
---rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
---value 0
---duration 0
+./Marker      setValidatorLockedGoldRequirements
+--rpcaddr     http://127.0.0.1:7445
+--keystore    ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--password    ""
+--value       0
+--duration    0
 
 RESPONSE:
 success
@@ -66,7 +67,7 @@ OPTIONS
 EXAMPLES:
 ./Marker setEpochRelayerPaymentFraction
 --rpcaddr http://127.0.0.1:7445
---keystore ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password ""
 --relayerf 0.1
 
@@ -104,7 +105,7 @@ OPTIONS
 EXAMPLES:
 ./Marker                setImplementation
 --rpcaddr               http://127.0.0.1:7445
---keystore              ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--keystore              ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password              ""
 --contractAddress       0x000000000000000000000000000000000000D012
 --ImplementationAddress 0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5
@@ -141,8 +142,8 @@ OPTIONS
   
 EXAMPLES:
 ./Marker                setContractOwner
---rpcaddr http://127.0.0.1:7445
---keystore              ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--rpcaddr               http://127.0.0.1:7445
+--keystore              ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password              ""
 --contractAddress       0x000000000000000000000000000000000000D012
 --target                0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5
@@ -179,8 +180,8 @@ OPTIONS
   
 EXAMPLES:
 ./Marker                setProxyContractOwner
---rpcaddr http://127.0.0.1:7445
---keystore              ./root/data_ibft1/keystore/UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
+--rpcaddr               http://127.0.0.1:7445
+--keystore              ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --password              ""
 --contractAddress       0x000000000000000000000000000000000000D012
 --target                0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5
