@@ -72,9 +72,9 @@ First you need to config the markerConfig.json like this: set your own keys.
 
 generate signer`s `PublicKeyHex`、`BLSPubKey`、`BLSG1PubKey` info please refer to  [Create four validator accounts](./make-private-chain.md#create-four-validator-accounts)
 
-generate signer`s `ECDSASignature` info please refer to  [make ECDSA signature from signer](./marker/aboutvalidator#makeecdsasignaturefromsigner)
+generate signer`s `ECDSASignature` info please refer to  [make ECDSA signature from signer](./marker/AboutValidator.md#makeecdsasignaturefromsigner)
 
-generate signer`s `BLSProofOfPossession` info please refer to  [make BLS proof of possession from signer](./marker/aboutvalidator#makeblsproofofpossessionfromsigner)
+generate signer`s `BLSProofOfPossession` info please refer to  [make BLS proof of possession from signer](./marker/AboutValidator.md#makeblsproofofpossessionfromsigner)
 
 note:If you use the same account address as Address and SignerAddress, signeraddress and blsproofofpossession are the default values of the account address.
 
