@@ -673,7 +673,7 @@ INFO [08-31|15:16:17.024] Transaction Success                      func=getResul
 Queues an update to a validator's commission. If there was a previously scheduled update, that is overwritten.
 
 `commission`: representation of the commission this validator receives on epoch payments made to its members. Must be in
-the range [0, 11000000].
+the range [0, 1000000].
 
 ```shell
 
@@ -702,7 +702,7 @@ INFO [09-01|14:17:20.911] Transaction Success                      func=getResul
 
 ### updateCommission
 
-Updates a validator's commission based on the previously queued update, The operation can only be executed after 2000
+Updates a validator's commission based on the previously queued update, The operation can only be executed after **2000**
 blocks after the successful execution of [setNextCommissionUpdate](/develop/map-relay-chain/marker/AboutCommon.md#setnextcommissionupdate)
 
 ```shell
