@@ -151,7 +151,7 @@ After the node starts, it will automatically connect to other nodes, and then st
 --keystore is used to specify the keystore of the `account`
 
 ```shell
-./marker createAccount -rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --name "validator"
+./marker createAccount --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --name "validator"
 
 INFO [07-08|14:54:28.097] Create account                           func=createAccount address=0x73bC690093b9dD0400c91886184A60cC127b2c33 name=validator
 INFO [07-08|14:54:28.097] === create Account === 
@@ -178,7 +178,7 @@ Signer PrivateKey: 8df920b696ef3f5fdcf01624405ea8236b2b4907766ad61d42ce877df05f8
 --signerPriv is used to specify the private key of the `signer`
 
 ```shell
-./marker authorizeValidatorSigner -rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --signerPriv 8df920b696ef3f5fdcf01624405ea8236b2b4907766ad61d42ce877df05f8bca
+./marker authorizeValidatorSigner --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --signerPriv 8df920b696ef3f5fdcf01624405ea8236b2b4907766ad61d42ce877df05f8bca
 
 INFO [07-08|14:55:00.015] === makeECDSASignatureFromSigner === 
 INFO [07-08|14:55:00.015] === signer  ===                          account=0x98EFA292822eB7b3045C491e8ae4E82B3b1AC005
@@ -194,7 +194,7 @@ INFO [07-08|14:55:05.078] Transaction Success                      func=queryTx 
 --keystore is used to specify the keystore of the `account`
 
 ```shell
-./marker lockedMAP -rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --lockedNum 1000000
+./marker lockedMAP --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --lockedNum 1000000
 
 INFO [07-08|14:54:49.141] === Lock  gold === 
 INFO [07-08|14:54:49.141] Lock  gold                               amount=1000000000000000000000000
@@ -209,10 +209,10 @@ INFO [07-08|14:54:50.765] Transaction Success                      func=queryTx 
 --signerPriv is used to specify the private key of the `signer`
 
 ```shell
-./marker register -rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --signerPriv 8df920b696ef3f5fdcf01624405ea8236b2b4907766ad61d42ce877df05f8bca --commission 150000
+./marker register --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --signerPriv 8df920b696ef3f5fdcf01624405ea8236b2b4907766ad61d42ce877df05f8bca --commission 150000
 
 INFO [07-08|15:09:53.230] === Register validator === 
-INFO [07-08|15:09:53.230] === commision ===                        commision=150,000
+INFO [07-08|15:09:53.230] === commission ===                        commission=150,000
 INFO [07-08|15:09:53.233] === getTotalVotesForValidator ===        admin=0x73bC690093b9dD0400c91886184A60cC127b2c33
 INFO [07-08|15:09:53.234] === getTotalVotesForValidator ===        result=0
 INFO [07-08|15:09:53.237] === makeBLSProofOfPossessionFromsigner === 
@@ -225,7 +225,7 @@ INFO [07-08|15:09:55.241] Transaction Success                      func=queryTx 
 So far we have completed the registration steps of validator, now let's verify whether it has become a validator.
 
 ```shell
-./marker getTotalVotesForEligibleValidators -rpcaddr http://127.0.0.1:7445
+./marker getTotalVotesForEligibleValidators --rpcaddr http://127.0.0.1:7445
 
 INFO [07-08|15:10:03.301] Validator:                               addr=0xeA9efaA232A4567EaC21C8C096f8BfF84595A244 vote amount=1,000,000,000,000,000,000,000,000
 INFO [07-08|15:10:03.301] Validator:                               addr=0x6ACdC02223100189d82A958d888F54fA27d60e8A vote amount=1,000,000,000,000,000,000,000,000
@@ -248,7 +248,7 @@ For more information on voting and elections, click on the links below to view:
 --keystore is used to specify the keystore of the `account`
 
 ```shell
-./marker vote -rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --validator 0x73bc690093b9dd0400c91886184a60cc127b2c33 --voteNum 1000000
+./marker vote --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --validator 0x73bc690093b9dd0400c91886184a60cc127b2c33 --voteNum 1000000
 
 INFO [07-08|15:11:13.693] === vote Validator ===                   admin=0x73bc690093b9dd0400c91886184a60cc127b2c33 voteTargetValidator=0x73bC690093b9dD0400c91886184A60cC127b2c33 vote MAP Num=1000000
 INFO [07-08|15:11:13.709] TxInfo                                   func=sendContractTransaction TX data nonce =4  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =1,098,789
@@ -260,7 +260,7 @@ INFO [07-08|15:11:15.123] Transaction Success                      func=queryTx 
 Let's verify that our vote was successful.
 
 ```shell
-./marker getTotalVotesForEligibleValidators -rpcaddr http://127.0.0.1:7445
+./marker getTotalVotesForEligibleValidators --rpcaddr http://127.0.0.1:7445
 
 INFO [07-08|15:21:45.881] Validator:                               addr=0xeA9efaA232A4567EaC21C8C096f8BfF84595A244 vote amount=1,000,000,000,000,000,000,000,000
 INFO [07-08|15:21:45.881] Validator:                               addr=0x6ACdC02223100189d82A958d888F54fA27d60e8A vote amount=1,000,000,000,000,000,000,000,000
