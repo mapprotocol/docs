@@ -209,10 +209,10 @@ INFO [07-08|14:54:50.765] Transaction Success                      func=queryTx 
 --signerPriv is used to specify the private key of the `signer`
 
 ```shell
-./marker register -rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --signerPriv 8df920b696ef3f5fdcf01624405ea8236b2b4907766ad61d42ce877df05f8bca --commission 400000
+./marker register -rpcaddr http://127.0.0.1:7445 --keystore ./account.jso --password "" --signerPriv 8df920b696ef3f5fdcf01624405ea8236b2b4907766ad61d42ce877df05f8bca --commission 150000
 
 INFO [07-08|15:09:53.230] === Register validator === 
-INFO [07-08|15:09:53.230] === commision ===                        commision=400,000
+INFO [07-08|15:09:53.230] === commision ===                        commision=150,000
 INFO [07-08|15:09:53.233] === getTotalVotesForValidator ===        admin=0x73bC690093b9dD0400c91886184A60cC127b2c33
 INFO [07-08|15:09:53.234] === getTotalVotesForValidator ===        result=0
 INFO [07-08|15:09:53.237] === makeBLSProofOfPossessionFromsigner === 
