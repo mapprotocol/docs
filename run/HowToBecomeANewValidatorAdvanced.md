@@ -131,6 +131,7 @@ After the node starts, it will automatically connect to other nodes, and then st
 ### Make ECDSA signature from signer
 
 --validator is used to specify the address of the `account`
+
 --signerPriv is used to specify the private key of the `signer`
 
 ```shell
@@ -144,9 +145,9 @@ INFO [08-26|17:31:49.422] ECDSASignature                           result=0x59df
 
 ### Generate signer proof
 
---validator is used to specify the address of the `account` (account.json)
+--validator is used to specify the address of the `account`
 
---signerPriv is used to specify the private key of the `signer` (signer.json)
+--signerPriv is used to specify the private key of the `signer`
 
 ```shell
 ./marker generateSignerProof --validator 0x73bc690093b9dd0400c91886184a60cc127b2c33 --signerPriv 040939e5...604b6f25
