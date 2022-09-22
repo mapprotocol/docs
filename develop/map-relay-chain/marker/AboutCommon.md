@@ -166,7 +166,6 @@ or
 Failed
 ```
 
-
 ### GetNumRegisteredValidators
 
 Returns the number of registered validators
@@ -185,7 +184,6 @@ EXAMPLES:
 RESPONSE:
 100
 ```
-
 
 ### GetTopValidators
 
@@ -216,7 +214,6 @@ INFO [03-14|17:04:48.636] Validator:                               index=1 addr=
 INFO [03-14|17:04:48.636] Validator:                               index=2 addr=0x2dC45799000ab08E60b7441c36fCC74060Ccbe11
 INFO [03-14|17:04:48.636] Validator:                               index=3 addr=0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5
 ```
-
 
 ### GetTotalVotesForEligibleValidators
 
@@ -288,7 +285,6 @@ INFO [03-14|17:10:27.990] === getValidatorEligibility ===          admin=0x00000
 INFO [03-14|17:10:28.018] === result ===                           bool=true
 ```
 
-
 ### GetValidator
 
 Returns the validator`s information.
@@ -321,7 +317,6 @@ INFO [03-14|17:12:22.333]                                          SlashMultipli
 INFO [03-14|17:12:22.333]                                          LastSlashed=0
 ```
 
-
 ### getValidatorRewardInfo
 
 Returns the awards of the last epoch
@@ -348,7 +343,6 @@ INFO [03-14|17:13:42.874]                                          validator=0x8
 INFO [03-14|17:13:42.874] === END === 
 ```
 
-
 ### GetPendingVotesForValidatorByAccount
 
 Returns the pending votes for `validator` made by `account`.
@@ -373,7 +367,6 @@ INFO [03-14|17:16:39.474] === getPendingVotesForValidatorByAccount === admin=0x0
 INFO [03-14|17:16:39.501] PendingVotes                             balance=0
 ```
 
-
 ### GetPendingInfoForValidator
 
 Returns the pending votes for `validator` made by `account` And the pending Epoch.
@@ -396,7 +389,6 @@ RESPONSE:
 INFO [03-14|17:20:49.046] === getPendingInfoForValidator ===       admin=0x0000000000000000000000000000000000000000
 INFO [03-14|17:20:49.074] getPendingInfoForValidator               Value=0 Epoch=0
 ```
-
 
 ### GetActiveVotesForValidatorByAccount
 
@@ -421,7 +413,6 @@ INFO [03-14|17:24:41.690] === getActiveVotesForValidatorByAccount === admin=0x00
 INFO [03-14|17:24:41.717] ActiveVotes                              balance=71,502,344,612,553,670,006,133,714
 ```
 
-
 ### GetValidatorsVotedForByAccount
 
 Returns the validators that `account` has voted for.
@@ -444,7 +435,6 @@ RESPONSE:
 INFO [03-14|17:26:57.697] === getValidatorsVotedForByAccount ===   admin=0x0000000000000000000000000000000000000000
 INFO [03-14|17:26:57.726] validator                                Address=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
 ```
-
 
 ### GetAccountTotalLockedGold
 
@@ -493,7 +483,6 @@ INFO [03-14|17:30:55.164] === getAccountNonvotingLockedGold ===    admin=0x00000
 INFO [03-14|17:30:55.192] result                                   lockedGold=0
 ```
 
-
 #### GetAccountLockedGoldRequirement
 
 Returns the current locked `MAP` balance requirement for the supplied account.
@@ -516,7 +505,6 @@ RESPONSE:
 INFO [03-14|17:32:15.948] === getAccountLockedGoldRequirement ===  admin=0x0000000000000000000000000000000000000000 target=0x1c0eDab88dbb72B119039c4d14b1663525b3aC15
 INFO [03-14|17:32:15.976] result                                   GoldRequirement=1,000,000,000,000,000,000,000,000
 ```
-
 
 ### GetPendingWithdrawals
 
@@ -574,7 +562,6 @@ INFO [08-30|10:56:13.328] Please waiting, Transaction is in pending status func=
 INFO [08-30|10:56:15.748] Transaction Success                      func=getResult               number=668,236
 INFO [08-30|10:56:15.748] transfer success                         from =0x3B778BB4F460956E313Ba92484Eb84603A86a625 to=0x7cC3e34C2075D96ef69bF6445a234F6C5E244073 amount=10
 ```
-
 
 ### getAccountMetadataURL
 
@@ -669,7 +656,7 @@ OPTIONS
   --name                                                       name for the account
     
 EXAMPLES:
-./marker setAccountName --rpcaddr http://3.0.19.66:7445 --keystore ./UTC--2022-08-26T10-59-01.086763000Z--ef021f15d188ad28625517a8d73cd20ce743a32d --password "" --name "so cool validator"
+./marker setAccountName --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-08-26T10-59-01.086763000Z--ef021f15d188ad28625517a8d73cd20ce743a32d --password "" --name "so cool validator"
 
 RESPONSE:
 INFO [08-31|15:16:07.006] set name                                 address=0xeF021f15D188ad28625517A8D73CD20cE743a32D name="so cool validator"
@@ -679,4 +666,64 @@ INFO [08-31|15:16:10.983] Please waiting, Transaction is in pending status func=
 INFO [08-31|15:16:12.517] Please waiting, Transaction is in pending status func=getResult
 INFO [08-31|15:16:14.048] Please waiting, Transaction is in pending status func=getResult
 INFO [08-31|15:16:17.024] Transaction Success                      func=getResult               number=82133
+```
+
+### setNextCommissionUpdate
+
+Queues an update to a validator's commission. If there was a previously scheduled update, that is overwritten.
+
+`commission`: representation of the commission this validator receives on epoch payments made to its members. Must be in
+the range [0, 1000000].
+
+```shell
+
+USAGE
+  $ ./marker setNextCommissionUpdate
+
+OPTIONS
+  --keystore                                                   Keystore file path of sender
+  
+  --password                                                   Keystore file`s password 
+                                                               (defult value "") 
+            
+  --rpcaddr                                                    HTTP-RPC server address   
+                                                                                                                                                              
+  --target                                                     target address that the account you want to query(including yourself)
+    
+EXAMPLES:
+./marker setNextCommissionUpdate --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-08-26T10-59-01.086763000Z--ef021f15d188ad28625517a8d73cd20ce743a32d --password "" --commission 300000
+
+RESPONSE:
+INFO [09-01|14:17:15.746] === setNextCommissionUpdate ===          commission=300,000
+INFO [09-01|14:17:17.644] Tx Info                                  func=sendContractTransaction from=0xeF021f15D188ad28625517A8D73CD20cE743a32D to=0x000000000000000000000000000000000000D012 value=<nil> nonce =14  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =20212
+INFO [09-01|14:17:18.062] Please waiting                           func=getResult                txHash =0xcb72b1a5055b290712a5f8e72a4bc60028b144ebea92c12637315891874ab8bf
+INFO [09-01|14:17:20.911] Transaction Success                      func=getResult               number=98706
+```
+
+### updateCommission
+
+Updates a validator's commission based on the previously queued update, The operation can only be executed after **2000**
+blocks after the successful execution of [setNextCommissionUpdate](/develop/map-relay-chain/marker/AboutCommon.md#setnextcommissionupdate)
+
+```shell
+
+USAGE
+  $ ./marker updateCommission
+
+OPTIONS
+  --keystore                                                   Keystore file path of sender
+  
+  --password                                                   Keystore file`s password 
+                                                               (defult value "") 
+            
+  --rpcaddr                                                    HTTP-RPC server address   
+                                                                                                                                                                  
+EXAMPLES:
+./marker updateCommission --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-08-26T10-59-01.086763000Z--ef021f15d188ad28625517a8d73cd20ce743a32d --password ""
+
+RESPONSE:
+INFO [09-01|14:18:15.648] === updateCommission === 
+INFO [09-01|14:18:17.303] Tx Info                                  func=sendContractTransaction from=0xeF021f15D188ad28625517A8D73CD20cE743a32D to=0x000000000000000000000000000000000000D012 value=<nil> nonce =15  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =20212
+INFO [09-01|14:18:17.717] Please waiting                           func=getResult                txHash =0x4f252120cc61e27d72d47e6f6a9dd732bb9aa319937b94fdb602c6c93feb4c83
+INFO [09-01|14:18:20.536] Transaction Success                      func=getResult               number=98718
 ```

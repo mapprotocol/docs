@@ -1,31 +1,30 @@
-
 ## How to become a new validator advanced
 
-In order to make your assets safer, we need you to set some necessary identification parameters to become a validator. 
-We also set the corresponding threshold so that we can screen those who really want to contribute to the chain. 
-Of course, we will give corresponding rewards to these people.
+In order to make your assets safer, we need you to set some necessary identification parameters to become a validator.
+We also set the corresponding threshold so that we can screen those who really want to contribute to the chain. Of
+course, we will give corresponding rewards to these people.
 
-The following steps are regarded as your first operation, because you only need to perform the following operations 
-once to become a validator. Unless you log off the validator or cancel the corresponding operation, you will not need to 
+The following steps are regarded as your first operation, because you only need to perform the following operations once
+to become a validator. Unless you log off the validator or cancel the corresponding operation, you will not need to
 perform the second operation to avoid wasting your gas fee.
 
 ### Step 1: create account
 
-In this step, you need to transfer your identification information to the corresponding management contract,
-which will manage your account, keys, and metadata.
+In this step, you need to transfer your identification information to the corresponding management contract, which will
+manage your account, keys, and metadata.
 
-The purpose of this step is keep your locked `MAP` more secure by authorizing alternative keys to be used for signing 
-attestations、voting、validating. By doing so, you can continue to participate in the protocol while keeping the key 
-with access to your locked `MAP` in storage.
+The purpose of this step is keep your locked `MAP` more secure by authorizing alternative keys to be used for signing
+attestations、voting、validating. By doing so, you can continue to participate in the protocol while keeping the key with
+access to your locked `MAP` in storage.
 
-You need `createAccount` command to perform the above operations,more detail about `createAccount` command 
-please to see [this](/develop/map-relay-chain/marker/AboutCommon.md#createaccount).
+You need `createAccount` command to perform the above operations,more detail about `createAccount` command please to
+see [this](/develop/map-relay-chain/marker/AboutCommon.md#createaccount).
 
 ### Step 2: authorize
 
 Authorizes an address to sign consensus messages on behalf of the account. This authorized address is called the signer.
-As his name is, he is only responsible for signing, your reward will not be issued to the signer, 
-but to the account created in the previous step。
+As his name is, he is only responsible for signing, your reward will not be issued to the signer, but to the account
+created in the previous step。
 
 ### Step 3: locked `MAP`
 
@@ -33,34 +32,37 @@ The threshold we set to be the validator is to lock 1000,000 `MAP` into the corr
 
 This part of the locked `MAP` will be used for future punishment, which is also one of the conditions for being elected.
 
-You need `lockedMAP`  command to perform the above operations,more detail about `lockedMAP` command 
-please to see [this](/develop/map-relay-chain/marker/AboutCommon.md#lockedmap) .
+You need `lockedMAP`  command to perform the above operations,more detail about `lockedMAP` command please to
+see [this](/develop/map-relay-chain/marker/AboutCommon.md#lockedmap) .
 
 ### Step 4: validator register
 
 This step is a key step for registering as a new validator.
 
-You need `register`  command to perform the above operations,more detail about `register` command please to see [this](/develop/map-relay-chain/marker/AboutValidator.md#register).
+You need `register`  command to perform the above operations,more detail about `register` command please to
+see [this](/develop/map-relay-chain/marker/AboutValidator.md#register).
 
-At this step, you will successfully register as a validator. Next, you can try to vote for yourself. How to vote please to see[this](/develop/map-relay-chain/marker/AboutVote.md#vote).
+At this step, you will successfully register as a validator. Next, you can try to vote for yourself. How to vote please
+to see[this](/develop/map-relay-chain/marker/AboutVote.md#vote).
 
 ### Step 5: vote
 
-Validators must have at least 0.001 proportion of the total votes to be considered for the election. So the validator can't have no votes.
+Validators must have at least 0.001 proportion of the total votes to be considered for the election. So the validator
+can't have no votes.
 
 We can use our validator account to vote for ourselves, or we can let other validators or voters vote for ourselves.
 
 We've locked in 1,000,000 MAP in step 3, and it's a great decision to vote for ourselves now
 
-
-
 ## Advanced example
 
 ### Start A node that provides RPC services.
 
-You can start a node that provides RPC services by yourself, or you can use the [RPC nodes](/develop/map-relay-chain/Makalu-PoC/PoC-2.md#atlas-address) we provide.
+You can start a node that provides RPC services by yourself, or you can use
+the [RPC nodes](/develop/map-relay-chain/Makalu-PoC/PoC-2.md#atlas-address) we provide.
 
 - Clone repositories
+
 ```shell
 cd /Users/alex
 
@@ -69,22 +71,26 @@ git checkout -b release origin/release_v0
 ```
 
 - Build
+
 ```shell
 make atlas
 make marker
 ```
+
 The file generated by build is in the build/bin directory
 
 ### Join the network
+
 First, you need to prepare two keystore, one for staking is called account, and one for mining is called signer
 
-keystore of `account`: UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33
+keystore of `account`: account.json
 
-keystore of `signer`:  UTC--2022-06-14T05-46-48.450557000Z--98efa292822eb7b3045c491e8ae4e82b3b1ac005
+keystore of `signer`:  signer.json
 
 How to build the atlas [click here](/develop/map-relay-chain/make-private-chain.md#build-four-nodes)
 
-If you want node to run in the background and not hang up,  you can use nohup and & in combination, or screen or similar. Below we will demonstrate using screen
+If you want node to run in the background and not hang up, you can use nohup and & in combination, or screen or similar.
+Below we will demonstrate using screen
 
 --miner.validator is used to specify the address of the `signer`
 
@@ -121,11 +127,46 @@ INFO [08-01|16:40:53.893] Finalized                                func=Finalize
 
 After the node starts, it will automatically connect to other nodes, and then start to synchronize blocks.
 
+### Singer operations
+
+### Make ECDSA signature from signer
+
+--validator is used to specify the address of the `account`
+
+--signerPriv is used to specify the private key of the `signer`
+
+```shell
+./marker makeECDSASignatureFromSigner --validator 0x73bc690093b9dd0400c91886184a60cc127b2c33 --signerPriv 040939e5...604b6f25
+
+INFO [08-26|17:31:49.422] === makeECDSASignatureFromSigner === 
+INFO [08-26|17:31:49.422] === signer  ===                          account=0x26654Eb0Bb935DCE4a34DAA3e14c67662a8Aa1f8
+INFO [08-26|17:31:49.422] ECDSASignature                           result=0x59dff185...32f0d700
+
+```
+
+### Generate signer proof
+
+--validator is used to specify the address of the `account`
+
+--signerPriv is used to specify the private key of the `signer`
+
+```shell
+./marker generateSignerProof --validator 0x73bc690093b9dd0400c91886184a60cc127b2c33 --signerPriv 040939e5...604b6f25
+
+INFO [08-26|17:32:23.950] generateBLSProof                         validator=0x01ccDcd1aE63a2C6B4c3493983dc6400C63729Ad signerPrivate=040939e5...604b6f25
+INFO [08-26|17:32:23.955] === makeBLSProofOfPossessionFromSigner === 
+INFO [08-26|17:32:23.958] generateBLSProof                         proof=0xf90149b8...0e56f0ab1
+
+```
+
+### Account operations
+
 ### Create account
+
 --keystore is used to specify the address of the `account`
 
 ```shell
-./marker createAccount -rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --password "" --name "validator"
+./marker createAccount --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --name "validator"
 
 INFO [07-08|14:54:28.097] Create account                           func=createAccount address=0x73bC690093b9dD0400c91886184A60cC127b2c33 name=validator
 INFO [07-08|14:54:28.097] === create Account === 
@@ -142,27 +183,17 @@ INFO [07-08|14:54:35.785] Please waiting                           func=getResul
 INFO [07-08|14:54:40.224] Transaction Success                      func=queryTx                 block Number=11
 ```
 
-### Make ECDSA signature from signer
---validator is used to specify the address of the `account`
---signerPriv is used to specify the private key of the `signer`
-
-```shell
-./marker makeECDSASignatureFromSigner --validator 0x73bc690093b9dd0400c91886184a60cc127b2c33 --signerPriv 040939e5...604b6f25
-
-INFO [08-26|17:31:49.422] === makeECDSASignatureFromSigner === 
-INFO [08-26|17:31:49.422] === signer  ===                          account=0x26654Eb0Bb935DCE4a34DAA3e14c67662a8Aa1f8
-INFO [08-26|17:31:49.422] ECDSASignature                           result=0x59dff185...32f0d700
-
-```
-
 ### Authorize by signature
-Authorize using the signature (0x59dff185...32f0d700) generated in the previous step
 
---keystore is used to specify the keystore of the `account`
---signer is used to specify the address key of the `signer`
+Authorize using the signature (0x59dff185...32f0d700) generated
+from [Make ECDSA signature from signer](/run/HowToBecomeANewValidatorAdvanced.md#make-ecdsa-signature-from-signer)
+
+--keystore is used to specify the keystore of the `account` (account.json)
+
+--signer is used to specify the address key of the `signer` (signer.json)
 
 ```shell
-./marker authorizeValidatorSignerBySignature -rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --password "" --signer 0x26654eb0bb935dce4a34daa3e14c67662a8aa1f8 --signature 0x59dff185...32f0d700
+./marker authorizeValidatorSignerBySignature --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --signer 0x26654eb0bb935dce4a34daa3e14c67662a8aa1f8 --signature 0x59dff185...32f0d700
 
 INFO [07-08|14:55:00.015] authorizeValidatorSignerBySignature      signer=0x26654eb0bb935dce4a34daa3e14c67662a8aa1f8    signature=0x59dff185...32f0d700
 INFO [07-08|14:55:00.032] Please waiting                           func=getResult                 txHash =0xb73a1376e661d523e44b87c37e2e03cc36534d3a550808245f263aaad358b0ad
@@ -170,10 +201,11 @@ INFO [07-08|14:55:05.078] Transaction Success                      func=queryTx 
 ```
 
 ### Locked MAP
+
 --keystore is used to specify the keystore of the `account`
 
 ```shell
-./marker lockedMAP -rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --password "" --lockedNum 1000000
+./marker lockedMAP --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --lockedNum 1000000
 
 INFO [07-08|14:54:49.141] === Lock  gold === 
 INFO [07-08|14:54:49.141] Lock  gold                               amount=1000000000000000000000000
@@ -182,28 +214,17 @@ INFO [07-08|14:54:49.150] Please waiting                           func=getResul
 INFO [07-08|14:54:50.765] Transaction Success                      func=queryTx                 block Number=13
 ```
 
-### Generate signer proof
---validator is used to specify the address of the `account`
---signerPriv is used to specify the private key of the `signer`
-
-```shell
-./marker generateSignerProof --validator 0x73bc690093b9dd0400c91886184a60cc127b2c33 --signerPriv 040939e5...604b6f25
-
-INFO [08-26|17:32:23.950] generateBLSProof                         validator=0x01ccDcd1aE63a2C6B4c3493983dc6400C63729Ad signerPrivate=040939e5...604b6f25
-INFO [08-26|17:32:23.955] === makeBLSProofOfPossessionFromSigner === 
-INFO [08-26|17:32:23.958] generateBLSProof                         proof=0xf90149b8...0e56f0ab1
-
-```
-
 ### Validator register by proof
-Use the proof (0xf90149b8...0e56f0ab1) generated in the previous step to register the validator
+
+Register the validator using the proof (0xf90149b8...0e56f0ab1) generated
+by [Generate signer proof](/run/HowToBecomeANewValidatorAdvanced.md#generate-signer-proof)
 
 --keystore is used to specify the keystore of the `account`
 
 ```shell
-./marker registerByProof -rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --password "" -- --proof 0xf90149b8...0e56f0ab1 
+./marker registerByProof --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --proof 0xf90149b8...0e56f0ab1 --commission 150000
 
-INFO [08-26|17:32:25.055] registerValidatorByProof                 commission=1,000,000
+INFO [08-26|17:32:25.055] registerValidatorByProof                 commission=150,000
 INFO [08-26|17:32:25.548] === getTotalVotesForValidator ===        admin=0x73bc690093b9dd0400c91886184a60cc127b2c33
 INFO [08-26|17:32:25.974] === getTotalVotesForValidator ===        result=0
 INFO [08-26|17:32:26.011] TxInfo                                   func=sendContractTransaction TX data nonce =7  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =1,098,789
@@ -212,10 +233,11 @@ INFO [08-26|17:32:27.241] Transaction Success                      func=queryTx 
 ```
 
 ### Verify
+
 So far we have completed the registration steps of validator, now let's verify whether it has become a validator.
 
 ```shell
-./marker getTotalVotesForEligibleValidators -rpcaddr http://127.0.0.1:7445
+./marker getTotalVotesForEligibleValidators --rpcaddr http://127.0.0.1:7445
 
 INFO [07-08|15:10:03.301] Validator:                               addr=0xeA9efaA232A4567EaC21C8C096f8BfF84595A244 vote amount=1,000,000,000,000,000,000,000,000
 INFO [07-08|15:10:03.301] Validator:                               addr=0x6ACdC02223100189d82A958d888F54fA27d60e8A vote amount=1,000,000,000,000,000,000,000,000
@@ -224,10 +246,13 @@ INFO [07-08|15:10:03.301] Validator:                               addr=0x5d643D
 INFO [07-08|15:10:03.301] Validator:                               addr=0x73bC690093b9dD0400c91886184A60cC127b2c33 vote amount=0
 
 ```
-As can be seen from the above results, we have become a validator. But our vote count is 0, which prevents us from being 
-elected as a validator that can participate in the block, which is not what we want. So we also need to vote for validators.
+
+As can be seen from the above results, we have become a validator. But our vote count is 0, which prevents us from being
+elected as a validator that can participate in the block, which is not what we want. So we also need to vote for
+validators.
 
 ### Vote
+
 The number of votes cannot be greater than the number of votes locked.
 
 For more information on voting and elections, click on the links below to view:
@@ -238,7 +263,7 @@ For more information on voting and elections, click on the links below to view:
 --keystore is used to specify the keystore of the `account`
 
 ```shell
-./marker vote -rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --password "" --validator 0x73bc690093b9dd0400c91886184a60cc127b2c33 --voteNum 1000000
+./marker vote --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --validator 0x73bc690093b9dd0400c91886184a60cc127b2c33 --voteNum 1000000
 
 INFO [07-08|15:11:13.693] === vote Validator ===                   admin=0x73bc690093b9dd0400c91886184a60cc127b2c33 voteTargetValidator=0x73bC690093b9dD0400c91886184A60cC127b2c33 vote MAP Num=1000000
 INFO [07-08|15:11:13.709] TxInfo                                   func=sendContractTransaction TX data nonce =4  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =1,098,789
@@ -247,10 +272,11 @@ INFO [07-08|15:11:15.123] Transaction Success                      func=queryTx 
 ```
 
 ### Verify
+
 Let's verify that our vote was successful.
 
 ```shell
-./marker getTotalVotesForEligibleValidators -rpcaddr http://127.0.0.1:7445
+./marker getTotalVotesForEligibleValidators --rpcaddr http://127.0.0.1:7445
 
 INFO [07-08|15:21:45.881] Validator:                               addr=0xeA9efaA232A4567EaC21C8C096f8BfF84595A244 vote amount=1,000,000,000,000,000,000,000,000
 INFO [07-08|15:21:45.881] Validator:                               addr=0x6ACdC02223100189d82A958d888F54fA27d60e8A vote amount=1,000,000,000,000,000,000,000,000
@@ -259,9 +285,10 @@ INFO [07-08|15:21:45.881] Validator:                               addr=0x5d643D
 INFO [07-08|15:21:45.881] Validator:                               addr=0x73bC690093b9dD0400c91886184A60cC127b2c33 vote amount=1,000,000,000,000,000,000,000,000
 
 ```
-Judging from the results, I've successfully voted for myself, but it's not enough.
-We need to call RPC in the next epoch to finally determine whether we are selected as validators who can participate in 
-block generation，Just like the following:
+
+Judging from the results, I've successfully voted for myself, but it's not enough. We need to call RPC in the next epoch
+to finally determine whether we are selected as validators who can participate in block generation，Just like the
+following:
 
 ```shell
 curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"istanbul_getValidators","params":[],"id":1}' http://127.0.0.1:7445
@@ -279,4 +306,5 @@ curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"
     ]
 }
 ```
+
 For more information on istanbul_getValidators [click here](/sdk/ConsensusAPI.md#getvalidators)
