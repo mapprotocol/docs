@@ -65,6 +65,7 @@ You can start a node that provides RPC services by yourself, or you can use the 
 cd /Users/alex
 
 git clone https://github.com/mapprotocol/atlas.git && cd atlas
+git checkout -b release origin/release_v0
 ```
 
 - Build
