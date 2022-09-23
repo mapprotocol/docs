@@ -115,6 +115,9 @@ If you want node to run in the background and not hang up,  you can use `nohup` 
 
 --miner.validator is used to specify the address of the `signer`
 
+`--port 30321` to make sure the port is opend on the firewall
+
+
 ```shell
 ./atlas --datadir ./node --syncmode "full" --port 30321 --v5disc --mine --miner.validator 0x98efa292822eb7b3045c491e8ae4e82b3b1ac005 --unlock 0x98efa292822eb7b3045c491e8ae4e82b3b1ac005
 

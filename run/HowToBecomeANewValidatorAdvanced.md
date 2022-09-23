@@ -94,6 +94,8 @@ Below we will demonstrate using screen
 
 --miner.validator is used to specify the address of the `signer`
 
+`--port 30321` to make sure the port is opend on the firewall
+
 ```shell
 ./atlas --datadir ./node --syncmode "full" --port 30321 --v5disc --mine --miner.validator 0x26654eb0bb935dce4a34daa3e14c67662a8aa1f8 --unlock 0x26654eb0bb935dce4a34daa3e14c67662a8aa1f8
 
