@@ -1,4 +1,8 @@
 
+## Scan API URL
+
+https://mainnet-api.maplabs.io/scan/api_method
+
 ## Scan API Reference
 
 List of APIs
