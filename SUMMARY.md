@@ -89,9 +89,10 @@
     * [How TO](develop/mcs-near/how-to.md)
   * [Messenger](develop/mcs/messenger/messenger.md)
   * [API](develop/mcs/api/api.md)
-* SDK
+* API & SDK
   * [Atlas JSON RPC](sdk/RPC-API.md)
   * [Atlas Consensus API](sdk/ConsensusAPI.md)
+  * [MAP Scan API](develop/sdk/scan-api.md)
 
 ## Run
 
