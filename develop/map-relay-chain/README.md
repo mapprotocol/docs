@@ -3,10 +3,10 @@
 
 ## Endpoints
 
-| network  | address | chainid | networkid |
-| -------- | ------  | ------ | ------ |
-| mainnet  | https://rpc.maplabs.io | 22776 | 22776 |
-| testnet  | https://makalu-rpc.maplabs.io   | 212 | 212 |
+| network  | address                        | chainid | networkid |
+| -------- |--------------------------------| ------ | ------ |
+| mainnet  | https://rpc.maplabs.io         | 22776 | 22776 |
+| testnet  | https://testnet-rpc.maplabs.io | 212 | 212 |
 
 
 ## Mainnet
@@ -20,8 +20,8 @@
 
 
 ## Testnet - Makalu
-| comment  | address                          |
-|----------|----------------------------------|
-| Explorer | https://makalu.mapscan.io        |
-| RPC      | https://makalu-rpc.maplabs.io    |
-| Faucet   | https://makalu-faucet.maplabs.io |
+| comment  | address                   |
+|----------|---------------------------|
+| Explorer | https://testnet.mapscan.io |
+| RPC      | https://testnet-rpc.maplabs.io |
+| Faucet   | https://faucet.maplabs.io |
