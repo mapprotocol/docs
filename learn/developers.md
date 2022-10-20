@@ -21,7 +21,7 @@ MAP Protocol is designated for cross-chain Dapp developers. Not for blockchain m
 
 - [How to become Maintainer](https://docs.maplabs.io/develop/maintainer)
 
-### MAP Cross-chain Service(MCS)
+### MAP Omnichain Service(MOS)
 
 - [Contract](https://docs.maplabs.io/develop/map-cross-chain-service/bridge)
 - [ABI](https://docs.maplabs.io/develop/map-cross-chain-service/abi)
