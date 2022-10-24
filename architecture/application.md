@@ -1,4 +1,4 @@
-Assets and data originated from Dapps assembly on MAP Relay Chain. Dapps can achieve interoperability because of MAP Cross-chain Services (MCS). The finality of omnichain data and asset verification network by MAP Protocol Layer empowers Dapps to grow limitless.
+Assets and data originated from Dapps assembly on MAP Relay Chain. Dapps can achieve interoperability because of MAP Omnichain Services (MOS). The finality of omnichain data and asset verification network by MAP Protocol Layer empowers Dapps to grow limitless.
 
 ## Cross-chain Lending
 
