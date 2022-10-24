@@ -1,17 +1,17 @@
-MAP Protocol is structured in **three layers**: **MAP Protocol Layer**, **MAP Cross-chain Services Layer(MCS)**, and **MAP Application Ecosystem Layer**.
+MAP Protocol is structured in **three layers**: **MAP Protocol Layer**, **MAP Omnichain Services Layer(MOS)**, and **MAP Application Ecosystem Layer**.
 
 ## MAP Application Layer
 
 - Assets and data originated from dApps assembly on MAP Relay Chain
-- DApps can achieve interoperability because of MAP Cross-chain Services (MCS)
+- DApps can achieve interoperability because of MAP Omnichain Services (MOS)
 - The finality of omnichain data and asset verification network by MAP Protocol Layer empowers dApps to grow limitless.
 
-## MAP Cross-chain Services Layer (MCS)
+## MAP Omnichain Services Layer (MOS)
 
 - Facilitate dApp developers to build applications, similar to Google Mobile Services to Android ecosystem.
 - Consists of Vaults and Data deployed on each chain, and Messenger Program to transmit messages between chains.
 - The execution layer for omnichain asset and data.
-- DApp developers can build their components or use MCS.
+- DApp developers can build their components or use MOS.
 - Developers can utilize Vaults and Data in MSC and share Vaults and Data liquidity with other applications.
 - Messenger Program is an SDK deployed, operated, and maintained by dApp developers. DApp developers can also independently and flexibly incentivize messenger contributors for transmitting omnichain messages for the dApp. 
 - The self-verification mechanism of the Light-client on the MAP Protocol Layer assures the invalidity of malicious attacks from messengers. 
