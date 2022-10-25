@@ -11,7 +11,7 @@
 ### 2022.Q1
 
 - Support more chains decentralized cross-chain.
-- MCS supports cross-chain between Ethereum, Polygon, BNB Chain and MAP Makalu.
+- MOS supports cross-chain between Ethereum, Polygon, BNB Chain and MAP Makalu.
 - Invite more DeFi projects to join Makalu testnet.
 
 ### 2022.Q2
@@ -19,7 +19,7 @@
 - Launch MAP Relay Chain, support more signature, hash, mining and Merkel proof calculation precompiled contracts.
 - Launch the explorer and PoS DApp.
 - Provide SDK to interact with MAP Relay Chain.
-- Provide MCS SDK test version.
+- Provide MOS SDK test version.
 
 ### 2022.Q3
 
