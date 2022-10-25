@@ -19,7 +19,7 @@
       * [Concept](architecture/concept.md)
       * [Isomorphism with All Chains](architecture/precompile.md)
       * [Verification &amp; Maintenance Network](architecture/verification.md)
-  * [MAP Cross-chain Service (MCS) Layer](architecture/mcs.md)
+  * [MAP Omnichain Service (MOS) Layer](architecture/mcs.md)
   * [MAP Application Layer](architecture/application.md)
 * [Gas Fee Model](learn/fee.md)
 * [DAO](learn/dao.md)
