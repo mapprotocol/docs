@@ -5,6 +5,6 @@ Messenger is an independent inter-chain program. Running as a messenger requires
 - Messenger needs to prepay the gas fee of MAP Relay Chain and the destination chain for cross-chain users and thus get rewards from applications.
 - As gas fees of destination chains cannot be estimated, MAP Protocol Layer cannot include this process into the bottom network because of the principle of absoluteness adopted by MAP Protocol.
 - The flexibility of applications opens up many possibilities for Messenger, where applications can charge cross-chain users flexible transaction fees and reward Messenger accordingly. 
-- As a main component of MAP Cross-chain Services, Messenger SDK is open to Dapp developers.
+- As a main component of MAP Omnichain Services, Messenger SDK is open to Dapp developers.
 - Messenger is a high concurrency inter-chain program. Theoretically, as long as one honest Messenger is working in between chains, all cross-chain transactions messages of the Dapp can be transferred.
 - Malicious attacks by messengers will not cause the loss of assets and will only result in invalidity of verification on the MAP Protocol Layer.  
