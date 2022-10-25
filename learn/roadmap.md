@@ -5,7 +5,7 @@
 ### 2021.Q3
 
 - Launch MAP Relay Chain Makalu Testnet, start the ligth-client veification cross-chain between MAP Makalu and Ethereum.
-- Launch MAP Cross-chain Service (MCS) for testnet.
+- Launch MAP Omnichain Service (MOS) for testnet.
 - Start maintainer mining, invite users to participate maintainer test.
 
 ### 2022.Q1
@@ -25,8 +25,8 @@
 
 - Extend cross-chain connections to Ethereum(EVM PoW) and Near(non-EVM PoS), which represents the technical mechanisms in blockchain space.
 - Extend cross-chain connections to popular EVM compatible chains: BNB Chain, Polygon, Avalanche, Fantom, Harmony, etc.
-- Launch MAP Cross-chain Service, support cross-chain data, fungible tokens and NFTS, provide shared vaults.
-- Provide MCS SDK to develope individual MCSs.
+- Launch MAP Omnichain Service, support cross-chain data, fungible tokens and NFTS, provide shared vaults.
+- Provide MOS SDK to develope individual MOSs.
 - Support cross-chain oracles, lending, swap and other DApps.
 
 ### 2022.Q4
