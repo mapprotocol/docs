@@ -72,7 +72,7 @@
   * [MAP LightClient on Near](develop/light-client/map/tx-verify/Map-light-client-on-near.md)
   * [Near LightClinet on Map](develop/light-client/Near-light-client-on-map.md)
 * [Maintainer](develop/light-client/Maintainer.md)
-* MAP Cross-chain Service
+* MAP Omnichain Service
   * EVM Blockchain
     * [Contract](develop/mcs/contract/bridge.md)
     * ABI
@@ -82,8 +82,8 @@
       * [Vault Token](develop/mcs/abi/VToken.md)
       * [Staking](develop/mcs/abi/MasterChef.md)
     * Address
-      * [MCS V1](develop/mcs/address/bridge-v1.md)
-      * [MCS V2 Test](develop/mcs/address/bridge_v2_test.md)
+      * [MOS V1](develop/mcs/address/bridge-v1.md)
+      * [MOS V2 Test](develop/mcs/address/bridge_v2_test.md)
   * NEAR Blockchain
     * [Contract](develop/mcs-near/mcs-on-near.md)
     * [How TO](develop/mcs-near/how-to.md)
