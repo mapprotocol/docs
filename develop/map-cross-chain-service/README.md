@@ -1,2 +1,0 @@
-# MAP Cross-chain Service
-
