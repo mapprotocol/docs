@@ -97,5 +97,5 @@
 ## Run
 
 * [How To Become A New Validator](run/HowToBecomeANewValidator.md)
-* [How To Become A New Validator[advance]](run/HowToBecomeANewValidatorAdvanced.md)
+* [How To Become A New Validator[advanced]](run/HowToBecomeANewValidatorAdvanced.md)
 * [Withdraw](run/Withdraw.md)

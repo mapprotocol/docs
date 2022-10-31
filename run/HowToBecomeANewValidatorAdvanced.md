@@ -1,4 +1,4 @@
-## How to become a new validator advanced
+## How to become a new validator [advanced]
 
 In order to make your assets safer, we need you to set some necessary identification parameters to become a validator.
 We also set the corresponding threshold so that we can screen those who really want to contribute to the chain. Of
