@@ -105,5 +105,6 @@ This will create a `genesis.json` in the ./root/atlasEnv folder
 ```
 
 ps: you can use this `genesis.json` init `MAP` validator nodes
+- you can update the `chainid` in the `genesis.json` 
 - the one way: like this `./atlas --datadir ./node-1 init ./genesis.json`
 - the other way: copy the `alloc` info in the `genesis.json` to core/chain/genesis_alloc_mainnet.go file overwrite `mainnetAllocJSON` info
