@@ -26,6 +26,7 @@ make atlas
 
 - build atlas of POS version:
 ```
+git checkout v1.0.0 or git checkout <latest tag>
 make atlas
 ```
 
@@ -149,10 +150,10 @@ INFO [03-16|15:14:56.227] Successfully wrote genesis state         database=ligh
 The following command starts four corresponding nodes using the four accounts created earlier。
 
 ```shell
-./atlas --datadir ./node-1 --ipcpath ./node-1 --port 20201 --mine --miner.validator 0xF930B74D2b1b703B879ab54E225ECc18Ab28e61C --unlock 0xF930B74D2b1b703B879ab54E225ECc18Ab28e61C console
-./atlas --datadir ./node-2 --ipcpath ./node-2 --port 20202 --mine --miner.validator 0x0e2699Be2B47Dfd7560c4771A32A50b64F81293d --unlock 0x0e2699Be2B47Dfd7560c4771A32A50b64F81293d console
-./atlas --datadir ./node-3 --ipcpath ./node-3 --port 20203 --mine --miner.validator 0x3c0ef282c8c62a44eA2FE8928b6bd89a16fD8252 --unlock 0x3c0ef282c8c62a44eA2FE8928b6bd89a16fD8252 console
-./atlas --datadir ./node-4 --ipcpath ./node-4 --port 20204 --mine --miner.validator 0x41E4A55Ef06c1961B3e143357e24cA7f92e4DD03 --unlock 0x41E4A55Ef06c1961B3e143357e24cA7f92e4DD03 console
+./atlas --datadir ./node-1 --networkid 110112 --port 20201 --mine --miner.validator 0xF930B74D2b1b703B879ab54E225ECc18Ab28e61C --unlock 0xF930B74D2b1b703B879ab54E225ECc18Ab28e61C console
+./atlas --datadir ./node-2 --networkid 110112 --port 20202 --mine --miner.validator 0x0e2699Be2B47Dfd7560c4771A32A50b64F81293d --unlock 0x0e2699Be2B47Dfd7560c4771A32A50b64F81293d console
+./atlas --datadir ./node-3 --networkid 110112 --port 20203 --mine --miner.validator 0x3c0ef282c8c62a44eA2FE8928b6bd89a16fD8252 --unlock 0x3c0ef282c8c62a44eA2FE8928b6bd89a16fD8252 console
+./atlas --datadir ./node-4 --networkid 110112 --port 20204 --mine --miner.validator 0x41E4A55Ef06c1961B3e143357e24cA7f92e4DD03 --unlock 0x41E4A55Ef06c1961B3e143357e24cA7f92e4DD03 console
 ```
 
 Type the above command on the command line and press enter, you will see the following prompt：
@@ -172,7 +173,9 @@ you have successfully started a node. Then we start the remaining nodes in the s
 
 If you want to start an RPC node you can use the following way.
 ```shell
-./atlas --datadir ./node-rpc --ipcpath ./node-rpc --port 20205 --http --http.addr "0.0.0.0" --http.port 7445 --http.api eth,web3,net,debug,txpool,header,istanbul --http.corsdomain "*" console
+./atlas --datadir ./node-rpc init ./genesis.json
+
+./atlas --datadir ./node-rpc --networkid 110112 --port 20205 --http --http.addr "0.0.0.0" --http.port 7445 --http.api eth,web3,net,debug,txpool,header,istanbul --http.corsdomain "*" console
 ```
 
 ## Connect four nodes
