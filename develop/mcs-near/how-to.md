@@ -15,7 +15,7 @@ NEAR_CHAIN_ID=       # Near blockchain ID
 MCS_WASM_FILE=       # path to the MCS contract wasm file
 INIT_ARGS_MCS='{
               "map_light_client": "'$CLIENT_ACCOUNT'",
-              "map_bridge_address": "'$MAP_BRIDGE_ADDRESS'",
+              "map_bridge_address": "'$MAPO_BRIDGE_ADDRESS'",
               "wrapped_token": "'$WNEAR_ACCOUNT'",
               "near_chain_id": '$NEAR_CHAIN_ID'
             }'

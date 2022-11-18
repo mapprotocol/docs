@@ -1,4 +1,4 @@
-$MAP Token is purchasable on Uniswap(v2,v3), Kucoin, Bithumb, and Coinone.
+$MAPO Token is purchasable on Uniswap(v2,v3), Kucoin, Bithumb, and Coinone.
 
 ## Token Address
 

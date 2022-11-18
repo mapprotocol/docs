@@ -4,7 +4,7 @@
 
 | Chain            | Address |
 |------------------| -----|
-| MAP Relay Chain | 0xb586DC60e9e39F87c9CB8B7D7E30b2f04D40D14c |
+| MAPO Chain | 0xb586DC60e9e39F87c9CB8B7D7E30b2f04D40D14c |
 | Ethereum mainnet | 0xb586DC60e9e39F87c9CB8B7D7E30b2f04D40D14c |
 | Polygon mainnet | 0xb586DC60e9e39F87c9CB8B7D7E30b2f04D40D14c |
 | BNB Chain mainnet | 0xb586DC60e9e39F87c9CB8B7D7E30b2f04D40D14c |

@@ -15,12 +15,12 @@
   * [MAP Protocol&#39;s Technical Mechanism](architecture/technical-mechanism.md)
   * [Three-layer Architecture](architecture/3layer.md)
   * [MAP Protocol Layer](learn/protocollayer.md)
-    * MAP Relay Chain
+    * MAPO Chain
       * [Concept](architecture/concept.md)
       * [Isomorphism with All Chains](architecture/precompile.md)
       * [Verification &amp; Maintenance Network](architecture/verification.md)
-  * [MAP Omnichain Service (MOS) Layer](architecture/mcs.md)
-  * [MAP Application Layer](architecture/application.md)
+  * [MAPO Service (MOS) Layer](architecture/mcs.md)
+  * [MAPO Application Layer](architecture/application.md)
 * [Gas Fee Model](learn/fee.md)
 * [DAO](learn/dao.md)
 * [Construction of MAP Protocol](architecture/construction.md)
@@ -32,11 +32,11 @@
   * [End users](learn/enduser.md)
 * [Tokenomics](learn/tokenomics.md)
 * [Roadmap](learn/roadmap.md)
-* [Purchase $MAP](/learn/purchase.md)
+* [Purchase $MAPO](/learn/purchase.md)
 
 ## Develop
 
-* [MAP Relay Chain](develop/map-relay-chain/README.md)
+* [MAPO Chain](develop/map-relay-chain/README.md)
   * [Make Private Chain](develop/map-relay-chain/make-private-chain.md)
   * [Make Genesis](develop/map-relay-chain/how-to-make-genesis.md)
   * [How To Vote](develop/map-relay-chain/how-to-vote.md)
@@ -72,7 +72,7 @@
   * [MAP LightClient on Near](develop/light-client/map/tx-verify/Map-light-client-on-near.md)
   * [Near LightClinet on Map](develop/light-client/Near-light-client-on-map.md)
 * [Maintainer](develop/light-client/Maintainer.md)
-* MAP Omnichain Service
+* MAPO Service
   * EVM Blockchain
     * [Contract](develop/mcs/contract/bridge.md)
     * ABI

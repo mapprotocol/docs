@@ -10,12 +10,12 @@ However, when Light-client conducted cross-chain verification between heterogene
 
 ### In 2021: MAP Protocol v2.0 was developed -  cross-chain solution with a relay chain - The final generation cross-chain infrastructure for all crypto community.
 
-MAP Protocol v2.0, **The final generation of cross-chain infrastructure for all crypto communities**, was developed. With more top experts joining in 2021, the MAP team began to develop the current version - MAP Protocol v2.0: **MAP Relay Chain** proactively embeds precompiled smart contracts on EVM layer for heterogeneous chains' features; **Messengers** transfer cross-chain messages; **Light-clients** conduct cross-chain self-verification; **Vaults & Data** manage cross-chain assets and data;  cross-chain communication components are deployed via on-chain and inter-chain ways to achieve cross-chain and cross-chain verification; and also make **MAP Relay Chain** ready for cross-chain Dapp deployment. MAP Protocol v2.0 is coming into form.
+MAP Protocol v2.0, **The final generation of cross-chain infrastructure for all crypto communities**, was developed. With more top experts joining in 2021, the MAP team began to develop the current version - MAP Protocol v2.0: **MAPO Chain** proactively embeds precompiled smart contracts on EVM layer for heterogeneous chains' features; **Messengers** transfer cross-chain messages; **Light-clients** conduct cross-chain self-verification; **Vaults & Data** manage cross-chain assets and data;  cross-chain communication components are deployed via on-chain and inter-chain ways to achieve cross-chain and cross-chain verification; and also make **MAPO Chain** ready for cross-chain Dapp deployment. MAP Protocol v2.0 is coming into form.
 
 - Has the same technical components as Cosmos and Polkadot: cross-chain communication components, relay chain, and Light-client.
 - Unlike Cosmos and Polkadot, MAP Protocol connects to all types of blockchains by proactively deploying on-chain and inter-chain cross-chain communication components.
-- By adding EVM and heterogeneous chains’ signatures, hashes, mining, and Merkle proof calculation to the EVM level of MAP Relay Chain, the gas cost consumed by Light-client’s heterogeneous cross-chain verification is optimized. (One transaction, one verification)
-- By providing Turing completeness in the MAP Relay Chain, developers can directly deploy cross-chain applications on MAP Protocol.
+- By adding EVM and heterogeneous chains’ signatures, hashes, mining, and Merkle proof calculation to the EVM level of MAPO Chain, the gas cost consumed by Light-client’s heterogeneous cross-chain verification is optimized. (One transaction, one verification)
+- By providing Turing completeness in the MAPO Chain, developers can directly deploy cross-chain applications on MAP Protocol.
 - Support cross-chain data, fungible tokens, and NFTs.
 - Support cross-chain on all chains no matter if they are EVM chains or heterogeneous chains.
 - Provide MAP Cross-Chain services, like Google Mobile Services, to facilitate the convenient deployment for cross-chain dapp developers.

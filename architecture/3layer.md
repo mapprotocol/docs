@@ -1,12 +1,12 @@
-MAP Protocol is structured in **three layers**: **MAP Protocol Layer**, **MAP Omnichain Services Layer(MOS)**, and **MAP Application Ecosystem Layer**.
+MAP Protocol is structured in **three layers**: **MAP Protocol Layer**, **MAPO Services Layer(MOS)**, and **MAPO Application Ecosystem Layer**.
 
-## MAP Application Layer
+## MAPO Application Layer
 
-- Assets and data originated from dApps assembly on MAP Relay Chain
-- DApps can achieve interoperability because of MAP Omnichain Services (MOS)
+- Assets and data originated from dApps assembly on MAPO Chain
+- DApps can achieve interoperability because of MAPO Services (MOS)
 - The finality of omnichain data and asset verification network by MAP Protocol Layer empowers dApps to grow limitless.
 
-## MAP Omnichain Services Layer (MOS)
+## MAPO Services Layer (MOS)
 
 - Facilitate dApp developers to build applications, similar to Google Mobile Services to Android ecosystem.
 - Consists of Vaults and Data deployed on each chain, and Messenger Program to transmit messages between chains.
@@ -18,8 +18,8 @@ MAP Protocol is structured in **three layers**: **MAP Protocol Layer**, **MAP Om
 
 ## Protocol Layer - Construct the CORE of Omnichain Network Infrastructure: Verification Finality Network and dApp Deployment 
 
-- Consists of: MAP Relay Chain, Light-Client deployed on each chain, and inter-chain Maintainer Program to update and maintain Light-Client status.
-- MAP Relay Chain proactively extends and supports heterogeneous blockchains' features in virtual machine, which construct a gas-efficient Light-Client verification network.
+- Consists of: MAPO Chain, Light-Client deployed on each chain, and inter-chain Maintainer Program to update and maintain Light-Client status.
+- MAPO Chain proactively extends and supports heterogeneous blockchains' features in virtual machine, which construct a gas-efficient Light-Client verification network.
 - Light-Client deployed on each chain has the characteristics of independent self-verification and verification finality, which becomes the verification network for cross-chain assets and data. 
 - The Maintainer is an independent inter-chain program responsible for updating the status of Light Clients. The mechanism of the Light-client assures the invalidity of malicious attacks from maintainer. 
 

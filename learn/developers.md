@@ -3,7 +3,7 @@
 MAP Protocol is designated for cross-chain Dapp developers. Not for blockchain mainnet developers. MAP Protocol is not a cross-chain bridge but a cross-chain Dapp infrastructure with cross-chain bridges as applications built on it. Link to [github](https://github.com/mapprotocol).
 
 
-### MAP Relay Chain
+### MAPO Chain
 
 - [Make Private Chain](https://docs.maplabs.io/develop/map-relay-chain/make-private-chain)
 - [Generating Marker genesis](https://docs.maplabs.io/develop/map-relay-chain/how-to-make-genesis)
@@ -21,7 +21,7 @@ MAP Protocol is designated for cross-chain Dapp developers. Not for blockchain m
 
 - [How to become Maintainer](https://docs.maplabs.io/develop/maintainer)
 
-### MAP Omnichain Service(MOS)
+### MAPO Service(MOS)
 
 - [Contract](https://docs.maplabs.io/develop/map-cross-chain-service/bridge)
 - [ABI](https://docs.maplabs.io/develop/map-cross-chain-service/abi)

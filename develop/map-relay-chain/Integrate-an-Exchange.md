@@ -1,8 +1,8 @@
-# Integrate an Exchange with MAP Relay Chain
+# Integrate an Exchange with MAPO Chain
 
 ## Overview
 
-The objective of this document is to provide a brief overview of how to integrate with the EVM-Compatible MAP Relay Chain(Atlas). For teams that already support ETH, supporting the Atlas is as straightforward as spinning up an Atlas node (which has the same API as go-ethereum) and populating Atlas ChainID (22776) when constructing transactions.
+The objective of this document is to provide a brief overview of how to integrate with the EVM-Compatible MAPO Chain(Atlas). For teams that already support ETH, supporting the Atlas is as straightforward as spinning up an Atlas node (which has the same API as go-ethereum) and populating Atlas ChainID (22776) when constructing transactions.
 
 ## Integration using EVM Endpoints
 
