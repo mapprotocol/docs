@@ -3,16 +3,16 @@ While cross-chain bridges can be easily built with MAP Protocol, MAP Protocol it
 1. MAP Protocol is structured in **three layers: Protocol Layer, Omnichain Services Layer (MOS), and Application Layer.**  
 2. MAP Protocol achieves omnichain interoperability with **all EVM and non-EVM chains** by deploying cross-chain execution and verification via on-chain smart contracts, and cross-chain messenger inter-chain program.  
 3. MAP Protocol's cross-chain verification network has **security finality** by adopting the Light-client independent self-verification mechanism.  
-4. MAPO Chain is fully EVM compatible built upon **Proof-of-Stake** mechanism and **Byzantine Fault Tolerant consensus. 
-5. MAPO Chain accomplished heterogeneous expansion on the EVM level, which simplified the complexity of engineering and **minimized the gas fee** for cross-chain verification between heterogeneous chains. 
-6. By connecting with MAPO Chain, EVM and non-EVM chains form a cross-chain execution and verification network. 
+4. MAPO Relay Chain is fully EVM compatible built upon **Proof-of-Stake** mechanism and **Byzantine Fault Tolerant consensus. 
+5. MAPO Relay Chain accomplished heterogeneous expansion on the EVM level, which simplified the complexity of engineering and **minimized the gas fee** for cross-chain verification between heterogeneous chains. 
+6. By connecting with MAPO Relay Chain, EVM and non-EVM chains form a cross-chain execution and verification network. 
 7. MAP Protocol provides **SDK for the inter-chain communication component - Messenger** to dApp developers. Each dApp can have its own Messenger and tailor-make their reward scheme, which facilitates cross-chain transactions to be completed.
 8. MAP Protocol provides developers with MAP Cross-chain Services similar to Google GMS. It is convenient for developers to develop and **share omnichain asset liquidity and data.** 
 9. MAP Protocol supports **both assets and data cross-chain.**
-10. MAPO Chain supports the development of all omnichain dApps, including omnichain oracle, omnichain swap, cross-chain bridge for tokens and NFTs, decentralized derivatives, omnichain DAO, and omnichain GameFi, etc. 
+10. MAPO Relay Chain supports the development of all omnichain dApps, including omnichain oracle, omnichain swap, cross-chain bridge for tokens and NFTs, decentralized derivatives, omnichain DAO, and omnichain GameFi, etc. 
 
 ### Technical Illustration of MAP Protocol
 
-Developers can deploy omnichain dApps on MAPO Chain to achieve interoperability.  
+Developers can deploy omnichain dApps on MAPO Relay Chain to achieve interoperability.  
 
 ![](jishutu.png)

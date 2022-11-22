@@ -1,4 +1,4 @@
-# MAPO Chain
+# MAPO Relay Chain
 
 
 ## Endpoints

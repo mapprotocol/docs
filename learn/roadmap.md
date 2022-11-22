@@ -4,7 +4,7 @@
 
 ### 2021.Q3
 
-- Launch MAPO Chain Makalu Testnet, start the ligth-client veification cross-chain between MAP Makalu and Ethereum.
+- Launch MAPO Relay Chain Makalu Testnet, start the ligth-client veification cross-chain between MAP Makalu and Ethereum.
 - Launch MAPO Service (MOS) for testnet.
 - Start maintainer mining, invite users to participate maintainer test.
 
@@ -16,9 +16,9 @@
 
 ### 2022.Q2
 
-- Launch MAPO Chain, support more signature, hash, mining and Merkel proof calculation precompiled contracts.
+- Launch MAPO Relay Chain, support more signature, hash, mining and Merkel proof calculation precompiled contracts.
 - Launch the explorer and PoS DApp.
-- Provide SDK to interact with MAPO Chain.
+- Provide SDK to interact with MAPO Relay Chain.
 - Provide MOS SDK test version.
 
 ### 2022.Q3

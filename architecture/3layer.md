@@ -2,7 +2,7 @@ MAP Protocol is structured in **three layers**: **MAP Protocol Layer**, **MAPO S
 
 ## MAPO Application Layer
 
-- Assets and data originated from dApps assembly on MAPO Chain
+- Assets and data originated from dApps assembly on MAPO Relay Chain
 - DApps can achieve interoperability because of MAPO Services (MOS)
 - The finality of omnichain data and asset verification network by MAP Protocol Layer empowers dApps to grow limitless.
 
@@ -18,8 +18,8 @@ MAP Protocol is structured in **three layers**: **MAP Protocol Layer**, **MAPO S
 
 ## Protocol Layer - Construct the CORE of Omnichain Network Infrastructure: Verification Finality Network and dApp Deployment 
 
-- Consists of: MAPO Chain, Light-Client deployed on each chain, and inter-chain Maintainer Program to update and maintain Light-Client status.
-- MAPO Chain proactively extends and supports heterogeneous blockchains' features in virtual machine, which construct a gas-efficient Light-Client verification network.
+- Consists of: MAPO Relay Chain, Light-Client deployed on each chain, and inter-chain Maintainer Program to update and maintain Light-Client status.
+- MAPO Relay Chain proactively extends and supports heterogeneous blockchains' features in virtual machine, which construct a gas-efficient Light-Client verification network.
 - Light-Client deployed on each chain has the characteristics of independent self-verification and verification finality, which becomes the verification network for cross-chain assets and data. 
 - The Maintainer is an independent inter-chain program responsible for updating the status of Light Clients. The mechanism of the Light-client assures the invalidity of malicious attacks from maintainer. 
 
