@@ -177,3 +177,7 @@ When a validator is deRegistered, voters can still cancel the votes on the deReg
 
 If voter don't withdraw his vote,voters vote will remain in the voting area,Wait for the validator to register again,
 and these tickets will be returned to the validator again.
+
+## Implementation
+
+[EpochRewards.sol](https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/EpochRewards.sol) manages  calculating epoch rewards.

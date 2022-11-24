@@ -39,4 +39,4 @@ Votes persist between epochs, and the same vote is applied to each election unle
 
 ## Implementation
 
-[LockedGold.sol](https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/LockedGold.sol) manages the lifecycle of Locked Gold.
+[LockedGold.sol](https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/LockedGold.sol) manages the lifecycle of Locked `Map`.
