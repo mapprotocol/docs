@@ -36,3 +36,7 @@ The flow is as follows:
 - The account may choose to `unlock` an amount of Locked `MAP` at any time, provided that it is inactive: this means it is non-voting in Validator Elections, the `deregistrationPeriod` has elapsed if the amount has been used as a validator stake. Once an unlocking period of 3 days has passed, the account can call withdraw to have the LockedGold contract transfer them that amount.
 
 Votes persist between epochs, and the same vote is applied to each election unless and until it is changed. Vote withdrawal, vote changes, and additional `MAP` being used to vote have no effect on the validator set until the election finalizes at the end of the epoch.
+
+## Implementation
+
+[LockedGold.sol](https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/LockedGold.sol) manages the lifecycle of Locked Gold.
