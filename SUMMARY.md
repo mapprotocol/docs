@@ -69,8 +69,8 @@
     * EVM Chains
     * Near
   * Light Clients
-    * Light Client Manager
-    * Ethereum Light Client
+    * [Light Client Manager](develop/light-client/light-client-manager.md)
+    * [Ethereum Light Client](develop/light-client/ethereum.md)
     * BNB Smart Chain
     * Near Protocol
     * Polygon
