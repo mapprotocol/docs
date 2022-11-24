@@ -1,4 +1,4 @@
-#Locked MAP And Voting
+# Locked MAP And Voting
 
 If you create Account and locked `MAP` enough, you can vote as a voter.Note that the minimum locking amount is 10 `MAP`.
 

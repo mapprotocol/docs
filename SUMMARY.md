@@ -46,11 +46,12 @@
   * Consensus
     * [Overview](develop/map-relay-chain/consensus/Overview.md)
     * [Proof-of-Stake](develop/map-relay-chain/consensus/Proof-of-Stake.md)
-    * [Epoch And Block AggregatedSeal](develop/map-relay-chain/consensus/AggregatedSeal.md)
-    * [Validator](develop/map-relay-chain/consensus/Validator.md)
-    * [Locked MAP](develop/map-relay-chain/consensus/LockedMAP.md)
+    * Validator
+      * [Validator](develop/map-relay-chain/consensus/Validator.md)
+      * [Locked MAP](develop/map-relay-chain/consensus/LockedMAP.md)
     * [Election](develop/map-relay-chain/consensus/Election.md)
     * [Rewards](develop/map-relay-chain/consensus/Rewards.md)
+    * [Aggregated Seal](develop/map-relay-chain/consensus/AggregatedSeal.md)
   
   * [Contracts](develop/map-relay-chain/contracts/ContractsAddress.md)
     * [Precompiled Contracts](develop/map-relay-chain/contracts/precompile-contract/precompile-contract.md)
