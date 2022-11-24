@@ -64,29 +64,25 @@
     * [ContractOwner](develop/map-relay-chain/marker/AboutContractOwner.md)
     * [Common](develop/map-relay-chain/marker/AboutCommon.md)
 * Light Client
-  * [Eth LightClient Contract](develop/light-client/ethereum/light-client-data/Header-Store-Contract.md)
-  * [Eth LightClient Verify](develop/light-client/ethereum/tx-verify/Tx-Verify.md)
-  * [Eth LightClient Verify Contract](develop/light-client/ethereum/tx-verify/Tx-Verify-Contract.md)
-  * [MAP LightClient Verify](develop/light-client/map/tx-verify/Tx-Verify.md)
-  * [MAP LightClient](develop/light-client/map/tx-verify/Tx-Verify-Contract.md)
-  * [MAP LightClient on Near](develop/light-client/map/tx-verify/Map-light-client-on-near.md)
-  * [Near LightClinet on Map](develop/light-client/Near-light-client-on-map.md)
-* [Maintainer](develop/light-client/Maintainer.md)
+  * Verification based on Light Client
+  * MAPO Light Client
+    * EVM Chains
+    * Near
+  * Light Clients
+    * Light Client Manager
+    * Ethereum Light Client
+    * BNB Smart Chain
+    * Near Protocol
+    * Polygon
+  * [Maintainer](develop/light-client/Maintainer.md)
 * MAPO Service
-  * EVM Blockchain
-    * [Contract](develop/mcs/contract/bridge.md)
-    * ABI
-      * [Fee Center](develop/mcs/abi/FeeCenter.md)
-      * [Map Bridge Relay](develop/mcs/abi/MAPBridgeRelayV2.md)
-      * [Map Bridge](develop/mcs/abi/MAPBridgeV2.md)
-      * [Vault Token](develop/mcs/abi/VToken.md)
-      * [Staking](develop/mcs/abi/MasterChef.md)
-    * Address
-      * [MOS V1](develop/mcs/address/bridge-v1.md)
-      * [MOS V2 Test](develop/mcs/address/bridge_v2_test.md)
-  * NEAR Blockchain
-    * [Contract](develop/mcs-near/mcs-on-near.md)
-    * [How TO](develop/mcs-near/how-to.md)
+  * How to develop MOS contracts
+  * MCS Guides
+    * EVM Chains
+      * [Contract](develop/mcs/contract/bridge.md)
+    * NEAR Blockchain
+      * [Contract](develop/mcs-near/mcs-on-near.md)
+      * [How TO](develop/mcs-near/how-to.md)
   * [Messenger](develop/mcs/messenger/messenger.md)
   * [API](develop/mcs/api/api.md)
 * API & SDK
