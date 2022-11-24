@@ -51,14 +51,18 @@
     * [Locked MAP](develop/map-relay-chain/consensus/LockedMAP.md)
     * [Election](develop/map-relay-chain/consensus/Election.md)
     * [Rewards](develop/map-relay-chain/consensus/Rewards.md)
-  * [Precompiled Contracts](develop/map-relay-chain/contracts/precompile-contract/precompile-contract.md)
+  
   * [Contracts](develop/map-relay-chain/contracts/ContractsAddress.md)
-    * [Validator Contracts Deploy](develop/map-relay-chain/contracts/DeployContracts.md)
-    * [AccountsABI](develop/map-relay-chain/contracts/ABI/AccountsABI.md)
-    * [ElectionABI](develop/map-relay-chain/contracts/ABI/ElectionABI.md)
-    * [EpochRewardsABI](develop/map-relay-chain/contracts/ABI/EpochRewardsABI.md)
-    * [LockedGoldABI](develop/map-relay-chain/contracts/ABI/LockedGoldABI.md)
-    * [ValidatorsABI](develop/map-relay-chain/contracts/ABI/ValidatorsABI.md)
+    * [Precompiled Contracts](develop/map-relay-chain/contracts/precompile-contract/precompile-contract.md)
+    * Genesis Contracts
+      * ABI
+        * [AccountsABI](develop/map-relay-chain/contracts/ABI/AccountsABI.md)
+        * [ElectionABI](develop/map-relay-chain/contracts/ABI/ElectionABI.md)
+        * [EpochRewardsABI](develop/map-relay-chain/contracts/ABI/EpochRewardsABI.md)
+        * [LockedGoldABI](develop/map-relay-chain/contracts/ABI/LockedGoldABI.md)
+        * [ValidatorsABI](develop/map-relay-chain/contracts/ABI/ValidatorsABI.md)
+      * [Deploy](develop/map-relay-chain/contracts/DeployContracts.md)
+    
   * [Marker](develop/map-relay-chain/marker/Marker.md)
     * [Genesis](develop/map-relay-chain/getting-started/how-to-make-genesis.md)
     * [Validator](develop/map-relay-chain/marker/AboutValidator.md)
