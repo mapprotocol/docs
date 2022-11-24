@@ -37,10 +37,12 @@
 ## Develop
 
 * [MAPO Relay Chain](develop/map-relay-chain/README.md)
-  * [Make Private Chain](develop/map-relay-chain/make-private-chain.md)
-  * [How To Vote](develop/map-relay-chain/how-to-vote.md)
-  * [How To Withdraw](develop/map-relay-chain/how-to-withdraw.md)
-  * [Integrate an Exchange](develop/map-relay-chain/Integrate-an-Exchange.md)
+  * Getting Started
+    * [Build](develop/map-relay-chain/getting-started/build.md)
+    * [Make Private Chain](develop/map-relay-chain/getting-started/make-private-chain.md)
+    * [How To Vote](develop/map-relay-chain/getting-started/how-to-vote.md)
+    * [How To Withdraw](develop/map-relay-chain/getting-started/how-to-withdraw.md)
+    * [Integrate an Exchange](develop/map-relay-chain/getting-started/Integrate-an-Exchange.md)
   * Consensus
     * [Overview](develop/map-relay-chain/consensus/Overview.md)
     * [Proof-of-Stake](develop/map-relay-chain/consensus/Proof-of-Stake.md)
@@ -58,7 +60,7 @@
     * [LockedGoldABI](develop/map-relay-chain/contracts/ABI/LockedGoldABI.md)
     * [ValidatorsABI](develop/map-relay-chain/contracts/ABI/ValidatorsABI.md)
   * [Marker](develop/map-relay-chain/marker/Marker.md)
-    * [Genesis](develop/map-relay-chain/how-to-make-genesis.md)
+    * [Genesis](develop/map-relay-chain/getting-started/how-to-make-genesis.md)
     * [Validator](develop/map-relay-chain/marker/AboutValidator.md)
     * [Vote](develop/map-relay-chain/marker/AboutVote.md)
     * [ContractOwner](develop/map-relay-chain/marker/AboutContractOwner.md)
