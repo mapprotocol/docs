@@ -80,6 +80,7 @@
     * [BNB Smart Chain](develop/light-client/clients/bsc.md)
     * [Near Protocol](develop/light-client/clients/near.md)
     * [Polygon(Matic)]((develop/light-client/clients/matic.md))
+    * [Ethereum 2.0](develop/light-client/clients/eth2.md))
   * [Maintainer](develop/light-client/Maintainer.md)
 * MAPO Service
   * How to develop MOS contracts
