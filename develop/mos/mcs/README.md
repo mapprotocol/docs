@@ -1,10 +1,13 @@
 # MCS 
 
-## What is MCS?
+## What is MCS
 MCS(MAPO Cross-chain Service) is a MOS implementation. It supports token cross-chain transfer.
 
 Now MCS supports [EVM chains](https://github.com/mapprotocol/map-contracts/tree/main/mcs/evmv2) and [Near Protocol](https://github.com/mapprotocol/map-contracts/tree/main/mcs/near).
 
+## How to test
+1. Get MAPO and MOST test token from [MAPO Faucet](https://faucet.mapprotocol.io)
+2. Try to cross-chain transfer on [Butter Bridge](https://test-bridge.butternetwork.io)
 
 ## MCS testnet address
 
@@ -38,11 +41,12 @@ Now MCS supports [EVM chains](https://github.com/mapprotocol/map-contracts/tree/
 
 ### mcs
 
-### proof verification
 
 ### vault
 
 ### fee
+
+### proof verification
 
 ## How it works
 
