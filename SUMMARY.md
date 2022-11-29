@@ -86,12 +86,12 @@
   * How to develop MOS contracts
   * [MCS Guides](develop/mos/mcs/README.md)
     * [How To Use](develop/mos/mcs/how-to.md)
-    * EVM Chains
-      * [Contract](develop/mos/mcs/mcs-on-evm.md)
-      * [How TO](develop/mos/mcs/how-to-evm.md)
-    * NEAR Protocol
-      * [Contract](develop/mos/mcs/mcs-on-near.md)
-      * [How TO](develop/mos/mcs/how-to-near.md)
+      * [How TO On Evm Chains](develop/mos/mcs/how-to-evm.md)
+      * [How TO On Near Protocol](develop/mos/mcs/how-to-near.md)
+    * Relay Chain Contract
+    * [EVM Chains Contract](develop/mos/mcs/mcs-on-evm.md)
+    * [Near Protocol Contract](develop/mos/mcs/mcs-on-near.md)
+      
   * [Messenger](develop/mos/messenger/messenger.md)
   * [API](develop/mos/mcs/api/api.md)
 * API & SDK
