@@ -1,4 +1,4 @@
-# Map cross chain service (MCS) on near blockchain
+# Map cross chain service (MCS) on near protocol
 
 ## Contract Address
 

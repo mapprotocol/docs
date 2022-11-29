@@ -84,14 +84,16 @@
   * [Maintainer](develop/light-client/Maintainer.md)
 * MAPO Service
   * How to develop MOS contracts
-  * MCS Guides
+  * [MCS Guides](develop/mos/mcs/README.md)
+    * [How To Use](develop/mos/mcs/how-to.md)
     * EVM Chains
-      * [Contract](develop/mcs/contract/bridge.md)
-    * NEAR Blockchain
-      * [Contract](develop/mcs-near/mcs-on-near.md)
-      * [How TO](develop/mcs-near/how-to.md)
-  * [Messenger](develop/mcs/messenger/messenger.md)
-  * [API](develop/mcs/api/api.md)
+      * [Contract](develop/mos/mcs/mcs-on-evm.md)
+      * [How TO](develop/mos/mcs/how-to-evm.md)
+    * NEAR Protocol
+      * [Contract](develop/mos/mcs/mcs-on-near.md)
+      * [How TO](develop/mos/mcs/how-to-near.md)
+  * [Messenger](develop/mos/messenger/messenger.md)
+  * [API](develop/mos/mcs/api/api.md)
 * API & SDK
   * [Atlas JSON RPC](sdk/RPC-API.md)
   * [Atlas Consensus API](sdk/ConsensusAPI.md)
