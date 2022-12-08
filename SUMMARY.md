@@ -70,17 +70,16 @@
     * [Vote](develop/map-relay-chain/marker/AboutVote.md)
     * [ContractOwner](develop/map-relay-chain/marker/AboutContractOwner.md)
     * [Common](develop/map-relay-chain/marker/AboutCommon.md)
-* Light Client
+* [Light Client](develop/light-client/README.md)
   * Verification based on Light Client
   * MAPO Light Client
-    * EVM Chains
-    * Near
+    * [EVM Chains](develop/light-client/map/evm.md)
+    * [Near](develop/light-client/map/near.md)
   * Light Clients
-    * [Light Client Manager](develop/light-client/light-client-manager.md)
-    * [Ethereum Light Client](develop/light-client/ethereum.md)
-    * BNB Smart Chain
-    * Near Protocol
-    * Polygon
+    * [Client Manager](develop/light-client/light-client-manager.md)
+    * [BNB Smart Chain](develop/light-client/clients/bsc.md)
+    * [Near Protocol](develop/light-client/clients/near.md)
+    * [Polygon(Matic)]((develop/light-client/clients/matic.md))
   * [Maintainer](develop/light-client/Maintainer.md)
 * MAPO Service
   * How to develop MOS contracts
@@ -91,7 +90,6 @@
     * Relay Chain Contract
     * [EVM Chains Contract](develop/mos/mcs/mcs-on-evm.md)
     * [Near Protocol Contract](develop/mos/mcs/mcs-on-near.md)
-      
   * [Messenger](develop/mos/messenger/messenger.md)
   * [API](develop/mos/mcs/api/api.md)
 * API & SDK
