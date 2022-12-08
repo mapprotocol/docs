@@ -1,11 +1,9 @@
-# Map light client on near blockchain
+# MAPO light client on near protocol
 
 ## Contract Address
 
-Map light client contract is deployed at address:
+[Here to get MAPO mainnet and testnet light client contract address.](/develop/light-client/README.md)
 
-```
-```
 
 ## Contract interface
 
