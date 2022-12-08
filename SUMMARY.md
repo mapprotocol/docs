@@ -38,12 +38,14 @@
 
 * [MAPO Relay Chain](develop/map-relay-chain/README.md)
   * Getting Started
+
     * [Build](develop/map-relay-chain/getting-started/build.md)
     * [Make Private Chain](develop/map-relay-chain/getting-started/make-private-chain.md)
     * [How To Vote](develop/map-relay-chain/getting-started/how-to-vote.md)
     * [How To Withdraw](develop/map-relay-chain/getting-started/how-to-withdraw.md)
     * [Integrate an Exchange](develop/map-relay-chain/getting-started/Integrate-an-Exchange.md)
   * Consensus
+
     * [Overview](develop/map-relay-chain/consensus/Overview.md)
     * [Proof-of-Stake](develop/map-relay-chain/consensus/Proof-of-Stake.md)
     * Validator
@@ -52,8 +54,8 @@
     * [Election](develop/map-relay-chain/consensus/Election.md)
     * [Rewards](develop/map-relay-chain/consensus/Rewards.md)
     * [Aggregated Seal](develop/map-relay-chain/consensus/AggregatedSeal.md)
-  
   * [Contracts](develop/map-relay-chain/contracts/ContractsAddress.md)
+
     * [Precompiled Contracts](develop/map-relay-chain/contracts/precompile-contract/precompile-contract.md)
     * Genesis Contracts
       * ABI
@@ -63,8 +65,8 @@
         * [LockedGoldABI](develop/map-relay-chain/contracts/ABI/LockedGoldABI.md)
         * [ValidatorsABI](develop/map-relay-chain/contracts/ABI/ValidatorsABI.md)
       * [Deploy](develop/map-relay-chain/contracts/DeployContracts.md)
-    
   * [Marker](develop/map-relay-chain/marker/Marker.md)
+
     * [Genesis](develop/map-relay-chain/getting-started/how-to-make-genesis.md)
     * [Validator](develop/map-relay-chain/marker/AboutValidator.md)
     * [Vote](develop/map-relay-chain/marker/AboutVote.md)
@@ -79,7 +81,7 @@
     * [Client Manager](develop/light-client/light-client-manager.md)
     * [BNB Smart Chain](develop/light-client/clients/bsc.md)
     * [Near Protocol](develop/light-client/clients/near.md)
-    * [Polygon(Matic)]((develop/light-client/clients/matic.md))
+    * [Polygon(Matic)](develop/light-client/clients/matic.md)
     * [Ethereum 2.0](develop/light-client/clients/eth2.md))
   * [Maintainer](develop/light-client/Maintainer.md)
 * MAPO Service
