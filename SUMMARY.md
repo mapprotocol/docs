@@ -88,7 +88,7 @@
     * [How To Use](develop/mos/mcs/how-to.md)
       * [How TO On Evm Chains](develop/mos/mcs/how-to-evm.md)
       * [How TO On Near Protocol](develop/mos/mcs/how-to-near.md)
-    * Relay Chain Contract
+    * [Relay Chain Contract](develop/mos/mcs/mcs-on-mapo.md)
     * [EVM Chains Contract](develop/mos/mcs/mcs-on-evm.md)
     * [Near Protocol Contract](develop/mos/mcs/mcs-on-near.md)
       
