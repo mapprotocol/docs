@@ -27,7 +27,7 @@
    ```shell
    npx hardhat relayRegisterChain --address <MOS address> --chain <near chain id> --type 2 --network <network>
    ```
-**NOTE**: Near Protocol testnet chain id 5566818579631833089, mainnet chain id 5566818579631833088
+   **NOTE**: Near Protocol testnet chain id 5566818579631833089, mainnet chain id 5566818579631833088
 
 
 ## Register token
@@ -74,7 +74,7 @@
    npx hardhat mosSetMintableToken --token <token address> --mintable <true/false> --network <network>
    ````
 
-**NOTE:** If set the token mintable, the token must grant the minter role to mos contract.
+   **NOTE:** If set the token mintable, the token must grant the minter role to mos contract.
 
 4. Altchain sets bridge token
 
@@ -98,7 +98,7 @@
    npx hardhat depositOutToken --mos <mos address> --token <token address> --address <receiver address> --value <transfer value> --network <network>
    ```
 
-***Note*** that the `--token` parameter is optional, if not set, it means to transfer out Native Token.
+   ***Note*** that the `--token` parameter is optional, if not set, it means to transfer out Native Token.
 Similarly --address is also an optional parameter. If it is not filled in, it will be the default caller's address.
 
 3. transfer native token to other chain:

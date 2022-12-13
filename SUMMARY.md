@@ -87,6 +87,7 @@
 * MAPO Service
   * How to develop MOS contracts
   * [MCS Guides](develop/mos/mcs/README.md)
+    * [How It Works](develop/mos/mcs/how-it-works.md)
     * [How To Use](develop/mos/mcs/how-to.md)
       * [How TO On Evm Chains](develop/mos/mcs/how-to-evm.md)
       * [How TO On Near Protocol](develop/mos/mcs/how-to-near.md)

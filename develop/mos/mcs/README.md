@@ -34,36 +34,3 @@ Now MCS supports [EVM chains](https://github.com/mapprotocol/map-contracts/tree/
 |             | BSC Testnet  | [0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd](https://testnet.bscscan.com/token/0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd)    | 18       |          |
 | NEAR        | MAPO Makalu | [0x9a5a085F5ffF09e922149426CbF6892F7df1dF79](https://testnet.maposcan.io/token/0x9a5a085f5fff09e922149426cbf6892f7df1df79)    | 18       | mintable |
 |             | Near Testnet | [wrap.testnet](https://explorer.testnet.near.org/accounts/wrap.testnet)                                                       | 24       |          |
-
-## Glossary
-
-### mcs relay
-
-### mcs
-
-
-### vault
-
-### fee
-
-### proof verification
-
-## How it works
-
-### Token transfer
-
-![MCS Flow](mcs.png)
-
-
-1. transfer out
-
-2. transfer relay
-
-3. transfer in
-
-
-### Vault deposit
-
-1. deposit out
-
-2. deposit in
