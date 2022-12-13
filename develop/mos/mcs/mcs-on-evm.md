@@ -1,15 +1,18 @@
 # EVM Chains Contract
 
+
+## Contract Address
+
+[Here to get MAPO mainnet and testnet MCS contract address.](/develop/mos/mcs/README.md)
+
+
 ## contract interface 
 
-```
+```solidity
 interface EvmChainContract {
     function initialize(address _wToken, address _lightNode)external;
     
-    function transferOutToken(address _token, 
-    bytes memory _to, 
-    uint256 _amount, 
-    uint256 _toChain) external;
+    function transferOutToken(address _token, bytes memory _to, uint256 _amount, uint256 _toChain) external;
     
     function transferOutNative(bytes memory _to, uint _toChain) external;
     
@@ -26,7 +29,94 @@ interface EvmChainContract {
 }
 ```
 
-## initialize
+## User Interface
+
+
+### transferOutToken
+
+Cross-chain transfer out token
+
+#### function
+
+function transferOutToken(address _token, bytes memory _to, uint256 _amount, uint256 _toChain) external
+
+#### parameters
+
+| parameter | type    | comment                                                      |
+| --------- | ------- | ------------------------------------------------------------ |
+| _token    | address | Token address to transfer tokens from                        |
+| _to       | bytes   | The destination chain receiving address of the token to be transferred out |
+| _amount   | uint256 | Amount of tokens to be transferred                           |
+| _toChain  | uint256 | Target chain id to transfer out                              |
+
+### transferOutNative
+
+Cross-chain transfer out of the native coin
+
+#### function
+
+function transferOutNative(bytes memory _to, uint _toChain) external
+
+#### parameters
+
+| parameter | type    | comment                                                      |
+| --------- | ------- | ------------------------------------------------------------ |
+| _to       | bytes   | The destination chain receiving address of the token to be transferred out |
+| _toChain  | uint256 | Target chain to transfer out                                 |
+
+### depositToken
+
+Deposit token to vault
+
+#### function
+
+function depositToken(address _token, address _to, uint _amount) external
+
+#### parameters
+
+| parameter | type    | comment                               |
+| --------- | ------- | ------------------------------------- |
+| _token    | address | Token address to transfer tokens from |
+| _to       | address | Target chain to transfer out          |
+| _amount   | uint    | Amount of tokens to be deposited      |
+
+### depositNative
+
+Deposit native coin to vault
+
+#### function
+
+function depositNative(address _to) external
+
+#### parameters
+
+| parameter | type    | comment                                                      |
+| --------- | ------- | ------------------------------------------------------------ |
+| _to       | address | The destination chain receiving address of the token to be transferred out |
+
+
+
+## Messenger Interface
+
+### transferIn
+
+Perform cross-chain transfer
+
+#### function
+
+function transferIn(uint256 _chainId, bytes memory _receiptProof) external
+
+#### parameters
+
+| parameter     | type    | comment                       |
+| ------------- | ------- | ----------------------------- |
+| _chainId      | uint256 | source chain id               |
+| _receiptProof | bytes   | source  chain  transfer proof |
+
+
+## Management Interface
+
+### initialize
 
 perform initialization
 
@@ -41,113 +131,6 @@ function initialize(address _wToken, address _lightNode)public
 | _wToken    | address | This is wrap contract address            |
 | _lightNode | address | This is the LightClient contract address |
 
-## transferOutToken
-
-Cross-chain transfer of tokens
-
-### function
-
-function transferOutToken(address _token, bytes memory _to, uint256 _amount, uint256 _toChain) external
-
-### parameters
-
-| parameter | type    | comment                                                      |
-| --------- | ------- | ------------------------------------------------------------ |
-| _token    | address | Token address to transfer tokens from                        |
-| _to       | bytes   | The destination chain receiving address of the token to be transferred out |
-| _amount   | uint256 | Amount of tokens to be transferred                           |
-| _toChain  | uint256 | Target chain id to transfer out                              |
-
-## transferOutNative
-
-Cross-chain transfer out of the native token
-
-### function
-
-function transferOutNative(bytes memory _to, uint _toChain) external
-
-### parameters
-
-| parameter | type    | comment                                                      |
-| --------- | ------- | ------------------------------------------------------------ |
-| _to       | bytes   | The destination chain receiving address of the token to be transferred out |
-| _toChain  | uint256 | Target chain to transfer out                                 |
-
-## depositToken
-
-Deposit Vault token across chains
-
-### function
-
-function depositToken(address _token, address _to, uint _amount) external
-
-### parameters
-
-| parameter | type    | comment                               |
-| --------- | ------- | ------------------------------------- |
-| _token    | address | Token address to transfer tokens from |
-| _to       | address | Target chain to transfer out          |
-| _amount   | uint    | Amount of tokens to be deposited      |
-
-## depositNative
-
-Deposit Vault  native token across chains
-
-### function
-
-function depositNative(address _to) external
-
-### parameters
-
-| parameter | type    | comment                                                      |
-| --------- | ------- | ------------------------------------------------------------ |
-| _to       | address | The destination chain receiving address of the token to be transferred out |
-
-
-
-## transferIn
-
-Perform cross-chain transfer
-
-### function
-
-function transferIn(uint256 _chainId, bytes memory _receiptProof) external
-
-### parameters
-
-| parameter     | type    | comment                       |
-| ------------- | ------- | ----------------------------- |
-| _chainId      | uint256 | source chain id               |
-| _receiptProof | bytes   | source  chain  transfer proof |
-
-## isBridgeable
-
-Check whether the token is registered in the target chain
-
-### function
-
-function isBridgeable(address _token, uint256 _toChain) public view returns (bool)
-
-### parameters
-
-| parameter | type    | comment         |
-| --------- | ------- | --------------- |
-| _token    | address | token address   |
-| _toChain  | uint256 | Target chain id |
-
-## isMintable
-
-Check whether the token has casting rights
-
-### function
-
-function isMintable(address _token) public view returns (bool)
-
-### parameters
-
-| parameter | type    | comment       |
-| --------- | ------- | ------------- |
-| _token    | address | token address |
 
 ## Data structure
 
