@@ -1,5 +1,6 @@
 # Map cross chain service (MCS) on near protocol
 
+![MOS](MOS.png)
 
 ## Contract Address
 

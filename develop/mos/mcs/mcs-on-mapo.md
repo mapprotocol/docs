@@ -1,6 +1,8 @@
 # Relay Chain Contract
 
 
+![MOSRelay](MOSRelay.png)
+
 ## Contract Address
 
 [Here to get MAPO mainnet and testnet MCS contract address.](/develop/mos/mcs/README.md)
