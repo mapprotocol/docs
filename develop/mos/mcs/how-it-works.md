@@ -54,7 +54,7 @@ Proof verification is to prove the proof to confirm that the cross-chain data is
 
 ## How it works
 
-![MCS Flow](mcs.png)
+![MCS Flow](mosFlowChart.png)
 
 ### Token transfer
 
