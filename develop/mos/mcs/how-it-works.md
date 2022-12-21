@@ -58,7 +58,7 @@ Proof verification is to prove the proof to confirm that the cross-chain data is
 
 ### Token transfer
 
-1. **transfer out**
+**transfer out**
 
 ​	The main process of cross chain transfer out is as follows:
 
@@ -74,7 +74,7 @@ Proof verification is to prove the proof to confirm that the cross-chain data is
 
 
 
-2. **transfer relay**
+**transfer relay**
 
 ​	The main process of the Maintainer monitoring information transferring out and calling the corresponding transferIn is as follows:
 
@@ -86,7 +86,7 @@ Proof verification is to prove the proof to confirm that the cross-chain data is
 
 
 
-3. **transfer in**
+**transfer in**
 
    The main process of cross chain transfer in of maintainer is as follows:
 
@@ -108,7 +108,7 @@ Proof verification is to prove the proof to confirm that the cross-chain data is
 
 
 
-1. **deposit out**
+**deposit out**
 
    The main process of MOS chain user pledge liquidity is as follows:
 
@@ -120,7 +120,7 @@ Proof verification is to prove the proof to confirm that the cross-chain data is
 
   
 
-2. **deposit in**
+**deposit in**
 
 ​	The initial application process of MOS (Maintainer) pledge liquidity is as follows:
 
