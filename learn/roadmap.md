@@ -41,6 +41,4 @@
 
 ### 2023.Q3
 - Extend cross-chain connections to more EVM compatible and non-EVM compatible chains: Cosmos ecosystem’s chain, Flow, etc.
-- Launch various SDKs from chain development to cross-chain components. 
-- Developers can easily deploy a dedicated chain with target application direction, and cross-chain functions are already embeded from the beginning.
-
+- Launch various SDKs from chain development to cross-chain components. Developers can easily deploy a dedicated chain with target application direction, and cross-chain functions are already embeded from the beginning.
