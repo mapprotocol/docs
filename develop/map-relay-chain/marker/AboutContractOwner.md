@@ -10,14 +10,11 @@ Updates the Locked Gold requirements for Validators.
 
 ```shell
 USAGE
-  $ ./Marker setValidatorLockedGoldRequirements
+  $ ./marker setValidatorLockedGoldRequirements
 
 OPTIONS
   --keystore                                                   Keystore file path
   
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address 
 
   --value                                                      The threshold you set to 
@@ -29,10 +26,9 @@ OPTIONS
                                                                deregister during this period.
                                                                
 EXAMPLES:
-./Marker      setValidatorLockedGoldRequirements
+./marker      setValidatorLockedGoldRequirements
 --rpcaddr     http://127.0.0.1:7445
 --keystore    ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password    ""
 --value       0
 --duration    0
 
@@ -49,14 +45,11 @@ Sets the relayer reward percentage
 
 ```shell
 USAGE
-  $ ./Marker setEpochRelayerPaymentFraction
+  $ ./marker setEpochRelayerPaymentFraction
 
 OPTIONS
   --keystore                                                   Keystore file path
   
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address 
 
   --relayerf                                                   The percentage of the total
@@ -65,10 +58,9 @@ OPTIONS
 
   
 EXAMPLES:
-./Marker setEpochRelayerPaymentFraction
+./marker setEpochRelayerPaymentFraction
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
 --relayerf 0.1
 
 
@@ -85,14 +77,11 @@ Sets the address of the implementation contract and calls into it.
 
 ```shell
 USAGE
-  $ ./Marker setImplementation
+  $ ./marker setImplementation
 
 OPTIONS
   --keystore                                                   Keystore file path
   
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address 
                                                                
   --contractAddress                                            Proxy contract Address    
@@ -103,10 +92,9 @@ OPTIONS
    
   
 EXAMPLES:
-./Marker                setImplementation
+./marker                setImplementation
 --rpcaddr               http://127.0.0.1:7445
 --keystore              ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password              ""
 --contractAddress       0x000000000000000000000000000000000000D012
 --ImplementationAddress 0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5
 
@@ -124,14 +112,11 @@ Transfers ownership of the contract to a new account (`newOwner`).
 
 ```shell
 USAGE
-  $ ./Marker setContractOwner
+  $ ./marker setContractOwner
 
 OPTIONS
   --keystore                                                   Keystore file path
   
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address 
                                                                
   --contractAddress                                            Proxy contract Address    
@@ -141,10 +126,9 @@ OPTIONS
    
   
 EXAMPLES:
-./Marker                setContractOwner
+./marker                setContractOwner
 --rpcaddr               http://127.0.0.1:7445
 --keystore              ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password              ""
 --contractAddress       0x000000000000000000000000000000000000D012
 --target                0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5
 
@@ -162,14 +146,11 @@ Transfers ownership of Proxy to a new owner.
 
 ```shell
 USAGE
-  $ ./Marker setProxyContractOwner
+  $ ./marker setProxyContractOwner
 
 OPTIONS
   --keystore                                                   Keystore file path
   
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address 
                                                                
   --contractAddress                                            Proxy contract Address    
@@ -179,10 +160,9 @@ OPTIONS
    
   
 EXAMPLES:
-./Marker                setProxyContractOwner
+./marker                setProxyContractOwner
 --rpcaddr               http://127.0.0.1:7445
 --keystore              ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password              ""
 --contractAddress       0x000000000000000000000000000000000000D012
 --target                0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5
 

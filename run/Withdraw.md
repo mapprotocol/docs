@@ -18,7 +18,7 @@ unregister operation can only be performed 60 days after registration as a valid
 the last block of the current epoch to take effect.
 
 ```shell
-./marker deregister --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --password ""
+./marker deregister --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33
 
 INFO [08-02|16:52:40.688] === deregisterValidator === 
 INFO [08-02|16:52:40.701] TxInfo                                   func=sendContractTransaction TX data nonce =10  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =22776
@@ -31,7 +31,7 @@ INFO [08-02|16:52:41.107] Transaction Success                      func=queryTx 
 This step is used to convert the state of your MAP from locked to unlocked
 
 ```shell
-./marker unlockMap --rpcaddr http://127.0.0.1:7445 --keystore  /Users/alex/data/atlas-1/keystore/UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --password "" --mapValue 0
+./marker unlockMap --rpcaddr http://127.0.0.1:7445 --keystore  /Users/alex/data/atlas-1/keystore/UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --lockedNum 200000
 
 INFO [08-02|17:24:16.166] === unLock validator gold === 
 INFO [08-02|17:24:16.166] unLock validator gold                    amount=200,000,000,000,000,000,000,000 admin=0x73bC690093b9dD0400c91886184A60cC127b2c33
@@ -59,7 +59,7 @@ This step will redeem the status of the reward from the unlocked state to the ba
 unlocked for 15 days before it can be executed.
 
 ```shell
-./marker withdrawMap --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --password "" --withdrawIndex 1
+./marker withdrawMap --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --withdrawIndex 1
 
 INFO [08-02|17:24:44.848] === withdraw validator gold ===          admin=0x73bC690093b9dD0400c91886184A60cC127b2c33
 INFO [08-02|17:24:44.858] TxInfo                                   func=sendContractTransaction TX data nonce =16  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =22776
@@ -91,7 +91,7 @@ INFO [08-03|14:41:27.100] validator                                Address=0x73b
 ### Query your account's active votes for validator
 
 ```shell
-./marker getActiveVotesForValidatorByAccount --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-17T03-50-52.931374000Z--6d842e9c25c0c6246231296ca6ecf4bc8268949f --password "" --target 0x73bc690093b9dd0400c91886184a60cc127b2c33
+./marker getActiveVotesForValidatorByAccount --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-17T03-50-52.931374000Z--6d842e9c25c0c6246231296ca6ecf4bc8268949f --target 0x73bc690093b9dd0400c91886184a60cc127b2c33
 
 INFO [08-03|14:41:59.009] === getActiveVotesForValidatorByAccount === admin=0x6D842E9c25C0c6246231296ca6ECf4bC8268949F
 INFO [08-03|14:41:59.011] ActiveVotes                              balance=100,648,411,651,178,302,866,465
@@ -100,7 +100,7 @@ INFO [08-03|14:41:59.011] ActiveVotes                              balance=100,6
 ### Revokes active votes for validator
 
 ```shell
-./marker revokeActive --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-17T03-50-52.931374000Z--6d842e9c25c0c6246231296ca6ecf4bc8268949f --password "" --validator 0x73bc690093b9dd0400c91886184a60cc127b2c33 --mapValue 50000
+./marker revokeActive --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-17T03-50-52.931374000Z--6d842e9c25c0c6246231296ca6ecf4bc8268949f --target 0x73bc690093b9dd0400c91886184a60cc127b2c33 --lockedNum 50000
 INFO [08-03|14:43:01.909] === revokeActive ===                     admin=0x6D842E9c25C0c6246231296ca6ECf4bC8268949F
 INFO [08-03|14:43:01.928] TxInfo                                   func=sendContractTransaction TX data nonce =5  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =22776
 INFO [08-03|14:43:01.931] Please waiting                           func=getResult                txHash =0x8dd81d60fdddb8e23f8edaeb243477bce34ab8e835d594f1081b17d4d48c089d
@@ -120,7 +120,7 @@ INFO [08-03|14:43:20.661] result                                   lockedGold=50
 This step is used to convert the state of your MAP from locked to unlocked
 
 ```shell
-./marker unlockMap --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-17T03-50-52.931374000Z--6d842e9c25c0c6246231296ca6ecf4bc8268949f --password "" --mapValue 50000
+./marker unlockMap --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-17T03-50-52.931374000Z--6d842e9c25c0c6246231296ca6ecf4bc8268949f --lockedNum 50000
 INFO [08-03|14:45:33.629] === unLock validator gold === 
 INFO [08-03|14:45:33.629] unLock validator gold                    amount=50,000,000,000,000,000,000,000 admin=0x6D842E9c25C0c6246231296ca6ECf4bC8268949F
 INFO [08-03|14:45:33.641] TxInfo                                   func=sendContractTransaction TX data nonce =6  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =22776
@@ -144,7 +144,7 @@ This step will redeem the status of the reward from the unlocked state to the ba
 unlocked for 15 days before it can be executed.
 
 ```shell
-./marker withdrawMap --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-17T03-50-52.931374000Z--6d842e9c25c0c6246231296ca6ecf4bc8268949f --password "" --withdrawIndex 0
+./marker withdrawMap --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-17T03-50-52.931374000Z--6d842e9c25c0c6246231296ca6ecf4bc8268949f --withdrawIndex 0
 
 INFO [08-03|14:46:21.582] === withdraw validator gold ===          admin=0x6D842E9c25C0c6246231296ca6ECf4bC8268949F
 INFO [08-03|14:46:21.591] TxInfo                                   func=sendContractTransaction TX data nonce =7  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =22776
