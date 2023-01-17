@@ -8,14 +8,11 @@ create an account
 
 ```shell
 USAGE
-  $ ./Marker createAccount
+  $ ./marker createAccount
 
 OPTIONS
   --keystore                                                   Keystore file path
   
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address 
 
   --name                                                you can marker your account
@@ -23,10 +20,9 @@ OPTIONS
                                                               and so on that you want 
 
 EXAMPLES:
-./Marker createAccount
+./marker createAccount
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
 --name "validator"
 
 RESPONSE:
@@ -41,13 +37,10 @@ Locks map to be used for voting or register validator
 
 ```shell
 USAGE
-  $ ./Marker lockedMAP
+  $ ./marker lockedMAP
 
 OPTIONS
   --keystore                                                   Keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
 
   --rpcaddr                                                    HTTP-RPC server address 
 
@@ -56,10 +49,9 @@ OPTIONS
                                                             
 
 EXAMPLES:
-./Marker lockedMAP
+./marker lockedMAP
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
 --lockedNum 1000000
 
 RESPONSE:
@@ -74,26 +66,22 @@ Unlocks `MAP` that becomes withdrawable after the unlocking period.
 
 ```shell
 USAGE
-  $ ./Marker unlockMap
+  $ ./marker unlockMap
 
 OPTIONS
   --keystore                                                   Keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
 
   --rpcaddr                                                    HTTP-RPC server address 
 
-  --mapValue                                                   The `MAP` you want to unlock
+  --lockedNum                                                   The `MAP` you want to unlock
                                                               
                                                             
 
 EXAMPLES:
-./Marker unlockMap
+./marker unlockMap
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
---mapValue 1000000
+--lockedNum 1000000
 
 RESPONSE:
 success
@@ -107,26 +95,22 @@ Relocks map that has been unlocked but not withdrawn.
 
 ```shell
 USAGE
-  $ ./Marker relockMAP
+  $ ./marker relockMAP
 
 OPTIONS
   --keystore                                                   Keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
 
   --rpcaddr                                                    HTTP-RPC server address
                                                                                                                        
-  --mapValue                                                   The `MAP` you want to Relocks
+  --lockedNum                                                   The `MAP` you want to Relocks
                                                               
   --relockIndex                                                from `getPendingWithdrawals` command                                                     
 
 EXAMPLES:
-./Marker relockMAP
+./marker relockMAP
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
- --mapValue 100000
+ --lockedNum 100000
 --relockIndex 1
 
 RESPONSE:
@@ -141,23 +125,19 @@ Withdraws `MAP` that has been unlocked after the unlocking period has passed.
 
 ```shell
 USAGE
-  $ ./Marker withdrawMap
+  $ ./marker withdrawMap
 
 OPTIONS
   --keystore                                                   Keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
 
   --rpcaddr                                                    HTTP-RPC server address
                                                               
   --withdrawIndex                                             from `getPendingWithdrawals` command                                                     
 
 EXAMPLES:
-./Marker withdrawMap
+./marker withdrawMap
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
 --withdrawIndex 1
 
 RESPONSE:
@@ -172,14 +152,14 @@ Returns the number of registered validators
 
 ```shell
 USAGE
-  $ ./Marker getNumRegisteredValidators
+  $ ./marker getNumRegisteredValidators
 
 OPTIONS
   --rpcaddr                                                    HTTP-RPC server address
                                                                                                                
 
 EXAMPLES:
-./Marker getNumRegisteredValidators --rpcaddr http://127.0.0.1:7445
+./marker getNumRegisteredValidators --rpcaddr http://127.0.0.1:7445
 
 RESPONSE:
 100
@@ -191,7 +171,7 @@ Returns the top n validator members for a particular validator.
 
 ```shell
 USAGE
-  $ ./Marker getTopValidators
+  $ ./marker getTopValidators
 
 OPTIONS
   --rpcaddr                                                    HTTP-RPC server address 
@@ -203,7 +183,7 @@ OPTIONS
                                                                commond                                                                                                      
 
 EXAMPLES:
-./Marker GetTopValidators
+./marker GetTopValidators
 --rpcaddr http://127.0.0.1:7445
 --topNum 6
 
@@ -221,13 +201,13 @@ Returns lists of all validator validators and the number of votes they've receiv
 
 ```shell
 USAGE
-  $ ./Marker getTotalVotesForEligibleValidators
+  $ ./marker getTotalVotesForEligibleValidators
 
 OPTIONS
   --rpcaddr                                                    HTTP-RPC server address                                                                                                  
 
 EXAMPLES:
-./Marker getTotalVotesForEligibleValidators
+./marker getTotalVotesForEligibleValidators
 --rpcaddr http://127.0.0.1:7445
 
 
@@ -248,13 +228,13 @@ Returns the total votes received across all validators.
 ```shell
 
 USAGE
-  $ ./Marker getTotalVotes
+  $ ./marker getTotalVotes
 
 OPTIONS
   --rpcaddr                                                    HTTP-RPC server address                                                                                                  
 
 EXAMPLES:
-./Marker getTotalVotes
+./marker getTotalVotes
 --rpcaddr http://127.0.0.1:7445
 
 RESPONSE:
@@ -268,17 +248,17 @@ Returns whether or not a validator is eligible to receive votes.
 
 ```shell
 USAGE
-  $ ./Marker getValidatorEligibility
+  $ ./marker getValidatorEligibility
 
 OPTIONS
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
-  --validator                                                  validatorAddress
+  --target                                                     Your target validator address
   
 EXAMPLES:
-./Marker getValidatorEligibility
+./marker getValidatorEligibility
 --rpcaddr http://127.0.0.1:7445
---validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
+--target 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
 RESPONSE:
 INFO [03-14|17:10:27.990] === getValidatorEligibility ===          admin=0x0000000000000000000000000000000000000000
@@ -292,17 +272,17 @@ Returns the validator`s information.
 ```shell
 
 USAGE
-  $ ./Marker getValidator
+  $ ./marker getValidator
 
 OPTIONS
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
-  --validator                                                  validatorAddress
+  --target                                                     Your target validator address
   
 EXAMPLES:
-./Marker getValidator
+./marker getValidator
 --rpcaddr http://127.0.0.1:7445
---validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
+--target 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
 RESPONSE:
 INFO [03-14|17:12:22.303] === getValidator ===                     admin=0x0000000000000000000000000000000000000000
@@ -324,13 +304,13 @@ Returns the awards of the last epoch
 ```shell
 
 USAGE
-  $ ./Marker getValidatorRewardInfo
+  $ ./marker getValidatorRewardInfo
 
 OPTIONS
   --rpcaddr                                                    HTTP-RPC server address   
   
 EXAMPLES:
-./Marker getValidatorRewardInfo
+./marker getValidatorRewardInfo
 --rpcaddr http://127.0.0.1:7445
 
 RESPONSE:
@@ -350,17 +330,17 @@ Returns the pending votes for `validator` made by `account`.
 ```shell
 
 USAGE
-  $ ./Marker getPendingVotesForValidatorByAccount
+  $ ./marker getPendingVotesForValidatorByAccount
 
 OPTIONS
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
-  --validator                                                  validatorAddress
+  --target                                                     Your target validator address
   
 EXAMPLES:
-./Marker getPendingVotesForValidatorByAccount
+./marker getPendingVotesForValidatorByAccount
 --rpcaddr http://127.0.0.1:7445
---validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
+--target 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
 RESPONSE:
 INFO [03-14|17:16:39.474] === getPendingVotesForValidatorByAccount === admin=0x0000000000000000000000000000000000000000
@@ -373,17 +353,17 @@ Returns the pending votes for `validator` made by `account` And the pending Epoc
 
 ```shell
 USAGE
-  $ ./Marker getPendingInfoForValidator
+  $ ./marker getPendingInfoForValidator
 
 OPTIONS
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
-  --validator                                                  validatorAddress
+  --target                                                     Your target validator address
   
 EXAMPLES:
-./Marker GetPendingInfoForValidator
+./marker GetPendingInfoForValidator
 --rpcaddr http://127.0.0.1:7445
---validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
+--target 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
 RESPONSE:
 INFO [03-14|17:20:49.046] === getPendingInfoForValidator ===       admin=0x0000000000000000000000000000000000000000
@@ -396,17 +376,17 @@ Returns the active votes for `validator` made by `account`.
 
 ```shell
 USAGE
-  $ ./Marker getActiveVotesForValidatorByAccount
+  $ ./marker getActiveVotesForValidatorByAccount
 
 OPTIONS
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
-  --validator                                                  validatorAddress
+  --target                                                     Your target validator address
   
 EXAMPLES:
-./Marker getActiveVotesForValidatorByAccount
+./marker getActiveVotesForValidatorByAccount
 --rpcaddr http://127.0.0.1:7445
---validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
+--target 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
 RESPONSE:
 INFO [03-14|17:24:41.690] === getActiveVotesForValidatorByAccount === admin=0x0000000000000000000000000000000000000000
@@ -419,17 +399,17 @@ Returns the validators that `account` has voted for.
 
 ```shell
 USAGE
-  $ ./Marker getValidatorsVotedForByAccount
+  $ ./marker getValidatorsVotedForByAccount
 
 OPTIONS
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
-  --validator                                                  validatorAddress
+  --target                                                     Your target validator address
   
 EXAMPLES:
-./Marker getValidatorsVotedForByAccount
+./marker getValidatorsVotedForByAccount
 --rpcaddr http://127.0.0.1:7445
---validator 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
+--target 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
 RESPONSE:
 INFO [03-14|17:26:57.697] === getValidatorsVotedForByAccount ===   admin=0x0000000000000000000000000000000000000000
@@ -442,7 +422,7 @@ Returns the total amount of locked `MAP` for an account.
 
 ```shell
 USAGE
-  $ ./Marker getAccountTotalLockedGold
+  $ ./marker getAccountTotalLockedGold
 
 OPTIONS
   --rpcaddr                                                    HTTP-RPC server address   
@@ -450,7 +430,7 @@ OPTIONS
   --target                                                 that the account you want to query(including yourself)
   
 EXAMPLES:
-./Marker getAccountTotalLockedGold
+./marker getAccountTotalLockedGold
 --rpcaddr http://127.0.0.1:7445
 --target 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
@@ -466,7 +446,7 @@ Returns the total amount of non-voting locked `MAP` for an account.
 ```shell
 
 USAGE
-  $ ./Marker getAccountNonvotingLockedGold
+  $ ./marker getAccountNonvotingLockedGold
 
 OPTIONS
   --rpcaddr                                                    HTTP-RPC server address   
@@ -474,7 +454,7 @@ OPTIONS
   --target                                                     targetAddress that the account you want to query(including yourself)
   
 EXAMPLES:
-./Marker getAccountNonvotingLockedGold
+./marker getAccountNonvotingLockedGold
 --rpcaddr http://127.0.0.1:7445
 --target 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
@@ -490,7 +470,7 @@ Returns the current locked `MAP` balance requirement for the supplied account.
 ```shell
 
 USAGE
-  $ ./Marker getAccountLockedGoldRequirement
+  $ ./marker getAccountLockedGoldRequirement
 
 OPTIONS
   --rpcaddr                                                    HTTP-RPC server address   
@@ -498,7 +478,7 @@ OPTIONS
  
   
 EXAMPLES:
-./Marker getAccountLockedGoldRequirement
+./marker getAccountLockedGoldRequirement
 --rpcaddr http://127.0.0.1:7445
 
 RESPONSE:
@@ -513,7 +493,7 @@ Returns the pending withdrawals from unlocked `MAP` for an account.
 ```shell
 
 USAGE
-  $ ./Marker getPendingWithdrawals
+  $ ./marker getPendingWithdrawals
 
 OPTIONS
   --rpcaddr                                                    HTTP-RPC server address   
@@ -521,7 +501,7 @@ OPTIONS
   --target                                                     targetAddress that the account you want to query(including yourself)
   
 EXAMPLES:
-./Marker getPendingWithdrawals
+./marker getPendingWithdrawals
 --rpcaddr http://127.0.0.1:7445
 --target 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
@@ -541,9 +521,6 @@ USAGE
 
 OPTIONS
   --keystore                                                   Keystore file path of sender
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
 
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
@@ -552,7 +529,7 @@ OPTIONS
   --amount                                                     transfer amount, unit (wei)
   
 EXAMPLES:
-./marker transfer --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/keystore/UTC--2022-05-31T03-33-25.405082000Z--3b778bb4f460956e313ba92484eb84603a86a625 --password "" --target 0x7cc3e34c2075d96ef69bf6445a234f6c5e244073 --amount 10
+./marker transfer --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/keystore/UTC--2022-05-31T03-33-25.405082000Z--3b778bb4f460956e313ba92484eb84603a86a625  --target 0x7cc3e34c2075d96ef69bf6445a234f6c5e244073 --amount 10
 
 RESPONSE:
 INFO [08-30|10:56:11.048] Tx Info                                  func=sendContractTransaction from=0x3B778BB4F460956E313Ba92484Eb84603A86a625 to=0x7cC3e34C2075D96ef69bF6445a234F6C5E244073 value=10 nonce =1  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =212
@@ -595,16 +572,13 @@ USAGE
 
 OPTIONS
   --keystore                                                   Keystore file path of sender
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-                                                               
+                                                          
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --target                                                     target address that the account you want to query(including yourself)
     
 EXAMPLES:
-./marker setAccountMetadataURL --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/keystore/UTC--2022-08-26T10-59-01.086763000Z--ef021f15d188ad28625517a8d73cd20ce743a32d --password "" --url https://www.metadata.com
+./marker setAccountMetadataURL --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/keystore/UTC--2022-08-26T10-59-01.086763000Z--ef021f15d188ad28625517a8d73cd20ce743a32d  --url https://www.metadata.com
 
 RESPONSE:
 INFO [08-30|11:09:53.016] set account metadata url                 address=0xeF021f15D188ad28625517A8D73CD20cE743a32D url=https://www.metadata.com
@@ -647,16 +621,13 @@ USAGE
 
 OPTIONS
   --keystore                                                   Keystore file path of sender
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-                                                               
+                                                            
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --name                                                       name for the account
     
 EXAMPLES:
-./marker setAccountName --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-08-26T10-59-01.086763000Z--ef021f15d188ad28625517a8d73cd20ce743a32d --password "" --name "so cool validator"
+./marker setAccountName --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-08-26T10-59-01.086763000Z--ef021f15d188ad28625517a8d73cd20ce743a32d --name "so cool validator"
 
 RESPONSE:
 INFO [08-31|15:16:07.006] set name                                 address=0xeF021f15D188ad28625517A8D73CD20cE743a32D name="so cool validator"
@@ -682,16 +653,13 @@ USAGE
 
 OPTIONS
   --keystore                                                   Keystore file path of sender
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-            
+      
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                               
   --target                                                     target address that the account you want to query(including yourself)
     
 EXAMPLES:
-./marker setNextCommissionUpdate --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-08-26T10-59-01.086763000Z--ef021f15d188ad28625517a8d73cd20ce743a32d --password "" --commission 300000
+./marker setNextCommissionUpdate --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-08-26T10-59-01.086763000Z--ef021f15d188ad28625517a8d73cd20ce743a32d --commission 300000
 
 RESPONSE:
 INFO [09-01|14:17:15.746] === setNextCommissionUpdate ===          commission=300,000
@@ -712,14 +680,11 @@ USAGE
 
 OPTIONS
   --keystore                                                   Keystore file path of sender
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-            
+       
   --rpcaddr                                                    HTTP-RPC server address   
                                                                                                                                                                   
 EXAMPLES:
-./marker updateCommission --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-08-26T10-59-01.086763000Z--ef021f15d188ad28625517a8d73cd20ce743a32d --password ""
+./marker updateCommission --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-08-26T10-59-01.086763000Z--ef021f15d188ad28625517a8d73cd20ce743a32d
 
 RESPONSE:
 INFO [09-01|14:18:15.648] === updateCommission === 

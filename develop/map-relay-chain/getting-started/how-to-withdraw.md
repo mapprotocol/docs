@@ -13,7 +13,7 @@ So， You can use `getPendingVotesForValidatorByAccount` command to  check wheth
 
 For Example
 ```shell
-./marker getPendingVotesForValidatorByAccount --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --password "" --rpcaddr http://127.0.0.1:7445
+./marker getPendingVotesForValidatorByAccount --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --rpcaddr http://127.0.0.1:7445
 
 INFO [07-07|13:32:03.891] === getPendingVotesForValidatorByAccount === admin=0x078F684c7d3bf78BDbe8bEf93E56998442dc8099
 INFO [07-07|13:32:03.894] PendingVotes                             balance=100,000,000,000,000,000,000,000
@@ -23,7 +23,7 @@ If your voting `MAP` is in `pending`, you can use 'revokePending' command to wit
 
 For Example
 ```shell
-./marker revokePending --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --password "" --rpcaddr http://127.0.0.1:7445 --mapValue 100000 --validator 0x078F684c7d3bf78BDbe8bEf93E56998442dc8099
+./marker revokePending --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --rpcaddr http://127.0.0.1:7445 --lockedNum 100000 --target 0x078F684c7d3bf78BDbe8bEf93E56998442dc8099
 
 INFO [07-08|02:39:49.006] === revokePending ===                    admin=0x078F684c7d3bf78BDbe8bEf93E56998442dc8099
 INFO [07-08|02:39:49.028] TxInfo                                   func=sendContractTransaction TX data nonce =14  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =29088
@@ -39,7 +39,7 @@ First, you can use the `getActiveVotesForValidatorByAccount` command to see how 
 
 For Example
 ```shell
-./marker getActiveVotesForValidatorByAccount --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --password "" --rpcaddr http://127.0.0.1:7445 --target 0x078F684c7d3bf78BDbe8bEf93E56998442dc8099
+./marker getActiveVotesForValidatorByAccount --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --rpcaddr http://127.0.0.1:7445 --target 0x078F684c7d3bf78BDbe8bEf93E56998442dc8099
 
 INFO [07-08|03:45:18.228] === getActiveVotesForValidatorByAccount === admin=0x078F684c7d3bf78BDbe8bEf93E56998442dc8099
 INFO [07-08|03:45:18.230] ActiveVotes                              balance=304,805,454,545,461,535,206,581
@@ -49,7 +49,7 @@ withdraw active vote
 
 For Example 
 ```shell
-./marker revokeActive --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --password "" --rpcaddr http://127.0.0.1:7445 --validator 0x078F684c7d3bf78BDbe8bEf93E56998442dc8099 --mapValue  100000
+./marker revokeActive --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --rpcaddr http://127.0.0.1:7445 --target 0x078F684c7d3bf78BDbe8bEf93E56998442dc8099 --lockedNum  100000
 
 INFO [07-08|05:47:48.065] === revokeActive ===                     admin=0x078F684c7d3bf78BDbe8bEf93E56998442dc8099
 INFO [07-08|05:47:48.088] TxInfo                                   func=sendContractTransaction TX data nonce =15  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =29088
@@ -94,7 +94,7 @@ You need `unlock` command to perform unlock operations,more detail about `unlock
 
 For Example
 ```shell
-./marker unlockMap --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --password "" --mapValue 100000
+./marker unlockMap --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --lockedNum 100000
 
 INFO [07-08|06:30:08.880] === unLock validator gold ===
 INFO [07-08|06:30:08.880] unLock validator gold                    amount=1,000,000,000,000,000,000,000 admin=0x078F684c7d3bf78BDbe8bEf93E56998442dc8099
@@ -125,7 +125,7 @@ At this step, the `MAP` you locked has been transferred to your account address.
 
 For Example
 ```shell
-./marker withdrawMap --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --password "" --withdrawIndex 0
+./marker withdrawMap --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --withdrawIndex 0
 
 INFO [07-08|06:32:04.394] === withdraw validator gold ===          admin=0x078F684c7d3bf78BDbe8bEf93E56998442dc8099
 INFO [07-08|06:32:04.406] TxInfo                                   func=sendContractTransaction TX data nonce =20  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =29088

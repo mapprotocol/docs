@@ -86,7 +86,7 @@ then to do so run:
 
 ```shell
 USAGE
-  $ ./Marker genesis
+  $ ./marker genesis
 
 OPTIONS
   --buildpath:  buildpath is the path to truffle compile output folder.

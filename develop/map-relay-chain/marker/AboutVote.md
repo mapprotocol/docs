@@ -12,27 +12,23 @@ Increments the number of total and pending votes for validator in the `Election`
 
 ```shell
 USAGE
-  $ ./Marker vote
+  $ ./marker vote
 
 OPTIONS
   --keystore                                                   your keystore file path
   
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address 
                                                                
-  --validator                                                  Your target validator address
+  --target                                                     Your target validator address
   
   --voteNum                                                    Your number of votes
 
                                                                                                             
 EXAMPLES:
-./Marker vote
+./marker vote
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
---validator "0x81f02fd21657df80783755874a92c996749777bf"
+--target "0x81f02fd21657df80783755874a92c996749777bf"
 --voteNum 10000
 
 
@@ -52,17 +48,14 @@ Please note that you can only use this command once. No matter whether the comma
 
 ```shell
 USAGE
-$ ./Marker  quicklyVote   
+$ ./marker  quicklyVote   
 
 OPTIONS
   --keystore                                                   your keystore file path
   
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address 
                                                                
-  --validator                                                  Your target validator address
+  --target                                                     Your target validator address
   
   --voteNum                                                    Your number of votes
   
@@ -71,11 +64,10 @@ OPTIONS
 
                                                                                                             
 EXAMPLES:
-./Marker vote
+./marker vote
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
---validator "0x81f02fd21657df80783755874a92c996749777bf"
+--target "0x81f02fd21657df80783755874a92c996749777bf"
 --voteNum 10000
 --lockedNum 10000
 
@@ -94,17 +86,14 @@ That means converts `account`'s pending votes for `validator` to active votes.
 
 ```shell
 USAGE
-$ ./Marker  activate   
+$ ./marker activate   
 
 OPTIONS
   --keystore                                                   your keystore file path
   
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
-
   --rpcaddr                                                    HTTP-RPC server address 
                                                                
-  --validator                                                  Your target validator address
+  --target                                                     Your target validator address
                                                                you can query it from 
                                                                `getTotalVotesForEligibleValidators`
                                                                command
@@ -113,11 +102,10 @@ OPTIONS
 
                                                                                                             
 EXAMPLES:
-./Marker activate
+./marker activate
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
---validator "0x81f02fd21657df80783755874a92c996749777bf"
+--target "0x81f02fd21657df80783755874a92c996749777bf"
 
 RESPONSE:
 success
@@ -138,32 +126,29 @@ Decrements the number of total and pending votes for validator in the `Election`
 
 ```shell
 USAGE
-$ ./Marker  revokePending   
+$ ./marker revokePending   
 
 OPTIONS
   --keystore                                                   your keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
 
   --rpcaddr                                                    HTTP-RPC server address 
                                                                
-  --validator                                                  Your target validator address
+  --target                                                     Your target validator address
                                                                you can query it from 
                                                                `getTotalVotesForEligibleValidators`
                                                                command
                                                                
-  --mapValue                                                   The `MAP` that you want to revoke from your penging votes for validator
+  --lockedNum                                                   The `MAP` that you want to revoke from your penging votes for validator
   
 
 
                                                                                                             
 EXAMPLES::
-./Marker revokePending
+./marker revokePending
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
---validator "0x81f02fd21657df80783755874a92c996749777bf"
+--target "0x81f02fd21657df80783755874a92c996749777bf"
+--lockedNum 10000
 
 RESPONSE:
 success
@@ -183,29 +168,26 @@ Decrements the number of total and active votes for validator in the `Election` 
 
 ```shell
 USAGE
-$ ./Marker  revokeActive
+$ ./marker revokeActive
 
 OPTIONS
   --keystore                                                   your keystore file path
-  
-  --password                                                   Keystore file`s password 
-                                                               (defult value "") 
 
   --rpcaddr                                                    HTTP-RPC server address 
                                                                
-  --validator                                                  Your target validator address
+  --target                                                     Your target validator address
                                                                you can query it from 
                                                                `getTotalVotesForEligibleValidators`
                                                                command
                                                                
-  --mapValue                                                   The `MAP` that you want to revoke from your active votes for validator
+  --lockedNum                                                   The `MAP` that you want to revoke from your active votes for validator
                                                                                                              
 EXAMPLES:
-./Marker revokeActive
+./marker revokeActive
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
---password ""
---validator "0x81f02fd21657df80783755874a92c996749777bf"
+--target "0x81f02fd21657df80783755874a92c996749777bf"
+--lockedNum 10000
 
 RESPONSE:
 success
