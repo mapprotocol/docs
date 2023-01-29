@@ -1,11 +1,12 @@
-# Map cross chain service (MCS) on near blockchain
+# Map cross chain service (MCS) on near protocol
+
+![MOS](MOS.png)
 
 ## Contract Address
 
-Map cross chain service contract is deployed at address:
+[Here to get MAPO mainnet and testnet MCS contract address.](/develop/mos/mcs/README.md)
 
-```
-```
+
 
 ## Contract interface
 
@@ -75,28 +76,9 @@ impl MapCrossChainService {
 
 ## Interact with contract interface
 
-
-### init
-
-Initialize the contract with configuration parameters.
-
-#### input parameters
-
-| parameter| type         | comment |
-| -------- | ------------ | ------- |
-| map_light_client   | String      | NEAR account of the MAP light client contract |
-| map_bridge_address     | String      | the address of the MCS contract on MAP blockchain, in hex |
-| wrapped_token     | String      | NEAR account of the wrap near contract |
-| near_chain_id     | u128     | the chain id of the near blockchain |
-
-
-### version
-
-Get the version info of the current MCS contract.
-
 ### transfer_in
 
-Transfer from Map to NEAR based on the proof data and event. Must attach enough NEAR funds to cover for storage of the proof.
+Transfer from Mapo to Near based on the proof data and event. Must attach enough NEAR funds to cover for storage of the proof.
 
 #### input parameters
 
@@ -108,7 +90,7 @@ Transfer from Map to NEAR based on the proof data and event. Must attach enough 
 
 ### transfer_out_token
 
-Transfer out mcs token to other blockchain.
+Transfer out tokens to other blockchain.
 
 #### input parameters
 
@@ -141,6 +123,27 @@ Deposit out native token to MAP blockchain.
 | parameter| type         | comment |
 | -------- | ------------ | ------- |
 | to     | Vec<u8>     | the target account address on MAP blockchain |
+
+
+## Management Interface
+
+### init
+
+Initialize the contract with configuration parameters.
+
+#### input parameters
+
+| parameter| type         | comment |
+| -------- | ------------ | ------- |
+| map_light_client   | String      | NEAR account of the MAP light client contract |
+| map_bridge_address     | String      | the address of the MCS contract on MAP blockchain, in hex |
+| wrapped_token     | String      | NEAR account of the wrap near contract |
+| near_chain_id     | u128     | the chain id of the near blockchain |
+
+
+### version
+
+Get the version info of the current MCS contract.
 
 
 ### deploy_mcs_token

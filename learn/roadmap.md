@@ -24,22 +24,21 @@
 ### 2022.Q3
 
 - Extend cross-chain connections to Ethereum(EVM PoW) and Near(non-EVM PoS), which represents the technical mechanisms in blockchain space.
-- Extend cross-chain connections to popular EVM compatible chains: BNB Chain, Polygon, Avalanche, Fantom, Harmony, etc.
-- Launch MAPO Service, support cross-chain data, fungible tokens and NFTS, provide shared vaults.
-- Provide MOS SDK to develope individual MOSs.
-- Support cross-chain oracles, lending, swap and other DApps.
+- Launch MAPO Service, support cross-chain fungible tokens and provide shared vaults.
 
 ### 2022.Q4
 
-- Extend cross-chain connections to non-EVM compatible chains: Flow and Celo.
-- Extend cross-chain connections to non-EVM compatible chains: Solana. 
+- Extend cross-chain connections to Ethereum(PoS).
+- Extend cross-chain connections to popular EVM compatible chains: BNB Chain, Polygon, etc.
+- Provide MOS SDK to develope individual MOSs.
+- Support cross-chain bridge and swap DApps.
 
 ### 2023.Q1
-- Extend cross-chain connections to more EVM compatible and non-EVM compatible chains: Polkadot ecosystem's chain, Arbitrum, Optimism, etc.
+- Extend cross-chain connections to popular EVM compatible chains.
+- Extend MAPO Service, support cross-chain data and NFTs.
+- Provide omnichain scan to show all cross-chain transactions and DApps.
 
 
 ### 2023.Q3
-
-- Launch various SDKs from chain development to cross-chain components. Developers can easily deploy a dedicated chain with target application direction, and cross-chain functions are already embeded from the beginning. 
-- Connect more new public chains.
-
+- Extend cross-chain connections to more EVM compatible and non-EVM compatible chains: Cosmos ecosystem’s chain, Flow, etc.
+- Launch various SDKs from chain development to cross-chain components. Developers can easily deploy a dedicated chain with target application direction, and cross-chain functions are already embeded from the beginning.

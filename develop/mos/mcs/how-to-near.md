@@ -1,4 +1,4 @@
-# How to use MCS on near blockchain?
+# How to use MCS on near protocol?
 
 ## 1. deploy MCS contract
 
