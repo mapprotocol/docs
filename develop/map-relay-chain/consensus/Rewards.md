@@ -17,7 +17,7 @@ units of MAP as blocks are produced, to create several kinds of incentives.
 
 Each epoch will be rewarded with a fixed reward.
 
-- First 2 yease, `EpochReward`= 833,333 `MAP`.
+- First 2 years, `EpochReward`= 833,333 `MAP`.
 
 
 ## Reward Disbursement
