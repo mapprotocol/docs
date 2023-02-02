@@ -15,9 +15,11 @@ It allows you to interact with the Map Protocol and smart contracts using comman
 ```shell
 Building `Marker` requires both a Go (version 1.14 or later) and a C compiler.You can install them using your favourite package manager.
 git clone https://github.com/mapprotocol/atlas.git
-cd github.com/mapprotocol/atlas/cmd/marker
-go build -o ./marker  *.go
+cd atlas
+make marker 
 ```
+
+Now you can run "./build/bin/marker" to launch marker or switch to ./build/bin path and run "./marker" to launch marker
 
 ### Commands
 
