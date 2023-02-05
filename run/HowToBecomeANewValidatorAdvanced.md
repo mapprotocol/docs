@@ -59,7 +59,7 @@ We've locked in 1,000,000 MAP in step 3, and it's a great decision to vote for o
 ### Start A node that provides RPC services.
 
 You can start a node that provides RPC services by yourself, or you can use
-the [RPC nodes](/develop/map-relay-chain/Makalu-PoC/PoC-2.md#atlas-address) we provide.
+the [RPC nodes](/develop/map-relay-chain/README.md) we provide.
 
 - Clone repositories
 
@@ -87,7 +87,7 @@ keystore of `account`: account.json
 
 keystore of `signer`:  signer.json
 
-How to build the atlas [click here](/develop/map-relay-chain/make-private-chain.md#build-four-nodes)
+How to build the atlas [click here](/develop/map-relay-chain/getting-started/make-private-chain.md#build-four-nodes)
 
 If you want node to run in the background and not hang up, you can use nohup and & in combination, or screen or similar.
 Below we will demonstrate using screen
@@ -259,7 +259,7 @@ The number of votes cannot be greater than the number of votes locked.
 
 For more information on voting and elections, click on the links below to view:
 
-[vote](/develop/map-relay-chain/how-to-vote.md)  
+[vote](/develop/map-relay-chain/getting-started/how-to-vote.md)  
 [election](/develop/map-relay-chain/consensus/Election.md)
 
 --keystore is used to specify the keystore of the `account`
