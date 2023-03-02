@@ -86,7 +86,7 @@
   * [Maintainer](develop/light-client/Maintainer.md)
 * MAPO Service
   * How to develop MOS contracts
-  * [MCS Guides](develop/mos/mcs/README.md)
+  * [MOS Guides](develop/mos/mcs/README.md)
     * [How It Works](develop/mos/mcs/how-it-works.md)
     * [How To Use](develop/mos/mcs/how-to.md)
       * [How To On Evm Chains](develop/mos/mcs/how-to-evm.md)
@@ -94,6 +94,8 @@
     * [Relay Chain Contract](develop/mos/mcs/mcs-on-mapo.md)
     * [EVM Chains Contract](develop/mos/mcs/mcs-on-evm.md)
     * [Near Protocol Contract](develop/mos/mcs/mcs-on-near.md)
+  * [Message Guides]
+    * [How It Works](develop/mos/message/cross-chain-message.md)
   * [Messenger](develop/mos/messenger/messenger.md)
   * [API](develop/mos/mcs/api/api.md)
 * API & SDK
