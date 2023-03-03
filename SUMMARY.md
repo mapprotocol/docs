@@ -85,7 +85,7 @@
     * [Ethereum 2.0](develop/light-client/clients/eth2.md))
   * [Maintainer](develop/light-client/Maintainer.md)
 * MAPO Service
-  * [MOS Message Guides](devlop/mos/message/README.md)
+  * [MOS Message Guides](develop/mos/message/README.md)
     * [How It Works](develop/mos/message/cross-chain-message.md)
   * [MCS Guides](develop/mos/mcs/README.md)
     * [How It Works](develop/mos/mcs/how-it-works.md)
@@ -98,7 +98,7 @@
   * [Messenger](develop/mos/messenger/messenger.md)
   * [API](develop/mos/mcs/api/api.md)
 * OmniChain Examples
-  * [OmniDictionary](devlop/mos/examples/OmniDictionary.md)
+  * [OmniDictionary](develop/mos/examples/OmniDictionary.md)
   
 * API & SDK
   * [Atlas JSON RPC](sdk/RPC-API.md)
