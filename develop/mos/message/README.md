@@ -13,8 +13,8 @@ With MOS you can achieve interoperation with two chains:
 
 ## How it works
 
-See the [details](devlop/mos/message/cross-chain-message.md) here.
+See the [details](/develop/mos/message/cross-chain-message.md) here.
 
 ## Build dApps on MOS message
 Here give some examples that how to build dapps on MOS message.
-* [OmniDictionary](devlop/mos/example/OmniDictionary.md)
+* [OmniDictionary](/develop/mos/examples/OmniDictionary.md)
