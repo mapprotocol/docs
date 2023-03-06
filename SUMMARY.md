@@ -85,8 +85,11 @@
     * [Ethereum 2.0](develop/light-client/clients/eth2.md))
   * [Maintainer](develop/light-client/Maintainer.md)
 * MAPO Service
-  * How to develop MOS contracts
-  * [MOS Guides](develop/mos/mcs/README.md)
+  * [MOS Message Guides](develop/mos/message/README.md)
+    * [How It Works](develop/mos/message/cross-chain-message.md)
+    * [How To Use](develop/mos/message/how-to-use-evm.md)
+    * [EVM Chains Contract](develop/mos/message/mos-message.md)
+  * [MCS Guides](develop/mos/mcs/README.md)
     * [How It Works](develop/mos/mcs/how-it-works.md)
     * [How To Use](develop/mos/mcs/how-to.md)
       * [How To On Evm Chains](develop/mos/mcs/how-to-evm.md)
@@ -94,12 +97,11 @@
     * [Relay Chain Contract](develop/mos/mcs/mcs-on-mapo.md)
     * [EVM Chains Contract](develop/mos/mcs/mcs-on-evm.md)
     * [Near Protocol Contract](develop/mos/mcs/mcs-on-near.md)
-  * [Message Guides]
-    * [How It Works](develop/mos/message/cross-chain-message.md)
-    * [How To Use](develop/mos/message/how-to-use-evm.md)
-    * [EVM Chains Contract](develop/mos/message/mos-message.md)
   * [Messenger](develop/mos/messenger/messenger.md)
   * [API](develop/mos/mcs/api/api.md)
+* OmniChain Examples
+  * [OmniDictionary](develop/mos/examples/OmniDictionary.md)
+  
 * API & SDK
   * [Atlas JSON RPC](sdk/RPC-API.md)
   * [Atlas Consensus API](sdk/ConsensusAPI.md)
