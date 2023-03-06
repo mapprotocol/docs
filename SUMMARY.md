@@ -96,6 +96,8 @@
     * [Near Protocol Contract](develop/mos/mcs/mcs-on-near.md)
   * [Message Guides]
     * [How It Works](develop/mos/message/cross-chain-message.md)
+    * [How To Use](develop/mos/message/how-to-use-evm.md)
+    * [EVM Chains Contract](develop/mos/message/mos-message.md)
   * [Messenger](develop/mos/messenger/messenger.md)
   * [API](develop/mos/mcs/api/api.md)
 * API & SDK
