@@ -14,7 +14,7 @@
 |---------------|--------------------------------------------|
 | Explorer      | [https://maposcan.io](https://maposcan.io) |
 | RPC           | https://rpc.maplabs.io                     |
-| RPC Websocket | wss://rpc.maplabs.io                       |
+| RPC Websocket | wss://wss-rpc.maplabs.io                   |
 | IPFS          | https://graph-ipfs.maplabs.io              |
 | Graph         | https://graph.maplabs.io                   |
 | Graph API     | https://graph-api.maplabs.io               |

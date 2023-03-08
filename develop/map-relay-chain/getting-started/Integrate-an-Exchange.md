@@ -2,9 +2,9 @@
 
 ## Overview
 
-The objective of this document is to provide a brief overview of how to integrate with the EVM-Compatible MAPO Relay Chain(Atlas). For teams that already support ETH, supporting the Atlas is as straightforward as spinning up an Atlas node (which has the same API as go-ethereum) and populating Atlas ChainID (22776) when constructing transactions.
+The objective of this document is to provide a brief overview of how to integrate with the EVM-Compatible MAPO Relay Chain. For teams that already support ETH, supporting the MAPO Relay Chain is as straightforward as spinning up an MAPO Relay Chain node (atlas) (which has the same API as go-ethereum) and populating MAPO ChainID (22776) when constructing transactions.
 
-## Integration using EVM Endpoints
+## Integration using MAPO Relay Chain Endpoints
 
 ### Running an Atlas node
 
@@ -16,10 +16,12 @@ from source code:
 // make sure the golang env
 
 git clone https://github.com/mapprotocol/atlas.git
-cd atlas & make atlas
+cd atlas
+git checkout release_v1
+make atlas
 
 ```
-than start a node with the RPC service on the background,use `atlas -h` get more details.
+then start a node with the RPC service on the background,use `./build/bin/atlas -h` get more details.
 
 ```
 ./build/bin/atlas --datadir ./data --gcmode "archive" --syncmode "full" --port 28360 --v5disc --http --http.addr "0.0.0.0" --http.api eth,web3,net,debug,txpool,header,istanbul --http.corsdomain "*" --http.vhosts "*" 
@@ -27,7 +29,7 @@ than start a node with the RPC service on the background,use `atlas -h` get more
 
 ## Interacting with the Atlas
 
-Interacting with the Atlas is identical to interacting with [go-ethereum](https://geth.ethereum.org/). You can find the reference material for Atlas API [here](/sdk/RPC-API.md).
+Interacting with the Atlas node is identical to interacting with [go-ethereum](https://geth.ethereum.org/). You can find the reference material for Atlas API [here](/sdk/RPC-API.md).
 
 Please note that personal_ namespace is turned off by default. To turn it on, you need to pass the appropriate command line .
 
@@ -40,14 +42,14 @@ If you plan on extracting data from the Atlas into your own systems using golang
 
 ### Constructing transactions
 
-Atlas transactions are identical to standard EVM transactions with one exceptions::
+MAPO Relay chain transactions are identical to standard EVM transactions with one exceptions::
 
-    They must be signed with Atlas’s ChainID (22776).
-
-
-For development purposes, Atlas supports all the popular tooling for Ethereum,like as `MetaMask and Remix`,`Truffle` and `Hardhat`, so developers familiar with Ethereum and Solidity can feel right at home.
-
-We are compatible with the improvement of Ethereum eip1559, and set the minimum basefee to 100GWei.
+    They must be signed with MAPO Relay Chain ChainID (22776).
 
 
-ps: Atlas consensus provides fast and irreversible finality with 5 seconds. To query the most up-to-date finalized block, query any value (i.e. block, balance, state, etc) with the latest parameter.
+For development purposes, MAPO Relay Chain supports all the popular tooling for Ethereum,like as `MetaMask and Remix`,`Truffle` and `Hardhat`, so developers familiar with Ethereum and Solidity can feel right at home.
+
+We are compatible with the improvement of Ethereum eip1559, and set the minimum base fee to 100GWei.
+
+
+ps: MAPO Relay Chain consensus provides fast and irreversible finality with 5 seconds. To query the most up-to-date finalized block, query any value (i.e. block, balance, state, etc.) with the latest parameter.
