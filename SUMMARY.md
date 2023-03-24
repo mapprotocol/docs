@@ -103,6 +103,7 @@
   * [OmniDictionary](develop/mos/examples/OmniDictionary.md)
   
 * API & SDK
+  * [Butter SDK](sdk/butter.md)
   * [Atlas JSON RPC](sdk/RPC-API.md)
   * [Atlas Consensus API](sdk/ConsensusAPI.md)
   * [MAP Scan API](develop/sdk/scan-api.md)
