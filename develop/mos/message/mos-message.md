@@ -4,19 +4,28 @@ Message EVM Chains Contract
 
 ```
 interface MessageEvmChainContract {
-	struct CallData {
+    enum MessageType {
+        CALLDATA,
+        MESSAGE
+    }
+    
+    struct MessageData {
+        bool relay;
+        MessageType msgType;
         bytes target;
-        bytes callData;
+        bytes payload;
         uint256 gasLimit;
         uint256 value;
     }
     
     function initialize(address _wToken, address _lightNode) public;
 
-	function transferOut(
-		uint256 _toChain,
-		CallData memory _callData
-	) external  returns(bool);
+ 	function transferOut(
+ 		uint256 _toChain, 
+ 		bytes memory _messageData,
+ 		address _feeToken
+  	) external payable  returns(bool);
+
      
     function transferIn(uint256 _chainId, bytes memory _receiptProof) external;
  
@@ -48,10 +57,11 @@ function transferOut(uint256 _toChain,CallData memory _callData) external
 
 ### parameters
 
-| parameter | type     | comment                                              |
-| --------- | -------- | ---------------------------------------------------- |
-| _toChain  | address  | Target chain id to transfer out                      |
-| _callData | CallData | This structure contains information across the chain |
+| parameter    | type    | comment                                              |
+| ------------ | ------- | ---------------------------------------------------- |
+| _toChain     | address | Target chain id to transfer out                      |
+| _messageData | bytes   | This structure contains information across the chain |
+| _feeToken    | address | Toke address for payment of handling charges         |
 
 
 
@@ -118,11 +128,15 @@ struct receiptProof {
 }
 ```
 ```
-	struct CallData {
-	    //Target chain execution contract address
+	struct MessageData {
+	    //Select whether you want the relay chain to assist in the operation
+        bool relay;
+        //Execute type options across chains
+        MessageType msgType;
+        //Target chain execution contract address
         bytes target;
         //Target chain execution calldata
-        bytes callData;
+        bytes payload;
         //The call method executes the gas maximum
         uint256 gasLimit;
         //The number of native tokens required by the target chain
