@@ -15,7 +15,7 @@
   * [MAP Protocol&#39;s Technical Mechanism](architecture/technical-mechanism.md)
   * [Three-layer Architecture](architecture/3layer.md)
   * [MAP Protocol Layer](learn/protocollayer.md)
-    * MAPO Relay Chain
+    * MAP Relay Chain
       * [Concept](architecture/concept.md)
       * [Isomorphism with All Chains](architecture/precompile.md)
       * [Verification &amp; Maintenance Network](architecture/verification.md)
@@ -36,7 +36,7 @@
 
 ## Develop
 
-* [MAPO Relay Chain](develop/map-relay-chain/README.md)
+* [MAP Relay Chain](develop/map-relay-chain/README.md)
   * Getting Started
 
     * [Build](develop/map-relay-chain/getting-started/build.md)

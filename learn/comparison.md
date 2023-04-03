@@ -21,7 +21,7 @@
             The relay chain does not support cross-chain between EVM and other heterogeneous chains. EVM and other heterogeneous chains need to modify the in-chain structure to become compatible.
         </td>
         <td>
-            MAPO Relay Chain expands to all heterogeneous chains proactively by adding other heterogeneous chains’ signatures, hashes, mining, and Merkle proof calculation to the EVM level.
+            MAP Relay Chain expands to all heterogeneous chains proactively by adding other heterogeneous chains’ signatures, hashes, mining, and Merkle proof calculation to the EVM level.
         </td>
     </tr>
     <tr>
@@ -37,7 +37,7 @@
             After embedding the SDK, the modified chains become interconnected with the relay chain, thus forming a cross-chain network.
         </td>
         <td>
-            Every chain is naturally interoperable with MAPO Relay Chain, thus forming a cross-chain network
+            Every chain is naturally interoperable with MAP Relay Chain, thus forming a cross-chain network
         </td>
     </tr>
     <tr>
@@ -51,9 +51,9 @@
         </td>
         <td>
             Cross-chain Dapp Developers<br/>
-            Native cross-chain applications are developed directly on MAPO Relay Chain (EVM).<br/>
+            Native cross-chain applications are developed directly on MAP Relay Chain (EVM).<br/>
             The relay chain should become the assembly for cross-chain assets and data, which Cosmos and Polkadot mistakenly ignored. <br/> 
-            Cross-chain Dapps can benefit from a shared cross-chain assets and data pool through the deployment on MAPO Relay Chain.
+            Cross-chain Dapps can benefit from a shared cross-chain assets and data pool through the deployment on MAP Relay Chain.
         </td>
     </tr>
     <tr>
@@ -64,7 +64,7 @@
         </td>
         <td>
             All Chains<br/>
-            MAPO Relay Chain is compatible and interoperable with all chains by proactively deploying cross-chain communication components on-chain or inter-chain and extending EVM capability with heterogeneous chains'features  through precompiled contracts to facilitate gas-efficient light client construction.
+            MAP Relay Chain is compatible and interoperable with all chains by proactively deploying cross-chain communication components on-chain or inter-chain and extending EVM capability with heterogeneous chains'features  through precompiled contracts to facilitate gas-efficient light client construction.
         </td>
     </tr>
 </table>
@@ -73,7 +73,7 @@
 
 The lightweight solutions, including MAP Protocol, achieved cross-chain functionality by deploying cross-chain communication components on-chain or inter-chain, which are better solutions than Cosmos & Polkadot (require embedding SDK to the bottom layer of the blockchain). MPC (Multi-Party Computation) technology is easy to develop but has obvious security risks. Using Oracle to conduct cross-chain verification is ambiguous , and the risk of colluding with messengers always exists. Using Light-client to conduct cross-chain verification is the ultimate security mechanism adopted in MAP Protocol, Cosmos, and Polkadot.
 
-The Light-client verification mechanism will lead to massive consumption of gas fees for cross-chain activities between heterogeneous chains. The better way is to use a relay chain, compatible with multiple chains' algorithm, thus enabling a homogeneous cross-chain and forming the ultimate cross-chain verification network. MAP Protocol has developed the MAPO Relay Chain as such. As the cross-chain asset and data assembly, MAPO Relay Chain supports the native deployment of cross-chain Dapps, including cross-chain bridge applications,  differentiating MAP Protocol from all the other competitors.
+The Light-client verification mechanism will lead to massive consumption of gas fees for cross-chain activities between heterogeneous chains. The better way is to use a relay chain, compatible with multiple chains' algorithm, thus enabling a homogeneous cross-chain and forming the ultimate cross-chain verification network. MAP Protocol has developed the MAP Relay Chain as such. As the cross-chain asset and data assembly, MAP Relay Chain supports the native deployment of cross-chain Dapps, including cross-chain bridge applications,  differentiating MAP Protocol from all the other competitors.
 
 
 ## Comparisons between MAP Protocol and other lightweight cross-chain solutions with no relay chain
