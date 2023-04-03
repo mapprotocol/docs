@@ -8,7 +8,7 @@ MAP Protocol offers the provably secure omnichain infrastructure built upon Ligh
 1. Full chain coverage: expandable and decentralized MAP Relay Chain to support both EVM and Non-EVM chains connections
 2. Self-verifiable Light-Client: light-Client technology to verify all cross-chain transactions with definite and unambiguous results
 3. Advance ZK Technology: Zero-Knowledge technolgy to optimize and speed up verification process and reduce transaction costs
-4. Comprehensive SDKs: MAPO Service (MOS) and SDKs to offer built-in interoperability features for omnichain applications
+4. Comprehensive SDKs: MAP Protocol Service (MOS) and SDKs to offer built-in interoperability features for omnichain applications
 
 While cross-chain bridges can be easily built with MAP Protocol, the protocol itself targets a more fundamental problem and pursues a larger vision: empower Web3 applications to thrive in the omnichain future. Any Dapp built with MAP Protocol's infrastructure automatically inherits the omnichain nature of MAP Protocol without requiring the developers to tackle the error-prone cross-chain communications. 
 
