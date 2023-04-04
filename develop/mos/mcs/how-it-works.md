@@ -2,9 +2,9 @@
 
 ## Glossary
 
-### mos relay
+### MOS relay
 
-MOS Relay is the main contract on MAPO, which is mainly responsible for handling everything on MAPO. Its main functions are as follows:
+MOS relay is the main contract on MAP Relay Chain, which is mainly responsible for handling everything on MAP Relay Chain. Its main functions are as follows:
 - Handle users' cross-chain transfers
 
 - Handle the cross-chain transfer of the Maintainer
@@ -19,32 +19,32 @@ MOS Relay is the main contract on MAPO, which is mainly responsible for handling
 
   
 
-### mos
+### MOS
 
-MOS is the main contract on the source chain. It is mainly responsible for processing things from MAPO. Its main functions are as follows:
+MOS is the main contract on the source chain. It is mainly responsible for processing things from MAP Relay Chain. Its main functions are as follows:
 - Handle users' cross-chain transfers
 
 - Handle the cross-chain transfer of the Maintainer
 
-- Responsible for calling the LightNode contract to verify the things on the MAPO main chain, and analyze related events
+- Responsible for calling the LightNode contract to verify the things on the MAP Relay Chain, and analyze related events
 
   
 
-### vault
+### Vault
 
 Vault is an equity token contract corresponding to each cross-chain token, and its main functions are as follows;
 - Pledge the user's liquidity and issue the equity token VToken
 - Record cross-chain fees and distribute them equally to liquidity providers
 - Extraction and transfer of liquidity
 
-### fee
+### Fee
 
 Fee is a collection and management contract for user cross-chain fees, which is distributed in the MOS Relay contract. Its main functions are as follows:
 
 - Set the fee distribution ratio of vault, relay and protocol
 - Set the charging standard of the handling fee
 
-### proof verification
+### Proof verification
 
 Proof verification is to prove the proof to confirm that the cross-chain data is legal. The general verification process is encapsulated in LightNode, and the process is as follows:
 - Prove that Proof can be verified in the transaction body
@@ -54,7 +54,7 @@ Proof verification is to prove the proof to confirm that the cross-chain data is
 
 ## How it works
 
-![MCS Flow](mosFlowChart.png)
+![MOS Flow](mosFlowChart.png)
 
 ### Token transfer
 

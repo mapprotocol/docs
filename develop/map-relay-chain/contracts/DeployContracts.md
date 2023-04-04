@@ -1,6 +1,6 @@
-# Deploy Genesis Contracts on MAPO-Relay-Chain with Truffle
+# Deploy Genesis Contracts on MAP  Relay Chain with Truffle
 
-How to deploy a smart contract to MAPO-Relay-Chain using Truffle.
+How to deploy a smart contract to MAP Relay Chain using Truffle.
 
 ## Introduction to Truffle
 
@@ -8,7 +8,7 @@ Truffle is a world-class development environment, testing framework, and asset p
 Ethereum Virtual Machine (EVM). By creating a Truffle project and editing a few configuration settings you can easily
 deploy your project on Map chain.
 
-To deploy on Map chain using Truffle, you should have your local environment. If you prefer to deploy without a local
+To deploy on MAP Relay Chain using Truffle, you should have your local environment. If you prefer to deploy without a local
 environment, you can deploy using Remix or Replit.
 
 If you are new to Truffle, complete  [Quickstart Tutorial](https://trufflesuite.com/docs/truffle/quickstart) to get more

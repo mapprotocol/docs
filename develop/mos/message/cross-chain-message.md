@@ -23,7 +23,7 @@ With MOS you can achieve interoperation with two chains:
 2. The dApp calls the transferOut method of MOS, and pays the gas fee for the cross-chain
 3. MOS sends a cross-chain transaction and pops up a cross-chain message log. You can view the details of the transaction on the browser of the source chain.
 
-### At the map relay chain
+### At map relay chain
 
 1. The messenger detects the message log on the source chain, and builds proof data from source chain, and calls the `transferIn` method to notify the MOS contract on relay chain.
 2. The MOS relay contract (MOS contract on MAP relay chain) confirms the message log of the source chain, verifies the authenticity of the source chain transaction through the light client, judges that it is going to another chain, sends the transaction, and continues to pop up the cross-chain message log. 
@@ -37,4 +37,4 @@ With MOS you can achieve interoperation with two chains:
 
 ## Flow architecture
 
-![croosChainMessage](croosChainMessage.png)
+![MAPO Service Message](croosChainMessage.png)

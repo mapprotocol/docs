@@ -32,7 +32,7 @@
   * [End users](learn/enduser.md)
 * [Tokenomics](learn/tokenomics.md)
 * [Roadmap](learn/roadmap.md)
-* [Purchase $MAPO](/learn/purchase.md)
+* [Purchase $MAP](/learn/purchase.md)
 
 ## Develop
 
