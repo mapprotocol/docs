@@ -7,11 +7,13 @@ To ease the development of light clients, all kinds of cryptography primitives a
 
 MAP Relay Chain will implement the pre-compiled contracts to support:
 
-- Address 0x0000000000000000000000000000000000000001: ecrecover
+### ecrecover
+
+- Address 0x0000000000000000000000000000000000000001
 
   ecrecover implemented as a native contract.
 
-  ```shell
+```golang
   func (c *ecrecover) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
   const ecRecoverInputLength = 128
   
@@ -42,31 +44,40 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
       // the first byte of pubkey is bitcoin heritage
       return common.LeftPadBytes(crypto.Keccak256(pubKey[1:])[12:], 32), nil
   }
-  ```
+```
 
-- Address 0x0000000000000000000000000000000000000002: sha256hash
+### sha256hash
+
+- Address 0x0000000000000000000000000000000000000002
 
   SHA256 implemented as a native contract.
 
-  ```go 
+```golang 
   func (c *sha256hash) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
     h := sha256.Sum256(input)
     return h[:], nil
   }
-  ```
-- Address 0x0000000000000000000000000000000000000004: dataCopy
+```
+
+### dataCopy
+
+- Address 0x0000000000000000000000000000000000000004
 - 
   data copy implemented as a native contract.
-    ```shell
+
+```golang
     func (c *dataCopy) Run(evm *EVM, contract *Contract, in []byte) ([]byte, error) { 
        return in, nil
     }
-    ```
+```
 
-- Address 0x0000000000000000000000000000000000000005: bigModExp
+### bigModExp
+
+- Address 0x0000000000000000000000000000000000000005
 
   bigModExp implements a native big integer exponential modular operation.
-  ```shell
+
+```golang
   func (c *bigModExp) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
     var (
     baseLen = new(big.Int).SetBytes(getData(input, 0, 32)).Uint64()
@@ -94,62 +105,74 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
     }
        return common.LeftPadBytes(base.Exp(base, exp, mod).Bytes(), int(modLen)), nil
   }
-  ```
+```
 
-- Address 0x0000000000000000000000000000000000000006: bn256AddIstanbul
+### bn256AddIstanbul
+
+- Address 0x0000000000000000000000000000000000000006
 
   bn256Add implements a native elliptic curve point addition conforming to Istanbul    consensus rules.
-  ```shell
+  
+```golang
   func (c *bn256AddIstanbul) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
      return runBn256Add(input)
   }
-  ```
+```
+### bn256ScalarMulIstanbul
 
-- Address 0x0000000000000000000000000000000000000007: bn256ScalarMulIstanbul
+- Address 0x0000000000000000000000000000000000000007
 
   bn256ScalarMulIstanbul implements a native elliptic curve scalar multiplication conforming to Istanbul consensus rules.
-  ```shell
+
+```golang
   func (c *bn256ScalarMulIstanbul) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
     return runBn256ScalarMul(input)
   }
-  
-  ```
+```
 
+### bn256PairingIstanbul
 
-- Address 0x0000000000000000000000000000000000000008: bn256PairingIstanbul
+- Address 0x0000000000000000000000000000000000000008
 
   bn256PairingIstanbul implements a pairing pre-compile for the bn256 curve
   conforming to Istanbul consensus rules.
-  ```shell
+
+```golang
   func (c *bn256PairingIstanbul) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
    return runBn256Pairing(input)
   }
-  ```
+```
 
-- Address 0x000068656164657273746F726541646472657373: store
+### store
+
+- Address 0x000068656164657273746F726541646472657373
 
   execute atlas header store contract
-  ```shell
+```golang
   func (s *store) Run(evm *EVM, contract *Contract, input []byte) (ret []byte, err error) {
      return RunHeaderStore(evm, contract, input)
   }
-  ```
+```
 
-- Address 0x0000000000747856657269667941646472657373: verify
+### verify
+
+- Address 0x0000000000747856657269667941646472657373
 
   RunTxVerify execute atlas tx verify contract
 
-  ```shell
+```golang
   func (tv *verify) Run(evm *EVM, contract *Contract, input []byte) (ret []byte, err error) {
     return RunTxVerify(evm, contract, input)
   }
-  ```
+```
   
+### transfer
 
-- Address 0x00000000000000000000000000000000000000fd: transfer
+- Address 0x00000000000000000000000000000000000000fd
 
   Native transfer contract to make Atlas Gold ERC20 compatible.
-  ```go
+
+```golang
   func (c *transfer) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
      caller := contract.CallerAddress
      atlasGoldAddress, err := evm.Context.GetRegisteredAddress(evm, params2.GoldTokenRegistryId)
@@ -191,14 +214,15 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
 
     return input, err
   }
-  ```
+```
   
+### fractionMulExp
 
-- Address 0x00000000000000000000000000000000000000fc: fractionMulExp
+- Address 0x00000000000000000000000000000000000000fc
 
   computes a * (b ^ exponent) to `decimals` places of precision, where a and b are fractions
 
-  ```shell
+```golang
   func (c *fractionMulExp) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
     // input is comprised of 6 arguments:
     //   aNumerator:   32 bytes, 256 bit integer, numerator for the first fraction (a)
@@ -267,12 +291,15 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
 
     return append(numeratorPadded, denominatorPadded...), nil
   }
-  ```
-- Address 0x00000000000000000000000000000000000000fb: proofOfPossession
+```
+
+  ### proofOfPossession
+
+- Address 0x00000000000000000000000000000000000000fb
 
   verify validator`s address 、publicKey、g1publickey、signature
 
-  ```shell 
+```golang 
   func (c *proofOfPossession) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
       // input is comprised of 3 arguments:
       //   address:   20 bytes, an address used to generate the proof-of-possession
@@ -309,14 +336,16 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
       }
       return true32Byte, nil
   }
-  ```
+```
 
-- Address 0x00000000000000000000000000000000000000fa: getValidator
+### getValidator
+
+- Address 0x00000000000000000000000000000000000000fa
 
   Return the validators that are required to sign the given, possibly unsealed, block number. If this block is the last in an epoch, note that that may mean one or more of those validators may no longer be elected for subsequent blocks.
   WARNING: Validator set is always constructed from the canonical chain, therefore this precompile is undefined  if the engine is aware of a chain with higher total difficulty.
 
-    ```shell
+```golang
     func (c *getValidator) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
        // input is comprised of two arguments:
        //   index: 32 byte integer representing the index of the validator to get
@@ -348,16 +377,18 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
 
        return addressBytes, nil
     }
-    ```
+```
 
-- Address 0x00000000000000000000000000000000000000f9: numberValidators
+### numberValidators
+
+- Address 0x00000000000000000000000000000000000000f9
 
   Return the number of validators that are required to sign this current, possibly unsealed, block. If this block is the last in an epoch, note that that may mean one or more of those validators may no longer be elected for subsequent blocks.
 
       WARNING: Validator set is always constructed from the canonical chain,therefore this precompile is undefined if the engine is aware of a chain with higher total difficulty
 
 
-      ```shell
+```golang
       func (c *numberValidators) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
         // input is comprised of a single argument:
         //   blockNumber: 32 byte integer representing the block number to access
@@ -380,25 +411,29 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
         numberValidatorsBytes := common.LeftPadBytes(numberValidators[:], 32)
         return numberValidatorsBytes, nil
       }
-      ```
+```
 
-- Address 0x00000000000000000000000000000000000000f8: epochSize
+### epochSize
+
+- Address 0x00000000000000000000000000000000000000f8
 
   return the epochSize
 
-  ```shell
+```golang
   func (c *epochSize) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
     epochSize := new(big.Int).SetUint64(evm.Context.EpochSize).Bytes()
     epochSizeBytes := common.LeftPadBytes(epochSize[:], 32)
     return epochSizeBytes, nil
   }
-  ```
+```
 
-- Address 0x00000000000000000000000000000000000000f7: blockNumberFromHeader
+### blockNumberFromHeader
+
+- Address 0x00000000000000000000000000000000000000f7
 
   return the blockNumber from header
 
-  ```shell
+```golang
   func (c *blockNumberFromHeader) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
     var header types.Header
     err := rlp.DecodeBytes(input, &header)
@@ -409,13 +444,15 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
     blockNumberBytes := common.LeftPadBytes(blockNumber[:], 32)
     return blockNumberBytes, nil
   }
-  ```
+```
 
-- Address 0x00000000000000000000000000000000000000f6: hashHeader
+### hashHeader
+
+- Address 0x00000000000000000000000000000000000000f6
 
   return the hashHeader from header
 
-  ```shell
+```golang
   func (c *hashHeader) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
     var header types.Header
     err := rlp.DecodeBytes(input, &header)
@@ -425,15 +462,16 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
     hashBytes := header.Hash().Bytes()
     return hashBytes, nil
   }
-  ```
+```
 
+### getParentSealBitmap
 
-- Address 0x00000000000000000000000000000000000000F5: getParentSealBitmap
+- Address 0x00000000000000000000000000000000000000F5
 
   Return the signer bitmap from the parent seal of a past block in the chain.
   Requested parent seal must have occurred within 4 epochs of the current block number.
 
-  ```shell
+```golang
       func (c *getParentSealBitmap) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
         // input is comprised of a single argument:
         //   blockNumber: 32 byte integer representing the block number to access
@@ -467,14 +505,15 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
     
       return common.LeftPadBytes(extra.ParentAggregatedSeal.Bitmap.Bytes()[:], 32), nil
     }
+```
 
-  ```
+### getVerifiedSealBitmap
 
-- Address 0x00000000000000000000000000000000000000F4: getVerifiedSealBitmap
+- Address 0x00000000000000000000000000000000000000F4
 
   rerurn the extra.AggregatedSeal.Bitmap from header
 
-  ```shell
+```golang
   func (c *getVerifiedSealBitmap) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
     // input is comprised of a single argument:
     // header:  rlp encoded block header
@@ -496,13 +535,15 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
 	}
       return common.LeftPadBytes(extra.AggregatedSeal.Bitmap.Bytes()[:], 32), nil
    }
-  ```
+```
 
-- Address 0x00000000000000000000000000000000000000f3: ed25519Verify
+### ed25519Verify
+
+- Address 0x00000000000000000000000000000000000000f3
 
   ed25519Verify implements a native Ed25519 signature verification.
 
-  ```shell
+```golang
   func (c *ed25519Verify) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
 	// Setup success/failure return values
 	var fail32byte, success32Byte = true32Byte, false32Byte
@@ -523,7 +564,376 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
 	}
 	return fail32byte, nil
   }
+```
 
-  ```
+### BLS12_G1ADD
 
+- Address 0x000000000000000000000000000000000000000a
+  
+  Implements EIP-2537 G1Add precompile.
+	
+  \> G1 addition call expects `256` bytes as an input that is interpreted as byte concatenation of two G1 points (`128` bytes each).
+	
+  \> Output is an encoding of addition operation result - single G1 point (`128` bytes).
 
+```golang
+
+func (c *bls12381G1Add) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
+  if len(input) != 256 {
+		return nil, errBLS12381InvalidInputLength
+	}
+	var err error
+	var p0, p1 *bls12381.PointG1
+
+	// Initialize G1
+	g := bls12381.NewG1()
+	// Decode G1 point p_0
+	if p0, err = g.DecodePoint(input[:128]); err != nil {
+		return nil, err
+	}
+	// Decode G1 point p_1
+	if p1, err = g.DecodePoint(input[128:]); err != nil {
+		return nil, err
+	}
+	// Compute r = p_0 + p_1
+	r := g.New()
+	g.Add(r, p0, p1)
+	// Encode the G1 point result into 128 bytes
+	return g.EncodePoint(r), nil
+}
+```
+
+### BLS12_G1MUL
+
+- Address 0x000000000000000000000000000000000000000b
+
+  Implements EIP-2537 G1Mul precompile.
+  
+  \> G1 multiplication call expects `160` bytes as an input that is interpreted as byte concatenation of encoding of G1 point (`128` bytes) and encoding of a scalar value (`32` bytes).
+	
+  \> Output is an encoding of multiplication operation result - single G1 point(`128` bytes). 
+
+```golang
+
+ func (c *bls12381G1Mul) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
+	
+	if len(input) != 160 {
+		return nil, errBLS12381InvalidInputLength
+	}
+	var err error
+	var p0 *bls12381.PointG1
+
+	// Initialize G1
+	g := bls12381.NewG1()
+	// Decode G1 point
+	if p0, err = g.DecodePoint(input[:128]); err != nil {
+		return nil, err
+	}
+	// Decode scalar value
+	e := new(big.Int).SetBytes(input[128:])
+	// Compute r = e * p_0
+	r := g.New()
+	g.MulScalar(r, p0, e)
+	// Encode the G1 point into 128 bytes
+	return g.EncodePoint(r), nil
+}
+
+```
+
+### BLS12_G1MULTIEXP
+
+- Address 0x000000000000000000000000000000000000000c
+
+  Implements EIP-2537 G1MultiExp precompile.
+	
+  G1 multiplication call expects `160*k` bytes as an input that is interpreted as byte concatenation of `k` slices each of them being a byte concatenation of encoding of G1 point (`128` bytes) and encoding of a scalar value (`32` bytes).
+	
+  Output is an encoding of multiexponentiation operation result - single G1 point (`128` bytes).
+
+```golang
+  func (c *bls12381G1MultiExp) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
+	
+  k := len(input) / 160
+	if len(input) == 0 || len(input)%160 != 0 {
+		return nil, errBLS12381InvalidInputLength
+	}
+	var err error
+	points := make([]*bls12381.PointG1, k)
+	scalars := make([]*big.Int, k)
+	// Initialize G1
+	g := bls12381.NewG1()
+	// Decode point scalar pairs
+	for i := 0; i < k; i++ {
+		off := 160 * i
+		t0, t1, t2 := off, off+128, off+160
+		// Decode G1 point
+		if points[i], err = g.DecodePoint(input[t0:t1]); err != nil {
+			return nil, err
+		}
+		// Decode scalar value
+		scalars[i] = new(big.Int).SetBytes(input[t1:t2])
+	}
+	// Compute r = e_0 * p_0 + e_1 * p_1 + ... + e_(k-1) * p_(k-1)
+	r := g.New()
+	g.MultiExp(r, points, scalars)
+	// Encode the G1 point to 128 bytes
+	return g.EncodePoint(r), nil
+}
+```
+
+### BLS12_G2ADD
+
+- Address 0x000000000000000000000000000000000000000d
+  
+  Implements EIP-2537 G2Add precompile.
+	
+  \> G2 addition call expects `512` bytes as an input that is interpreted as byte concatenation of two G2 points (`256` bytes each).
+	
+  \> Output is an encoding of addition operation result - single G2 point (`256` bytes).
+
+```golang
+
+  func (c *bls12381G2Add) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
+	
+  if len(input) != 512 {
+		return nil, errBLS12381InvalidInputLength
+	}
+	var err error
+	var p0, p1 *bls12381.PointG2
+	// Initialize G2
+	g := bls12381.NewG2()
+	r := g.New()
+	// Decode G2 point p_0
+	if p0, err = g.DecodePoint(input[:256]); err != nil {
+		return nil, err
+	}
+	// Decode G2 point p_1
+	if p1, err = g.DecodePoint(input[256:]); err != nil {
+		return nil, err
+	}
+	// Compute r = p_0 + p_1
+	g.Add(r, p0, p1)
+	// Encode the G2 point into 256 bytes
+	return g.EncodePoint(r), nil
+  }
+```
+
+### BLS12_G2MUL
+
+- Address 0x000000000000000000000000000000000000000e
+  
+  Implements EIP-2537 G2MUL precompile logic.
+	
+  \> G2 multiplication call expects `288` bytes as an input that is interpreted as byte concatenation of encoding of G2 point (`256` bytes) and encoding of a scalar value (`32` bytes).
+	
+  \> Output is an encoding of multiplication operation result - single G2 point (`256` bytes).
+
+```golang
+
+  func (c *bls12381G2Mul) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
+	
+	if len(input) != 288 {
+		return nil, errBLS12381InvalidInputLength
+	}
+	var err error
+	var p0 *bls12381.PointG2
+	// Initialize G2
+	g := bls12381.NewG2()
+	// Decode G2 point
+	if p0, err = g.DecodePoint(input[:256]); err != nil {
+		return nil, err
+	}
+	// Decode scalar value
+	e := new(big.Int).SetBytes(input[256:])
+	// Compute r = e * p_0
+	r := g.New()
+	g.MulScalar(r, p0, e)
+	// Encode the G2 point into 256 bytes
+	return g.EncodePoint(r), nil
+}
+```
+
+### BLS12_G2MULTIEXP
+
+- Address 0x000000000000000000000000000000000000000f
+
+  Implements EIP-2537 G2MultiExp precompile logic
+	
+  \> G2 multiplication call expects `288*k` bytes as an input that is interpreted as byte concatenation of `k` slices each of them being a byte concatenation of encoding of G2 point (`256` bytes) and encoding of a scalar value (`32` bytes).
+	
+  \> Output is an encoding of multiexponentiation operation result - single G2 point (`256` bytes).
+
+```golang
+  func (c *bls12381G2MultiExp) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
+	
+	k := len(input) / 288
+	if len(input) == 0 || len(input)%288 != 0 {
+		return nil, errBLS12381InvalidInputLength
+	}
+	var err error
+	points := make([]*bls12381.PointG2, k)
+	scalars := make([]*big.Int, k)
+
+	// Initialize G2
+	g := bls12381.NewG2()
+
+	// Decode point scalar pairs
+	for i := 0; i < k; i++ {
+		off := 288 * i
+		t0, t1, t2 := off, off+256, off+288
+		// Decode G1 point
+		if points[i], err = g.DecodePoint(input[t0:t1]); err != nil {
+			return nil, err
+		}
+		// Decode scalar value
+		scalars[i] = new(big.Int).SetBytes(input[t1:t2])
+	}
+
+	// Compute r = e_0 * p_0 + e_1 * p_1 + ... + e_(k-1) * p_(k-1)
+	r := g.New()
+	g.MultiExp(r, points, scalars)
+
+	// Encode the G2 point to 256 bytes.
+	return g.EncodePoint(r), nil
+}
+```
+
+### BLS12_PAIRING
+
+- Address 0x0000000000000000000000000000000000000010
+
+  Implements EIP-2537 Pairing precompile logic.
+	
+  \> Pairing call expects `384*k` bytes as an inputs that is interpreted as byte concatenation of `k` slices. Each slice has the following structure:
+	
+  \> - `128` bytes of G1 point encoding
+	
+  \> - `256` bytes of G2 point encoding
+	
+  \> Output is a `32` bytes where last single byte is `0x01` if pairing result is equal to multiplicative identity in a pairing target field and `0x00` otherwise
+	
+  \> (which is equivalent of Big Endian encoding of Solidity values `uint256(1)` and `uin256(0)` respectively).
+
+```golang
+func (c *bls12381Pairing) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
+	
+	k := len(input) / 384
+	if len(input) == 0 || len(input)%384 != 0 {
+		return nil, errBLS12381InvalidInputLength
+	}
+
+	// Initialize BLS12-381 pairing engine
+	e := bls12381.NewPairingEngine()
+	g1, g2 := e.G1, e.G2
+
+	// Decode pairs
+	for i := 0; i < k; i++ {
+		off := 384 * i
+		t0, t1, t2 := off, off+128, off+384
+		// Decode G1 point
+		p1, err := g1.DecodePoint(input[t0:t1])
+		if err != nil {
+			return nil, err
+		}
+		// Decode G2 point
+		p2, err := g2.DecodePoint(input[t1:t2])
+		if err != nil {
+			return nil, err
+		}
+		// 'point is on curve' check already done,
+		// Here we need to apply subgroup checks.
+		if !g1.InCorrectSubgroup(p1) {
+			return nil, errBLS12381G1PointSubgroup
+		}
+		if !g2.InCorrectSubgroup(p2) {
+			return nil, errBLS12381G2PointSubgroup
+		}
+		// Update pairing engine with G1 and G2 ponits
+		e.AddPair(p1, p2)
+	}
+	// Prepare 32 byte output
+	out := make([]byte, 32)
+	// Compute pairing and set the result
+	if e.Check() {
+		out[31] = 1
+	}
+	return out, nil
+}
+```
+
+### BLS12_MAP_FP_TO_G1
+
+- Address 0x0000000000000000000000000000000000000011
+
+Implements EIP-2537 Map_To_G1 precompile.
+
+\> Field-to-curve call expects `64` bytes an an input that is interpreted as a an element of the base field.
+
+\> Output of this call is `128` bytes and is G1 point following respective encoding rules.
+
+```golang
+
+  func (c *bls12381MapG1) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
+	
+	if len(input) != 64 {
+		return nil, errBLS12381InvalidInputLength
+	}
+	// Decode input field element
+	fe, err := decodeBLS12381FieldElement(input)
+	if err != nil {
+		return nil, err
+	}
+	// Initialize G1
+	g := bls12381.NewG1()
+	// Compute mapping
+	r, err := g.MapToCurve(fe)
+	if err != nil {
+		return nil, err
+	}
+	// Encode the G1 point to 128 bytes
+	return g.EncodePoint(r), nil
+}
+```
+
+### BLS12_MAP_FP2_TO_G2
+
+- Address 0x0000000000000000000000000000000000000012
+
+  Implements EIP-2537 Map_FP2_TO_G2 precompile logic.
+
+  \> Field-to-curve call expects `128` bytes an an input that is interpreted as a an element of the quadratic extension field.
+
+  \> Output of this call is `256` bytes and is G2 point following respective encoding rules.
+
+```golang
+  func (c *bls12381MapG2) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) 
+  {
+    if len(input) != 128 {
+		  return nil, errBLS12381InvalidInputLength
+	  }
+	  // Decode input field element
+	  fe := make([]byte, 96)
+	  c0, err := decodeBLS12381FieldElement(input[:64])
+	  if err != nil 
+    {
+		  return nil, err
+	  }
+	  copy(fe[48:], c0)
+	  c1, err := decodeBLS12381FieldElement(input[64:])
+	  if err != nil 
+    {
+		  return nil, err
+	  }
+	  copy(fe[:48], c1)
+	  // Initialize G2
+	  g := bls12381.NewG2()
+	  // Compute mapping
+	  r, err := g.MapToCurve(fe)
+	  if err != nil 
+    {
+		  return nil, err
+	  }
+	  // Encode the G2 point to 256 bytes
+	  return g.EncodePoint(r), nil
+  }
+```
