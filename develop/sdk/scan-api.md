@@ -1,57 +1,56 @@
-
-## Scan API URL
+## 掃描 API URL
 
 https://mainnet-api.mapscan.io/scan/api_method
 
-## Scan API Reference
+## 掃描 API 參考
 
-List of APIs
+API列表
 
 - [queryMapChainData](#queryMapChainData)
-- [queryCommitteeList](#queryCommitteeList)
+- [queryCommitteeList]（#queryCommitteeList）
 - [queryCommitteeInfoByAddress](#queryCommitteeInfoByAddress)
-- [queryValidatorVoteList](#queryValidatorVoteList)
-- [queryRewardList](#queryRewardList)
-- [queryVoterRewardList](#queryVoterRewardList)
-- [queryVoterList](#queryVoterList)
-- [queryVoterInfo](#queryVoterInfo)
+- [queryValidatorVoteList]（#queryValidatorVoteList）
+- [queryRewardList]（#queryRewardList）
+- [queryVoterRewardList]（#queryVoterRewardList）
+- [queryVoterList]（#queryVoterList）
+- [queryVoterInfo]（#queryVoterInfo）
 - [queryPocTransactionList](#queryPocTransactionList)
 - [queryValidatorData](#queryValidatorData)
 
 
 ### queryMapChainData
 
-Uri: /scan/queryMapChainData
+URI: /scan/queryMapChainData
 
-Request method: GET
+請求方式：GET
 
-Return map chain information, you can query the circulation, pledge amount, address number, transaction number, latest height and latest session number
+返回圖鏈信息，可查詢流通量、質押量、地址數、交易數、最新高度、最新會話數
 
-##### Parameters
+##### 參數
 
-Parameter Type：
+參數類型：
 
-`typeStr` - Query type, including supply, staking, address, transfer, block, epoch.
+`typeStr` - 查詢類型，包括供應、質押、地址、轉賬、區塊、紀元。
 
-Example:
+例子：
 
 http://host:port/scan/queryMapChainData?typeStr=supply,staking,address,transfer,block,epoch
 
-##### Returns
+##### 回報
 
-`supply` - supply.
+`供應` - 供應。
 
-`staking` - staking.
+`staking` - 放樣。
 
-`address` - address amount.
+`address` - 地址數量。
 
-`transfer` - transfer amount.
+`transfer` - 轉賬金額。
 
-`block` - Latest block height.
+`block` - 最新的區塊高度。
 
-`epoch` - The latest epoch.
+`epoch` - 最新的紀元。
 
-##### Example
+#### 示例
 ```js
 // Request
 curl -X GET -H  "Accept:application/json;charset=UTF-8" -H  "Content-Type:application/x-www-form-urlencoded" "http://18.139.224.21:9002/scan/queryMapChainData?typeStr=supply,staking,address,transfer,block,epoch"
@@ -76,22 +75,22 @@ curl -X GET -H  "Accept:application/json;charset=UTF-8" -H  "Content-Type:applic
 
 Uri: /scan/queryCommitteeInfoByAddress
 
-Request method: GET
+查詢方法: GET
 
-Get committee details by address.
+按地址獲取委員會詳細信息
 
 ##### Parameters
 
-Parameter Type：
+參數類型：
 
 `address` - Validator address.
 
-Example:
+示例:
 
 http://host:port/scan/queryCommitteeInfoByAddress?address=0xAfdE7710588ED92DE6924d5fbE3146005d9B7b1A
 
 
-##### Returns
+##### 返回
 
 `voteReward` - Vote reward.
 
@@ -114,7 +113,7 @@ http://host:port/scan/queryCommitteeInfoByAddress?address=0xAfdE7710588ED92DE692
 `name` - validator name
 
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X GET -H  "Accept:application/json;charset=UTF-8" -H  "Content-Type:application/x-www-form-urlencoded" "http://18.139.224.21:9002/scan/queryCommitteeInfoByAddress?address=0x30b3953cf4c60e648202e9808d81f750ebe0f694"
@@ -154,7 +153,7 @@ Uri: /scan/queryCommitteeList
 
 Request method: GET
 
-Return a list of validators。
+返回 a list of validators。
 
 ##### Parameters
 
@@ -168,12 +167,12 @@ Parameter Type：
 
 `address` - Validator address.
 
-Example:
+示例:
 
 http://host:port/scan/queryCommitteeList?pageNo=1&pageSize=10&name=test&address=0xAfdE7710588ED92DE6924d5fbE3146005d9B7b1A
 
 
-##### Returns
+##### 返回
 
 `voteReward` - Vote reward.
 
@@ -196,7 +195,7 @@ http://host:port/scan/queryCommitteeList?pageNo=1&pageSize=10&name=test&address=
 `name` - validator name
 
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X GET -H  "Accept:application/json;charset=UTF-8" -H  "Content-Type:application/x-www-form-urlencoded" "http://18.139.224.21:9002/scan/queryCommitteeList?page=1&size=10"
@@ -312,12 +311,12 @@ Parameter Type：
 
 `address` - Validator address.
 
-Example:
+示例:
 
 http://host:port/scan/queryValidatorVoteList?pageNo=1&pageSize=10&address=0xAfdE7710588ED92DE6924d5fbE3146005d9B7b1A
 
 
-##### Returns
+##### 返回
 
 `id` - Validator address.
 
@@ -325,7 +324,7 @@ http://host:port/scan/queryValidatorVoteList?pageNo=1&pageSize=10&address=0xAfdE
 
 `value` - vote amount.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X GET -H  "Accept:application/json;charset=UTF-8" -H  "Content-Type:application/x-www-form-urlencoded" "http://18.139.224.21:9002/scan/queryValidatorVoteList?address=0x30b3953cf4c60e648202e9808d81f750ebe0f694&page=1&size=10"
@@ -373,12 +372,12 @@ Parameter Type：
 
 `address` - Validator address.
 
-Example:
+示例:
 
 http://host:port/scan/queryRewardList?pageNo=1&pageSize=10&address=0xAfdE7710588ED92DE6924d5fbE3146005d9B7b1A
 
 
-##### Returns
+##### 返回
 
 `epoch` - epoch.
 
@@ -392,7 +391,7 @@ http://host:port/scan/queryRewardList?pageNo=1&pageSize=10&address=0xAfdE7710588
 
 `voterRewardStr` - voter reward (wei)
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X GET -H  "Accept:application/json;charset=UTF-8" -H  "Content-Type:application/x-www-form-urlencoded" "http://18.139.224.21:9002/scan/queryRewardList?address=0x30b3953cf4c60e648202e9808d81f750ebe0f694&page=1&size=10"
@@ -547,12 +546,12 @@ Parameter Type：
 
 `address` - voter address.
 
-Example:
+示例:
 
 http://host:port/scan/queryVoterRewardList?pageNo=1&pageSize=10&address=0xAfdE7710588ED92DE6924d5fbE3146005d9B7b1A
 
 
-##### Returns
+##### 返回
 
 `version` - epoch.
 
@@ -562,7 +561,7 @@ http://host:port/scan/queryVoterRewardList?pageNo=1&pageSize=10&address=0xAfdE77
 
 `reward` - reward
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X GET -H  "Accept:application/json;charset=UTF-8" -H  "Content-Type:application/x-www-form-urlencoded" "http://18.139.224.21:9002/scan/queryVoterRewardList?address=0x30b3953cf4c60e648202e9808d81f750ebe0f694&page=1&size=10"
@@ -689,12 +688,12 @@ Parameter Type：
 
 `address` - voter address.
 
-Example:
+示例:
 
 http://host:port/scan/queryVoterList?pageNo=1&pageSize=10&address=0xAfdE7710588ED92DE6924d5fbE3146005d9B7b1A
 
 
-##### Returns
+##### 返回
 
 `validator` - validator address.
 
@@ -704,7 +703,7 @@ http://host:port/scan/queryVoterList?pageNo=1&pageSize=10&address=0xAfdE7710588E
 
 `version` - epoch
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X GET -H  "Accept:application/json;charset=UTF-8" -H  "Content-Type:application/x-www-form-urlencoded" "http://18.139.224.21:9002/scan/queryVoterList?address=0x30b3953cf4c60e648202e9808d81f750ebe0f694&page=1&size=10"
@@ -845,12 +844,12 @@ Parameter Type：
 
 `address` - voter address.
 
-Example:
+示例:
 
 http://host:port/scan/queryVoterInfo?address=0xAfdE7710588ED92DE6924d5fbE3146005d9B7b1A
 
 
-##### Returns
+##### 返回
 
 `voteAmount` - vote amount.
 
@@ -858,7 +857,7 @@ http://host:port/scan/queryVoterInfo?address=0xAfdE7710588ED92DE6924d5fbE3146005
 
 `rewardAmount` - reward amount.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X GET -H  "Accept:application/json;charset=UTF-8" -H  "Content-Type:application/x-www-form-urlencoded" "http://18.139.224.21:9002/scan/queryVoterInfo?address=0x30b3953cf4c60e648202e9808d81f750ebe0f694"
@@ -894,12 +893,12 @@ Parameter Type：
 
 `from` - validator address.
 
-Example:
+示例:
 
 http://host:port/scan/queryPocTransactionList?pageNo=1&pageSize=10&from=0xAfdE7710588ED92DE6924d5fbE3146005d9B7b1A
 
 
-##### Returns
+##### 返回
 
 `method` - transfer method name.
 
@@ -919,7 +918,7 @@ http://host:port/scan/queryPocTransactionList?pageNo=1&pageSize=10&from=0xAfdE77
 
 `status` - status 0 fail 1 success
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X GET -H  "Accept:application/json;charset=UTF-8" -H  "Content-Type:application/x-www-form-urlencoded" "http://18.139.224.21:9002/scan/queryPocTransactionList?from=0x30b3953cf4c60e648202e9808d81f750ebe0f694&page=1&size=10"
@@ -966,12 +965,12 @@ Parameter Type：
 
 none
 
-Example:
+示例:
 
 http://host:port/scan/queryValidatorData
 
 
-##### Returns
+##### 返回
 
 `epoch` - epoch.
 
@@ -980,7 +979,7 @@ http://host:port/scan/queryValidatorData
 `totalVotes` - total votes (wei)
 
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X GET -H  "Accept:application/json;charset=UTF-8" -H  "Content-Type:application/x-www-form-urlencoded" "http://18.139.224.21:9002/scan/queryValidatorData"

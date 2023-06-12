@@ -1,145 +1,145 @@
-# How MOS works
+# MOS 是如何工作的
 
-## Glossary
+## 術語表
 
-### MOS relay
+### MOS中繼鏈
 
-MOS relay is the main contract on MAP Relay Chain, which is mainly responsible for handling everything on MAP Relay Chain. Its main functions are as follows:
-- Handle users' cross-chain transfers
+MOS中繼是MAP中繼鏈上的主合約，主要負責處理MAP中繼鏈上的一切。 其主要功能如下：
+- 處理用戶的跨鏈轉賬
 
-- Handle the cross-chain transfer of the Maintainer
+- 處理Maintainer的跨鏈轉移
 
-- Responsible for calling the LightNodeManager contract to verify the message and analyze related events
+- 負責調用LightNodeManager合約來驗證消息並分析相關事件
 
-- Responsible for the transaction forwarding of other chain MOS contracts
+- 負責其他鏈MOS合約的交易轉發
 
-- Responsible for managing the issuance and recovery of tokens and Vault rights of tokens
+- 負責管理令牌的發行和回收以及令牌的Vault權限
 
-- Responsible for the processing of handling fees
+- 負責手續費的處理
 
   
 
 ### MOS
 
-MOS is the main contract on the source chain. It is mainly responsible for processing things from MAP Relay Chain. Its main functions are as follows:
-- Handle users' cross-chain transfers
+MOS是源鏈上的主合約。 主要負責處理來自MAP Relay Chain的東西。 其主要功能如下：
+- 處理用戶的跨鏈轉賬
 
-- Handle the cross-chain transfer of the Maintainer
+- 處理Maintainer的跨鏈轉移
 
-- Responsible for calling the LightNode contract to verify the things on the MAP Relay Chain, and analyze related events
+- 負責調用LightNode合約驗證MAP中繼鏈上的事物，分析相關事件
 
   
 
-### Vault
+### 金庫
 
-Vault is an equity token contract corresponding to each cross-chain token, and its main functions are as follows;
-- Pledge the user's liquidity and issue the equity token VToken
-- Record cross-chain fees and distribute them equally to liquidity providers
-- Extraction and transfer of liquidity
+Vault是每個跨鏈代幣對應的權益代幣合約，其主要功能如下；
+- 質押用戶的流動性，發行股權代幣VToken
+- 記錄跨鏈費用並平均分配給流動性提供者
+- 流動性的提取和轉移
 
-### Fee
+### 費用
 
-Fee is a collection and management contract for user cross-chain fees, which is distributed in the MOS Relay contract. Its main functions are as follows:
+Fee 是用戶跨鏈手續費的收取和管理合約，在 MOS Relay 合約中進行分發。 其主要功能如下：
 
-- Set the fee distribution ratio of vault, relay and protocol
-- Set the charging standard of the handling fee
+- 設置保險庫、中繼和協議的費用分配比例
+- 設定手續費的收費標準
 
-### Proof verification
+### 證明驗證
 
-Proof verification is to prove the proof to confirm that the cross-chain data is legal. The general verification process is encapsulated in LightNode, and the process is as follows:
-- Prove that Proof can be verified in the transaction body
-- Prove that the transaction body can construct ReciptRoot
-- Prove that ReciptRoot is in the header
-- Verify the validity of the Header according to the Header collection stored in the LightNodeds
+證明驗證是證明證明跨鏈數據是合法的。 一般的驗證流程封裝在LightNode中，流程如下：
+- 證明 Proof 可以在交易主體中被驗證
+- 證明交易主體可以構造ReciptRoot
+- 證明 ReciptRoot 在頭部
+- 根據保存在LightNodes中的Header集合驗證Header的合法性
 
-## How it works
+## 如何運行
 
 ![MOS Flow](mosFlowChart.png)
 
-### Token transfer
+### 代幣轉移
 
-**transfer out**
+**轉出**
 
-​	The main process of cross chain transfer out is as follows:
+跨鏈轉出的主要流程如下：
 
-- User authorized asset deduction
+- 用戶授權資產扣除
 
-- The user calls the contract to specify the cross chain chainId and quantity, and the contract deducts the corresponding quantity
+- 用戶調用合約指定跨鏈chainId和數量，合約扣除相應數量
 
-- The contract maps the token of the target chain and calculates the service charge and quantity (MOS Relay) deducted according to the token decimal
+- 合約映射目標鏈的token，並根據token小數計算扣除的服務費和數量（MOS Relay）
 
-- Deduction of handling charges and distribution according to TokenRegister registration information (MOS Relay)
+- 扣除手續費並根據TokenRegister註冊信息分配（MOS Relay）
 
-- Generate the out information into the order and the transferOut event output
-
-
-
-**transfer relay**
-
-​	The main process of the Maintainer monitoring information transferring out and calling the corresponding transferIn is as follows:
-
-- Scan MOS/MOS Relay's transferOut event
-
-- Generate corresponding Proof according to Event and Chain
-
-- Form the proof data and event into the transferIn of the transaction call target chain
+- 生成出入訂單信息和transferOut事件輸出
 
 
 
-**transfer in**
+**轉接中繼**
 
-   The main process of cross chain transfer in of maintainer is as follows:
+Maintainer監控信息轉出並調用相應的transferIn的主要流程如下：
 
-- Proof verification
+- 掃描MOS/MOS Relay的transferOut事件
 
-- Parse the corresponding transOut data
+- 根據Event和Chain生成相應的Proof
 
-- The contract maps the token of the target chain and calculates the service charge and quantity (MOS Relay) deducted according to the token decimal
-
-- Deduction of handling charges and distribution according to TokenRegister registration information (MOS Relay)
-
-- Judge whether it is a transfer to the MAPO chain, if it is the next step, and if it is not the order generated from the out information and the transferOut event output (MOS Relay) generated
-
-- Transfer out cross chain assets to users
+- 將證明數據和事件形成交易調用目標鏈的transferIn
 
 
 
-### Vault deposit
+**轉入**
+
+    Maintainer跨鏈轉入的主要流程如下：
+
+- 證明驗證
+
+- 解析對應的transOut數據
+
+- 合約映射目標鏈的token，並根據token小數計算扣除的服務費和數量（MOS Relay）
+
+- 扣除手續費並根據TokenRegister註冊信息分配（MOS Relay）
+
+- 判斷是否是到MAPO鏈的轉賬，如果是下一步，如果不是out信息產生的訂單和產生的transferOut事件輸出（MOS Relay）
+
+- 將跨鏈資產轉出給用戶
 
 
 
-**deposit out**
+### 保管庫存款
 
-   The main process of MOS chain user pledge liquidity is as follows:
 
-- User authorized asset deduction
 
-- The user calls the contract to specify the cross chain chainId and quantity, and the contract deducts the corresponding quantity
+**存入**
 
-- Generate the disposition information into an order and generate the disposition Out event output
+    MOS鏈用戶質押流動性的主要流程如下：
 
-  
+- 用戶授權資產扣除
 
-**deposit in**
+- 用戶調用合約指定跨鏈chainId和數量，合約扣除相應數量
 
-​	The initial application process of MOS (Maintainer) pledge liquidity is as follows:
-
-- Proof verification
-
-- Resolve the corresponding depositOut data
+- 將處置信息生成訂單並生成處置Out事件輸出
 
   
 
-​	The initial process for MOS Relay chain users to pledge liquidity is as follows:
+**存入**
 
-- User authorized asset deduction
+MOS（Maintainer）質押流動性初始申請流程如下：
 
-- The user calls the contract to specify the cross chain chainId and quantity, and the contract deducts the corresponding quantity
+- 證明驗證
+
+- 解析對應的depositOut數據
 
   
 
-​	The process behind MOS (Maintainer)/MOS Relay is as follows:
+MOS Relay鏈用戶質押流動性的初始流程如下：
 
-- Generate the corresponding equity token Vtoken to the user according to the quantity pledged by the user
+- 用戶授權資產扣除
 
-- Generate the corresponding depositIn event
+- 用戶調用合約指定跨鏈chainId和數量，合約扣除相應數量
+
+  
+
+MOS (Maintainer)/MOS Relay背後的流程如下：
+
+- 根據用戶質押的數量生成對應的權益代幣Vtoken給用戶
+
+- 生成對應的depositIn事件

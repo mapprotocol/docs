@@ -1,24 +1,24 @@
-# Validators
+# 驗證者
 
-## What is a Validator?
+## 什麼是驗證者？
 
-Map’s consensus protocol is performed by nodes that are selected as validators. There is a maximum cap on the number of active validators that can be changed by governance proposal, which is currently set at 100 validators. The active validator set is determined via the proof-of-stake process and is updated at the end of each epoch, a fixed period of approximately 3 days.
+Map 的共識協議由被選為驗證者的節點執行。 治理提案可以更改的活躍驗證者數量存在最大上限，目前設置為 100 個驗證者。 活躍的驗證者集是通過權益證明過程確定的，並在每個紀元結束時更新，固定週期約為 3 天。
 
-## Registration
+## 登記
 
-Any account that has at least the minimum stake requirement in Locked `MAP`, whether voting or non-voting, can register an validator. If a validating key is specified it may be used for this registration.
+任何在 Locked `MAP` 中至少具有最低股份要求的帳戶，無論是投票還是非投票，都可以註冊驗證器。 如果指定了驗證密鑰，則可以將其用於此註冊。
 
-## Reward source of validator
+## 驗證者的獎勵來源
 
-The reward of validator comes from a certain proportion of the system reward of each session. This certain proportion is set at registration time and can be changed later.
+validator 的獎勵來自每個會話系統獎勵的一定比例。 這個一定比例是在註冊時設置的，以後可以更改。
 
-## DeRegister
+##註銷
 
-- [deRegister](/develop/map-relay-chain/marker/AboutValidator.md)
+- [註銷](/develop/map-relay-chain/marker/AboutValidator.md)
 
-In order to prevent malicious occupation of resources during deregister, we put your deregister request in pending status and perform batch logout in the last block of the epoch.
+為了防止註銷時惡意佔用資源，我們將您的註銷請求置為pending狀態，並在epoch的最後一個區塊進行批量註銷。
 
 
-## Implementation
+## 執行
 
-[Validators.sol](https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/Validators.sol) handles registration, deregistration, staking, key management and epoch rewards for validators, as well as routines to manage the members of Accounts.
+[Validators.sol](https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/Validators.sol) 處理驗證者的註冊、註銷、質押、密鑰管理和紀元獎勵，以及 例程來管理帳戶的成員。

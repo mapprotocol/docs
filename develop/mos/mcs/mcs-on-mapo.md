@@ -40,115 +40,114 @@ Cross-chain transfer of tokens
 
 function transferOutToken(address _token, bytes memory _to, uint256 _amount, uint256 _toChain) external
 
-#### parameters
+#### 參數
 
-| parameter | type    | comment                                                      |
+| 參數 | 類型 | 備註                                                        |
 | :-------- | :------ | ------------------------------------------------------------ |
-| _token    | address | Token address to transfer tokens from                        |
-| _to       | bytes   | The destination chain receiving address of the token to be transferred out |
-| _amount   | uint256 | Amount of tokens to be transferred                           |
-| _toChain  | uint256 | Target chain id to transfer out                              |
+| _token    | address |  轉移代幣的代幣地  |
+| _to       | bytes   | 轉出代幣的目的鏈接收地址 |
+| _amount   | uint256 | 要轉移的代幣數量                        |
+| _toChain  | uint256 | 轉出的目標鏈id                             |
+
 
 ### transferOutNative
 
-Cross-chain transfer out of the native token
+跨鏈轉出原生代幣
 
-#### function
+#### 功能
 
 function transferOutNative(bytes memory _to, uint256 _toChain) external
 
-#### parameters
-
-| parameter | type    | comment                                                      |
+#### 參數
+| 參數 | 類型 | 備註                                                         |
 | --------- | ------- | ------------------------------------------------------------ |
-| _to       | bytes   | The destination chain receiving address of the token to be transferred out |
-| _toChain  | uint256 | Target chain id to transfer out                              |
+| _to       | bytes   | 待轉token的目的鏈接收地址 |
+| _toChain  | uint256 | 轉出的目標鏈id                             |
 
 ### depositToken
 
-The deposit tokens are in the chain
+存款代幣在鏈上
 
-#### function
+#### 功能
 
 function depositToken(address _token, address _to, uint _amount) external
 
-#### parameters
+#### 參數
 
-| parameter | type    | comment                                                      |
+| 參數 | 類型 | 備註                                                          |
 | --------- | ------- | ------------------------------------------------------------ |
-| _token    | address | Token address to transfer tokens from                        |
-| _to       | address | The destination chain receiving address of the token to be deposited out |
-| _amount   | uint    | Amount of tokens to be deposited                             |
+| _token    | address | 可以從中轉移代幣的地址                      |
+| _to       | address | 待存入代幣的目的鏈接收地址 |
+| _amount   | uint    | 要存入的代幣數量                             |
 
 ### depositNative
 
-The deposit native tokens are in the chain
+存款原生代幣在鏈上
 
-#### function
+#### 功能
 
-function depositNative(address _to) external
+功能 depositNative(address _to) external
 
-#### parameters
+#### 參數
 
-| parameter | type    | comment                                                      |
+| 參數 | 類型 | 備註                                                         |
 | :-------- | :------ | ------------------------------------------------------------ |
-| _to       | address | The destination chain receiving address of the token to be transferred out |
+| _to       | address | 待轉出代幣的目的鏈接收地址 |
 
 
 
-### withdraw
+### 取出
 
-Withdraw staked tokens and earnings
+取出質押代幣及收入
 
-#### function
+#### 功能
 
-function withdraw(address _vaultToken, uint256 _vaultAmount) external
+功能 withdraw(address _vaultToken, uint256 _vaultAmount) external
 
-#### parameters
+#### 參數
 
-| parameter    | type    | comment                   |
+| 參數 | 類型 | 備註                       |
 | ------------ | ------- | ------------------------- |
-| _vaultToken  | address | valut token address       |
-| _vaultAmount | uint256 | Amount of tokens withdraw |
+| _vaultToken  | address | valut 代幣地址     |
+| _vaultAmount | uint256 | 代幣取出數量 |
 
-## Messenger Interface
+## 信使界面
 
 
 
 ### transferIn
 
-Perform cross-chain transfer
+執行跨鏈傳輸
 
-#### function
+#### 功能
 
-function transferIn(uint256 _chainId, bytes memory _receiptProof) external
+功能 transferIn(uint256 _chainId, bytes memory _receiptProof) external
 
-#### parameters
+#### 參數
 
-| parameter     | type    | comment                       |
+| 參數 | 類型 | 備註                      |
 | ------------- | ------- | ----------------------------- |
-| _chainId      | uint256 | source chain id               |
-| _receiptProof | bytes   | source  chain  transfer proof |
-
+| _chainId      | uint256 | 起源鏈 id               |
+| _receiptProof | bytes   | 起源鏈轉出證明 |
 ### depositIn
 
-Perform cross-chain deposit
+執行跨鏈傳輸
 
-#### function
+#### 功能
 
-function depositIn(uint256 _chainId, bytes memory _receiptProof) external
+功能 depositIn(uint256 _chainId, bytes memory _receiptProof) external
 
-#### parameters
+#### 參數
 
-| parameter     | type    | comment                     |
+| 參數 | 類型 | 備註                    |
 | ------------- | ------- | --------------------------- |
-| _chainId      | uint256 | source chain id             |
-| _receiptProof | bytes   | source chain depsoit  proof |
+| _chainId      | uint256 | 起源鏈 id               |
+| _receiptProof | bytes   | 起源鏈轉出證明 |
 
 
-## Data structure
+## 數據結構
 
-ReceiptProof includes the proof and the receipt to prove.
+ReceiptProof包括證明和收據證明。
 
 ```
 

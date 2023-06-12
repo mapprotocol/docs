@@ -1,26 +1,25 @@
-MAP Protocol is structured in **three layers**: **MAP Protocol Layer**, **MAPO Services Layer(MOS)**, and **MAPO Application Ecosystem Layer**.
+MAP協議的結構分爲**三層**： **MAP協議層**，**MAPO服務層（MOS）**，以及**MAPO應用生態系統層**。
+## MAPO應用層
 
-## MAPO Application Layer
+- 來源於dApps的資產和數據在MAP中繼鏈上組裝。
+- 由於MAP全鏈服務（MOS），DApps可以實現互操作性
+- MAP協議層的全能鏈數據和資產驗證網絡的最終結果使dApps能夠無限增長。
 
-- Assets and data originated from dApps assembly on MAP Relay Chain
-- DApps can achieve interoperability because of MAPO Services (MOS)
-- The finality of omnichain data and asset verification network by MAP Protocol Layer empowers dApps to grow limitless.
+## MAP 全鏈服务层（MOS）
 
-## MAPO Services Layer (MOS)
+- 促進dApp開發者建立應用程序，類似於谷歌移動服務的Android生態系統。
+- 由部署在每個鏈上的保險庫和數據組成，以及在鏈之間傳輸信息的信使程序。
+- 是全能鏈資產和數據的執行層。
+- DApp開發者可以建立自己的組件或使用MOS。
+- 開發者可以利用MSC中的Vaults和數據，並與其他應用程序共享Vaults和數據的流動性。
+- 信使程序是一個由DApp開發者部署、運營和維護的SDK。DApp開發者也可以獨立和靈活地激勵信使貢獻者爲dApp傳輸omnichain信息。
+- MAP協議層上的Light-client的自驗證機制保證了來自信使的惡意攻擊將會是無效的。
 
-- Facilitate dApp developers to build applications, similar to Google Mobile Services to Android ecosystem.
-- Consists of Vaults and Data deployed on each chain, and Messenger Program to transmit messages between chains.
-- The execution layer for omnichain asset and data.
-- DApp developers can build their components or use MOS.
-- Developers can utilize Vaults and Data in MSC and share Vaults and Data liquidity with other applications.
-- Messenger Program is an SDK deployed, operated, and maintained by dApp developers. DApp developers can also independently and flexibly incentivize messenger contributors for transmitting omnichain messages for the dApp. 
-- The self-verification mechanism of the Light-client on the MAP Protocol Layer assures the invalidity of malicious attacks from messengers. 
+## 協議層 - 構建全息網絡基礎設施的核心： 驗證最終網絡和dApp的部署
 
-## Protocol Layer - Construct the CORE of Omnichain Network Infrastructure: Verification Finality Network and dApp Deployment 
+- 由以下部分組成： MAP中繼鏈，部署在每個鏈上的輕客戶端，以及鏈間維護程序，以更新和維護輕客戶端狀態。
+- MAP Relay Chain在虛擬機中主動擴展並支持異構區塊鏈的功能，從而構建了一個高效的Light-Client驗證網絡。
+- 部署在各個鏈上的Light-Client具有獨立的自我驗證和驗證終結的特點，成爲跨鏈資產和數據的驗證網絡。
+- 維護者是一個獨立的跨鏈程序，負責更新Light Client的狀態。輕客戶端的機制保證了維護者的惡意攻擊的無效性。
 
-- Consists of: MAP Relay Chain, Light-Client deployed on each chain, and inter-chain Maintainer Program to update and maintain Light-Client status.
-- MAP Relay Chain proactively extends and supports heterogeneous blockchains' features in virtual machine, which construct a gas-efficient Light-Client verification network.
-- Light-Client deployed on each chain has the characteristics of independent self-verification and verification finality, which becomes the verification network for cross-chain assets and data. 
-- The Maintainer is an independent inter-chain program responsible for updating the status of Light Clients. The mechanism of the Light-client assures the invalidity of malicious attacks from maintainer. 
-
-![](threelayers.png)
+！[](threelayers.png)

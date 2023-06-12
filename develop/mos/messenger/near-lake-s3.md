@@ -1,21 +1,21 @@
 # near-lake-s3
-near-lake-s3 is used to sync the certain blocks from AWS S3 buckets to redis server. The block must contain transactions/receipts related to specified account.
+near-lake-s3 用於將某些塊從 AWS S3 存儲桶同步到 redis 服務器。 該塊必須包含與指定帳戶相關的交易/收據。
 
-## How to build?
+## 如何構建？
 
 ```shell
 cargo build --release
 ```
 
-The binary file "near-lake-s3" will be generated in ./target/release.
+./target/release 中將生成二進製文件“near-lake-s3”。
 
-## How to Run
+## 如何運行
 
-### AWS S3 Credentials
+### AWS S3 證書
 
-In order to be able to get objects from the AWS S3 bucket you need to provide the AWS credentials.
+為了能夠從 AWS S3 存儲桶中獲取對象，您需要提供 AWS 憑證。
 
-AWS default profile configuration with aws configure looks similar to the following:
+使用 aws configure 的 AWS 默認配置文件配置類似於以下內容：
 
 `~/.aws/credentials`
 ```
@@ -24,13 +24,13 @@ aws_access_key_id=
 aws_secret_access_key=
 ```
 
-[AWS docs: Configuration and credential file settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
+[AWS 文檔：配置和憑證文件設置](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
 
-### Env Config
+### 環境配置
 
-You can copy env.example to .env, modify it and put it in the same directory with near-lake-s3 (or it's parent directory).
+您可以將 env.example 複製到 .env，修改它並將其放在與 near-lake-s3 相同的目錄（或其父目錄）中。
 
-maybe you can install the [redis](https://redis.io/docs/getting-started/installation/) for the following configuration.
+也許您可以為以下配置安裝 [redis](https://redis.io/docs/getting-started/installation/)。
 
 ```
 // Get the start block height from cache if true, if no record is found, use START_BLOCK_HEIGHT
@@ -56,7 +56,7 @@ LOG_LEVEL="INFO"
 ```
 
 
-### Run
+### 運行
 ```shell
 ./target/release/near-lake-s3
 ```

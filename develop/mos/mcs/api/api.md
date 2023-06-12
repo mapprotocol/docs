@@ -1,34 +1,34 @@
 
-## MCS API Reference
+## MCS API 參考
 
-List of APIs
+API列表
 
 - [queryHistory](#queryHistory)
-- [queryBridgeInfo](#queryBridgeInfo)
+- [queryBridgeInfo]（#queryBridgeInfo）
 - [queryTokenList](#queryTokenList)
 - [queryChainList](#queryChainList)
 
-### queryHistory
+### 查詢歷史queryHistory
 
 Uri: /api/queryHistory
 
-Request method: post
+查詢方式：post
 
-Returns the user's transaction history on the specified chain.
+返回用戶在指定鏈上的交易記錄。
 
-##### Parameters
+##### 參數
 
-Parameter Type： raw (application/json)
+參數類型： raw (application/json)
 
-`pageNo` - Integer of page number, default is 1.
+`pageNo` - 頁碼的整數，默認為 1。
 
-`pageSize` - Integer of page size, default is 10.
+`pageSize` - 頁面大小的整數，默認為 10。
 
-`address` - User address.
+`address` - 用戶地址。
 
-`chainId` - Chain id.
+`chainId` - 鏈號。
 
-Example:
+示例:
 
 {
 "address": "0x01eb1a70b4b3529fc0c3a8dc6f78ffb5f5d42e8c",
@@ -37,21 +37,20 @@ Example:
 "pageSize": 10
 }
 
-##### Returns
+##### 返回
 
-`hash` - Transaction hash.
+`hash` - 交易哈希。
 
-`amount` - Cross-chain amount.
+`amount` - 跨鏈數量。
 
-`tokenAddress` - Token address.
+`tokenAddress` - 代幣地址。
 
-`fromChainObject` - From chain details.
+`fromChainObject` - 來自鏈的詳細信息。
 
-`toChainObject` - To chain details.
+`toChainObject` - 鏈接細節。
 
-`tokenObject` - Token details.
-
-##### Example
+`tokenObject` - 令牌詳細信息。
+##### 示例
 ```js
 // Request
 curl --location --request POST 'http://18.139.224.21:8201/api/queryHistory' \
@@ -189,27 +188,27 @@ curl --location --request POST 'http://18.139.224.21:8201/api/queryHistory' \
 }
 ```
 
-### queryBridgeInfo
+### 查詢跨鏈橋信息 queryBridgeInfo
 
 Uri: /api/queryBridgeInfo
 
-Request method: post
+詢問方法: post
 
-Returns cross-chain details.
+返回跨鏈詳情 cross-chain details.
 
-##### Parameters
+##### 參數
 
 Parameter Type： raw / application/json
 
 `txHash` - Transaction hash.
 
-Example: 
+示例: 
 
 {
 "txHash": "0xcdf3dbd92f6269f4ce5d4c1f05fae5673cec24fe876295fca0d6059297d389d4"
 }
 
-##### Returns
+##### 返回s
 
 `coin` - Token symbol.
 
@@ -237,7 +236,7 @@ Example:
 
 `relayerObject` - Relayer Chain details.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl --location --request POST 'http://18.139.224.21:8201/api/queryBridgeInfo' \
@@ -281,19 +280,19 @@ curl --location --request POST 'http://18.139.224.21:8201/api/queryBridgeInfo' \
 }
 ```
 
-### queryTokenList
+### 查詢代幣列表 queryTokenList
 
 Uri: /api/queryTokenList
 
-Request method: post
+詢問方式 : post
 
-Returns a list of tokens.
+返回代幣列表
 
-##### Parameters
+##### 參數
 
 none
 
-##### Returns
+##### 返回
 
 `list` - List of tokens:
 - `tokenId`: Token id.
@@ -304,7 +303,7 @@ none
 - `decimal`: Token decimal.
 - `img`: Token icon.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl --location --request POST 'http://18.139.224.21:8201/api/queryTokenList'
@@ -551,31 +550,31 @@ curl --location --request POST 'http://18.139.224.21:8201/api/queryTokenList'
 }
 ```
 
-### queryChainList
+### 查詢鏈列表 queryChainList
 
 Uri: /api/queryChainList
 
 Request method: post
 
-Returns supported chains.
+返回s supported chains.
 
-##### Parameters
+##### 參數
 
 none
 
-##### Returns
+##### 返回
 
-`list` - List of chains:
-- `chain`: Chain identification.
-- `contract`: Cross address.
-- `rpc`: Rpc url.
-- `chainId`: Chain Id.
-- `gasLimit`: Gas limit.
-- `chainName`: Chain name.
-- `chainImg`: Chain icon.
-- `scanUrl`: Scan url.
+`list` - 链列表：
+- `chain`： 链的标识
+- `contract`： 合約
+- `rpc`： Rpc网址
+- `chainId`： 链的ID
+- `gasLimit`： 燃氣費限制
+- `chainName`： 链名称
+- `chainImg`： 链的图标
+- `scanUrl`： 扫描地址
 
-##### Example
+##### 示例
 ```js
 // Request
 curl --location --request POST 'http://18.139.224.21:8201/api/queryChainList'

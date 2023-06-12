@@ -1,13 +1,13 @@
-# EVM Chains Contract
+# EVM 鏈合約
 
 ![MOS](MOS.png)
 
-## Contract Address
+## 合約地址
 
-[Here to get MAPO mainnet and testnet MCS contract address.](/develop/mos/mcs/README.md)
+[此處獲取MAPO主網和測試網MCS合約地址。](/develop/mos/mcs/README.md)
 
 
-## contract interface 
+## 合約界面
 
 ```solidity
 interface EvmChainContract {
@@ -30,112 +30,114 @@ interface EvmChainContract {
 }
 ```
 
-## User Interface
+## 用戶界面
 
 
 ### transferOutToken
 
-Cross-chain transfer out token
+跨鏈轉出代幣
 
-#### function
+#### 功能
 
-function transferOutToken(address _token, bytes memory _to, uint256 _amount, uint256 _toChain) external
+function transferOutToken(address _token, bytes memory _to, uint256 _amount, uint256 _toChain) 外部
 
-#### parameters
+#### 參數
 
-| parameter | type    | comment                                                      |
+|參數 | 類型 | 備註                                                    |
 | --------- | ------- | ------------------------------------------------------------ |
-| _token    | address | Token address to transfer tokens from                        |
-| _to       | bytes   | The destination chain receiving address of the token to be transferred out |
-| _amount   | uint256 | Amount of tokens to be transferred                           |
-| _toChain  | uint256 | Target chain id to transfer out                              |
+| _token    | address | 轉移代幣的代幣地址                       |
+| _to       | bytes   | 轉出代幣的目的鏈接收地址  |
+| _amount   | uint256 | 要轉移的代幣數量                         |
+| _toChain  | uint256 | 轉出的目標鏈id                          |
+
 
 ### transferOutNative
 
-Cross-chain transfer out of the native coin
+原生幣跨鏈轉出
 
-#### function
+#### 功能
 
-function transferOutNative(bytes memory _to, uint _toChain) external
+function	transferOutNative(bytes memory _to, uint _toChain) external
 
-#### parameters
+#### 儲存代幣
 
-| parameter | type    | comment                                                      |
+| 參數 | 類型 | 備註                                                    |
 | --------- | ------- | ------------------------------------------------------------ |
-| _to       | bytes   | The destination chain receiving address of the token to be transferred out |
-| _toChain  | uint256 | Target chain to transfer out                                 |
+| _to       | bytes   | 轉出代幣的目的鏈接收地址  |
+| _toChain  | uint256 |目標鏈轉出                                |
 
-### depositToken
+### 存入本地
 
-Deposit token to vault
+將代幣存入vault
 
-#### function
+#### 功能
 
-function depositToken(address _token, address _to, uint _amount) external
+function depositToken（address _token，address _to，uint _amount）外部
 
-#### parameters
+#### 參數
 
-| parameter | type    | comment                               |
+| 參數 | 類型 | 備註 |
 | --------- | ------- | ------------------------------------- |
-| _token    | address | Token address to transfer tokens from |
-| _to       | address | Target chain to transfer out          |
-| _amount   | uint    | Amount of tokens to be deposited      |
+| _token    | address | 從中轉移代幣的代幣地址|
+| _to       | address | 目標鏈轉出         |
+| _amount   | uint    | 要存入的代幣數量     |
 
-### depositNative
+### depositeNative 存入本地
 
-Deposit native coin to vault
+將代幣存入vault
 
 #### function
 
-function depositNative(address _to) external
+function  depositNative(address _to) external
 
 #### parameters
 
-| parameter | type    | comment                                                      |
+| 參數 | 類型 | 備註 |                                                     |
 | --------- | ------- | ------------------------------------------------------------ |
-| _to       | address | The destination chain receiving address of the token to be transferred out |
+| _to       | address | 待轉出代幣的目的鏈接收地址 |
 
 
 
-## Messenger Interface
+## 信使界面
 
-### transferIn
+###轉入
 
-Perform cross-chain transfer
+執行跨鏈傳輸
 
-#### function
+#### 功能
 
 function transferIn(uint256 _chainId, bytes memory _receiptProof) external
 
 #### parameters
 
-| parameter     | type    | comment                       |
+| 參數 | 類型 | 備註   |
 | ------------- | ------- | ----------------------------- |
-| _chainId      | uint256 | source chain id               |
-| _receiptProof | bytes   | source  chain  transfer proof |
+| _chainId      | uint256 | 起源鏈 id               |
+| _receiptProof | bytes   | 起源鏈轉出證明 |
 
 
-## Management Interface
+## 管理界面
 
-### initialize
+###初始化
 
-perform initialization
+執行初始化
 
-### function
+### 功能
 
 function initialize(address _wToken, address _lightNode)public 
 
-### parameters
+### 參數
 
-| parameter  | type    | comment                                  |
+| 參數 | 類型 | 備註                                |
 | ---------- | ------- | ---------------------------------------- |
-| _wToken    | address | This is wrap contract address            |
-| _lightNode | address | This is the LightClient contract address |
+| _wToken    | address | 這是包裝合約地址          |
+| _lightNode | address | 這是LightClient合約地址 |
 
 
-## Data structure
 
-ReceiptProof includes the proof and the receipt to prove.
+## 數據結構
+
+ReceiptProof包括證明和收據證明。
 
 ```
 struct istanbulExtra {

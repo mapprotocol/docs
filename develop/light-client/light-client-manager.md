@@ -1,18 +1,18 @@
-# Client Manager
+# 客戶端管理
 
 
 
-## what is light client manager?
+## 什麼是輕客戶端管理器？
 
-Client Manager is just a management contract. Every time MAPO supports a chain cross-chain, it will deploy the corresponding Light Client contract on the MAPO chain. In order to avoid unnecessary errors when synchronizing different Light Client blocks, we created a Client Manager contract to synchronize blocks, and it is also more convenient to verify the ProofData of different Light Clients.
+Client Manager只是一份管理合約。 MAPO每支持一條鏈跨鏈，都會在MAPO鏈上部署對應的Light Client合約。 為了避免同步不同Light Client區塊時出現不必要的錯誤，我們創建了一個Client Manager合約來同步區塊，同時也更方便驗證不同Light Client的ProofData。
 
-## How it works?
+## 如何運行？
 
-Client Manager is a management contract that relies on the owner to register the contract addresses of other Light Clients on the MAPO chain. Detailed verification logic and block data are still updated on the Light Client contract. Client Manager is only to provide more convenient update blocks and Proof verification
+Client Manager 是一個管理合約，它依賴於所有者在 MAPO 鏈上註冊其他 Light Client 的合約地址。 詳細的驗證邏輯和區塊數據仍然在輕客戶端合約上更新。 Client Manager只是為了提供更方便的更新區塊和Proof驗證
 
-## Client Manager Interface
+## 客戶端管理界面
 
-Here is the interface of the Client Manager method
+這是Client Manager方法的界面
 
 ```
 interface ILightClientManager {

@@ -1,14 +1,14 @@
-# Map cross chain service (MCS) on near protocol
+# 在 near 協議上映射跨鏈服務 (MCS)
 
 ![MOS](MOS.png)
 
-## Contract Address
+## 合約地址
 
-[Here to get MAPO mainnet and testnet MCS contract address.](/develop/mos/mcs/README.md)
+[此處獲取MAPO主網和測試網MCS合約地址。](/develop/mos/mcs/README.md)
 
 
 
-## Contract interface
+## 合約界面
 
 ```rust
 
@@ -74,15 +74,15 @@ impl MapCrossChainService {
 }
 ```
 
-## Interact with contract interface
+## 與合約接口交互
 
-### transfer_in
+### 轉入
 
-Transfer from Mapo to Near based on the proof data and event. Must attach enough NEAR funds to cover for storage of the proof.
+根據證明數據和事件從 Mapo 轉移到 Near。 必須附加足夠的 NEAR 資金來支付證明的存儲費用。
 
-#### input parameters
+#### 輸入參數
 
-| parameter| type         | comment |
+| 參數 | 類型 | 備註 |
 | -------- | ------------ | ------- |
 | receipt_proof   | ReceiptProof      | the proof of one receipt |
 | index     | usize      | the index of event among all the events in the receipt |
@@ -92,9 +92,9 @@ Transfer from Mapo to Near based on the proof data and event. Must attach enough
 
 Transfer out tokens to other blockchain.
 
-#### input parameters
+#### 輸入參數
 
-| parameter| type         | comment |
+| 參數 | 類型 | 備註 |
 | -------- | ------------ | ------- |
 | token   | String      | NEAR account of the mcs token contract |
 | to     | Vec<u8>     | the target account address on target blockchain |
@@ -106,9 +106,9 @@ Transfer out tokens to other blockchain.
 
 Transfer out native token to other blockchain.
 
-#### input parameters
+#### 輸入參數
 
-| parameter| type         | comment |
+| 參數 | 類型 | 備註 |
 | -------- | ------------ | ------- |
 | to     | Vec<u8>     | the target account address on target blockchain |
 | to_chain | u128      | the chain id of target blockchain |
@@ -118,255 +118,253 @@ Transfer out native token to other blockchain.
 
 Deposit out native token to MAP blockchain.
 
-#### input parameters
+#### 輸入參數
 
-| parameter| type         | comment |
+| 參數 | 類型 | 備註 |
 | -------- | ------------ | ------- |
 | to     | Vec<u8>     | the target account address on MAP blockchain |
 
 
-## Management Interface
+## 管理界面
 
-### init
+### 初始化
 
-Initialize the contract with configuration parameters.
+使用配置參數初始化合約。
 
-#### input parameters
+#### 輸入參數
 
-| parameter| type         | comment |
+| 參數 | 類型 | 備註 |
 | -------- | ------------ | ------- |
-| map_light_client   | String      | NEAR account of the MAP light client contract |
-| map_bridge_address     | String      | the address of the MCS contract on MAP blockchain, in hex |
-| wrapped_token     | String      | NEAR account of the wrap near contract |
-| near_chain_id     | u128     | the chain id of the near blockchain |
+| map_light_client   | String      | MAP 輕客戶端合約的 NEAR 賬戶 |
+| map_bridge_address     | String      | MOS 合約在 MAP 區塊鏈上的十六進制地址 |
+| wrapped_token     | String      |wrap near 合約的 NEAR 賬戶 |
+| near_chain_id     | u128     |NEAR 區塊鏈的鏈ID|
 
 
-### version
+### 版本
 
-Get the version info of the current MCS contract.
+獲取當前 MCS 合約的版本信息。
 
 
 ### deploy_mcs_token
 
-Deploy MCS token contract. The deployed token can be minted/burnt by MCS contract.
+部署 MOS 代幣合約。 部署的代幣可以由 MOS 合約鑄造/銷毀。
 
-#### input parameters
+#### 輸入參數
 
-| parameter| type         | comment |
+| 參數 | 類型 | 備註 |
 | -------- | ------------ | ------- |
-| name     | String     | the name of MCS token, the full address of the token will be <name>.<MCS contract address>|
+| name     | String     | MOS代幣的名稱，代幣的完整地址為<名稱>.<MOS合約地址>|
 
 
 ### is_used_event
 
-Check if the event is ussed or not.
+檢查事件是否被使用。
 
-#### input parameters
+#### 輸入參數
 
-| parameter| type         | comment |
+| 參數 | 類型 | 備註 |
 | -------- | ------------ | ------- |
-| order_id   | &CryptoHash   | the order id of the event|
+| order_id   | &CryptoHash   | event事件的訂單id|
 
-#### output parameters
+#### 輸出參數
 
 | type         | comment |
 | --------  | ------- |
-| bool      |  true if the event is already used, false otherwise | 
+| bool      |  如果事件已被使用，則為 true，否則為 false | 
 
 
 ### set_metadata
 
-Get the record information( validators, threshold and epoch) for the epecified epoch.
+獲取指定紀元的記錄信息（驗證者、閾值和紀元）。
 
-#### input parameters
+#### 輸入參數
 
-| parameter| type         | comment |
+| 參數 | 類型 | 備註 |
 | -------- | ------------ | ------- |
-| address   | String      | the contract address of the MCS token |
-| name   | Option<String>      | the human-readable name of the token |
-| symbol   | Option<String>      | the abbreviation, like wETH or AMPL |
-| reference   | Option<String>      | a link to a valid JSON file containing various keys offering supplementary details on the token |
-| reference_hash   | Option<String>      | the base64-encoded sha256 hash of the JSON file contained in the reference field |
-| decimals   | Option<String>      | used in frontends to show the proper significant digits of a token |
-| icon   | Option<String>      | a small image associated with this token |
+| address   | String      | MOS 代幣合約地址 |
+| name   | Option<String>      | 代幣可讀名字 |
+| symbol   | Option<String>      | 略縮形式例如wETH 或者 AMPL |
+| reference   | Option<String>      | 指向包含各種密鑰的有效 JSON 文件的鏈接，提供有關令牌的補充詳細信息 |
+| reference_hash   | Option<String>      | 引用字段中包含的 JSON 文件的 base64 編碼的 sha256 哈希|
+| decimals   | Option<String>      | 在前端用於顯示令牌的正確有效數字 |
+| icon   | Option<String>      | 與此代幣關聯的頭像 |
 
-### controller
+### 控制帳戶 controller
 
-Get the controller of the MCS contract.
+獲取MOS 合約的控制帳戶 ID
 
-#### output parameters
+#### 輸出參數
 
-| type         | comment |
+|  類型 | 備註  |
 | --------  | ------- |
-| Option<AccountId>      |  the controller account id of the MCS contract | 
+| Option<AccountId>      |  MOS 合約的控制帳戶 ID | 
 
 
 ### set_controller
 
-Set the controller of the MCS contract.
+設置 MCS 合約的控制帳戶。
 
-#### input parameters
+#### 輸入參數
 
-| parameter| type         | comment |
+| 參數 | 類型 | 備註 |
 | -------- | ------------ | ------- |
-| controller   | AccountId      | the controller account id of the MCS contract |
+| controller   | AccountId      | MOS 合約的控制帳戶 ID|
 
 
 ### controller_or_self
 
-Check if the predecessor is controller or self.
+檢查前任是控制者還是自己。
 
-#### output parameters
+#### 輸出參數
 
 | type         | comment |
 | --------  | ------- |
-| bool      |  true if the predecessor is controller or self, false otherwise | 
+| bool      | 如果前任是控制者或自己，則為 true，否則為 false| 
 
 
 ### get_mcs_tokens
 
-Get all deployed MCS tokens and their target chains.
+獲取已部署的所有MOS代幣和其目標鏈 
 
-#### output parameters
+#### 輸出參數
 
 | type         | comment |
 | --------  | ------- |
-| Vec<(String, HashSet<u128>)>      |  deployed MCS tokens and their target chains | 
+| Vec<(String, HashSet<u128>)>      |  已部署的MOS代幣和其目標鏈  | 
 
 
 ### get_fungible_tokens
 
-Get all registered fungible tokens and their target chains.
+獲取所有可置換代幣和其目標鏈 
 
-#### output parameters
+#### 輸出參數
 
 | type         | comment |
 | --------  | ------- |
-| Vec<(String, HashSet<u128>)>      |  registered fungible tokens and their target chains | 
+| Vec<(String, HashSet<u128>)>      |  已註冊可置換代幣和其目標鏈 | 
 
 
 ### get_native_token_to_chains
 
-Get all registered native token target chains.
+獲取所有已註冊的本地代幣目標鏈。
 
-#### output parameters
+#### 輸出參數
 
-| type         | comment |
+| 類型 | 備註 |
 | --------  | ------- |
-| HashSet<u128>      |  registered native token target chains | 
+| HashSet<u128>      |  註冊原生代幣目標鏈 | 
 
 
 ### add_native_to_chain
 
-Add target chain for native token.
+為原生代幣添加目標鏈。
 
-#### input parameters
+#### 輸入參數
 
-| parameter| type         | comment |
+| 參數 | 類型 | 備註 |
 | -------- | ------------ | ------- |
-| to_chain   | u128      | target chain id |
+| to_chain   | u128      | 目標鏈 id |
 
 
 ### remove_native_to_chain
 
-Remove target chain for native token.
+刪除本地代幣的目標鏈。
 
-#### input parameters
+#### 輸入參數
 
-| parameter| type         | comment |
+| 參數 | 類型 | 備註|
 | -------- | ------------ | ------- |
-| to_chain   | u128      | target chain id |
+| to_chain   | u128      | 目標鏈 id  |
 
 
 ### add_mcs_token_to_chain
 
-Allow the MCS token to be transfered to the target chain.
+允許 MOS 代幣轉移到目標鏈。
 
-#### input parameters
+#### 輸入參數
 
-| parameter| type         | comment |
+| 參數 | 類型 | 備註 |
 | -------- | ------------ | ------- |
-| token   | String      | MCS token address |
-| to_chain   | u128      | target chain id |
+| token   | String      | MOS代幣地址  |
+| to_chain   | u128      | 目標鏈 id  |
 
 ### remove_mcs_token_to_chain
 
-Remove the target chain id from the allow list of the MCS token.
+從 MOS 代幣的允許列表中刪除目標鏈 ID。
 
-#### input parameters
+#### 輸入參數
 
-| parameter| type         | comment |
+| 參數 | 類型 | 備註 |
 | -------- | ------------ | ------- |
-| token   | String      | MCS token address |
-| to_chain   | u128      | target chain id |
+| token   | String      | MOS代幣地址  |
+| to_chain   | u128      | 目標鏈 id  |
 
 
 ### valid_mcs_token_out
 
-Check if the MCS token is allowed to be transfered to the target chain.
+檢查是否允許將代幣轉移到目標鏈。
 
-#### input parameters
+#### 輸入參數
 
-| parameter| type         | comment |
+| 參數 | 類型 | 備註 |
 | -------- | ------------ | ------- |
-| token   | &String      | MCS token address |
-| to_chain   | u128      | target chain id |
+| token   | &String      | MOS代幣地址 |
+| to_chain   | u128      | 目標鏈 id |
 
-#### output parameters
+#### 輸出參數
 
-| type         | comment |
+類型 | 備註 |
 | --------  | ------- |
-| bool      |  true if target chain is allowed, false otherwise  | 
+| bool      |  如果允許目標鏈，則為 true，否則為 false | 
 
 
 ### add_fungible_token_to_chain
+允許將可置換代幣轉移到目標鏈。
 
-Allow the fungible token to be transfered to the target chain.
+#### 輸入參數
 
-#### input parameters
-
-| parameter| type         | comment |
+| 參數 | 類型 | 備註  |
 | -------- | ------------ | ------- |
-| token   | String      | fungible token address |
-| to_chain   | u128      | target chain id |
+| token   | String      | 可置換代幣的地址 |
+| to_chain   | u128      | 目標鏈 id |
 
 ### remove_fungible_token_to_chain
 
-Remove the target chain id from the allow list of the fungible token.
+從可替代代幣的允許列表中刪除目標鏈 ID。
 
-#### input parameters
+#### 輸入參數
 
-| parameter| type         | comment |
+| 參數 | 類型 | 備註  |
 | -------- | ------------ | ------- |
-| token   | String      | fungible token address |
-| to_chain   | u128      | target chain id |
+| token   | String      | 可置換代幣的地址 |
+| to_chain   | u128      | 目標鏈 id |
 
 
 ### valid_fungible_token_out
 
-Check if the fungible token is allowed to be transfered to the target chain.
+檢查是否允許將代幣轉移到目標鏈。
 
-#### input parameters
+#### 輸入參數
 
-| parameter| type         | comment |
+| 參數 | 類型 | 備註   |
 | -------- | ------------ | ------- |
-| token   | &String      | MCS token address |
-| to_chain   | u128      | target chain id |
+| token   | &String      | MOS 代幣地址 |
+| to_chain   | u128      | 目標鏈 id |
 
-#### output parameters
+#### 輸出參數
 
-| type         | comment |
+|  類型 | 備註   |
 | --------  | ------- |
-| bool      |  true if target chain is allowed, false otherwise  | 
+| bool      |  如果允許目標鏈，則為 true，否則為 false| 
 
 
+## 數據結構
 
-## Data structure
 
+### 以下是地圖燈客戶端合約的一些主要數據結構。
 
-### Here are some main data structure for map light client contract.
-
-MapCrossChainService is the map cross chain service contract.
+MapCrossChainService 是地圖跨鏈服務合約。
 ```rust
 
 pub struct MapCrossChainService {
@@ -402,7 +400,7 @@ pub struct MapCrossChainService {
 }
 ```
 
-ReceiptProof includes the proof and the receipt to prove.
+ReceiptProof包括證明和收據證明。
 ```rust
 pub struct ReceiptProof {
     // the block header where the receipt exists

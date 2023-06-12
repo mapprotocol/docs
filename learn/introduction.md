@@ -1,29 +1,28 @@
-## Introduction of MAP Protocol
+## 介紹MAP協議
+MAP協議是用於可互操作的Web3的全能鏈網絡，具有五個主要特徵： **安全-終端性、全鏈覆蓋、即時確認、最低成本和開發者就緒**。
 
-MAP Protocol is the omnichain network for an interoperable Web3 with five main features: **Security-Finality, All-Chain Coverage, Instant Confirmation, Minimum Cost, and Developer-Ready**.
+MAP協議爲全鏈交易提供即時確認，並通過輕客戶端提供驗證最終結果，爲低代碼部署提供SDK和API，主動將其他鏈的算法作爲預編譯合約嵌入MAP中繼鏈的EVM層，並維持一個低成本的網絡。
 
-MAP Protocol provides instant confirmation for omnichain transactions and verification finality by light-client, offers SDK and API for low-code deployment, proactively embeds other chains' algorithms as pre-compiled contracts in the EVM layer of MAP Relay Chain, and maintains a cost-efficient network.
+現在，一般的鏈，如Ethereum、Avalanche、Flow，都有各自的領地；而專門的鏈，如IoTex、NKN，也在蓬勃發展。Omnichain網絡，一個連接它們的基礎設施，是未來的趨勢。與世界各地的開發者一起，MAP協議是一個新的全能鏈時代的曙光。
 
-Nowadays, general chains, such as Ethereum, Avalanche, Flow, have their own respective territory; and dedicated chains, such as IoTex, NKN, are also thriving. Omnichain network, an infrastructure to connect them all, is the future. Together with worldwide developers, MAP Protocol is the dawn of a new omnichain age.
+開發者只需**兩個步驟就可以輕鬆建立他們部署在任何鏈上的全能鏈應用程序：
 
-Developers can easily build their omnichain applications deployed on any chain in just **two steps**:
+1. **建立鏈間信使**。
+2. **通過我們的SDK與鏈上金庫和數據進行互動。
 
-1. **Build inter-chain messenger.**
-2. **Interact with on-chain vault and data through our SDK.**
+## MAP協議的特點
 
-## Features of MAP Protocol 
+### 安全性-基礎性
+通過每個公共區塊鏈上的輕客戶端形成的獨立自我驗證網絡，保證區塊鏈級別的安全。
 
-### Security-Finality
-Guarantee blockchain-level security through an independent self-verification network formed by light clients on every public blockchain.
+### 全鏈覆蓋
+將異質鏈的簽名和散列算法嵌入到MAP中繼鏈的EVM層，以確保所有鏈之間的無縫通信。
 
-### All-Chain Coverage
-Embed heterogeneous chains' signing and hashing algorithm into the EVM layer of the MAP Relay Chain to ensure seamless communication between all chains.
+### 即時確認
+鏈間通信程序和鏈上智能合約協同工作。
 
-### Instant Confirmation
-Inter-chain communication programs and on-chain smart contracts work together efficiently to ensure that speed is only related to each chain's block time.
+###最低費用
+MAP協議只收取MAP中繼鏈和其他相關鏈的燃氣費，無額外費用。
 
-### Minimum Cost
-MAP Protocol only charge the gas fee of MAP Relay Chain and other related chains with no additional cost.
-
-### Developer-Ready
-Through MAPO Service (MOS) deployed on and between public chains, dAPPs can share the liquidity of MOS's Vaults on different chains, and customize the entry threshold and incentive model of inter-chain program: messenger. Alternatively, we can use the MOS open source code to build dAPP-related Omnichain components.
+### 開發者就緒
+通過部署在公有鏈上和公有鏈之間的MAP全鏈服務（MOS），dAPP可以在不同的鏈上共享MOS的Vaults的流動性，並定製鏈間程序的進入門檻和激勵模式：信使。另外，我們可以使用MOS的開放源代碼來構建dAPP相關的Omnichain組件。

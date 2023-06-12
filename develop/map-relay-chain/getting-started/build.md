@@ -1,8 +1,8 @@
-## Building from the source
+## 從源代碼開始創建
 
-Building atlas requires both a Go (version 1.16 or later) and a C compiler.
-You can install them using your favourite package manager.
-Once the dependencies are installed, run
+創建atlas需要Go（1.16或更高版本）和C編譯器。
+你可以用你喜歡的軟件包管理器來安裝它們。
+一旦安裝了這些，就可開始運行
 
 ```
     git clone https://github.com/mapprotocol/atlas.git
@@ -10,23 +10,23 @@ Once the dependencies are installed, run
     make atlas
 ```
 
-## Running atlas
+## 運行 atlas
 
 Going `atlas -h` can get help infos.
 
-### Running on the atlas main network
+### 在 atlas 主網運行
 
 ```
 $ atlas --datadir ./data0 console
 ```
 
 
-### Running on the Atlas Chain singlenode(private) network
+### 在 Atlas 鏈單節點（私人）網絡上運行
 
-To start a g
-instance for single node,  run it with these flags:
+要在單節點運行 g 實例，
+用這些標記指令：
 
 ```
 $ atlas --single --datadir ./data0  console
 ```
-if add  `--http` flag to the command, it will enable the RPC server, than you can access the RPC with the  `http://127.0.0.1:7445`
+如果把  `--http` 標記到command，RPC服務器便會啟動，然後你便可以通過  `http://127.0.0.1:7445`擁有RPC服務器權限。

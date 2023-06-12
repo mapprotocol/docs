@@ -1,40 +1,39 @@
-# MAP Maintainer - Compass 
+# MAP 維護者 - Compass
 
-## Summary
+## 概括
 
-Compass is the Golang implementation of cross-chain communication maintainer for MAP Protocol. It currently supports bridging between EVM based chains.
+Compass 是 MAP 協議跨鏈通信維護者的 Golang 實現。 它目前支持基於 EVM 的鏈之間的橋接。
 
-The newly designed compass version contains all the functions required to run the relay node. With this tool, you can run nodes on almost all hardware platforms.
+新設計的指南針版本包含運行中繼節點所需的所有功能。 使用此工具，您可以在幾乎所有硬件平台上運行節點。
 
-# Contents
+# 內容
 
-# Quick Start
+## 快速開始
 
-the recommanded way to get the executable is to download it from the release page.
+獲取可執行文件的推薦方法是從發布頁面下載它。
 
->if you want to build it from the source code,check the [building](#building) section below.
+>如果您想從源代碼構建它，請查看下面的 [building](#building) 部分。
 
-### 2. Prepare the accounts for each chain
-fund some accounts in order to send txs on each chain, you want to provice crosse-chain service.
-the esaiest way is to using the same one address for every chain.
+### 2.準備每個鏈的賬戶
+為一些賬戶注資以便在每條鏈上發送交易，你想提供跨鏈服務。
+最簡單的方法是為每個鏈使用相同的地址。
 
-after that we need to import the account into the keystore of compass.  
-using the private key is the simplest way,run the following command in terminal:
-
+之後我們需要將帳戶導入指南針的密鑰庫。
+使用私鑰是最簡單的方法，在終端中運行以下命令：
 ```zsh
 compass accounts import --privateKey '********** your private key **********'
 ```
 
-during the process of importing, you will be asked to input a password.  
-the password is used to encrypt your keystore.you have to input it when unlocking your account.
+在導入過程中，系統會要求您輸入密碼。
+密碼用於加密您的密鑰庫。您必須在解鎖帳戶時輸入密碼。
 
-to list the imported keys in the keystore, using the command below:
+使用以下命令列出密鑰庫中導入的密鑰：
 ```zsh
 compass accounts list
 ```
 
-### 3. Modify the configuration file
-copy a example configure file from
+### 3.修改配置文件
+從復制示例配置文件
 ```json
 {
   "mapchain": {
@@ -69,38 +68,37 @@ copy a example configure file from
   ]
 }
 ```
-modify the configuration accordingly.  
-fill the accounts for each chain.
-
-### 4. Running the executable
-lauch and keep the executable runing simply by run:
+相應地修改配置。
+填寫每個鏈的帳戶。
+### 4. 運行可執行文件
+只需運行即可啟動並保持可執行文件運行：
 ```zsh
 compass maintainer --blockstore ./block-eth-map --config ./config-mcs-erh-map.json
 ```
-you will be asked to input the password to unlock your account.(which you have inputed at step 2)
-if everything runs smoothly. it's all set
+您將被要求輸入密碼以解鎖您的帳戶。（您在第 2 步輸入的密碼）
+如果一切順利的話。 一切就緒
 
-# Building
+# 創建
 
-Building compass requires a [Go](https://github.com/golang/go) compiler(version 1.16 or later)
+創建需要 [Go](https://github.com/golang/go) 編譯器（1.16 或更高版本）
 
-under the root directory of the repo
+在 repo 的根目錄下
 
 `make build`: Builds `compass` in `./build`.  
 `make install`: Uses `go install` to add `compass` to your GOBIN.
 
-# Maintainer
+# 維護者
 
-Synchronize the information of blocks in each chain according to the information in the configuration file
+根據配置文件中的信息同步各鏈中的區塊信息
 
-Start with the following command:
+從以下命令開始：
 ```zsh
 compass maintainer --blockstore ./block-eth-map --config ./config.json
 ```
 
-# Configuration
+# 配置
 
-the configuration file is a small JSON file.
+配置文件是一個小的 JSON 文件。
 
 ```
 {
@@ -115,7 +113,7 @@ the configuration file is a small JSON file.
 
 ```
 
-A chain configurations take this form:
+鏈配置採用以下形式：
 
 ```
 {
@@ -129,7 +127,7 @@ A chain configurations take this form:
 }
 ```
 
-|chain| type |
+|鏈| 類型 |
 | :-----------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ethereum | ethereum |
 | bsc | bsc |
@@ -138,12 +136,12 @@ A chain configurations take this form:
 | near | near |
 | klaytn | klaytn |
 
-See `config.json.example` for an example configuration.
+有關示例配置，請參閱“config.json.example”。
 
-### Options
+＃＃＃ 選項
 
-Since MAP is also a EVM based chain, so the opts of the **mapchain** is following the options below as well  
-Ethereum chains support the following additional options:
+由於 MAP 也是基於 EVM 的鏈，因此 **mapchain** 的選項也遵循以下選項
+以太坊鏈支持以下附加選項：
 
 ```
 {
@@ -165,27 +163,25 @@ Ethereum chains support the following additional options:
     "alarmSecond": "3000",                                  // How long does the user balance remain unchanged, triggering the alarm, unit ：seconds                                              
 }
 ```
-## Blockstore
+## 塊存儲
 
-The blockstore is used to record the last block the maintainer processed, so it can pick up where it left off.
+blockstore 用於記錄維護者處理的最後一個塊，因此它可以從中斷的地方繼續。
 
-To disable loading from the chunk library, specify the "--fresh" flag. Add the fresh flag, and the program will execute from height 0，
+要禁用從塊庫加載，請指定“--fresh”標誌。 加上fresh flag，程序會從0高度開始執行，
 
-In addition, the configuration file provides the "startBlock" option, and the program will execute from the startBlock
+另外，配置文件提供了“startBlock”選項，程序將從startBlock開始執行
 
-## Keystore
+## 密鑰庫
 
-Compass requires keys to sign and submit transactions, and to identify each bridge node on chain.
+Compass 需要密鑰來簽署和提交交易，並識別鏈上的每個橋接節點。
 
-To use secure keys, see `compass accounts --help`. The keystore password can be supplied with the `KEYSTORE_PASSWORD` environment variable.
+要使用安全密鑰，請參閱“compass accounts --help”。 密鑰庫密碼可以與“KEYSTORE_PASSWORD”環境變量一起提供。
 
-To import external ethereum keys, such as those generated with geth, use `compass accounts import --ethereum /path/to/key`.
+要導入外部以太坊密鑰，例如使用 geth 生成的密鑰，請使用 `compass accounts import --ethereum /path/to/key`。
 
-To import private keys as keystores, use `compass accounts import --privateKey key`.
+要將私鑰導入為密鑰庫，請使用 `compass accounts import --privateKey key`。
 
-# Chain Implementations
+# 鏈實現
 
-- Ethereum (Solidity): [contracts](https://github.com/mapprotocol/contracts)
-  The Solidity contracts required for compass. Includes scripts for deployment.
-
-
+- 以太坊（Solidity）：[合約](https://github.com/mapprotocol/contracts)
+   Compass所需的 Solidity 合約。 包括用於部署的腳本。

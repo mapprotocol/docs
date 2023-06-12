@@ -1,16 +1,16 @@
-# Polygon Light Client
+# 多邊形輕客戶端
 
-## How it works
+## 如何運行
 
-PolygonLightClient is an implementation of the polygon Light Client in Solidity as an MapoContract.
+PolygonLightClient 是 Solidity 中作為 MapoContract 在Polygon Light Client 的實現。
 
-Polygon is a Proof-of-stake system. Anyone can stake their Matic token on Ethereum smart-contract, "staking contract", and become a validator for the system.Once validators are active on Heimdall they get selected as producers through `bor` module.
+Polygon 是一個權益證明系統。 任何人都可以將他們的 Matic 代幣質押在以太坊智能合約“質押合約”上，並成為系統的驗證者。一旦驗證者在 Heimdall 上活躍，他們就會通過“bor”模塊被選為生產者。
 
-[Bor](https://wiki.polygon.technology/docs/pos/bor/consensus/) consensus is inspired by Clique consensus: [https://eips.ethereum.org/EIPS/eip-225](https://eips.ethereum.org/EIPS/eip-225). Clique works with multiple pre-defined producers. All producers vote on new producers using Clique APIs. They take turns creating blocks.
+[Bor](https://wiki.polygon.technology/docs/pos/bor/consensus/) 共識的靈感來自 Clique 共識：[https://eips.ethereum.org/EIPS/eip-225](https: //eips.ethereum.org/EIPS/eip-225）。 Clique 與多個預定義的生產者合作。 所有生產者都使用 Clique API 對新生產者進行投票。 他們輪流創建塊。
 
-Bor fetches new producers through span and sprint management mechanism.
+Bor 通過 span 和 sprint 管理機制獲取新的生產者。
 
-The validators changes every epoch,each selected validator address is written to the epoch block in the extraData field of the block header. next block begins production and validation of the block.These validators participate in the consensus protocol by signing blocks that contain cryptographic signatures signed by each validator's private key.
+驗證器在每個紀元發生變化，每個選定的驗證器地址都被寫入塊頭的 extraData 字段中的紀元塊。 下一個塊開始生產和驗證塊。這些驗證器通過簽署包含由每個驗證器的私鑰簽名的加密簽名的塊來參與共識協議。
 
 ```solidity
     struct BlockHeader {
@@ -33,15 +33,15 @@ The validators changes every epoch,each selected validator address is written to
     }
 ```
 
-If we want to validate a transaction, we need to validate the block header that the transaction is in,to validate a block header and we need to validate the signature of the block header.
+如果我們要驗證一筆交易，我們需要驗證交易所在的區塊頭，驗證一個區塊頭，我們需要驗證區塊頭的簽名。
 
-by tracking validators changes light node can verify all  transations.
+通過跟踪驗證器的變化，輕節點可以驗證所有交易。
 
-## How to verify
+## 如何驗證
 
-#### updateBlockHeader
+#### 更新區塊頭
 
-keep track of the validator's changes by continuously submitting epoch block headers to light client.The submitted epoch block must be signed with the private key by one of the validator's submitted in the previous epoch. so we initialize an epoch and  store the validator's address can keep committing the next epoch block over and over again.to improve certainty, multiple blocks need to be submitted as confirms.
+通過不斷向輕客戶端提交紀元塊頭來跟踪驗證器的更改。提交的紀元塊必須由前一個紀元提交的驗證器之一使用私鑰簽名。 所以我們初始化一個紀元並存儲驗證者的地址可以不斷地一遍又一遍地提交下一個紀元塊。為了提高確定性，需要提交多個塊作為確認。
 
 ```solidity
  function updateBlockHeader(
@@ -72,15 +72,15 @@ keep track of the validator's changes by continuously submitting epoch block hea
     }
 ```
 
-updateBlockHeader take a few steps
+更新 BlockHeader 分以下幾步
 
-1.check that the first committed block is the next epoch block.
+1.檢查第一個提交的塊是否是下一個紀元塊。
 
-2.check that the number of blocks submitted is sufficient.
+2.檢查提交的塊數是否足夠。
 
-3.verify each submitted block separately.
+3.分別驗證每個提交的塊。
 
-* validate the field of the block
+* 驗證塊的字段
 
 ```solidity
   function validateHeader(
@@ -163,7 +163,7 @@ updateBlockHeader take a few steps
     }
 ```
 
-* verify the signature of the block
+* 驗證區塊的簽名
 
   ```solidity
       function recoverSigner(
@@ -194,7 +194,7 @@ updateBlockHeader take a few steps
           return signer;
       }
   ```
-* check if siger is in the corresponding validatorSet.
+* 檢查siger是否在對應的validatorSet中。
 
   ```solidity
               address signer = Verify.recoverSigner(_blockHeaders[i]);
@@ -215,14 +215,13 @@ updateBlockHeader take a few steps
         );
 ```
 
-###### verify receipt
+###### 驗證收據
 
-The light client can verify the epoch blocks after it has the epoch validatorSet.to verify the receipt should first veriy the block transation receipt in.verify the block is similar to the update block,won't go into it again.
+輕客戶端在有了epoch validatorSet之後就可以驗證epoch blocks了。驗證receipt首先要驗證block transaction receipt in。驗證block和update block相似，不會再進去了。
 
-we know that receipts from block transactions form a receipt [patricia-merkle-trie](https://ethereum.org/en/developers/docs/data-structures-and-encoding/patricia-merkle-trie/). the block field  receiptsRoot is the root of the tree. after we verify the block we can trust the receiptsRoot.
+我們知道來自大宗交易的收據形成收據 [patricia-merkle-trie](https://ethereum.org/en/developers/docs/data-structures-and-encoding/patricia-merkle-trie/)。 塊字段 receiptsRoot 是樹的根。 在我們驗證該塊之後，我們可以信任 receiptsRoot。
 
-so we can build proof of the transation receipt off chain submit to light client to proof transaton receipts.
-
+因此我們可以建立鏈下交易收據的證明，提交給輕客戶端以證明交易收據。
 ```solidity
     function validateProof(
         bytes32 _receiptsRoot,
@@ -249,7 +248,7 @@ so we can build proof of the transation receipt off chain submit to light client
     }
 ```
 
-## Proof
+## 證明
 
 ```solidity
     struct ProofData {

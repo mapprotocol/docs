@@ -1,5 +1,4 @@
-## Accounts Contract json ABI
-
+## 賬戶合約 json ABI
 ```json
 
 [

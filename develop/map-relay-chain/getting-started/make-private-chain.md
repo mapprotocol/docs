@@ -1,83 +1,80 @@
-#  Operating a private network
-Until now, atlas has both POC and POS version. Next, the following is a description of how to build private-net with four nodes On two different version. 
+# 運營私有網絡
+到目前為止，atlas 既有 POC 版本，也有 POS 版本。 下面分別介紹如何在兩個不同的版本上搭建四個節點的私網。
 
-## Prerequisites
+##先決條件
 
-- Private key and address
+- 私鑰和地址
   
-  Building atlas requires git, Go (version 1.14 or later) and a C compiler. You can install them using your favourite package manager.
+   構建圖集需要 git、Go（1.14 或更高版本）和 C 編譯器。 您可以使用您喜歡的包管理器安裝它們。
 
-- Clone repositories
+- 克隆存儲庫
 ```
 git clone https://github.com/mapprotocol/atlas.git
 cd atlas
 ```
 
-## Build four nodes
+## 構建四個節點
 
-We can start four nodes with different ports on one host, or we can start four nodes on multiple hosts.
-The following will use the node method of starting four different ports on one host to demonstrate.
+我們可以在一台主機上啟動四個不同端口的節點，也可以在多台主機上啟動四個節點。
+下面將使用在一台主機上啟動四個不同端口的node方法來進行演示。
 
-- build atlas of POC version:
+-構建POC版本圖集：
 ```
 git checkout v0.2
 make atlas
 ```
 
-- build atlas of POS version:
+- 構建POS版本atlas：
 ```
 git checkout v1.0.0 or git checkout <latest tag>
 make atlas
 ```
 
-## Create four validator accounts 
+## 創建四個驗證者賬戶
 
-- private key and address
+- 私鑰和地址
 
-  Atlas allows developers use the ethereum's account on atlas blockchain. If no account, it's helpful to use the command.
-```shell
+   Atlas 允許開發者在 atlas 區塊鏈上使用以太坊的賬戶。 如果沒有帳戶，使用命令會有所幫助。```shell
 $ ./atlas --datadir ./node-1 account new
 $ ./atlas --datadir ./node-2 account new
 $ ./atlas --datadir ./node-3 account new
 $ ./atlas --datadir ./node-4 account new
 
-# Output
-INFO [03-16|14:12:42.713] Maximum peer count                       ETH=50 LES=0 total=50
-Your new account is locked with a password. Please give a password. Do not forget this password.
-Password: 
-Repeat password: 
+# 輸出
+信息 [03-16|14:12:42.713] 最大對等點數 ETH=50 LES=0 total=50
+您的新帳戶已使用密碼鎖定。 請給個密碼。 不要忘記這個密碼。
+密碼：
+重複輸入密碼：
 
-Your new key was generated
+您的新密鑰已生成
 
-Address:   0x57d28a6Cb48dc6Da45f6fE13E42757aF56cB0650
-PublicKey:   0x04cb8512a050dc66750faabf4a6cace5bbfd70ccaa5e94e986f5062aa5c016a7e9541f266b7289e6e113c9780fbf5d2ad1ff3136576a38e20569f82094c2e47d30
-BLS Public key:   0x2a9520c996aaa5bd3222a0cef50ae1420602b4ba836c3e0a590d794107d8d7b51139baefa4645947402dc31d3c69ae96a83f054b0851412892d03ba6d154257126ebfcd6c512f84f19d139749ce760b9f142bd10c9a80b0f6b3086254840a4ee0d9510c2ebfcbbf03d168d62d8b2926edeee70e0e8b6b205e0ac0394370832ec
-BLS G1 Public key:   0x0491aa3f6523e253003c02856a4623a163bb11ba9f115ae464c940dd60e64e0b1fff5644ca887928f0c6a29055bfa608103aa19d13edfc1a12f5baaa69d60f7a
-BLSProofOfPossession:   0x2866621aa6703c6992299f75ee05b34fb42963ae82173e43c212d891ddc8a94e107fa37f3833e9230deb3078dde2521ea6b833e70ed051ee297734117bec367c
+地址：0x57d28a6Cb48dc6Da45f6fE13E42757aF56cB0650
+公鑰：0x04cb8512a050dc66750faabf4a6cace5bbfd70ccaa5e94e986f5062aa5c016a7e9541f266b7289e6e113c9780fbf5d2ad1ff3136576a38e20569f82094c2 e47d30
+BLS公鑰：0x2a9520c996aaa5bd3222a0cef50ae1420602b4ba836c3e0a590d794107d8d7b51139baefa4645947402dc31d3c69ae96a83f054b0851412892d03ba6d 154257126ebfcd6c512f84f19d139749ce760b9f142bd10c9a80b0f6b3086254840a4ee0d9510c2ebfcbbf03d168d62d8b2926edeee70e0e8b6b205e0ac03943708 32ec
+BLS G1 公鑰：0x0491aa3f6523e253003c02856a4623a163bb11ba9f115ae464c940dd60e64e0b1fff5644ca887928f0c6a29055bfa608103aa19d13edfc1a12f5baaa 69d60f7a
+BLS 擁有證明：0x2866621aa6703c6992299f75ee05b34fb42963ae82173e43c212d891ddc8a94e107fa37f3833e9230deb3078dde2521ea6b833e70ed051ee29773 4117bec367c
 
-Path of the secret key file: node-1/keystore/UTC--2022-03-17T09-35-15.650368000Z--f930b74d2b1b703b879ab54e225ecc18ab28e61c
+秘鑰文件路徑：node-1/keystore/UTC--2022-03-17T09-35-15.650368000Z--f930b74d2b1b703b879ab54e225ecc18ab28e61c
 
-- You can share your public address with anyone. Others need it to interact with you.
-- You must NEVER share the secret key with anyone! The key controls access to your funds!
-- You must BACKUP your key file! Without the key, it's impossible to access account funds!
-- You must REMEMBER your password! Without the password, it's impossible to decrypt the key!
-
-
+- 您可以與任何人分享您的公共地址。 其他人需要它與您互動。
+- 您絕不能與任何人共享密鑰！ 鑰匙控制著您的資金使用權！
+- 您必須備份您的密鑰文件！ 沒有密鑰，就無法訪問帳戶資金！
+- 你必須記住你的密碼！ 沒有密碼，就無法解密密鑰！
 
 ```
 
-## Generating a genesis.json 
-**Note that there are differences between versions, which the POC version needn't set validator.
-Only Suitable for the POS version. The validator must be set, because only them are allowed to mine.**
+## 生成一個 genesis.json
+**注意版本之間是有區別的，POC版本不需要設置validator。
+僅適用於 POS 版本。 必須設置驗證器，因為只有他們才可以挖礦。**
 
-Get validator configuration json and generating a genesis.json
-- [generating a genesis.json ](./how-to-make-genesis.md#generating-a-genesis.json-file)
+獲取驗證器配置 json 並生成一個 genesis.json
+- [生成 genesis.json ](./how-to-make-genesis.md#generating-a-genesis.json-file)
 
-We now generate the genesis.json file using the paths of the four accounts generated in the previous step.
-Fill in the information we output when we created the account into the corresponding key value.
-The value corresponding to the `AdminAddress` key can be any of the four accounts we created above or other accounts.
+我們現在使用上一步生成的四個帳戶的路徑生成 genesis.json 文件。
+將我們創建賬戶時輸出的信息填入對應的鍵值中。
+`AdminAddress`鍵對應的值可以是我們上面創建的四個賬戶中的任意一個，也可以是其他賬戶。
 
-Just like the following:
+就像下面這樣：
 
 ```json
 {
@@ -123,8 +120,8 @@ Just like the following:
 }
 ```
 
-## Initialize four validator nodes
-Initialize the node with the genesis file generated in the previous step
+## 初始化四個驗證節點
+使用上一步生成的創世文件初始化節點
 
 ```shell
 ./atlas --datadir ./node-1 init ./genesis.json
@@ -145,9 +142,9 @@ INFO [03-16|15:14:56.226] Persisted trie from memory database      nodes=276 siz
 INFO [03-16|15:14:56.227] Successfully wrote genesis state         database=lightchaindata                        hash=e359b1..ad2642
 ```
 
-## Start four validator nodes
+## 啟動四個驗證節點
 
-The following command starts four corresponding nodes using the four accounts created earlier。
+下面的命令使用之前創建的四個賬戶啟動對應的四個節點。
 
 ```shell
 ./atlas --datadir ./node-1 --networkid 110112 --port 20201 --mine --miner.validator 0xF930B74D2b1b703B879ab54E225ECc18Ab28e61C --unlock 0xF930B74D2b1b703B879ab54E225ECc18Ab28e61C console
@@ -156,7 +153,7 @@ The following command starts four corresponding nodes using the four accounts cr
 ./atlas --datadir ./node-4 --networkid 110112 --port 20204 --mine --miner.validator 0x41E4A55Ef06c1961B3e143357e24cA7f92e4DD03 --unlock 0x41E4A55Ef06c1961B3e143357e24cA7f92e4DD03 console
 ```
 
-Type the above command on the command line and press enter, you will see the following prompt：
+在命令行中輸入以上命令並回車，會看到如下提示：
 
 ```shell
 ......
@@ -168,25 +165,25 @@ Unlocking account 0x931abadeb878d761cf2df15f0ba0442350c132fc | Attempt 1/3
 Password: 
 ```
 
-At this time, we need to enter the password corresponding to the account and press Enter, congratulations, 
-you have successfully started a node. Then we start the remaining nodes in the same way.
+這個時候我們需要輸入賬號對應的密碼回車，恭喜，
+您已經成功啟動了一個節點。 然後我們以相同的方式啟動剩餘的節點。
 
-If you want to start an RPC node you can use the following way.
+如果你想啟動一個 RPC 節點你可以使用下面的方式。
 ```shell
 ./atlas --datadir ./node-rpc init ./genesis.json
 
 ./atlas --datadir ./node-rpc --networkid 110112 --port 20205 --http --http.addr "0.0.0.0" --http.port 7445 --http.api eth,web3,net,debug,txpool,header,istanbul --http.corsdomain "*" console
 ```
 
-## Connect four nodes
+## 連接四個節點
 
--  the Operation of flag. 
+- 標誌的操作。
 
-With the bootnode operational and externally reachable (try
-`telnet <ip> <port>` to ensure it's indeed reachable), start every subsequent `atlas`
-node pointed to the bootnode for peer discovery via the `--bootnodes` flag. It will
-probably also be desirable to keep the data directory of your private network separated, so
-do also specify a custom `--datadir` flag.
+bootnode 可操作且外部可訪問（嘗試
+`telnet <ip> <port>` 以確保它確實可以訪問），啟動每個後續的 `atlas`
+節點通過“--bootnodes”標誌指向用於對等發現的引導節點。 它會
+可能還需要將您的專用網絡的數據目錄分開，所以
+還要指定一個自定義的 `--datadir` 標誌。
 
 ```shell
 $ atlas --datadir=path/to/custom/data/folder --bootnodes=<bootnode-url>
@@ -194,14 +191,14 @@ $ atlas --datadir=path/to/custom/data/folder --bootnodes=<bootnode-url>
 
 - the Operation on a console.
 
-Query Own node-url: 
+查詢自己的node-url：
 ```
 admin.nodeInfo.enode
 "enode://6a469a852c7ee7f656e33a7858db5c480d6253ad760771a779985c305d66de78109bae579adf3f32fbd770e44145d5728176bcddda56d8a8c92709f827d94842@127.0.0.1
 :20201"
 ```
 
-Connect validator node, for example:
+連接驗證節點，例如：
 ```
 admin.addPeer("enode://8f8bb96b01be9f76a93b2b54bcaff35b48ace58f0b0f3c85a139048072ff030bcad022a442e49181885f1f0338a5efd2f4807d21d2f88973e18426dee3d8e0b7@127.0.0.1:20201")
 admin.addPeer("enode://a4642d6eb2f1c69ee861f4146636df028a7eb328e233f620cc6838db474e94327bdcdc810d2f9c2fa30694764e71b4c7b5828f6e8df7a3f71f3eb781bb017a4e@127.0.0.1:20202")
@@ -209,9 +206,9 @@ admin.addPeer("enode://88c2fdd0189a33e3b8ee02a04a767c4792140c00c08de5d368b9aac57
 admin.addPeer("enode://88c2fdd0189a33e3b8ee02a04a767c4792140c00c08de5d368b9aac578a0a36b5518aee5fcb695cd93c348237901a5c532f561170adc00903001e40ca3eff041@127.0.0.1:20204")
 ```
 
-## Check node status
+## 查看節點狀態
 
-You'll start seeing some output. After a few minutes, you should see lines that look like this. This means your node has connected other nodes and started produce blocks.
+您將開始看到一些輸出。 幾分鐘後，您應該會看到如下所示的線條。 這意味著您的節點已連接其他節點並開始生產塊。
 ```text
 INFO [03-16|20:21:27.683] Looking for peers                        peercount=2 tried=5 static=4
 INFO [03-16|20:21:37.582] Reset timer to resend RoundChange msg    address=0x2dC45799000ab08E60b7441c36fCC74060Ccbe11 func=resetResendRoundChangeTi

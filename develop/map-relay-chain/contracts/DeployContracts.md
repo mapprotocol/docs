@@ -1,41 +1,40 @@
-# Deploy Genesis Contracts on MAP  Relay Chain with Truffle
+# 使用 Truffle 在 MAP 中繼鏈上部署創世合約
 
-How to deploy a smart contract to MAP Relay Chain using Truffle.
+如何使用 Truffle 將智能合約部署到 MAP 中繼鏈。
 
-## Introduction to Truffle
+## Truffle介紹
 
-Truffle is a world-class development environment, testing framework, and asset pipeline for blockchains using the
-Ethereum Virtual Machine (EVM). By creating a Truffle project and editing a few configuration settings you can easily
-deploy your project on Map chain.
+Truffle 是世界一流的區塊鏈開發環境、測試框架和資產管道，使用
+以太坊虛擬機 (EVM)。 通過創建一個 Truffle 項目並編輯一些配置設置，您可以輕鬆地
+在地圖鏈上部署您的項目。
 
-To deploy on MAP Relay Chain using Truffle, you should have your local environment. If you prefer to deploy without a local
-environment, you can deploy using Remix or Replit.
+要使用 Truffle 在 MAP 中繼鏈上部署，您應該擁有本地環境。 如果您更喜歡在沒有本地的情況下進行部署
+環境，您可以使用 Remix 或 Replit 進行部署。
 
-If you are new to Truffle, complete  [Quickstart Tutorial](https://trufflesuite.com/docs/truffle/quickstart) to get more
-familiar with this tool.
+如果您是 Truffle 新手，請完成 [快速入門教程](https://trufflesuite.com/docs/truffle/quickstart) 以獲取更多信息
+熟悉這個工具。
 
-## Project Setup
+## 項目設置
 
-Setup Project Folder
+設置項目文件夾
 
-Open your terminal window, create a project directory, and navigate into that directory.
+打開終端窗口，創建項目目錄，然後導航到該目錄。
 
-## Initialize Truffle
+## 初始化松露
 
-Initializing truffle creates the scaffolding for your truffle project.
+初始化 truffle 會為您的 truffle 項目創建腳手架。
 
 `truffle init`
 
-## Configure Deployment Settings
+## 配置部署設置
 
-The default truffle.config.js file contains connections required to deploy to the Ethereum networks, imports
-HDWalletProvider, and connects to the mnemonic in your .env file. To deploy a Map network, you need to update this
-configuration file to point toward the different Map networks and add a few details specific to Map best practices.
+默認的 truffle.config.js 文件包含部署到以太坊網絡所需的連接，導入
+HDWalletProvider，並連接到您的 .env 文件中的助記詞。 要部署地圖網絡，您需要更新此
+配置文件指向不同的 Map 網絡，並添加一些特定於 Map 最佳實踐的細節。
 
-# Update the truffle-config.js file
+# 更新 truffle-config.js 文件
 
-Open truffle-config.js in a text editor and configure its contents through the following example:
-
+在文本編輯器中打開 truffle-config.js 並通過以下示例配置其內容：
 ``` shell
   networks: {
    development: {
@@ -50,29 +49,29 @@ Open truffle-config.js in a text editor and configure its contents through the f
   },
 ``` 
 
-## Compile Contract
+## 編譯合約
 
 `truffle compile`
 
-## Deploy Contract
+## 部署合約
 
-Deploy to your chosen Map network running one of the following commands.
+運行以下命令之一部署到您選擇的 MAP 網絡。
 
 `truffle deploy --network mapNetwork`
 
 
-## Deployment of contract related to validator
+## 驗證器相關合約的部署
 
-Introduce the contracts related to the deployment of validator
+介紹部署validator相關的合約
 
-you need compile your `atlas-contracts` project,we need the `bytecode` about `atlas-contracts` to make `genesis.json`file.
+你需要編譯你的 `atlas-contracts` 項目，我們需要關於 `atlas-contracts` 的 `bytecode` 來製作 `genesis.json` 文件。
 
-1.Download `atlas-contracts` project in any folder you like , use this command `git clone https://github.com/mapprotocol/atlas-contracts.git`
+1.在你喜歡的任何文件夾中下載`atlas-contracts`項目，使用這個命令`git clone https://github.com/mapprotocol/atlas-contracts.git`
 
-2.Suppose you have installed `node`,  then switch to the project file initialize the project and use this command `npm install`
+2.假設你已經安裝了`node`，然後切換到項目文件初始化項目並使用這個命令`npm install`
 
-3.Download truffle with `npm install truffle`
+3.使用`npm install truffle`下載truffle
 
-4.Compile the project using truffle, the command compiled by truffle is `truffle compile`
+4.使用truffle編譯工程，truffle編譯的命令為`truffle compile`
 
-5.A file called `build` will be generated in your `atlas-contracts` project. We will use this file to specify the corresponding parameters.
+5.將在您的 atlas-contracts 項目中生成一個名為 build 的文件。 我們將使用這個文件來指定相應的參數。

@@ -1,18 +1,17 @@
-While cross-chain bridges can be easily built with MAP Protocol, MAP Protocol itself tackles a more fundamental problem and pursues a larger vision: boosting the whole cross-chain ecosystem **by building an omnichain network infrastructure**. Any dApp built with the infrastructure **utomatically inherits the omnichain nature of MAP Protocol** without requiring the developers to tackle the error-prone cross-chain communications. With the technical threshold of building omnichain dApp reduced, the ecosystem shall thrive.
+雖然可以通過MAP協議輕鬆建立跨鏈橋，但MAP協議本身解決了一個更基本的問題，並追求一個更大的願景：通過建立一個全鏈網絡基礎設施，**促進整個跨鏈生態系統。任何使用該基礎設施構建的dApp都會**自動繼承MAP協議的全鏈性質，而不要求開發者解決易出錯的跨鏈通信問題。隨着構建全能鏈dApp的技術門檻降低，生態系統將蓬勃發展。
+1. MAP協議的結構分爲**三層： 協議層、全鏈鏈服務層（MOS）和應用層**。
+2. 2.MAP協議通過部署跨鏈執行和驗證，通過鏈上智能合約和跨鏈信使的跨鏈程序，實現了與**所有EVM和非EVM鏈的全鏈互通。
+3. MAP協議的跨鏈驗證網絡通過採用Light-client獨立的自驗證機制，跨鏈驗證過程絕無特權角色。
+4. MAP中繼鏈完全兼容EVM，建立在**證明的**機制和**拜占庭容錯的共識之上。
+5. MAP中繼鏈在EVM層面完成了異構擴展，簡化了工程的複雜性，**優化了異構鏈之間跨鏈驗證的燃氣費**。
+6. 通過與MAP中繼鏈的連接，EVM鏈和非EVM鍊形成了一個跨鏈執行和驗證網絡。
+7. MAP協議爲dApp開發者提供**鏈間通信組件--信使的SDK。每個dApp都可以擁有自己的信使，並定製自己的獎勵方案，這有利於跨鏈交易的完成。
+8. MAP協議爲開發者提供類似於谷歌GMS的MAP跨鏈服務。它方便開發者開發和**共享全網資產的流動性和數據。
+9. MAP協議支持**資產和數據跨鏈**。
+10. MAP中繼鏈支持所有omnichain dApps的開發，包括omnichain oracle、omnichain swap、代幣和NFTs的跨鏈橋、去中心化衍生品、omnichain DAO和omnichain GameFi等。
 
-1. MAP Protocol is structured in **three layers: Protocol Layer, Omnichain Services Layer (MOS), and Application Layer.**  
-2. MAP Protocol achieves omnichain interoperability with **all EVM and non-EVM chains** by deploying cross-chain execution and verification via on-chain smart contracts, and cross-chain messenger inter-chain program.  
-3. MAP Protocol's cross-chain verification network has **security finality** by adopting the Light-client independent self-verification mechanism.  
-4. MAP Relay Chain is fully EVM compatible built upon **Proof-of-Stake** mechanism and **Byzantine Fault Tolerant consensus. 
-5. MAP Relay Chain accomplished heterogeneous expansion on the EVM level, which simplified the complexity of engineering and **minimized the gas fee** for cross-chain verification between heterogeneous chains. 
-6. By connecting with MAP Relay Chain, EVM and non-EVM chains form a cross-chain execution and verification network. 
-7. MAP Protocol provides **SDK for the inter-chain communication component - Messenger** to dApp developers. Each dApp can have its own Messenger and tailor-make their reward scheme, which facilitates cross-chain transactions to be completed.
-8. MAP Protocol provides developers with MAP Cross-chain Services similar to Google GMS. It is convenient for developers to develop and **share omnichain asset liquidity and data.** 
-9. MAP Protocol supports **both assets and data cross-chain.**
-10. MAP Relay Chain supports the development of all omnichain dApps, including omnichain oracle, omnichain swap, cross-chain bridge for tokens and NFTs, decentralized derivatives, omnichain DAO, and omnichain GameFi, etc. 
+### MAP協議的技術說明
 
-### Technical Illustration of MAP Protocol
-
-Developers can deploy omnichain dApps on MAP Relay Chain to achieve interoperability.  
+開發者可以在MAP中繼鏈上部署omnichain dApps，以實現互操作性。
 
 ![](jishutu.png)

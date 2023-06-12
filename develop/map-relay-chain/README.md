@@ -1,18 +1,19 @@
-# MAP Relay Chain
+# MAP 中繼鏈
 
+## 端點
 
-## Endpoints
-
-| network  | address                        | chainid | networkid |
+| 網絡  | 地址                        | chainid | networkid |
 | -------- |--------------------------------| ------ | ------ |
-| mainnet  | https://rpc.maplabs.io         | 22776 | 22776 |
-| testnet  | https://testnet-rpc.maplabs.io | 212 | 212 |
+| 主網  | https://rpc.maplabs.io         | 22776 | 22776 |
+| 測試網  | https://testnet-rpc.maplabs.io | 212 | 212 |
 
 
-## Mainnet
-| comment       | address                                    |
+
+
+## 主網
+| 備註       | 地址                                    |
 |---------------|--------------------------------------------|
-| Explorer      | [https://maposcan.io](https://maposcan.io) |
+| 區塊瀏覽器      | [https://maposcan.io](https://maposcan.io) |
 | RPC           | https://rpc.maplabs.io                     |
 | RPC Websocket | wss://wss-rpc.maplabs.io                   |
 | IPFS          | https://graph-ipfs.maplabs.io              |
@@ -20,10 +21,10 @@
 | Graph API     | https://graph-api.maplabs.io               |
 
 
-## Testnet - Makalu
-| comment       | address                                                        |
+## 測試網 - Makalu
+| 備註       | 地址                                                        |
 |---------------|----------------------------------------------------------------|
-| Explorer      | [https://testnet.maposcan.io](https://testnet.maposcan.io)     |
+| 區塊瀏覽器      | [https://testnet.maposcan.io](https://testnet.maposcan.io)     |
 | RPC           | https://testnet-rpc.maplabs.io                                 |
 | RPC Websocket | wss://testnet-rpc.maplabs.io                                   |
 | Faucet        | [https://faucet.mapprotocol.io](https://faucet.mapprotocol.io) |

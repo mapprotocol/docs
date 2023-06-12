@@ -1,20 +1,20 @@
-# MAPO Service (MOS) Message
+# ＃MAPO全鏈服務（MOS）消息傳遞
 
-## What is MOS Message
+## 什麼是MOS全鏈消息
 
-MOS message enables projects built on one chain to easily synchronize some project information to other chains, and can also call contract methods on other connected chains.
+MOS全鏈消息使建立在一個鏈上的項目可以很容易地將一些項目信息同步到其他鏈上，也可以調用其他連接鏈上的合約方法。
 
-MOS uses MAP Protocol light client to verify the transaction of cross-chain messages to ensure that cross-chain messages are authentic and checkable on the chain.
+MOS使用MAP協議輕型客戶端來驗證跨鏈消息的交易，以確保跨鏈消息的真實性和在鏈上可查。
 
-With MOS you can achieve interoperation with two chains:
+使用MOS可以實現與兩個鏈的互操作：
 
-- Call a contract on chain B from chain A.
-- Pack the message changes in chain A and write them into chain B to realize message synchronization
+- 從A鏈調用B鏈上的合約。
+- 將A鏈中的消息變化打包，寫入B鏈中，實現消息同步
 
-## How it works
+## 如何運作的
 
-See the [details](/develop/mos/message/cross-chain-message.md) here.
+請看這裏的[細節](/develop/mos/message/cross-chain-message.md)。
 
-## Build dApps on MOS message
-Here give some examples that how to build dapps on MOS message.
+## 在MOS全鏈消息上構建dApps
+這裏給出了一些例子，說明如何在MOS消息上構建dapps。
 * [OmniDictionary](/develop/mos/examples/OmniDictionary.md)

@@ -1,137 +1,137 @@
-# Consensus
-Istanbul Byzantine Fault Tolerant (IBFT) consensus is inspired by [Castro-Liskov 99 paper](http://pmg.csail.mit.edu/papers/osdi99.pdf).
+# 共識
+伊斯坦布爾拜占庭容錯 (IBFT) 共識的靈感來自 [Castro-Liskov 99 論文](http://pmg.csail.mit.edu/papers/osdi99.pdf)。
 
-IBFT inherits from the original PBFT by using a 3-phase consensus, PRE-PREPARE, PREPARE and COMMIT. The system can tolerate at most F faulty nodes in a N validator network, where N = 3F + 1.
-Implementation
+IBFT繼承了最初的PBFT，採用了三階段共識，PRE-PREPARE、PREPARE和COMMIT。 在 N 個驗證器網絡中，系統最多可以容忍 F 個故障節點，其中 N = 3F + 1。
+執行
 
-## Terminology
+## 術語
 
-- Validator: Block validation participant.
--   Proposer: A block validation participant that is chosen to propose block in a consensus round.
--   Round: Consensus round. A round starts with the proposer creating a block proposal and ends with a block commitment or round change.
--   Proposal: New block generation proposal which is undergoing consensus processing.
--   Sequence: Sequence number of a proposal. A sequence number should be greater than all previous sequence numbers. Currently each proposed block height is its associated sequence number.
--   Backlog: The storage to keep future consensus messages.
--   Round state: Consensus messages of a specific sequence and round, including pre-prepare message, prepare message, and commit message.
--   Consensus proof: The commitment signatures of a block that can prove the block has gone through the consensus process.
--   Snapshot: The validator voting state from last epoch.
+- 驗證者：區塊驗證參與者。
+- 提議者：被選中在共識回合中提議區塊的區塊驗證參與者。
+- 回合：共識回合。 一輪開始於提議者創建區塊提案，結束於區塊承諾或輪次變更。
+- 提案：正在進行共識處理的新區塊生成提案。
+- 序號：提案的序號。 一個序列號應該大於所有先前的序列號。 目前，每個提議的區塊高度都是其關聯的序列號。
+- 備份 Backlog：保存未來共識消息的存儲。
+- 回合狀態：特定序列和回合的共識消息，包括預準備消息、準備消息和提交消息。
+- 共識證明：一個區塊的承諾簽名，可以證明該區塊已經通過了共識過程。
+- 快照：上個紀元的驗證者投票狀態。
 
-## Consensus
+## 共識
 
-Istanbul BFT Consensus protocol begins at Round 0 with the validators picking a proposer from themselves in a round robin fashion. The proposer will then propose a new block proposal and broadcast it along with the PRE-PREPARE message. Upon receiving the PRE-PREPARE message from the proposer, other validators validate the incoming proposal and enter the state of PRE-PREPARED and broadcast PREPARE message. This step is to make sure all validators are working on the same sequence and on the same round. When ceil(2N/3) of PREPARE messages is received by the validator from other validators, the validator switches to the state of PREPARED and broadcasts COMMIT message. This step is to inform other validators that it accepts the proposed block and is going to insert the block to the chain. Lastly, validators wait for ceil(2N/3) of COMMIT messages to enter COMMITTED state and then append the block to the chain.
+伊斯坦布爾 BFT 共識協議從第 0 輪開始，驗證者以循環方式從他們自己中選出一個提議者。 然後，提議者將提出一個新的區塊提議，並將其與 PRE-PREPARE 消息一起廣播。 在收到來自提議者的 PRE-PREPARE 消息後，其他驗證者驗證傳入的提議並進入 PRE-PREPARED 狀態並廣播 PREPARE 消息。 此步驟是為了確保所有驗證器都在同一序列和同一輪上工作。 當驗證器從其他驗證器收到 ceil(2N/3) 個 PREPARE 消息時，驗證器切換到 PREPARED 狀態並廣播 COMMIT 消息。 這一步是為了通知其他驗證者它接受了提議的區塊並將將該區塊插入鏈中。 最後，驗證者等待 ceil(2N/3) 條 COMMIT 消息進入 COMMITTED 狀態，然後將區塊附加到鏈中。
 
-Blocks in Istanbul BFT protocol are final, which means that there are no forks and any valid block must be somewhere in the main chain. To prevent a faulty node from generating a totally different chain from the main chain, each validator appends ceil(2N/3) of received COMMIT signatures to extraData field in the header before inserting it into the chain. Thus all blocks are self-verifiable. However, the dynamic extraData would cause an issue on block hash calculation. Since the same block from different validators can have different set of COMMIT signatures, the same block can have different block hashes as well. To solve this, we calculate the block hash by excluding the COMMIT signatures part. Therefore, we can still keep the block/block hash consistency and put the consensus proof in the block header.
+伊斯坦布爾 BFT 協議中的塊是最終的，這意味著沒有分叉，任何有效的塊必須位於主鏈中的某個位置。 為了防止故障節點生成與主鏈完全不同的鏈，每個驗證器在將其插入鏈之前將接收到的 COMMIT 簽名的 ceil(2N/3) 附加到標頭中的 extraData 字段。 因此，所有塊都是可自我驗證的。 但是，動態的 extraData 會導致區塊哈希計算出現問題。 由於來自不同驗證者的同一個塊可以有不同的 COMMIT 簽名集，所以同一個塊也可以有不同的塊哈希值。 為了解決這個問題，我們通過排除 COMMIT 簽名部分來計算塊哈希。 因此，我們仍然可以保持區塊/區塊哈希的一致性，將共識證明放在區塊頭中。
 
-### Consensus States
+### 共識狀態
 
-Istanbul BFT is a state machine replication algorithm. Each validator maintains a state machine replica in order to reach block consensus. Various states in IBFT consensus are,
+伊斯坦布爾 BFT 是一種狀態機複製算法。 每個驗證器維護一個狀態機副本以達成區塊共識。 IBFT共識中的各種狀態是，
 
--   NEW ROUND: Proposer to send new block proposal. Validators wait for PRE-PREPARE message.
--   PRE-PREPARED: A validator has received PRE-PREPARE message and broadcasts PREPARE message. Then it waits for ceil(2N/3) of PREPARE or COMMIT messages.
--   PREPARED: A validator has received ceil(2N/3) of PREPARE messages and broadcasts COMMIT messages. Then it waits for ceil(2N/3) of COMMIT messages.
--   COMMITTED: A validator has received ceil(2N/3) of COMMIT messages and is able to insert the proposed block into the blockchain.
--   FINAL COMMITTED: A new block is successfully inserted into the blockchain and the validator is ready for the next round.
--   ROUND CHANGE: A validator is waiting for ceil(2N/3) of ROUND CHANGE messages on the same proposed round number.
+- 新一輪：提議者發送新的區塊提議。 驗證者等待 PRE-PREPARE 消息。
+- PRE-PREPARED：驗證者已收到 PRE-PREPARE 消息並廣播 PREPARE 消息。 然後它等待 ceil(2N/3) 個 PREPARE 或 COMMIT 消息。
+- PREPARED：驗證者已收到 ceil(2N/3) 個 PREPARE 消息並廣播 COMMIT 消息。 然後它等待 ceil(2N/3) 個 COMMIT 消息。
+- COMMITTED：驗證者收到 ceil(2N/3) 個 COMMIT 消息，並能夠將提議的區塊插入區塊鏈。
+- FINAL COMMITTED：新區塊成功插入區塊鏈，驗證器準備好進行下一輪。
+- ROUND CHANGE：驗證者正在等待 ceil(2N/3) 輪更改消息中相同的提議輪數。
 
-## State Transitions
-![State Transitions](41951806-4824998c-79ff-11e8-99f0-153fca7708a4.jpg)
+## 狀態轉換
+![狀態轉換](41951806-4824998c-79ff-11e8-99f0-153fca7708a4.jpg)
 
-### State Transitions
+### 狀態轉換
 
-  - NEW ROUND -> PRE-PREPARED:
-        Proposer collects transactions from txpool.
-        Proposer generates a block proposal and broadcasts it to validators. It then enters the PRE-PREPARED state.
-        Each validator enters PRE-PREPARED upon receiving the PRE-PREPARE message with the following conditions:
-            Block proposal is from the valid proposer.
-            Block header is valid.
-            Block proposal’s sequence and round match the validator‘s state.
-        Validator broadcasts PREPARE message to other validators.
-  - PRE-PREPARED -> PREPARED:
-        Validator receives ceil(2N/3) of valid PREPARE messages to enter PREPARED state. Valid messages conform to the following conditions:
-            Matched sequence and round.
-            Matched block hash.
-            Messages are from known validators.
-        Validator broadcasts COMMIT message upon entering PREPARED state.
-  - PREPARED -> COMMITTED:
-        Validator receives ceil(2N/3) of valid COMMIT messages to enter COMMITTED state. Valid messages conform to the following conditions:
-            Matched sequence and round.
-            Matched block hash.
-            Messages are from known validators.
-  - COMMITTED -> FINAL COMMITTED:
-        Validator appends ceil(2N/3) commitment signatures to extraData and tries to insert the block into the blockchain.
-        Validator enters FINAL COMMITTED state when insertion succeeds.
-  - FINAL COMMITTED -> NEW ROUND:
-        Validators pick a new proposer and begin a new round timer.
+   - 新回合 -> 預先準備好的：
+         提議者從 txpool 收集交易。
+         提議者生成一個區塊提議並將其廣播給驗證者。 然後它進入 PRE-PREPARED 狀態。
+         每個驗證者在收到具有以下條件的 PRE-PREPARE 消息後進入 PRE-PREPARED：
+             區塊提議來自有效的提議者。
+             塊頭有效。
+             區塊提議的順序和輪次與驗證者的狀態相匹配。
+         驗證者向其他驗證者廣播 PREPARE 消息。
+   - 預先準備 -> 準備：
+         Validator 收到 ceil(2N/3) 個有效 PREPARE 消息進入 PREPARED 狀態。 有效消息符合以下條件：
+             匹配的順序和回合。
+             匹配的塊哈希。
+             消息來自已知的驗證器。
+         驗證器在進入 PREPARED 狀態時廣播 COMMIT 消息。
+   - 準備 -> 承諾：
+         Validator 收到 ceil(2N/3) 個有效的 COMMIT 消息以進入 COMMITTED 狀態。 有效消息符合以下條件：
+             匹配的順序和回合。
+             匹配的塊哈希。
+             消息來自已知的驗證器。
+   - 已提交 -> 最終提交：
+         驗證器將 ceil(2N/3) 承諾簽名附加到 extraData 並嘗試將塊插入區塊鏈。
+         驗證器在插入成功時進入 FINAL COMMITTED 狀態。
+   - 最終提交 -> 新一輪：
+         驗證者選擇一個新的提議者並開始新一輪的計時器。
 
-### Round change flow
+### 回合變化流程
 
--   Three conditions can trigger ROUND CHANGE:
-    - Round change timer expires.
-    - Invalid PREPREPARE message.
-    - Block insertion fails.
--   When a validator notices that one of the above conditions applies, it broadcasts a ROUND CHANGE message along with the proposed round number and waits for ROUND CHANGE messages from other validators. The proposed round number is selected based on following condition:
-    - If the validator has received ROUND CHANGE messages from its peers, it picks the largest round number which has F + 1 of ROUND CHANGE messages.
-    - Otherwise, it picks 1 + current round number as the proposed round number.
--   Whenever a validator receives F + 1 of ROUND CHANGE messages on the same proposed round number, it compares the received one with its own. If the received is larger, the validator broadcasts ROUND CHANGE message again with the received number.
--   Upon receiving ceil(2N/3) of ROUND CHANGE messages on the same proposed round number, the validator exits the round change loop, calculates the new proposer, and then enters NEW ROUND state.
--   Another condition that a validator jumps out of round change loop is when it receives verified block(s) through peer synchronization.
+- 三個條件可以觸發 ROUND CHANGE：
+     - 回合更改計時器到期。
+     - 無效的 PREPREPARE 消息。
+     - 塊插入失敗。
+- 當驗證者註意到上述條件之一適用時，它會廣播 ROUND CHANGE 消息以及建議的輪數，並等待來自其他驗證者的 ROUND CHANGE 消息。 提議的輪數是根據以下條件選擇的：
+     - 如果驗證器收到來自其對等方的 ROUND CHANGE 消息，它會選擇具有 F + 1 個 ROUND CHANGE 消息的最大輪數。
+     - 否則，它選擇 1 + 當前輪數作為建議的輪數。
+- 每當驗證者收到 F + 1 條關於相同提議輪數的 ROUND CHANGE 消息時，它會將收到的消息與自己的消息進行比較。 如果接收到的更大，驗證器將使用接收到的數字再次廣播 ROUND CHANGE 消息。
+- 在收到相同提議輪數的 ROUND CHANGE 消息的 ceil(2N/3) 後，驗證器退出輪更改循環，計算新提議者，然後進入 NEW ROUND 狀態。
+- 驗證者跳出循環變化循環的另一個條件是當它通過對等同步接收到已驗證的塊時。
 
-### Proposer selection
+### 提議者選擇
 
-Currently we support two policies: round robin and sticky proposer.
+目前我們支持兩種策略：round robin 和 sticky proposer。
 
-- Round robin: Round robin is the default proposer selection policy. In this setting proposer will change in every block and round change.
-- Sticky proposer: in a sticky proposer setting, proposer will change only when a round change happens.
+- 循環法：循環法是默認的提議者選擇策略。 在此設置中，提議者將在每個區塊和輪次更改中更改。
+- Sticky proposer：在sticky proposer設置中，proposer只會在輪換發生時改變。
 
-### Validator list voting
+### 驗證者列表投票
 
-Istanbul BFT uses a similar validator voting mechanism as Clique and copies most of the content from Clique EIP. Every epoch transaction resets the validator voting, meaning any pending votes for adding/removing a validator are reset.
+伊斯坦布爾 BFT 使用與 Clique 類似的驗證者投票機制，並從 Clique EIP 複製大部分內容。 每個紀元交易都會重置驗證器投票，這意味著任何用於添加/刪除驗證器的未決投票都會被重置。
 
-For all transactions blocks:
+對於所有交易塊：
 
--   Proposer can cast one vote to propose a change to the validators list.
--   Only the latest proposal per target beneficiary is kept from a single validator.
--   Votes are tallied live as the chain progresses (concurrent proposals allowed).
--   Proposals reaching majority consensus VALIDATOR_LIMIT come into effect immediately.
--   Invalid proposals are not to be penalized for client implementation simplicity.
--   A proposal coming into effect entails discarding all pending votes for that proposal (both for and against).
+- 提議者可以投一票來提議更改驗證者列表。
+- 僅每個目標受益人的最新提案來自單個驗證者。
+- 隨著鏈的進展（允許並發提案），實時計票。
+- 達成多數共識的提案 VALIDATOR_LIMIT 立即生效。
+- 無效的提議不會因為客戶端實現的簡單性而受到懲罰。
+- 一項生效的提案需要放棄對該提案的所有未決投票（支持和反對）。
 
-### Future message and backlog
+### 未來的消息和積壓
 
-In an asynchronous network environment, one may receive future messages which cannot be processed in the current state. For example, a validator can receive COMMIT messages on NEW ROUND. We call this kind of message a “future message.” When a validator receives a future message, it will put the message into its backlog and try to process later whenever possible.
+在異步網絡環境中，人們可能會收到無法在當前狀態下處理的未來消息。 例如，驗證者可以在 NEW ROUND 上接收 COMMIT 消息。 我們稱這種信息為“未來信息”。 當驗證器收到一條未來的消息時，它會將消息放入其待辦事項列表中，並在可能的情況下嘗試稍後處理。
 
-### Block hash, proposer seal and committed seals
+### 區塊哈希、提議者印章和承諾印章
 
-The Istanbul block hash calculation is different from the ethash block hash calculation due to the following reasons:
+由於以下原因，伊斯坦布爾區塊哈希計算不同於 ethash 區塊哈希計算：
 
--   The proposer needs to put proposer’s seal in extraData to prove the block is signed by the chosen proposer.
--   The validators need to put ceil(2N/3) of committed seals as consensus proof in extraData to prove the block has gone through consensus.
+- 提議者需要在extraData中蓋上提議者的印章，以證明該區塊是由被選中的提議者簽署的。
+- 驗證者需要將 ceil(2N/3) of committed seals 作為共識證明放在 extraData 中，以證明該塊已通過共識。
 
-The calculation is still similar to the ethash block hash calculation, with the exception that we need to deal with extraData. We calculate the fields as follows:
-#### Proposer seal calculation
+計算仍然類似於ethash塊哈希計算，不同之處在於我們需要處理extraData。 我們計算字段如下：
+#### 提案人印章計算
 
-By the time of proposer seal calculation, the committed seals are still unknown, so we calculate the seal with those unknowns empty. The calculation is as follows:
+到 proposer seal 計算時，committed seals 仍然是未知的，所以我們計算那些未知數為空的 seal。 計算如下：
 
--   Proposer seal: SignECDSA(Keccak256(RLP(Header)), PrivateKey)
--   PrivateKey: Proposer’s private key.
--   Header: Same as ethash header only with a different extraData.
--   extraData: vanity | RLP(IstanbulExtra), where in the IstanbulExtra, CommittedSeal and Seal are empty arrays.
+- 提議者印章：SignECDSA(Keccak256(RLP(Header)), PrivateKey)
+- PrivateKey：提議者的私鑰。
+- 標頭：與 ethash 標頭相同，只是具有不同的 extraData。
+- 額外數據：虛榮| RLP(IstanbulExtra)，其中在IstanbulExtra中，CommittedSeal和Seal為空數組。
 
-#### Block hash calculation
+#### 區塊哈希計算
 
-While calculating block hash, we need to exclude committed seals since that data is dynamic between different validators. Therefore, we make CommittedSeal an empty array while calculating the hash. The calculation is:
+在計算塊哈希時，我們需要排除已提交的印章，因為該數據在不同驗證器之間是動態的。 因此，我們在計算哈希時將 CommittedSeal 設為空數組。 計算是：
 
--   Header: Same as ethash header only with a different extraData.
--   extraData: vanity | RLP(IstanbulExtra), where in the IstanbulExtra, CommittedSeal is an empty array.
+- 標頭：與 ethash 標頭相同，只是具有不同的 extraData。
+- 額外數據：虛榮| RLP(IstanbulExtra)，其中在 IstanbulExtra 中，CommittedSeal 是一個空數組。
 
-#### Consensus proof
+#### 共識證明
 
-Before inserting a block into the blockchain, each validator needs to collect ceil(2N/3) of committed seals from other validators to compose a consensus proof. Once it receives enough committed seals, it will fill the CommittedSeal in IstanbulExtra, recalculate the extraData, and then insert the block into the blockchain. Note that since committed seals can differ by different sources, we exclude that part while calculating the block hash as in the previous section.
+貝弗在將一個區塊插入區塊鏈時，每個驗證者需要從其他驗證者那裡收集 ceil(2N/3) 個承諾印章來組成一個共識證明。 一旦它收到足夠多的承諾印章，它將填充 IstanbulExtra 中的 CommittedSeal，重新計算 extraData，然後將塊插入區塊鏈。 請注意，由於提交的印章可能因不同來源而異，因此我們在計算塊哈希時排除了該部分，如上一節所述。
 
-### Committed seal calculation:
+### 承諾印章計算：
 
-Committed seal is calculated by each of the validators signing the hash along with COMMIT_MSG_CODE message code of its private key. The calculation is as follows:
+Committed seal 由每個簽署散列的驗證器及其私鑰的 COMMIT_MSG_CODE 消息代碼計算得出。 計算如下：
 
--   Committed seal: SignECDSA(Keccak256(CONCAT(Hash, COMMIT_MSG_CODE)), PrivateKey).
--   CONCAT(Hash, COMMIT_MSG_CODE): Concatenate block hash and COMMIT_MSG_CODE bytes.
--   PrivateKey: Signing validator’s private key.
+- 承諾印章：SignECDSA(Keccak256(CONCAT(Hash, COMMIT_MSG_CODE)), PrivateKey)。
+- CONCAT(Hash, COMMIT_MSG_CODE)：連接塊散列和 COMMIT_MSG_CODE 字節。
+- PrivateKey：簽名驗證者的私鑰。

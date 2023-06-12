@@ -1,14 +1,14 @@
-## About Vote
+## 關於投票
 
-Introduction about vote commands.
+關於投票命令的介紹。
 
-### Vote
+###投票
 
-You must lock enough `MAP` into the `lockedGold` contract in advance and register your information into the contract.
+您必須提前將足夠的`MAP`鎖定到`lockedGold`合約中，並將您的信息註冊到合約中。
 
-Decrements the number of total and  the number of nonvoting  corresponding to your previously registered account in the `LockedGold` contract.
+減少您之前在 `LockedGold` 合約中註冊的帳戶對應的總數和未投票數。
 
-Increments the number of total and pending votes for validator in the `Election` contract.
+增加“選舉”合約中驗證者的總票數和未決票數。
 
 ```shell
 USAGE
@@ -39,7 +39,12 @@ Failed
 ```
 
 
-### quicklyVote
+### quicklyVote 快速投票
+
+如果您還沒有創建賬號或鎖定地圖，您可以通過`quicklyVote`命令進行快速投票，
+集成了 `createAccount` `lockedMAP`
+
+請注意，您只能使用此命令一次。 無論命令成功與否，該命令只是對`createAccount` `lockedMAP` 命令進行打包組合，不具備復用的性質。
 
 If you have not creat Account or locked the Map, you can quickly vote through the `quicklyVote` command, which
 integrates the `createAccount` `lockedMAP`
@@ -77,12 +82,11 @@ success
 or
 Failed
 ```
+### 啟用
 
-### Activate
+在驗證者選舉中激活未決選票以開始賺取獎勵。 要作為選民獲得獎勵，需要在產生投票的紀元結束後的某個時間點激活您的未決投票。
 
-Activate pending votes in validator elections to begin earning rewards. To earn rewards as a voter, it is required to activate your pending votes at some point after the end of the epoch in which they were made.
-
-That means converts `account`'s pending votes for `validator` to active votes.
+這意味著將“帳戶”對“驗證者”的未決投票轉換為有效投票。
 
 ```shell
 USAGE
@@ -113,15 +117,15 @@ or
 Failed
 ```
 
-### RevokePending
+### RevokePending 撤銷等待
 
-Revokes `value` pending votes for `validator`.
+撤銷 `validator` 的 `value` 未決投票。
 
-This command will put the voting `MAP` turn into nonvoting `MAP`.
+此命令會將有投票權的 `MAP` 變成無投票權的 `MAP`。
 
-Increments the number of total and the number of nonvoting  corresponding to your previously registered account in the `LockedGold` contract.
+增加與您之前在 `LockedGold` 合約中註冊的帳戶相對應的總數和無投票權的數量。
 
-Decrements the number of total and pending votes for validator in the `Election` contract.
+減少“選舉”合約中驗證者的總票數和未決票數。
 
 
 ```shell
@@ -156,16 +160,15 @@ or
 Failed
 ```
 
-### RevokeActive
+### RevokeActive 撤銷激活
 
-Revokes `value` active votes for `validator`
+撤銷對“驗證者”的“價值”有效投票
 
-This command will put the voting `MAP` turn into nonvoting `MAP`.
+此命令會將有投票權的 `MAP` 變成無投票權的 `MAP`。
 
-Increments the number of total and the number of nonvoting corresponding to your previously registered account in the `LockedGold` contract.
+增加與您之前在 `LockedGold` 合約中註冊的帳戶相對應的總數和無投票權的數量。
 
-Decrements the number of total and active votes for validator in the `Election` contract.
-
+減少“選舉”合約中驗證者的總票數和有效票數。
 ```shell
 USAGE
 $ ./marker revokeActive

@@ -1,17 +1,17 @@
-# Concept
+# 概念
 
-Precompiled contracts are a compromise used in the EVM to provide more complex library functions (usually used for complex operations such as encryption, hashing, etc.) that are not suitable for writing in opcode. They are applied to contracts that are simple but frequently called, or that are logically fixed but computationally intensive. Precompiled contracts are implemented on the client-side with client code, and because they do not require the EVM, they run fast. It also costs less for developers than using functions that run directly in the EVM.
+預編譯合約是 EVM 中使用的一種折衷方案，用於提供更複雜的庫函數（通常用於復雜的操作，如加密、哈希等），不適合寫在操作碼中。 它們適用於簡單但經常調用的合約，或者邏輯固定但計算量大的合約。 預編譯合約是在客戶端使用客戶端代碼實現的，因為它們不需要 EVM，所以運行速度很快。 對於開發人員而言，與使用直接在 EVM 中運行的函數相比，它的成本也更低。
 
-## MAP Pre-compiled contracts
-To ease the development of light clients, all kinds of cryptography primitives are supported at the blockchain level and are exposed to EVM via pre-compiled contracts.
+## MAP 預編譯合約
+為了簡化輕客戶端的開發，區塊鏈級別支持各種密碼學原語，並通過預編譯合約向 EVM 公開。
 
-MAP Relay Chain will implement the pre-compiled contracts to support:
+MAP 中繼鏈將實施預編譯合約以支持：
 
-### ecrecover
+### Ecrecover
 
-- Address 0x0000000000000000000000000000000000000001
+- 地址 0x0000000000000000000000000000000000000001
 
-  ecrecover implemented as a native contract.
+   ecrecover 作為原生合約實現。
 
 ```golang
   func (c *ecrecover) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
@@ -48,9 +48,9 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
 
 ### sha256hash
 
-- Address 0x0000000000000000000000000000000000000002
+- 地址 0x0000000000000000000000000000000000000002
 
-  SHA256 implemented as a native contract.
+ SHA256 作為本地合約實施。
 
 ```golang 
   func (c *sha256hash) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
@@ -61,10 +61,9 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
 
 ### dataCopy
 
-- Address 0x0000000000000000000000000000000000000004
+- 地址 0x0000000000000000000000000000000000000004
 - 
-  data copy implemented as a native contract.
-
+ 作為本機合約實現的數據副本。
 ```golang
     func (c *dataCopy) Run(evm *EVM, contract *Contract, in []byte) ([]byte, error) { 
        return in, nil
@@ -73,9 +72,9 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
 
 ### bigModExp
 
-- Address 0x0000000000000000000000000000000000000005
+- 地址 0x0000000000000000000000000000000000000005
 
-  bigModExp implements a native big integer exponential modular operation.
+  bigModExp 實現原生大整數指數模運算。
 
 ```golang
   func (c *bigModExp) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
@@ -109,9 +108,9 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
 
 ### bn256AddIstanbul
 
-- Address 0x0000000000000000000000000000000000000006
+- 地址 0x0000000000000000000000000000000000000006
 
-  bn256Add implements a native elliptic curve point addition conforming to Istanbul    consensus rules.
+bn256Add 實現了一個符合伊斯坦布爾共識規則的原生橢圓曲線點加法。
   
 ```golang
   func (c *bn256AddIstanbul) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
@@ -120,9 +119,9 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
 ```
 ### bn256ScalarMulIstanbul
 
-- Address 0x0000000000000000000000000000000000000007
+- 地址 0x0000000000000000000000000000000000000007
 
-  bn256ScalarMulIstanbul implements a native elliptic curve scalar multiplication conforming to Istanbul consensus rules.
+bn256ScalarMuIstanbul 實現了一個符合伊斯坦布爾共識規則的原生橢圓曲線標量乘法。
 
 ```golang
   func (c *bn256ScalarMulIstanbul) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
@@ -134,8 +133,8 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
 
 - Address 0x0000000000000000000000000000000000000008
 
-  bn256PairingIstanbul implements a pairing pre-compile for the bn256 curve
-  conforming to Istanbul consensus rules.
+ bn256PairingIstanbul 實現bn256曲線的配對預編譯
+   符合伊斯坦布爾共識規則。
 
 ```golang
   func (c *bn256PairingIstanbul) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
@@ -143,20 +142,20 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
   }
 ```
 
-### store
+### 儲存
 
 - Address 0x000068656164657273746F726541646472657373
 
-  execute atlas header store contract
+  執行 atlas header 儲存合約
 ```golang
   func (s *store) Run(evm *EVM, contract *Contract, input []byte) (ret []byte, err error) {
      return RunHeaderStore(evm, contract, input)
   }
 ```
 
-### verify
+### 驗證
 
-- Address 0x0000000000747856657269667941646472657373
+- 地址 0x0000000000747856657269667941646472657373
 
   RunTxVerify execute atlas tx verify contract
 
@@ -166,11 +165,11 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
   }
 ```
   
-### transfer
+### 轉移
 
-- Address 0x00000000000000000000000000000000000000fd
+- 地址 0x00000000000000000000000000000000000000fd
 
-  Native transfer contract to make Atlas Gold ERC20 compatible.
+   使 Atlas Gold ERC20 兼容的本地傳輸合約。
 
 ```golang
   func (c *transfer) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
@@ -218,10 +217,9 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
   
 ### fractionMulExp
 
-- Address 0x00000000000000000000000000000000000000fc
+- 地址 0x00000000000000000000000000000000000000fc
 
-  computes a * (b ^ exponent) to `decimals` places of precision, where a and b are fractions
-
+   計算 a * (b ^ exponent) 到精度的小數位，其中 a 和 b 是分數
 ```golang
   func (c *fractionMulExp) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
     // input is comprised of 6 arguments:
@@ -293,11 +291,11 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
   }
 ```
 
-  ### proofOfPossession
+  ### 佔有證明
 
-- Address 0x00000000000000000000000000000000000000fb
+- 地址 0x00000000000000000000000000000000000000fb
 
-  verify validator`s address 、publicKey、g1publickey、signature
+   驗證validator的地址、publicKey、g1publickey、signature
 
 ```golang 
   func (c *proofOfPossession) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
@@ -338,12 +336,12 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
   }
 ```
 
-### getValidator
+### getValidator 獲取驗證者
 
-- Address 0x00000000000000000000000000000000000000fa
+- 地址 0x00000000000000000000000000000000000000fa
 
-  Return the validators that are required to sign the given, possibly unsealed, block number. If this block is the last in an epoch, note that that may mean one or more of those validators may no longer be elected for subsequent blocks.
-  WARNING: Validator set is always constructed from the canonical chain, therefore this precompile is undefined  if the engine is aware of a chain with higher total difficulty.
+   返回簽署給定的、可能未密封的塊號所需的驗證器。 如果這個塊是一個紀元中的最後一個塊，請注意，這可能意味著這些驗證器中的一個或多個可能不再被選為後續塊。
+   警告：驗證器集總是從規範鏈構建，因此如果引擎知道總難度更高的鏈，則此預編譯是未定義的。
 
 ```golang
     func (c *getValidator) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
@@ -379,13 +377,13 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
     }
 ```
 
-### numberValidators
+### numberValidators 驗證者數量
 
-- Address 0x00000000000000000000000000000000000000f9
+- 地址 0x00000000000000000000000000000000000000f9
 
-  Return the number of validators that are required to sign this current, possibly unsealed, block. If this block is the last in an epoch, note that that may mean one or more of those validators may no longer be elected for subsequent blocks.
+   返回簽署此當前（可能未密封）塊所需的驗證者數量。 如果這個塊是一個紀元中的最後一個塊，請注意，這可能意味著這些驗證者中的一個或多個可能不再被選為後續塊。
 
-      WARNING: Validator set is always constructed from the canonical chain,therefore this precompile is undefined if the engine is aware of a chain with higher total difficulty
+       警告：驗證者集總是從規範鏈構建，因此如果引擎知道總難度更高的鏈，則此預編譯是未定義的
 
 
 ```golang
@@ -413,11 +411,11 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
       }
 ```
 
-### epochSize
+### epochSize 紀元大小
 
-- Address 0x00000000000000000000000000000000000000f8
+- 地址 0x00000000000000000000000000000000000000f8
 
-  return the epochSize
+   返回epochSize
 
 ```golang
   func (c *epochSize) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
@@ -431,7 +429,7 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
 
 - Address 0x00000000000000000000000000000000000000f7
 
-  return the blockNumber from header
+ 返回blockNumber from header
 
 ```golang
   func (c *blockNumberFromHeader) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
@@ -450,7 +448,7 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
 
 - Address 0x00000000000000000000000000000000000000f6
 
-  return the hashHeader from header
+  返回 the hashHeader from header
 
 ```golang
   func (c *hashHeader) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
@@ -468,8 +466,8 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
 
 - Address 0x00000000000000000000000000000000000000F5
 
-  Return the signer bitmap from the parent seal of a past block in the chain.
-  Requested parent seal must have occurred within 4 epochs of the current block number.
+從鏈中過去區塊的父印章返回簽名者位圖signer bitmap。
+   請求的父印章必須在當前塊號的 4 個紀元epochs內發生。
 
 ```golang
       func (c *getParentSealBitmap) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
@@ -511,7 +509,7 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
 
 - Address 0x00000000000000000000000000000000000000F4
 
-  rerurn the extra.AggregatedSeal.Bitmap from header
+  返回 the extra.AggregatedSeal.Bitmap from header
 
 ```golang
   func (c *getVerifiedSealBitmap) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
@@ -541,7 +539,7 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
 
 - Address 0x00000000000000000000000000000000000000f3
 
-  ed25519Verify implements a native Ed25519 signature verification.
+ed25519Verify 實現了原生的 Ed25519 簽名驗證。
 
 ```golang
   func (c *ed25519Verify) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
@@ -568,13 +566,13 @@ MAP Relay Chain will implement the pre-compiled contracts to support:
 
 ### BLS12_G1ADD
 
-- Address 0x000000000000000000000000000000000000000a
+- 地址 0x000000000000000000000000000000000000000a
   
-  Implements EIP-2537 G1Add precompile.
-	
-  \> G1 addition call expects `256` bytes as an input that is interpreted as byte concatenation of two G1 points (`128` bytes each).
-	
-  \> Output is an encoding of addition operation result - single G1 point (`128` bytes).
+實現 EIP-2537 G1Add 預編譯。
+
+   \> G1 加法調用需要“256”字節作為輸入，該輸入被解釋為兩個 G1 點（每個“128”字節）的字節串聯。
+
+   \> 輸出是加法運算結果的編碼 - 單個 G1 點（`128` 字節）。
 
 ```golang
 
@@ -605,13 +603,13 @@ func (c *bls12381G1Add) Run(evm *EVM, contract *Contract, input []byte) ([]byte,
 
 ### BLS12_G1MUL
 
-- Address 0x000000000000000000000000000000000000000b
+- 地址 0x000000000000000000000000000000000000000b
 
-  Implements EIP-2537 G1Mul precompile.
+ 實現 EIP-2537 G1Mul 預編譯。
   
-  \> G1 multiplication call expects `160` bytes as an input that is interpreted as byte concatenation of encoding of G1 point (`128` bytes) and encoding of a scalar value (`32` bytes).
-	
-  \> Output is an encoding of multiplication operation result - single G1 point(`128` bytes). 
+   \> G1 乘法調用需要“160”字節作為輸入，該輸入被解釋為 G1 點編碼（“128”字節）和標量值編碼（“32”字節）的字節串聯。
+
+   \> 輸出是乘法運算結果的編碼 - 單個 G1 點（`128` 字節）。
 
 ```golang
 
@@ -642,13 +640,13 @@ func (c *bls12381G1Add) Run(evm *EVM, contract *Contract, input []byte) ([]byte,
 
 ### BLS12_G1MULTIEXP
 
-- Address 0x000000000000000000000000000000000000000c
+- 地址 0x000000000000000000000000000000000000000c
 
-  Implements EIP-2537 G1MultiExp precompile.
-	
-  G1 multiplication call expects `160*k` bytes as an input that is interpreted as byte concatenation of `k` slices each of them being a byte concatenation of encoding of G1 point (`128` bytes) and encoding of a scalar value (`32` bytes).
-	
-  Output is an encoding of multiexponentiation operation result - single G1 point (`128` bytes).
+實現 EIP-2537 G1MultiExp 預編譯。
+
+  \> G1 乘法調用期望“160*k”字節作為輸入，該輸入被解釋為“k”切片的字節串聯，每個切片都是 G1 點編碼（“128”字節）和標量值編碼（“ 32` 字節）。
+
+  \> 輸出是多重指數運算結果的編碼 - 單個 G1 點（`128` 字節）。
 
 ```golang
   func (c *bls12381G1MultiExp) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
@@ -685,11 +683,11 @@ func (c *bls12381G1Add) Run(evm *EVM, contract *Contract, input []byte) ([]byte,
 
 - Address 0x000000000000000000000000000000000000000d
   
-  Implements EIP-2537 G2Add precompile.
+  預編譯 EIP-2537 G2Add
 	
-  \> G2 addition call expects `512` bytes as an input that is interpreted as byte concatenation of two G2 points (`256` bytes each).
-	
-  \> Output is an encoding of addition operation result - single G2 point (`256` bytes).
+\> G2 加法調用需要“512”字節作為輸入，該輸入被解釋為兩個 G2 點（每個“256”字節）的字節串聯。
+
+   \> 輸出是加法運算結果的編碼 - 單個 G2 點（`256` 字節）。
 
 ```golang
 
@@ -722,11 +720,11 @@ func (c *bls12381G1Add) Run(evm *EVM, contract *Contract, input []byte) ([]byte,
 
 - Address 0x000000000000000000000000000000000000000e
   
-  Implements EIP-2537 G2MUL precompile logic.
+  預編譯 EIP-2537 G2MUL 邏輯.
 	
-  \> G2 multiplication call expects `288` bytes as an input that is interpreted as byte concatenation of encoding of G2 point (`256` bytes) and encoding of a scalar value (`32` bytes).
-	
-  \> Output is an encoding of multiplication operation result - single G2 point (`256` bytes).
+ \> G2 乘法調用需要“288”字節作為輸入，該輸入被解釋為 G2 點編碼（“256”字節）和標量值編碼（“32”字節）的字節串聯。
+
+   \> 輸出是乘法運算結果的編碼 - 單個 G2 點（`256` 字節）。
 
 ```golang
 
@@ -757,11 +755,11 @@ func (c *bls12381G1Add) Run(evm *EVM, contract *Contract, input []byte) ([]byte,
 
 - Address 0x000000000000000000000000000000000000000f
 
-  Implements EIP-2537 G2MultiExp precompile logic
+  預編譯 EIP-2537 G2MultiExp 邏輯
 	
-  \> G2 multiplication call expects `288*k` bytes as an input that is interpreted as byte concatenation of `k` slices each of them being a byte concatenation of encoding of G2 point (`256` bytes) and encoding of a scalar value (`32` bytes).
-	
-  \> Output is an encoding of multiexponentiation operation result - single G2 point (`256` bytes).
+ \> G2 乘法調用期望將“288*k”字節作為輸入，該輸入被解釋為“k”切片的字節串聯，每個切片都是 G2 點（“256”字節）編碼和標量值編碼的字節串聯 （`32` 字節）。
+
+   \> 輸出是多重指數運算結果的編碼 - 單個 G2 點（`256` 字節）。
 
 ```golang
   func (c *bls12381G2MultiExp) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
@@ -802,17 +800,17 @@ func (c *bls12381G1Add) Run(evm *EVM, contract *Contract, input []byte) ([]byte,
 
 - Address 0x0000000000000000000000000000000000000010
 
-  Implements EIP-2537 Pairing precompile logic.
+  預編譯 EIP-2537 Pairing 邏輯.
 	
-  \> Pairing call expects `384*k` bytes as an inputs that is interpreted as byte concatenation of `k` slices. Each slice has the following structure:
-	
-  \> - `128` bytes of G1 point encoding
-	
-  \> - `256` bytes of G2 point encoding
-	
-  \> Output is a `32` bytes where last single byte is `0x01` if pairing result is equal to multiplicative identity in a pairing target field and `0x00` otherwise
-	
-  \> (which is equivalent of Big Endian encoding of Solidity values `uint256(1)` and `uin256(0)` respectively).
+ \> 配對調用需要 `384*k` 字節作為輸入，被解釋為 `k` 切片的字節連接。 每個切片具有以下結構：
+
+   \> - `128` 字節的 G1 點編碼
+
+   \> - `256` 字節的 G2 點編碼
+
+   \> 輸出是一個“32”字節，如果配對結果等於配對目標字段中的乘法標識，最後一個字節為“0x01”，否則為“0x00”
+
+   \>（分別相當於 Solidity 值 `uint256(1)` 和 `uin256(0)` 的 Big Endian 編碼）。
 
 ```golang
 func (c *bls12381Pairing) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
@@ -865,12 +863,11 @@ func (c *bls12381Pairing) Run(evm *EVM, contract *Contract, input []byte) ([]byt
 
 - Address 0x0000000000000000000000000000000000000011
 
-Implements EIP-2537 Map_To_G1 precompile.
+預變異 EIP-2537 Map_To_G1
 
-\> Field-to-curve call expects `64` bytes an an input that is interpreted as a an element of the base field.
+\> 字段到曲線調用需要“64”字節和一個被解釋為基本字段元素的輸入。
 
-\> Output of this call is `128` bytes and is G1 point following respective encoding rules.
-
+\> 此調用的輸出是 128 個字節，並且是遵循各自編碼規則的 G1 點。
 ```golang
 
   func (c *bls12381MapG1) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
@@ -899,12 +896,11 @@ Implements EIP-2537 Map_To_G1 precompile.
 
 - Address 0x0000000000000000000000000000000000000012
 
-  Implements EIP-2537 Map_FP2_TO_G2 precompile logic.
+  預編譯 EIP-2537 Map_FP2_TO_G2 邏輯
 
-  \> Field-to-curve call expects `128` bytes an an input that is interpreted as a an element of the quadratic extension field.
+\> 場到曲線調用需要“128”字節和一個輸入，該輸入被解釋為二次擴展場的一個元素。
 
-  \> Output of this call is `256` bytes and is G2 point following respective encoding rules.
-
+   \> 此調用的輸出是 `256` 字節，並且是遵循各自編碼規則的 G2 點。
 ```golang
   func (c *bls12381MapG2) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) 
   {

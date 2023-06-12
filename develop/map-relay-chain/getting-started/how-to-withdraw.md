@@ -1,17 +1,17 @@
-## How To withdraw voting MAP
+## 如何撤回投票 MAP
 
-### Introduce
+### 介紹
 
-When you use the vote command to vote, you're voting status is pending. Only when the last block of the current epoch is generated, your voting status will automatically change to active。
-Next, follow this document, and you will withdraw your vote
+當您使用 vote 命令進行投票時，您的投票狀態為 pending。 只有噹噹前紀元的最後一個區塊生成時，您的投票狀態才會自動變為活躍。
+接下來，按照這個文件，你將撤回你的投票
 
-#### How To withdraw pending vote
+#### 如何撤回未激活的投票
 
-Because your current vote is to contribute to the `validator`(in the next epoch), so your voting `MAP` will go through two states the `pending` and the `active` state.
+因為你當前的投票是貢獻給`validator`（在下一個epoch），所以你的投票`MAP`會經歷兩種狀態`pending`和`active`狀態。
 
-So， You can use `getPendingVotesForValidatorByAccount` command to  check whether you have inactive `MAP`
+所以，您可以使用 `getPendingVotesForValidatorByAccount` 命令來檢查您是否有未激活的 `MAP`
 
-For Example
+示例
 ```shell
 ./marker getPendingVotesForValidatorByAccount --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --rpcaddr http://127.0.0.1:7445
 
@@ -19,9 +19,9 @@ INFO [07-07|13:32:03.891] === getPendingVotesForValidatorByAccount === admin=0x0
 INFO [07-07|13:32:03.894] PendingVotes                             balance=100,000,000,000,000,000,000,000
 ```
 
-If your voting `MAP` is in `pending`, you can use 'revokePending' command to withdraw your pending voting `MAP`.
+如果您的投票`MAP`處於`pending`狀態，您可以使用'revokePending'命令撤回您的投票`MAP`。
 
-For Example
+示例
 ```shell
 ./marker revokePending --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --rpcaddr http://127.0.0.1:7445 --lockedNum 100000 --target 0x078F684c7d3bf78BDbe8bEf93E56998442dc8099
 
@@ -31,13 +31,13 @@ INFO [07-08|02:39:49.029] Please waiting                           func=getResul
 INFO [07-08|02:39:50.839] Transaction Success                      func=queryTx                 block Number=478,705
 ```
 
-#### How To withdraw active vote
+#### 如何撤回主動投票
 
-If you're voting `MAP` is in `active`, you can use `revokeActive` command to withdraw your  active voting `MAP`. If you perform this step, the votes you withdraw will lose the corresponding reward.
+如果您正在投票的 `MAP` 處於 `active` 狀態，您可以使用 `revokeActive` 命令撤回您的活躍投票 `MAP`。 如果執行此步驟，您撤回的選票將失去相應的獎勵。
 
-First, you can use the `getActiveVotesForValidatorByAccount` command to see how many active votes you have
+首先，您可以使用 `getActiveVotesForValidatorByAccount` 命令查看您有多少活躍投票
 
-For Example
+示例
 ```shell
 ./marker getActiveVotesForValidatorByAccount --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --rpcaddr http://127.0.0.1:7445 --target 0x078F684c7d3bf78BDbe8bEf93E56998442dc8099
 
@@ -45,9 +45,9 @@ INFO [07-08|03:45:18.228] === getActiveVotesForValidatorByAccount === admin=0x07
 INFO [07-08|03:45:18.230] ActiveVotes                              balance=304,805,454,545,461,535,206,581
 ```
 
-withdraw active vote
+撤回已激活投票
 
-For Example 
+示例
 ```shell
 ./marker revokeActive --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --rpcaddr http://127.0.0.1:7445 --target 0x078F684c7d3bf78BDbe8bEf93E56998442dc8099 --lockedNum  100000
 
@@ -57,24 +57,23 @@ INFO [07-08|05:47:48.089] Please waiting                           func=getResul
 INFO [07-08|05:47:51.709] Transaction Success                      func=queryTx                 block Number=480,961
 ```
 
-Then you can also use the `getActiveVotesForValidatorByAccount` command to confirm whether the revoke is successful
+然後你也可以使用`getActiveVotesForValidatorByAccount`命令來確認是否撤銷成功
 
-> Here are the details of these two commands please click [revokePending](/develop/map-relay-chain/marker/AboutVote.md#revokepending) or [revokeActive](/develop/map-relay-chain/marker/AboutVote.md#revokeactive) to see.
+> 這兩個命令的詳細信息請點擊[revokePending](/develop/map-relay-chain/marker/AboutVote.md#revokepending) 或 [revokeActive](/develop/map-relay-chain/marker/AboutVote. md#revokeactive) 來查看。
 
-> be careful ： Both of `revokePending` and `revokeActive` command will put the voting `MAP` turn into nonvoting `MAP`
-> 
-> Now your voting `MAP` state has changed from pending state or active state to locking state.
-> 
-> the next step is same to [How To withdraw Locked MAP](/develop/map-relay-chain/how-to-withdraw.md#how-to-withdraw-locked-map)
+> 注意：`revokePending` 和 `revokeActive` 命令都會把有投票權的 `MAP` 變成無投票權的 `MAP`
+>
+> 現在您的投票 `MAP` 狀態已經從 pending 狀態或 active 狀態變為 locking 狀態。
+>
+> 下一步同[如何提現鎖定MAP](/develop/map-relay-chain/how-to-withdraw.md#how-to-withdraw-locked-map)
 
 
-## How To withdraw Locked MAP
+## 如何提取鎖定的 MAP
 
-### Step 1: unlock
+###第一步：解鎖
 
-You can use the `getAccountNonvotingLockedGold` command to see how many nonvoting maps you have
-
-For Example
+您可以使用 `getAccountNonvotingLockedGold` 命令查看您有多少無投票權的地圖
+示例
 ```shell
 /marker getAccountNonvotingLockedGold --rpcaddr http://127.0.0.1:7445 --target 0x078F684c7d3bf78BDbe8bEf93E56998442dc8099
 
@@ -82,17 +81,17 @@ INFO [07-08|06:13:47.791] === getAccountNonvotingLockedGold ===    admin=0x00000
 INFO [07-08|06:13:47.793] result                                   lockedGold=800,000,000,000,000,000,000,000
 ```
 
-Map chain implements an unlocking period, a delay of 60 days after making a request to unlock Locked `MAP` before it can be recovered from the escrow.
+地圖鏈實施解鎖期，在提出解鎖請求後延遲 60 天才能從託管中恢復鎖定的`MAP`。
 
-Unlocks `MAP`, which can be withdrawn after the unlocking period. Unlocked `MAP` will appear as a "pending withdrawal" until the unlocking period is over, after which it can be withdrawn via "withdraw" command.
+解鎖`MAP`，可以在解鎖期後撤回。 解鎖的`MAP`將顯示為“待取款”，直到解鎖期結束，之後可以通過“取款”命令取款。
 
-You can only unlock your nonvoting `MAP`,if you want to cancel your voting `MAP` please to Reference [How To withdraw voting MAP](/develop/map-relay-chain/how-to-withdraw.md#how-to-withdraw-voting-map)
+你只能解鎖你的非投票`MAP`，如果你想取消你的投票`MAP`請參考[如何撤回MAP投票](/develop/map-relay-chain/how-to-withdraw.md#如何撤回MAP投票）
 
-If you are a validator you will not be able to unlock 1000,000 `MAP` that necessary pledge as validator.
+如果您是驗證者，您將無法解鎖 1000,000 `MAP` 作為驗證者所必需的質押。
 
-You need `unlock` command to perform unlock operations,more detail about `unlock` command please to see [this](/develop/map-relay-chain/marker/AboutCommon.md#unlockmap) .
+你需要 `unlock` 命令來執行解鎖操作，更多關於 `unlock` 命令的細節請看[this]((/develop/map-relay-chain/marker/AboutCommon.md#unlockmap)。
 
-For Example
+示例
 ```shell
 ./marker unlockMap --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --lockedNum 100000
 
@@ -103,27 +102,25 @@ INFO [07-08|06:30:08.904] Please waiting                           func=getResul
 INFO [07-08|06:30:11.117] Transaction Success                      func=queryTx                 block Number=481,469
 ```
 
-You can use `getPendingWithdrawals` command to view the map that can be withdrawn at present
-
-For Example
+您可以使用`get Pending Withdrawals` 命令查看當前可以提現的地圖
+示例
 ```shell
 ./cmd/marker/marker getPendingWithdrawals --rpcaddr http://127.0.0.1:7445 --target 0x19b375ebb9ee1b21a592a933c6383df49380046d
 
 INFO [07-08|06:25:27.544] === getPendingWithdrawals ===            admin=0x0000000000000000000000000000000000000000 target=0x19b375EBB9eE1B21A592A933c6383Df49380046D
 INFO [07-08|06:25:27.546] result:                                  index=0 values=10,000,000,000,000,000,000,000 timestamps=1,658,286,912
 ```
+**Timestamps是你可以提款的時間，以秒為單位**
 
-**Timestamps is the time you can withdraw, in seconds**
+### 第二步：退出
 
-### Step 2:withdraw
+在解鎖期結束後撤回已解鎖的`MAP`。 這一步相當於將你鎖定在智能合約中的錢提現到你的賬戶地址。
 
-Withdraws `MAP` that has been unlocked after the unlocking period has passed. this step equivalent to withdrawing the money you locked in the smart contract to your account address.
+您需要 `withdraw` 命令來執行取款操作，更多關於 `withdraw` 命令的細節請看[this](/develop/map-relay-chain/marker/AboutCommon.md#withdrawmap)。
 
-You need `withdraw` command to perform withdraw operations,more detail about `withdraw` command please to see [this](/develop/map-relay-chain/marker/AboutCommon.md#withdrawmap) .
+至此，您鎖定的`MAP`已轉入您的賬戶地址。 您可以自行查詢。
 
-At this step, the `MAP` you locked has been transferred to your account address. You can inquire by yourself.
-
-For Example
+示例
 ```shell
 ./marker withdrawMap --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --withdrawIndex 0
 
@@ -133,9 +130,9 @@ INFO [07-08|06:32:04.408] Please waiting                           func=getResul
 INFO [07-08|06:32:06.218] Transaction Success                      func=queryTx                 block Number=481,492
 ```
 
-After withdraw, you can check your balance， Map recommends that you use RPC interface.
+提現後可以查看餘額，MAP推薦使用RPC接口。
 
-For Example
+示例
 ```shell
 curl --location --request POST 'http://18.142.54.137:7445' \
 --header 'Content-Type: application/json' \

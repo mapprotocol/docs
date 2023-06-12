@@ -1,33 +1,32 @@
-## Proof-of-Stake
+## 股權證明
 
-MAP Relay Chain(Atlas) is a proof-of-stake blockchain. In comparison to Proof of Work systems like Bitcoin and Ethereum, this eliminates the negative environmental impact and means that users can make transactions that are cheaper, faster, and whose outcome cannot be changed once complete.
+MAP 中繼鏈（Atlas）是一種股權證明區塊鏈。 與比特幣和以太坊等工作量證明系統相比，這消除了對環境的負面影響，意味著用戶可以進行更便宜、更快速且交易結果一旦完成就無法更改的交易。
 
-MAP Relay Chain implements a Istanbul Byzantine Fault Tolerant (IBFT) consensus algorithm in which a well-defined set of validator nodes broadcast signed messages between themselves in a sequence of steps to reach agreement even when up to a third of the total nodes are offline, faulty or malicious. When a quorum of validators have reached agreement, that decision is final.
+MAP 中繼鏈實現了伊斯坦布爾拜占庭容錯 (IBFT) 共識算法，其中一組明確定義的驗證器節點按照一系列步驟在它們之間廣播簽名消息以達成協議，即使多達三分之一的節點處於離線狀態， 錯誤或惡意的。 當法定人數的驗證者達成一致時，該決定就是最終決定。
 
-## Validators
-Validators gather transactions received from other nodes and execute any associated smart contracts to form new blocks, then participate in a Byzantine Fault Tolerant (BFT) consensus protocol to advance the state of the network. Since BFT protocols can scale only to a few hundred participants, and can tolerate at most a third of the participants acting maliciously, a proof-of-stake mechanism admits only a limited set of nodes to this role.
+## 驗證器
+驗證者收集從其他節點收到的交易並執行任何關聯的智能合約以形成新區塊，然後參與拜占庭容錯 (BFT) 共識協議以推進網絡狀態。 由於 BFT 協議只能擴展到幾百個參與者，並且最多可以容忍三分之一的參與者惡意行為，因此權益證明機制只允許有限的一組節點擔任此角色。
 
-## Staking Requirements
+## 質押要求
 
-Atlas uses a proof-of-stake consensus mechanism, which requires Validators to have locked `MAPO` to participate in block production. 
-The current requirement is `1,000,000` `MAPO` to register a Validator.
+Atlas 採用 PoS 共識機制，要求 Validators 鎖定 `MAPO` 才能參與出塊。
+當前的要求是 `1,000,000` `MAPO` 來註冊驗證器。
 
-## About election
+## 關於選舉
 
-The Election contract is called from the IBFT block finalization code to select the validators for the following epoch.
-The contract maintains a sorted list of the Locked `MAPO` voting (either pending or activated) for each Validator.
-The active validator set is updated by running an election in the final block of each epoch, after processing transactions and Epoch Rewards.
+選舉合約從 IBFT 區塊最終確定代碼中調用，以選擇下一個時期的驗證者。
+合約為每個驗證者維護一個已排序的鎖定 `MAPO` 投票列表（未決或已激活）。
+在處理交易和紀元獎勵之後，通過在每個紀元的最後一個區塊中運行選舉來更新活動驗證器集。
 
-There is a minimum target and a maximum cap on the number of active validators that may be selected.
-If the minimum target is not reached, the election aborts and no change is made to the validator set this epoch.
+可以選擇的活躍驗證器的數量有一個最小目標和一個最大上限。
+如果沒有達到最低目標，選舉就會中止，並且不會對這個時期的驗證者集進行任何更改。
 
-## Validator number and Reward
+## 驗證者數量和獎勵
 
-The participators make these decisions by locking `MAPO` and voting for Validator.
-Validator elections are held `every epoch` (approximately once per three day).
-The protocol elects a maximum of `100` Validators. At each epoch, every elected Validator must be re-elected to continue.
-Validators are selected in proportion to votes received for each Validator.
+參與者通過鎖定 `MAPO` 並投票給驗證者來做出這些決定。
+驗證者選舉“每個時期”舉行一次（大約每三天一次）。
+該協議最多選擇 100 個驗證器。 在每個時期，每個當選的驗證者都必須重新當選才能繼續。
+驗證器是根據每個驗證器收到的選票按比例選擇的。
 
-If you hold `MAPO`, or are a beneficiary of a Release`MAPO` contract that allows voting, you can vote for validator. A single account can split their Locked`MAPO` balance to have outstanding votes between `3 validator` and `10 validator`.
-`MAPO` that you lock and use to vote for a  validator receives epoch rewards every epoch (approximately every day) once the community passes a governance proposal enabling rewards.
-
+如果您持有 `MAPO`，或者是允許投票的 Release`MAPO` 合約的受益人，您可以投票給驗證者。 單個帳戶可以拆分其鎖定的“MAPO”餘額，以在“3 個驗證者”和“10 個驗證者”之間獲得未決投票。
+一旦社區通過了一項支持獎勵的治理提案，您鎖定並用於投票給驗證者的 `MAPO` 將在每個時期（大約每天）收到一個時期獎勵。

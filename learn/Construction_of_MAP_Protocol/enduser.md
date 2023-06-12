@@ -1,1 +1,2 @@
-**End Users**: Community members can participate through various types of Dapps in the MAP ecosystem and get rewards.
+**終端用戶**： 社區成員可以通過MAP生態系統中各種類型的Dapp參與，並獲得獎勵。
+

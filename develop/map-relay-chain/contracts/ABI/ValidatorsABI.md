@@ -1,4 +1,4 @@
-## Validators Contract json ABI
+## 驗證者合約 json ABI
 
 ```json
 [

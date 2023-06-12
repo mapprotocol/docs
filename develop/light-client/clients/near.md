@@ -1,23 +1,23 @@
-# Near Protocol Light Client
+# 近協議輕客戶端
 
-## How it works
+## 如何運行的
 
-NearProtocolLightClient is an implementation of the [NEAR light client](https://nomicon.io/ChainSpec/LightClient) in Solidity as an Mapo contract. The state of the light client is defined by:
+NearProtocolLightClient 是 [NEAR 輕客戶端](https://nomicon.io/ChainSpec/LightClient) 在 Solidity 中作為 Mapo 合約的實現。 輕客戶端的狀態定義為：
 
-1. `BlockHeaderInnerLiteView` for the current head (which contains `height`, `epoch_id`, `next_epoch_id`, `prev_state_root`, `outcome_root`, `timestamp`, the hash of the block producers set for the next epoch `next_bp_hash`, and the merkle root of all the block hashes `block_merkle_root`);
-2. The set of block producers for the current and next epochs.
+1. 當前頭部的`BlockHeaderInnerLiteView`（包含`height`, `epoch_id`, `next_epoch_id`, `prev_state_root`, `outcome_root`, `timestamp`，為下一個epoch設置的區塊生產者的hash `next_bp_hash` , 以及所有區塊哈希的 merkle 根 `block_merkle_root`);
+2. 當前和下一個時期的區塊生產者集合。
 
-The `epoch_id` refers to the epoch to which the block that is the current known head belongs, and `next_epoch_id` is the epoch that will follow.
+`epoch_id` 指的是當前已知頭部的區塊所屬的紀元，而 `next_epoch_id` 是接下來的紀元。
 
-Light clients operate by periodically fetching instances of `LightClientBlockView` via particular RPC end-point described [here](https://nomicon.io/ChainSpec/LightClient#rpc-end-points).
+輕客戶端通過[此處](https://nomicon.io/ChainSpec/LightClient#rpc-end-points) 描述的特定 RPC 端點定期獲取 LightClientBlockView 的實例來運行。
 
-Light client doesn't need to receive `LightClientBlockView` for all the blocks. Having the `LightClientBlockView` for block `B` is sufficient to be able to verify any statement about state or outcomes in any block in the ancestry of `B` (including `B` itself). In particular, having the `LightClientBlockView` for the head is sufficient to locally verify any statement about state or outcomes in any block on the canonical chain.
+輕客戶端不需要接收所有塊的 `LightClientBlockView`。 擁有塊“B”的“LightClientBlockView”足以驗證“B”祖先（包括“B”本身）中任何塊中關於狀態或結果的任何陳述。 特別是，擁有頭部的 LightClientBlockView 足以在本地驗證規範鏈上任何區塊中關於狀態或結果的任何陳述。
 
-However, to verify the validity of a particular `LightClientBlockView`, the light client must have verified a `LightClientBlockView` for at least one block in the preceding epoch, thus to sync to the head the light client will have to fetch and verify a `LightClientBlockView` per epoch passed.
+然而，為了驗證特定“LightClientBlockView”的有效性，輕客戶端必須在前一個紀元中驗證至少一個區塊的“LightClientBlockView”，因此要同步到頭部，輕客戶端必須獲取並驗證一個“ LightClientBlockView` 每個時代過去了。
 
-## How to verify
+## 如何驗證
 
-#### updateBlockHeader
+#### 更新塊頭
 
 ```solidity
 struct LightClientBlock {
@@ -74,7 +74,7 @@ struct OptionalSignature {
 
 ```
 
-The fields `prev_block_hash`, `next_block_inner_hash` and `inner_rest_hash` are used to reconstruct the hashes of the current and next block, and the approvals that will be signed, in the following way (where `block_view` is an instance of `LightClientBlockView`):
+`prev_block_hash`、`next_block_inner_hash` 和 `inner_rest_hash` 字段用於重建當前和下一個塊的哈希值，以及將要簽署的批准，按照以下方式（其中 `block_view` 是 `LightClientBlockView` 的實例 ):
 
 ```solidity
 hash = sha256(
@@ -90,15 +90,14 @@ approval_message =  abi.encodePacked(
                 bytes23(0)
             )
 ```
+輕客戶端使用來自 LightClientBlockView 的信息更新它的頭部，當且僅當：
 
-The light client updates its head with the information from `LightClientBlockView` iff:
-
-1. The height of the block is higher than the height of the current head;
-2. The epoch of the block is equal to the `next_epoch_id` known for the current head;
-3. If the epoch of the block is equal to the `next_epoch_id` of the head, then `next_bps` is not `None`;
-4. `approvals_after_next` contain valid signatures on `approval_message` from the block producers of the corresponding epoch (see next section);
-5. The signatures present in `approvals_after_next` correspond to more than 2/3 of the total stake (see next section).
-6. If `next_bps` is not none, `sha256(borsh(next_bps))` corresponds to the `next_bp_hash` in `inner_lite`.
+1.區塊高度高於當前區塊頭高度；
+2. 區塊的epoch等於當前頭部已知的`next_epoch_id`；
+3. 如果區塊的epoch等於頭部的`next_epoch_id`，則`next_bps`不為`None`；
+4. `approvals_after_next` 包含來自相應時期的區塊生產者的 `approval_message` 上的有效簽名（見下一節）；
+5. `approvals_after_next` 中的簽名對應於總股份的 2/3 以上（見下一節）。
+6.如果`next_bps`不為none，則`sha256(borsh(next_bps))`對應`inner_lite`中的`next_bp_hash`。
 
    ```solidity
      // 1
@@ -142,19 +141,18 @@ The light client updates its head with the information from `LightClientBlockVie
      require(nearBlock.next_bps.hash == nearBlock.inner_lite.next_bp_hash,"Hash of block producers does not match");
    ```
 
-   To simplify the protocol we require that the next block and the block after next are both in the same epoch as the block that `LightClientBlockView` corresponds to. It is guaranteed that each epoch has at least one final block for which the next two blocks that build on top of it are in the same epoch.
+   為了簡化協議，我們要求下一個塊和下一個塊之後的塊都與 LightClientBlockView 對應的塊處於同一紀元。 保證每個紀元至少有一個最終區塊，在它之上構建的下兩個區塊在同一紀元中。
 
-   By construction by the time the `LightClientBlockView` is being validated, the block producers set for its epoch is known. Specifically, when the first light client block view of the previous epoch was processed, due to (3) above the `next_bps` was not `None`, and due to (6) above it was corresponding to the `next_bp_hash` in the block header.
+    通過在“LightClientBlockView”被驗證時構建，為其紀元設置的區塊生產者是已知的。 具體來說，當處理前一個epoch的第一個輕客戶端塊視圖時，由於上面的（3）'next_bps'不是'None'，並且由於上面的（6）它對應於塊中的'next_bp_hash' 標頭。
 
-   The sum of all the stakes of `next_bps` in the previous epoch is `total_stake` referred to in (5) above.
+    前一個 epoch 的 `next_bps` 的所有 stake 之和就是上面（5）中提到的 `total_stake`。
 
-   The signatures in the `LightClientBlockView::approvals_after_next` are signatures on `approval_message`. The `i`-th signature in `approvals_after_next`, if present, must validate against the `i`-th public key in `next_bps` from the previous epoch. `approvals_after_next` can contain fewer elements than `next_bps` in the previous epoch.
+    `LightClientBlockView::approvals_after_next` 中的簽名是 `approval_message` 上的簽名。 `approvals_after_next` 中的第 `i` 個簽名（如果存在）必鬚根據前一個紀元的 `next_bps` 中的第 `i` 個公鑰進行驗證。 `approvals_after_next` 可以包含比前一個紀元中的 `next_bps` 更少的元素。
 
-   `approvals_after_next` can also contain more signatures than the length of `next_bps` in the previous epoch. This is due to the fact that, as per [consensus specification](https://nomicon.io/ChainSpec/Consensus), the last blocks in each epoch contain signatures from both the block producers of the current epoch, and the next epoch. The trailing signatures can be safely ignored by the light client implementation.
+    `approvals_after_next` 還可以包含比前一個紀元中的 `next_bps` 長度更多的簽名。 這是因為，根據 [共識規範](https://nomicon.io/ChainSpec/Consensus)，每個紀元中的最後一個區塊都包含來自當前紀元和下一個紀元的區塊生產者的簽名 . 輕客戶端實現可以安全地忽略尾隨簽名。
+#### 驗證證明數據
 
-#### verifyProofData
-
-To verify that a transaction or receipt happens on chain, a light client can request a proof through rpc by providing receipt_id and the block hash of light client head. The rpc will return the following struct
+為了驗證交易或收據是否發生在鏈上，輕客戶端可以通過 rpc 提供 receipt_id 和輕客戶端頭部的塊哈希來請求證明。 rpc 將返回以下結構
 
 ```solidity
 
@@ -207,13 +205,13 @@ struct MerklePath {
 }
 ```
 
-which includes everything that a light client needs to prove the execution outcome of the given transaction or receipt.
+其中包括輕客戶端證明給定交易或收據的執行結果所需的一切。
 
-The proof verification can be broken down into two steps, execution outcome root verification and block merkle root verification.
+證明驗證可以分為兩步，執行結果根驗證和區塊默克爾根驗證。
 
-###### Execution Outcome Root Verification
+###### 執行結果根驗證
 
-If the outcome root of the transaction or receipt is included in block `H`, then `outcome_proof` includes the block hash of `H`, as well as the merkle proof of the execution outcome in its given shard. The outcome root in `H` can be reconstructed by
+如果交易或收據的結果根包含在塊“H”中，則“outcome_proof”包含“H”的塊哈希，以及其給定分片中執行結果的默克爾證明。 `H` 中的結果根可以重建為
 
 ```solidity
     bytes32 hash = _computeRoot(
@@ -232,11 +230,11 @@ If the outcome root of the transaction or receipt is included in block `H`, then
         }
 ```
 
-This outcome root must match the outcome root in `block_header_lite.inner_lite`.
+這個結果根必須匹配`block_header_lite.inner_lite`中的結果根。
 
-###### Block Merkle Root Verification
+###### 區塊 Merkle 根驗證
 
-Recall that block hash can be computed from `LightClientBlockLiteView` by
+回看區塊哈希可以通過以下方式從 LightClientBlockLiteView 計算出來
 
 ```solidity
 hash = sha256(
@@ -244,7 +242,7 @@ hash = sha256(
         );
 ```
 
-The expected block merkle root can be computed by
+預期的區塊 merkle 根可以計算為
 
 ```solidity
  if (
@@ -257,12 +255,11 @@ The expected block merkle root can be computed by
         }
 ```
 
-which must match the block merkle root in the light client block of the light client head.
+它必須與輕客戶端頭的輕客戶端塊中的塊默克爾根匹配。
 
-## Proof
+## 證明
 
-###### LightClientBlock
-
+###### 輕客戶端區塊 LightClientBlock
 ```solidity
 struct LightClientBlock {
         bytes32 prev_block_hash;
@@ -278,7 +275,7 @@ struct LightClientBlock {
 
 ```
 
-###### Proof of transation
+###### 交易證明
 
 ```solidity
 struct FullOutcomeProof {

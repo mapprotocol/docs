@@ -1,63 +1,61 @@
-# Summary
+# 概括
+* [概述](README.md)
 
-* [Overview](README.md)
+## 學習
 
-## Learn
-
-* About MAP Protocol
-  * [Background](learn/background.md)
-  * [Introduction of MAP Protocol](learn/introduction.md)
-  * [History of MAP Protocol](learn/history.md)
-* [Comparison with other cross-chain models](learn/comparison.md)
-  * [MAP Protocol vs Cosmos &amp; Polkadot](learn/CosmosPolkadot.md)
-  * [MAP vs other cross-chain solutions without relay chain](learn/others.md)
-* [Technical Mechanism](learn/Teachnical_Mechanism/overiew.md)
-  * [MAP Protocol&#39;s Technical Mechanism](learn/Teachnical_Mechanism/technical-mechanism.md)
-  * [Three-layer Architecture](learn/Teachnical_Mechanism/3layer.md)
-  * [MAP Protocol Layer](learn/Teachnical_Mechanism/protocollayer.md)
-    * MAP Relay Chain
-      * [Concept](learn/Teachnical_Mechanism/concept.md)
-      * [Isomorphism with All Chains](learn/Teachnical_Mechanism/precompile.md)
-      * [Verification &amp; Maintenance Network](learn/Teachnical_Mechanism/verification.md)
-  * [MAPO Service (MOS) Layer](learn/Teachnical_Mechanism/mcs.md)
-  * [MAPO Application Layer](learn/Teachnical_Mechanism/application.md)
-* [Gas Fee Model](learn/fee.md)
+* 關於 MAP 協議
+  * [背景](learn/background.md)
+  * [介紹 MAP 協議](learn/introduction.md)
+  * [MAP 協議的發展歷程](learn/history.md)
+* [與其他跨鏈模型進行比較](learn/comparison.md)
+  * [MAP 協議與Cosmos＆amp; Pokadot](learn/CosmosPolkadot.md)
+  * [MAP vs. 其他無中繼鏈的跨鏈解決方案](learn/others.md)
+* [技術機制](learn/Teachnical_Mechanism/overiew.md)
+  * [MAP協議'的技術機制](learn/Teachnical_Mechanism/technical-mechanism.md)
+  * [三層結構](learn/Teachnical_Mechanism/3layer.md)
+  * [MAP協議層](learn/Teachnical_Mechanism/protocollayer.md)
+  * [MAP中繼鏈]
+    * [概念](learn/Teachnical_Mechanism/concept.md)
+    * [與所有鏈的同構性](learn/Teachnical_Mechanism/precompile.md)
+    * [驗證& 維護網絡](learn/Teachnical_Mechanism/verification.md)
+  * [MAPO服務(MOS)層](learn/Teachnical_Mechanism/mcs.md)
+  * [MAPO應用層](learn/Teachnical_Mechanism/application.md)
+* [燃氣費收費模式](learn/fee.md)
 * [DAO](learn/dao.md)
-* [Construction of MAP Protocol](learn/Construction_of_MAP_Protocol/construction.md)
-  * [Developers](learn/Construction_of_MAP_Protocol/developers.md)
-  * [Validators](learn/Construction_of_MAP_Protocol/validators.md)
-  * [Maintainers](learn/Construction_of_MAP_Protocol/maintainer.md)
-  * [Messengers](learn/Construction_of_MAP_Protocol/messengers.md)
-  * [Liquidity providers](learn/Construction_of_MAP_Protocol/liquidityprovider.md)
-  * [End users](learn/Construction_of_MAP_Protocol/enduser.md)
+* [MAP協議的構建](learn/Construction_of_MAP_Protocol/construction.md)
+  * [開發者](learn/Construction_of_MAP_Protocol/developers.md)
+  * [驗證者](learn/Construction_of_MAP_Protocol/validators.md)
+  * [維護者](learn/Construction_of_MAP_Protocol/maintainer.md)
+  * [信使](learn/Construction_of_MAP_Protocol/messengers.md)
+  * [流動資金提供者](learn/Construction_of_MAP_Protocol/liquidityprovider.md)
+  * [終端用戶](learn/Construction_of_MAP_Protocol/enduser.md)
 * [Tokenomics](learn/tokenomics.md)
-* [Roadmap](learn/roadmap.md)
-* [Purchase $MAP](/learn/purchase.md)
+* [路線圖](learn/roadmap.md)
+* [購買$MAP](/learn/purchase.md)
 
-## Develop
+## 開發
 
 * [MAP Relay Chain](develop/map-relay-chain/README.md)
-  * Getting Started
 
-    * [Build](develop/map-relay-chain/getting-started/build.md)
-    * [Make Private Chain](develop/map-relay-chain/getting-started/make-private-chain.md)
-    * [How To Vote](develop/map-relay-chain/getting-started/how-to-vote.md)
-    * [How To Withdraw](develop/map-relay-chain/getting-started/how-to-withdraw.md)
-    * [Integrate an Exchange](develop/map-relay-chain/getting-started/Integrate-an-Exchange.md)
-  * Consensus
-
-    * [Overview](develop/map-relay-chain/consensus/Overview.md)
+  * 入門
+    * [構建](develop/map-relay-chain/getting-started/build.md)
+    * [製作私有鏈](develop/map-relay-chain/getting-started/make-private-chain.md)
+    * [如何投票](develop/map-relay-chain/getting-started/how-to-vote.md)
+    * [如何取出質押](develop/map-relay-chain/getting-started/how-to-withdraw.md)
+    * [集成到交易所](develop/map-relay-chain/getting-started/Integrate-an-Exchange.md)
+  * 共識
+    * [概述](develop/map-relay-chain/consensus/Overview.md)
     * [Proof-of-Stake](develop/map-relay-chain/consensus/Proof-of-Stake.md)
-    * Validator
-      * [Validator](develop/map-relay-chain/consensus/Validator.md)
-      * [Locked MAP](develop/map-relay-chain/consensus/LockedMAP.md)
-    * [Election](develop/map-relay-chain/consensus/Election.md)
-    * [Rewards](develop/map-relay-chain/consensus/Rewards.md)
-    * [Aggregated Seal](develop/map-relay-chain/consensus/AggregatedSeal.md)
-  * [Contracts](develop/map-relay-chain/contracts/ContractsAddress.md)
+    * 驗證器
+      * [驗證器](develop/map-relay-chain/consensus/Validator.md)
+      * [鎖定的MAP](develop/map-relay-chain/consensus/LockedMAP.md)
+    * [選舉](develop/map-relay-chain/consensus/Election.md)
+    * [獎勵](develop/map-relay-chain/consensus/Rewards.md)
+    * [聚合印章](develop/map-relay-chain/consensus/AggregatedSeal.md)
+  * [合約](develop/map-relay-chain/contracts/ContractsAddress.md)
 
-    * [Precompiled Contracts](develop/map-relay-chain/contracts/precompile-contract/precompile-contract.md)
-    * Genesis Contracts
+    * [預編譯合約](develop/map-relay-chain/contracts/precompile-contract/precompile-contract.md)
+    * 創世紀合約
       * ABI
         * [AccountsABI](develop/map-relay-chain/contracts/ABI/AccountsABI.md)
         * [ElectionABI](develop/map-relay-chain/contracts/ABI/ElectionABI.md)
@@ -68,46 +66,46 @@
   * [Marker](develop/map-relay-chain/marker/Marker.md)
 
     * [Genesis](develop/map-relay-chain/getting-started/how-to-make-genesis.md)
-    * [Validator](develop/map-relay-chain/marker/AboutValidator.md)
+    * [驗證器](develop/map-relay-chain/marker/AboutValidator.md)
     * [Vote](develop/map-relay-chain/marker/AboutVote.md)
     * [ContractOwner](develop/map-relay-chain/marker/AboutContractOwner.md)
     * [Common](develop/map-relay-chain/marker/AboutCommon.md)
-* [Light Client](develop/light-client/README.md)
-  * Verification based on Light Client
-  * MAPO Light Client
-    * [EVM Chains](develop/light-client/map/evm.md)
+* [輕型客戶端](develop/light-client/README.md)
+  * 基於輕型客戶端的驗證
+  * MAPO輕型客戶端
+    * [EVM鏈](develop/light-client/map/evm.md)
     * [Near](develop/light-client/map/near.md)
-  * Light Clients
-    * [Client Manager](develop/light-client/light-client-manager.md)
-    * [BNB Smart Chain](develop/light-client/clients/bsc.md)
-    * [Near Protocol](develop/light-client/clients/near.md)
+  * 輕客戶端
+    * [客戶端管理器](develop/light-client/light-client-manager.md)
+    * [BNB 鏈](develop/light-client/clients/bsc.md)
+    * [NEAR 協議](develop/light-client/clients/near.md)
     * [Polygon(Matic)](develop/light-client/clients/matic.md)
     * [Ethereum 2.0](develop/light-client/clients/eth2.md))
-  * [Maintainer](develop/light-client/Maintainer.md)
-* MAPO Service
-  * [MOS Message Guides](develop/mos/message/README.md)
+    * [維護者](develop/light-client/Maintainer.md)
+* MAPO 全鏈服務
+  * [MOS消息指南](develop/mos/message/README.md)
     * [How It Works](develop/mos/message/cross-chain-message.md)
-  * [MCS Guides](develop/mos/mcs/README.md)
-    * [How It Works](develop/mos/mcs/how-it-works.md)
-    * [How To Use](develop/mos/mcs/how-to.md)
-      * [How To On Evm Chains](develop/mos/mcs/how-to-evm.md)
-      * [How To On Near Protocol](develop/mos/mcs/how-to-near.md)
-    * [Relay Chain Contract](develop/mos/mcs/mcs-on-mapo.md)
-    * [EVM Chains Contract](develop/mos/mcs/mcs-on-evm.md)
-    * [Near Protocol Contract](develop/mos/mcs/mcs-on-near.md)
-  * [Messenger](develop/mos/messenger/messenger.md)
+  * [MOS 指南](develop/mos/mcs/README.md)
+    * [運行原理](develop/mos/mcs/how-it-works.md)
+    * [如何使用](develop/mos/mcs/how-to.md)
+      * [在Evm鏈的方法](develop/mos/mcs/how-to-evm.md)
+      * [在NEAR協議上](develop/mos/mcs/how-to-near.md)
+    * [中繼鏈合約](develop/mos/mcs/mcs-on-mapo.md)
+    * [EVM鏈合約](develop/mos/mcs/mcs-on-evm.md)
+    * [ NEAR 協議合約](develop/mos/mcs/mcs-on-near.md)
+  * [信使](develop/mos/messenger/messenger.md)
   * [API](develop/mos/mcs/api/api.md)
-* OmniChain Examples
+* OmniChain實例
   * [OmniDictionary](develop/mos/examples/OmniDictionary.md)
-  
+
 * API & SDK
   * [Butter SDK](sdk/butter.md)
   * [Atlas JSON RPC](sdk/RPC-API.md)
   * [Atlas Consensus API](sdk/ConsensusAPI.md)
-  * [MAP Scan API](develop/sdk/scan-api.md)
+  * [MAP掃描API](develop/sdk/scan-api.md)
 
-## Run
+## 運行
 
-* [How To Become A New Validator](run/HowToBecomeANewValidator.md)
-* [How To Become A New Validator[advanced]](run/HowToBecomeANewValidatorAdvanced.md)
+* [如何成爲一個新的驗證者](run/HowToBecomeANewValidator.md)
+* [如何成爲一個新的驗證器[進階版]](run/HowToBecomeANewValidatorAdvanced.md)
 * [Withdraw](run/Withdraw.md)

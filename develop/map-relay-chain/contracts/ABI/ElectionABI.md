@@ -1,4 +1,4 @@
-## Election Contract json ABI
+## 選舉合約json ABI
 
 ```json
 [

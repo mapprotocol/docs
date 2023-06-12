@@ -1,2 +1,2 @@
-**Liquidity provider**: Community members can provide liquidity to Vaults on each chain through Dapps deployed in the MAP ecosystem. Incentives are provided directly by each Dapp.
+**流動資金提供者**： 社區成員可以通過部署在MAP生態系統中的Dapp向每個鏈上的Vaults提供流動性。激勵措施由每個Dapp直接提供。
 

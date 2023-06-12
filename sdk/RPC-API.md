@@ -1,8 +1,8 @@
 
-## JSON RPC API Reference
+## JSON RPC API 參考
 
-### The default block parameter
-The following methods have an extra default block parameter:
+### 默認塊參數
+以下方法有一個額外的默認塊參數：
 
 - [eth_getBalance](#eth_getbalance)
 - [eth_getCode](eth_getcode)
@@ -10,30 +10,29 @@ The following methods have an extra default block parameter:
 - [eth_getStorageAt](eth_getstorageat)
 - [eth_call](eth_call)
 
-When requests are made that act on the state of ethereum, the last default block parameter determines the height of the block.
+當發出對以太坊狀態起作用的請求時，最後一個默認塊參數決定了塊的高度。
 
-The following options are possible for the defaultBlock parameter:
+defaultBlock 參數可以使用以下選項：
 
-- `HEX String` - an integer block number
-- `String "earliest"` for the earliest/genesis block
-- `String "latest"` - for the latest mined block
-- `String "pending"` - for the pending state/transactions
+- `HEX String` - 整數塊號
+- `String "earliest"` 代表最早/創世區塊
+- `String "latest"` - 最新開采的區塊
+- `String "pending"` - 用於待定狀態/交易
 
 
 ### web3
 
 #### web3_clientVersion
+返回當前客戶端版本。
 
-Returns the current client version.
-
-##### Parameters
+##### 參數
 none
 
-##### Returns
+#### 返回
 
 `String` - The current client version.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}'
@@ -48,24 +47,24 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],
 
 #### web3_sha3
 
-Returns Keccak-256 (*not* the standardized SHA3-256) of the given data.
+返回 Keccak-256 (*not* the standardized SHA3-256) of the given data.
 
-##### Parameters
+##### 參數
 
 1. `DATA` - the data to convert into a SHA3 hash.
 
-##### Example Parameters
+##### 示例 參數
 ```js
 params: [
   "0x68656c6c6f20776f726c64"
 ]
 ```
 
-##### Returns
+#### 返回
 
 `DATA` - The SHA3 result of the given string.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"web3_sha3","params":["0x68656c6c6f20776f726c64"],"id":1}'
@@ -84,17 +83,17 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"web3_sha3","params":["0x68656c6c
 
 Returns the current network id.
 
-##### Parameters
+##### 參數
 none
 
-##### Returns
+#### 返回
 
 `String` - The current network id.
 - `"22776"`: Mainnet
 - `"212"`:   Testnet
 - `"213"`:   Devnet
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":1}'
@@ -111,14 +110,14 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":1}
 
 Returns `true` if client is actively listening for network connections.
 
-##### Parameters
+##### 參數
 none
 
-##### Returns
+#### 返回
 
 `Boolean` - `true` when listening, otherwise `false`.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"net_listening","params":[],"id":1}'
@@ -137,14 +136,14 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"net_listening","params":[],"id":
 
 Returns number of peers currently connected to the client.
 
-##### Parameters
+##### 參數
 none
 
-##### Returns
+#### 返回
 
 `QUANTITY` - integer of the number of connected peers.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":1}'
@@ -163,14 +162,14 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":
 
 Returns the current price per gas in wei.
 
-##### Parameters
+##### 參數
 none
 
-##### Returns
+#### 返回
 
 `QUANTITY` - integer of the current gas price in wei.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_gasPrice","params":[],"id":1}'
@@ -189,14 +188,14 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_gasPrice","params":[],"id":1
 
 Returns a fee per gas that is an estimate of how much you can pay as a priority fee, or "tip", to get a transaction included in the current block.
 
-##### Parameters
+##### 參數
 none
 
-##### Returns
+#### 返回
 
 `QUANTITY` - the estimated priority fee per gas.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_maxPriorityFeePerGas","params":[],"id":1}'
@@ -216,10 +215,10 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_maxPriorityFeePerGas","param
 Returns an object with data about the sync status or `false`.
 
 
-##### Parameters
+##### 參數
 none
 
-##### Returns
+#### 返回
 
 `Object|Boolean`, An object with sync status data or `FALSE`, when not syncing:
   - `startingBlock`: `QUANTITY` - The block at which the import started (will only be reset, after the sync reached his head)
@@ -233,7 +232,7 @@ startingBlock: QUANTITY - The block at which the import started (will only be re
 currentBlock: QUANTITY - The current block, same as eth_blockNumber
 highestBlock: QUANTITY - The estimated highest block
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}'
@@ -265,14 +264,14 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}
 Returns a list of addresses owned by client.
 
 
-##### Parameters
+##### 參數
 none
 
-##### Returns
+#### 返回
 
 `Array of DATA`, 20 Bytes - addresses owned by the client.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_accounts","params":[],"id":1}'
@@ -289,14 +288,14 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_accounts","params":[],"id":1
 
 Returns the number of most recent block.
 
-##### Parameters
+##### 參數
 none
 
-##### Returns
+#### 返回
 
 `QUANTITY` - integer of the current block number the client is on.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
@@ -313,15 +312,15 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id
 
 Returns the balance of the account of given address.
 
-##### Parameters
+##### 參數
 DATA, 20 Bytes - address to check for balance.
 QUANTITY|TAG - integer block number, or the string "latest", "earliest" or "pending", see the [default block parameter](#the-default-block-parameter).
 
-##### Returns
+#### 返回
 
 `QUANTITY` - integer of the current block number the client is on.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0x84d46b3055454646a419d023f73472561b6cf20f", "latest"],"id":1}'
@@ -338,11 +337,11 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0x84d
 
 Returns information about a block by block number.
 
-##### Parameters
+##### 參數
 `QUANTITY|TAG` - integer of a block number, or the string "earliest", "latest" or "pending", as in the default block parameter.
 `Boolean` - If true it returns the full transaction objects, if false only the hashes of the transactions.
 
-##### Returns
+#### 返回
 
 `Object` - A block object, or null when no block was found:
     - `number`: QUANTITY - the block number. null when its pending block.
@@ -363,7 +362,7 @@ Returns information about a block by block number.
     - `transactions`: Array - Array of transaction objects, or 32 Bytes transaction hashes depending on the last given parameter.
     - `baseFeePerGas`: QUANTITY - The base fee is the bare minimum you will be charged to send a transaction on the network.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["0x1", true],"id":1}}'
@@ -399,15 +398,15 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":[
 
 Returns information about a block by block hash.
 
-##### Parameters
+##### 參數
 `DATA`, 32 Bytes - Hash of a block.
 `Boolean` - If true it returns the full transaction objects, if false only the hashes of the transactions.
 
-##### Returns
+#### 返回
 
 See [eth_getBlockByNumber](#eth_getblockbynumber)
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockByHash","params":["0xdddfede981cb797b5492be3b6a238db872ae3260bb19472f06dfa5b2214850dc", true],"id":1}}'
@@ -418,16 +417,16 @@ Result See [eth_getBlockByNumber](#eth_getblockbynumber)
 
 Returns code at a given address.
 
-##### Parameters
+##### 參數
 
 1. `DATA`, 20 Bytes - address.
 2. `QUANTITY|TAG` - integer block number, or the string `"latest"`, `"earliest"` or `"pending"`, see the [default block parameter](#the-default-block-parameter).
 
-##### Returns
+#### 返回
 
 `DATA` - the code from the given address.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getCode","params":["0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b", "0x2"],"id":1}'
@@ -444,17 +443,17 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getCode","params":["0xa94f53
 
 Returns the value from a storage position at a given address. 
 
-##### Parameters
+##### 參數
 
 1. `DATA`, 20 Bytes - address of the storage.
 2. `QUANTITY` - integer of the position in the storage.
 3. `QUANTITY|TAG` - integer block number, or the string `"latest"`, `"earliest"` or `"pending"`, see the [default block parameter](#the-default-block-parameter)
 
-##### Returns
+#### 返回
 
 `DATA` - the value at this storage position.
 
-##### Example
+##### 示例
 Calculating the correct position depends on the storage to retrieve. Consider the following contract deployed at `0x295a70b2de5e3953354a6a8344e616ed314d7251` by address `0x391694e7e0b0cce554cb130d723a9d27458f9298`.
 
 ```
@@ -505,7 +504,7 @@ curl -X POST --data '{"jsonrpc":"2.0", "method": "eth_getStorageAt", "params": [
 
 Executes a new message call immediately without creating a transaction on the block chain.
 
-##### Parameters
+##### 參數
 1. `Object` - The transaction call object
   - `from`: `DATA`, 20 Bytes - (optional) The address the transaction is sent from.
   - `to`: `DATA`, 20 Bytes  - The address the transaction is directed to.
@@ -515,15 +514,15 @@ Executes a new message call immediately without creating a transaction on the bl
   - `maxPriorityFeePerGas`: `QUANTITY` - When you submit a transaction you will also provide a "tip" to the miner. This is the maxPriorityFeePerGas field. fork.
   - `value`: `QUANTITY`  - (optional) Integer of the value sent with this transaction
   - `nonce`: `QUANTITY` - the number of transactions made by the sender prior to this one.
-  - `data`: `DATA`  - (optional) Hash of the method signature and encoded parameters
+  - `data`: `DATA`  - (optional) Hash of the method signature and encoded 參數
   - `input`: `DATA`  - (optional) We accept "data" and "input" for backwards-compatibility reasons. "input" is the newer name and should be preferred by clients.
 2. `QUANTITY|TAG` - integer block number, or the string `"latest"`, `"earliest"` or `"pending"`, see the [default block parameter](#the-default-block-parameter)
 
-##### Returns
+#### 返回
 
 `DATA` - the return value of executed contract.
 
-##### Example
+##### 示例
 ```json
 // Request
 curl -X POST --data '{
@@ -553,15 +552,15 @@ curl -X POST --data '{
 
 Generates and returns an estimate of how much gas is necessary to allow the transaction to complete. The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance.
 
-##### Parameters
+##### 參數
 
-See [eth_call](#eth_call) parameters, expect that all properties are optional. If no gas limit is specified geth  uses the block gas limit from the pending block as an upper bound. As a result the returned estimate might not be enough to executed the call/transaction when the amount of gas is higher than the pending block gas limit.
+See [eth_call](#eth_call) 參數, expect that all properties are optional. If no gas limit is specified geth  uses the block gas limit from the pending block as an upper bound. As a result the returned estimate might not be enough to executed the call/transaction when the amount of gas is higher than the pending block gas limit.
 
-##### Returns
+#### 返回
 
 `QUANTITY` - the amount of gas used.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_estimateGas","params":[{"from": "0xd13fe09e7a304709b1c4ed6bd3a2d6c272357bbb","to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567","gas": "0x76c0","gasPrice": "0x9184e72a000","value": "0x9184e72a","data": "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"}, "latest"],"id":1}],"id":1}'
@@ -579,15 +578,15 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_estimateGas","params":[{"fro
 
 Returns the number of transactions in a block matching the given block number.
 
-##### Parameters
+##### 參數
 
 1. `QUANTITY|TAG` - integer of a block number, or the string `"earliest"`, `"latest"` or `"pending"`, as in the [default block parameter](#the-default-block-parameter).
 
-##### Returns
+#### 返回
 
 `QUANTITY` - integer of the number of transactions in this block.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockTransactionCountByNumber","params":["0x1"],"id":1}'
@@ -604,15 +603,15 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockTransactionCountByNu
 
 Returns the number of transactions in a block from a block matching the given block hash.
 
-##### Parameters
+##### 參數
 
 1. `DATA`, 32 Bytes - hash of a block.
 
-##### Returns
+#### 返回
 
 `QUANTITY` - integer of the number of transactions in this block.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockTransactionCountByHash","params":["0xdddfede981cb797b5492be3b6a238db872ae3260bb19472f06dfa5b2214850dc"],"id":1}'
@@ -630,11 +629,11 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockTransactionCountByHa
 Returns the information about a transaction requested by transaction hash.
 
 
-##### Parameters
+##### 參數
 
 1. `DATA`, 32 Bytes - hash of a transaction
 
-##### Returns
+#### 返回
 
 `Object` - A transaction object, or `null` when no transaction was found:
 
@@ -664,7 +663,7 @@ Returns the information about a transaction requested by transaction hash.
   - `ps`: `DATA`, 32 Bytes - ECDSA signature ps
 
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionByHash","params":["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"],"id":1}'
@@ -702,16 +701,16 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionByHash","param
 
 Returns information about a transaction by block number and transaction index position.
 
-##### Parameters
+##### 參數
 
 1. `QUANTITY|TAG` - a block number, or the string `"earliest"`, `"latest"` or `"pending"`, as in the [default block parameter](#the-default-block-parameter).
 2. `QUANTITY` - the transaction index position.
 
-##### Returns
+#### 返回
 
 See [eth_getTransactionByHash](#eth_gettransactionbyhash)
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionByBlockNumberAndIndex","params":["0x29c", "0x0"],"id":1}'
@@ -724,16 +723,16 @@ Result see [eth_getTransactionByHash](#eth_gettransactionbyhash)
 
 Returns information about a transaction by block hash and transaction index position.
 
-##### Parameters
+##### 參數
 
 1. `DATA`, 32 Bytes - hash of a block.
 2. `QUANTITY` - integer of the transaction index position.
 
-##### Returns
+#### 返回
 
 See [eth_getTransactionByHash](#eth_gettransactionbyhash)
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionByBlockHashAndIndex","params":["0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b", "0x0"],"id":1}'
@@ -745,17 +744,17 @@ Result see [eth_getTransactionByHash](#eth_gettransactionbyhash)
 
 Returns the number of transactions *sent* from an address.
 
-##### Parameters
+##### 參數
 
 1. `DATA`, 20 Bytes - address.
 2. `QUANTITY|TAG` - integer block number, or the string `"latest"`, `"earliest"` or `"pending"`, see the [default block parameter](#the-default-block-parameter)
 
-##### Returns
+#### 返回
 
 `QUANTITY` - integer of the number of transactions send from this address.
 
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionCount","params":["0xD13fE09E7A304709B1C4ed6Bd3a2D6C272357BBb","latest"],"id":1}'
@@ -775,18 +774,18 @@ Returns the receipt of a transaction by transaction hash.
 **Note** That the receipt is not available for pending transactions.
 
 
-##### Parameters
+##### 參數
 
 1. `DATA`, 32 Bytes - hash of a transaction
 
-##### Example Parameters
+##### 示例 參數
 ```js
 params: [
    '0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238'
 ]
 ```
 
-##### Returns
+#### 返回
 
 `Object` - A transaction receipt object, or `null` when no receipt was found:
 
@@ -809,7 +808,7 @@ It also returns _either_ :
     - `root` : `DATA` 32 bytes of post-transaction stateroot (pre Byzantium)
     - `status`: `QUANTITY` either `1` (success) or `0` (failure)
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionReceipt","params":["0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238"],"id":1}'
@@ -841,7 +840,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionReceipt","para
 
 Creates new message call transaction or a contract creation, if the data field contains code.
 
-##### Parameters
+##### 參數
 1. `Object` - The transaction object
     - `from`: `DATA`, 20 Bytes - (optional) The address the transaction is sent from.
     - `to`: `DATA`, 20 Bytes  - The address the transaction is directed to.
@@ -851,10 +850,10 @@ Creates new message call transaction or a contract creation, if the data field c
     - `maxPriorityFeePerGas`: `QUANTITY` - When you submit a transaction you will also provide a "tip" to the miner. This is the maxPriorityFeePerGas field. fork.
     - `value`: `QUANTITY`  - (optional) Integer of the value sent with this transaction
     - `nonce`: `QUANTITY` - the number of transactions made by the sender prior to this one.
-    - `data`: `DATA`  - (optional) Hash of the method signature and encoded parameters
+    - `data`: `DATA`  - (optional) Hash of the method signature and encoded 參數
     - `input`: `DATA`  - (optional) We accept "data" and "input" for backwards-compatibility reasons. "input" is the newer name and should be preferred by clients.
 
-##### Example Parameters
+##### 示例 參數
 ```js
 params: [{
   "from": "0xf675187ff5b76d2430b353f6736aa051253118ee",
@@ -866,13 +865,13 @@ params: [{
 }]
 ```
 
-##### Returns
+#### 返回
 
 `DATA`, 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available.
 
 Use [eth_getTransactionReceipt](#eth_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
-##### Example
+##### 示例
 ```json
 // Request
 curl -X POST --data '{
@@ -907,17 +906,17 @@ By adding a prefix to the message makes the calculated signature recognisable as
 
 Note the address to sign with must be unlocked.
 
-##### Parameters
+##### 參數
 account, message
 
 1. `DATA`, 20 Bytes - address.
 2. `DATA`, N Bytes - message to sign.
 
-##### Returns
+#### 返回
 
 `DATA`: Signature
 
-##### Example
+##### 示例
 
 ```js
 // Request
@@ -931,14 +930,14 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sign","params":["0xf675187ff
 }
 ```
 
-An example how to use solidity ecrecover to verify the signature calculated with `eth_sign` can be found [here](https://gist.github.com/bas-vk/d46d83da2b2b4721efb0907aecdb7ebd). The contract is deployed on the testnet Ropsten and Rinkeby.
+An 示例 how to use solidity ecrecover to verify the signature calculated with `eth_sign` can be found [here](https://gist.github.com/bas-vk/d46d83da2b2b4721efb0907aecdb7ebd). The contract is deployed on the testnet Ropsten and Rinkeby.
 
 
 #### eth_signTransaction
 
 Signs a transaction that can be submitted to the network at a later time using with eth_sendRawTransaction.
 
-##### Parameters
+##### 參數
 1. `Object` - The transaction object
     - `from`: `DATA`, 20 Bytes - (optional) The address the transaction is sent from.
     - `to`: `DATA`, 20 Bytes  - The address the transaction is directed to.
@@ -948,16 +947,16 @@ Signs a transaction that can be submitted to the network at a later time using w
     - `maxPriorityFeePerGas`: `QUANTITY` - When you submit a transaction you will also provide a "tip" to the miner. This is the maxPriorityFeePerGas field. fork.
     - `value`: `QUANTITY`  - (optional) Integer of the value sent with this transaction
     - `nonce`: `QUANTITY` - the number of transactions made by the sender prior to this one.
-    - `data`: `DATA`  - (optional) Hash of the method signature and encoded parameters
+    - `data`: `DATA`  - (optional) Hash of the method signature and encoded 參數
     - `input`: `DATA`  - (optional) We accept "data" and "input" for backwards-compatibility reasons. "input" is the newer name and should be preferred by clients.
 
-##### Returns
+#### 返回
 
 `raw`, The signed transaction object.
 
 Use [eth_getTransactionReceipt](#eth_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
-##### Example
+##### 示例
 ```json
 // Request
 curl -X POST --data '{
@@ -1006,17 +1005,17 @@ curl -X POST --data '{
 
 Creates new message call transaction or a contract creation for signed transactions.
 
-##### Parameters
+##### 參數
 
 1. `DATA`, The signed transaction data.
 
-##### Returns
+#### 返回
 
 `DATA`, 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available.
 
 Use [eth_getTransactionReceipt](#eth_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sendRawTransaction","params":[{see above}],"id":1}'
@@ -1042,7 +1041,7 @@ Topics are order-dependent. A transaction with a log with topics [A, B] will be 
 * `[A, B]` "A in first position AND B in second position (and anything after)"
 * `[[A, B], [A, B]]` "(A OR B) in first position AND (A OR B) in second position (and anything after)"
 
-##### Parameters
+##### 參數
 
 1. `Object` - The filter options:
   - `fromBlock`: `QUANTITY|TAG` - (optional, default: `"latest"`) Integer block number, or `"latest"` for the last mined block or `"pending"`, `"earliest"` for not yet mined transactions.
@@ -1050,7 +1049,7 @@ Topics are order-dependent. A transaction with a log with topics [A, B] will be 
   - `address`: `DATA|Array`, 20 Bytes - (optional) Contract address or a list of addresses from which logs should originate.
   - `topics`: `Array of DATA`,  - (optional) Array of 32 Bytes `DATA` topics. Topics are order-dependent. Each topic can also be an array of DATA with "or" options.
 
-##### Example Parameters
+##### 示例 參數
 ```js
 params: [{
   "fromBlock": "0x1",
@@ -1060,11 +1059,11 @@ params: [{
 }]
 ```
 
-##### Returns
+#### 返回
 
 `QUANTITY` - A filter id.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_newFilter","params":[{"topics":["0x0000000000000000000000000000000000000000000000000000000012341234"]}],"id":1}'
@@ -1082,14 +1081,14 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_newFilter","params":[{"topic
 Creates a filter in the node, to notify when a new block arrives.
 To check if the state has changed, call [eth_getFilterChanges](#eth_getfilterchanges).
 
-##### Parameters
+##### 參數
 None
 
-##### Returns
+#### 返回
 
 `QUANTITY` - A filter id.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_newBlockFilter","params":[],"id":1}'
@@ -1109,14 +1108,14 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_newBlockFilter","params":[],
 Creates a filter in the node, to notify when new pending transactions arrive.
 To check if the state has changed, call [eth_getFilterChanges](#eth_getfilterchanges).
 
-##### Parameters
+##### 參數
 None
 
-##### Returns
+#### 返回
 
 `QUANTITY` - A filter id.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_newPendingTransactionFilter","params":[],"id":1}'
@@ -1137,15 +1136,15 @@ Uninstalls a filter with given id. Should always be called when watch is no long
 Additonally Filters timeout when they aren't requested with [eth_getFilterChanges](#eth_getfilterchanges) for a period of time.
 
 
-##### Parameters
+##### 參數
 
 1. `QUANTITY` - The filter id.
 
-##### Returns
+#### 返回
 
 `Boolean` - `true` if the filter was successfully uninstalled, otherwise `false`.
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_uninstallFilter","params":["0x9c0f6318f321c61e29a88943072b8bfb"],"id":73}'
@@ -1165,18 +1164,18 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_uninstallFilter","params":["
 Polling method for a filter, which returns an array of logs which occurred since last poll.
 
 
-##### Parameters
+##### 參數
 
 1. `QUANTITY` - the filter id.
 
-##### Example Parameters
+##### 示例 參數
 ```js
 params: [
   "0x16" // 22
 ]
 ```
 
-##### Returns
+#### 返回
 
 `Array` - Array of log objects, or an empty array if nothing has changed since last poll.
 
@@ -1194,7 +1193,7 @@ params: [
   - `data`: `DATA` - contains the non-indexed arguments of the log.
   - `topics`: `Array of DATA` - Array of 0 to 4 32 Bytes `DATA` of indexed log arguments. (In *solidity*: The first topic is the *hash* of the signature of the event (e.g. `Deposit(address,bytes32,uint256)`), except you declared the event with the `anonymous` specifier.)
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getFilterChanges","params":["0x16"],"id":73}'
@@ -1225,22 +1224,22 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getFilterChanges","params":[
 Returns an array of all logs matching filter with given id.
 
 
-##### Parameters
+##### 參數
 
 1. `QUANTITY` - The filter id.
 
-##### Example Parameters
+##### 示例 參數
 ```js
 params: [
   "0x16" // 22
 ]
 ```
 
-##### Returns
+#### 返回
 
 See [eth_getFilterChanges](#eth_getfilterchanges)
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getFilterLogs","params":["0x16"],"id":74}'
@@ -1254,7 +1253,7 @@ Result see [eth_getFilterChanges](#eth_getfilterchanges)
 
 Returns an array of all logs matching a given filter object.
 
-##### Parameters
+##### 參數
 
 1. `Object` - The filter options:
   - `fromBlock`: `QUANTITY|TAG` - (optional, default: `"latest"`) Integer block number, or `"latest"` for the last mined block or `"pending"`, `"earliest"` for not yet mined transactions.
@@ -1263,18 +1262,18 @@ Returns an array of all logs matching a given filter object.
   - `topics`: `Array of DATA`,  - (optional) Array of 32 Bytes `DATA` topics. Topics are order-dependent. Each topic can also be an array of DATA with "or" options.
   - `blockhash`:  `DATA`, 32 Bytes - (optional) With the addition of EIP-234 (Geth >= v1.8.13 or Parity >= v2.1.0), `blockHash` is a new filter option which restricts the logs returned to the single block with the 32-byte hash `blockHash`.  Using `blockHash` is equivalent to `fromBlock` = `toBlock` = the block number with hash `blockHash`.  If `blockHash` is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.
 
-##### Example Parameters
+##### 示例 參數
 ```js
 params: [{
   "topics": ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]
 }]
 ```
 
-##### Returns
+#### 返回
 
 See [eth_getFilterChanges](#eth_getfilterchanges)
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getLogs","params":[{"topics":["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]}],"id":74}'
@@ -1288,15 +1287,15 @@ Result see [eth_getFilterChanges](#eth_getfilterchanges)
 Returns an array of all logs matching filter with given id.
 
 
-##### Parameters
+##### 參數
 
 1. `QUANTITY` - The filter id.
 
-##### Returns
+#### 返回
 
 See [eth_getFilterChanges](#eth_getfilterchanges)
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getFilterLogs","params":["0x16"],"id":74}'
@@ -1310,7 +1309,7 @@ Result see [eth_getFilterChanges](#eth_getfilterchanges)
 
 Returns an array of all logs matching a given filter object.
 
-##### Parameters
+##### 參數
 
 1. `Object` - The filter options:
   - `fromBlock`: `QUANTITY|TAG` - (optional, default: `"latest"`) Integer block number, or `"latest"` for the last mined block or `"pending"`, `"earliest"` for not yet mined transactions.
@@ -1319,18 +1318,18 @@ Returns an array of all logs matching a given filter object.
   - `topics`: `Array of DATA`,  - (optional) Array of 32 Bytes `DATA` topics. Topics are order-dependent. Each topic can also be an array of DATA with "or" options.
   - `blockhash`:  `DATA`, 32 Bytes - (optional) With the addition of EIP-234 (Geth >= v1.8.13 or Parity >= v2.1.0), `blockHash` is a new filter option which restricts the logs returned to the single block with the 32-byte hash `blockHash`.  Using `blockHash` is equivalent to `fromBlock` = `toBlock` = the block number with hash `blockHash`.  If `blockHash` is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.
 
-##### Example Parameters
+##### 示例 參數
 ```js
 params: [{
   "topics": ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]
 }]
 ```
 
-##### Returns
+#### 返回
 
 See [eth_getFilterChanges](#eth_getfilterchanges)
 
-##### Example
+##### 示例
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getLogs","params":[{"topics":["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]}],"id":74}'

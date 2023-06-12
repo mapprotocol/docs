@@ -1,16 +1,16 @@
-# Marker
+# 標記 Marker
 
-Introduction to the Map Command Line Interface and installation instructions.
+MAP 命令行界面簡介和安裝說明。
 
-### What is the Marker
+### 什麼是標記 Marker
 
-Marker contains tools to make genesis.json and some client commands to better link Map contracts.
+Marker 包含製作 genesis.json 的工具和一些客戶端命令以更好地鏈接 Map 合約。
 
-The Command Line Interface allows users to interact with the Map Protocol smart contracts.
+命令行界面允許用戶與MAP 協議智能合約進行交互。
 
-It allows you to interact with the Map Protocol and smart contracts using command-line tools rather than writing go Script. Some common features you may want to consider are helping users participate in elections or in on-chain governance, voting for validators, or helping users interact with multi-sig contracts.
+它允許您使用命令行工具與MAP 協議和智能合約進行交互，而不是編寫 go 腳本。 您可能需要考慮的一些常見功能是幫助用戶參與選舉或鏈上治理、為驗證者投票或幫助用戶與多重簽名合約進行交互。
 
-### Building Marker
+### 創建標記 Marker
 
 ```shell
 Building `Marker` requires both a Go (version 1.14 or later) and a C compiler.You can install them using your favourite package manager.
@@ -19,26 +19,25 @@ cd atlas
 make marker 
 ```
 
-Now you can run "./build/bin/marker" to launch marker or switch to ./build/bin path and run "./marker" to launch marker
+現在您可以運行“./build/bin/marker”來啟動標記或切換到 ./build/bin 路徑並運行“./marker”來啟動標記
 
-### Commands
+### 命令
 
-The tool is broken down into modules and commands with the following pattern:
-
+該工具被分解為具有以下模式的模塊和命令：
 ```shell
 ./marker　<command> <...args> 
 ```
 
-The Marker tool assumes that users are running a node which they have access to signing transactions on.
+Marker 工具假設用戶正在運行一個節點，他們有權在該節點上簽署交易。
 
-Please note that our commands need to specify your keystore file, so you need to generate your keystore file in advance.
+請注意，我們的命令需要指定您的密鑰庫文件，因此您需要提前生成您的密鑰庫文件。
 
-The method of generating keystore file is here:
+生成keystore文件的方法在這裡：
 
-1. you need to building `atlas` project,building `atlas` requires both a Go (version 1.14 or later) and a C compiler.
-2. download our atlas project and use this command: `git clone https://github.com/mapprotocol/atlas.git` in your favorite folder.
-3. Switch to atlas project folder use this command `go build -o ./favoritefolder/atlas  *.go` will generate atlas client in the directory  specified by -o.
-4. Use your client generate your keystore file like this.
+1. 您需要構建 `atlas` 項目，構建 `atlas` 需要 Go（1.14 或更高版本）和 C 編譯器。
+2. 下載我們的 atlas 項目並使用此命令：`git clone https://github.com/mapprotocol/atlas.git` 在您最喜歡的文件夾中。
+3.切換到atlas項目文件夾使用這個命令`go build -o ./favoritefolder/atlas *.go`會在-o指定的目錄下生成atlas client。
+4. 使用您的客戶端像這樣生成您的密鑰庫文件。
 
 ```shell
 USAGE
@@ -57,7 +56,7 @@ Path of the secret key file: ./datadir/keystore/UTC--2022-03-15T02-11-43.8378070
 The keystore has been stored in the directory specified by --keystore.
 ```
 
-If you already have an account,you can use the atlas client to convert. Enter the atlas console and use the command:
+如果您已經有一個帳戶，您可以使用atlas客戶端進行轉換。 進入atlas控制台，使用命令：
 
 ```shell
 USAGE
@@ -69,6 +68,6 @@ EXAMPLES:
 The keystore has been stored in the directory specified by --dataDir.
 ```
 
-### Optional: Run a Full Node
+### 可選：運行完整節點
 
-Commands need to connect to a Map node to execute most functionality.
+命令需要連接到MAP節點才能執行大部分功能。

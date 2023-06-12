@@ -1,40 +1,40 @@
-# MAPO Service (MOS) Message
+# MAPO 全鏈服務 (MOS) 消息
 
-MOS message enables projects built on one chain to easily synchronize some project information to other chains, and can also call contract methods on other connected chains.
+MOS 消息使得建立在一條鏈上的項目可以方便地將一些項目信息同步到其他鏈上，也可以調用其他相連鏈上的合約方法。
 
-MOS uses MAP Protocol light client to verify the transaction of cross-chain messages to ensure that cross-chain messages are authentic and checkable on the chain.
+MOS使用MAP Protocol輕客戶端對跨鏈消息的交易進行驗證，確保跨鏈消息的真實性和鏈上可查性。
 
-With MOS you can achieve interoperation with two chains:
+使用 MOS，您可以實現與兩條鏈的互操作：
 
-- Call a contract on chain B from chain A.
-- Pack the message changes in chain A and write them into chain B to realize message synchronization
+- 從鏈 A 調用鏈 B 上的合約。
+- 將鏈A中的消息變化打包寫入鏈B，實現消息同步
 
-## Prerequisites
+##先決條件
 
-- The application must be on one of the chains supported by MAP Protocol. See [chain names](https://docs.mapprotocol.io/develop/light-client) for a list of chains where MAPO light clients are deployed. The list is updated as new chains are added.
-- The executable contract authority of the cross-chain message must be authorized to the MOS contract on the corresponding chain.
-- Both chain A and chain B must have deployed the MOS message contracts(MOS message for Near Chain is still under development).
+- 應用程序必須在 MAP 協議支持的鏈之一上。 有關部署 MAPO 輕客戶端的鏈列表，請參閱[鏈名稱](https://docs.mapprotocol.io/develop/light-client)。 該列表會隨著新鏈的添加而更新。
+- 跨鏈消息的可執行合約權限必須授權給對應鏈上的MOS合約。
+- A 鍊和 B 鏈必須都部署了 MOS 消息合約（Near Chain 的 MOS 消息仍在開發中）。
 
-## How MOS completes cross-chain message
+## MOS如何完成跨鏈消息
 
-### At the source chain
+### 在源鏈上
 
-1. The user (dApp) sorts out the messages that need to be cross-chained, and organizes the callData called by the target chain
-2. The dApp calls the transferOut method of MOS, and pays the gas fee for the cross-chain
-3. MOS sends a cross-chain transaction and pops up a cross-chain message log. You can view the details of the transaction on the browser of the source chain.
+1. 用戶（dApp）整理需要跨鏈的消息，整理目標鏈調用的callData
+2. dApp調用MOS的transferOut方法，支付跨鏈gas費
+3. MOS發送跨鏈交易，彈出跨鏈消息日誌。 您可以在源鏈的瀏覽器上查看交易詳情。
 
-### At map relay chain
+### 在地圖中繼鏈
 
-1. The messenger detects the message log on the source chain, and builds proof data from source chain, and calls the `transferIn` method to notify the MOS contract on relay chain.
-2. The MOS relay contract (MOS contract on MAP relay chain) confirms the message log of the source chain, verifies the authenticity of the source chain transaction through the light client, judges that it is going to another chain, sends the transaction, and continues to pop up the cross-chain message log. 
-3. If MAP relay chain is the target chain, execute the call method and pop up the execution log.
+1. 信使檢測源鏈上的消息日誌，從源鏈上構建證明數據，調用transferIn方法通知中繼鏈上的MOS合約。
+2. MOS中繼合約（MAP中繼鏈上的MOS合約）確認源鏈的消息日誌，通過輕客戶端驗證源鏈交易的真實性，判斷是去另一條鏈，發送交易，以及 繼續彈出跨鏈消息日誌。
+3.如果MAP中繼鍊是目標鏈，執行call方法，彈出執行日誌。
 
-### At the destination chain
+### 在目標鏈
 
-1. Messenger detects message log on the MAP Relay Chain, and builds proof data from relay chain, and calls the `transferIn` method to notify the MOS contract on destination chain.
-2. The MOS contract verifies the authenticity of MAPO's message log through the light client. 
-3. The destination chain pops up the execution log, and completes the message cross-chain contract call.
+1. Messenger檢測MAP中繼鏈上的消息日誌，從中繼鏈構建證明數據，調用transferIn方法通知目的鏈上的MOS合約。
+2. MOS合約通過輕客戶端驗證MAPO消息日誌的真實性。
+3.目的鏈彈出執行日誌，完成消息跨鏈合約調用。
 
-## Flow architecture
+## 流架構
 
-![MAPO Service Message](croosChainMessage.png)
+![MAPO 服務消息](croosChainMessage.png)

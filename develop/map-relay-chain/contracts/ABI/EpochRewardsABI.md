@@ -1,4 +1,4 @@
-## EpochRewards Contract json ABI
+## EpochRewards 合約 json ABI
 
 ```json
 [

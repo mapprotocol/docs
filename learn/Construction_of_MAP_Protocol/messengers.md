@@ -1,10 +1,8 @@
-
-Messenger is an independent inter-chain program. Running as a messenger requires a sufficient amount of gas fee for the MAP Relay Chain ($MAPO) and the target chains (native token). Messengers are incentivized by each Dapp.
-
-- Messenger listens to relevant events as preset in the program and builds a proof on the ledger of the source chain; then transmit the message of the event and proof to Vault or Data on the destination chain.
-- Messenger needs to prepay the gas fee of MAP Relay Chain and the destination chain for cross-chain users and thus get rewards from applications.
-- As gas fees of destination chains cannot be estimated, MAP Protocol Layer cannot include this process into the bottom network because of the principle of absoluteness adopted by MAP Protocol.
-- The flexibility of applications opens up many possibilities for Messenger, where applications can charge cross-chain users flexible transaction fees and reward Messenger accordingly. 
-- As a main component of MAPO Services, Messenger SDK is open to Dapp developers.
-- Messenger is a high concurrency inter-chain program. Theoretically, as long as one honest Messenger is working in between chains, all cross-chain transactions messages of the Dapp can be transferred.
-- Malicious attacks by messengers will not cause the loss of assets and will only result in invalidity of verification on the MAP Protocol Layer.  
+Messenger 信使是一個獨立的鏈間程序。作爲信使運行需要爲MAP中繼鏈（$MAPO）和目標鏈（原生代幣）提供足夠的加油費。信使受到每個Dapp的激勵。
+- 信使監聽程序中預設的相關事件，並在源鏈的賬本上建立一個證明；然後將事件的信息和證明傳送給目標鏈上的Vault或Data。
+- 信使需要爲跨鏈用戶預付MAP中繼鏈和目的鏈的氣費，從而獲得應用的獎勵。
+- 由於目的地鏈的氣體費用無法估計，由於MAP協議採用的絕對性原則，MAP協議層不能將這個過程納入底層網絡。
+- 應用程序的靈活性爲信使開闢了許多可能性，應用程序可以向跨鏈用戶收取靈活的交易費用並相應地獎勵信使。
+- 作爲MAPO服務的一個主要組成部分，Messenger SDK向Dapp開發者開放。
+- Messenger是一個高併發的跨鏈程序。理論上，只要一個誠實的信使在鏈間工作，Dapp的所有跨鏈交易信息都可以被傳輸。
+- 信使的惡意攻擊不會導致資產的損失，只會導致MAP協議層的驗證無效。

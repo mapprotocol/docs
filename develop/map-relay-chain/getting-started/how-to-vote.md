@@ -1,25 +1,25 @@
-## How To Vote
+##如何投票
 
-## Introduce
+## 介紹
 
-We can use our validator account to vote for ourselves, or we can let other validators or voters vote for ourselves.
-Below we will demonstrate voting for ourselves using our own validator account, as this is the easiest.
+我們可以用自己的驗證人賬戶爲自己投票，也可以讓其他驗證人或投票人爲自己投票。
+下面我們將演示使用我們自己的驗證人賬戶爲自己投票，因爲這是最簡單的。
 
-The number of votes, and the number of MAP you pledge are 1 to 1
+投票的數量，和你承諾的MAP數量是1比1。
 
-Before voting, you must first become a validator，If you are not a validator， please to see [this](/run/HowToBecomeANewValidator.md).
+在投票之前，你必須先成爲一個驗證者，如果你不是一個驗證者，請看[this](/run/HowToBecomeANewValidator.md)。
 
-### Step 1: createAccount
+###第1步：創建賬戶
 
-If you have done this step before, please skip it.
+如果你以前做過這個步驟，請跳過它。
 
-In this step, you need to transfer your identification information to the corresponding management contract,which will manage your account, keys, and metadata.
+在這一步中，你需要將你的身份信息轉移到相應的管理合約中，它將管理你的賬戶、密鑰和元數據。
 
-The purpose of this step is keep your locked `MAP` more secure by authorizing alternative keys to be used for signing attestations、voting、validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked `MAP` in storage.
+這一步的目的是通過授權替代鑰匙用於簽署證明、投票、驗證，使你鎖定的`MAP`更加安全。通過這樣做，你可以繼續參與協議，同時將訪問你的鎖定`MAP'的密鑰保存起來。
 
-You need `createAccount` command to perform the above operations,more detail about `createAccount` command please to see [this](/develop/map-relay-chain/marker/AboutCommon.md#createAccount).
+你需要 "createAccount "命令來執行上述操作，更多關於 "createAccount "命令的細節請參見[this](/develop/map-relay-chain/marker/AboutCommon.md#createAccount)。
 
-For example
+示例：
 ```shell
 ./marker createAccount --rpcaddr http://127.0.0.1:7445 --name "validator" --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 
 
@@ -38,15 +38,14 @@ INFO [07-01|05:54:47.126] Please waiting                           func=getResul
 INFO [07-01|05:54:52.152] Transaction Success                      func=queryTx                 block Number=360,087
 ```
 
-### Step 2: locked `MAP`
+### 第 2 步：鎖定 `MAP`
 
-If you have locked enough `MAP` for you to vote, please skip this step.
+如果您已鎖定足夠的`MAP`來投票，請跳過此步驟。
 
-The purpose of this step is to deduct the part of the corresponding vote from the money you locked to the validator you want to vote,so you need to lock your `MAP` into the corresponding management contract in advance.
+這一步的目的是從你鎖定的錢中扣除對應投票的部分給你想要投票的驗證者，所以你需要提前將你的`MAP`鎖定到對應的管理合約中。
 
-You need `lockedMAP` command to perform the above operations,more detail about `lockedMAP` command please to see [this](/develop/map-relay-chain/marker/AboutCommon.md#lockedMAP).
-
-For example
+您需要 `lockedMAP` 命令來執行上述操作，有關 `lockedMAP` 命令的更多詳細信息請參閱 [this](/develop/map-relay-chain/marker/AboutCommon.md#lockedMAP)。
+示例
 ```shell
 ./marker lockedMAP --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --lockedNum 1000000
 
@@ -57,13 +56,13 @@ INFO [07-01|06:12:45.085] Please waiting                           func=getResul
 INFO [07-01|06:12:47.095] Transaction Success                      func=queryTx                 block Number=360,302
 ```
 
-### Step 3: vote
+### 第三步：投票
 
-This step is voting.
+這一步是投票。
 
-When you get to this step, you can vote for your favorite validator. You can use the `getTotalVotesForEligibleValidators` subcommand to view all current validators and their votes
+當你到達這一步時，你可以投票給你最喜歡的驗證者。 您可以使用 `getTotalVotesForEligibleValidators` 子命令來查看所有當前驗證者及其投票。
 
-For example
+示例
 ```shell
 ./marker getTotalVotesForEligibleValidators --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 
 
@@ -76,7 +75,7 @@ INFO [07-06|06:04:01.434] Validator:                               addr=0x19C560
 INFO [07-06|06:04:01.434] Validator:                               addr=0x078F684c7d3bf78BDbe8bEf93E56998442dc8099 vote amount=103,060,000,000,004,450,909,077
 ```
 
-For `vote` example
+`vote`示例
 ```shell
 ./marker vote --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --target "0x078F684c7d3bf78BDbe8bEf93E56998442dc8099" --voteNum 100000
 
@@ -86,15 +85,15 @@ INFO [07-06|06:05:31.479] Please waiting                           func=getResul
 INFO [07-06|06:05:32.083] Transaction Success                      func=queryTx                 block Number=446,614
 ```
 
-When you finish voting,your votes will be in the status of pending. At the end of epoch block, the Elected validator will automatic activation the votes in pending related to him, you can also use `active` command to activate your votes yourself. this active operation need to be greater than your pending vote epoch.
+當您完成投票後，您的投票將處於待定狀態。 在 epoch block 結束時，Elected validator 會自動激活與其相關的 pending 投票，您也可以使用 active 命令自行激活您的投票。 此活動操作需要大於您的待定投票時間。
 
-You can click the [active](./marker/AboutVote.md#activate) and [vote](/develop/map-relay-chain/marker/AboutVote.md#vote)  to see detail.
+您可以點擊[激活](./marker/AboutVote.md#activate)和[投票](/develop/map-relay-chain/marker/AboutVote.md#vote)查看詳情。
 
-## Expand:
+## 擴張：
 
-### Case: When you vote for a validator who is not yet been elected.
+### 案例：當您投票給尚未當選的驗證者時。
 
-your pending votes will not be automatic activation,until validator is elected , validator will automatic activation your votes at the next epoch.
-so If you don't activate your vote, your votes will get benefits after the second epoch when validator be elected.
+您的待定投票不會自動激活，直到驗證人被選出，驗證人將在下一個紀元自動激活您的投票。
+因此，如果您不激活您的投票，您的投票將在第二個 epoch 驗證人當選後獲得收益。
 
 

@@ -1,42 +1,40 @@
+# 輕客戶端
+爲了驗證跨鏈信息的加密證明，需要一個可信的根。通常情況下，加密證明是一個（變種）Merkle樹中特定值的存在Merkle證明，例如Ethereum中的Merkle Patricia Tree（MPT）或Cosmos中使用的Immutable AVL（IAFL+）樹，而可信根是該樹的Merkle根，通常包含在塊頭中。然後，通過將所有感興趣的區塊鏈的所有區塊頭送入MAP中繼鏈，可信根的可用性問題可以輕鬆解決。然而，隨着不斷努力縮短區塊生成的內部時間，在MAP中繼鏈上處理所有上傳的區塊頭會消耗大量的資源，特別是當我們試圖連接越來越多的區塊鏈和區塊鏈，如Binance智能鏈，Polygon網絡已經在每2或3秒產生區塊。另一個問題是，如何驗證上傳的區塊頭的正確性？MAP協議的設計是去除所有的信任方，因此依靠信任方來上傳正確的區塊頭顯然不是一個可接受的解決方案。隨着SPV技術和輕型客戶端構建技術的進步，這兩個問題都可以用無信任的方式解決。核心的觀察是，幾乎所有的區塊鏈都可以在非常有限的信息下達成共識。
 
-# Light Client
+## PoW鏈的輕客戶端
 
-To validate the cryptographic proof for a cross-chain message, a trusted root is required. Normally the cryptographic proof is the existence Merkle proof of a specific value in a (variant) Merkle tree, e.g., the Merkle Patricia Tree (MPT) in Ethereum or Immutable AVL (IAVL+) tree used in Cosmos and the trusted root is the Merkle root of the tree that is usually included in block header. Then by feeding all block headers of all interested blockchains to the MAP Relay Chain, the availability problem of trusted root can be easily solved. Yet, with continuous efforts put into shortening the block generation internal, processing all uploaded block headers on MAP Relay Chain would consume considerable resources, especially when we are trying to connect more and more blockchains and blockchains like Binance Smart Chain, Polygon networks are already producing blocks every 2 or 3 seconds. Another problem is that, how to validate the correctness of the uploaded block headers? The design of MAP protocol is to remove all trusted parties, thus relying on trusted parties to upload correct block headers is clearly not an acceptable solution. Following the advancement of SPV technology and light client construction technology, both problems can be solved in a trustless way. The core observation is that almost all blockchains can reach consensus with very limited information.
+類似中本聰的共識鏈，例如以太坊，新的區塊頭可以很容易地按照共識規則檢查，例如，哈希鏈接以及累積的工作等。如果以太坊網絡不會重新組織超過n個區塊，那麼以太坊的輕客戶端只需要保留n+1個最新的區塊頭來驗證新的區塊頭並以自主方式更新其內部狀態。考慮到傳遞跨鏈信息的延遲，以這種方式構建的輕客戶端可以存儲更多的區塊頭，例如，過去48小時內產生的區塊頭。在以太坊~13秒的區塊間隔下，MAP中繼鏈上的輕客戶端只需要存儲13k個以太坊區塊頭。另一方面，通過採用Flyclient技術，上傳至MAP Relay Chain的區塊數量可以大大減少。雖然輕客戶端的創世狀態需要手動設置，但由於任何人都可以檢查創世狀態的正確性，所以無信任的特性不會受到影響。我們猜想，這基本上與取證世界中流行的 "弱主觀性 "概念相同。
 
-## Light client of PoW chain
+**PoW Chain的Light-Client部署在其他鏈上**：
+- 存儲最新的N個區塊頭。
+- 按照共識協議驗證新的區塊頭並自我更新。
+- 某些txs的證明：包含Merkle證明。
+- 維護者： 用Light-client爲MAP協議更新預付氣體費用，並從MAP協議中獲得獎勵
 
-Nakamoto consensus-like chain, e.g.,  Ethereum, new block header can be easily checked following the consensus rules, e.g., the hash link as well as the accumulated work etc. If Ethereum network won’t re-org more than n blocks, then a light client of Ethereum only needs to preserve n+1 newest block headers to verify new block headers and update its internal state in an autonomous way. Considering the latency to relay the crossing-chain message, light clients built this way can store more block headers, e.g., block headers generated in the last 48 hours. With Ethereum’s ~13-second block interval, the light client on MAP Relay Chain only needs to store 13k Ethereum block headers. On the other hand, by adopting Flyclient technique, the number of blocks uploaded to MAP Relay Chain can be significantly reduced. Although the genesis state of a light client requires manual setup, the trustless feature is not compromised since any one can check the correctness of the genesis state. We conjecture that this is basically the same as the “weak subjective” concept populated in the Proof-of-Stake world.
+## PoS鏈的輕型客戶端
 
-**PoW Chain's Light-Client deployed on other chains**:
-- Store the latest N block headers.
-- Verify new block header following consensus protocol and self-update.
-- Proof of certain txs: inclusion Merkle proof.
-- Maintainer: Prepay the gas fees with Light-client updating for MAP Protocol and get rewards from MAP Protocol
+對於基於Proof-of-Stake和BFT的區塊鏈，輕客戶端的構建在開始時可能顯得相當困難。感謝Tendermint團隊的工作，事實證明，一個更有效的輕客戶端可以被構建。雖然技術細節可能相當冗長，但核心思想卻很簡單。在這樣的網絡中，區塊是由一組被選中的有樁驗證者簽署的，所以通過驗證一些數字簽名，可以很容易地檢查一個區塊的有效性。驗證者的集合可以隨着時間的推移而改變，但在典型的PoS網絡中，新的驗證者集合也需要由舊的集合通過簽名來證明。這樣一來，只需提供當前驗證器集的少量信息，例如，每個驗證器集的樁重、公鑰，輕型客戶端就可以輕鬆檢查新的區塊頭以及更新自己。甚至不需要上傳所有的區塊頭，只需要上傳極少數的區塊頭，例如那些參與跨鏈操作的區塊頭，或者驗證集升級。
 
-## Light client of PoS chain
+MAP中繼鏈上的輕客戶端被初始化爲智能合約，因此該鏈可以爲由MAP中繼鏈連接的新區塊鏈快速添加新的輕客戶端。默克爾證明驗證和數字簽名驗證對於輕客戶端的構建和運行至關重要。但是，用Solidity實現這些密碼學原語既麻煩又低效，特別是在不同的區塊鏈中使用各種密碼學原語。爲了簡化輕客戶端的開發，在區塊鏈層面支持各種密碼學原語，並通過預先編譯的合約暴露給EVM。
 
-For Proof-of-Stake and BFT based blockchains, the construction of a light client might seem quite difficult at the beginning. Thanks to the work of the Tendermint team, it turns out that a more efficient light client can be built. While the technique detail could be quite lengthy, the core idea is simple. In such networks, blocks are signed off by a group of selected staked validators, so by verifying a few digital signatures, the validity of a block can be easily checked. The set of validators could change over time, but in typical PoS networks, a new set of validators also needed to be proved by the old set via signatures. In this way, with only a little information of the current validator set, e.g., staked weight, public keys of each validator set, a light client can easily check new block headers as well as updating itself. There is even no need to upload all block headers, only a tiny few, e.g., those involved in a cross-chain operation, or validate set upgrade.
+**PoS鏈的輕客戶端部署在其他鏈上**：
+- 存儲驗證者的公鑰和投票權重 - 不需要存儲區塊頭。
+- 驗證一組新的驗證者（由前一組驗證者授權）並自我更新。
+- 某些txs或事件的證明：包含Merkle證明和相應的塊頭信息（包含簽名）。
+- 維護者： 用Light-client爲MAP協議更新預付汽油費，並從MAP協議獲得獎勵。
 
-Light clients on MAP Relay Chain are initialized as smart contracts, so that the chain can quickly add new light clients for new blockchains connected by the MAP Relay Chain. Merkle proof verification and digital signature verification are crucial to the construction and operation of light clients. But, implementing these cryptography primitives with Solidity is both tricky and inefficient, especially since various cryptography primitives are used in different blockchains. To ease the development of light clients, all kinds of cryptography primitives are supported at the blockchain level and are exposed to EVM via pre-compiled contracts.
+*注意：Light-Client的獨立和自我驗證機制可以保證驗證的最終性，並且是無操縱的。初始狀態將由MAP協議團隊向公衆完全開放。
 
-**PoS Chain's Light-Client deployed on other chains**:
-- Store validators' public key and vote weight - no need to store block header.
-- Verify a new set of validators (authorized by the previous set) and self-update.
-- Proof of certain txs or events: inclusion Merkle proof and corresponding block header info (contains signatures).
-- Maintainer: Prepay the gas fees with Light-client updating for MAP Protocol and get rewards from MAP Protocol
+## MAP中繼鏈的輕客戶端
 
-*Note: Light-Client's independent and self-verification mechanism can guarantee verification finality and are manipulation-free. Initial state will be fully open to the public by MAP Protocol team
+僅僅在MAP中繼鏈上維護連接的區塊鏈的輕客戶端是不足以實現無信任風格的雙向跨鏈互操作的，MAP協議要求在每個連接的區塊鏈上都有MAP中繼鏈的輕客戶端存在。雖然在MAP中繼鏈上，天然氣價格可以不斷優化以保持儘可能低的價格，但在其他鏈上，我們必須接受現實。由於MAP中繼鏈採用了PoS和IBFT，按照上述技術可以很容易地建立一個輕客戶端。爲了優化輕客戶端在其他鏈上的氣體消耗，MAP Relay Chain採用了BN256曲線上的聚合BLS簽名。這樣一來，MAP Relay Chain的驗證器的簽名驗證可以減少到只用一個聚合公鑰驗證一個聚合簽名。由於BN256的預編譯合約被兼容EVM的區塊鏈廣泛支持，維護MAP Relay Chain的輕客戶端的氣體消耗可以減少。
 
-## Light client of MAP Relay Chain
+**MAP協議的驗證和維護網絡示意圖**
 
-Solely maintaining light clients of connected blockchains on MAP Relay Chain is not enough for bidirectional cross-chain interoperation in a trustless style, MAP protocol requires the existence of MAP Relay Chain’s light client on each connected blockchain. While on MAP Relay Chain, the gas price can be continuously optimized to stay as low as possible, on other chains, we must accept the reality. As MAP Relay Chain adopts PoS and IBFT, a light client can be easily built following the above technique. To optimize the gas consumption of the light client on other chains, MAP Relay Chain adopts aggregate  BLS signature over BN256 curve. In this way, the verification of the signatures of MAP Relay Chain’s validators can be reduced to verify only one aggregated signature with one aggregated public key. As the precompile contract of BN256 is widely supported by the EVM-compatible blockchain, the gas consumption of maintaining the MAP Relay Chain’s light client can be reduced.
+！[](verify_main.png)
 
-**Illustration of MAP Protocol's Verification & Maintenance Network**
+# 維護者
 
-![](verify_main.png)
+MAP中繼鏈上的連接區塊鏈的輕客戶端和連接區塊鏈上的MAP中繼鏈的輕客戶端需要跟上相應區塊鏈的發展。這就是維護者的責任。MAP協議中的維護者持續監控MAP中繼鏈以及所有連接區塊鏈的區塊鏈增長。MAP中繼鏈的新區塊頭被提交給所有連接的區塊鏈，以保持MAP中繼鏈的輕客戶端更新。同時，所有連接的區塊鏈的新區塊頭被提交給MAP Relay Chain，以更新生活在MAP Relay Chain上的各種輕客戶端。這樣一來，MAP中繼鏈和每個連接的區塊鏈都知道彼此的最新狀態，爲跨鏈消息驗證奠定了基礎。
 
-# Maintainer
-
-Light clients of connected blockchains on MAP Relay Chain and light clients of MAP Relay Chain on connected blockchains need to keep up with the growth of the corresponding blockchains. This is the Maintainers’ responsibility. Maintainers in MAP protocol continuously monitor the blockchain growth of MAP Relay Chain as well as all the connected blockchains. New block headers of MAP Relay Chain are submitted to all connected blockchains to keep the light client of MAP Relay Chain updated. Meanwhile, new block headers of all connected blockchains are submitted to MAP Relay Chain to update various light clients living on MAP Relay Chain. In this way, MAP Relay Chains and each connected blockchain are aware of the most recent state of each other, and laid the foundation for cross-chain message verification.
-
-After correctly set up, each light client can verify newer block headers according to its internal state as well as  the rules coded in the contract, so that dishonest Maintainers won’t be able to trick the light clients to accept invalid block headers. Or in other worlds, the security of MAP protocol does not rely on trusted relayers. As long as the light client is correctly initialized and the implementation correctly follows the corresponding blockchain’s consensus protocol, the correctness of the light client is guaranteed cryptographically. As submitting transactions to blockchains would consume gas, all Maintainers are rewarded with MAP tokens according to the useful work they have accomplished, e.g., the number of effective block headers submitted.
+正確設置後，每個輕客戶端可以根據其內部狀態以及合約中編碼的規則來驗證較新的區塊頭，這樣不誠實的維護者就無法欺騙輕客戶端接受無效的區塊頭。或者在其他世界中，MAP協議的安全性並不依賴於受信任的中轉者。只要輕客戶端被正確地初始化，並且實現正確地遵循相應區塊鏈的共識協議，輕客戶端的正確性就會得到加密保證。由於向區塊鏈提交交易會消耗氣體，所有維護者都會根據他們完成的有益工作，例如提交的有效區塊頭的數量，得到MAP代幣的獎勵。

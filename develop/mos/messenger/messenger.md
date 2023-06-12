@@ -1,40 +1,39 @@
-## What is messenger
-Messenger is an independent inter-chain program. It works for MAPO Service. 
+## 什麼是信使
+Messenger 是一個獨立的跨鏈程序。 它適用於 MAPO 服務。
 
-Messenger listens to relevant events as preset in the program and builds a proof on the ledger of the source chain; then transmit the message of the event and proof to Vault or Data on the destination chain.
+Messenger監聽程序中預設的相關事件，並在源鏈賬本上建立證明； 然後將事件的消息和證明傳輸到目標鏈上的 Vault 或 Data。
 
-The flexibility of applications opens up many possibilities for Messenger, where applications can charge cross-chain users flexible transaction fees and reward Messenger accordingly.
+應用的靈活性為 Messenger 開啟了很多可能性，應用可以向跨鏈用戶收取靈活的交易費用，並相應地獎勵 Messenger。
 
-## Messenger SDK
-As a main component of MAPO Services, Messenger SDK will be open to Dapp developers.
+## 信使SDK
+Messenger SDK 作為 MAPO Services 的主要組成部分，將對 Dapp 開發者開放。
 
-# Quick Start
+# 快速開始
 
-the recommanded way to get the executable is to download it from the release page.
+獲取可執行文件的推薦方法是從發布頁面下載它。
 
->if you want to build it from the source code,check the [building](#building) section below.
+>如果您想從源代碼構建它，請查看下面的 [building](#building) 部分。
 
-### 2. Prepare the accounts for each chain
-fund some accounts in order to send txs on each chain, you want to provice crosse-chain service.
-the esaiest way is to using the same one address for every chain.
+### 2.準備每個鏈的賬戶
+為一些賬戶注資以便在每條鏈上發送交易，你想提供跨鏈服務。
+最簡單的方法是為每個鏈使用相同的地址。
 
-after that we need to import the account into the keystore of compass.  
-using the private key is the simplest way,run the following command in terminal:
+之後我們需要將帳戶導入指南針的密鑰庫。
+使用私鑰是最簡單的方法，在終端中運行以下命令：
 
 ```zsh
 compass accounts import --privateKey '********** your private key **********'
 ```
 
-during the process of importing, you will be asked to input a password.  
-the password is used to encrypt your keystore.you have to input it when unlocking your account.
+在導入過程中，系統會要求您輸入密碼。
+密碼用於加密您的密鑰庫。您必須在解鎖帳戶時輸入密碼。
 
-to list the imported keys in the keystore, using the command below:
+使用以下命令列出密鑰庫中導入的密鑰：
 ```zsh
 compass accounts list
 ```
-
-### 3. Modify the configuration file
-copy a example configure file from
+### 3.修改配置文件
+從復制示例配置文件
 ```json
 {
   "mapchain": {
@@ -69,34 +68,33 @@ copy a example configure file from
   ]
 }
 ```
-modify the configuration accordingly.  
-fill the accounts for each chain.
-
-### 4. Running the executable
-lauch and keep the executable runing simply by run:
+相應地修改配置。
+填寫每個鏈的帳戶。
+### 4. 運行可執行文件
+只需運行即可啟動並保持可執行文件運行：
 ```zsh
 compass messenger --blockstore ./block-eth-map --config ./config-mcs-erh-map.json
 ```
-you will be asked to input the password to unlock your account.(which you have inputed at step 2)
-if everything runs smoothly. it's all set
+您將被要求輸入密碼以解鎖您的帳戶。（您在第 2 步輸入的密碼）
+如果一切順利的話。 一切就緒
 
-# Building
+# 創建
 
-Building compass requires a [Go](https://github.com/golang/go) compiler(version 1.16 or later)
+構建指南針需要 [Go](https://github.com/golang/go) 編譯器（1.16 或更高版本）
 
-under the root directory of the repo
+在 repo 的根目錄下
 
-`make build`: Builds `compass` in `./build`.  
-`make install`: Uses `go install` to add `compass` to your GOBIN.
+`make build`：在 `./build` 中構建 `compass`。
+`make install`：使用 `go install` 將 `compass` 添加到您的 GOBIN。
 
-Start with the following command:
+從以下命令開始：
 ```zsh
 compass messenger --blockstore ./block-eth-map --config ./config.json
 ```
 
-# Configuration
+# 配置
 
-the configuration file is a small JSON file.
+配置文件是 JSON 文件
 
 ```
 {
@@ -111,7 +109,7 @@ the configuration file is a small JSON file.
 
 ```
 
-A chain configurations take this form:
+鏈配置採用以下形式：
 
 ```
 {
@@ -125,7 +123,7 @@ A chain configurations take this form:
 }
 ```
 
-|chain| type |
+|鏈| 類型 |
 | :-----------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ethereum | ethereum |
 | bsc | bsc |
@@ -134,11 +132,10 @@ A chain configurations take this form:
 | near | near |
 | klaytn | klaytn |
 
-### Options
+### 選項
 
-Since MAP is also a EVM based chain, so the opts of the **mapchain** is following the options below as well  
-Ethereum chains support the following additional options:
-
+由於 MAP 也是基於 EVM 的鏈，因此 **mapchain** 的選項也遵循以下選項
+以太坊鏈支持以下附加選項：
 ```
 {
     "mcs": "0x12345...",                                    // Address of the bridge contract (required)
@@ -159,42 +156,69 @@ Ethereum chains support the following additional options:
     "alarmSecond": "3000",                                  // How long does the user balance remain unchanged, triggering the alarm, unit ：seconds                                              
 }
 ```
-## Blockstore
+## 區塊存儲
 
-The blockstore is used to record the last block the maintainer processed, so it can pick up where it left off.
+blockstore 用於記錄維護者處理的最後一個塊，因此它可以從中斷的地方繼續。
 
-To disable loading from the chunk library, specify the "--fresh" flag. Add the fresh flag, and the program will execute from height 0，
+要禁用從塊庫加載，請指定“--fresh”標誌。 加上fresh flag，程序會從0高度開始執行，
 
-In addition, the configuration file provides the "startBlock" option, and the program will execute from the startBlock
+另外，配置文件提供了“startBlock”選項，程序將從startBlock開始執行
 
-## Keystore
+## 密鑰庫
 
-Compass requires keys to sign and submit transactions, and to identify each bridge node on chain.
+Compass 需要密鑰來簽署和提交交易，並識別鏈上的每個橋接節點。
 
-To use secure keys, see `compass accounts --help`. The keystore password can be supplied with the `KEYSTORE_PASSWORD` environment variable.
+要使用安全密鑰，請參閱“compass accounts --help”。 密鑰庫密碼可以與“KEYSTORE_PASSWORD”環境變量一起提供。
 
-To import external ethereum keys, such as those generated with geth, use `compass accounts import --ethereum /path/to/key`.
+要導入外部以太坊密鑰，例如使用 geth 生成的密鑰，請使用 `compass accounts import --ethereum /path/to/key`。
 
-To import private keys as keystores, use `compass accounts import --privateKey key`.
+要將私鑰導入為密鑰庫，請使用 `compass accounts import --privateKey key`。
 
-# Chain Implementations
+# 鏈實現
 
-- Ethereum (Solidity): [contracts](https://github.com/mapprotocol/contracts)
-  The Solidity contracts required for compass. Includes scripts for deployment.
+- 以太坊（Solidity）：[合約](https://github.com/mapprotocol/contracts)
+   指南針所需的 Solidity 合約。 包括用於部署的腳本。
 
-## Near
+## NEAR
 
-If you need to synchronize the near block, please install the near cli first. Here is a simple tutorial. For more information,
+如果需要同步near block，請先安裝near cli。 這是一個簡單的教程。 了解更多信息，
 
-please check [Near cli installation tutorial](https://docs.near.org/tools/near-cli#installation)
+請查看[Near cli安裝教程](https://docs.near.org/tools/near-cli#installation)
 
-First, install npm. Depending on the system, the running command is different. The following is an example of the installation command in
+首先，安裝 npm。 根據不同的系統，運行命令不同。 下面是安裝命令的例子
 
-the ubuntu system. Use the `apt install npm` command to run `npm install -g near cli`,
+ubuntu系統。 使用 `apt install npm` 命令運行 `npm install -g near cli`，
 
-After installation, use 'near -- version' to check whether the installation is successful
+安裝完成後使用'near --version'查看是否安裝成功
 
-Configure the environment you need, for example:
+配置你需要的環境，例如：
+
+`
+導出 NEAR_CLI_LOCALNET_RPC_SERVER_URL=https://archival-rpc.testnet.near.org
+
+導出 NEAR_ENV=測試網
+`
+
+使用 'near login' 命令，在 `.near-credentials` 中本地創建一個密鑰對，並將隱式帳戶作為 accountId。 （公鑰的哈希表示）
+
+並將目錄記錄到配置文件中的keystorePath選項
+
+此外，還需要為近端信使運行另一個程序。 請查看 [near-lake-s3](./near-lake-s3/README.md)
+
+
+## NEAR
+
+如果需要同步near block，請先安裝near cli。 這是一個簡單的教程。 了解更多信息，
+
+請查看[Near cli安裝教程](https://docs.near.org/tools/near-cli#installation)
+
+首先，安裝 npm。 根據不同的系統，運行命令不同。 下面是安裝命令的例子
+
+ubuntu系統。 使用 `apt install npm` 命令運行 `npm install -g near cli`，
+
+安裝完成後使用'near --version'查看是否安裝成功
+
+配置你需要的環境，例如：
 
 `
 export NEAR_CLI_LOCALNET_RPC_SERVER_URL=https://archival-rpc.testnet.near.org
@@ -202,35 +226,8 @@ export NEAR_CLI_LOCALNET_RPC_SERVER_URL=https://archival-rpc.testnet.near.org
 export NEAR_ENV=testnet
 `
 
-Use the 'near login' command , Creates a key pair locally in `.near-credentials` with an implicit account as the accountId. (hash representation of the public key)
+使用 'near login' 命令，在 `.near-credentials` 中本地創建一個密鑰對，並將隱式帳戶作為 accountId。 （公鑰的哈希表示）
 
-And record the directory to the keystorePath option in the configuration file
+並將目錄記錄到配置文件中的keystorePath選項
 
-In addition, another program needs to be run for near messenger. Please check [near-lake-s3](./near-lake-s3/README.md)
-
-
-## Near
-
-If you need to synchronize the near block, please install the near cli first. Here is a simple tutorial. For more information,
-
-please check [Near cli installation tutorial](https://docs.near.org/tools/near-cli#installation)
-
-First, install npm. Depending on the system, the running command is different. The following is an example of the installation command in
-
-the ubuntu system. Use the `apt install npm` command to run `npm install -g near cli`,
-
-After installation, use 'near -- version' to check whether the installation is successful
-
-Configure the environment you need, for example:
-
-`
-export NEAR_CLI_LOCALNET_RPC_SERVER_URL=https://archival-rpc.testnet.near.org
-
-export NEAR_ENV=testnet
-`
-
-Use the 'near login' command , Creates a key pair locally in `.near-credentials` with an implicit account as the accountId. (hash representation of the public key)
-
-And record the directory to the keystorePath option in the configuration file
-
-In addition, another program needs to be run for near messenger. Please check [near-lake-s3](./near-lake-s3.md)
+此外，還需要為近端信使運行另一個程序。 請檢查 [near-lake-s3](./near-lake-s3.md)

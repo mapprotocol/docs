@@ -1,12 +1,11 @@
-## MAP Protocol VS cross-chain solutions without relay chain
-
-### Comparisons between MAP Protocol and other lightweight cross-chain solutions with no relay chain
+## MAP協議VS無中繼鏈的跨鏈解決方案
+### MAP協議與其他無中繼鏈的輕量級跨鏈解決方案的比較
 
 ![](comp2.png)
 
-- The above lightweight solutions, including MAP Protocol, achieved cross-chain functionality by deploying cross-chain communication components on-chain or inter-chain, which are better solutions than Cosmos & Polkadot (require embedding SDK to the bottom layer of the blockchain);
-- MPC (Multi-Party Computation) technology is easy to develop but has obvious security risks. 
-- Using Oracle to conduct cross-chain verification is ambiguity , and the risk of colluding with messengers always exists. 
-- Using Light-client to conduct cross-chain verification is the ultimate security mechanism adopted in MAP Protocol, Cosmos, and Polkadot. 
-- The Light-client verification mechanism will lead to massive consumption of gas fees for cross-chain activities between heterogeneous chains. The better way is to use a relay chain, compatible with multiple chains' algorithm, thus enabling a homogeneous cross-chain and forming the ultimate cross-chain verification network. MAP Protocol has developed the MAP Relay Chain as such. 
-- As the cross-chain asset and data assembly, MAP Relay Chain supports the native deployment of omnichain dApps, including cross-chain bridge applications,  differentiating MAP Protocol from all the other competitors.
+- 上述輕量級解決方案，包括MAP協議，通過在鏈上或鏈間部署跨鏈通信組件實現了跨鏈功能，是比Cosmos & Polkadot（需要將SDK嵌入到區塊鏈底層）更好的解決方案；
+- MPC（多方計算）技術容易開發，但有明顯的安全風險。
+- 使用Oracle進行跨鏈驗證有二義性，與信使合謀的風險始終存在。
+- 使用Light-client進行跨鏈驗證是MAP協議、Cosmos和Polkadot採用的終極安全機制。
+- Light-client驗證機制將導致異質鏈之間的跨鏈活動大量消耗氣體費用。更好的辦法是使用中繼鏈，兼容多個鏈的算法，從而實現同質化的跨鏈，形成最終的跨鏈驗證網絡。MAP協議就是這樣開發的MAP中繼鏈。
+- 作爲跨鏈資產和數據的集合體，MAP Relay Chain支持omnichain dApps的原生部署，包括跨鏈橋接應用，使MAP Protocol區別於其他所有競爭對手。

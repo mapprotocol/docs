@@ -1,13 +1,13 @@
-# Marker genesis
+# Marker genesis 創世標記符
 
-`Marker genesis` is a developer utility to easy running atlas blockchain testnets and related jobs around testnets.
+`Marker genesis 創世標記符` 是一個開發者工具，可以輕鬆運行Atlas區塊鏈測試網和圍繞測試網的相關工作。
 
-Its main advantage over previous solutions is that it's able to create a `genesis.json` where all core conctracts are
-already deployed in it.
+與之前的解決方案相比，它的主要優勢在於它能夠創建一個`genesis.json`，所有的核心合約都已經部署在其中。
+已經部署在其中。
 
-We need to use the marker tool. For information on how to use the marker tool, please refer to [Marker](/develop/map-relay-chain/marker/Marker.md)
+我們需要使用marker工具。關於如何使用標記工具的信息，請參考[Marker](/develop/map-relay-chain/marker/Marker.md)
 
-## Generating a genesis.json file
+## 生成 genesis.json 文件
 
 ```
 git clone github.com/mapprotocol/atlas
@@ -15,7 +15,7 @@ cd marker/config
 vim markerConfig.json
 ```
 
-First you need to config the markerConfig.json like this: set your own keys.
+首先你需要像這樣配置markerConfig.json：設置你自己的 key
 
 ```shell
 {
@@ -60,29 +60,28 @@ First you need to config the markerConfig.json like this: set your own keys.
  ]
 }
 ```
-## MarkerConfig.json params instruction
+## MarkerConfig.json 参数指令
 
-- Address:        This account address will be registered to the validator list as a validator account
-- SignerAddress:  It is authorized by account address to replace the validator to make consensus with other nodes on the `MAP` network
+- 地址:       該賬戶地址將作爲驗證人賬戶註冊到驗證人名單中。
+- 簽名者地址:  它由賬戶地址授權，取代驗證人，與`MAP`網絡上的其他節點達成共識
 - ECDSASignature: Signeraddress ecdsasignature for account address
 - PublicKeyHex:   Signeraddress`s Publickeyhex
 - BLSPubKey:      Signeraddress`s Blspubkey
 - BLSG1PubKey:    Signeraddress`s BLSG1PubKey
-- BLSProofOfPossession: BLS signature data of signeraddress to account address
+- BLSProofOfPossession: 簽名人的BLS簽名數據到賬戶地址
+生成簽名人的`PublicKeyHex`、`BLSPubKey`、`BLSG1PubKey`信息請參考[創建四個驗證人賬戶](./make-private-chain.md#create-four-validator-accounts)
 
-generate signer`s `PublicKeyHex`、`BLSPubKey`、`BLSG1PubKey` info please refer to  [Create four validator accounts](./make-private-chain.md#create-four-validator-accounts)
+生成簽名人的 "ECDSASignature "信息，請參考[從簽名人制作ECDSA簽名](/develop/map-relay-chain/marker/AboutValidator.md#makeecdsasignaturefromsigner)
 
-generate signer`s `ECDSASignature` info please refer to  [make ECDSA signature from signer](/develop/map-relay-chain/marker/AboutValidator.md#makeecdsasignaturefromsigner)
+生成簽名人的`BLSProofOfPossession`信息請參考[make BLS proof of possession from signer](/develop/map-relay-chain/marker/AboutValidator.md#makeblsproofofpossessionfromsigner)
 
-generate signer`s `BLSProofOfPossession` info please refer to  [make BLS proof of possession from signer](/develop/map-relay-chain/marker/AboutValidator.md#makeblsproofofpossessionfromsigner)
+注意:如果你使用與Address和SignerAddress相同的賬戶地址，signeraddress和blsproofofpossession是賬戶地址的默認值。
 
-note:If you use the same account address as Address and SignerAddress, signeraddress and blsproofofpossession are the default values of the account address.
+其次，你需要編譯你的`atlas-contracts`項目，我們需要關於`atlas-contracts`的字節碼來製作`genesis.json`文件。
 
-Second you need compile your `atlas-contracts` project,we need the bytecode about `atlas-contracts` to make `genesis.json` file.
+請參考[部署與驗證器相關的合約](/develop/map-relay-chain/contracts/DeployContracts.md#deployment-of-contract-related tovalidator)
 
-Please refer to [Deployment of contract related to validator](/develop/map-relay-chain/contracts/DeployContracts.md#deployment-of-contract-related-to-validator)
-
-then to do so run:
+要這樣做，請運行
 
 ```shell
 USAGE
@@ -104,7 +103,7 @@ marker genesis --buildpath ./root/atlas-contracts/build/contracts --newenv ./roo
 This will create a `genesis.json` in the ./root/atlasEnv folder
 ```
 
-ps: you can use this `genesis.json` init `MAP` validator nodes
-- you can update the `chainid` in the `genesis.json` 
-- the one way: like this `./atlas --datadir ./node-1 init ./genesis.json`
-- the other way: copy the `alloc` info in the `genesis.json` to core/chain/genesis_alloc_mainnet.go file overwrite `mainnetAllocJSON` info
+ps：你可以使用這個`genesis.json`啓動`MAP`驗證器節點
+- 你可以更新`genesis.json`中的`chainid'。
+- 一種方法：像這樣`./atlas --datadir ./node-1 init ./genesis.json`。
+- 另一種方法：把`genesis.json`中的`alloc`信息複製到core/chain/genesis_alloc_mainnet.go文件，覆蓋`mainnetAllocJSON`信息。

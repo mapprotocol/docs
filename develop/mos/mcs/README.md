@@ -1,27 +1,27 @@
-# MCS 
+# MOS
 
-## What is MCS
-MCS(MAPO Cross-chain Service) is a MOS implementation. It supports token cross-chain transfer.
+## 什麼是 MOS
+MOS(MAPO Omnichain Service)是一種MOS實現。 支持代幣跨鏈轉賬。
 
-Now MCS supports [EVM chains](https://github.com/mapprotocol/map-contracts/tree/main/mcs/evmv2) and [Near Protocol](https://github.com/mapprotocol/map-contracts/tree/main/mcs/near).
+現在 MCS 支持 [EVM 鏈](https://github.com/mapprotocol/map-contracts/tree/main/mcs/evmv2) 和 [Near Protocol](https://github.com/mapprotocol/map-contracts/ 樹/主要/mcs/附近）。
 
-## How to test
-1. Get MAPO and MOST test token from [MAPO Faucet](https://faucet.mapprotocol.io)
-2. Try to cross-chain transfer on [Butter Bridge](https://test-bridge.butternetwork.io)
+## 如何測試
+1. 從[MAPO Faucet](https://faucet.mapprotocol.io)獲取MAPO和MOST測試代幣
+2、在【Butter Bridge】(https://test-bridge.butternetwork.io)上嘗試跨鏈轉賬
 
-## MCS testnet address
+## MOS 測試網地址
 
 
-| Network      | Chain ID                | Type      | Contract Address                                                                                                                |
+| 網絡 | 鏈號 | 類型 | 合約地址                                                                                                              |
 |--------------|-------------------------|-----------|---------------------------------------------------------------------------------------------------------------------------------|
 | MAPO Makalu  | 212                     | MOS Relay | [0xB6c1b689291532D11172Fb4C204bf13169EC0dCA](https://testnet.maposcan.io/address/0xb6c1b689291532d11172fb4c204bf13169ec0dca)    |
 | BSC Testnet  | 97                      | MOS       | [0x220bE51C717c4E257Cb8e96be8591740336623F8](https://testnet.bscscan.com/address/0x220bE51C717c4E257Cb8e96be8591740336623F8)    |
 | Matic Mumbai | 137                     | MOS       | [0x688f3Ef5f728995a9DcB299DAEC849CA2E49ddE1](https://mumbai.polygonscan.com/address/0x688f3Ef5f728995a9DcB299DAEC849CA2E49ddE1) |
 | Near Testnet | 5566818579631833089 |  MOS      | [mos2.mfac.maplabs.testnet](https://explorer.testnet.near.org/accounts/mos2.mfac.maplabs.testnet)                               |
 
-### Tokens
+### 代幣
 
-| Token       | Network      | Token Address                                                                                                                 | Decimals | Note     |
+| 代幣 | 網絡 | 代幣地址 | 進度製 | 注意 |
 |-------------|--------------|-------------------------------------------------------------------------------------------------------------------------------|----------|----------|
 | MAPO(WMAPO) | MAPO Makalu  | [0x2eD27dF9B4c903aB53666CcA59AFB431F7D15e91](https://testnet.maposcan.io/token/0x2ed27df9b4c903ab53666cca59afb431f7d15e91)    | 18       |          |
 |             | BSC Testnet  | [0xad4c2B6e113113d345c167F7BdAA5A5D1cD00273](https://testnet.bscscan.com/token/0xad4c2b6e113113d345c167f7bdaa5a5d1cd00273)    | 18       | mintable |

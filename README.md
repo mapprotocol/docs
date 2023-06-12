@@ -1,15 +1,15 @@
-# Introduction
+# 介紹
 
-MAP Protocol is the omnichain layer of Web3, a cross-chain interoperable protocol to empower Web3 apps to thrive in the omnichain future. 
+MAP 協議是Web3的全鏈層，是一個跨鏈互操作協議，旨在賦能Web3應用在全鏈未來全面發展。
 
-Today’s blockchain developers are building applications on multiple competing and non-interoperable blockchains, resulting in inefficient operation, low user resources, and high costs. The future is omnichain. The omnichian infrastructure is the powerhouse enabling all-chain interoperability and onboarding the next billion Web2 users into Web3.
+當今區塊鏈開發者正在相互競爭且不互通的區塊鏈上建立應用，導致操作效率低下，用戶資源匱乏，且成本高昂。未來是全鏈的。全鏈基礎設施是實現互操作性、讓幾十億 Web2 用戶進入Web3 的重要基礎。
 
-MAP Protocol offers the provably secure omnichain infrastructure built upon Light-Client and Zero-Knowledge technology. There are four core pillars to MAP Protocol's omnichain infrastructure:
-1. Full chain coverage: expandable and decentralized MAP Relay Chain to support both EVM and Non-EVM chains connections
-2. Self-verifiable Light-Client: light-Client technology to verify all cross-chain transactions with definite and unambiguous results
-3. Advance ZK Technology: Zero-Knowledge technolgy to optimize and speed up verification process and reduce transaction costs
-4. Comprehensive SDKs: MAP Protocol Service (MOS) and SDKs to offer built-in interoperability features for omnichain applications
+MAP 協議 提供了基於Light-Client和零知識技術、真正去中心化、無特權角色的全鏈基礎設施。 MAP Protocol全鏈基礎設施的四大特點：
+1.全鏈覆蓋：通過可擴展、去中心化的MAP Relay Chain，支持EVM和非EVM鏈接入 
+2.能夠自驗證的Light-Client：Light-Client技術可驗證所有跨鏈交易，結果明確且無二義性
+3.先進的ZK技術：創新利用零知識技術優化驗證過程，提升驗證效率，並降低交易成本
+4.全套SDK：MAP Omnichain Service (MOS) 和全套SDK直接為全鏈應用開發者提供互操作性功能，節省開發成本
 
-While cross-chain bridges can be easily built with MAP Protocol, the protocol itself targets a more fundamental problem and pursues a larger vision: empower Web3 applications to thrive in the omnichain future. Any Dapp built with MAP Protocol's infrastructure automatically inherits the omnichain nature of MAP Protocol without requiring the developers to tackle the error-prone cross-chain communications. 
+"雖然可以輕易地使用MAP 協議建立跨鏈橋，但MAP Protocol 旨在解決一個更基本的問題，並追求更大的願景：為Web3應用在全鏈未來真正賦能。任何使用MAP 協議基礎設施建立的Dapp都將自動擁有MAP Protocol的全鏈性質。由此，開發者無需再為容易出錯的跨鏈通訊苦苦尋找方案"
 
-MAP Protocol is the super connector of blockchains and will facilitate Web3 applications to onboard the next millions of users. 
+MAP 協議是區塊鏈的超級連接器，將為Web3應用吸引數以百萬的新用戶賦能。

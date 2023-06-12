@@ -1,12 +1,12 @@
-# BNBSmartChain Light Client
+# BNBSmartChain輕客戶端
 
-## How it works
+## 如何運行
 
-BNBSmartChainLightClient is an implementation of the BNBSmartChain Light Client in Solidity as an MapoContract.
+BNBSmartChainLightClient 是 BNBSmartChain Light Client 在 Solidity 中作為 MapoContract 的實現。
 
-BNB Smart Chain relies on a system of 21 active validators with [Proof of Staked Authority (PoSA) consensus](https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md#consensus-and-validator-quorum) that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
+BNB 智能鏈依賴於一個由 21 個活躍驗證者組成的系統，具有 [權益證明 (PoSA) 共識](https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md#consensus-and-validator -quorum），可以支持較短的出塊時間和較低的費用。 抵押最多的驗證者候選人將成為驗證者並生產區塊。 雙簽檢測和其他罰沒邏輯保證了安全性、穩定性和鏈的最終性。
 
-The validators changes every epoch,each selected validator address is written to the epoch block in the extraData field of the block header. after half the number of validators of the block begins production and validation of the block.These validators participate in the consensus protocol by signing blocks that contain cryptographic signatures signed by each validator's private key.
+驗證器在每個紀元發生變化，每個選定的驗證者地址都被寫入塊頭的 extraData 字段中的紀元塊。 在該塊的一半數量的驗證者開始生產和驗證該塊之後。這些驗證者通過簽署包含由每個驗證者的私鑰簽名的加密簽名的塊來參與共識協議。
 
 ```solidity
     struct BlockHeader {
@@ -28,15 +28,15 @@ The validators changes every epoch,each selected validator address is written to
     }
 ```
 
-If we want to validate a transaction, we need to validate the block header that the transaction is in,to validate a block header and we need to validate the signature of the block header.
+如果我們要驗證一筆交易，我們需要驗證交易所在的區塊頭，驗證一個區塊頭，我們需要驗證區塊頭的簽名。
 
-by tracking validators changes light node can verify all bsc transations.
+通過跟踪驗證者的變化，輕節點可以驗證所有 bsc 交易。
 
-## How to verify
+## 如何驗證
 
-#### updateBlockHeader
+#### 更新塊頭
 
-keep track of the validator's changes by continuously submitting epoch block headers to light client.The submitted epoch block must be signed with the private key by one of the validator's submitted in the previous epoch. so we initialize an epoch and  store the validator's address can keep committing the next epoch block over and over again.to improve certainty, multiple blocks need to be submitted as confirms.
+通過不斷向輕客戶端提交紀元塊頭來跟踪驗證器的更改。提交的紀元塊必須由前一個紀元提交的驗證器之一使用私鑰簽名。 所以我們初始化一個紀元並存儲驗證者的地址可以不斷地一遍又一遍地提交下一個紀元塊。為了提高確定性，需要提交多個塊作為確認。
 
 ```solidity
     function updateBlockHeader(
@@ -70,15 +70,15 @@ keep track of the validator's changes by continuously submitting epoch block hea
     }
 ```
 
-updateBlockHeader take a few steps
+updateBlockHeader 走幾步
 
-1.check that the first committed block is the next epoch block.
+1.檢查第一個提交的塊是否是下一個紀元塊。
 
-2.check that the number of blocks submitted is sufficient.
+2.檢查提交的區塊數是否足夠。
 
-3.verify each submitted block separately.
+3.分別驗證每個提交的區塊。
 
-* validate the field of the block
+* 驗證區塊的字段
 
 ```solidity
     function validateHeader(
@@ -135,7 +135,7 @@ updateBlockHeader take a few steps
     }
 ```
 
-* verify the signature of the block
+* 驗證區塊的簽名
 
   ```solidity
       function verifyHeaderSignature(
@@ -181,7 +181,7 @@ updateBlockHeader take a few steps
                   "invalid miner"
               );
   ```
-* Verify that miner is duplicate
+* 驗證礦工是否重複
 
   ```solidity
               if (i > 0) {
@@ -200,13 +200,13 @@ updateBlockHeader take a few steps
         );
 ```
 
-###### verify receipt
+###### 驗證收據
 
-The light client can verify the epoch blocks after it has the epoch validatorSet.to verify the receipt should first veriy the block transation receipt in.verify the block is similar to the update block,won't go into it again.
+輕客戶端在有了epoch validatorSet之後就可以驗證epoch blocks了。驗證receipt首先要驗證block transaction receipt in。驗證block和update block相似，不會再進去了。
 
-we know that receipts from block transactions form a receipt [patricia-merkle-trie](https://ethereum.org/en/developers/docs/data-structures-and-encoding/patricia-merkle-trie/). the block field  receiptsRoot is the root of the tree. after we verify the block we can trust the receiptsRoot.
+我們知道來自大宗交易的收據形成收據 [patricia-merkle-trie](https://ethereum.org/en/developers/docs/data-structures-and-encoding/patricia-merkle-trie/)。 塊字段 receiptsRoot 是樹的根。 在我們驗證該塊之後，我們可以信任 receiptsRoot。
 
-so we can build proof of the transation receipt off chain submit to light client to proof transaton receipts.
+因此我們可以建立鏈下交易收據的證明，提交給輕客戶端以證明交易收據。
 
 ```solidity
     function validateProof(
@@ -235,7 +235,7 @@ so we can build proof of the transation receipt off chain submit to light client
     }
 ```
 
-## Proof
+## 證明
 
 ```solidity
     struct ProofData {

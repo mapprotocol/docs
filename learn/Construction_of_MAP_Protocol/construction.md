@@ -1,13 +1,12 @@
-## MAP Protocol Layer
+## MAP協議層
+- **驗證人：**驗證人是MAP中繼鏈的基礎。社區成員用$MAPO參與，建立一個具有運行驗證器所需計算能力的節點。社區成員也可以將他們的$MAPO委託給其他驗證器運營商。
+- **維護者：**維護者的價值在於更新部署在目標鏈上的Light-client的狀態，以便驗證網絡能夠順利運行。當維護者更新Light-client時，必須在鏈上寫入一筆交易，從而導致氣體費用的支付。正因爲如此，MAP協議的經濟模型單獨設計了一部分來激勵和補償維護者。作爲維護者運行需要有計算能力，有足夠的資金流來用目標鏈的代幣預付氣體費用，並有$MAPO的賭注。
 
-- **Validator:** Validator is the foundation of the MAP Relay Chain. Community members can stake $MAPO and build a node with the required computing power to run a validator. Community members can also delegate their $MAPO to other validator operators. 
-- **Maintainer:** The value of the maintainer is to update the status of the Light-client deployed on the target chain so that the verification network can run smoothly. When the maintainer updates the Light-client, a transaction must be written on-chain, resulting in a gas fee payment. Because of this, MAP Protocol's economic model has designed a portion separately to incentivize and compensate Maintainers. Running as a maintainer requires computation power, sufficient fund flow to prepay the gas fees with the target chain's token, and staking of $MAPO. 
+## MAPO 全鏈服務（MOS）層
 
-## MAPO Service (MOS) Layer
+- **流動性提供者：**社區成員可以通過部署在MAP生態系統中的Dapps向每個鏈上的Vaults提供流動性。激勵措施由每個Dapp直接提供。
+- **信使：**作爲信使運行需要爲MAP中繼鏈（$MAPO）和目標鏈（原生代幣）提供足夠的氣體費用。信使是由每個Dapp激勵的。
 
-- **Liquidity provider:** Community members can provide liquidity to Vaults on each chain through Dapps deployed in the MAP ecosystem. Incentives are provided directly by each Dapp. 
-- **Messenger:** Running as a messenger requires a sufficient amount of gas fee for the MAP Relay Chain ($MAPO) and the target chains (native token). Messengers are incentivized by each Dapp. 
+## MAPO應用層
 
-## MAPO Application Layer
-
-- **End Users:** Community members can participate through various types of Dapps in the MAP ecosystem and get rewards.
+- **終端用戶：**社區成員可以通過MAP生態系統中的各種類型的Dapp參與並獲得獎勵。

@@ -1,39 +1,38 @@
-## Three stages of crypto industry development
+## 加密貨幣行業發展的三個階段
+**階段1：比特幣***
+比特幣點對點電子現金支付系統的誕生創造了加密貨幣行業，並刺激了2009年以來集中式交易所（CEXs）的發展。
 
-**Stage 1: Bitcoin**
-The birth of the Bitcoin peer-to-peer e-cash payment system created the crypto industry and stimulated the development of centralized exchanges (CEXs) since 2009.
+**階段2：以太坊***
+以太坊的可編程智能合約的出現推動了2015年以來公共鏈和去中心化應用（Dapps）的發展。
 
-**Stage 2: Ethereum**
-The emergence of the programmable smart contract of Ethereum boosted the development of public chains and decentralized applications (Dapps) since 2015.
-
-**Stage 3: Multi-chain - Call for cross-chain**
-Although cross-chain infrastructure competition is neck and neck, cross-chain infrastructure makes cross-chain dapps possible and significantly boosts development.
+**階段3：多鏈--呼籲跨鏈**
+儘管跨鏈基礎設施的競爭不相上下，但跨鏈基礎設施使跨鏈Dapps成爲可能，並大大促進了發展。
 
 
-## Cross-chain field
+##跨鏈領域
 
-Let’s start by explaining what blockchain and cross-chain are. Blockchain is a network in which one block of transactions sequentially follows another and the network is supported by miners/nodes. The first blockchain is the Bitcoin blockchain, since its launch many other blockchains have been created. An important milestone in the development of blockchain technology was the launch of the Ethereum network with the support for smart contracts. Ethereum dominated the market, Dapps started to deploy on Ethereum. After Ethereum, more public chains were launched to challenge Ethereum, and Dapps started to explore possibilities on different chains. Nowadays, Dapps are deployed on multiple chains and as a result, users also own digital assets on multiple chains, and they are desperately in need of a secure and efficient cross-chain solution. Not just a bridge, but a cross-chain interoperability protocol as a solution.
+我們先來解釋一下什麼是區塊鏈和跨鏈。區塊鏈是一個網絡，其中一個交易區塊依次跟隨另一個區塊，網絡由礦工/節點支持。第一個區塊鏈是比特幣區塊鏈，自它推出以來，許多其他的區塊鏈已經被創建。區塊鏈技術發展的一個重要里程碑是支持智能合約的以太坊網絡的推出。以太坊主導了市場，Dapp開始在以太坊上部署。在以太坊之後，更多的公共鏈被推出來挑戰以太坊，Dapps也開始在不同的鏈上探索可能性。如今，Dapps被部署在多個鏈上，因此，用戶也在多個鏈上擁有數字資產，他們迫切需要一個安全、高效的跨鏈解決方案。不僅僅是一個橋樑，而是一個跨鏈互操作協議作爲解決方案。
 
-## Existing problems - Centralization
+## 現有的問題--中心化
 
 - CEXs
-- Centralized
-- Non-interoperable
+- 集中化
+- 不可互操作
 
-## Existing cross-chain solutions in the crypto industry
+## 在加密貨幣行業現有的跨鏈解決方案
 
-The solution to the problem of blockchains interoperability can be the very factor to ensure world recognition of blockchain technology and all its derivatives, primarily, cryptocurrencies. Having a cross-chain protocol in place gives projects freedom of choice and opens up fair competition: if one network is cheaper or faster than the other one, assets can move freely. This will mean, neither more nor less, a new economic era, which will be determined by genuine economic freedom and the broadest financial and working opportunities.
+區塊鏈互操作性問題的解決方案可以成爲確保區塊鏈技術及其所有衍生產品（主要是加密貨幣）得到世界認可的因素。有了跨鏈協議，項目就有了選擇的自由，開啓了公平競爭：如果一個網絡比另一個網絡更便宜或更快，資產就可以自由流動。這將意味着，不多也不少，一個新的經濟時代，這將由真正的經濟自由和最廣泛的金融和工作機會決定。
 
-**Solutions without a Relay Chain**
-* Cross-chain bridge dapps with MPC super administrator
-* Oracle verification mechanism with ambiguity and collusion risk
-* The transitional solution in MPC with PoS. (Slightly better than pure MPC)
-* Optimistic roll-up with long verification waiting time
-* Light-client verification mechanism with ultra-high gas fees during cross-chain among heterogeneous chains
+**沒有中繼鏈的解決方案**
+* 帶有MPC超級管理員的跨鏈橋接dapps
+* 具有模糊性和串通風險的Oracle驗證機制
+* 帶有PoS的MPC中的過渡性解決方案。(比純MPC稍好一些)
+* 具有較長驗證等待時間的樂觀卷積機制
+* 在異質鏈之間的跨鏈過程中具有超高氣費的輕客戶驗證機制
 
-**Polkadot & Cosmos Solution**
+**Polkadot和Cosmos解決方案**
 
-* It is difficult for the EVM and other heterogeneous chains to connect the cross-chain network through SDK.
-* The relay chain is dedicated to blockchain mainnet developers instead of cross-chain dapp developers.  
-* Although Thorchain and Terra are Cosmos’s ecosystem chains, the cross-chain mechanism of Thorchain is still MPC, and dapps developed on Terra are mostly mono-chain dapps.
-* Polkadot has not yet developed any cross-chain applications. 
+* EVM和其他異構鏈很難通過SDK連接跨鏈網絡。
+* 中繼鏈是專門爲區塊鏈主網開發人員而不是跨鏈dapp開發人員提供的。
+* 雖然Thorchain和Terra是Cosmos的生態鏈，但Thorchain的跨鏈機制仍然是MPC，而Terra上開發的dapp大多是單鏈dapp。
+* Polkadot還沒有開發任何跨鏈應用。

@@ -1,76 +1,75 @@
-# Eth2.0 PoS light client
+# Eth2.0 PoS 輕客戶端
+## 如何運行
 
-## How it works
+Eth2.0輕客戶端是一種輕客戶端，目的是在MERGE後的執行層區塊中驗證收據。 這是
+分為兩部分：
 
-Eth2.0 light client is a light client which aims to verify the receipt in the execution layer blocks after MERGE. It is
-divided into 2 parts:
+1. 實現主要輕客戶端邏輯的solidity合約部分；
+2. 驗證信標塊頭和下一個同步委員會的最終性的預編譯合約部分，以及
+    還
+    驗證已證明的信標塊標頭的聚合 BLS 簽名。
 
-1. the solidity contract part which implemented the main light client logic;
-2. the precompiled contract part which verifies the finality of the beacon block header and the next sync committee, and
-   also
-   verifies the aggregated BLS signature of the attested beacon block header.
+以下是有關其工作原理的主要工作流程：
 
-Here is the main workflow about how it works:
+1.部署腳本通過beacon獲取基於可信區塊根的輕客戶端bootstrap信息
+    chain RPC，同時腳本獲取一些其他必要的信息，然後部署和初始化輕客戶端
+    與獲得的信息。
+2. 輕客戶端從一個名為 **maintainer** 的鏈下程序接收輕客戶端更新。 這
+    輕客戶端更新的數據結構如下：
+     ```堅固
+     結構 LightClientUpdate {
+         BeaconBlockHeader attestedHeader； // 一個週期的同步委員會簽署的證明信標塊頭
+         SyncCommittee nextSyncCommittee; // 下一期的同步委員會，可能為空
+         bytes32[] nextSyncCommitteeBranch； // nextSyncCommittee 的 merkle 證明
+         BeaconBlockHeader finalizedHeader； // 已驗證標頭狀態下的最終信標塊標頭
+         bytes32[] finalityBranch； // finalizedHeader 的 merkle 證明
+         BlockHeader finalizedExeHeader； // finalized beacon header對應的finalized execution layer block header
+         bytes32[] exeFinalityBranch； // finalizedExeHeader 的證明
+         同步聚合約步聚合； // 已證明的 beancon 標頭的聚合簽名
+         uint64 簽名槽； // 聚合簽名在哪個槽中籤名
+     }
+     ```
+    輕客戶端調用預編譯合約來驗證信標區塊頭和執行的最終性
+    layer block header，同時驗證下一個sync committee是否存在，並驗證聚合BLS簽名
+    已證明的塊頭。 一旦所有驗證通過，輕客戶端存儲下一個同步委員會，更新
+    最終確定的信標鏈槽，以及最終確定的執行層區塊頭編號和哈希值。
+3.每次**維護者**更新輕客戶端成功，最終確定的信標鏈插槽和最終確定
+    更新執行層標題編號。 最新敲定的執行層header與
+    上一個最終確定的標頭。 **維護者**應該將執行層塊頭更新為 light
+    客戶端，輕客戶端將驗證塊頭的有效性並存儲哈希以供進一步證明
+    確認。 維護者無法在填補空白之前進行下一次輕客戶端更新。
+4. 輕客戶端只有hash在某個以太坊執行層區塊中才能驗證收據的有效性
+    存儲塊的位置並填充它所在的間隙。 所以如果一個應用程序想要使用 eth2.0 輕客戶端來
+    驗證證明，它可以首先通過獲取可驗證的標頭範圍來檢查相應的標頭是否可驗證
+    來自 eth2.0 輕客戶端。
 
-1. The deployment scripts get the light client bootstrap information based on the trusted block root through beacon
-   chain RPC, also the scripts get some other necessary information, and then deploy and initialize the light client
-   with the obtained information.
-2. The light client receives the light client update from an off-chain program called **maintainer**. The
-   data structure of the light client update is as follows:
-    ```solidity
-    struct LightClientUpdate {
-        BeaconBlockHeader attestedHeader;  // attested beacon block header which is signed by the sync committee of one period
-        SyncCommittee nextSyncCommittee;   // the sync committee for the next period, may be empty
-        bytes32[] nextSyncCommitteeBranch; // the merkle proof of nextSyncCommittee
-        BeaconBlockHeader finalizedHeader; // finalized beacon block header in the state of the attested header
-        bytes32[] finalityBranch;          // the merkle proof of finalizedHeader
-        BlockHeader finalizedExeHeader;    // the finalized execution layer block header corresponding to the finalized beacon header
-        bytes32[] exeFinalityBranch;       // the proof of finalizedExeHeader
-        SyncAggregate syncAggregate;       // the aggregated signature of the attested beancon header
-        uint64 signatureSlot;              // in which slot the aggregated signature is signed
-    }
-    ```
-   The light client calls the precompiled contract to verify the finality of the beacon block header and execution
-   layer block header, also verifies the next sync committee if it exists, and verifies the aggregated BLS signature
-   of the attested block header. Once all verifications pass, the light client stores the next sync committee, updates
-   the finalized beacon chain slot, and the finalized execution layer block header number and hash.
-3. Everytime the **maintainer** updates the light client successfully, the finalized beacon chain slot and finalized
-   execution layer header number are updated. There is a gap between the latest finalized execution layer header and
-   the previous finalized header. The **maintainer** should update the execution layer block headers to the light
-   client, and the light client will verify the validity of the block headers and store the hashes for further proof
-   verification. The maintainer could not do the next light client update util the gap is filled.
-4. The light client can verify the validity of the receipt in a certain ethereum execution layer block only if the hash
-   of the block is stored and the gap it locates is filled. So if an application want to use the eth2.0 light client to
-   verify the proof, it can first check if the corresponding header is verifiable by getting the verifiable header range
-   from the eth2.0 light client.
+## 如何驗證
 
-## How to verify
+證明數據的內容包括：
 
-The content of proof data includes:
+1.回執所在的以太坊執行層區塊頭
+2.收據證明
+3.收據在區塊中的索引
+4.證明上述收據存在的證明
 
-1. Ethereum execution layer block header where the receipt exists
-2. The receipt to prove
-3. The index of the receipt in the block
-4. The proof to prove the existence of the above receipt
+輕客戶端按照以下步驟驗證證明數據：
 
-The light client follows these steps to verify the proof data:
+1. 檢查輕客戶端是否記錄了證明數據中區塊頭的<區塊號，區塊哈希>對。
+    如果不是，則返回錯誤。
+2. 計算證明數據中區塊頭的哈希值，驗證其是否等於存儲的哈希值。 這證明了
+    區塊頭的有效性。如果不是，則返回錯誤。
+3. 一個以太坊執行層區塊中的所有收據哈希構建一個Merkle Patricia Tree，樹根為
+    記錄在區塊頭中。 輕客戶端從塊頭通過樹根檢索樹葉，
+    證明數據中的關鍵索引和證明。 然後它檢查樹葉是否等於收據的哈希
+    包含在證明數據中。 如果不是，則返回錯誤。
 
-1. Check that the <block number, block hash> pair of the block header in the proof data is recorded in the light client.
-   If not, and error is returned.
-2. Compute the hash of the block header in the proof data, and verify that it equals to the hash stored. This proves the
-   validity of the block header.If not, an error is returned.
-3. All the receipts hashes in an ethereum execution layer block constructs a Merkle Patricia Tree, and the tree root is
-   recorded in the block header. The light client retrieves the tree leaf through the tree root from block header,the
-   key index and the proof in the proof data. Then it checks whether the tree leaf equals to the hash of the receipt
-   included in the proof data. If not, an error is returned.
+如果以上驗證均通過，證明數據有效。
 
-If all above verifications pass, the proof data is proved to be valid.
+## 證明
 
-## Proof
+### 這是證明的數據結構。
 
-### Here is the data structure about the proof.
-
-ReceiptProof includes the proof and the receipt to prove.
+ReceiptProof包括證明和收據證明。
 
 ```solidity
    struct ReceiptProof {

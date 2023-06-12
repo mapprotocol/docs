@@ -1,4 +1,4 @@
-## LockedGold Contract json ABI
+## LockedGold 合約 json ABI
 
 ```json
 [

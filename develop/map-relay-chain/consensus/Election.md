@@ -1,29 +1,27 @@
-# Elections
+# 選舉
 
-Introduction to Map chain validator elections and management of validator and votes throughout the process.
+介紹圖鏈驗證人選舉和管理驗證人和投票的全過程。
 
-## Updating the Active Validator Set
+## 更新活躍驗證者集
 
-The active validator set is updated by running an election in the final block of each epoch, after processing transactions and Epoch Rewards.
+在處理交易和紀元獎勵之後，通過在每個紀元的最後一個區塊中運行選舉來更新活動驗證器集。
 
-## Election Validator 
+## 選舉驗證器
 
-Validators must have at least 0.001 proportion of the total votes to be considered for the election. So the validator can't have no votes.
+驗證者必須至少擁有總票數的 0.001 比例才能被考慮參加選舉。 所以驗證者不能沒有選票。
 
-The advantage of this is to avoid burn `MAP` and limit the number of voters in the 1000.
+這樣做的好處是避免燒掉`MAP`並限制1000個選民的數量。
 
-There is a minimum target(1) and a maximum cap(100) on the number of active validators that may be selected. If the minimum target is not reached, the election aborts and no change is made to the validator set this epoch.
+可以選擇的活躍驗證者的數量有一個最小目標 (1) 和一個最大上限 (100)。 如果沒有達到最低目標，選舉就會中止，並且不會對這個時期的驗證者集進行任何更改。
 
-EXAMPLE:
-Now there are four validators on the chain,they are:
+例子：
+現在鏈上有四個驗證人，他們是：
 
-["0x1c0eDab88dbb72B119039c4d14b1663525b3aC15", "0x16FdBcAC4D4Cc24DCa47B9b80f58155a551ca2aF", "0x2dC45799000ab08E60b7441c36fCC74060Ccbe11", "0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5"]
+[“0x1c0eDab88dbb72B119039c4d14b1663525b3aC15”，“0x16FdBcAC4D4Cc24DCa47B9b80f58155a551ca2aF”，“0x2dC45799000ab08E60b7441c36fCC74060Ccbe 11", "0x6C5938B49bACDe73a8Db7C3A7DA208846898BFf5"]
 
-If we do not select validators for some reasons (equivalent validators number to less than 1), we will continue to use the above validators.
-If we select the latest set of validators (which means that the number of new validators is greater than 1 and less than 100), we will replace the above validators with new validators.
+如果由於某些原因我們沒有選擇驗證者（等效驗證器數量小於 1），我們將繼續使用上述驗證者。
+如果我們選擇最新的一組驗證者（這意味著新驗證人的數量大於 1 且小於 100），我們將用新的驗證者替換上述驗證者。
 
-## Implementation
+## 執行
 
-[Election.sol](https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/Election.sol) manages Locked `Map` voting and epoch rewards and runs Validator Elections.
-
-
+[Election.sol](https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/Election.sol) 管理鎖定的“地圖”投票和紀元獎勵，並運行驗證者選舉。

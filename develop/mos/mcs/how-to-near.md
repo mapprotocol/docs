@@ -1,8 +1,8 @@
-# How to use MCS on near protocol?
+# 如何在 near 協議上使用 MOS？
 
-## 1. deploy MCS contract
+## 1.部署MOS合約
 
-You can use below command to deploy MCS contract.
+您可以使用以下命令部署 MOS 合約。
 
 ```shell
 # configure some parameters first
@@ -30,9 +30,9 @@ echo "initializing mcs contract"
 near call $MCS_ACCOUNT init "$INIT_ARGS_MCS" --accountId $MASTER_ACCOUNT --gas 80000000000000
 ```
 
-## 2. manage MCS token and transfer out MCS token
+## 2.管理MCS代幣和轉出MCS代幣
 
-### 2.1 deploy MCS token and set metadata
+### 2.1部署MCS令牌並設置元數據
 
 ```shell
 
@@ -58,9 +58,9 @@ echo "getting mcs token list from mcs contract"
 near view $MCS_ACCOUNT get_mcs_tokens '{}'
 ```
 
-### 2.3 transfer out some amount (if someone has already transferred in some amount of the MCS token)
+### 2.3 轉出一定數量（如果有人已經轉入一定數量的MCS代幣）
 
-You can see the amount changes before and after the MCS token is transferred.
+您可以看到 MCS 代幣轉出前後的金額變化。
 ```shell
 
 FROM=                                                                          # sender address on NEAR blockchain
@@ -77,16 +77,16 @@ echo "after transfer out, get account $FROM balance of token $MCS_TOKEN"
 near view $MCS_TOKEN ft_balance_of '{"account_id":"'$FROM'"}'
 ```
 
-### 2.4 remove target chain to disable transfer to
+### 2.4 刪除目標鏈以禁用傳輸到
 ```shell
 echo "removing $MCS_TOKEN to_chain $TO_CHAIN from mcs contract"
 near call $MCS_ACCOUNT remove_mcs_token_to_chain '{"token": "'$MCS_TOKEN'", "to_chain": '$TO_CHAIN'}' --accountId $MCS_ACCOUNT
 ```
 
-## 3. manage fungible token and transfer out fungible token
-The difference between MCS tokens and fungible tokens is that the MCS contract has the privilege to mint/burn MCS tokens, but the fungible tokens are tokens deployed by others and already exists on NEAR blockchain.
+## 3.管理可置換代幣並轉出可置換代幣
+MOS token 和 可置換代幣 的區別在於，MOS 合約擁有鑄造/銷毀 MOS token 的權限，而可置換代幣 是其他人部署的代幣，已經存在於 NEAR 區塊鏈上。
 
-### 3.1 add target chain for the fungible token to transfer to
+### 3.1 為可替代令牌添加目標鏈以轉移到
 ```shell
 TO_CHAIN=34434            # target chain ID
 FT_TOKEN="wrap.testnet"   # fungible token contract address
@@ -98,9 +98,9 @@ echo "getting fungible token list from mcs contract"
 near view $MCS_ACCOUNT get_fungible_tokens '{}'
 ```
 
-### 3.2 transfer out some amount
+### 3.2 轉出一些金額
 
-You can see the amount changes before and after the fungible token is transferred.
+您可以看到可替代代幣轉移前後的金額變化。
 ```shell
 
 FROM=                                                                          # sender address on NEAR blockchain
@@ -115,16 +115,14 @@ near call $FT_TOKEN ft_transfer_call '{"receiver_id":"'$MCS_ACCOUNT'", "amount":
 echo "after transfer out, get account $FROM balance of token $FT_TOKEN"
 near view $FT_TOKEN ft_balance_of '{"account_id":"'$FROM'"}'
 ```
-
-### 3.3 remove target chain to disable transfer to
+### 3.3 刪除目標鏈以禁用傳輸到
 ```shell
 echo "removing $FT_TOKEN to_chain $TO_CHAIN from mcs contract"
 near call $MCS_ACCOUNT remove_fungible_token_to_chain '{"token": "'$FT_TOKEN'", "to_chain": '$TO_CHAIN'}' --accountId $MCS_ACCOUNT
 ```
+## 4. 管理原生代幣（NEAR）和轉出原生代幣
 
-## 4. manage native token (NEAR) and transfer out native token
-
-### 4.1 add target chain for the native token to transfer to
+### 4.1 為原生代幣轉入添加目標鏈
 ```shell
 TO_CHAIN=34434            # target chain ID
 
@@ -135,9 +133,9 @@ echo "getting native token list from mcs contract"
 near view $MCS_ACCOUNT get_native_token_to_chains '{}'
 ```
 
-### 4.2 transfer out some amount 
+### 4.2 轉出一些金額
 
-You can see the amount changes before and after the native token is transferred.
+可以看到原生代幣轉出前後的金額變化。
 ```shell
 
 FROM=                                                                          # sender address on NEAR blockchain
@@ -153,7 +151,7 @@ echo "after transfer out, get state of account $FROM"
 near state $FROM
 ```
 
-### 4.3 remove target chain to disable transfer to
+### 4.3 刪除目標鏈以禁用傳輸到
 ```shell
 echo "removing native token to_chain $TO_CHAIN from mcs contract"
 near call $MCS_ACCOUNT remove_native_to_chain '{ "to_chain": '$TO_CHAIN'}' --accountId $MCS_ACCOUNT

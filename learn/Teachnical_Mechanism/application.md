@@ -1,90 +1,89 @@
-Assets and data originated from Dapps assembly on MAP Relay Chain. Dapps can achieve interoperability because of MAPO Services (MOS). The finality of omnichain data and asset verification network by MAP Protocol Layer empowers Dapps to grow limitless.
+來源於Dapp的資產和數據在MAP中繼鏈上組裝。由於MAPO服務（MOS），Dapps可以實現互操作性。通過MAP協議層，全能鏈數據和資產驗證網絡的最終結果使Dapps能夠無限增長。
+## 跨鏈借貸
 
-## Cross-chain Lending
+目前，如果一個用戶在A鏈上有錢，但想在B鏈上farming，那麼這個用戶必須經過9個步驟：
 
-Currently, if a user has money on chain A but wants to farm on Chain B, the user would have to go through 9 steps: 
+在A鏈上抵押 -> 借款 -> 過橋（費用） -> 交換（費用） -> 在目的鏈上耕種 -> 交換回來（費用） -> 過橋回來（費用） -> 償還貸款 -> 取消抵押。
 
-Collateralize on Chain A -> borrow -> bridge (fee) -> swap (fee) -> farm on the destination chain -> swap back (fee) -> bridge back (fee) -> repay the loan -> un-collateralize. 
-
-With MAP Protocol, you can collateralize on Chain A, borrow on the destination chain, farm, repay, and the collateral is unlocked, skipping the four bridging and swapping fees.
+通過MAP協議，你可以在A鏈上抵押，在目的鏈上借款，養殖，還款，抵押物就解鎖了，跳過了四個橋接和交換費用。
 
 
 
 ## Omnichain Swap
 
-Omnichain Swap allows you to swap coins with substantially lower fees than traditional DeFi exchanges by connecting you to the best cross-chain DeFi protocols. By using MAP Protocol, developers can build a truly decentralized omnichain exchange that enables users to swap any token on any chain.
- 
-Omnichain SWAP also enables omnichain aggregation swap by connecting every major DEX liquidity out there. Existing AMMs can be wrapped to perform omnichain swaps from one asset to another without the need to modify any existing code. User’s will be able to swap from ETH on Ethereum to Near on Near in one single transaction from the source chain.
+Omnichain Swap通過連接最好的跨鏈DeFi協議，讓你以大大低於傳統DeFi交易所的費用進行換幣。通過使用MAP協議，開發者可以建立一個真正去中心化的Omnichain交易所，使用戶可以交換任何鏈上的任何代幣。
 
-In an omnichain swap built with MAP Protocol, users can add multichain coin liquidity in one pool, that means providing liquidity to a pair of tokens from different chains becomes possible. Users can swap one token directly for another chain token from a different chain without using any intermediate token, such as stable coins, to achieve the shortest route of omnichain swap.
+Omnichain SWAP還可以通過連接每一個主要的DEX流動性來實現全能鏈的聚合交換。現有的AMMs可以被包裝起來，以執行從一種資產到另一種資產的全息交換，而不需要修改任何現有的代碼。用戶將能夠在一次交易中從以太坊的ETH換到Near的Near。
 
-**BarterSwap**, the first truly decentralized cross-chain exchange that enables users to swap any token on any chain, includes all the above functionalities and will be released in Q4 2022. 
+在用MAP協議構建的全鏈交換中，用戶可以在一個池子裏增加多鏈幣的流動性，這意味着向來自不同鏈的一對代幣提供流動性成爲可能。用戶可以直接用一個代幣交換不同鏈的另一個鏈的代幣，而不使用任何中間代幣，如穩定幣，實現全鏈交換的最短路徑。
 
+**ButterSwap**，第一個真正去中心化的跨鏈交易所，使用戶能夠交換任何鏈上的任何代幣，包括上述所有功能，並將在2022年第四季度發佈。
+Butter
 
 ## Omnichain GameFi
 
-As the crypto industry and the idea of metaverse boomed, a lot of innovative ideas were brought to the traditional gaming sector. Gaming Finance refers to the gamification of financial systems to create profit through participation in play-to-earn crypto games. The play-to-earn games are different from conventional games since players participate to earn rewards, and players can create in-game assets with complete control over ownership. 
+隨着加密貨幣行業和元空間理念的蓬勃發展，很多創新理念被帶到了傳統的遊戲領域。遊戲金融指的是金融系統的遊戲化，通過參與遊戲賺錢的加密貨幣遊戲來創造利潤。玩賺遊戲與傳統遊戲不同，因爲玩家參與遊戲是爲了賺取獎勵，玩家可以創造遊戲中的資產，完全控制所有權。
 
-The lifespan of a GameFi depends heavily on the popularity and user's gaming experience. To maintain popularity, a new source of players is the key, and the best way is to expand to other chains so that users from other chains can participate. With MAP Protocol, GameFi Projects can deploy their tokens on multiple chains and allow users from other chains to efficiently and securely transfer their assets to their project's chain. For example, an BSC GameFi project deployed its tokens on Polygon and WAX chains; Users from Polygon and BSC can transfer their assets to WAX through the cross-chain bridge and participate in the GameFi, increasing the user base exponentially. 
+GameFi的壽命在很大程度上取決於人氣和用戶的遊戲體驗。爲了保持人氣，新的玩家來源是關鍵，最好的方法是擴展到其他鏈，以便其他鏈的用戶可以參與。通過MAP協議，GameFi項目可以在多個鏈上部署其代幣，並允許來自其他鏈的用戶高效、安全地將其資產轉移到他們項目的鏈上。例如，一個BSC GameFi項目將其代幣部署在Polygon和WAX鏈上；來自Polygon和BSC的用戶可以通過跨鏈橋將其資產轉移到WAX並參與GameFi，從而成倍地增加用戶羣。
 
-Another way to be scalable and maintain a good gaming experience is directly deploying on MAP Relay Chain. With MAP Relay Chain's interoperability, GameFi projects can automatically link up with all EVM and non-EVM chains efficiently and securely by deploying on MAP Relay Chain. MAP Relay Chain will proactively connect with all of the upcoming chains so that the GameFi project can focus on user experience without worrying about scalability and security problems. 
-
-
-## On-chain Oracle and Derivatives
-
-Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices and quantities originating from other chains. This issue can be solved by multi-chain deployment, but it is extremely complex. By building a reliable omnichain network, MAP Protocol has enabled Data cross-chain and is nurturing a completely new oracle market - On-Chain Oracle. By deploying on MAP Relay Chain, derivative and synthetic asset applications can easily acquire reliable multi-chain data from On-Chain Oracle. 
+另一種可擴展並保持良好遊戲體驗的方式是直接部署在MAP Relay Chain上。利用MAP Relay Chain的互操作性，GameFi項目可以通過部署在MAP Relay Chain上，自動與所有EVM和非EVM鏈高效、安全地連接起來。MAP Relay Chain會主動與所有即將到來的鏈進行連接，這樣GameFi項目就可以專注於用戶體驗，而不必擔心擴展性和安全問題。
 
 
-### Illustration of MAP Protocol Omnichain Applications - Data
+##鏈上預言機和衍生品
 
-![Illustration of MAP Protocol Omnichain Applications - Data](dataflow.png)
-
-Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices, and quantities originated from other chains. This issue can be solved by deploying on multiple chains but is extremely complex. By building a reliable cross-chain network, MAP Protocol has enabled Data omnichain and is nurturing a completely new oracle market - **On-Chain Oracle**. By deploying on MAP Relay Chain, derivative and synthetic asset applications can acquire reliable multi-chain data from On-Chain Oracle with ease. 
-
-## Fungible token and NFT Bridge
-
-Cross-chain bridges and cross-chain NFT bridges no longer have to build their infrastructure or use MPC. Using MAP’s underlying cross-chain verification network with finality and the MCS application developer service kit, bridge developers can easily build their NFT or homogenized token bridge application. 
+去中心化的衍生品和合成資產通常受制於源自其他鏈的資產價格和數量的準確性和及時性。這個問題可以通過多鏈部署來解決，但這是非常複雜的。通過建立一個可靠的全鏈網絡，MAP協議實現了數據跨鏈，並正在培育一個全新的甲骨文市場--鏈上甲骨文。通過在MAP中繼鏈上的部署，衍生和合成資產應用可以很容易地從On-Chain Oracle獲取可靠的多鏈數據。
 
 
-### Illustration of MAP Protocol Omnichain Application - Fungible Tokens
+### MAP協議全息網應用的圖解--數據
+
+![MAP協議全能鏈應用的說明--數據](dataflow.png)
+
+去中心化的衍生品和合成資產通常受制於資產價格的準確性和及時性，以及來自其他鏈的數量。這個問題可以通過在多個鏈上的部署來解決，但卻非常複雜。通過建立一個可靠的跨鏈網絡，MAP協議實現了數據全鏈，並正在培育一個全新的甲骨文市場--**鏈上甲骨文。通過部署在MAP中繼鏈上，衍生和合成資產應用可以輕鬆地從On-Chain Oracle獲取可靠的多鏈數據。
+
+## 可變通的代幣和NFT橋
+
+跨鏈橋和跨鏈NFT橋不再需要建立其基礎設施或使用MPC。使用MAP的底層跨鏈驗證網絡與最終性和MCS應用開發者服務包，橋接器開發者可以輕鬆建立他們的NFT或同質化代幣橋接器應用。
+
+
+
 
 ![MAP Protocol Omnichain Application - Fungible Tokens](fungible.png)
 
-*Fungible tokens like USDC are issued simultaneously on multiple chains. Dapp developers need to submit whether fungible tokens are issued on multiple chains on the MAP Cross-chain services' vault to avoid different forms of the same assets created during the omnichain process.
+*像USDC這樣的可變通代幣在多個鏈上同時發行。Dapp開發者需要在MAP跨鏈服務的保險庫中提交可替換代幣是否在多條鏈上發行，以避免在全能鏈過程中創建不同形式的相同資產。
 
-### Illustration of MAP Protocol Omnichain Application - Non-Fungible Tokens (NFT)
+### MAP協議全能鏈應用說明--非可替代代幣（NFT）
 
 ![MAP Protocol Omnichain Application - NFT](nft_flow.png)
 
-## Omnichain Governance - The case of Aave
+## 全能鏈治理--Aave的案例
 
-As told by its developers, a proposal executed on Aave, which is built on the Ethereum (ETH) network, was sent to the Polygon (MATIC) FxPortal. The mechanism then read the Ethereum data and passed it for validation on the Polygon network. Afterward, the Aave cross-chain governance bridge contract received this data, decoded it and queued the action, pending a timelock for finalization. The development team wrote:
+正如其開發者所講述的那樣，在Aave上執行的一項提案，是建立在以太坊（ETH）網絡上的，被髮送到Polygon（MATIC）FxPortal。然後，該機制讀取以太坊數據，並將其傳遞給Polygon網絡進行驗證。之後，Aave跨鏈治理橋接合約收到了這些數據，對其進行解碼並排隊行動，等待時間鎖定來完成。開發團隊寫道：
 
-The Aave cross-chain governance bridge is built in a generic way to be easily adapted to operate with any chain that supports the EVM and cross-chain messaging. Currently, the repository supports contracts bridging to Polygon and Arbitrum. On Aave, users can submit Aave Improvement Protocols, or AIPs, to target various features on the DeFi platform.
- 
-With MAP Protocol's interoperability with all-chains, omnichain governace can be achieved with all EVM and heterogenous chains by a security cross-chain infrastructure. 
+Aave 跨鏈治理橋是以一種通用的方式建立的，可以很容易地適應與任何支持 EVM 和跨鏈信息傳遞的鏈一起操作。目前，該資源庫支持與Polygon和Arbitrum的合約橋接。在Aave上，用戶可以提交Aave改進協議，或AIP，以針對DeFi平臺的各種功能。
+
+憑藉MAP協議與所有鏈的互操作性，全能鏈管理可以通過安全的跨鏈基礎設施與所有EVM和異質鏈實現。
 
 
-## Omnichain Applications on MAP Protocol
+## MAP協議上的全能鏈應用
 
-Dapp developers only need to deploy their dapps on MAP Relay Chain with the completed MAPO Services module, then enjoy the privilege of connecting the entire blockchain world’s liquidity. Developers can easily build their omnichain applications deployed on any chain in just two steps:
+Dapp開發者只需要在MAP中繼鏈上部署他們的dapp，並完成MAPO服務模塊，然後享受連接整個區塊鏈世界的流動性的特權。開發者只需兩個步驟就可以輕鬆建立他們部署在任何鏈上的全能鏈應用程序：
 
-1. Build inter-chain messenger using our SDK.
-2. Interact with on-chain vault and data through our API.
+1. 使用我們的SDK構建鏈間信使。
+2. 2.通過我們的API與鏈上金庫和數據進行互動。
 
-| Dapp Categories | Projects under development on MAP Protocol as of Apr 2022 |
+| Dapp分類 | 截至2022年4月，MAP協議上正在開發的項目 |
 | ---- | ---- |
-| Fungible Token Bridge | Barter Bridge |
+| 可置換的代幣橋 | Butter 橋 |
 | NFT Bridge | CoLAB NFT Bridge |
-| Cross-chain NFT Collaboration Platform | CoLAB |
-| Cross-chain Swap | BarterSwap |
-| Cross-chain DAO | Idavoll DAO |
-| MAP Relay Chain Swap | HiveSwap |
-| Off-chain Oracle | Nest |
-| On-chain Oracle | Onchain Oracle |
-| Cross-chain Farm | UniFarm |
-| Cross-chain GameFi | Nextype, Spiritland |
-| Wallet | BeFi Wallet DAO, Bitkeep, MathWallet, Coin98 |
-| Payment | Alchemy Pay |
-| DeFi System | Ecentive |
-| Staking Service | Kucoin, Ankr, Hashquark, 01Node, Allnodes, Infstone |
+| 跨鏈NFT合作平臺 | CoLAB |
+| 跨鏈互換 | ButterSwap |
+| 跨鏈DAO | Idavoll DAO |
+|MAP中繼鏈互換 | HiveSwap |
+| 鏈下Oracle | Nest |
+| 鍊上Oracle | 鍊上Oracle
+| 跨鏈農場 | UniFarm|
+| 跨鏈GameFi | Nextype, Spiritland |
+| 錢包 | BeFi Wallet DAO, Bitkeep, MathWallet, Coin98
+| 支付 | 鍊金術支付 |
+| DeFi系統 | Ecentive |
+| 質押服務 | Kucoin, Ankr, Hashquark, 01Node, Allnodes, Infstone |

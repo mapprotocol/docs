@@ -1,42 +1,42 @@
-# Locked MAP And Voting
+# 鎖定MAP 和投票
 
-If you create Account and locked `MAP` enough, you can vote as a voter.Note that the minimum locking amount is 10 `MAP`.
+如果你創建了賬戶並鎖定了足夠多的`MAP`，你就可以作為選民投票了。注意最低鎖定量為10個`MAP`。
 
-If your account has become a validator, you can also use this account as a voter to vote.
+如果你的賬戶已經成為驗證者，你也可以使用這個賬戶作為選民進行投票。
 
-Introduction to locked `MAP` and how to  participate in voting.
+鎖定`MAP`介紹及如何參與投票。
 
-## Validator Election Participation
+## 驗證者選舉參與
 
-To participate in validator elections, users must first make a transfer of `MAP` to the `LockedGold` smart contract.
+要參與驗證者選舉，用戶必須首先將 `MAP` 轉移到 `LockedGold` 智能合約。
 
-## Concurrent Use of Locked MAP
+## 同時使用鎖定的 MAP
 
-Locking up `MAP` guarantees that the same asset is not used more than once in the same vote.
+鎖定 `MAP` 可確保同一資產在同一投票中不會被多次使用。
 
-## Unlocking Period
+##解鎖期
 
-Map chain implements an unlocking period, a delay of 15 days after making a request to unlock Locked `MAP` before it can be recovered from the escrow.
+MAP 鏈實施解鎖期，在提出解鎖請求後延遲 15 天才能從託管中恢復鎖定的`MAP`。
 
-This value balances two concerns. First, it is long enough that an election will have taken place since the request to unlock, so that those units of `MAP` will no longer have any impact on which validators are managing the network. This deters an attacker from manipulations in the form of borrowing funds to purchase `MAP`, then using it to elect malicious validators, since they will not be able to return the borrowed funds until after the attack, when presumably it would have been detected and the borrowed funds’ value have fallen.
+這個值平衡了兩個問題。 首先，自請求解鎖以來已經進行了足夠長的選舉，因此“MAP”的那些單元將不再對管理網絡的驗證者產生任何影響。 這阻止了攻擊者以藉入資金購買 `MAP` 的形式進行操縱，然後用它來選舉惡意驗證者，因為他們將無法歸還借入的資金，直到攻擊發生後，據推測攻擊已經被檢測到並且 借入資金的價值下降了。
 
-Second, the unlocking period is short enough that it does not represent a significant liquidity risk for most users. This limits the attractiveness to users of exchanges creating secondary markets in Locked `MAP` and thereby pooling voting power.
+其次，解鎖期足夠短，對大多數用戶來說不會構成重大的流動性風險。 這限制了對在 Locked `MAP` 中創建二級市場並因此匯集投票權的交易所用戶的吸引力。
 
-## Locking and Voting Flow
+## 鎖定和投票流程
 
-The flow is as follows:
+流程如下：
 
-- An account calls `lock`, transferring an amount of `MAP` from their balance to the `LockedGold` smart contract. This increments the account's 'non-voting' balance by the same amount.
-- Then the account calls `vote`, passing in an amount and the address of the validator to vote for. This decrements the account's 'non-voting' balance and increments the 'pending' balance associated with that validator by the same amount. This counts immediately towards electing validators. Note that the vote may be rejected if it would mean that the account would be voting for more than 10 distinct validators.
-- At the end of the current epoch, the protocol will first deliver epoch rewards to validators and voters based on the current epoch (pending votes do not count for these purposes), and then run an election to select the active validator set for the following epoch.
-- The pending vote continues to contribute towards electing validators until it is changed, but the account must call activate (in a subsequent epoch to the one in which the vote was made) to convert the pending vote to one that earns rewards.(If you do not activate your vote, we will automatically activate your inactive vote)
-- At the end of that epoch, if the validator for which the vote was made had elected one or more validators in the prior election, then the activated vote is eligible for Locked `MAP` rewards. These are applied to the pool of activated votes for the validator. This means that activated voting Locked `MAP` automatically compounds, with the rewards increasing the account's votes for the same validator, thereby increasing future rewards, benefitting participants who have elected to continuously participate in governance.
-- The account may subsequently choose to `unvote` a specific amount of voting Locked `MAP` from a validator, up to the total balance that the account has accrued there. Due to rewards, this Locked `MAP` amount may be higher than the original value passed to vote.
-- This Locked `MAP` immediately becomes non-voting, receives no further Epoch Rewards, and can be re-used to vote for a different validator.
-- The account may choose to `unlock` an amount of Locked `MAP` at any time, provided that it is inactive: this means it is non-voting in Validator Elections, the `deregistrationPeriod` has elapsed if the amount has been used as a validator stake. Once an unlocking period of 3 days has passed, the account can call withdraw to have the LockedGold contract transfer them that amount.
+- 一個賬戶調用“lock”，將一定數量的“MAP”從他們的餘額轉移到“LockedGold”智能合約。 這會使帳戶的“無投票權”餘額增加相同的數額。
+- 然後賬戶調用 `vote`，傳遞一個數量和要投票的驗證者的地址。 這會減少帳戶的“無投票權”餘額，並增加與該驗證器關聯的“待定”餘額相同的數量。 這立即計入選舉驗證者。 請注意，如果這意味著該帳戶將投票給超過 10 個不同的驗證者，則投票可能會被拒絕。
+- 在當前 epoch 結束時，協議將首先根據當前 epoch 向驗證者和選民提供 epoch 獎勵（未決投票不計入這些目的），然後進行選舉以選擇以下活躍驗證者集 時代。
+- 未決投票將繼續為選舉驗證者做出貢獻，直到它被更改，但該帳戶必須調用激活（在進行投票的後續紀元中）以將未決投票轉換為獲得獎勵的投票。（如果你 不激活您的投票，我們將自動激活您的非活動投票）
+- 在該紀元結束時，如果投票的驗證者在之前的選舉中選出了一名或多名驗證者，則激活的投票有資格獲得鎖定的“MAP”獎勵。 這些將應用於驗證器的激活投票池。 這意味著激活投票 Locked `MAP` 會自動複合，獎勵會增加帳戶對同一驗證者的投票，從而增加未來的獎勵，使選擇持續參與治理的參與者受益。
+- 該帳戶隨後可以選擇從驗證器中“取消投票”特定數量的投票鎖定“MAP”，最多為該帳戶在那裡累積的總餘額。 由於獎勵，這個 Locked `MAP` 金額可能高於投票的原始值。
+- 這個鎖定的 `MAP` 立即變為無投票權，不再獲得 Epoch 獎勵，並且可以重新用於為不同的驗證者投票。
+- 該帳戶可以隨時選擇“解鎖”一定數量的鎖定“MAP”，前提是它處於非活動狀態：這意味著它在驗證者選舉中沒有投票權，如果該金額已被用作 驗證者股份。 一旦 3 天的解鎖期過去，賬戶可以調用 withdraw 以讓 LockedGold 合約向他們轉賬該金額。
 
-Votes persist between epochs, and the same vote is applied to each election unless and until it is changed. Vote withdrawal, vote changes, and additional `MAP` being used to vote have no effect on the validator set until the election finalizes at the end of the epoch.
+投票在不同時期之間持續存在，並且相同的投票適用於每次選舉，除非並且直到它被改變。 投票撤回、投票更改和用於投票的額外 `MAP` 對驗證者集沒有影響，直到選舉在 epoch 結束時結束。
 
-## Implementation
+## 執行
 
-[LockedGold.sol](https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/LockedGold.sol) manages the lifecycle of Locked `Map`.
+[LockedGold.sol](https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/LockedGold.sol) 管理 Locked `Map` 的生命週期。
