@@ -108,4 +108,4 @@
 
 * [如何成爲一個新的驗證者](run/HowToBecomeANewValidator.md)
 * [如何成爲一個新的驗證者[進階版]](run/HowToBecomeANewValidatorAdvanced.md)
-* [Withdraw](run/Withdraw.md)
+* [取出或撤回](run/Withdraw.md)
