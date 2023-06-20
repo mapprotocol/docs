@@ -8,7 +8,7 @@
   * [介紹 MAP 協議](learn/introduction.md)
   * [MAP 協議的發展歷程](learn/history.md)
 * [與其他跨鏈模型進行比較](learn/comparison.md)
-  * [MAP 協議與Cosmos＆amp; Pokadot](learn/CosmosPolkadot.md)
+  * [MAP 協議與Cosmos＆ Pokadot](learn/CosmosPolkadot.md)
   * [MAP vs. 其他無中繼鏈的跨鏈解決方案](learn/others.md)
 * [技術機制](learn/Teachnical_Mechanism/overiew.md)
   * [MAP協議'的技術機制](learn/Teachnical_Mechanism/technical-mechanism.md)
