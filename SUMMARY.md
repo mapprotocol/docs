@@ -107,5 +107,5 @@
 ## 運行
 
 * [如何成爲一個新的驗證者](run/HowToBecomeANewValidator.md)
-* [如何成爲一個新的驗證器[進階版]](run/HowToBecomeANewValidatorAdvanced.md)
+* [如何成爲一個新的驗證者[進階版]](run/HowToBecomeANewValidatorAdvanced.md)
 * [Withdraw](run/Withdraw.md)
