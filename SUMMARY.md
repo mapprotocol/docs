@@ -98,7 +98,7 @@
   * [Messenger](develop/mos/messenger/messenger.md)
   * [API](develop/mos/mcs/api/api.md)
 * OmniChain Examples
-  * [OmniApp](develop/mos/examples/OmniAdd.md)
+  * [OmniApp](develop/mos/examples/omni-app.md)
   * [OmniDictionary](develop/mos/examples/OmniDictionary.md)
   
 * API & SDK
