@@ -1,5 +1,5 @@
-````
-# 如何使用Mapprotocol构建全链DAPP
+
+# 如何使用MAP Protocol构建全链DAPP
 
 ## 1. 确定合同版本和项目名称
 
@@ -185,9 +185,10 @@ contract OApp is Ownable {
 ### 6.1 设置 `feeToken`
 
 通过5.1，我们注意到transferOut需要三个参数:
-    * `toChain` 是我们目标的chainId，
-    * `messageData` 5.2就已经可以获取了
-    * `feeToken` 参数就是我们在跨链过程中要用来支付目标链执行费用的代币。我们只需要在源链上进行预付费即可. 
+
+* `toChain` 是我们目标的chainId，
+* `messageData` 5.2就已经可以获取了
+* `feeToken` 参数就是我们在跨链过程中要用来支付目标链执行费用的代币。我们只需要在源链上进行预付费即可. 
 
 在这种情况下，我们将仅使用该链的原生代币进行演示，我们就用address(0)来填充feeToken。每笔跨链交易需要支付多少钱？我们可以参考下面代码中的解释
 ```solidity
@@ -238,8 +239,9 @@ contract OApp is Ownable {
     }
 ```
 
-## 7. 完成‘MESSAGE’跨链方法用以执行消息跨链的逻辑
-发送跨链消息后，在步骤4中，我们完成了CALLDATA跨链方法的执行代码。使用该MESSAGE方法时，接收合约需要实现一个固定的方法，更多细节可以在IMpoExecutor接口中找到[IMapoExecutor](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/contracts/interface/IMapoExecutor.sol) interface for more details.
+## 7. 完成 `MESSAGE`跨链方法用以执行消息跨链的逻辑
+发送跨链消息后，在步骤4中，我们完成了CALLDATA跨链方法的执行代码。
+使用该MESSAGE方法时，接收合约需要实现一个固定的方法，更多细节可以在IMpoExecutor接口中找到[IMapoExecutor](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/contracts/interface/IMapoExecutor.sol) interface for more details.
 
 ```solidity
 
@@ -440,4 +442,4 @@ contract OAppTargetReceiver is Ownable, IMapoExecutor{
 7.  After observing the cross-chain completion on the cross-chain browser, call the
     getTrustFromAddress method on the Target Chain to verify if the result has been 
     successfully accumulated.
-````
+
