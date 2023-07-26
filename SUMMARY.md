@@ -96,6 +96,7 @@
   * [信使](develop/mos/messenger/messenger.md)
   * [API](develop/mos/mcs/api/api.md)
 * OmniChain實例
+  * [Omni App](develop/mos/examples/Omni-app.md)
   * [OmniDictionary](develop/mos/examples/OmniDictionary.md)
 
 * API & SDK
