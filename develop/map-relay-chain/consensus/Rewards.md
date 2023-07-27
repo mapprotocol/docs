@@ -17,7 +17,7 @@ units of MAP as blocks are produced, to create several kinds of incentives.
 
 Each epoch will be rewarded with a fixed reward.
 
-- First 2 yease, `EpochReward`= 833,333 `MAP`.
+- First 2 years, `EpochReward`= 833,333 `MAP`.
 
 
 ## Reward Disbursement
@@ -29,7 +29,7 @@ The amount of disbursements is determined at the end of every epoch via a three 
 In step one，Community Fund will receive a fixed percentage of the reward
 
 - `CommunityFundReward`  =  `CommunityFundMultiplier`*`EpochReward`
-- `CommunityFundMultiplier` defult value = 0.
+- `CommunityFundMultiplier` default value = 0.
 
 ### Step 2
 
@@ -40,13 +40,20 @@ If the validator fails to fulfill its responsibilities, it will be punished thro
 
 So per validator will receive the reward:
 
-- `ValidatorReceived` = `(`EpochReward`-`CommunityFundReward`)` \* `Punishment` \* (`P` +` mySorce`) / (`N` * `P` + `Sorce1` + `Score2` +...`ScoreN`).
+- `ValidatorReceived` = `(`EpochReward`-`CommunityFundReward`)` * `StakingWeight` * `OwnActiveVotes / TotalActiveVotes` + `WorkWeight` * `OwnScore / TotalScores`.
   
-- `P`   A fixed reward proportion shared by the validator(p>0, p<=1, default value is 1)
+- `StakingWeight`   Staking weight of validator(StakingWeight>0, StakingWeight<=1, default value is 1)
   
-- `N`  Number of validator
-  
-- `Punishment`  Punishment mechanism param.
+- `WorkWeight`  Work weight of validator(WorkWeight = 1 - StakingWeight).
+
+- `OwnActiveVotes` The number of votes activated by the current validator.
+
+- `TotalActiveVotes` The active votes received across all validators.
+
+- `OwnScore` The score obtained by the current validator. Your node online time will directly affect this parameter.
+  If you have this parameter smaller than other validators, you will be penalized, which will slashing your reward. (0 <= OwnScore <= 1)
+
+- `TotalScores` The sum of the scores of all validators.
 
 The score is calculated by this formula:
 
@@ -93,7 +100,7 @@ The score is calculated by this formula:
 
 In step three, because the validator will distribute the reward to voter, the actual validator will receive the reward:
 
-- `ValidatorActualReceived` =`ValidatorReceived`*`Commission`.
+- `ValidatorActualReceived` =`ValidatorReceived` * `Commission `*` OwnScore`.
 - `Commission` A proportional value drawn by the validator in proportion to the `ValidatorReceived`.
 
 The validator's voters will receive:
@@ -103,67 +110,6 @@ The validator's voters will receive:
 These rewards(`VotersReward`) will be returned to the voting pool. This operation is equivalent to an increase in the number of votes per voter. Voters draw their votes from the voting pool and get corresponding rewards.
 
 Per voter's reward will be obtained according to the voting proportion of voter to validator.
-
-## Example:
-
-the initial parameters of atlas:
-```
-epoch size = 100
-
-reward of epoch = 1,000,000
-
-four validators for consensus(V1、V2、V3、V4) with fee rate (
-  0.1,0.2,0.5,0.6) and all votes: (200,000,100,000,500,000,300,000)
-
-// V1 validator has two voters(V1 + V2)
-V1's vote = 100,000(self vote) + 100,000(V2 vote) = 200,000
-
-// V2 validator has one voter (V2)
-V2's vote = 100,000(self vote) = 100,000
-
-// V3 validator has two voters(V3 + V4)
-V3's vote = 200,000(self vote) + 300,000(V4 vote) = 500,000
-
-// V4 validator has one voter (V4)
-V4's vote = 300,000(self vote) = 300,000
-
-community fund of C1
-```
-
-If every validator has done a good job in the epoch. so each validator will get all the scores.
-
-Calculate the reward in end of the epoch:
-```
-C1 = 1,000,000 * 10% = 100,000
-
-// refor to reward = (EpochReward-CommunityFundReward) * Punishment * (P + mySorce) / (N * P + Sorce1 + Score2 +...ScoreN)
-// validator = reward * fee rate
-// four validators have same score: 1 (0 <= score <= 1)
-
-V1 = (1,000,000-C1) * (1+1) / (1*4 + 1 + 1 + 1 + 1) * 0.1 = 22,500
-V2 = (1,000,000-C1) * (1+1) / (1*4 + 1 + 1 + 1 + 1) * 0.2 = 45,000
-V3 = (1,000,000-C1) * (1+1) / (1*4 + 1 + 1 + 1 + 1) * 0.5 = 112,500
-V4 = (1,000,000-C1) * (1+1) / (1*4 + 1 + 1 + 1 + 1) * 0.6 = 135,000
-```
-
-Calculate the reward for voter:
-
-```
-// V1 validator:
-V1 voter = 225,000 * (1-0.1) * (100,000 / 200,000) = 101,250
-V2 voter = 225,000 * (1-0.1) * (100,000 / 200,000) = 101,250
-
-// V2 validator:
-V2 voter = 225,000 * (1-0.2) * (100,000 / 100,000) = 180,000
-
-// V3 validator:
-V3 voter = 225,000 * (1-0.5) * (200,000 / 500,000) = 45,000
-V4 voter = 225,000 * (1-0.5) * (300,000 / 500,000) = 67,500
-
-// V4 validator:
-V4 voter = 225,000 * (1-0.6) * (300,000 / 300,000) = 90,000
-
-```
 
 ## Expand:
 
@@ -177,3 +123,7 @@ When a validator is deRegistered, voters can still cancel the votes on the deReg
 
 If voter don't withdraw his vote,voters vote will remain in the voting area,Wait for the validator to register again,
 and these tickets will be returned to the validator again.
+
+## Implementation
+
+[EpochRewards.sol](https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/EpochRewards.sol) manages  calculating epoch rewards.

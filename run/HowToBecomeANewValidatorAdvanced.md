@@ -1,4 +1,4 @@
-## How to become a new validator advanced
+## How to become a new validator [advanced]
 
 In order to make your assets safer, we need you to set some necessary identification parameters to become a validator.
 We also set the corresponding threshold so that we can screen those who really want to contribute to the chain. Of
@@ -59,7 +59,7 @@ We've locked in 1,000,000 MAP in step 3, and it's a great decision to vote for o
 ### Start A node that provides RPC services.
 
 You can start a node that provides RPC services by yourself, or you can use
-the [RPC nodes](/develop/map-relay-chain/Makalu-PoC/PoC-2.md#atlas-address) we provide.
+the [RPC nodes](/develop/map-relay-chain/README.md) we provide.
 
 - Clone repositories
 
@@ -87,7 +87,7 @@ keystore of `account`: account.json
 
 keystore of `signer`:  signer.json
 
-How to build the atlas [click here](/develop/map-relay-chain/make-private-chain.md#build-four-nodes)
+How to build the atlas [click here](/develop/map-relay-chain/getting-started/make-private-chain.md#build-four-nodes)
 
 If you want node to run in the background and not hang up, you can use nohup and & in combination, or screen or similar.
 Below we will demonstrate using screen
@@ -133,12 +133,12 @@ After the node starts, it will automatically connect to other nodes, and then st
 
 ### Make ECDSA signature from signer
 
---validator is used to specify the address of the `account`
+--target is used to specify the address of the `account`
 
 --signerPriv is used to specify the private key of the `signer`
 
 ```shell
-./marker makeECDSASignatureFromSigner --validator 0x73bc690093b9dd0400c91886184a60cc127b2c33 --signerPriv 040939e5...604b6f25
+./marker makeECDSASignatureFromSigner --target 0x73bc690093b9dd0400c91886184a60cc127b2c33 --signerPriv 040939e5...604b6f25
 
 INFO [08-26|17:31:49.422] === makeECDSASignatureFromSigner === 
 INFO [08-26|17:31:49.422] === signer  ===                          account=0x26654Eb0Bb935DCE4a34DAA3e14c67662a8Aa1f8
@@ -168,7 +168,7 @@ INFO [08-26|17:32:23.958] generateBLSProof                         proof=0xf9014
 --keystore is used to specify the address of the `account`
 
 ```shell
-./marker createAccount --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --name "validator"
+./marker createAccount --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --name "validator"
 
 INFO [07-08|14:54:28.097] Create account                           func=createAccount address=0x73bC690093b9dD0400c91886184A60cC127b2c33 name=validator
 INFO [07-08|14:54:28.097] === create Account === 
@@ -195,7 +195,7 @@ from [Make ECDSA signature from signer](/run/HowToBecomeANewValidatorAdvanced.md
 --signer is used to specify the address key of the `signer` (signer.json)
 
 ```shell
-./marker authorizeValidatorSignerBySignature --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --signer 0x26654eb0bb935dce4a34daa3e14c67662a8aa1f8 --signature 0x59dff185...32f0d700
+./marker authorizeValidatorSignerBySignature --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --signer 0x26654eb0bb935dce4a34daa3e14c67662a8aa1f8 --signature 0x59dff185...32f0d700
 
 INFO [07-08|14:55:00.015] authorizeValidatorSignerBySignature      signer=0x26654eb0bb935dce4a34daa3e14c67662a8aa1f8    signature=0x59dff185...32f0d700
 INFO [07-08|14:55:00.032] Please waiting                           func=getResult                 txHash =0xb73a1376e661d523e44b87c37e2e03cc36534d3a550808245f263aaad358b0ad
@@ -207,7 +207,7 @@ INFO [07-08|14:55:05.078] Transaction Success                      func=queryTx 
 --keystore is used to specify the keystore of the `account`
 
 ```shell
-./marker lockedMAP --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --lockedNum 1000000
+./marker lockedMAP --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --lockedNum 1000000
 
 INFO [07-08|14:54:49.141] === Lock  gold === 
 INFO [07-08|14:54:49.141] Lock  gold                               amount=1000000000000000000000000
@@ -224,7 +224,7 @@ by [Generate signer proof](/run/HowToBecomeANewValidatorAdvanced.md#generate-sig
 --keystore is used to specify the keystore of the `account`
 
 ```shell
-./marker registerByProof --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --proof 0xf90149b8...0e56f0ab1 --commission 150000
+./marker registerByProof --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --proof 0xf90149b8...0e56f0ab1 --commission 150000
 
 INFO [08-26|17:32:25.055] registerValidatorByProof                 commission=150,000
 INFO [08-26|17:32:25.548] === getTotalVotesForValidator ===        admin=0x73bc690093b9dd0400c91886184a60cc127b2c33
@@ -259,13 +259,13 @@ The number of votes cannot be greater than the number of votes locked.
 
 For more information on voting and elections, click on the links below to view:
 
-[vote](/develop/map-relay-chain/how-to-vote.md)  
+[vote](/develop/map-relay-chain/getting-started/how-to-vote.md)  
 [election](/develop/map-relay-chain/consensus/Election.md)
 
 --keystore is used to specify the keystore of the `account`
 
 ```shell
-./marker vote --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --password "" --validator 0x73bc690093b9dd0400c91886184a60cc127b2c33 --voteNum 1000000
+./marker vote --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --target 0x73bc690093b9dd0400c91886184a60cc127b2c33 --voteNum 1000000
 
 INFO [07-08|15:11:13.693] === vote Validator ===                   admin=0x73bc690093b9dd0400c91886184a60cc127b2c33 voteTargetValidator=0x73bC690093b9dD0400c91886184A60cC127b2c33 vote MAP Num=1000000
 INFO [07-08|15:11:13.709] TxInfo                                   func=sendContractTransaction TX data nonce =4  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =1,098,789

@@ -22,6 +22,8 @@ Now there are four validators on the chain,they are:
 If we do not select validators for some reasons (equivalent validators number to less than 1), we will continue to use the above validators.
 If we select the latest set of validators (which means that the number of new validators is greater than 1 and less than 100), we will replace the above validators with new validators.
 
+## Implementation
 
+[Election.sol](https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/Election.sol) manages Locked `Map` voting and epoch rewards and runs Validator Elections.
 
 

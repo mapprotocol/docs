@@ -26,4 +26,4 @@ Inter-chain communication programs and on-chain smart contracts work together ef
 MAP Protocol only charge the gas fee of MAP Relay Chain and other related chains with no additional cost.
 
 ### Developer-Ready
-Through MAP Cross-Chain Service (MCS) deployed on and between public chains, dAPPs can share the liquidity of MCS's Vaults on different chains, and customize the entry threshold and incentive model of inter-chain program: messenger. Alternatively, we can use the MCS open source code to build dAPP-related Omnichain components.
+Through MAPO Service (MOS) deployed on and between public chains, dAPPs can share the liquidity of MOS's Vaults on different chains, and customize the entry threshold and incentive model of inter-chain program: messenger. Alternatively, we can use the MOS open source code to build dAPP-related Omnichain components.

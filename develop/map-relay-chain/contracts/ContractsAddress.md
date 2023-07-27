@@ -2,7 +2,7 @@
 
 owner address is 0x1c0edab88dbb72b119039c4d14b1663525b3ac15
 
-### Contract address
+### Genesis Contract address
 
 | name | ContractProxyAddress   | ContractAddress |
 | --------- | ------ | ------- |

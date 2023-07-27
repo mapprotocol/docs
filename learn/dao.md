@@ -1,52 +1,46 @@
-MAP protocol’s DAO Governance model is based on GMAP locking mechanism. GMAP as a MAP token derivative, community members can use GMAP to participate in DAO without affecting the liquidity of MAP.
+# **MAP Governance**
 
-In terms of voting, there are two types of approaches in the market:
+MAP Protocol uses a formal **on-chain** governance mechanism to manage and upgrade the protocol such as for upgrading smart contracts, adding new stable currencies, or modifying the reserve target asset allocation. All changes must be agreed upon by **MAP holders**. A **quorum threshold** model is used to determine the number of votes needed for a proposal to pass.
 
-* Voting with lock-up and
-* Voting provided with address snapshot without lock-up.
 
-Considering the market value, voting with lock-up is beneficial to community users in the long term; however, it makes users bear the risks of price fluctuations on MAP tokens. To solve this issue, MAP Protocol proposed to cooperate with Idavoll and create lock-up voting with their advanced technological modules. The mechanism provided by Idavoll will not affect the liquidity of community users and it can add modules for MAP token derivatives. Considering the market value, voting with lock-up is beneficial to community users in the long term; however, it makes users bear the risks of price fluctuations on MAP tokens. 
+## **Proposal Process**
 
-The details are as follows:
+Changes are managed via the MAP Governance smart contract. This contract acts as an "owner" for making modifications to other protocol smart contracts. Such smart contracts are termed **governable**. The Governance contract itself is governable, and owned by itself.
 
-1. Users deposit MAP tokens into the Idavoll staking module, which lasts for 90 days each term. Users can stake again for the next term.
+The change procedure happens in the following phases:
 
-2. Users will get 12% APY of the lock-up tokens.
+- Proposal
+- Approval
+- Referendum
+- Execution
 
-3. Meanwhile, users will get an XMAP as a voucher.
+## Phases Overview
 
-4. Each XMAP will automatically generate one GMAP (governance MAP) and one YMAP (yield MAP). GMAP is a voting token, while YMAP is a yield token.
+Each proposal starts on the **Proposal Queue** where it may receive **upvotes** to move forward in the queue relative to other queued proposals. Proposal authors should work to find community members to upvote their proposal (proposers may also upvote their proposals). Up to **3 proposals** from the top of the queue are dequeued and promoted to the approval stage automatically per day. Any proposal that remains in the queue for **4 weeks** will expire.
 
-5. Users can participate in any governance events by owing GMAP tokens.
+- **Approval** lasts **1 day (24 hours)**, during which the proposal must be approved by the Approver(s). Approved proposals are promoted to the Referendum stage.
+- **Referendum** lasts **5 days**, during which owners of Locked MAP vote yes or no on the proposal. Proposals that satisfy the necessary quorum are promoted to the execution phase.
+- **Execution** lasts up to **3 days**, during which anybody may trigger the execution of the proposal.
 
-6. Users who do not want to go through the above procedure but want to participate in governance can buy GMAP directly from Hiveswap.
+## Proposal
 
-7. HiveSwap will list XMAP/MAP pair to ensure the users’ MAP lock-up that they can freely transact the MAP tokens (theoretically, XMAP contains 12% of APY, and the price will be 12% higher than the MAP price).
+Any user may submit a Proposal to the Governance smart contract, along with **50000 MAP** deposit. This deposit is required to avoid spam proposals, and is refunded to the proposer if the proposal reaches the Approval stage. A Proposal consists of a list of transactions, and a description URL where voters can get more information about the proposal. It is encouraged that this description URL points to a **MEP document** in the [https://github.com/mapprotocol/MEPs](https://github.com/mapprotocol/MEPs) repository. Transaction data in the proposal includes the destination address, data, and value. If the proposal passes, the included transactions will be executed by the Governance contract.
 
-8. HiveSwap will list XMAP/GMAP pair. The initial price is set as 1GMAP = 0.2 XMAP. It will fluctuate with the market.
+Submitted proposals are added to the queue of proposals. While a proposal is on this queue, voters may use their [Locked MAP](https://docs.mapprotocol.io/develop/map-relay-chain/how-to-vote) to upvote the proposal. Once per day the **top three proposals**, by weight of the Locked Map upvoting them, are dequeued and moved into the Approval phase. Note that if there are fewer than three proposals on the queue, all may be dequeued even if they have no upvotes. If a proposal has been on the queue for for more than **4 weeks**, it expires and the deposit is forfeited.
 
-9. HiveSwap will list XMAP/YMAP pair. The initial price is set as 1YMAP = 0.8 XMAP. It will fluctuate with the market.
+## Approval
 
-10. If users want to withdraw their MAP tokens from the staking pool, they can combine GMAPs and YMAPs in a 1:1 ratio and get the corresponding XMAPs.    Then, users can use XMAPs to swap MAP tokens.
+Every day the top three proposals at the head of the queue are pop off and move to the Approval phase. At this time, the original proposers are eligible to reclaim their Locked Map deposit. In this phase, the proposal needs to be approved by the Approver. The Approver is initially a 3 of 9 multi-signature address held by individuals selected by the Map Foundation, and will move to a DAO in the future. The Approval phase lasts **1 day** and if the proposal is not approved in this window, it is considered expired and does not move on to the “Referendum” phase.
 
-11. Users need to swap MAP tokens into ETHs or USDCs on HiveSwap.
+## Referendum
 
-12. The MAP Protocol team has 33% of the voting rights for each proposal.
+Once the Approval phase is over, approved proposals graduate to the referendum phase. Any user may vote **yes**, **no**, or **abstain** on these proposals. Their vote's weight is determined by the **weight of their Locked Map**. After the Referendum phase is over, which lasts **five days**, each proposal is marked as passed or failed as a function of the votes and the corresponding passing function parameters.
 
-### Reward proposal
+In order for a proposal to pass, it must meet a minimum threshold for participation, and agreement:
 
-* Voting governance, MAP staking, 90 days, APY 12%.
-* Add XMAP/MAP pair with APR 5%.
-* Add YMAP/XMAP pair and GMAP/XMAP pair with APR 5%.
+- **Participation** is the **minimum portion of Locked MAP** which must cast a vote for a proposal to pass. It exists to prevent proposals passing with very low participation. The participation requirement is calculated as a governable portion of the participation baseline, which is an exponential moving average of final participation in past governance proposals.
+- **Agreement** is the portion of votes cast that must be **"yes" votes** for a proposal to pass. Each contract and function can define a required level of agreement, and the required agreement for a proposal is the maximum requirement among its constituent transactions.
 
-### GMAP DAO Governance Model
+## **Execution**
 
-Proposals initiated with GMAP are considered valid proposals. If the supporting ratio exceeds 60%, the MAP Protocol team will discuss with the initiator and make relevant suggestions and executions. The MAP Protocol team has 33% of the voting rights for each proposal.
-Users will receive incentives from locked GMAP. GMAP DAO Governance Model will have a two months trial period. MAP Protocol highly encourage our community members to actively participate in our GMAP DAO Governance as DAO is an essential element of MAP Protocol.
-
-### How to participate
-
-By voting on proposals via idavoll, everyone can shape the future of MAP Protocol together. 
-
-Related Link: Click [here](https://newspace.idavoll.network/project-staking-detail/MAPProtocol)
-
+Proposals that graduate from the Referendum phase to the Execution phase may be **executed by anyone**, triggering a call operation code with the arguments defined in the proposal, originating from the Governance smart contract. Proposals expire from this phase after **three days**.
