@@ -9,6 +9,7 @@ List of APIs
 - [queryBridgeInfoById](#queryBridgeInfoById)
 - [queryBridgeInfoBySourceHash](#queryBridgeInfoBySourceHash)
 - [queryCrossInfoByOrderId](#queryCrossInfoByOrderId)
+- [queryMessageBridge](#queryMessageBridge)
 
 
 ### queryCrossList
@@ -48,7 +49,7 @@ http://host:port/api/queryCrossList?page=1&size=10&txHash=0x939a86a02c9cb6a52cf6
 
 `address` - Source Address
 
-`state` - Bridge Status
+`state` - Bridge Status. 0: crossing 1 completed 2 relayering 3 relayer completed
 
 `sourceHash` - Source Transactions Hash
 
@@ -223,7 +224,7 @@ http://host:port/api/queryCrossInfo?id=1
 
 `destinationMessengerContract` - Destination Messenger Address.
 
-`state` - Bridge Status.
+`state` - Bridge Status. 0: crossing 1 completed 2 relayering 3 relayer completed
 
 `timestamp` - Bridge times.
 
@@ -372,7 +373,7 @@ http://host:port/api/queryBridgeHistoryByAddress?pageNo=1&pageSize=10&chainId=1&
 
 `amount` - Bridge Amount.
 
-`state` - Bridge Status.
+`state` - Bridge Status. 0: crossing 1 completed 2 relayering 3 relayer completed
 
 `timestamp` - Bridge Transactions Time.
 
@@ -503,7 +504,7 @@ http://host:port/api/queryBridgeInfoById?id=1
 
 `fee` - Bridge Transactions Fee.
 
-`state` - Bridge Transactions Status.
+`state` - Bridge Transactions Status. 0: crossing 1 completed 2 relayering 3 relayer completed
 
 `sourceHash` - Source Chain Hash.
 
@@ -647,7 +648,7 @@ http://host:port/api/queryBridgeInfoBySourceHash?hash=0xfa26d7abef03d57a938b675a
 
 `fee` - Bridge Transactions Fee.
 
-`state` - Bridge Transactions Status.
+`state` - Bridge Transactions Status. 0: crossing 1 completed 2 relayering 3 relayer completed
 
 `sourceHash` - Source Chain Hash.
 
@@ -789,7 +790,7 @@ http://host:port/api/queryCrossInfoByOrderId?orderId=0x06c55c661a44abaf1089ea728
 
 `fee` - Bridge Transactions Fee.
 
-`state` - Bridge Transactions Status.
+`state` - Bridge Transactions Status. 0: crossing 1 completed 2 relayering 3 relayer completed
 
 `sourceHash` - Source Chain Hash.
 
@@ -885,6 +886,70 @@ curl -X GET -H  "Accept:application/json;charset=UTF-8" -H  "Content-Type:applic
                 "decimal": 18,
                 "isMainCurrency": 0
         }
+    }
+}
+}
+```
+
+### queryMessageBridge
+
+Uri: /api/queryMessageBridge
+
+Request method: GET
+
+Return to Message Bridge Info。
+
+##### Parameters
+
+Parameter Type：
+
+`hash` - Source Chain Transactions Hash.
+
+Example:
+
+http://host:port/api/queryMessageBridge?hash=0x06c55c661a44abaf1089ea7285926e03d741effd09d2d932916cf99af5a3a7f0
+
+
+##### Returns
+
+`sourceHash` - Source Chain Transactions Hash.
+
+`sourceHeight` - Source Chain Transactions Hetght.
+
+`SourceTimestamp` - Source Chain Transactions Time.
+
+`relayerHash` - Relayer Chain Transactions Hash. Relayer Chain transaction was not completed or failed, the field is null.
+
+`relayerHeight` - Relayer Chain Transactions Height. Relayer Chain transaction was not completed or failed, the field is null.
+
+`relayerTimestamp` - Relayer Chain Transactions Time. Relayer Chain transaction was not completed or failed, the field is null.
+
+`toHash` - Destination Chain Transactions Hash. Destination Chain transaction was not completed or failed, the field is null.
+
+`toHeight` - Destination Chain Transactions Height. Destination Chain transaction was not completed or failed, the field is null.
+
+`toTimestamp` - Destination Chain Transactions Time. Destination Chain transaction was not completed or failed, the field is null.
+
+##### Example
+```js
+// Request
+curl -X GET -H  "Accept:application/json;charset=UTF-8" -H  "Content-Type:application/x-www-form-urlencoded" "https://127.0.0.1:8403/api/queryMessageBridge?hash=0x5277ae3357d13b21413da77572311c75b01bbe1324e50540f0876604279da9ff"
+
+// Result
+{
+    "code": 200,
+    "message": "success",
+    "data": {
+    "messageBridgeInfo": {
+        "sourceHash": "0x5277ae3357d13b21413da77572311c75b01bbe1324e50540f0876604279da9ff",
+        "sourceHeight": "37908942",
+        "relayerHash": "0xa36fb96fac07b9afe63e1ee807b94831def182244a310ee10b9da64b5ba20c8e",
+        "relayerHeight": "4329092",
+        "relayerTimestamp": "2020-09-16T09:58:03.000+00:00",
+        "toHash": "0x6d43a00d9916ee297237d77ae1f6a9f8c58478fd6bb9f50aab0430de9ea6a793",
+        "toHeight": "31561158",
+        "toTimestamp": "2023-07-15T00:10:40.000+00:00",
+        "sourceTimestamp": "2023-07-14T02:42:18.000+00:00"
     }
 }
 }
