@@ -14,7 +14,7 @@
   * [MAP協議'的技術機制](learn/Teachnical_Mechanism/technical-mechanism.md)
   * [三層結構](learn/Teachnical_Mechanism/3layer.md)
   * [MAP協議層](learn/Teachnical_Mechanism/protocollayer.md)
-  * [MAP中繼鏈]
+  * MAP中繼鏈
     * [概念](learn/Teachnical_Mechanism/concept.md)
     * [與所有鏈的同構性](learn/Teachnical_Mechanism/precompile.md)
     * [驗證& 維護網絡](learn/Teachnical_Mechanism/verification.md)
