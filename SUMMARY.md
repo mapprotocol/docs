@@ -20,6 +20,7 @@
     * [驗證& 維護網絡](learn/Teachnical_Mechanism/verification.md)
   * [MAPO服務(MOS)層](learn/Teachnical_Mechanism/mcs.md)
   * [MAPO應用層](learn/Teachnical_Mechanism/application.md)
+  * [ZK 支持下的輕節點](learn/Teachnical_Mechanism/zk_lightclient.md)
 * [燃氣費收費模式](learn/fee.md)
 * [DAO](learn/dao.md)
 * [MAP協議的構建](learn/Construction_of_MAP_Protocol/construction.md)
