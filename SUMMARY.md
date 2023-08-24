@@ -21,6 +21,7 @@
       * [Verification &amp; Maintenance Network](learn/Teachnical_Mechanism/verification.md)
   * [MAPO Service (MOS) Layer](learn/Teachnical_Mechanism/mcs.md)
   * [MAPO Application Layer](learn/Teachnical_Mechanism/application.md)
+  * [ZK-enabled Light Clients](learn/Teachnical_Mechanism/zk_lightclient.md)
 * [Gas Fee Model](learn/fee.md)
 * [DAO](learn/dao.md)
 * [Construction of MAP Protocol](learn/Construction_of_MAP_Protocol/construction.md)
