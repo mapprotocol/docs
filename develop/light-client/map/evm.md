@@ -2,7 +2,7 @@
 
   合約地址
 
-[點此獲取MAPO主網和測試網輕客戶端合約地址。](/develop/light-client/README.md)
+[點此獲取MAPO主網和測試網輕客戶端合約地址](/develop/light-client/README.md)
 
 
 
