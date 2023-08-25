@@ -44,6 +44,7 @@
     * [如何投票](develop/map-relay-chain/getting-started/how-to-vote.md)
     * [如何取出質押](develop/map-relay-chain/getting-started/how-to-withdraw.md)
     * [集成到交易所](develop/map-relay-chain/getting-started/Integrate-an-Exchange.md)
+    * [MAP Protocol 對接EVM兼容鏈](develop/map-relay-chain/getting-started/Integration-EVM-Compatible-Chains.md)
   * 共識
     * [概述](develop/map-relay-chain/consensus/Overview.md)
     * [Proof-of-Stake](develop/map-relay-chain/consensus/Proof-of-Stake.md)
