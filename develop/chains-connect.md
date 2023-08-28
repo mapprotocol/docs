@@ -1,5 +1,11 @@
 # chains connect
 
+MAP Protocol can cover different types of blockchains in a peer-to-peer trustless way. Presently, it has established connections with prominent blockchains such as Ethereum, BNB Chain, Polygon, and even NEAR—a Non-EVM chain. 
+
+What sets MAP Protocol apart is its ongoing initiative to broaden its reach, actively seeking to integrate with additional Layer 1 (L1) and Layer 2 (L2) solutions.
+
+ The table below provides an overview of the most recent advancements in chain connectivity, along with their corresponding light client contract addresses.
+ 
 
 | Network        | Chain ID            | light-client   | MOS      | status  |
 |----------------|---------------------|----------------|-----------|--------|
