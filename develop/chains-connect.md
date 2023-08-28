@@ -24,6 +24,6 @@ The table below provides an overview of the most recent advancements in chain co
 |Boba| src: [N/A] | [src](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md): [address](https://bobascan.com/address/0x624E6F327c4F91F1Fa6285711245c215de264d49) | [coming soon] | 288 |coming soon  |
 |Metis andromeda|src: [N/A] | [src](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md): [address](https://andromeda-explorer.metis.io/address/0x624E6F327c4F91F1Fa6285711245c215de264d49) | [coming soon] |  1088 |coming soon |
 |zkSync|src: [N/A] | src: [coming soon] | [coming soon] | |coming soon  |
-|zkEvm(Polygon)|src: [N/A] | src: [coming soon] | [coming soon] || coming soon  |
+|zkEvm(Polygon)|src: [N/A] | src: [coming soon] | [coming soon] | | coming soon  |
 |Scroll|src: [N/A] | src: [coming soon] | [coming soon] | | planning |
 |Filecoin|src: [N/A] | src: [coming soon] | [coming soon] | | coming soon  |
