@@ -1,10 +1,10 @@
 # chains connect
 
-MAP Protocol can cover different types of blockchains in a peer-to-peer trustless way. Presently, it has established connections with prominent blockchains such as Ethereum, BNB Chain, Polygon, and even NEAR—a Non-EVM chain. 
+MAP Protocol can cover different types of blockchains in a peer-to-peer trustless way. It has established connections with prominent blockchains such as Ethereum, BNB Chain, Polygon, and even NEAR — a Non-EVM chain. 
 
 What sets MAP Protocol apart is its ongoing initiative to broaden its reach, actively seeking to integrate with additional Layer 1 (L1) and Layer 2 (L2) solutions.
 
-The table below provides an overview of the most recent advancements in chain connectivity, along with their corresponding light client contract addresses.
+The table below provides an overview of the most recent advancements in chain connectivity and their corresponding light client contract addresses.
 
 
 | Network        | Light-client on MAPO        | Light-client on Chain        | MOS            | Chain ID            | Status  |
@@ -31,10 +31,10 @@ The table below provides an overview of the most recent advancements in chain co
 
 
 
-# How to integration Mapo with EVM-Compatible Chain
+# How to integration MAP Protocol with EVM-Compatible Chains
 
-we can connect to the Mapo by evm-chains. [details](map-relay-chain/getting-started/Integration-EVM-Compatible-Chains.md)
+You can connect to the Mapo by EVM chains. [View details](map-relay-chain/getting-started/Integration-EVM-Compatible-Chains.md)
 
-# How to make a DAPP with Mapo protocol
+# How to build a dApp with MAP Protocol
 
-we can easy make a dapp connect to the mapo protocol. [details](mos/examples/omni-app.md)
+You can easily build your omnichain dApps by connecting to MAP Protocol. [View details](mos/examples/omni-app.md)
