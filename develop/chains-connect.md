@@ -33,8 +33,8 @@ The table below provides an overview of the most recent advancements in chain co
 
 # How to integration MAP Protocol with EVM-Compatible Chains
 
-You can connect to the Mapo by EVM chains. [View details](map-relay-chain/getting-started/Integration-EVM-Compatible-Chains.md)
+If your chain is EVM-compatible, you can easily connect and integrate with MAP Protocol to achieve omnichain. View details [here](map-relay-chain/getting-started/Integration-EVM-Compatible-Chains.md)
 
 # How to build a dApp with MAP Protocol
 
-You can easily build your omnichain dApps by connecting to MAP Protocol. [View details](mos/examples/omni-app.md)
+You can easily build your omnichain dApps by connecting to MAP Protocol. View details [here](mos/examples/omni-app.md)
