@@ -131,7 +131,7 @@ In this process, the Messenger service plays a crucial role in facilitating the 
 
 ## Application Layer
 
-The application layer represents the true business logic of the cross-chain framework. Users define specific business logic at this layer, such as asset management and operations like lock, unlock, mint, burn, and more. The actual cross-chain operations take place within the application layer, where the `transferOut` interface from the Mos layer is invoked to write specific cross-chain messages onto the chain.
+The application layer represents the true business logic of the cross-chain framework. Users define specific business logic at this layer, such as asset management and operations like lock, unlock, mint, burn, and more. The actual cross-chain operations take place within the application layer, where the `transferOut` interface from the Mos layer is invoked to write specific cross-chain messages onto the chain. [details](develop/mos/examples/omni-app.md)
 
 Here's how the cross-chain process flows within the application layer:
 
