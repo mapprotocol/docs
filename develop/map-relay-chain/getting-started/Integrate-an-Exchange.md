@@ -1,12 +1,12 @@
-# Integrate an Exchange with MAPO Relay Chain
+# Integrate an Exchange with MAP Relay Chain
 
 ## Overview
 
-The objective of this document is to provide a brief overview of how to integrate with the EVM-Compatible MAPO Relay Chain. For teams that already support ETH, supporting the MAPO Relay Chain is as straightforward as spinning up an MAPO Relay Chain node (atlas) (which has the same API as go-ethereum) and populating MAPO ChainID (22776) when constructing transactions.
+The objective of this document is to provide a brief overview of how to integrate with the EVM-Compatible MAP Relay Chain. For teams that already support ETH, supporting the MAP Relay Chain is as straightforward as spinning up an MAP Relay Chain node (atlas) (which has the same API as go-ethereum) and populating MAP Relay Chain ID (22776) when constructing transactions.
 
-## Integration using MAPO Relay Chain Endpoints
+## Integration using MAP Relay Chain Endpoints
 
-### Running an Atlas node
+### Running an atlas node
 
 you can get it from [source code](https://github.com/mapprotocol/atlas) or [release versin](https://github.com/mapprotocol/atlas/releases).
 
@@ -42,14 +42,14 @@ If you plan on extracting data from the Atlas into your own systems using golang
 
 ### Constructing transactions
 
-MAPO Relay chain transactions are identical to standard EVM transactions with one exceptions::
+MAP Relay chain transactions are identical to standard EVM transactions with one exceptions::
 
-    They must be signed with MAPO Relay Chain ChainID (22776).
+    They must be signed with MAP Relay Chain ChainID (22776).
 
 
-For development purposes, MAPO Relay Chain supports all the popular tooling for Ethereum,like as `MetaMask and Remix`,`Truffle` and `Hardhat`, so developers familiar with Ethereum and Solidity can feel right at home.
+For development purposes, MAP Relay Chain supports all the popular tooling for Ethereum,like as `MetaMask and Remix`,`Truffle` and `Hardhat`, so developers familiar with Ethereum and Solidity can feel right at home.
 
 We are compatible with the improvement of Ethereum eip1559, and set the minimum base fee to 100GWei.
 
 
-ps: MAPO Relay Chain consensus provides fast and irreversible finality with 5 seconds. To query the most up-to-date finalized block, query any value (i.e. block, balance, state, etc.) with the latest parameter.
+ps: MAP Relay Chain consensus provides fast and irreversible finality with 5 seconds. To query the most up-to-date finalized block, query any value (i.e. block, balance, state, etc.) with the latest parameter.

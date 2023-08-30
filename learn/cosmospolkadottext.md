@@ -20,7 +20,7 @@
             The relay chain does not support cross-chain between EVM and other heterogeneous chains. EVM and other heterogeneous chains need to modify the in-chain structure to become compatible.
         </td>
         <td>
-            MAPO Relay Chain expands to all heterogeneous chains proactively by adding other heterogeneous chains’ signatures, hashes, mining, and Merkle proof calculation to the EVM level.
+            MAP Relay Chain expands to all heterogeneous chains proactively by adding other heterogeneous chains’ signatures, hashes, mining, and Merkle proof calculation to the EVM level.
         </td>
     </tr>
     <tr>
@@ -36,7 +36,7 @@
             After embedding the SDK, the modified chains become interconnected with the relay chain, thus forming a cross-chain network.
         </td>
         <td>
-            Every chain is naturally interoperable with MAPO Relay Chain, thus forming a cross-chain network
+            Every chain is naturally interoperable with MAP Relay Chain, thus forming a cross-chain network
         </td>
     </tr>
     <tr>
@@ -50,9 +50,9 @@
         </td>
         <td>
             Cross-chain Dapp Developers<br/>
-            Native cross-chain applications are developed directly on MAPO Relay Chain (EVM).<br/>
+            Native cross-chain applications are developed directly on MAP Relay Chain (EVM).<br/>
             The relay chain should become the assembly for cross-chain assets and data, which Cosmos and Polkadot mistakenly ignored. <br/> 
-            Cross-chain Dapps can benefit from a shared cross-chain assets and data pool through the deployment on MAPO Relay Chain.
+            Cross-chain Dapps can benefit from a shared cross-chain assets and data pool through the deployment on MAP Relay Chain.
         </td>
     </tr>
     <tr>
@@ -63,7 +63,7 @@
         </td>
         <td>
             All Chains<br/>
-            MAPO Relay Chain is compatible and interoperable with all chains by proactively deploying cross-chain communication components on-chain or inter-chain and extending EVM capability with heterogeneous chains'features  through precompiled contracts to facilitate gas-efficient light client construction.
+            MAP Relay Chain is compatible and interoperable with all chains by proactively deploying cross-chain communication components on-chain or inter-chain and extending EVM capability with heterogeneous chains'features  through precompiled contracts to facilitate gas-efficient light client construction.
         </td>
     </tr>
 </table>

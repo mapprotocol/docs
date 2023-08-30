@@ -1,4 +1,4 @@
-Assets and data originated from Dapps assembly on MAPO Relay Chain. Dapps can achieve interoperability because of MAPO Services (MOS). The finality of omnichain data and asset verification network by MAP Protocol Layer empowers Dapps to grow limitless.
+Assets and data originated from Dapps assembly on MAP Relay Chain. Dapps can achieve interoperability because of MAPO Services (MOS). The finality of omnichain data and asset verification network by MAP Protocol Layer empowers Dapps to grow limitless.
 
 ## Cross-chain Lending
 
@@ -27,19 +27,19 @@ As the crypto industry and the idea of metaverse boomed, a lot of innovative ide
 
 The lifespan of a GameFi depends heavily on the popularity and user's gaming experience. To maintain popularity, a new source of players is the key, and the best way is to expand to other chains so that users from other chains can participate. With MAP Protocol, GameFi Projects can deploy their tokens on multiple chains and allow users from other chains to efficiently and securely transfer their assets to their project's chain. For example, an BSC GameFi project deployed its tokens on Polygon and WAX chains; Users from Polygon and BSC can transfer their assets to WAX through the cross-chain bridge and participate in the GameFi, increasing the user base exponentially. 
 
-Another way to be scalable and maintain a good gaming experience is directly deploying on MAPO Relay Chain. With MAPO Relay Chain's interoperability, GameFi projects can automatically link up with all EVM and non-EVM chains efficiently and securely by deploying on MAPO Relay Chain. MAPO Relay Chain will proactively connect with all of the upcoming chains so that the GameFi project can focus on user experience without worrying about scalability and security problems. 
+Another way to be scalable and maintain a good gaming experience is directly deploying on MAP Relay Chain. With MAP Relay Chain's interoperability, GameFi projects can automatically link up with all EVM and non-EVM chains efficiently and securely by deploying on MAP Relay Chain. MAP Relay Chain will proactively connect with all of the upcoming chains so that the GameFi project can focus on user experience without worrying about scalability and security problems. 
 
 
 ## On-chain Oracle and Derivatives
 
-Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices and quantities originating from other chains. This issue can be solved by multi-chain deployment, but it is extremely complex. By building a reliable omnichain network, MAP Protocol has enabled Data cross-chain and is nurturing a completely new oracle market - On-Chain Oracle. By deploying on MAPO Relay Chain, derivative and synthetic asset applications can easily acquire reliable multi-chain data from On-Chain Oracle. 
+Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices and quantities originating from other chains. This issue can be solved by multi-chain deployment, but it is extremely complex. By building a reliable omnichain network, MAP Protocol has enabled Data cross-chain and is nurturing a completely new oracle market - On-Chain Oracle. By deploying on MAP Relay Chain, derivative and synthetic asset applications can easily acquire reliable multi-chain data from On-Chain Oracle. 
 
 
 ### Illustration of MAP Protocol Omnichain Applications - Data
 
 ![Illustration of MAP Protocol Omnichain Applications - Data](dataflow.png)
 
-Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices, and quantities originated from other chains. This issue can be solved by deploying on multiple chains but is extremely complex. By building a reliable cross-chain network, MAP Protocol has enabled Data omnichain and is nurturing a completely new oracle market - **On-Chain Oracle**. By deploying on MAPO Relay Chain, derivative and synthetic asset applications can acquire reliable multi-chain data from On-Chain Oracle with ease. 
+Decentralized derivative and synthetic assets are usually constrained by the accuracy and timeliness of asset prices, and quantities originated from other chains. This issue can be solved by deploying on multiple chains but is extremely complex. By building a reliable cross-chain network, MAP Protocol has enabled Data omnichain and is nurturing a completely new oracle market - **On-Chain Oracle**. By deploying on MAP Relay Chain, derivative and synthetic asset applications can acquire reliable multi-chain data from On-Chain Oracle with ease. 
 
 ## Fungible token and NFT Bridge
 
@@ -67,7 +67,7 @@ With MAP Protocol's interoperability with all-chains, omnichain governace can be
 
 ## Omnichain Applications on MAP Protocol
 
-Dapp developers only need to deploy their dapps on MAPO Relay Chain with the completed MAPO Services module, then enjoy the privilege of connecting the entire blockchain world’s liquidity. Developers can easily build their omnichain applications deployed on any chain in just two steps:
+Dapp developers only need to deploy their dapps on MAP Relay Chain with the completed MAPO Services module, then enjoy the privilege of connecting the entire blockchain world’s liquidity. Developers can easily build their omnichain applications deployed on any chain in just two steps:
 
 1. Build inter-chain messenger using our SDK.
 2. Interact with on-chain vault and data through our API.
@@ -79,7 +79,7 @@ Dapp developers only need to deploy their dapps on MAPO Relay Chain with the com
 | Cross-chain NFT Collaboration Platform | CoLAB |
 | Cross-chain Swap | BarterSwap |
 | Cross-chain DAO | Idavoll DAO |
-| MAPO Relay Chain Swap | HiveSwap |
+| MAP Relay Chain Swap | HiveSwap |
 | Off-chain Oracle | Nest |
 | On-chain Oracle | Onchain Oracle |
 | Cross-chain Farm | UniFarm |

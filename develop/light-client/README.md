@@ -3,7 +3,7 @@
 ## Mainnet Address
 
 
-### Altchains light clients on MAPO Mainnet
+### Altchains light clients on MAP Relay Chain Mainnet
 
 | Network        | Chain ID            | Type           | Contract Address                                                                                                            |                                                      |
 |----------------|---------------------|----------------|-----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------|
@@ -24,7 +24,7 @@
 
 ## Testnet Address
 
-### Altchains light clients on MAPO Makalu
+### Altchains light clients on MAP Makalu Testnet
 
 | Network         | Chain ID            | Type           | Contract Address                                                                                                             |                                                      |
 |-----------------|---------------------|----------------|------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------|

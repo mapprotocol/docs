@@ -8,35 +8,36 @@
   * [Background](learn/background.md)
   * [Introduction of MAP Protocol](learn/introduction.md)
   * [History of MAP Protocol](learn/history.md)
-* [Comparison with other cross-chain models](architecture/comparison.md)
+* [Comparison with other cross-chain models](learn/comparison.md)
   * [MAP Protocol vs Cosmos &amp; Polkadot](learn/CosmosPolkadot.md)
   * [MAP vs other cross-chain solutions without relay chain](learn/others.md)
-* [Technical Mechanism](architecture/overiew.md)
-  * [MAP Protocol&#39;s Technical Mechanism](architecture/technical-mechanism.md)
-  * [Three-layer Architecture](architecture/3layer.md)
-  * [MAP Protocol Layer](learn/protocollayer.md)
-    * MAPO Relay Chain
-      * [Concept](architecture/concept.md)
-      * [Isomorphism with All Chains](architecture/precompile.md)
-      * [Verification &amp; Maintenance Network](architecture/verification.md)
-  * [MAPO Service (MOS) Layer](architecture/mcs.md)
-  * [MAPO Application Layer](architecture/application.md)
+* [Technical Mechanism](learn/Teachnical_Mechanism/overiew.md)
+  * [MAP Protocol&#39;s Technical Mechanism](learn/Teachnical_Mechanism/technical-mechanism.md)
+  * [Three-layer Architecture](learn/Teachnical_Mechanism/3layer.md)
+  * [MAP Protocol Layer](learn/Teachnical_Mechanism/protocollayer.md)
+    * MAP Relay Chain
+      * [Concept](learn/Teachnical_Mechanism/concept.md)
+      * [Isomorphism with All Chains](learn/Teachnical_Mechanism/precompile.md)
+      * [Verification &amp; Maintenance Network](learn/Teachnical_Mechanism/verification.md)
+  * [MAPO Service (MOS) Layer](learn/Teachnical_Mechanism/mcs.md)
+  * [MAPO Application Layer](learn/Teachnical_Mechanism/application.md)
+  * [Peer-to-Peer Cross-chain Technology with ZK-enabled Light Clients](learn/Teachnical_Mechanism/Peer-to-Peer-Cross-chain-Technology-with-ZK-enabled-Light-Clients.md)
 * [Gas Fee Model](learn/fee.md)
 * [DAO](learn/dao.md)
-* [Construction of MAP Protocol](architecture/construction.md)
-  * [Developers](learn/developers.md)
-  * [Validators](learn/validators.md)
-  * [Maintainers](learn/maintainer.md)
-  * [Messengers](learn/messengers.md)
-  * [Liquidity providers](learn/liquidityprovider.md)
-  * [End users](learn/enduser.md)
+* [Construction of MAP Protocol](learn/Construction_of_MAP_Protocol/construction.md)
+  * [Developers](learn/Construction_of_MAP_Protocol/developers.md)
+  * [Validators](learn/Construction_of_MAP_Protocol/validators.md)
+  * [Maintainers](learn/Construction_of_MAP_Protocol/maintainer.md)
+  * [Messengers](learn/Construction_of_MAP_Protocol/messengers.md)
+  * [Liquidity providers](learn/Construction_of_MAP_Protocol/liquidityprovider.md)
+  * [End users](learn/Construction_of_MAP_Protocol/enduser.md)
 * [Tokenomics](learn/tokenomics.md)
 * [Roadmap](learn/roadmap.md)
-* [Purchase $MAPO](/learn/purchase.md)
+* [Purchase $MAP](/learn/purchase.md)
 
 ## Develop
 
-* [MAPO Relay Chain](develop/map-relay-chain/README.md)
+* [MAP Relay Chain](develop/map-relay-chain/README.md)
   * Getting Started
 
     * [Build](develop/map-relay-chain/getting-started/build.md)
@@ -44,6 +45,7 @@
     * [How To Vote](develop/map-relay-chain/getting-started/how-to-vote.md)
     * [How To Withdraw](develop/map-relay-chain/getting-started/how-to-withdraw.md)
     * [Integrate an Exchange](develop/map-relay-chain/getting-started/Integrate-an-Exchange.md)
+    * [Integration of MAP with EVM-Compatible Chains](develop/map-relay-chain/getting-started/Integration-EVM-Compatible-Chains.md)
   * Consensus
 
     * [Overview](develop/map-relay-chain/consensus/Overview.md)
@@ -72,6 +74,7 @@
     * [Vote](develop/map-relay-chain/marker/AboutVote.md)
     * [ContractOwner](develop/map-relay-chain/marker/AboutContractOwner.md)
     * [Common](develop/map-relay-chain/marker/AboutCommon.md)
+  * [Account-Abstraction](develop/map-relay-chain/account-abstraction/eip4337.md) 
 * [Light Client](develop/light-client/README.md)
   * Verification based on Light Client
   * MAPO Light Client
@@ -100,6 +103,7 @@
   * [Messenger](develop/mos/messenger/messenger.md)
   * [API](develop/mos/mcs/api/api.md)
 * OmniChain Examples
+  * [OmniApp](develop/mos/examples/omni-app.md)
   * [OmniDictionary](develop/mos/examples/OmniDictionary.md)
   
 * API & SDK
@@ -107,6 +111,7 @@
   * [Atlas JSON RPC](sdk/RPC-API.md)
   * [Atlas Consensus API](sdk/ConsensusAPI.md)
   * [MAP Scan API](develop/sdk/scan-api.md)
+* [Chains Connect](develop/chains-connect.md)
 
 ## Run
 
