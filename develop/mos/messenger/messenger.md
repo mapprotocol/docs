@@ -6,7 +6,7 @@ Messenger監聽程序中預設的相關事件，並在源鏈賬本上建立證�
 應用的靈活性為 Messenger 開啟了很多可能性，應用可以向跨鏈用戶收取靈活的交易費用，並相應地獎勵 Messenger。
 
 ## 信使SDK
-Messenger SDK 作為 MAPO Services 的主要組成部分，將對 Dapp 開發者開放。
+Messenger SDK 作為 MAP Omnichain Services 的主要組成部分，將對 Dapp 開發者開放。
 
 # 快速開始
 

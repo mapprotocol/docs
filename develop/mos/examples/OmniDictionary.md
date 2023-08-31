@@ -106,4 +106,4 @@ function setDictionaryEntry(string memory _key,string memory _val) external retu
 
 * [OmniDictionary Example contract](https://github.com/mapprotocol/omnichain-examples/blob/main/evm/contracts/omniDictionary.sol)
 
-* [Mapo Service contracts](https://github.com/mapprotocol/mapo-service-contracts/tree/main/evm/contracts)
+* [MAP Omnichain Service contracts](https://github.com/mapprotocol/mapo-service-contracts/tree/main/evm/contracts)
