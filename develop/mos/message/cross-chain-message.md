@@ -1,4 +1,4 @@
-# MAPO Service (MOS) Message
+# MAP Omnichain Service (MOS) Message
 
 MOS message enables projects built on one chain to easily synchronize some project information to other chains, and can also call contract methods on other connected chains.
 
@@ -37,4 +37,4 @@ With MOS you can achieve interoperation with two chains:
 
 ## Flow architecture
 
-![MAPO Service Message](croosChainMessage.png)
+![MAP Omnichain Service Message](croosChainMessage.png)

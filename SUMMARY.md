@@ -19,7 +19,7 @@
       * [Concept](learn/Teachnical_Mechanism/concept.md)
       * [Isomorphism with All Chains](learn/Teachnical_Mechanism/precompile.md)
       * [Verification &amp; Maintenance Network](learn/Teachnical_Mechanism/verification.md)
-  * [MAPO Service (MOS) Layer](learn/Teachnical_Mechanism/mcs.md)
+  * [MAP Omnichain Service (MOS) Layer](learn/Teachnical_Mechanism/mcs.md)
   * [MAPO Application Layer](learn/Teachnical_Mechanism/application.md)
   * [Peer-to-Peer Cross-chain Technology with ZK-enabled Light Clients](learn/Teachnical_Mechanism/Peer-to-Peer-Cross-chain-Technology-with-ZK-enabled-Light-Clients.md)
 * [Gas Fee Model](learn/fee.md)
@@ -87,7 +87,7 @@
     * [Polygon(Matic)](develop/light-client/clients/matic.md)
     * [Ethereum 2.0](develop/light-client/clients/eth2.md))
   * [Maintainer](develop/light-client/Maintainer.md)
-* MAPO Service
+* MAP Omnichain Service
   * [MOS Message Guides](develop/mos/message/README.md)
     * [How It Works](develop/mos/message/cross-chain-message.md)
   * [MCS Guides](develop/mos/mcs/README.md)

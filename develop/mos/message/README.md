@@ -1,4 +1,4 @@
-# MAPO Service (MOS) Message
+# MAP Omnichain Service (MOS) Message
 
 ## What is MOS Message
 

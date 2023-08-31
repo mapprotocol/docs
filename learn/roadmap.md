@@ -5,7 +5,7 @@
 ### 2021.Q3
 
 - Launch MAP Relay Chain Makalu Testnet, start the ligth-client veification cross-chain between MAP Makalu and Ethereum.
-- Launch MAPO Service (MOS) for testnet.
+- Launch MAP Omnichain Service (MOS) for testnet.
 - Start maintainer mining, invite users to participate maintainer test.
 
 ### 2022.Q1
@@ -24,7 +24,7 @@
 ### 2022.Q3
 
 - Extend cross-chain connections to Ethereum(EVM PoW) and Near(non-EVM PoS), which represents the technical mechanisms in blockchain space.
-- Launch MAPO Service, support cross-chain fungible tokens and provide shared vaults.
+- Launch MAP Omnichain Service, support cross-chain fungible tokens and provide shared vaults.
 
 ### 2022.Q4
 
@@ -35,7 +35,7 @@
 
 ### 2023.Q1
 - Extend cross-chain connections to popular EVM compatible chains.
-- Extend MAPO Service, support cross-chain data and NFTs.
+- Extend MAP Omnichain Service, support cross-chain data and NFTs.
 - Provide omnichain scan to show all cross-chain transactions and DApps.
 
 

@@ -1,4 +1,4 @@
-Assets and data originated from Dapps assembly on MAP Relay Chain. Dapps can achieve interoperability because of MAPO Services (MOS). The finality of omnichain data and asset verification network by MAP Protocol Layer empowers Dapps to grow limitless.
+Assets and data originated from Dapps assembly on MAP Relay Chain. Dapps can achieve interoperability because of MAP Omnichain Services (MOS). The finality of omnichain data and asset verification network by MAP Protocol Layer empowers Dapps to grow limitless.
 
 ## Cross-chain Lending
 
@@ -67,7 +67,7 @@ With MAP Protocol's interoperability with all-chains, omnichain governace can be
 
 ## Omnichain Applications on MAP Protocol
 
-Dapp developers only need to deploy their dapps on MAP Relay Chain with the completed MAPO Services module, then enjoy the privilege of connecting the entire blockchain world’s liquidity. Developers can easily build their omnichain applications deployed on any chain in just two steps:
+Dapp developers only need to deploy their dapps on MAP Relay Chain with the completed MAP Omnichain Services module, then enjoy the privilege of connecting the entire blockchain world’s liquidity. Developers can easily build their omnichain applications deployed on any chain in just two steps:
 
 1. Build inter-chain messenger using our SDK.
 2. Interact with on-chain vault and data through our API.

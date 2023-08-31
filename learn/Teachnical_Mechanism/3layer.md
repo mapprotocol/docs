@@ -1,12 +1,12 @@
-MAP Protocol is structured in **three layers**: **MAP Protocol Layer**, **MAPO Services Layer(MOS)**, and **MAPO Application Ecosystem Layer**.
+MAP Protocol is structured in **three layers**: **MAP Protocol Layer**, **MAP Omnichain Services Layer(MOS)**, and **MAPO Application Ecosystem Layer**.
 
 ## MAPO Application Layer
 
 - Assets and data originated from dApps assembly on MAP Relay Chain
-- DApps can achieve interoperability because of MAPO Services (MOS)
+- DApps can achieve interoperability because of MAP Omnichain Services (MOS)
 - The finality of omnichain data and asset verification network by MAP Protocol Layer empowers dApps to grow limitless.
 
-## MAPO Services Layer (MOS)
+## MAP Omnichain Services Layer (MOS)
 
 - Facilitate dApp developers to build applications, similar to Google Mobile Services to Android ecosystem.
 - Consists of Vaults and Data deployed on each chain, and Messenger Program to transmit messages between chains.

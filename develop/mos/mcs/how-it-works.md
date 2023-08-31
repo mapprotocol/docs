@@ -98,7 +98,7 @@ Proof verification is to prove the proof to confirm that the cross-chain data is
 
 - Deduction of handling charges and distribution according to TokenRegister registration information (MOS Relay)
 
-- Judge whether it is a transfer to the MAPO chain, if it is the next step, and if it is not the order generated from the out information and the transferOut event output (MOS Relay) generated
+- Judge whether it is a transfer to the MAP Relay Chain, if it is the next step, and if it is not the order generated from the out information and the transferOut event output (MOS Relay) generated
 
 - Transfer out cross chain assets to users
 
