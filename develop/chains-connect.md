@@ -1,6 +1,4 @@
-# Connected Chains and Corresponding Addresses
-
-Below is MAP Protocol's latest chain connectivity progress and the corresponding contract addresses. In order to connect one chain to another, light clients will be deployed on MAP Relay Chain and the to-be-connected chains.
+> Below is MAP Protocol's latest chain connectivity progress and the corresponding contract addresses. In order to connect one chain to another, light clients will be deployed on the MAP Relay Chain, the to-be-connected chains, and the MAP Omnichian Service (MOS) layer.
 
 ## Ethereum
 * `Light-client on MAPO`
@@ -11,7 +9,7 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 	
 * `Light-client on Chain`
 	\
-	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
 	\
 	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://etherscan.io/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
 	
@@ -33,7 +31,7 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 
 * `Light-client on Chain`
 	\
-	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
 	\
 	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://bscscan.com/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
 * `MOS`
@@ -52,7 +50,7 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 
 * `Light-client on Chain`
 	\
-	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
 	\
 	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](0x624E6F327c4F91F1Fa6285711245c215de264d49)
 * `MOS`
@@ -157,7 +155,7 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 	`Address`:`Coming soon`
 * `Light-client on Chain`
 	\
-	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
 	`Address`: `Coming soon`
 
 * `MOS`
@@ -174,7 +172,7 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 	`Address`: `N/A`
 * `Light-client on Chain`
 	\
-	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
 	\
 	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://optimism.blockscout.com/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
 
@@ -192,7 +190,7 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 	`Address`: `N/A`
 * `Light-client on Chain`
 	\
-	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
 	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://basescan.org/address/0x624e6f327c4f91f1fa6285711245c215de264d49)
 
 * `MOS`
@@ -210,7 +208,7 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 	`Address`:`N/A`
 * `Light-client on Chain`
 	\
-	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
 	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://explorer.linea.build/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
 
 * `MOS`: `Coming soon`
@@ -239,7 +237,7 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 	`Address`:`N/A`
 * `Light-client on Chain`
 	\
-	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
 	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://bobascan.com/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
 
 * `MOS`: `Coming soon`
@@ -274,9 +272,7 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `Coming soon`
 
 # How to integration MAP Protocol with EVM-Compatible Chains
-
 If your chain is EVM-compatible, you can easily connect and integrate with MAP Protocol to achieve omnichain. Read more on [Integration of MAP with EVM-Compatible Chains](map-relay-chain/getting-started/Integration-EVM-Compatible-Chains.md).
 
 # How to build a dApp with MAP Protocol
-
 You can easily build your omnichain dApps by connecting to MAP Protocol. Read more on [OmniApp](mos/examples/omni-app.md).
