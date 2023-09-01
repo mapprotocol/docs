@@ -52,7 +52,7 @@
 	\
 	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
 	\
-	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](0x624E6F327c4F91F1Fa6285711245c215de264d49)
+	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://polygonscan.com/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
 * `MOS`
 	\
 	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)
