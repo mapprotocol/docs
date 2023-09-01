@@ -87,7 +87,7 @@
     * [Polygon(Matic)](develop/light-client/clients/matic.md)
     * [Ethereum 2.0](develop/light-client/clients/eth2.md))
   * [Maintainer](develop/light-client/Maintainer.md)
-* MAP Omnichain Service
+* MAP Omnichain Service (MOS)
   * [MOS Message Guides](develop/mos/message/README.md)
     * [How It Works](develop/mos/message/cross-chain-message.md)
   * [MCS Guides](develop/mos/mcs/README.md)
