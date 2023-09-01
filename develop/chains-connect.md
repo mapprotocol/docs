@@ -1,4 +1,4 @@
-Below is MAP Protocol's latest chain connectivity progress and the corresponding contract addresses. In order to connect one chain to another, light clients will be deployed on the [MAP Relay Chain](https://docs.mapprotocol.io/learn/overiew/protocollayer/map-relay-chain/concept), the to-be-connected chains, and the [MAP Omnichian Service (MOS) layer](https://docs.mapprotocol.io/develop/map-omnichain-service-mos).
+Below is MAP Protocol's latest chain connectivity progress and the corresponding contract addresses. In order to integrate with MAP Protocol's omnichain ecosystem, both the target chain and the [MAP Relay Chain](https://docs.mapprotocol.io/learn/overiew/protocollayer/map-relay-chain/concept) will need to deploy light clients on each other's chains respectively, as well as [MAP Omnichian Service (MOS)](https://docs.mapprotocol.io/develop/map-omnichain-service-mos) onto the target chain.
 
 ## Ethereum
 * `Light-client on MAPO`
