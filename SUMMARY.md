@@ -45,7 +45,7 @@
     * [How To Vote](develop/map-relay-chain/getting-started/how-to-vote.md)
     * [How To Withdraw](develop/map-relay-chain/getting-started/how-to-withdraw.md)
     * [Integrate an Exchange](develop/map-relay-chain/getting-started/Integrate-an-Exchange.md)
-    * [Integration of MAP with EVM-Compatible Chains](develop/map-relay-chain/getting-started/Integration-EVM-Compatible-Chains.md)
+    * [Integrate MAP Relay Chain with EVM-Compatible Chains](develop/map-relay-chain/getting-started/Integration-EVM-Compatible-Chains.md)
   * Consensus
 
     * [Overview](develop/map-relay-chain/consensus/Overview.md)
