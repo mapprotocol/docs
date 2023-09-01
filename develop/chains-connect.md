@@ -20,7 +20,7 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 	`Address`: [0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f](https://etherscan.io/address/0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f)
 
 * `Chain ID`: `1`
-* `Status`:`Completed` `MAP Protocol` <-> `Ethreume` 
+* `Status`:`Completed` `MAP Protocol` <-> `Ethereum` 
 ## BNB Smart Chain
 
 * `Light-client on MAPO`
@@ -271,7 +271,7 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 ## Filecoin
 * `Coming soon`
 
-# How to integration MAP Protocol with EVM-Compatible Chains
+# How to integrate MAP Protocol with EVM-Compatible Chains
 If your chain is EVM-compatible, you can easily connect and integrate with MAP Protocol to achieve omnichain. Read more on [Integration of MAP with EVM-Compatible Chains](map-relay-chain/getting-started/Integration-EVM-Compatible-Chains.md).
 
 # How to build a dApp with MAP Protocol
