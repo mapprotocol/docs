@@ -1,4 +1,4 @@
-# Integration of MAP with EVM-Compatible Chains
+# Integrate MAP Protocol with EVM-Compatible Chains
 
 The cross-chain process of the MAP Protocol involves multiple steps, from locking assets to verifying data, ensuring secure transfer and interoperability of assets between different blockchains. Here we will discuss the integration process with EVM-compatible chains. The development and deployment of the following modules are sufficient to integrate with the MAP Protocol:
 
@@ -11,7 +11,7 @@ As the cross-chain messages between the integrating chain and other chains on th
 + Maintain and update the state of the `light-client`, which involves storing a certain number of block headers and continuously updating to verify new block headers.
 + Verify contract events on the source chain based on the current state of the `light-client`, usually validating transaction receipts (MPT verification information).
 
-### light-client Contract Development
+### Light-client Contract Development
 
 To integrate with the MAP Protocol, the integrating chain needs to satisfy the [ILightNode interface](https://github.com/mapprotocol/map-contracts/blob/main/protocol/contracts/interface/ILightNode.sol) defined by the MAP Protocol. It should primarily satisfy the following interface:
 
@@ -28,7 +28,7 @@ function updateLightClient(bytes memory _data) external;
 
 ``` 
 
-### light-Client Deployment
+### Light-Client Deployment
    
 + Deploy the integrating chain's `light-client` contract on the `map-relay-chain`.
 + Deploy `map-relay-chain`'s `light-client` contract on the integrating chain. [more detials](https://github.com/mapprotocol/map-contracts/tree/main/mapclients).
@@ -40,7 +40,7 @@ The Maintainer service is an independent program designed to update and synchron
 + Get the current state of the `light-client`.
 + submit the header to the `light-client`.
 
-## Mos
+## MAP Omnichain Service (MOS)
 
 The MOS layer defines the general framework and implementation logic of the MAP Protocol's common cross-chain messaging. Developers of the integrating chain do not need to implement this module separately but can directly deploy and use it. The Mos layer needs to be deployed on both chains of the cross-chain pair. As EVM-compatible chains, we implement the Solidity version of Mos. Installation and deployment instructions can be found [here](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md).
 
