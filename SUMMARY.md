@@ -84,7 +84,7 @@
     * [Polygon(Matic)](develop/light-client/clients/matic.md)
     * [Ethereum 2.0](develop/light-client/clients/eth2.md))
     * [維護者](develop/light-client/Maintainer.md)
-* MAPO 全鏈服務
+* MOS 全鏈服務
   * [MOS消息指南](develop/mos/message/README.md)
     * [How It Works](develop/mos/message/cross-chain-message.md)
   * [MOS 指南](develop/mos/mcs/README.md)
