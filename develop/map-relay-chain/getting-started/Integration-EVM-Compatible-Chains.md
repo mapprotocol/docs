@@ -1,10 +1,10 @@
-# MAP Protocol 對接EVM兼容鏈
+# EVM 兼容鏈接入 MAP Protocol
 
 MAP Protocol 的跨鏈過程涉及多個步驟，從鎖定資產到驗證數據，確保資產在不同區塊鏈之間的安全傳輸和互通，這裏我們僅討論EMV兼容鏈的接入過程。完成以下幾個模塊的開發和部署即可接入到 MAP Protocol。
 
 ## Light-client 層
 
-由於接入鏈與Mapo Protocol上的其他鏈的消息跨鏈都是通過`map-relay-chain`作爲中轉，所以接入鏈只需要部署`map-relay-chain`的`light-client`就可以實現來自於`map-relay-chain`的跨鏈消息的驗證。由於`map-relay-chain`已經實現了solidity版本的`light-client`，故接入鏈只需要專注於實現自己的solidity的`light-client`, 接入鏈的`light-client`至少需要滿足兩個功能:
+由於接入鏈與 MAP Protocol上的其他鏈的消息跨鏈都是通過`map-relay-chain`作爲中轉，所以接入鏈只需要部署`map-relay-chain`的`light-client`就可以實現來自於`map-relay-chain`的跨鏈消息的驗證。由於`map-relay-chain`已經實現了solidity版本的`light-client`，故接入鏈只需要專注於實現自己的solidity的`light-client`, 接入鏈的`light-client`至少需要滿足兩個功能:
 
 + 維持和更新`light-client`的狀態,即保存一定數量的區塊頭及持續更新校驗新的區塊頭。
 + 可以根據`light-client`的當前狀態，驗證源鏈上的合約事件功能，通常是交易的收據的驗證（MPT的驗證信息）。
