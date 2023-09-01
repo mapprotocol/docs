@@ -9,7 +9,7 @@ MAP Protocol 的跨鏈過程涉及多個步驟，從鎖定資產到驗證數據�
 + 維持和更新`light-client`的狀態,即保存一定數量的區塊頭及持續更新校驗新的區塊頭。
 + 可以根據`light-client`的當前狀態，驗證源鏈上的合約事件功能，通常是交易的收據的驗證（MPT的驗證信息）。
 
-### light-client合約開發:
+### Light-client合約開發
 
 	要 MAP Protocol 協議，接入鏈方需要滿足 MAP Protocol 定義的 [ILightNode接口](https://github.com/mapprotocol/map-contracts/blob/main/protocol/contracts/interface/ILightNode.sol),其中主要滿足以下接口:
 
@@ -40,9 +40,9 @@ Maintainer服務是一個獨立的程序,用於更新同步`light-client`的狀�
 + 根據當前`light-client`的狀態獲取對應鏈的區塊頭數據並提交到`light-client`
 
 
-## MOS 層
+## MOS 全鏈服務層
 
-MOS 層定義了 MAP Protocol 通用消息跨鏈的框架結構及實現邏輯，接入鏈方的開發者不需要再實現該模塊，而可以直接部署使用，MOS 層需要在跨鏈雙方的鏈上都部署，由於是EVM兼容鏈，這裏我們實現的Mos是solidity版本，其安裝部署流程參考[這裏](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md).
+MOS 層定義了 MAP Protocol 通用消息跨鏈的框架結構及實現邏輯，接入鏈方的開發者不需要再實現該模塊，而可以直接部署使用，MOS 層需要在跨鏈雙方的鏈上都部署，由於是EVM兼容鏈，這裏我們實現的Mos是solidity版本，其安裝部署流程參考[這裡](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md).
 
 主要數據結構和[接口](https://github.com/mapprotocol/mapo-service-contracts/tree/main/evm/contracts/interface):
 
@@ -115,7 +115,7 @@ MOS 層定義了 MAP Protocol 通用消息跨鏈的框架結構及實現邏輯�
 MOS 合約部署後可以通過`setLightClient`方法設置對應`light-client`合約地址.
 
 
-### Messeager 程序開發
+### Messenger 程序開發
 
 Messenger服務是一個獨立的程序，旨在監控並路由源鏈和目標鏈上`mos合約`的特定事件。這些事件包括常見的消息事件，如`mapMessageOut`和`mapMessageIn`。Messenger服務爲這些事件構建相應的證明數據，並最終將跨鏈消息以及證明數據提交到目標鏈。由於 Messenger 服務已經支持`map-relay-chain`，集成鏈的開發者只需要在 Messenger 服務中添加對自己鏈的支持。開發者可以fork一個 MAP Protocol 提供的[Messenger服務](https://github.com/mapprotocol/compass)，並自定義以添加對自己鏈的支持。
 
