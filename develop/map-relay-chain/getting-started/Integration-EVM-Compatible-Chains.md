@@ -1,4 +1,4 @@
-# Integrate MAP Protocol with EVM-Compatible Chains
+# Integrate MAP Relay Chain with EVM-Compatible Chains
 
 The cross-chain process of the MAP Protocol involves multiple steps, from locking assets to verifying data, ensuring secure transfer and interoperability of assets between different blockchains. Here we will discuss the integration process with EVM-compatible chains. The development and deployment of the following modules are sufficient to integrate with the MAP Protocol:
 
