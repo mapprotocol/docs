@@ -123,7 +123,7 @@ Similar to the steps for the integrating chain, you need to deploy the mos contr
 After deploying the mos contract on both the integrating chain and the `map-relay-chain`, you will need to set the `light-client` contract addresses for both chains using the `setLightClient` method. This connection is crucial for the successful operation of the cross-chain messaging process.
 
 
-### Messeager Development
+### Messenger Development
 
 The Messenger service is an independent program designed to monitor and route specific events from the mos contract on both the source chain and the target chain. These events include common messaging events such as `mapMessageOut` and `mapMessageIn`. The Messenger service constructs corresponding proof data for these events and ultimately submits cross-chain messages along with proof data to the target chain. Since the Messenger service already supports the `map-relay-chain`, developers of the integrating chain only need to add support for their own chain within the Messenger service. Developers can fork the Messenger service provided by the Mapo Protocol's [Messenger repository](https://github.com/mapprotocol/compass) and customize it to add support for their own chain.
 
