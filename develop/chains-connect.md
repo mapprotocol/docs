@@ -1,4 +1,4 @@
-以下為 MAP Protocol 最新接鏈進展以及所接鏈相對應的合約地址。一般而言，要成功接入一條鏈，輕客戶端需要在三個地方完成部署：[MAP 中繼鏈](https://docs.mapprotocol.io/v/cn/xue-xi/overiew/map-zhong-ji-lian/concept)、待接入鏈、[MOS 全鏈服務層](https://docs.mapprotocol.io/v/cn/kai-fa/mos-quan-lian-fu-wu)。
+以下為 MAP Protocol 最新接鏈進展以及所接鏈相對應的合約地址。一般而言，一条链要成功接入 MAP Protocol 全链生态，需要在目标链和 [MAP 中繼鏈](https://docs.mapprotocol.io/v/cn/xue-xi/overiew/map-zhong-ji-lian/concept)上部署对方的轻客户端，并部署 [MOS 全鏈服務](https://docs.mapprotocol.io/v/cn/kai-fa/mos-quan-lian-fu-wu)  到目標鏈。
 
 ## Ethereum
 * `Light-client on MAPO`
