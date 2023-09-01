@@ -1,1 +1,1 @@
-# MAP Protocol 全鏈服務 (MOS)
+# MOS 全鏈服務
