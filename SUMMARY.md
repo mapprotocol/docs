@@ -106,6 +106,7 @@
   * [Atlas JSON RPC](sdk/RPC-API.md)
   * [Atlas Consensus API](sdk/ConsensusAPI.md)
   * [MAP掃描API](develop/sdk/scan-api.md)
+* [最新接鏈進展以及對應地址](develop/chains-connect)
 
 ## 運行
 
