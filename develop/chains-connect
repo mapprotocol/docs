@@ -1,4 +1,4 @@
-以下為 MAP Protocol 最新接鏈進展以及所接鏈相對應得合約地址。一般而言，要成功接入一條鏈，輕客戶端需要在三個地方完成部署：MAP 中繼鏈，要鏈接的鏈，全鏈服務層 (MOS)。
+以下為 MAP Protocol 最新接鏈進展以及所接鏈相對應的合約地址。一般而言，要成功接入一條鏈，輕客戶端需要在三個地方完成部署：MAP 中繼鏈、要鏈接的鏈、全鏈服務(MOS)層。
 
 ## Ethereum
 * `Light-client on MAPO`
@@ -20,7 +20,7 @@
 	`Address`: [0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f](https://etherscan.io/address/0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f)
 
 * `Chain ID`: `1`
-* `Status`:`Completed` `MAP Protocol` <-> `Ethreume` 
+* `Status`:`Completed` `MAP Protocol` <-> `Ethereum` 
 ## BNB Smart Chain
 
 * `Light-client on MAPO`
@@ -86,7 +86,7 @@
 
 * `Light-client on Chain`
 	\
-	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
 	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://arbiscan.io/address/0x624e6f327c4f91f1fa6285711245c215de264d49)
 * `MOS`
 	\
@@ -101,7 +101,7 @@
 	`Address`:`Coming soon`
 * `Light-client on Chain`
 	\
-	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
 	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://scope.klaytn.com/account/0x624E6F327c4F91F1Fa6285711245c215de264d49?tabId=txList)
 
 * `MOS`
@@ -119,7 +119,7 @@
 	`Address`:`Coming soon`
 * `Light-client on Chain`
 	\
-	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
 	\
 	`Address`: `Coming soon`
 
@@ -139,7 +139,7 @@
 	`Address`:`Coming soon`
 * `Light-client on Chain`
 	\
-	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
 	`Address`: `Developing`
 * `MOS`
 	\
