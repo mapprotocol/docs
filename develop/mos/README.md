@@ -1,1 +1,1 @@
-# MAPO Service (MOS)
+# MAP Omnichain Service (MOS)

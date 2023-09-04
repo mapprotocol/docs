@@ -1,40 +1,278 @@
-# chains connect
+Below is MAP Protocol's latest chain connectivity progress and the corresponding contract addresses. In order to integrate with MAP Protocol's omnichain ecosystem, both the target chain and the [MAP Relay Chain](https://docs.mapprotocol.io/learn/overiew/protocollayer/map-relay-chain) will need to deploy light clients on each other's chains respectively, as well as [MAP Omnichian Service (MOS)](https://docs.mapprotocol.io/develop/map-omnichain-service-mos) onto the target chain.
 
-MAP Protocol can cover different types of blockchains in a peer-to-peer trustless way. It has established connections with prominent blockchains such as Ethereum, BNB Chain, Polygon, and even NEAR — a Non-EVM chain. 
+## Ethereum
+* `Light-client on MAPO`
+	\
+	`Source Code`: [Ethereum2.0 POS light client](https://github.com/mapprotocol/map-contracts/blob/main/lightclients/eth2/README.md)
+	\
+	`Address`: [0x6859b2aE7CE9fb0c4FAA71798aC5498B41B42D7A](https://maposcan.io/address/0x6859b2aE7CE9fb0c4FAA71798aC5498B41B42D7A)
+	
+* `Light-client on Chain`
+	\
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
+	\
+	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://etherscan.io/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
+	
+* `MOS`
+	\
+	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)
+	\
+	`Address`: [0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f](https://etherscan.io/address/0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f)
 
-What sets MAP Protocol apart is its ongoing initiative to broaden its reach, actively seeking to integrate with additional Layer 1 (L1) and Layer 2 (L2) solutions.
+* `Chain ID`: `1`
+* `Status`:`Completed` `MAP Protocol` <-> `Ethereum` 
+## BNB Smart Chain
 
-The table below provides an overview of the most recent advancements in chain connectivity and their corresponding light client contract addresses.
+* `Light-client on MAPO`
+	\
+	`Source Code`: [BNB Smart Chain light client](https://github.com/mapprotocol/map-contracts/blob/main/lightclients/bsc/README.md)
+	\
+	`Address`: [0x14843295C38EaC604dEDe0eDb77e08B460D093D8](https://maposcan.io/address/0x14843295C38EaC604dEDe0eDb77e08B460D093D8)
 
+* `Light-client on Chain`
+	\
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
+	\
+	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://bscscan.com/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
+* `MOS`
+	\
+	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)
+	\
+	`Address`: [0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f](0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f)
+* `Chain ID`: `56`
+* `Status`: `Completed` `MAP Protocol` <-> `BNB Smart Chain`
+## Polygon Mainnet
+* `Light-client on MAPO`
+	\
+	`Source Code`: [Polygon Mainnet light client](https://github.com/mapprotocol/map-contracts/blob/main/lightclients/matic/README.md)
+	\
+	`Address`: [0x1D621078676D7bdd75FC7F5ebbaBadDC9a65E3c5](https://maposcan.io/address/0x1D621078676D7bdd75FC7F5ebbaBadDC9a65E3c5)
 
-| Network        | Light-client on MAPO        | Light-client on Chain        | MOS            | Chain ID            | Status  |
-|----------------|------------------------------------|----------------------------------|---------------------------|---------------------|-------------------|
-|ETH|[src](https://github.com/mapprotocol/map-contracts/blob/main/lightclients/eth2/README.md): [address](https://maposcan.io/address/0x6859b2aE7CE9fb0c4FAA71798aC5498B41B42D7A) |    [src](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md):[address](https://etherscan.io/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)  | [src](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md):[address](https://etherscan.io/address/0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f) |1| mapo <--> eth |
-|BSC|[src](https://github.com/mapprotocol/map-contracts/blob/main/lightclients/bsc/README.md):[address](https://maposcan.io/address/0x14843295C38EaC604dEDe0eDb77e08B460D093D8)   | [src](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md): [address](https://bscscan.com/address/0x624E6F327c4F91F1Fa6285711245c215de264d49) | [src](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md):[address](https://bscscan.com/address/0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f) |56|  mapo <--> bsc |
-|Matic|[src](https://github.com/mapprotocol/map-contracts/blob/main/lightclients/matic/README.md):[address](https://maposcan.io/address/0x1D621078676D7bdd75FC7F5ebbaBadDC9a65E3c5) | [src](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md): [address](https://polygonscan.com/address/0x624E6F327c4F91F1Fa6285711245c215de264d49) | [src](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md):[address](https://polygonscan.com/address/0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f) |137|mapo <--> matic |
-|Near|[src](https://github.com/mapprotocol/map-contracts/blob/main/lightclients/near/README.md):[address](https://maposcan.io/address/0x4464fA3A804b8a44a0aD212eD23155a08f336B34)  | [src](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/near/README.md): [address](https://explorer.near.org/accounts/client2.cfac.mapprotocol.near) | [src](https://github.com/butternetwork/butter-mos-contracts/tree/master/near): [address](https://explorer.near.org/accounts/mosv21.mfac.butternetwork.near) |5566818579631833088| mapo <--> near |
-|Klaytn|[src](https://github.com/mapprotocol/map-contracts/blob/main/lightclients/klaytn/README.md): [coming soon]  |  [src](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md): [address](https://scope.klaytn.com/account/0x624E6F327c4F91F1Fa6285711245c215de264d49?tabId=txList) | [src](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md): [coming soon] | 8217|coming soon  |
-|Conflux|[src](https://github.com/mapprotocol/map-contracts/tree/main/lightclients/conflux): [coming soon] | [src](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md): [coming soon] | [src](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md):[coming soon] |1030 |coming soon |
-|Tron| src:[developing] | [src](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md): [coming soon] | [src](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md):[coming soon] |728126428| developing |
-|Platon| [src](https://github.com/mapprotocol/map-contracts/blob/main/lightclients/platon/README.md):[coming soon] | [src](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md): [coming soon] | [src](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md):[coming soon] |210425| coming soon |
-|Arbitrum one|src: [N/A]  | [src](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md): [address](https://arbiscan.io/address/0x624e6f327c4f91f1fa6285711245c215de264d49) | [src](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md): [address](https://arbiscan.io/address/0x8c3ccc219721b206da4a2070fd96e4911a48cb4f) |42161 | coming soon: mapo --> arb |
-|OP mainnet|src: [N/A]  | [src](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md): [address](https://optimism.blockscout.com/address/0x624E6F327c4F91F1Fa6285711245c215de264d49) | [src](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md): [address](https://optimism.blockscout.com/address/0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f)|10 |coming soon: mapo --> op |
-|Base|src: [N/A] | [src](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md): [address](https://basescan.org/address/0x624e6f327c4f91f1fa6285711245c215de264d49) | [src](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md): [address](https://basescan.org/address/0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f) |8453 |coming soon: mapo --> base |
-|Linea| src: [N/A] | [src](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md): [address](https://explorer.linea.build/address/0x624E6F327c4F91F1Fa6285711245c215de264d49) | [coming soon] | 59144 |coming soon  |
-|Avax (C)|src: [N/A] | [src](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md): [address](https://snowtrace.io/address/0x624E6F327c4F91F1Fa6285711245c215de264d49) | [coming soon] |43114 | coming soon  |
-|Boba| src: [N/A] | [src](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md): [address](https://bobascan.com/address/0x624E6F327c4F91F1Fa6285711245c215de264d49) | [coming soon] | 288 |coming soon  |
-|Metis andromeda|src: [N/A] | [src](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md): [address](https://andromeda-explorer.metis.io/address/0x624E6F327c4F91F1Fa6285711245c215de264d49) | [coming soon] |  1088 |coming soon |
-|zkSync|src: [N/A] | src: [coming soon] | [coming soon] | |coming soon  |
-|zkEvm(Polygon)|src: [N/A] | src: [coming soon] | [coming soon] | | coming soon  |
-|Scroll|src: [N/A] | src: [coming soon] | [coming soon] | | planning |
-|Filecoin|src: [N/A] | src: [coming soon] | [coming soon] | | coming soon  |
+* `Light-client on Chain`
+	\
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
+	\
+	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](0x624E6F327c4F91F1Fa6285711245c215de264d49)
+* `MOS`
+	\
+	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)
+	\
+	`Address`: [0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f](https://polygonscan.com/address/0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f)
+* `Chain ID`: `137`
+* `Status`: `Completed` `MAP Protocol` <-> `Polygon Mainnet`
 
+## NEAR
+* `Light-client on MAPO`
+	\
+	`Source Code`: [NEAR light client](https://github.com/mapprotocol/map-contracts/blob/main/lightclients/near/README.md)\
+	`Address`: [0x4464fA3A804b8a44a0aD212eD23155a08f336B34](https://maposcan.io/address/0x4464fA3A804b8a44a0aD212eD23155a08f336B34)
 
+* `Light-client on Chain`
+	\
+	`Source Code`: [MAP light client on NEAR](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/near/README.md)\
+	`Address`: [4WUmfmcRYbLfAJyBzXnYPP69iSRuVQ81cJAhZas6Cw1i](https://explorer.near.org/accounts/client2.cfac.mapprotocol.near)
+* `MOS`
+	\
+	`Source Code`: [MAP Omnichain Service](https://github.com/butternetwork/butter-mos-contracts/tree/master/near)\
+	`Address`: [J1KQdJSNUyBZGwsW3oZ8nFUqv2iLxb3Y8X9DTTJjxJgr](https://explorer.near.org/accounts/mosv21.mfac.butternetwork.near)
+* `Chain ID`: `5566818579631833088`
+* `Status`: `Completed` `MAP Protocol` <-> `NEAR`
 
-# How to integration MAP Protocol with EVM-Compatible Chains
+## Arbitrum One
+* `Light-client on MAPO`
+	\
+	`Source Code`: `N/A`\
+	`Address`:`N/A`
 
-If your chain is EVM-compatible, you can easily connect and integrate with MAP Protocol to achieve omnichain. View details [here](map-relay-chain/getting-started/Integration-EVM-Compatible-Chains.md)
+* `Light-client on Chain`
+	\
+	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
+	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://arbiscan.io/address/0x624e6f327c4f91f1fa6285711245c215de264d49)
+* `MOS`
+	\
+	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)	\
+	`Address`: [0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f](https://arbiscan.io/address/0x8c3ccc219721b206da4a2070fd96e4911a48cb4f)
+* `Chain ID`: `42161`
+* `Status`: `Completed` `MAP Protocol` --> `Arbitrum One`
+
+## Klaytn
+* `Light-client on MAPO`\
+	`Source Code`: [Klaytn light client](https://github.com/mapprotocol/map-contracts/blob/main/lightclients/klaytn/README.md)\
+	`Address`:`Coming soon`
+* `Light-client on Chain`
+	\
+	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
+	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://scope.klaytn.com/account/0x624E6F327c4F91F1Fa6285711245c215de264d49?tabId=txList)
+
+* `MOS`
+	\
+	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)\
+	`Address`: `Coming Soon`
+* `Chain ID`: `8721`
+* `Status`: `Coming soon`
+
+## Conflux
+* `Light-client on MAPO`
+	\
+	`Source Code`: [Conflux light client](https://github.com/mapprotocol/map-contracts/tree/main/lightclients/conflux)
+	\
+	`Address`:`Coming soon`
+* `Light-client on Chain`
+	\
+	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
+	\
+	`Address`: `Coming soon`
+
+* `MOS`
+	\
+	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)	
+	\
+	`Address`: `Coming soon`
+* `Chain ID`:1030
+* `Status`: `Coming soon`
+
+## Tron
+* `Light-client on MAPO`
+	\
+	`Source Code`: `Developing`
+	\
+	`Address`:`Coming soon`
+* `Light-client on Chain`
+	\
+	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
+	`Address`: `Developing`
+* `MOS`
+	\
+	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)	\
+	`Address`: `Coming soon`
+* `Chain ID`: `728126428`
+* `Status`: `Developing`
+
+## PlatON Mainnet
+* `Light-client on MAPO`
+	\
+	`Source Code`: [PlatON light client](https://github.com/mapprotocol/map-contracts/blob/main/lightclients/platon/README.md)\
+	`Address`:`Coming soon`
+* `Light-client on Chain`
+	\
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
+	`Address`: `Coming soon`
+
+* `MOS`
+	\
+	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)\
+	`Address`: `Coming soon`
+* `Chain ID`: `210425`
+* `Status`: `Coming soon`
+
+## OP Mainnet
+* `Light-client on MAPO`
+	\
+	`Source Code`: `N/A`\
+	`Address`: `N/A`
+* `Light-client on Chain`
+	\
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
+	\
+	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://optimism.blockscout.com/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
+
+* `MOS`
+	\
+	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)\
+	`Address`:[0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f](https://optimism.blockscout.com/address/0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f)
+* `Chain ID`: `10`
+* `Status`: `Coming soon` `MAP Protocol` --> `OP Mainnet`
+
+## Base
+* `Light-client on MAPO`
+	\
+	`Source Code`: `N/A`\
+	`Address`: `N/A`
+* `Light-client on Chain`
+	\
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
+	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://basescan.org/address/0x624e6f327c4f91f1fa6285711245c215de264d49)
+
+* `MOS`
+	\
+	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)
+	\
+	`Address`: [0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f](https://basescan.org/address/0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f)
+* `Chain ID`: `8453`
+* `Status`: `Coming soon` `MAP Protocol` --> `Base`
+
+## Linea
+* `Light-client on MAPO`
+	\
+	`Source Code`: `N/A`\
+	`Address`:`N/A`
+* `Light-client on Chain`
+	\
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
+	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://explorer.linea.build/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
+
+* `MOS`: `Coming soon`
+* `Chain ID`: `59144`
+* `Status`: `Coming soon`
+
+## Avalanche C-Chain
+* `Light-client on MAPO`
+\
+	`Source Code`: `N/A` \
+ `Address`:`N/A`
+* `Light-client on Chain`
+\
+`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
+	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://snowtrace.io/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
+
+* `MOS`: `Coming soon`
+* `Chain ID`: `43114`
+* `Status`: `Coming soon`
+
+## Boba Network
+* `Light-client on MAPO`
+	\
+	`Source Code`: `N/A`
+	\
+	`Address`:`N/A`
+* `Light-client on Chain`
+	\
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
+	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://bobascan.com/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
+
+* `MOS`: `Coming soon`
+* `Chain ID`: `288`
+* `Status`: `Coming soon`
+
+## Metis Andromeda
+* `Light-client on MAPO`
+	\
+	`Source Code`: `N/A`
+	\
+	`Address`:`N/A`
+* `Light-client on Chain`
+	\
+	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
+	`Address`:
+
+* `MOS`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://andromeda-explorer.metis.io/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
+* `Chain ID`: `1088`
+* `Status`: `Coming soon`
+
+## zkSync
+* `Coming soon`
+
+## zkEvm(Polygon)
+* `Coming soon`
+
+## Scroll
+* `Planning`
+
+## Filecoin
+* `Coming soon`
+
+# How to integrate MAP Protocol with EVM-Compatible Chains
+If your chain is EVM-compatible, you can easily connect and integrate with MAP Protocol to achieve omnichain. Read more on [Integration of MAP with EVM-Compatible Chains](map-relay-chain/getting-started/Integration-EVM-Compatible-Chains.md).
 
 # How to build a dApp with MAP Protocol
-
-You can easily build your omnichain dApps by connecting to MAP Protocol. View details [here](mos/examples/omni-app.md)
+You can easily build your omnichain dApps by connecting to MAP Protocol. Read more on [OmniApp](mos/examples/omni-app.md).

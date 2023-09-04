@@ -19,7 +19,7 @@
       * [Concept](learn/Teachnical_Mechanism/concept.md)
       * [Isomorphism with All Chains](learn/Teachnical_Mechanism/precompile.md)
       * [Verification &amp; Maintenance Network](learn/Teachnical_Mechanism/verification.md)
-  * [MAPO Service (MOS) Layer](learn/Teachnical_Mechanism/mcs.md)
+  * [MAP Omnichain Service (MOS) Layer](learn/Teachnical_Mechanism/mcs.md)
   * [MAPO Application Layer](learn/Teachnical_Mechanism/application.md)
   * [Peer-to-Peer Cross-chain Technology with ZK-enabled Light Clients](learn/Teachnical_Mechanism/Peer-to-Peer-Cross-chain-Technology-with-ZK-enabled-Light-Clients.md)
 * [Gas Fee Model](learn/fee.md)
@@ -45,7 +45,7 @@
     * [How To Vote](develop/map-relay-chain/getting-started/how-to-vote.md)
     * [How To Withdraw](develop/map-relay-chain/getting-started/how-to-withdraw.md)
     * [Integrate an Exchange](develop/map-relay-chain/getting-started/Integrate-an-Exchange.md)
-    * [Integration of MAP with EVM-Compatible Chains](develop/map-relay-chain/getting-started/Integration-EVM-Compatible-Chains.md)
+    * [Integrate MAP Relay Chain with EVM-Compatible Chains](develop/map-relay-chain/getting-started/Integration-EVM-Compatible-Chains.md)
   * Consensus
 
     * [Overview](develop/map-relay-chain/consensus/Overview.md)
@@ -87,7 +87,7 @@
     * [Polygon(Matic)](develop/light-client/clients/matic.md)
     * [Ethereum 2.0](develop/light-client/clients/eth2.md))
   * [Maintainer](develop/light-client/Maintainer.md)
-* MAPO Service
+* MAP Omnichain Service (MOS)
   * [MOS Message Guides](develop/mos/message/README.md)
     * [How It Works](develop/mos/message/cross-chain-message.md)
     * [How To Use](develop/mos/message/how-to-use-evm.md)
@@ -111,7 +111,7 @@
   * [Atlas JSON RPC](sdk/RPC-API.md)
   * [Atlas Consensus API](sdk/ConsensusAPI.md)
   * [MAP Scan API](develop/sdk/scan-api.md)
-* [Chains Connect](develop/chains-connect.md)
+* [Connected Chains and Corresponding Addresses](develop/chains-connect.md)
 
 ## Run
 
