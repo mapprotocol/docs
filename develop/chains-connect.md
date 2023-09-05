@@ -98,7 +98,7 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 ## Klaytn
 * `Light-client on MAPO`\
 	`Source Code`: [Klaytn light client](https://github.com/mapprotocol/map-contracts/blob/main/lightclients/klaytn/README.md)\
-	`Address`:`Coming soon`
+	`Address`:[0x91a14b93e4d588879dAE94E2EeE5E1d88b879D81](https://maposcan.io/address/0x91a14b93e4d588879dAE94E2EeE5E1d88b879D81)
 * `Light-client on Chain`
 	\
 	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
@@ -107,9 +107,9 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `MOS`
 	\
 	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)\
-	`Address`: `Coming Soon`
+	`Address`: [0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f](https://scope.klaytn.com/account/0x8c3ccc219721b206da4a2070fd96e4911a48cb4f?tabId=txList)
 * `Chain ID`: `8721`
-* `Status`: `Coming soon`
+* `Status`: `Completed` `MAP Protocol` --> `Klaytn`
 
 ## Conflux
 * `Light-client on MAPO`
@@ -269,6 +269,15 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `Planning`
 
 ## Filecoin
+* `Coming soon`
+
+## xrpl-evm-sidechain
+* `Coming soon`
+
+## EthereumPoW
+* `Coming soon`
+
+## Gnosis Chain
 * `Coming soon`
 
 # How to integrate MAP Protocol with EVM-Compatible Chains
