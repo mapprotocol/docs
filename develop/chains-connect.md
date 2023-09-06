@@ -268,6 +268,9 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 ## Scroll
 * `Planning`
 
+## Solana
+* `Planning`
+  
 ## Filecoin
 * `Coming soon`
 
