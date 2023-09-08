@@ -98,7 +98,7 @@
 ## Klaytn
 * `Light-client on MAPO`\
 	`Source Code`: [Klaytn light client](https://github.com/mapprotocol/map-contracts/blob/main/lightclients/klaytn/README.md)\
-	`Address`:`即待上線`
+	`Address`:`Coming soon`
 * `Light-client on Chain`
 	\
 	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
@@ -107,36 +107,36 @@
 * `MOS`
 	\
 	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)\
-	`Address`: `即待上線`
+	`Address`: `Coming soon`
 * `Chain ID`: `8721`
-* `Status`: `即待上線`
+* `Status`: `Coming soon`
 
 ## Conflux
 * `Light-client on MAPO`
 	\
 	`Source Code`: [Conflux light client](https://github.com/mapprotocol/map-contracts/tree/main/lightclients/conflux)
 	\
-	`Address`:`即待上線`
+	`Address`:`Coming soon`
 * `Light-client on Chain`
 	\
 	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
 	\
-	`Address`: `即待上線`
+	`Address`: `Coming soon`
 
 * `MOS`
 	\
 	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)	
 	\
-	`Address`: `即待上線`
+	`Address`: `Coming soon`
 * `Chain ID`:1030
-* `Status`: `即待上線`
+* `Status`: `Coming soon`
 
 ## Tron
 * `Light-client on MAPO`
 	\
 	`Source Code`: `Developing`
 	\
-	`Address`:`即待上線`
+	`Address`:`Coming soon`
 * `Light-client on Chain`
 	\
 	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
@@ -144,7 +144,7 @@
 * `MOS`
 	\
 	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)	\
-	`Address`: `即待上線`
+	`Address`: `Coming soon`
 * `Chain ID`: `728126428`
 * `Status`: `Developing`
 
@@ -152,18 +152,18 @@
 * `Light-client on MAPO`
 	\
 	`Source Code`: [PlatON light client](https://github.com/mapprotocol/map-contracts/blob/main/lightclients/platon/README.md)\
-	`Address`:`即待上線`
+	`Address`:`Coming soon`
 * `Light-client on Chain`
 	\
 	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
-	`Address`: `即待上線`
+	`Address`: `Coming soon`
 
 * `MOS`
 	\
 	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)\
-	`Address`: `即待上線`
+	`Address`: `Coming soon`
 * `Chain ID`: `210425`
-* `Status`: `即待上線`
+* `Status`: `Coming soon`
 
 ## OP Mainnet
 * `Light-client on MAPO`
@@ -181,7 +181,7 @@
 	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)\
 	`Address`:[0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f](https://optimism.blockscout.com/address/0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f)
 * `Chain ID`: `10`
-* `Status`: `即待上線` `MAP Protocol` --> `OP Mainnet`
+* `Status`: `Coming soon` `MAP Protocol` --> `OP Mainnet`
 
 ## Base
 * `Light-client on MAPO`
@@ -199,7 +199,7 @@
 	\
 	`Address`: [0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f](https://basescan.org/address/0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f)
 * `Chain ID`: `8453`
-* `Status`: `即待上線` `MAP Protocol` --> `Base`
+* `Status`: `Coming soon` `MAP Protocol` --> `Base`
 
 ## Linea
 * `Light-client on MAPO`
@@ -211,9 +211,9 @@
 	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
 	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://explorer.linea.build/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
 
-* `MOS`: `即待上線`
+* `MOS`: `Coming soon`
 * `Chain ID`: `59144`
-* `Status`: `即待上線`
+* `Status`: `Coming soon`
 
 ## Avalanche C-Chain
 * `Light-client on MAPO`
@@ -225,9 +225,9 @@
 `Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
 	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://snowtrace.io/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
 
-* `MOS`: `即待上線`
+* `MOS`: `Coming soon`
 * `Chain ID`: `43114`
-* `Status`: `即待上線`
+* `Status`: `Coming soon`
 
 ## Boba Network
 * `Light-client on MAPO`
@@ -240,9 +240,9 @@
 	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
 	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://bobascan.com/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
 
-* `MOS`: `即待上線`
+* `MOS`: `Coming soon`
 * `Chain ID`: `288`
-* `Status`: `即待上線`
+* `Status`: `Coming soon`
 
 ## Metis Andromeda
 * `Light-client on MAPO`
@@ -257,28 +257,28 @@
 
 * `MOS`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://andromeda-explorer.metis.io/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
 * `Chain ID`: `1088`
-* `Status`: `即待上線`
+* `Status`: `Coming soon`
 
 ## zkSync
-* `即待上線`
+* `Coming soon`
 
 ## zkEvm(Polygon)
-* `即待上線`
+* `Coming soon`
 
 ## Scroll
 * `Planning`
 
 ## Filecoin
-* `即待上線`
+* `Coming soon`
 
 ## xrpl-evm-sidechain
-* `即待上線`
+* `Coming soon`
 
 ## EthereumPoW
-* `即待上線`
+* `Coming soon`
 
 ## Gnosis Chain
-* `即待上線`
+* `Coming soon`
 
 # 如何和 EVM 兼容鏈鏈接？
 如果您的鏈是 EVM 兼容，您可以輕鬆與 MAP Protocol 鏈接並實現全鏈。更多詳情請閱讀 [MAP Protocol 對接EVM兼容鏈](develop/map-relay-chain/getting-started/Integration-EVM-Compatible-Chains.md).
