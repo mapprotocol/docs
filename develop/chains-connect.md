@@ -260,7 +260,20 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `Status`: `Coming soon`
 
 ## zkSync
-* `Coming soon`
+* `Light-client on MAPO`
+	\
+	`Source Code`: `N/A`
+	\
+	`Address`:`N/A`
+* `Light-client on Chain`
+	\
+	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
+	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://zkevm.polygonscan.com/address/0x624e6f327c4f91f1fa6285711245c215de264d49)
+
+* `MOS`: 
+* `Chain ID`: `1101`
+* `Status`: `Coming soon`
+
 
 ## zkEvm(Polygon)
 * `Coming soon`
