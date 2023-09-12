@@ -109,7 +109,7 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)\
 	`Address`: [0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f](https://scope.klaytn.com/account/0x8c3ccc219721b206da4a2070fd96e4911a48cb4f?tabId=txList)
 * `Chain ID`: `8721`
-* `Status`: `Completed` `MAP Protocol` --> `Klaytn`
+* `Status`: `Completed` `MAP Protocol` <->  `Klaytn`
 
 ## Conflux
 * `Light-client on MAPO`
