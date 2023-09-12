@@ -253,9 +253,9 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `Light-client on Chain`
 	\
 	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
-	`Address`:
+	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://andromeda-explorer.metis.io/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
 
-* `MOS`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://andromeda-explorer.metis.io/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
+* `MOS`: 
 * `Chain ID`: `1088`
 * `Status`: `Coming soon`
 
