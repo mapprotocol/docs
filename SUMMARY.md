@@ -87,6 +87,7 @@
     * [Polygon(Matic)](develop/light-client/clients/matic.md)
     * [Ethereum 2.0](develop/light-client/clients/eth2.md))
     * [Klaytn](develop/light-client/clients/klaytn.md))
+    * [Conflux](develop/light-client/clients/conflux.md))
   * [Maintainer](develop/light-client/Maintainer.md)
 * MAP Omnichain Service (MOS)
   * [MOS Message Guides](develop/mos/message/README.md)
