@@ -295,6 +295,10 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 
 ## Gnosis Chain
 * `Coming soon`
+  
+## ICP(DFINITY)
+* `Coming soon`
+  
 
 # How to integrate MAP Protocol with EVM-Compatible Chains
 If your chain is EVM-compatible, you can easily connect and integrate with MAP Protocol to achieve omnichain. Read more on [Integration of MAP with EVM-Compatible Chains](map-relay-chain/getting-started/Integration-EVM-Compatible-Chains.md).
