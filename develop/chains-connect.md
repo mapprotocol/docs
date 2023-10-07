@@ -98,7 +98,7 @@
 ## Klaytn
 * `Light-client on MAPO`\
 	`Source Code`: [Klaytn light client](https://github.com/mapprotocol/map-contracts/blob/main/lightclients/klaytn/README.md)\
-	`Address`:`Coming soon`
+	`Address`:[0x91a14b93e4d588879dAE94E2EeE5E1d88b879D81](https://maposcan.io/address/0x91a14b93e4d588879dAE94E2EeE5E1d88b879D81)
 * `Light-client on Chain`
 	\
 	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
