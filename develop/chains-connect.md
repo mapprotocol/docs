@@ -116,20 +116,20 @@
 	\
 	`Source Code`: [Conflux light client](https://github.com/mapprotocol/map-contracts/tree/main/lightclients/conflux)
 	\
-	`Address`:`Coming soon`
+	`Address`:[0x3E357098bbBeD2810c9a37FDfB5816067890304a](https://maposcan.io/address/0x3E357098bbBeD2810c9a37FDfB5816067890304a)
 * `Light-client on Chain`
 	\
-	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
+	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
 	\
-	`Address`: `Coming soon`
+	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://evm.confluxscan.io/address/0x624e6f327c4f91f1fa6285711245c215de264d49)
 
 * `MOS`
 	\
 	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)	
 	\
-	`Address`: `Coming soon`
+	`Address`: [0xfeb2b97e4efce787c08086dc16ab69e063911380](https://evm.confluxscan.io/address/0xfeb2b97e4efce787c08086dc16ab69e063911380)
 * `Chain ID`:1030
-* `Status`: `Coming soon`
+* `Status`: `Completed` `MAP Protocol` <->  `Conflux`
 
 ## Tron
 * `Light-client on MAPO`
@@ -139,14 +139,14 @@
 	`Address`:`Coming soon`
 * `Light-client on Chain`
 	\
-	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
-	`Address`: `Developing`
+	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
+	`Address`: [TETvGTGk4FrVfqjVBkNgKx3BeGpkSjpzyb](https://tronscan.org/#/contract/TETvGTGk4FrVfqjVBkNgKx3BeGpkSjpzyb/code)
 * `MOS`
 	\
 	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)	\
-	`Address`: `Coming soon`
+	`Address`: [TAR515UoMxTa2ruua6KqnXDwPJQEu66RVU](https://tronscan.org/#/contract/TAR515UoMxTa2ruua6KqnXDwPJQEu66RVU/code)
 * `Chain ID`: `728126428`
-* `Status`: `Developing`
+* `Status`: `Developing` `MAP Protocol` --> `Tron`
 
 ## PlatON Mainnet
 * `Light-client on MAPO`
@@ -260,6 +260,9 @@
 * `Status`: `Coming soon`
 
 ## zkSync
+* `Planning`
+
+## zkEvm(Polygon)
 * `Light-client on MAPO`
 	\
 	`Source Code`: `N/A`
@@ -270,14 +273,27 @@
 	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
 	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://zkevm.polygonscan.com/address/0x624e6f327c4f91f1fa6285711245c215de264d49)
 
-## zkEvm(Polygon)
-* `Coming soon`
+* `MOS`: 
+* `Chain ID`: `1101`
+* `Status`: `Coming soon`
 
 ## Scroll
 * `Planning`
 
 ## Filecoin
-* `Coming soon`
+* `Light-client on MAPO`
+	\
+	`Source Code`: `N/A`
+	\
+	`Address`:`N/A`
+* `Light-client on Chain`
+	\
+	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
+	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://filfox.info/en/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
+
+* `MOS`: `Coming soon`
+* `Chain ID`: `314`
+* `Status`: `Coming soon`
 
 ## xrpl-evm-sidechain
 * `Coming soon`
