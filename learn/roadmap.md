@@ -1,44 +1,40 @@
 ### 2019.Q3 - 2020.Q4
 
-- Release MAP Protocol v1.0, implement cross-chain solution with light-client verification without relay chain.
+- 发布MAP Protocol 1.0版本，实现采用轻客户端验证的跨链解决方案，无需中继链。
 
 ### 2021.Q3
 
-- Launch MAP Relay Chain Makalu Testnet, start the ligth-client veification cross-chain between MAP Makalu and Ethereum.
-- Launch MAP Omnichain Service (MOS) for testnet.
-- Start maintainer mining, invite users to participate maintainer test.
+- 启动MAP中继链马卡卢测试网，开始在MAP马卡卢和以太坊之间进行轻客户端验证跨链。
+- 启动测试网的MAP全链服务（MOS）。
+- 开始维护者挖矿，邀请用户参与维护者测试。
 
 ### 2022.Q1
 
-- Support more chains decentralized cross-chain.
-- MOS supports cross-chain between Ethereum, Polygon, BNB Chain and MAP Makalu.
-- Invite more DeFi projects to join Makalu testnet.
+- 支持更多链的去中心化跨链。
+- MOS支持以太坊、Polygon、BNB链和MAP马卡卢之间的跨链。
+- 邀请更多DeFi项目加入马卡卢测试网。
 
 ### 2022.Q2
-
-- Launch MAP Relay Chain, support more signature, hash, mining and Merkel proof calculation precompiled contracts.
-- Launch the explorer and PoS DApp.
-- Provide SDK to interact with MAP Relay Chain.
-- Provide MOS SDK test version.
+- 启动MAP中继链，支持更多的签名、哈希、挖矿和默克尔证明计算预编译合约。
+- 启动浏览器和PoS DApp。
+- 提供与MAP中继链交互的SDK。
+- 提供MOS SDK测试版本。
 
 ### 2022.Q3
-
-- Extend cross-chain connections to Ethereum(EVM PoW) and Near(non-EVM PoS), which represents the technical mechanisms in blockchain space.
-- Launch MAP Omnichain Service, support cross-chain fungible tokens and provide shared vaults.
+- 将跨链连接扩展到以太坊（EVM PoW）和Near（非EVM PoS），这代表了区块链领域的技术机制。
+- 启动MAP全链服务，支持跨链可替代代币，并提供共享保管库。
 
 ### 2022.Q4
-
-- Extend cross-chain connections to Ethereum(PoS).
-- Extend cross-chain connections to popular EVM compatible chains: BNB Chain, Polygon, etc.
-- Provide MOS SDK to develope individual MOSs.
-- Support cross-chain bridge and swap DApps.
+- 将跨链连接扩展到以太坊（PoS）。
+- 将跨链连接扩展主流的EVM兼容链：BNB链、Polygon等。
+- 提供MOS SDK，用于开发个人MOS。
+- 支持跨链桥和交换DApp。
 
 ### 2023.Q1
-- Extend cross-chain connections to popular EVM compatible chains.
-- Extend MAP Omnichain Service, support cross-chain data and NFTs.
-- Provide omnichain scan to show all cross-chain transactions and DApps.
-
+- 将跨链连接扩展到流行的EVM兼容链。
+- 扩展MOS全链服务，支持跨链数据和NFT。
+- 提供全链扫描，显示所有跨链交易和DApp。
 
 ### 2023.Q3
-- Extend cross-chain connections to more EVM compatible and non-EVM compatible chains: Cosmos ecosystem’s chain, Flow, etc.
-- Launch various SDKs from chain development to cross-chain components. Developers can easily deploy a dedicated chain with target application direction, and cross-chain functions are already embeded from the beginning.
+- 将跨链连接扩展到更多EVM兼容和非EVM兼容链：Cosmos生态系统的链、Flow等。
+- 发布各种SDK，从链开发到跨链组件。开发者可以轻松部署具有目标应用方向的专用链，并从一开始就嵌入跨链功能。
