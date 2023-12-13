@@ -7,6 +7,7 @@ Once the dependencies are installed, run
 ```
     git clone https://github.com/mapprotocol/atlas.git
     cd atlas
+    git checkout release_v1
     make atlas
 ```
 
