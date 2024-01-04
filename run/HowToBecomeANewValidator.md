@@ -294,3 +294,5 @@ curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"
 }
 ```
 For more information on istanbul_getValidators [click here](/sdk/ConsensusAPI.md#getvalidators)
+
+ps: **We recommend using [ethkey](https://github.com/ethereum/go-ethereum/tree/master/cmd/ethkey) to create the keystore, export the private key, and use the private key to restore the keystore**

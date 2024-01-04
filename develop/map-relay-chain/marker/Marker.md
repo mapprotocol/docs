@@ -56,6 +56,7 @@ Public address of the key:   0x929510A8b54D3a8d7943e2Cdb5BA1888F7Ab7C4a
 Path of the secret key file: ./datadir/keystore/UTC--2022-03-15T02-11-43.837807000Z--929510a8b54d3a8d7943e2cdb5ba1888f7ab7c4a
 The keystore has been stored in the directory specified by --keystore.
 ```
+**We recommend using [ethkey](https://github.com/ethereum/go-ethereum/tree/master/cmd/ethkey) to create the keystore, export the private key, and use the private key to restore the keystore**
 
 If you already have an account,you can use the atlas client to convert. Enter the atlas console and use the command:
 
