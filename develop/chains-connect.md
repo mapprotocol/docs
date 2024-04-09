@@ -132,21 +132,13 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `Status`: `Completed` `MAP Protocol` <->  `Conflux`
 
 ## Tron
-* `Light-client on MAPO`
-	\
-	`Source Code`: `Developing`
-	\
-	`Address`:`Coming soon`
-* `Light-client on Chain`
-	\
-	`Source Code`: [MAP Relay Chain light client delpoyed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
-	`Address`: [TETvGTGk4FrVfqjVBkNgKx3BeGpkSjpzyb](https://tronscan.org/#/contract/TETvGTGk4FrVfqjVBkNgKx3BeGpkSjpzyb/code)
+
 * `MOS`
 	\
 	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)	\
 	`Address`: [TAR515UoMxTa2ruua6KqnXDwPJQEu66RVU](https://tronscan.org/#/contract/TAR515UoMxTa2ruua6KqnXDwPJQEu66RVU/code)
 * `Chain ID`: `728126428`
-* `Status`: `Developing` `MAP Protocol` --> `Tron`
+* `Status`: `Developing` `MAP Protocol` <--> `Tron`
 
 ## PlatON Mainnet
 * `Light-client on MAPO`
@@ -276,6 +268,25 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `MOS`: 
 * `Chain ID`: `1101`
 * `Status`: `Coming soon`
+
+## Merlin
+
+* `MOS`
+	\
+	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)	\
+	`Address`: [0xfeB2b97e4Efce787c08086dC16Ab69E063911380](https://scan.merlinchain.io/address/0xfeB2b97e4Efce787c08086dC16Ab69E063911380)
+* `Chain ID`: `4200`
+* `Status`: `Developing` `MAP Protocol` <--> `Merlin`
+
+## Blast
+
+* `MOS`
+	\
+	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)	\
+	`Address`: [0xfeB2b97e4Efce787c08086dC16Ab69E063911380](https://blastscan.io/address/0xfeB2b97e4Efce787c08086dC16Ab69E063911380)
+* `Chain ID`: `81457`
+* `Status`: `Developing` `MAP Protocol` <--> `Blast`
+  
 
 ## Scroll
 * `Planning`
