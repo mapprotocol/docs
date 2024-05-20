@@ -132,13 +132,15 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `Status`: `Completed` `MAP Protocol` <->  `Conflux`
 
 ## Tron
-
+* `OracleNode on MAPO`
+  	\
+	`Address`:[0x17ecd177019CDD72125659af33446758d7390A42](https://maposcan.io/address/0x17ecd177019CDD72125659af33446758d7390A42)
 * `MOS`
 	\
 	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)	\
 	`Address`: [TAR515UoMxTa2ruua6KqnXDwPJQEu66RVU](https://tronscan.org/#/contract/TAR515UoMxTa2ruua6KqnXDwPJQEu66RVU/code)
 * `Chain ID`: `728126428`
-* `Status`: `Developing` `MAP Protocol` <--> `Tron`
+* `Status`:  `MAP Protocol` <--> `Tron`
 
 ## PlatON Mainnet
 * `Light-client on MAPO`
@@ -158,54 +160,51 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `Status`: `Coming soon`
 
 ## OP Mainnet
-* `Light-client on MAPO`
+* `OracleNode on MAPO`
 	\
-	`Source Code`: `N/A`\
-	`Address`: `N/A`
+	`Address`:[0x0EBDBB2b94953C1375dbA3C063682a094b4d9780](https://maposcan.io/address/0x0EBDBB2b94953C1375dbA3C063682a094b4d9780)
 * `Light-client on Chain`
 	\
 	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)
 	\
-	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://optimism.blockscout.com/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
+	`Address`: [0x0001805c0b57dbd48b5c5c26e237a135ddc678ae](https://optimism.blockscout.com/address/0x0001805c0b57dbd48b5c5c26e237a135ddc678ae)
 
 * `MOS`
 	\
 	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)\
 	`Address`:[0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f](https://optimism.blockscout.com/address/0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f)
 * `Chain ID`: `10`
-* `Status`: `Coming soon` `MAP Protocol` --> `OP Mainnet`
+* `Status`: `MAP Protocol` --> `OP Mainnet`
 
 ## Base
-* `Light-client on MAPO`
+* `OracleNode on MAPO`
 	\
-	`Source Code`: `N/A`\
-	`Address`: `N/A`
+	`Address`:[0x10c195Ab0FF99b6711FE8be65469E460d1d4478f](https://maposcan.io/address/0x10c195Ab0FF99b6711FE8be65469E460d1d4478f)
 * `Light-client on Chain`
 	\
 	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
-	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://basescan.org/address/0x624e6f327c4f91f1fa6285711245c215de264d49)
+	`Address`: [0x0001805c0b57dbd48b5c5c26e237a135ddc678ae](https://basescan.org/address/0x0001805c0b57dbd48b5c5c26e237a135ddc678ae)
 
 * `MOS`
 	\
 	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)
 	\
-	`Address`: [0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f](https://basescan.org/address/0x8C3cCc219721B206DA4A2070fD96E4911a48CB4f)
+	`Address`: [0xfeB2b97e4Efce787c08086dC16Ab69E063911380](https://basescan.org/address/0xfeB2b97e4Efce787c08086dC16Ab69E063911380)
 * `Chain ID`: `8453`
-* `Status`: `Coming soon` `MAP Protocol` --> `Base`
+* `Status`: `MAP Protocol` <--> `Base`
 
 ## Linea
-* `Light-client on MAPO`
+* `OracleNode on MAPO`
 	\
-	`Source Code`: `N/A`\
-	`Address`:`N/A`
+	`Address`:[0x667E45a64F7c0e5Ba897C0c072D70cE6B2F73701](https://maposcan.io/address/0x667E45a64F7c0e5Ba897C0c072D70cE6B2F73701)
 * `Light-client on Chain`
 	\
 	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
-	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://explorer.linea.build/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
+	`Address`: [0x0001805c0b57dbd48b5c5c26e237a135ddc678ae](https://explorer.linea.build/address/0x0001805c0b57dbd48b5c5c26e237a135ddc678ae)
 
-* `MOS`: `Coming soon`
+* `MOS`: `0xfeB2b97e4Efce787c08086dC16Ab69E063911380`
 * `Chain ID`: `59144`
-* `Status`: `Coming soon`
+* `Status`: `MAP Protocol` <--> `Linea`
 
 ## Avalanche C-Chain
 * `Light-client on MAPO`
@@ -252,7 +251,15 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `Status`: `Coming soon`
 
 ## zkSync
-* `Planning`
+* `OracleNode on MAPO`
+	\
+	`Address`:[0x371717D5ea21f73FEf2a30537571e05f62460CcE](https://maposcan.io/address/0x371717D5ea21f73FEf2a30537571e05f62460CcE)
+* `OracleNode on Chain`
+	\
+	`Address`: [0xA9bDC7D5738d88A6F082b2580A4a425697Da9E5D](https://explorer.zksync.io/address/0xA9bDC7D5738d88A6F082b2580A4a425697Da9E5D)
+
+* `Chain ID`: `324`
+* `Status`: `MAP Protocol` <--> `zkSync`
 
 ## zkEvm(Polygon)
 * `Light-client on MAPO`
@@ -270,26 +277,84 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `Status`: `Coming soon`
 
 ## Merlin
-
-* `MOS`
+* `OracleNode on MAPO`
 	\
-	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)	\
-	`Address`: [0xfeB2b97e4Efce787c08086dC16Ab69E063911380](https://scan.merlinchain.io/address/0xfeB2b97e4Efce787c08086dC16Ab69E063911380)
+	`Address`:[0xe656bd52F9953b2688881644e3858fBE4c024627](https://maposcan.io/address/0xe656bd52F9953b2688881644e3858fBE4c024627)
+* `OracleNode on Chain`
+	\
+	`Address`: [0x1cbB3ACbD5f8817c75A83A62135A8CF2F86EEd48](https://scan.merlinchain.io/address/0x1cbB3ACbD5f8817c75A83A62135A8CF2F86EEd48)
+
 * `Chain ID`: `4200`
-* `Status`: `Developing` `MAP Protocol` <--> `Merlin`
+* `Status`: `MAP Protocol` <--> `Merlin`
 
 ## Blast
-
-* `MOS`
+* `OracleNode on MAPO`
 	\
-	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)	\
-	`Address`: [0xfeB2b97e4Efce787c08086dC16Ab69E063911380](https://blastscan.io/address/0xfeB2b97e4Efce787c08086dC16Ab69E063911380)
+	`Address`:[0x4030d0e5F10c859268Cd60C18e6DD3F645eea83C](https://maposcan.io/address/0x4030d0e5F10c859268Cd60C18e6DD3F645eea83C)
+* `OracleNode on Chain`
+	\
+	`Address`: [0x0001805c0b57dbd48b5c5c26e237a135ddc678ae](https://blastscan.io/address/0x0001805c0b57dbd48b5c5c26e237a135ddc678ae)
+
 * `Chain ID`: `81457`
-* `Status`: `Developing` `MAP Protocol` <--> `Blast`
+* `Status`: `MAP Protocol` <--> `Blast`
   
 
 ## Scroll
-* `Planning`
+* `OracleNode on MAPO`
+	\
+	`Address`:[0xe1E918C2157eC00a0b83280C738d3Bb08f172B8B](https://maposcan.io/address/0xe1E918C2157eC00a0b83280C738d3Bb08f172B8B)
+* `OracleNode on Chain`
+	\
+	`Address`: [0x0001805c0b57dbd48b5c5c26e237a135ddc678ae](https://scrollscan.com/address/0x0001805c0b57dbd48b5c5c26e237a135ddc678ae)
+
+* `Chain ID`: `534352`
+* `Status`: `MAP Protocol` <--> `Scroll`
+
+## AINN
+* `OracleNode on MAPO`
+	\
+	`Address`:[0xB8560Ed626De95Bad25CcD34264F29682FE677AB](https://maposcan.io/address/0xB8560Ed626De95Bad25CcD34264F29682FE677AB)
+* `OracleNode on Chain`
+	\
+	`Address`: [0x6951B909A71cd4189aA21aEfD38dFc3dCee90001](https://mainnet-explorer.ailayer.xyz/address/0x6951B909A71cd4189aA21aEfD38dFc3dCee90001)
+
+* `Chain ID`: `2649`
+* `Status`: `MAP Protocol` <--> `AINN`
+
+
+## B2 network
+* `OracleNode on MAPO`
+	\
+	`Address`:[0xab897386F696eA34D6968A4058547F726Eb245Aa](https://maposcan.io/address/0xab897386F696eA34D6968A4058547F726Eb245Aa)
+* `OracleNode on Chain`
+	\
+	`Address`: [0x6951B909A71cd4189aA21aEfD38dFc3dCee90001](https://explorer.bsquared.network/address/0x6951B909A71cd4189aA21aEfD38dFc3dCee90001)
+
+* `Chain ID`: `223`
+* `Status`: `MAP Protocol` <--> `B2`
+
+
+## Mantle
+* `OracleNode on MAPO`
+	\
+	`Address`:[0x5ACa31Fe7314a4c323E83C0F58936Fc40fB47a80](https://maposcan.io/address/0x5ACa31Fe7314a4c323E83C0F58936Fc40fB47a80)
+* `OracleNode on Chain`
+	\
+	`Address`: [0x0001805c0b57dbd48b5c5c26e237a135ddc678ae](https://mantlescan.info/address/0x0001805c0b57dbd48b5c5c26e237a135ddc678ae)
+
+* `Chain ID`: `5000`
+* `Status`: `MAP Protocol` <--> `Mantle`
+
+## zkLink
+* `OracleNode on MAPO`
+	\
+	`Address`:[0xD017252b2933Ec3723BdEdfDF1C891e4583955bd](https://maposcan.io/address/0xD017252b2933Ec3723BdEdfDF1C891e4583955bd)
+* `OracleNode on Chain`
+	\
+	`Address`: `0x1ceB1E03E9a23f5ACee598c42521EF87f24d6fCB`
+
+* `Chain ID`: `810180`
+* `Status`: `MAP Protocol` <--> `zkLink`
 
 ## Solana
 * `Planning`
