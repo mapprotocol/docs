@@ -206,49 +206,6 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `Chain ID`: `59144`
 * `Status`: `MAP Protocol` <--> `Linea`
 
-## Avalanche C-Chain
-* `Light-client on MAPO`
-\
-	`Source Code`: `N/A` \
- `Address`:`N/A`
-* `Light-client on Chain`
-\
-`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
-	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://snowtrace.io/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
-
-* `MOS`: `Coming soon`
-* `Chain ID`: `43114`
-* `Status`: `Coming soon`
-
-## Boba Network
-* `Light-client on MAPO`
-	\
-	`Source Code`: `N/A`
-	\
-	`Address`:`N/A`
-* `Light-client on Chain`
-	\
-	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
-	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://bobascan.com/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
-
-* `MOS`: `Coming soon`
-* `Chain ID`: `288`
-* `Status`: `Coming soon`
-
-## Metis Andromeda
-* `Light-client on MAPO`
-	\
-	`Source Code`: `N/A`
-	\
-	`Address`:`N/A`
-* `Light-client on Chain`
-	\
-	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
-	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://andromeda-explorer.metis.io/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
-
-* `MOS`: 
-* `Chain ID`: `1088`
-* `Status`: `Coming soon`
 
 ## zkSync
 * `OracleNode on MAPO`
@@ -261,20 +218,6 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `Chain ID`: `324`
 * `Status`: `MAP Protocol` <--> `zkSync`
 
-## zkEvm(Polygon)
-* `Light-client on MAPO`
-	\
-	`Source Code`: `N/A`
-	\
-	`Address`:`N/A`
-* `Light-client on Chain`
-	\
-	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
-	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://zkevm.polygonscan.com/address/0x624e6f327c4f91f1fa6285711245c215de264d49)
-
-* `MOS`: 
-* `Chain ID`: `1101`
-* `Status`: `Coming soon`
 
 ## Merlin
 * `OracleNode on MAPO`
@@ -291,7 +234,7 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `OracleNode on MAPO`
 	\
 	`Address`:[0x4030d0e5F10c859268Cd60C18e6DD3F645eea83C](https://maposcan.io/address/0x4030d0e5F10c859268Cd60C18e6DD3F645eea83C)
-* `OracleNode on Chain`
+* `Light-client on Chain`
 	\
 	`Address`: [0x0001805c0b57dbd48b5c5c26e237a135ddc678ae](https://blastscan.io/address/0x0001805c0b57dbd48b5c5c26e237a135ddc678ae)
 
@@ -303,7 +246,7 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `OracleNode on MAPO`
 	\
 	`Address`:[0xe1E918C2157eC00a0b83280C738d3Bb08f172B8B](https://maposcan.io/address/0xe1E918C2157eC00a0b83280C738d3Bb08f172B8B)
-* `OracleNode on Chain`
+* `Light-client on Chain`
 	\
 	`Address`: [0x0001805c0b57dbd48b5c5c26e237a135ddc678ae](https://scrollscan.com/address/0x0001805c0b57dbd48b5c5c26e237a135ddc678ae)
 
@@ -322,7 +265,7 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `Status`: `MAP Protocol` <--> `AINN`
 
 
-## B2 network
+## B² network
 * `OracleNode on MAPO`
 	\
 	`Address`:[0xab897386F696eA34D6968A4058547F726Eb245Aa](https://maposcan.io/address/0xab897386F696eA34D6968A4058547F726Eb245Aa)
@@ -331,14 +274,14 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 	`Address`: [0x6951B909A71cd4189aA21aEfD38dFc3dCee90001](https://explorer.bsquared.network/address/0x6951B909A71cd4189aA21aEfD38dFc3dCee90001)
 
 * `Chain ID`: `223`
-* `Status`: `MAP Protocol` <--> `B2`
+* `Status`: `MAP Protocol` <--> `B²`
 
 
 ## Mantle
 * `OracleNode on MAPO`
 	\
 	`Address`:[0x5ACa31Fe7314a4c323E83C0F58936Fc40fB47a80](https://maposcan.io/address/0x5ACa31Fe7314a4c323E83C0F58936Fc40fB47a80)
-* `OracleNode on Chain`
+* `Light-client on Chain`
 	\
 	`Address`: [0x0001805c0b57dbd48b5c5c26e237a135ddc678ae](https://mantlescan.info/address/0x0001805c0b57dbd48b5c5c26e237a135ddc678ae)
 
@@ -359,32 +302,6 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 ## Solana
 * `Planning`
   
-## Filecoin
-* `Light-client on MAPO`
-	\
-	`Source Code`: `N/A`
-	\
-	`Address`:`N/A`
-* `Light-client on Chain`
-	\
-	`Source Code`: [MAP Relay Chain light client deployed on EVM chains](https://github.com/mapprotocol/map-contracts/blob/main/mapclients/eth/README.md)\
-	`Address`: [0x624E6F327c4F91F1Fa6285711245c215de264d49](https://filfox.info/en/address/0x624E6F327c4F91F1Fa6285711245c215de264d49)
-
-* `MOS`: `Coming soon`
-* `Chain ID`: `314`
-* `Status`: `Coming soon`
-
-## xrpl-evm-sidechain
-* `Coming soon`
-
-## EthereumPoW
-* `Coming soon`
-
-## Gnosis Chain
-* `Coming soon`
-  
-## ICP(DFINITY)
-* `Coming soon`
   
 
 # How to integrate MAP Protocol with EVM-Compatible Chains
