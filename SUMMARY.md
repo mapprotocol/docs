@@ -103,7 +103,7 @@
     * [EVM Chains Contract](develop/mos/mcs/mcs-on-evm.md)
     * [Near Protocol Contract](develop/mos/mcs/mcs-on-near.md)
   * [Messenger](develop/mos/messenger/messenger.md)
-  * [API](develop/mos/mcs/api/api.md)
+  * [API](develop/sdk/bridge-api.md)
 * OmniChain Examples
   * [OmniApp](develop/mos/examples/omni-app.md)
   * [OmniDictionary](develop/mos/examples/OmniDictionary.md)
