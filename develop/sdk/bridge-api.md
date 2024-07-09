@@ -5,6 +5,7 @@ List of APIs
 
 - [queryCrossInfoById](#queryCrossInfoById)
 - [queryCrossInfoBySourceHash](#queryCrossInfoBySourceHash)
+- [queryHistoryByChainIdAddress](#queryHistoryByChainIdAddress)
 
 
 ### queryCrossInfoById
