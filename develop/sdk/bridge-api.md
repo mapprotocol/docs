@@ -273,7 +273,7 @@ http://host:port/api/queryHistoryByChainIdAddress?chainId=137&address=0x14a5b11b
 ##### Example
 ```js
 // Request
-curl -X GET -H  "Accept:application/json;charset=UTF-8" -H  "Content-Type:application/x-www-form-urlencoded" "https://127.0.0.1:8403/api/queryCrossInfo?id=85454"
+curl -X GET -H  "Accept:application/json;charset=UTF-8" -H  "Content-Type:application/x-www-form-urlencoded" "https://bn-api.chainservice.io/api/queryHistoryByChainIdAddress?address=0x14a5b11be1f996a2c662f8968d017328b4b80c3a&chainId=137&page=1&size=10"
 // Result
 {
     "code": 200,
