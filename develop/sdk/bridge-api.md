@@ -139,8 +139,9 @@ Example:
 http://host:port/api/queryCrossInfoBySourceHash?txHash=0x939a86a02c9cb6a52cf6d4ecbe897ea3924ba9a5a8a588a05390904ba7ea1ddb
 
 ##### Returns
+`list`
 
-`sourceInfo`
+-`sourceInfo`
  - `address`: source address
  - `chainInfo` : source chain info json object, include chainId, chainName, scanUrl, chainImg
  - `contract` : contract address
@@ -148,7 +149,7 @@ http://host:port/api/queryCrossInfoBySourceHash?txHash=0x939a86a02c9cb6a52cf6d4e
  - `hash` : source chain transaction hash
  - `timestamp` : source transaction timestamp
 
-`relyerInfo`
+-`relyerInfo`
 - `address`: relyer address
 - `chainInfo` : relyer chain info json object, include chainId, chainName, scanUrl, chainImg
 - `contract` : contract address
@@ -156,7 +157,7 @@ http://host:port/api/queryCrossInfoBySourceHash?txHash=0x939a86a02c9cb6a52cf6d4e
 - `hash` : relyer chain transaction hash
 - `timestamp` : relyer transaction timestamp
 
-`destinationInfo`
+-`destinationInfo`
 - `address`: destination address
 - `chainInfo` : destination chain info json object, include chainId, chainName, scanUrl, chainImg
 - `contract` : contract address
