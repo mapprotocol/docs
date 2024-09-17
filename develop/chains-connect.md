@@ -265,18 +265,6 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `Status`: `MAP Protocol` <--> `AINN`
 
 
-## B² network
-* `OracleNode on MAPO`
-	\
-	`Address`:[0xab897386F696eA34D6968A4058547F726Eb245Aa](https://maposcan.io/address/0xab897386F696eA34D6968A4058547F726Eb245Aa)
-* `OracleNode on Chain`
-	\
-	`Address`: [0x6951B909A71cd4189aA21aEfD38dFc3dCee90001](https://explorer.bsquared.network/address/0x6951B909A71cd4189aA21aEfD38dFc3dCee90001)
-
-* `Chain ID`: `223`
-* `Status`: `MAP Protocol` <--> `B²`
-
-
 ## Mantle
 * `OracleNode on MAPO`
 	\
@@ -288,16 +276,6 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `Chain ID`: `5000`
 * `Status`: `MAP Protocol` <--> `Mantle`
 
-## zkLink
-* `OracleNode on MAPO`
-	\
-	`Address`:[0xD017252b2933Ec3723BdEdfDF1C891e4583955bd](https://maposcan.io/address/0xD017252b2933Ec3723BdEdfDF1C891e4583955bd)
-* `OracleNode on Chain`
-	\
-	`Address`: `0x1ceB1E03E9a23f5ACee598c42521EF87f24d6fCB`
-
-* `Chain ID`: `810180`
-* `Status`: `MAP Protocol` <--> `zkLink`
 
 ## Solana
 * `Planning`
