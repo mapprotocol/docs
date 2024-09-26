@@ -31,7 +31,6 @@
   * [流動資金提供者](learn/Construction_of_MAP_Protocol/liquidityprovider.md)
   * [終端用戶](learn/Construction_of_MAP_Protocol/enduser.md)
 * [Tokenomics](learn/tokenomics.md)
-* [路線圖](learn/roadmap.md)
 * [購買$MAP](/learn/purchase.md)
 
 ## 開發
