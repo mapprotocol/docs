@@ -32,7 +32,6 @@
   * [Liquidity providers](learn/Construction_of_MAP_Protocol/liquidityprovider.md)
   * [End users](learn/Construction_of_MAP_Protocol/enduser.md)
 * [Tokenomics](learn/tokenomics.md)
-* [Roadmap](learn/roadmap.md)
 * [Purchase $MAP](/learn/purchase.md)
 
 ## Develop
