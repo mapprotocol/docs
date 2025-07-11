@@ -1,6 +1,6 @@
 # Introduction
 
-MAP Protocol is the omnichain layer of Web3, a cross-chain interoperable protocol to empower Web3 apps to thrive in the omnichain future. 
+MAP Protocol is an omnichain infrastructure for BTC, stablecoin, and tokenized asset swap. 
 
 Today’s blockchain developers are building applications on multiple competing and non-interoperable blockchains, resulting in inefficient operation, low user resources, and high costs. The future is omnichain. The omnichian infrastructure is the powerhouse enabling all-chain interoperability and onboarding the next billion Web2 users into Web3.
 
