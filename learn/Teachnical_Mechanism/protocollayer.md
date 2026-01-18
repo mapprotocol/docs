@@ -1,4 +1,0 @@
-MAP Protocol layer constructs the CORE of Omnichain Network Infrastructure: Verification Finality Network and dApp Deployment.
-
-Protocol layer consists of MAP Relay Chain, Light-Client deployed on each chain, and inter-chain Maintainer Program to update and maintain Light-Client status. MAP Relay Chain proactively extends and supports heterogeneous blockchains' features in virtual machine, which construct a gas-efficient Light-Client verification network. Light-Client deployed on each chain has the characteristics of independent self-verification and verification finality, which becomes the verification network for cross-chain assets and data. The Maintainer is an independent inter-chain program responsible for updating the status of Light Clients. The mechanism of the Light-client assures the invalidity of malicious attacks from maintainer. MAP Protocol [incentivizes validators on MAP Relay Chain and Maintainers](fee.md) for updating Light-Client status. 
-

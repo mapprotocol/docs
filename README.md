@@ -1,15 +1,74 @@
-# Introduction
+# MAP Protocol Documentation
 
-MAP Protocol is an omnichain infrastructure for BTC, stablecoin, and tokenized asset swap. 
+Welcome to the MAP Protocol documentation. This guide helps users, node operators, and application developers get started with MAP Protocol.
 
-Today’s blockchain developers are building applications on multiple competing and non-interoperable blockchains, resulting in inefficient operation, low user resources, and high costs. The future is omnichain. The omnichian infrastructure is the powerhouse enabling all-chain interoperability and onboarding the next billion Web2 users into Web3.
+## What is MAP Protocol?
 
-MAP Protocol offers the provably secure omnichain infrastructure built upon Light-Client and Zero-Knowledge technology. There are four core pillars to MAP Protocol's omnichain infrastructure:
-1. Full chain coverage: expandable and decentralized MAP Relay Chain to support both EVM and Non-EVM chains connections
-2. Self-verifiable Light-Client: light-Client technology to verify all cross-chain transactions with definite and unambiguous results
-3. Advance ZK Technology: Zero-Knowledge technolgy to optimize and speed up verification process and reduce transaction costs
-4. Comprehensive SDKs: MAP Protocol Service (MOS) and SDKs to offer built-in interoperability features for omnichain applications
+MAP Protocol is a peer-to-peer cross-chain infrastructure enabling secure interoperability between different blockchains. It supports:
 
-While cross-chain bridges can be easily built with MAP Protocol, the protocol itself targets a more fundamental problem and pursues a larger vision: empower Web3 applications to thrive in the omnichain future. Any Dapp built with MAP Protocol's infrastructure automatically inherits the omnichain nature of MAP Protocol without requiring the developers to tackle the error-prone cross-chain communications. 
+- Cross-chain asset transfers
+- Cross-chain messaging
+- Omnichain application development
 
-MAP Protocol is the super connector of blockchains and will facilitate Web3 applications to onboard the next millions of users. 
+## Getting Started
+
+### For Users
+Learn about MAP Protocol and how to use cross-chain services.
+- [Introduction](learn/introduction.md)
+- [Architecture Overview](learn/architecture/overview.md)
+
+### For Node Operators
+Run nodes and participate in the network.
+- [Run Node](run-node/overview.md)
+- [Become Validator](validator/become-validator.md)
+- [Run Compass (v1)](compass/overview.md)
+- [Run Compass-TSS (v2)](compass-tss/overview.md)
+
+### For Developers
+Build cross-chain applications on MAP Protocol.
+- [Development Guide](develop/overview.md)
+- [API Reference](api/overview.md)
+- [SDK](sdk/overview.md)
+
+## Documentation Structure
+
+| Section | Description |
+|---------|-------------|
+| [Learn](learn/introduction.md) | Understand MAP Protocol concepts |
+| [Quick Start](quick-start/overview.md) | Get started quickly |
+| [Run Node](run-node/overview.md) | Node operation guides |
+| [Validator](validator/overview.md) | Validator guides |
+| [Compass](compass/overview.md) | Compass (v1) operation |
+| [Compass-TSS](compass-tss/overview.md) | Compass-TSS (v2) operation |
+| [Develop](develop/overview.md) | Application development |
+| [API](api/overview.md) | API reference |
+| [SDK](sdk/overview.md) | SDK documentation |
+| [Network](network/mainnet.md) | Network information |
+
+## Network Information
+
+### Mainnet
+- Chain ID: 22776
+- RPC: https://rpc.maplabs.io
+- Explorer: https://maposcan.io
+
+### Testnet (Makalu)
+- Chain ID: 212
+- RPC: https://testnet-rpc.maplabs.io
+- Explorer: https://testnet.maposcan.io
+
+## For Advanced Developers
+
+For protocol design details, contract specifications, and chain integration guides, see the [Developer Documentation](../developer-docs/README.md).
+
+## Resources
+
+- [GitHub](https://github.com/mapprotocol)
+- [Website](https://mapprotocol.io)
+- [Discord](https://discord.gg/mapprotocol)
+- [Twitter](https://twitter.com/mapprotocol)
+
+## Support
+
+- GitHub Issues: Report bugs and request features
+- Discord: Community support and discussions
