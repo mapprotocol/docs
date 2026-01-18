@@ -7,17 +7,17 @@
 * [Introduction](learn/introduction.md)
 * Architecture
   * [Overview](learn/architecture/overview.md)
-  * [v1 Light Client Solution](learn/architecture/v1-light-client.md)
-  * [v2 TSS Solution](learn/architecture/v2-tss.md)
+  * [MAP Protocol 1.0](learn/architecture/v1-light-client.md)
+  * [MAP Protocol 2.0](learn/architecture/v2-tss.md)
 * [Tokenomics](learn/tokenomics.md)
 * [DAO Governance](learn/dao.md)
 * [FAQ](learn/faq.md)
 
 ## Network
 
-* [MAP Relay Chain](network/relay-chain.md)
 * [2.0 Contracts](network/v2-contracts.md)
 * [1.0 Contracts](network/v1-contracts.md)
+* [MAP Relay Chain](network/relay-chain.md)
 
 ## Validator
 

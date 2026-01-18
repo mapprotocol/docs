@@ -1,25 +1,25 @@
-## How To Vote
+# How To Vote
 
-## Introduce
+## Introduction
 
-We can use our validator account to vote for ourselves, or we can let other validators or voters vote for ourselves.
-Below we will demonstrate voting for ourselves using our own validator account, as this is the easiest.
+You can use your validator account to vote for yourself, or let other validators or voters vote for you.
+Below we demonstrate voting for yourself using your own validator account, as this is the easiest approach.
 
-The number of votes, and the number of MAP you pledge are 1 to 1
+The number of votes corresponds 1:1 with the number of MAP you pledge.
 
-Before voting, you must first become a validator，If you are not a validator， please to see [this](/run/HowToBecomeANewValidator.md).
+Before voting, you must first become a validator. If you are not a validator, please see [Become a Validator](./become-validator.md).
 
-### Step 1: createAccount
+## Step 1: Create Account
 
 If you have done this step before, please skip it.
 
-In this step, you need to transfer your identification information to the corresponding management contract,which will manage your account, keys, and metadata.
+In this step, you need to transfer your identification information to the corresponding management contract, which will manage your account, keys, and metadata.
 
-The purpose of this step is keep your locked `MAP` more secure by authorizing alternative keys to be used for signing attestations、voting、validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked `MAP` in storage.
+The purpose of this step is to keep your locked `MAP` more secure by authorizing alternative keys to be used for signing attestations, voting, and validating. By doing so, you can continue to participate in the protocol while keeping the key with access to your locked `MAP` in storage.
 
-You need `createAccount` command to perform the above operations,more detail about `createAccount` command please to see [this](/develop/map-relay-chain/marker/AboutCommon.md#createAccount).
+You need `createAccount` command to perform the above operations. For more details about `createAccount` command please see [Marker Common Commands](./marker/common.md#createaccount).
 
-For example
+Example:
 ```shell
 ./marker createAccount --rpcaddr http://127.0.0.1:7445 --name "validator" --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 
 
@@ -38,15 +38,15 @@ INFO [07-01|05:54:47.126] Please waiting                           func=getResul
 INFO [07-01|05:54:52.152] Transaction Success                      func=queryTx                 block Number=360,087
 ```
 
-### Step 2: locked `MAP`
+## Step 2: Lock MAP
 
-If you have locked enough `MAP` for you to vote, please skip this step.
+If you have locked enough `MAP` for voting, please skip this step.
 
-The purpose of this step is to deduct the part of the corresponding vote from the money you locked to the validator you want to vote,so you need to lock your `MAP` into the corresponding management contract in advance.
+The purpose of this step is to deduct the part of the corresponding vote from the money you locked to the validator you want to vote. You need to lock your `MAP` into the corresponding management contract in advance.
 
-You need `lockedMAP` command to perform the above operations,more detail about `lockedMAP` command please to see [this](/develop/map-relay-chain/marker/AboutCommon.md#lockedMAP).
+You need `lockedMAP` command to perform the above operations. For more details about `lockedMAP` command please see [Marker Common Commands](./marker/common.md#lockedmap).
 
-For example
+Example:
 ```shell
 ./marker lockedMAP --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --lockedNum 1000000
 
@@ -57,13 +57,11 @@ INFO [07-01|06:12:45.085] Please waiting                           func=getResul
 INFO [07-01|06:12:47.095] Transaction Success                      func=queryTx                 block Number=360,302
 ```
 
-### Step 3: vote
+## Step 3: Vote
 
-This step is voting.
+When you get to this step, you can vote for your favorite validator. You can use the `getTotalVotesForEligibleValidators` subcommand to view all current validators and their votes.
 
-When you get to this step, you can vote for your favorite validator. You can use the `getTotalVotesForEligibleValidators` subcommand to view all current validators and their votes
-
-For example
+Example:
 ```shell
 ./marker getTotalVotesForEligibleValidators --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 
 
@@ -76,7 +74,7 @@ INFO [07-06|06:04:01.434] Validator:                               addr=0x19C560
 INFO [07-06|06:04:01.434] Validator:                               addr=0x078F684c7d3bf78BDbe8bEf93E56998442dc8099 vote amount=103,060,000,000,004,450,909,077
 ```
 
-For `vote` example
+Vote example:
 ```shell
 ./marker vote --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --target "0x078F684c7d3bf78BDbe8bEf93E56998442dc8099" --voteNum 100000
 
@@ -86,15 +84,12 @@ INFO [07-06|06:05:31.479] Please waiting                           func=getResul
 INFO [07-06|06:05:32.083] Transaction Success                      func=queryTx                 block Number=446,614
 ```
 
-When you finish voting,your votes will be in the status of pending. At the end of epoch block, the Elected validator will automatic activation the votes in pending related to him, you can also use `active` command to activate your votes yourself. this active operation need to be greater than your pending vote epoch.
+When you finish voting, your votes will be in pending status. At the end of epoch block, the elected validator will automatically activate the votes in pending related to them. You can also use `activate` command to activate your votes yourself. This activate operation needs to be greater than your pending vote epoch.
 
-You can click the [active](./marker/AboutVote.md#activate) and [vote](/develop/map-relay-chain/marker/AboutVote.md#vote)  to see detail.
+For more details about vote commands, see [Marker Vote Commands](./marker/vote.md).
 
-## Expand:
+## Additional Notes
 
-### Case: When you vote for a validator who is not yet been elected.
+### When You Vote for a Validator Who Is Not Yet Elected
 
-your pending votes will not be automatic activation,until validator is elected , validator will automatic activation your votes at the next epoch.
-so If you don't activate your vote, your votes will get benefits after the second epoch when validator be elected.
-
-
+Your pending votes will not be automatically activated until the validator is elected. Once the validator is elected, they will automatically activate your votes at the next epoch. If you don't activate your vote manually, your votes will get benefits after the second epoch when the validator is elected.

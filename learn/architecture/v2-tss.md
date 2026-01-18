@@ -1,8 +1,8 @@
-# v2 TSS Solution
+# MAP Protocol 2.0
 
 ## Overview
 
-Protocol v2 introduces TSS (Threshold Signature Scheme) based cross-chain infrastructure. It enables secure asset transfers across all chains, including Bitcoin, through decentralized threshold signatures.
+Protocol 2.0 introduces TSS (Threshold Signature Scheme) based cross-chain infrastructure. It enables secure asset transfers across all chains, including Bitcoin, through decentralized threshold signatures.
 
 ## How It Works
 

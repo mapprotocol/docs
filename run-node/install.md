@@ -228,7 +228,5 @@ atlas --datadir ~/.atlas init ~/.atlas/genesis.json
 
 ## Next Steps
 
-- [Run Full Node](./run-full-node.md)
-- [Run Archive Node](./run-archive-node.md)
-- [Run RPC Node](./run-rpc-node.md)
-- [Become Validator](/validator/become-validator.md)
+- [Node Types](./node-types.md) - Configure different node types (Full Node, Archive Node, RPC Node)
+- [Become Validator](../validator/become-validator.md) - Run a validator node

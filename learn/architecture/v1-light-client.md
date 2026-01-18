@@ -1,8 +1,8 @@
-# v1 Light Client Solution
+# MAP Protocol 1.0
 
 ## Overview
 
-Protocol v1 is MAP Protocol's light client-based cross-chain solution. It enables trustless cross-chain communication by verifying transactions through on-chain light clients.
+Protocol 1.0 is MAP Protocol's light client-based cross-chain solution. It enables trustless cross-chain communication by verifying transactions through on-chain light clients.
 
 ## How It Works
 
@@ -115,4 +115,4 @@ The messaging layer that standardizes cross-chain communication.
 
 ## Getting Started
 
-- **Build Cross-chain App**: See [Development Guide](/develop/cross-chain-app/getting-started.md)
+- **Build Cross-chain App**: See [Development Guide](/develop/cross-chain-app/overview.md)

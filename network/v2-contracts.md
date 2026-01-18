@@ -16,6 +16,14 @@ MAP Protocol v2 uses TSS (Threshold Signature Scheme) for cross-chain asset cust
 | Registry | [0xf2C3a9b547875C48Ba8598C4973BAC71eDc4C34c](https://explorer.mapprotocol.io/address/0xf2C3a9b547875C48Ba8598C4973BAC71eDc4C34c) | Contract registry |
 | View Controller | [0x8c98bA0a11Cbb0DB3C52e4CD91B0844B39BC1F11](https://explorer.mapprotocol.io/address/0x8c98bA0a11Cbb0DB3C52e4CD91B0844B39BC1F11) | View functions for querying state |
 
+
+## EVM Gateway Addresses
+
+| Contract | Address | Description         |
+|----------|---------|---------------------|
+| Gateway  | 0x00004080D86e1077ce96E67C1B167fF105025307 | Cross-chain gateway |
+
+
 ## Vault Addresses
 
 ### BTC Vault
@@ -28,14 +36,7 @@ MAP Protocol v2 uses TSS (Threshold Signature Scheme) for cross-chain asset cust
 
 | Epoch | Address | Status |
 |-------|---------|--------|
-| 1 | `Coming soon` | - |
-
-## Supported Chains (v2)
-
-| Chain | Chain ID | Status |
-|-------|----------|--------|
-| BTC | - | Active |
-| DOGE | - | Active |
+| 0     | `Coming soon` | - |
 
 ## Query Vault Information
 

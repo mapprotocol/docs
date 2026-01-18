@@ -85,48 +85,6 @@ This guide covers running MAP Relay Chain (Atlas) nodes. Different node types se
 | RPC | https://testnet-rpc.maplabs.io |
 | Explorer | https://testnet.maposcan.io |
 
-## Choose Your Node Type
-
-### Run Full Node
-
-Basic node for network participation.
-
-- Syncs and validates blocks
-- Participates in P2P network
-- Moderate resource requirements
-
-[Full Node Guide →](./run-full-node.md)
-
-### Run Archive Node
-
-Store complete blockchain history.
-
-- All historical state available
-- Required for historical queries
-- High storage requirements
-
-[Archive Node Guide →](./run-archive-node.md)
-
-### Run RPC Node
-
-Serve API requests for applications.
-
-- Expose JSON-RPC endpoints
-- Handle DApp requests
-- May need load balancing for high traffic
-
-[RPC Node Guide →](./run-rpc-node.md)
-
-### Become Validator
-
-Produce blocks and earn rewards.
-
-- Requires staking MAPO
-- Participate in consensus
-- Run Validator node + register
-
-[Validator Guide →](/validator/become-validator.md)
-
 ## Quick Start
 
 ### 1. Install Atlas
@@ -164,6 +122,6 @@ mkdir -p ~/.atlas
 
 ## Next Steps
 
-- [Installation Guide](./install.md)
-- [Full Node Setup](./run-full-node.md)
-- [Troubleshooting](./troubleshooting.md)
+- [Installation Guide](./install.md) - Detailed installation instructions
+- [Node Types](./node-types.md) - Learn about different node configurations (Full Node, Archive Node, RPC Node)
+- [Become Validator](../validator/become-validator.md) - Run a validator node

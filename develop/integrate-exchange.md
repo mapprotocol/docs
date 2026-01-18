@@ -29,7 +29,7 @@ then start a node with the RPC service on the background,use `./build/bin/atlas 
 
 ## Interacting with the Atlas
 
-Interacting with the Atlas node is identical to interacting with [go-ethereum](https://geth.ethereum.org/). You can find the reference material for Atlas API [here](/sdk/RPC-API.md).
+Interacting with the Atlas node is identical to interacting with [go-ethereum](https://geth.ethereum.org/). You can find the reference material for Atlas API [here](/api/json-rpc/standard-rpc.md).
 
 Please note that personal_ namespace is turned off by default. To turn it on, you need to pass the appropriate command line .
 

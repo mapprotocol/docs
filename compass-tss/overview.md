@@ -122,17 +122,13 @@ Compass-TSS is a node software that:
 4. **Configure**: Set up configuration file
 5. **Run**: Start Compass-TSS node
 
-## Documentation
+## Next Steps
 
-- [Requirements](./requirements.md)
-- [Installation](./install.md)
-- [Configuration](./config.md)
-- [Running](./run.md)
-- [Register as Maintainer](./register-maintainer.md)
-- [Troubleshooting](./troubleshooting.md)
+- [Requirements](./requirements.md) - Detailed hardware and network requirements
+- [Register as Maintainer](./register-maintainer.md) - How to register on-chain
 
 ## Support
 
 For issues and questions:
-- GitHub Issues: [compass-tss repository]
+- GitHub Issues: [compass-tss repository](https://github.com/mapprotocol/compass-tss)
 - Discord: MAP Protocol community

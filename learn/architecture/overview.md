@@ -158,5 +158,4 @@ Depending on your role:
 | User | Use cross-chain bridges built on MAP Protocol |
 | Developer | [Build cross-chain apps](/develop/overview.md) |
 | Validator | [Run a validator node](/validator/become-validator.md) |
-| Maintainer (v1) | [Run Compass](/compass/overview.md) |
-| Maintainer (v2) | [Run Compass-TSS](/compass-tss/overview.md) |
+| Maintainer | [Run Compass-TSS](/compass-tss/overview.md) |
