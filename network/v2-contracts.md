@@ -22,7 +22,7 @@ MAP Protocol v2 uses TSS (Threshold Signature Scheme) for cross-chain asset cust
 
 | Epoch | Address | Status |
 |-------|---------|--------|
-| 1 | `bc1q86m6d8fmlvan8r9pypd4p592xtcpfkn6ezxj3t` | active |
+| 0 | `bc1q86m6d8fmlvan8r9pypd4p592xtcpfkn6ezxj3t` | active |
 
 ### DOGE Vault
 

@@ -7,7 +7,7 @@ This is the user documentation repository for MAP Protocol, targeting **general 
 ## Target Audience
 
 - Users wanting to learn about MAP Protocol
-- Node operators (Validators, Maintainers, Messengers)
+- Node operators (Validators, Maintainers)
 - DApp developers (using API/SDK for cross-chain application development)
 - Exchange integration personnel
 
@@ -21,83 +21,55 @@ docs/
 │   │   ├── overview.md          # Three-layer Architecture Overview
 │   │   ├── v1-light-client.md   # v1 Solution Brief
 │   │   └── v2-tss.md            # v2 Solution Brief
-│   ├── comparison.md            # Comparison with Other Solutions
 │   ├── tokenomics.md            # Tokenomics
 │   ├── dao.md                   # DAO Governance
 │   └── faq.md                   # FAQ
 │
-├── quick-start/                 # Quick Start
-│   ├── overview.md
-│   ├── for-users.md             # For Users
-│   ├── for-developers.md        # For Developers
-│   └── for-validators.md        # For Validators
+├── network/                     # Network Information
+│   ├── relay-chain.md           # MAP Relay Chain Info
+│   ├── v2-contracts.md          # 2.0 Contract Addresses
+│   └── v1-contracts.md          # 1.0 Contract Addresses
 │
 ├── run-node/                    # Run Node (Atlas)
-│   ├── overview.md
-│   ├── requirements.md          # Hardware Requirements
+│   ├── overview.md              # Overview
 │   ├── install.md               # Installation Guide
-│   ├── run-full-node.md         # Run Full Node
-│   ├── run-archive-node.md      # Run Archive Node
-│   ├── run-rpc-node.md          # Run RPC Node
-│   └── troubleshooting.md       # Troubleshooting
+│   └── node-types.md            # Node Types (Full/Archive/RPC)
 │
 ├── validator/                   # Validator Guide
-│   ├── overview.md
-│   ├── become-validator.md      # Become a Validator
-│   ├── advanced-setup.md        # Advanced Setup
+│   ├── become-validator.md      # Become a Validator (includes advanced setup)
 │   ├── vote.md                  # Voting
 │   ├── withdraw.md              # Withdrawal
-│   └── marker-tool.md           # Marker Tool Usage
-│
-├── compass/                     # Compass Operation Guide (v1)
-│   ├── overview.md              # Compass Introduction
-│   ├── install.md               # Installation
-│   ├── config.md                # Configuration
-│   ├── run-maintainer.md        # Run Maintainer
-│   ├── run-messenger.md         # Run Messenger
-│   └── troubleshooting.md       # Troubleshooting
+│   └── marker/                  # Marker Tool
+│       ├── overview.md          # Tool Overview
+│       ├── common.md            # Common Commands
+│       ├── validator.md         # Validator Commands
+│       └── vote.md              # Vote Commands
 │
 ├── compass-tss/                 # Compass-TSS Operation Guide (v2)
 │   ├── overview.md              # Compass-TSS Introduction
 │   ├── requirements.md          # Hardware/Network Requirements
-│   ├── install.md               # Installation
-│   ├── config.md                # Configuration
-│   ├── run.md                   # Running
-│   ├── register-maintainer.md   # Register as Maintainer
-│   └── troubleshooting.md       # Troubleshooting
+│   └── register-maintainer.md   # Register as Maintainer
 │
-├── develop/                     # Development Guide (Application Layer)
-│   ├── overview.md
+├── develop/                     # Development Guide
+│   ├── overview.md              # Development Overview
+│   ├── integrate-exchange.md    # Exchange Integration
 │   ├── cross-chain-app/         # Cross-chain App Development
-│   │   ├── getting-started.md
-│   │   ├── mos-message.md       # Using MOS Message
+│   │   ├── overview.md          # MOS Overview
+│   │   ├── asset-cross-chain.md # Asset Cross-chain Guide
+│   │   ├── message-cross-chain.md # Message Cross-chain Guide
 │   │   └── examples/            # Examples
-│   ├── smart-contracts/         # Smart Contract Development
-│   │   ├── getting-started.md
-│   │   ├── deploy.md
-│   │   └── verify.md
-│   └── integrate-exchange.md    # Exchange Integration
+│   │       └── omni-app.md      # Build OmniApp
+│   └── services/                # Third-party Services
+│       └── supra.md             # Supra Oracle
 │
 ├── api/                         # API Reference
-│   ├── overview.md
-│   ├── json-rpc/                # JSON-RPC API
-│   │   ├── standard-rpc.md      # Standard Ethereum RPC
-│   │   └── consensus-rpc.md     # Consensus RPC
-│   ├── mos-api.md               # MOS Interface
-│   ├── scan-api.md              # Block Explorer API
-│   └── bridge-api.md            # Cross-chain Bridge API
+│   └── json-rpc/                # JSON-RPC API
+│       ├── standard-rpc.md      # Standard Ethereum RPC
+│       ├── consensus-rpc.md     # Consensus RPC
+│       └── tss-rpc.md           # TSS RPC
 │
 ├── sdk/                         # SDK
-│   ├── overview.md
-│   ├── javascript.md
-│   ├── go.md
-│   └── butter.md                # Butter SDK
-│
-├── network/                     # Network Information
-│   ├── mainnet.md               # Mainnet Info
-│   ├── testnet.md               # Testnet Info
-│   ├── supported-chains.md      # Supported Chains
-│   └── contract-addresses.md    # Contract Addresses
+│   └── cross-chain.md           # Cross-chain SDK
 │
 └── resources/                   # Resources
     ├── glossary.md              # Glossary
@@ -107,14 +79,16 @@ docs/
 
 ## Version Description
 
-### Compass (v1)
-- Supports Maintainer role: maintains light client state
-- Supports Messenger role: delivers cross-chain messages
-
 ### Compass-TSS (v2)
+- Current active cross-chain solution
 - Supports TSS-signing Maintainer
 - Participates in KeyGen/KeySign processes
 - Requires registration as Maintainer to participate
+
+### Light Client (v1)
+- Legacy solution (documentation in developer-docs)
+- Supports Maintainer role: maintains light client state
+- Supports Messenger role: delivers cross-chain messages
 
 ## Content Scope
 
@@ -122,23 +96,23 @@ docs/
 |-------------|-----------|----------------|
 | Project Introduction | ✅ | ❌ |
 | Node Operation | ✅ | ❌ |
-| Compass/Compass-TSS Deployment | ✅ | ❌ |
+| Compass-TSS Deployment | ✅ | ❌ |
 | Validator Operations | ✅ | ❌ |
 | API/SDK Usage | ✅ | ❌ |
-| Cross-chain App Development Tutorial | ✅ | ❌ |
+| Cross-chain App Development | ✅ | ❌ |
 | Protocol Design Principles | Brief | ✅ Deep |
 | Contract Design/ABI | ❌ | ✅ |
+| Light Client Implementation | ❌ | ✅ |
 
 ## Writing Guidelines
 
 1. **Language**: English
 2. **Depth**: For general users, focus on operational steps and practicality
-3. **Format**: Markdown
+3. **Format**: Markdown (GitBook compatible)
 4. **Examples**: Provide clear command-line examples and screenshots
 
 ## Related Repositories
 
-- **developer-docs**: Technical documentation for advanced developers (protocol design, contract ABI, etc.)
+- **developer-docs**: Technical documentation for advanced developers (protocol design, contract ABI, light client implementation)
 - **atlas**: MAP Relay Chain source code
-- **compass**: Compass v1 source code
 - **compass-tss**: Compass TSS source code

@@ -21,29 +21,26 @@ Learn about MAP Protocol and how to use cross-chain services.
 Run nodes and participate in the network.
 - [Run Node](run-node/overview.md)
 - [Become Validator](validator/become-validator.md)
-- [Run Compass (v1)](compass/overview.md)
 - [Run Compass-TSS (v2)](compass-tss/overview.md)
 
 ### For Developers
 Build cross-chain applications on MAP Protocol.
 - [Development Guide](develop/overview.md)
-- [API Reference](api/overview.md)
-- [SDK](sdk/overview.md)
+- [Cross-chain Application](develop/cross-chain-app/overview.md)
+- [API & SDK](api/json-rpc/standard-rpc.md)
 
 ## Documentation Structure
 
 | Section | Description |
 |---------|-------------|
 | [Learn](learn/introduction.md) | Understand MAP Protocol concepts |
-| [Quick Start](quick-start/overview.md) | Get started quickly |
+| [Network](network/relay-chain.md) | Network and contract information |
 | [Run Node](run-node/overview.md) | Node operation guides |
-| [Validator](validator/overview.md) | Validator guides |
-| [Compass](compass/overview.md) | Compass (v1) operation |
+| [Validator](validator/become-validator.md) | Validator guides |
 | [Compass-TSS](compass-tss/overview.md) | Compass-TSS (v2) operation |
 | [Develop](develop/overview.md) | Application development |
-| [API](api/overview.md) | API reference |
-| [SDK](sdk/overview.md) | SDK documentation |
-| [Network](network/mainnet.md) | Network information |
+| [API & SDK](api/json-rpc/standard-rpc.md) | API reference and SDK |
+| [Resources](resources/glossary.md) | Glossary and links |
 
 ## Network Information
 

@@ -19,7 +19,7 @@ Retrieves vault information for a specific epoch or the latest epoch.
 | Field | Type | Description |
 |-------|------|-------------|
 | `epoch` | `QUANTITY` | The epoch number |
-| `public_key` | `DATA` | TSS public key for this epoch |
+| `public_key` | `String` | TSS public key for this epoch |
 | `status` | `String` | Vault status (`active`, `inactive`, etc.) |
 | `chains` | `Array` | List of supported chain names |
 | `addresses` | `Array` | Chain-specific vault addresses |

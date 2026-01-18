@@ -93,29 +93,6 @@ mkdir -p ~/.atlas
 chmod 700 ~/.atlas
 ```
 
-### Download Genesis File
-
-#### Mainnet
-
-```bash
-wget -O ~/.atlas/genesis.json \
-  https://raw.githubusercontent.com/mapprotocol/atlas/main/genesis/mainnet.json
-```
-
-#### Testnet (Makalu)
-
-```bash
-wget -O ~/.atlas/genesis.json \
-  https://raw.githubusercontent.com/mapprotocol/atlas/main/genesis/testnet.json
-```
-
-### Initialize Node
-
-```bash
-# Initialize with genesis
-atlas --datadir ~/.atlas init ~/.atlas/genesis.json
-```
-
 ## Create Systemd Service
 
 For production nodes, use systemd for process management:
