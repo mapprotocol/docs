@@ -19,6 +19,43 @@ MAP Protocol is an omnichain infrastructure for BTC, stablecoins, and tokenized 
 
 ## Roadmap
 
+### **2026 Q4**
+* **Intent-based cross-chain mainnet launch:**
+Officially launch intent-based cross-chain services and open formal access for solver providers.
+
+* **Cross-chain data report:**
+Publish an annual report covering cross-chain volume, TVL growth, and user activity.
+
+* **Tokenized asset exploration:**
+Explore frameworks and roadmap planning for tokenized assets and RWA cross-chain support.
+
+### **2026 Q3**
+* **Intent-based cross-chain development completed:**
+Finalize intent-based execution and expand solver participation in routing and liquidity support.
+
+* **Advanced LP tooling for solvers:**
+Launch solver-oriented LP APIs and tools, with incentive parameters adjustable via DAO governance.
+
+* **Governance execution milestone:**
+Conduct the first multi-dimensional DAO votes and publish a mid-year governance report.
+
+### **2026 Q2**
+* **Intent-based cross-chain architecture design:**
+Complete the design of intent-based execution with solver mode and plan integrations for additional heterogeneous and popular chains.
+
+* **Liquidity as a Service (LaaS) upgrade:**
+Enhance LP incentives with dynamic APY adjustments and impermanent loss mitigation mechanisms.
+
+* **DAO governance expansion:**
+Extend MAPO governance to multi-dimensional voting covering fees, revenue distribution, and development priorities.
+
+### **2026 Q1**
+* **Native BTC, DOGE, and XRP cross-chain mainnet launch:**
+Enable peer-to-peer cross-chain swaps across BTC, Dogecoin, and XRP using MPC-TSS execution and light-client verification.
+
+* **Public liquidity pools opened:**
+Open existing LP pools to the public with asset-specific APY parameters.
+
 ### 2025 Q4
 * Launch a universal cross-chain standard specification MStack based on heterogeneous chains
 
