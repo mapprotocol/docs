@@ -53,6 +53,7 @@
   * [Standard RPC](api/json-rpc/standard-rpc.md)
   * [Consensus RPC](api/json-rpc/consensus-rpc.md)
   * [TSS RPC](api/json-rpc/tss-rpc.md)
+  * [TSS-Cross RPC](api/json-rpc/tss-cross-rpc.md)
 * [Cross-chain SDK](sdk/cross-chain.md)
 
 

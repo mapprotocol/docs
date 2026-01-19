@@ -67,6 +67,8 @@ docs/
 │       ├── standard-rpc.md      # Standard Ethereum RPC
 │       ├── consensus-rpc.md     # Consensus RPC
 │       └── tss-rpc.md           # TSS RPC
+Cross
+│       └── tss-cross-rpc.md           # TSS-Cross RPC
 │
 ├── sdk/                         # SDK
 │   └── cross-chain.md           # Cross-chain SDK
