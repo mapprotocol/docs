@@ -26,13 +26,13 @@ MAP Protocol v2 uses TSS (Threshold Signature Scheme) for cross-chain asset cust
 
 ## Vault Addresses
 
-### BTC Vault
+### MAP Protocol BTC Vault
 
 | Epoch | Address | Status |
 |-------|---------|--------|
 | 0 | `bc1q86m6d8fmlvan8r9pypd4p592xtcpfkn6ezxj3t` | active |
 
-### DOGE Vault
+### MAP Protocol DOGE Vault
 
 | Epoch | Address | Status |
 |-------|---------|--------|
