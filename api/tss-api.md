@@ -1,6 +1,6 @@
-# TSS RPC API
+# TSS Cross-chain API
 
-An interface that returns TSS cross-chain data, and provides the following interfaces.
+TSS cross-chain API returns TSS cross-chain data, and provides the following interfaces.
 
 - [getChainTxHeight](#getChainTxHeight)
 - [getOrderSetByChainHeight](#getOrderSetByChainHeight)

@@ -7,8 +7,8 @@
 * [Introduction](learn/introduction.md)
 * Architecture
   * [Overview](learn/architecture/overview.md)
-  * [MAP Protocol 1.0](learn/architecture/v1-light-client.md)
   * [MAP Protocol 2.0](learn/architecture/v2-tss.md)
+  * [MAP Protocol 1.0](learn/architecture/v1-light-client.md)
 * [Tokenomics](learn/tokenomics.md)
 * [DAO Governance](learn/dao.md)
 * [FAQ](learn/faq.md)
@@ -53,7 +53,7 @@
   * [Standard RPC](api/json-rpc/standard-rpc.md)
   * [Consensus RPC](api/json-rpc/consensus-rpc.md)
   * [TSS RPC](api/json-rpc/tss-rpc.md)
-  * [TSS-Cross RPC](api/json-rpc/tss-cross-rpc.md)
+* [TSS Cross-chain API](api/tss-api.md)
 * [Cross-chain SDK](sdk/cross-chain.md)
 
 

@@ -46,12 +46,12 @@ To get the latest vault addresses programmatically, use the `tss_getVault` RPC m
 # Query latest vault
 curl -X POST -H "Content-Type: application/json" \
   --data '{"jsonrpc":"2.0","method":"tss_getVault","params":["latest"],"id":1}' \
-  http://localhost:8545
+  https://rpc.maplabs.io
 
 # Query by epoch
 curl -X POST -H "Content-Type: application/json" \
   --data '{"jsonrpc":"2.0","method":"tss_getVault","params":["0x1"],"id":1}' \
-  http://localhost:8545
+  https://rpc.maplabs.io
 ```
 
 See [TSS RPC API](../api/json-rpc/tss-rpc.md) for more details.
