@@ -79,7 +79,7 @@ curl -X POST https://api.butterpay.io/v1/merchants/me/generate-key \
 
 ```json
 {
-  "apiKey": "bpk_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  "apiKey": "bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 }
 ```
 

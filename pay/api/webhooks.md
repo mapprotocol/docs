@@ -5,7 +5,7 @@ dispatches, and secret rotation. For event semantics, payload shapes, signature 
 retry policy, see [Webhooks](../webhooks.md).
 
 All endpoints require authentication. `ListLogs`, `GetSecret`, and `SendTest` accept an API key
-(`X-Api-Key` or `Bearer` API key). `RotateSecret` is intentionally restricted to a short-lived
+(`X-Api-Key` or `Authorization: Bearer <jwt>`). `RotateSecret` is intentionally restricted to a short-lived
 **Bearer JWT** because secret rotation is a security-sensitive operation.
 
 ---
@@ -69,7 +69,7 @@ Query string parameters:
 
 ```bash
 curl https://api.butterpay.io/v1/webhooks/logs?limit=20&offset=0 \
-  -H "X-Api-Key: pk_live_abc123..."
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..."
 ```
 
 **Response** (HTTP 200):
@@ -135,7 +135,7 @@ None. Merchant identity is derived from the API key.
 
 ```bash
 curl https://api.butterpay.io/v1/webhooks/secret \
-  -H "X-Api-Key: pk_live_abc123..."
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..."
 ```
 
 **Response** (HTTP 200):
@@ -220,7 +220,7 @@ response body (truncated at the transport layer if very long). On network failur
 
 ```bash
 curl -X POST https://api.butterpay.io/v1/webhooks/test \
-  -H "X-Api-Key: pk_live_abc123..."
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..."
 ```
 
 **Response** (HTTP 200 — delivery succeeded):

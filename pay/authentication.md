@@ -43,7 +43,7 @@ curl -X POST https://api.butterpay.io/v1/auth/login \
     "id": "mer_01hwz3k9x2f8b4c6e7g9h0j1km",
     "name": "Acme Store",
     "email": "you@example.com",
-    "apiKey": "bpk_live_xxxx...",
+    "apiKey": "bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...",
     "serviceFeeBps": 80,
     "webhookUrl": "https://your-server.example.com/webhooks/butterpay",
     "receivingAddresses": { "arbitrum": "0xYourAddress" }
@@ -85,7 +85,7 @@ Once you have an API key, pass it in the `X-Api-Key` header:
 
 ```bash
 curl -X POST https://api.butterpay.io/v1/invoices \
-  -H "X-Api-Key: bpk_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
   -H "Content-Type: application/json" \
   -d '{ "amountUsd": "49.99" }'
 ```
@@ -118,7 +118,7 @@ curl -X POST https://api.butterpay.io/v1/merchants/me/generate-key \
 
 ```json
 {
-  "apiKey": "bpk_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "apiKey": "bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "message": "Store this key securely. It will not be shown again."
 }
 ```
@@ -156,7 +156,7 @@ curl -X POST https://api.butterpay.io/v1/merchants/me/rotate-key \
 
 ```json
 {
-  "apiKey": "bpk_live_yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+  "apiKey": "bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "message": "Store this key securely. It will not be shown again."
 }
 ```
@@ -239,5 +239,5 @@ reflects all origins. These defaults must never be used in a production deployme
 - Prefer short-lived JWTs in browser contexts. The 24-hour expiry is designed for dashboard
   sessions — do not persist JWTs in localStorage for long periods.
 - Before sending a request, validate that the API key starts with the expected prefix
-  (`bpk_live_`). This catches accidentally truncated keys before they result in a `401` at
+  (`bp_`). This catches accidentally truncated keys before they result in a `401` at
   the server.

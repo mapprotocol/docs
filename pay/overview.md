@@ -16,7 +16,7 @@ works without modification. A flat 0.8% service fee is deducted at the moment of
    token, and signs the on-chain transaction. `PaymentRouter` atomically splits the transfer:
    99.2% to the merchant address and 0.8% to the fee collector in a single transaction.
 4. **Webhook delivered** — the backend detects the `PaymentProcessed` on-chain event, verifies the
-   amount, marks the invoice `confirmed`, and POST the `invoice.paid` event to the merchant's
+   amount, marks the invoice `confirmed`, and POST the `payment.confirmed` event to the merchant's
    configured webhook URL.
 
 ## Architecture

@@ -289,7 +289,7 @@ Retrieve delivery history and retry status with:
 
 ```bash
 curl https://api.butterpay.io/v1/webhooks/logs \
-  -H "X-Api-Key: bpk_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 
 The response includes `attempts`, `statusCode`, `success`, `nextRetryAt`, and the raw
@@ -359,7 +359,7 @@ webhook secret, so your verification logic runs exactly as it would for a real e
 
 ```bash
 curl -X POST https://api.butterpay.io/v1/webhooks/test \
-  -H "X-Api-Key: bpk_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 
 **Response**

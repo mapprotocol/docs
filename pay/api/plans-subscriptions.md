@@ -51,7 +51,7 @@ cycles. Once created, the plan is immediately usable on the hosted subscription 
 | `intervalSeconds` | number | Yes | Billing interval in seconds. Must be `>= 86400` (1 day). Common values: `2592000` (30 days), `7776000` (90 days), `31536000` (365 days). |
 | `cycles` | number | Yes | Total number of billing cycles before the subscription completes. Range: 1–120. |
 | `description` | string | No | Optional description shown to the subscriber. |
-| `chain` | string | No | Blockchain to use for charges. Defaults to `"arbitrumSepolia"`. |
+| `chain` | string | No | Blockchain to use for charges. Defaults to `"arbitrum"`. |
 | `token` | string | No | Token symbol for charges. Defaults to `"USDT"`. |
 
 ### Returns
@@ -65,7 +65,7 @@ cycles. Once created, the plan is immediately usable on the hosted subscription 
   "amountUsd": "9.99",
   "interval": 2592000,
   "cycles": 12,
-  "chain": "arbitrumSepolia",
+  "chain": "arbitrum",
   "token": "USDT",
   "active": true,
   "createdAt": "2026-04-27T12:00:00.000Z",
@@ -79,7 +79,7 @@ cycles. Once created, the plan is immediately usable on the hosted subscription 
 
 ```bash
 curl -X POST https://api.butterpay.io/v1/subscription-plans \
-  -H "X-Api-Key: pk_live_abc123..." \
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..." \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Pro Monthly",
@@ -87,7 +87,7 @@ curl -X POST https://api.butterpay.io/v1/subscription-plans \
     "amountUsd": "9.99",
     "intervalSeconds": 2592000,
     "cycles": 12,
-    "chain": "arbitrumSepolia",
+    "chain": "arbitrum",
     "token": "USDT"
   }'
 ```
@@ -103,7 +103,7 @@ curl -X POST https://api.butterpay.io/v1/subscription-plans \
   "amountUsd": "9.99",
   "interval": 2592000,
   "cycles": 12,
-  "chain": "arbitrumSepolia",
+  "chain": "arbitrum",
   "token": "USDT",
   "active": true,
   "createdAt": "2026-04-27T12:00:00.000Z",
@@ -142,7 +142,7 @@ None.
       "amountUsd": "9.99",
       "interval": 2592000,
       "cycles": 12,
-      "chain": "arbitrumSepolia",
+      "chain": "arbitrum",
       "token": "USDT",
       "active": true,
       "createdAt": "2026-04-27T12:00:00.000Z",
@@ -159,7 +159,7 @@ None.
 
 ```bash
 curl https://api.butterpay.io/v1/subscription-plans \
-  -H "X-Api-Key: pk_live_abc123..."
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..."
 ```
 
 **Response** (HTTP 200):
@@ -204,14 +204,14 @@ subscriber before they approve and sign.
   "amountUsd": "9.99",
   "interval": 2592000,
   "cycles": 12,
-  "chain": "arbitrumSepolia",
+  "chain": "arbitrum",
   "token": "USDT",
   "active": true,
   "createdAt": "2026-04-27T12:00:00.000Z",
   "updatedAt": "2026-04-27T12:00:00.000Z",
   "merchantName": "Acme Store",
   "merchantReceivingAddresses": {
-    "arbitrumSepolia": "0xMerchantWalletAddress"
+    "arbitrum": "0xMerchantWalletAddress"
   }
 }
 ```
@@ -235,14 +235,14 @@ curl https://api.butterpay.io/v1/subscription-plans/plan_01hwzq3k5n8ej4v2b7r9abc
   "amountUsd": "9.99",
   "interval": 2592000,
   "cycles": 12,
-  "chain": "arbitrumSepolia",
+  "chain": "arbitrum",
   "token": "USDT",
   "active": true,
   "createdAt": "2026-04-27T12:00:00.000Z",
   "updatedAt": "2026-04-27T12:00:00.000Z",
   "merchantName": "Acme Store",
   "merchantReceivingAddresses": {
-    "arbitrumSepolia": "0xMerchantWalletAddress"
+    "arbitrum": "0xMerchantWalletAddress"
   }
 }
 ```
@@ -281,7 +281,7 @@ The full updated plan record (same shape as [GetPlan](#getplan) minus the mercha
 
 ```bash
 curl -X PATCH https://api.butterpay.io/v1/subscription-plans/plan_01hwzq3k5n8ej4v2b7r9abc123 \
-  -H "X-Api-Key: pk_live_abc123..." \
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..." \
   -H "Content-Type: application/json" \
   -d '{
     "active": false
@@ -299,7 +299,7 @@ curl -X PATCH https://api.butterpay.io/v1/subscription-plans/plan_01hwzq3k5n8ej4
   "amountUsd": "9.99",
   "interval": 2592000,
   "cycles": 12,
-  "chain": "arbitrumSepolia",
+  "chain": "arbitrum",
   "token": "USDT",
   "active": false,
   "createdAt": "2026-04-27T12:00:00.000Z",
@@ -348,7 +348,7 @@ Permanently delete a plan. Deletion is blocked when the plan has active or past-
 
 ```bash
 curl -X DELETE https://api.butterpay.io/v1/subscription-plans/plan_01hwzq3k5n8ej4v2b7r9abc123 \
-  -H "X-Api-Key: pk_live_abc123..."
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..."
 ```
 
 **Response** (HTTP 200):
@@ -409,7 +409,7 @@ Webhook events delivered after registration: `subscription.activated` (first cha
   "merchantId": "mer_01hwzq3k5n8ej4v2b7r9abc123",
   "planId": "plan_01hwzq3k5n8ej4v2b7r9abc123",
   "subscriberAddress": "0xSubscriberWalletAddress",
-  "chain": "arbitrumSepolia",
+  "chain": "arbitrum",
   "token": "USDT",
   "amount": "9.99",
   "interval": 2592000,
@@ -449,7 +449,7 @@ curl -X POST https://api.butterpay.io/v1/plans/plan_01hwzq3k5n8ej4v2b7r9abc123/s
   "merchantId": "mer_01hwzq3k5n8ej4v2b7r9abc123",
   "planId": "plan_01hwzq3k5n8ej4v2b7r9abc123",
   "subscriberAddress": "0xSubscriberWalletAddress",
-  "chain": "arbitrumSepolia",
+  "chain": "arbitrum",
   "token": "USDT",
   "amount": "9.99",
   "interval": 2592000,
@@ -489,7 +489,7 @@ import existing subscribers.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `subscriberAddress` | string | Yes | Subscriber's wallet address. |
-| `chain` | string | Yes | Blockchain identifier, e.g. `"arbitrumSepolia"`. |
+| `chain` | string | Yes | Blockchain identifier, e.g. `"arbitrum"`. |
 | `token` | string | Yes | Token symbol, e.g. `"USDT"`. |
 | `amount` | string | Yes | Decimal USD amount per cycle, e.g. `"9.99"`. |
 | `intervalSeconds` | number | Yes | Billing interval in seconds. |
@@ -507,11 +507,11 @@ The full subscription record (same shape as [RegisterSubscription](#registersubs
 
 ```bash
 curl -X POST https://api.butterpay.io/v1/subscriptions \
-  -H "X-Api-Key: pk_live_abc123..." \
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..." \
   -H "Content-Type: application/json" \
   -d '{
     "subscriberAddress": "0xSubscriberWalletAddress",
-    "chain": "arbitrumSepolia",
+    "chain": "arbitrum",
     "token": "USDT",
     "amount": "9.99",
     "intervalSeconds": 2592000,
@@ -529,7 +529,7 @@ curl -X POST https://api.butterpay.io/v1/subscriptions \
   "merchantId": "mer_01hwzq3k5n8ej4v2b7r9abc123",
   "planId": null,
   "subscriberAddress": "0xSubscriberWalletAddress",
-  "chain": "arbitrumSepolia",
+  "chain": "arbitrum",
   "token": "USDT",
   "amount": "9.99",
   "interval": 2592000,
@@ -576,7 +576,7 @@ descending. Optionally filter by status.
       "merchantId": "mer_01hwzq3k5n8ej4v2b7r9abc123",
       "planId": "plan_01hwzq3k5n8ej4v2b7r9abc123",
       "subscriberAddress": "0xSubscriberWalletAddress",
-      "chain": "arbitrumSepolia",
+      "chain": "arbitrum",
       "token": "USDT",
       "amount": "9.99",
       "interval": 2592000,
@@ -602,7 +602,7 @@ descending. Optionally filter by status.
 
 ```bash
 curl "https://api.butterpay.io/v1/subscriptions?status=active" \
-  -H "X-Api-Key: pk_live_abc123..."
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..."
 ```
 
 **Response** (HTTP 200):
@@ -642,7 +642,7 @@ The full subscription record (same shape as [RegisterSubscription](#registersubs
 
 ```bash
 curl https://api.butterpay.io/v1/subscriptions/sub_01hwzq3k5n8ej4v2b7r9abc456 \
-  -H "X-Api-Key: pk_live_abc123..."
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..."
 ```
 
 **Response** (HTTP 200):
@@ -653,7 +653,7 @@ curl https://api.butterpay.io/v1/subscriptions/sub_01hwzq3k5n8ej4v2b7r9abc456 \
   "merchantId": "mer_01hwzq3k5n8ej4v2b7r9abc123",
   "planId": "plan_01hwzq3k5n8ej4v2b7r9abc123",
   "subscriberAddress": "0xSubscriberWalletAddress",
-  "chain": "arbitrumSepolia",
+  "chain": "arbitrum",
   "token": "USDT",
   "amount": "9.99",
   "interval": 2592000,
@@ -702,7 +702,7 @@ The updated subscription record with `status: "cancelled"` and `cancelledAt` set
   "merchantId": "mer_01hwzq3k5n8ej4v2b7r9abc123",
   "planId": "plan_01hwzq3k5n8ej4v2b7r9abc123",
   "subscriberAddress": "0xSubscriberWalletAddress",
-  "chain": "arbitrumSepolia",
+  "chain": "arbitrum",
   "token": "USDT",
   "amount": "9.99",
   "interval": 2592000,
@@ -725,7 +725,7 @@ The updated subscription record with `status: "cancelled"` and `cancelledAt` set
 
 ```bash
 curl -X POST https://api.butterpay.io/v1/subscriptions/sub_01hwzq3k5n8ej4v2b7r9abc456/cancel \
-  -H "X-Api-Key: pk_live_abc123..."
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..."
 ```
 
 **Response** (HTTP 200):
@@ -736,7 +736,7 @@ curl -X POST https://api.butterpay.io/v1/subscriptions/sub_01hwzq3k5n8ej4v2b7r9a
   "merchantId": "mer_01hwzq3k5n8ej4v2b7r9abc123",
   "planId": "plan_01hwzq3k5n8ej4v2b7r9abc123",
   "subscriberAddress": "0xSubscriberWalletAddress",
-  "chain": "arbitrumSepolia",
+  "chain": "arbitrum",
   "token": "USDT",
   "amount": "9.99",
   "interval": 2592000,

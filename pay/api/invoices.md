@@ -94,7 +94,7 @@ Full invoice record (same shape as the authenticated `GET /v1/invoices/:id`):
 
 ```bash
 curl -X POST https://api.butterpay.io/v1/invoices \
-  -H "X-Api-Key: pk_live_abc123..." \
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..." \
   -H "Content-Type: application/json" \
   -d '{
     "amountUsd": "10.00",
@@ -247,7 +247,7 @@ curl https://api.butterpay.io/v1/invoices/inv_01hwzq3k5n8ej4v2b7r9fcx6ds
 
 ```bash
 curl https://api.butterpay.io/v1/invoices/inv_01hwzq3k5n8ej4v2b7r9fcx6ds \
-  -H "X-Api-Key: pk_live_abc123..."
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..."
 ```
 
 **Response** includes all fields listed in [full record](#with-valid-x-api-key-matching-invoice-owner-full-record) above.
@@ -457,7 +457,7 @@ by `createdAt` descending (newest first). Supports offset-based pagination.
 
 ```bash
 curl "https://api.butterpay.io/v1/transactions?status=confirmed&from=2026-04-01T00:00:00Z&to=2026-04-30T23:59:59Z&limit=50&offset=0" \
-  -H "X-Api-Key: pk_live_abc123..."
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..."
 ```
 
 **Response:**
@@ -533,7 +533,7 @@ All monetary values are strings representing decimal numbers with up to 18 fract
 
 ```bash
 curl "https://api.butterpay.io/v1/transactions/summary?from=2026-04-01T00:00:00Z&to=2026-04-30T23:59:59Z" \
-  -H "X-Api-Key: pk_live_abc123..."
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..."
 ```
 
 **Response:**
@@ -598,7 +598,7 @@ CSV columns (in order):
 
 ```bash
 curl "https://api.butterpay.io/v1/transactions/export?status=confirmed&from=2026-04-01T00:00:00Z" \
-  -H "X-Api-Key: pk_live_abc123..." \
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..." \
   -o butterpay-export.csv
 ```
 
@@ -665,7 +665,7 @@ If no receiving addresses are configured, the response is:
 
 ```bash
 curl https://api.butterpay.io/v1/balances \
-  -H "X-Api-Key: pk_live_abc123..."
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..."
 ```
 
 **Response:**
@@ -749,7 +749,7 @@ Full invoice record with `status` updated to `"refunded"`:
 
 ```bash
 curl -X POST https://api.butterpay.io/v1/invoices/inv_01hwzq3k5n8ej4v2b7r9fcx6ds/refund \
-  -H "X-Api-Key: pk_live_abc123..."
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..."
 ```
 
 **Response:**

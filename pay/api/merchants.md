@@ -50,7 +50,7 @@ including the current API key prefix.
     "id": "mer_01hwzq3k5n8ej4v2b7r9abc123",
     "name": "Acme Store",
     "email": "hello@acme.io",
-    "apiKey": "pk_live_abc1...",
+    "apiKey": "bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...",
     "serviceFeeBps": 80,
     "webhookUrl": "https://acme.io/webhooks/butter",
     "receivingAddresses": {
@@ -61,7 +61,7 @@ including the current API key prefix.
 }
 ```
 
-`apiKey` in the response is the stored **prefix** of the key (e.g. `pk_live_abc1...`), not the
+`apiKey` in the response is the stored **prefix** of the key (e.g. `bp_abc1...`), not the
 full plaintext key. The full key is only returned once, at generation or rotation time.
 
 ### Example
@@ -86,7 +86,7 @@ curl -X POST https://api.butterpay.io/v1/auth/login \
     "id": "mer_01hwzq3k5n8ej4v2b7r9abc123",
     "name": "Acme Store",
     "email": "hello@acme.io",
-    "apiKey": "pk_live_abc1...",
+    "apiKey": "bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...",
     "serviceFeeBps": 80,
     "webhookUrl": "https://acme.io/webhooks/butter",
     "receivingAddresses": {
@@ -121,7 +121,7 @@ None. The merchant identity is derived from the JWT.
   "id": "mer_01hwzq3k5n8ej4v2b7r9abc123",
   "name": "Acme Store",
   "email": "hello@acme.io",
-  "apiKey": "pk_live_abc1...",
+  "apiKey": "bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...",
   "serviceFeeBps": 80,
   "webhookUrl": "https://acme.io/webhooks/butter",
   "receivingAddresses": {
@@ -147,7 +147,7 @@ curl https://api.butterpay.io/v1/auth/me \
   "id": "mer_01hwzq3k5n8ej4v2b7r9abc123",
   "name": "Acme Store",
   "email": "hello@acme.io",
-  "apiKey": "pk_live_abc1...",
+  "apiKey": "bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...",
   "serviceFeeBps": 80,
   "webhookUrl": "https://acme.io/webhooks/butter",
   "receivingAddresses": {
@@ -270,7 +270,7 @@ None. The merchant identity is derived from the `X-Api-Key` header.
 
 ```bash
 curl https://api.butterpay.io/v1/merchants/me \
-  -H "X-Api-Key: pk_live_abc123..."
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..."
 ```
 
 **Response** (HTTP 200):
@@ -323,7 +323,7 @@ The full updated merchant record (same shape as [GetMe](#getme)).
 
 ```bash
 curl -X PATCH https://api.butterpay.io/v1/merchants/me \
-  -H "X-Api-Key: pk_live_abc123..." \
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..." \
   -H "Content-Type: application/json" \
   -d '{
     "webhookUrl": "https://acme.io/webhooks/butter-v2",
@@ -360,7 +360,7 @@ when no key currently exists. Subsequent rotations use [RotateApiKey](#rotateapi
 
 - **Method**: `POST`
 - **Path**: `/v1/merchants/me/generate-key`
-- **Auth**: `X-Api-Key`
+- **Auth**: `apiKeyAuth (Bearer or X-Api-Key)` — for first-time generation a brand-new merchant has no API key, so use the `Authorization: Bearer <jwt>` returned by [SignUp](#signup) or [Login](#login)
 - **Description**: Generates a new API key, stores only its bcrypt hash, and returns the plaintext
   key exactly once. The key is not stored in plaintext anywhere — if it is lost, rotation is the
   only recovery path. Requires that at least one chain entry is present in `receivingAddresses`
@@ -375,7 +375,7 @@ None.
 
 ```json
 {
-  "apiKey": "pk_live_abc123...",
+  "apiKey": "bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...",
   "message": "Store this key securely. It will not be shown again."
 }
 ```
@@ -390,14 +390,14 @@ responses.
 
 ```bash
 curl -X POST https://api.butterpay.io/v1/merchants/me/generate-key \
-  -H "X-Api-Key: pk_live_abc123..."
+  -H "X-Api-Key: bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx..."
 ```
 
 **Response** (HTTP 200):
 
 ```json
 {
-  "apiKey": "pk_live_abc123fullkeyhere...",
+  "apiKey": "bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...",
   "message": "Store this key securely. It will not be shown again."
 }
 ```
@@ -425,7 +425,7 @@ None.
 
 ```json
 {
-  "apiKey": "pk_live_xyz789...",
+  "apiKey": "bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...",
   "message": "Store this key securely. It cannot be retrieved again."
 }
 ```
@@ -454,7 +454,7 @@ curl -X POST https://api.butterpay.io/v1/merchants/me/rotate-key \
 
 ```json
 {
-  "apiKey": "pk_live_xyz789fullnewkey...",
+  "apiKey": "bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...",
   "message": "Store this key securely. It cannot be retrieved again."
 }
 ```

@@ -73,7 +73,7 @@ Pass a `ButterPayConfig` object to the `ButterPay` constructor.
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `apiUrl` | `string` | Yes | ButterPay API base URL, e.g. `"https://api.butterpay.io"`. |
-| `apiKey` | `string` | No | Merchant API key (`bpk_live_...`). Required for merchant-only endpoints (create plan, list subscriptions, etc.). Omit for payer-side usage. |
+| `apiKey` | `string` | No | Merchant API key (`bp_...`). Required for merchant-only endpoints (create plan, list subscriptions, etc.). Omit for payer-side usage. |
 | `wallet` | `WalletAdapter` | Yes | Wallet adapter instance. Pass `ExternalWalletAdapter` for browser usage or `HDWalletAdapter` for server/TG bot (Phase 2). |
 | `chains` | `Partial<Record<ChainName, Partial<ChainConfig>>>` | No | Per-chain overrides for RPC URLs, contract addresses, or token lists. Merged on top of `defaultChainConfigs`. See [Custom chain configuration](#custom-chain-configuration). |
 
@@ -552,7 +552,7 @@ import { ApiClient, type ApiClientConfig } from "@butterpay/core";
 
 const api = new ApiClient({
   baseUrl: "https://api.butterpay.io",  // required
-  apiKey: "bpk_live_...",               // optional; adds X-Api-Key header to every request
+  apiKey: "bp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...",               // optional; adds X-Api-Key header to every request
 });
 ```
 
