@@ -55,6 +55,18 @@
   * [TSS RPC](api/json-rpc/tss-rpc.md)
 * [TSS Cross-chain API](api/tss-api.md)
 * [Cross-chain SDK](sdk/cross-chain.md)
+* ButterPay (Pay)
+  * [Overview](pay/overview.md)
+  * [Getting Started](pay/getting-started.md)
+  * [Authentication](pay/authentication.md)
+  * [Webhooks](pay/webhooks.md)
+  * API
+    * [Invoices](pay/api/invoices.md)
+    * [Merchants](pay/api/merchants.md)
+    * [Plans & Subscriptions](pay/api/plans-subscriptions.md)
+    * [Webhooks Management](pay/api/webhooks.md)
+  * SDK
+    * [@butterpay/core](pay/sdk/core.md)
 
 
 ## Run Node
